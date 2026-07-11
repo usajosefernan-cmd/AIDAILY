@@ -238,8 +238,13 @@ if [ "$SYNC_OK" = "true" ]; then
     fi
 
     log "Limpiando directorios de compilación y contingencia para evitar recursividades..."
-    rm -rf /opt/aidaily/public/pro
-    rm -rf /opt/aidaily/dist
+    rm -rf /opt/aidaily/public/pro || true
+    if [ -d "/opt/aidaily/dist" ]; then
+        OBSOLETE_DIR="/opt/aidaily/dist_obsolete_$(date +%s)"
+        mv /opt/aidaily/dist "$OBSOLETE_DIR" || true
+        rm -rf "$OBSOLETE_DIR" >/dev/null 2>&1 &
+    fi
+    mkdir -p /opt/aidaily/dist
     log "Compilando Astro en /opt/aidaily..."
     update_vps_status 6 "Compilación de Astro" "Generando el build estático de producción (npm run build)..." 20
     

@@ -1,91 +1,45 @@
 {
   "topics": [
     {
-      "id": "wimbledon",
-      "title": "Wimbledon",
+      "id": "mundial-2026",
+      "title": "Mundial 2026",
       "keywords": [
-        "wimbledon"
+        "mundial",
+        "2026"
       ],
-      "articleCount": 26,
-      "popularity": 6,
+      "articleCount": 21,
+      "popularity": 7,
       "category": "deportes",
       "type": "event",
-      "recentCount": 0,
-      "detectedAt": "2026-07-11T16:01:05.659Z",
-      "expiresAt": "2026-07-14T16:00:20.386Z",
+      "recentCount": 1,
+      "detectedAt": "2026-07-11T18:01:07.277Z",
+      "expiresAt": "2026-07-14T18:00:21.914Z",
       "subMenus": [
         {
           "label": "Ver Todo",
           "icon": "📰",
-          "count": 26,
-          "query": "wimbledon"
+          "count": 21,
+          "query": "mundial 2026"
+        },
+        {
+          "label": "Cuartos de Final",
+          "icon": "🏆",
+          "count": 6,
+          "query": "mundial 2026 cuartos de final"
         },
         {
           "label": "Final",
           "icon": "👑",
-          "count": 5,
-          "query": "wimbledon final"
-        }
-      ]
-    },
-    {
-      "id": "agent",
-      "title": "Agent",
-      "keywords": [
-        "agent"
-      ],
-      "articleCount": 26,
-      "popularity": 6,
-      "category": "tecnologia",
-      "type": "event",
-      "recentCount": 0,
-      "detectedAt": "2026-07-11T16:01:05.659Z",
-      "expiresAt": "2026-07-14T16:00:20.386Z",
-      "subMenus": [
-        {
-          "label": "Ver Todo",
-          "icon": "📰",
-          "count": 26,
-          "query": "agent"
+          "count": 4,
+          "query": "mundial 2026 final"
         },
         {
-          "label": "Precios",
-          "icon": "💰",
-          "count": 2,
-          "query": "agent precios"
+          "label": "Semifinales",
+          "icon": "🔥",
+          "count": 3,
+          "query": "mundial 2026 semifinales"
         }
       ]
-    },
-    {
-      "id": "espana-belgica",
-      "title": "Espana Belgica",
-      "keywords": [
-        "espana",
-        "belgica"
-      ],
-      "articleCount": 12,
-      "popularity": 6,
-      "category": "deportes",
-      "type": "event",
-      "recentCount": 0,
-      "detectedAt": "2026-07-11T16:01:05.659Z",
-      "expiresAt": "2026-07-14T16:00:20.386Z",
-      "subMenus": []
-    },
-    {
-      "id": "series",
-      "title": "Series",
-      "keywords": [
-        "series"
-      ],
-      "articleCount": 24,
-      "popularity": 6,
-      "category": "cultura",
-      "type": "event",
-      "recentCount": 0,
-      "detectedAt": "2026-07-11T16:01:05.659Z",
-      "expiresAt": "2026-07-14T16:00:20.386Z",
-      "subMenus": []
     },
     {
       "id": "ufc-329",
@@ -94,13 +48,85 @@
         "ufc",
         "329"
       ],
-      "articleCount": 11,
-      "popularity": 5,
+      "articleCount": 17,
+      "popularity": 7,
       "category": "deportes",
       "type": "event",
-      "recentCount": 0,
-      "detectedAt": "2026-07-11T16:01:05.659Z",
-      "expiresAt": "2026-07-14T16:00:20.386Z",
+      "recentCount": 3,
+      "detectedAt": "2026-07-11T18:01:07.278Z",
+      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "subMenus": []
+    },
+    {
+      "id": "july-2026",
+      "title": "July 2026",
+      "keywords": [
+        "july",
+        "2026"
+      ],
+      "articleCount": 12,
+      "popularity": 6,
+      "category": "internacional",
+      "type": "event",
+      "recentCount": 5,
+      "detectedAt": "2026-07-11T18:01:07.278Z",
+      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "subMenus": []
+    },
+    {
+      "id": "tour-francia",
+      "title": "Tour Francia",
+      "keywords": [
+        "tour",
+        "francia"
+      ],
+      "articleCount": 17,
+      "popularity": 6,
+      "category": "deportes",
+      "type": "event",
+      "recentCount": 1,
+      "detectedAt": "2026-07-11T18:01:07.278Z",
+      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "subMenus": [
+        {
+          "label": "Ver Todo",
+          "icon": "📰",
+          "count": 17,
+          "query": "tour francia"
+        },
+        {
+          "label": "Etapa 7",
+          "icon": "🚴",
+          "count": 4,
+          "query": "tour francia etapa 7"
+        },
+        {
+          "label": "Sprint",
+          "icon": "💨",
+          "count": 2,
+          "query": "tour francia sprint"
+        },
+        {
+          "label": "Líder / Maillot",
+          "icon": "🟡",
+          "count": 2,
+          "query": "tour francia líder"
+        }
+      ]
+    },
+    {
+      "id": "series",
+      "title": "Series",
+      "keywords": [
+        "series"
+      ],
+      "articleCount": 27,
+      "popularity": 6,
+      "category": "cultura",
+      "type": "event",
+      "recentCount": 3,
+      "detectedAt": "2026-07-11T18:01:07.278Z",
+      "expiresAt": "2026-07-14T18:00:21.914Z",
       "subMenus": []
     },
     {
@@ -109,17 +135,17 @@
       "keywords": [
         "best"
       ],
-      "articleCount": 22,
+      "articleCount": 26,
       "popularity": 5,
       "category": "cultura",
       "type": "event",
-      "recentCount": 0,
-      "detectedAt": "2026-07-11T16:01:05.659Z",
-      "expiresAt": "2026-07-14T16:00:20.386Z",
+      "recentCount": 2,
+      "detectedAt": "2026-07-11T18:01:07.278Z",
+      "expiresAt": "2026-07-14T18:00:21.914Z",
       "subMenus": []
     }
   ],
-  "updatedAt": "2026-07-11T16:01:05.668Z",
+  "updatedAt": "2026-07-11T18:01:07.289Z",
   "windowHours": 48,
-  "totalRecentArticles": 2164
+  "totalRecentArticles": 3261
 }
