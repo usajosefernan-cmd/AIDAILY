@@ -123,38 +123,13 @@ if ! (cd "$OPT_DIR" && node scripts/validate-staging-build.mjs "$OPT_DIR/dist");
 fi
 log "✅ Control de integridad aprobado."
 
-# 7. Sincronizar el build final con el directorio del servidor de producción local de la VPS
-log "Paso 7: Publicando el nuevo build en producción de la VPS..."
-mkdir -p "$PROD_DIR"
-rm -rf "$PROD_DIR"/*
-cp -r "$OPT_DIR/dist/"* "$PROD_DIR/"
-
-# 8. Desplegar en Firebase Hosting
-log "Paso 8: Desplegando en Firebase Hosting (pecemi.web.app)..."
-if (cd /home/ubuntu/workspace && firebase deploy --only hosting --non-interactive --project pecemi); then
-  log "✅ Despliegue en Firebase Hosting completado con éxito."
-else
-  log "⚠️ ADVERTENCIA: Falló el despliegue directo de Firebase. Intentando usar token alternativo..."
-  if [ -f "/home/ubuntu/workspace/firebase_deploy.sh" ]; then
-    FT_TOKEN=$(grep -oP 'TOKEN=\K[^ ]+' "/home/ubuntu/workspace/firebase_deploy.sh" | tr -d '"' | tr -d "'")
-    if [ -n "$FT_TOKEN" ]; then
-      if (cd /home/ubuntu/workspace && firebase deploy --only hosting --non-interactive --project pecemi --token "$FT_TOKEN"); then
-        log "✅ Despliegue exitoso con token."
-      else
-        log "❌ Falló reintento con token."
-      fi
-    fi
-  fi
-fi
-
-# 9. Verificar la web en producción
-log "Paso 9: Ejecutando verificación de la web pública en vivo..."
-if npm run verify:production; then
-  log "✅ Verificación de producción aprobada."
-else
-  log "❌ ERROR: La web pública no superó la verificación de producción."
+# 7. Copia, Deploy en Firebase y Verificación Automática (unificados en Node)
+log "Paso 7: Ejecutando copia física, deploy en Firebase Hosting y verificación en vivo desde Node..."
+if ! node scripts/deploy-vps.js; then
+  log "❌ ERROR: El proceso de copia, deploy o verificación falló en Node. Despliegue abortado."
   exit 1
 fi
+log "✅ Copia, deploy y verificación en vivo aprobados."
 
 # Eliminar bloqueo
 rm -f "$LOCKFILE"
