@@ -56,3 +56,12 @@ public/pro/aidaily/api/
 trending_topics.json
 jobs_updated.json
 
+# Cleanup constraints
+dist_staging/
+public.bak/
+scratch/
+patch_*
+test_*
+~syncthing~*.tmp
+*.log
+

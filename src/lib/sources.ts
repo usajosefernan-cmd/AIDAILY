@@ -4102,10 +4102,48 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
           console.error('[Caché Incremental] Error al guardar caché local incremental:', diskErr.message || diskErr);
         }
 
-        // 2. Guardar noticia procesada en la base de datos local SQLite (cambiando status a 'publicada')
+        // 2. Guardar noticia procesada en la base de datos local SQLite (cambiando status a 'publicada' o el filtro correspondiente)
         try {
           console.log(`[Cola - SQLite Save] Guardando noticia procesada en la base de datos local SQLite: "${newsItem.title}"`);
           
+          let finalStatus = 'publicada';
+          const titleLower = (newsItem.title || '').toLowerCase();
+          const summaryLower = (newsItem.summary || '').toLowerCase();
+          const categoryLower = (newsItem.category || '').toLowerCase();
+
+          // REGLA 1: Si category no es relevante para AIDAILY, descartar.
+          // AIDAILY prioriza IA, tecnología, startups, ciencia y medioambiente.
+          // Descartamos deportes, estilo, gastronomía, y sociedad genérica a menos que hablen de IA o tecnología.
+          const nonRelevantCategories = ['deportes', 'estilo', 'gastronomia', 'sociedad'];
+          const techKeywords = ['inteligencia artificial', 'ia', 'ai', 'robot', 'tecnologia', 'software', 'hardware', 'startup', 'openai', 'chatgpt', 'nvidia', 'google', 'microsoft', 'apple', 'amazon', 'meta', 'ciencia', 'espacio', 'biotecnologia', 'quimica', 'fisica', 'astronomia'];
+          const hasTechKeyword = techKeywords.some(kw => titleLower.includes(kw) || summaryLower.includes(kw));
+
+          if (nonRelevantCategories.includes(categoryLower) && !hasTechKeyword) {
+            console.log(`[Filtro Publicación] Descartando noticia no relevante de categoría "${newsItem.category}": "${newsItem.title}"`);
+            finalStatus = 'descartada';
+          }
+
+          // REGLA 2: Si la fecha está en el futuro, descartar.
+          const pubTime = new Date(newsItem.publishedAt).getTime();
+          if (pubTime > Date.now() + 5 * 60 * 1000) { // Tolerancia de 5 min
+            console.log(`[Filtro Publicación] Descartando noticia con fecha futura: "${newsItem.title}" (${newsItem.publishedAt})`);
+            finalStatus = 'descartada';
+          }
+
+          // REGLA 3: Si noticia parece inventada o sin fuente fiable (título o resumen demasiado cortos, o vacíos, o con errores obvios), descartar.
+          if (titleLower.length < 10 || summaryLower.length < 20 || titleLower.includes('failed') || titleLower.includes('error') || titleLower.includes('unsupported')) {
+            console.log(`[Filtro Publicación] Descartando noticia sospechosa o corrupta: "${newsItem.title}"`);
+            finalStatus = 'descartada';
+          }
+
+          // REGLA 4: Si el título contiene afirmaciones geopolíticas graves, marcar como revisión manual (no publicar automático).
+          const geopoliticalKeywords = ['guerra', 'atentado', 'bomba', 'invasion', 'misil', 'nuclear', 'armas de destruccion', 'golpe de estado', 'asesinato', 'muertos en combate', 'crisis militar'];
+          const hasGeopoliticalSensibility = geopoliticalKeywords.some(kw => titleLower.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(kw));
+          if (hasGeopoliticalSensibility && finalStatus === 'publicada') {
+            console.log(`[Filtro Publicación] Noticia geopolítica sensible detectada. Marcada para revisión manual: "${newsItem.title}"`);
+            finalStatus = 'revision_manual';
+          }
+
           const tagsStr = JSON.stringify(newsItem.tags || []);
           const tagsSecundariosStr = JSON.stringify(newsItem.tagsSecundarios || []);
           const keyPointsStr = JSON.stringify(newsItem.keyPoints || []);
@@ -4137,7 +4175,7 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
               relevanceScore = ?,
               urgencyScore = ?,
               scoreReason = ?,
-              status = 'publicada'
+              status = ?
             WHERE id = ?
           `);
 
@@ -4163,18 +4201,21 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
             newsItem.relevanceScore || 0,
             newsItem.urgencyScore || 0,
             newsItem.scoreReason || '',
+            finalStatus,
             hashId
           );
           
-          console.log(`[Cola - SQLite Save] Guardado exitoso.`);
+          console.log(`[Cola - SQLite Save] Guardado exitoso con estado: ${finalStatus}`);
+
+          if (finalStatus === 'publicada') {
+            finalItems.push(newsItem);
+            cachedItems.push(newsItem);
+            cachedMap.set(newsItem.url, newsItem);
+            newArticlesProcessed++;
+          }
         } catch (sqliteSaveErr: any) {
           console.error('[Cola - SQLite Save] Error guardando noticia procesada en SQLite:', sqliteSaveErr.message || sqliteSaveErr);
         }
-
-        finalItems.push(newsItem);
-        cachedItems.push(newsItem);
-        cachedMap.set(newsItem.url, newsItem);
-        newArticlesProcessed++;
       } catch (articleErr: any) {
         console.error(`[IA] Error procesando artículo en la cola "${queueItem.title}":`, articleErr.message || articleErr);
       } finally {
