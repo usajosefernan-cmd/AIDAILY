@@ -17,7 +17,7 @@ try {
     const rows = stmt.all() as any[];
     totalArticlesCount = rows.length;
     
-    recentArticles = rows.slice(0, 200).map((art: any) => {
+    recentArticles = rows.slice(0, 30).map((art: any) => {
       return {
         ...art,
         tags: art.tags ? JSON.parse(art.tags) : [art.category],
@@ -38,7 +38,7 @@ try {
       if (Array.isArray(allArts)) {
         totalArticlesCount = allArts.length;
         allArts.sort((a, b) => new Date(b.publishedAt || b.published).getTime() - new Date(a.publishedAt || a.published).getTime());
-        recentArticles = allArts.slice(0, 200);
+        recentArticles = allArts.slice(0, 30);
       }
     }
   }

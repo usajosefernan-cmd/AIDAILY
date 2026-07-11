@@ -12,7 +12,8 @@
     "news:hot": "node scripts/hot-topics-cron.js",
     "news:validate": "node scripts/validate-news-data.js",
     "build:safe": "npm run news:validate && npm run build",
-    "deploy:safe": "bash deploy/deploy-safe.sh"
+    "deploy:safe": "bash deploy/deploy-safe.sh",
+    "verify:production": "node scripts/verify-production.js"
   },
   "dependencies": {
     "@astrojs/db": "^0.21.3",

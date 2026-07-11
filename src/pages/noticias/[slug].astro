@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 
   try {
     const db = new DatabaseSync(dbPath);
-    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada'");
+    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada' ORDER BY publishedAt DESC LIMIT 100");
     const rows = stmt.all() as any[];
     return rows.map(art => {
       const slug = getSlug(art.title) || art.id;

@@ -4335,7 +4335,7 @@ export function getDatesToBuild(): string[] {
         uniqueDates.add(d.toISOString().split('T')[0]);
       }
       
-      return Array.from(uniqueDates).sort().reverse();
+      return Array.from(uniqueDates).sort().reverse().slice(0, 15);
     } catch (e) {
       console.error('[sources] Error al leer fechas de SQLite para compilación:', e);
     }

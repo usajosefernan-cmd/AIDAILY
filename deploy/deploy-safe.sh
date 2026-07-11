@@ -147,6 +147,15 @@ else
   fi
 fi
 
+# 9. Verificar la web en producción
+log "Paso 9: Ejecutando verificación de la web pública en vivo..."
+if npm run verify:production; then
+  log "✅ Verificación de producción aprobada."
+else
+  log "❌ ERROR: La web pública no superó la verificación de producción."
+  exit 1
+fi
+
 # Eliminar bloqueo
 rm -f "$LOCKFILE"
 log "=== Pipeline Completado con Éxito ==="
