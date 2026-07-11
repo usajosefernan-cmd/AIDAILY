@@ -233,27 +233,26 @@ async function main() {
     };
     writeJsonAtomic(path.join(apiDir, 'news-config.json'), paginationConfig, false);
 
-    // C. Fichas individuales detalladas de cada noticia
+    // C. Fichas individuales detalladas de cada noticia (Escritura inteligente / Smart Writing)
     const articlesDir = path.join(apiDir, 'articles');
     
-    // Eliminar la carpeta para limpiar acumulaciones obsoletas del disco
-    if (fs.existsSync(articlesDir)) {
-      try {
-        fs.rmSync(articlesDir, { recursive: true, force: true });
-        logger.log('Limpiado directorio de artículos para eliminar acumulaciones obsoletas.');
-      } catch (err) {
-        logger.warn('No se pudo limpiar el directorio de artículos:', err.message);
-      }
+    // Mantener el directorio existente para no re-escribir de forma redundante 22,000 fichas de noticias
+    if (!fs.existsSync(articlesDir)) {
+      fs.mkdirSync(articlesDir, { recursive: true });
     }
-    fs.mkdirSync(articlesDir, { recursive: true });
 
     let writtenCount = 0;
+    let skippedCount = 0;
     enrichedList.forEach(art => {
       const detailPath = path.join(articlesDir, `${art.id}.json`);
-      writeJsonAtomic(detailPath, art, false);
-      writtenCount++;
+      if (!fs.existsSync(detailPath)) {
+        writeJsonAtomic(detailPath, art, false);
+        writtenCount++;
+      } else {
+        skippedCount++;
+      }
     });
-    logger.log(`Guardadas ${writtenCount} fichas detalladas de noticias en ${articlesDir}.`);
+    logger.log(`Fichas detalladas: ${writtenCount} escritas, ${skippedCount} omitidas por existir previamente en disco.`);
 
     // D. Consolidado histórico ligero (optimizado para buscador)
     const optimizedArticlesMap = {};
