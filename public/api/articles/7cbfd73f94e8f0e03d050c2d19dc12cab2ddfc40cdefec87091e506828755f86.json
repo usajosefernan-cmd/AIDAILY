@@ -1,0 +1,77 @@
+{
+  "id": "7cbfd73f94e8f0e03d050c2d19dc12cab2ddfc40cdefec87091e506828755f86",
+  "title": "Cazando un bug a las 10 de la noche: la solución para que tus capturas de popups no salgan vacías",
+  "summary": "Un desarrollador resuelve un error crítico en la librería htmlToImage que generaba imágenes vacías al capturar elementos dentro de popups de SweetAlert, compartiendo el proceso de debugging y la solución final.",
+  "url": "https://dev.to/codemaster_121482/how-to-hunt-a-bug-at-10-pm-5gkf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T09:24:01.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvt8qt5cvnjzhg9817wgj.png",
+  "imageAlt": "Cazando un bug a las 10 de la noche: la solución para que tus capturas de popups no salgan vacías",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador resuelve un error crítico en la librería htmlToImage que generaba imágenes vacías al capturar elementos dentro de popups de SweetAlert, compartiendo el proceso de debugging y la solución final.",
+  "keyPoints": [
+    "Un error en la librería htmlToImage generaba imágenes vacías de 0 bytes al intentar capturar el botón de 'Download Card' de la aplicación.",
+    "La causa raíz era que el elemento a capturar se eliminaba automáticamente del DOM al cerrarse el popup de SweetAlert de forma instantánea.",
+    "La solución consistió en mover el elemento de previsualización de la tarjeta al DOM del nuevo popup de 'Processing' para mantenerlo activo.",
+    "El desarrollador comparte el bloque de código de la corrección en su perfil de Github para que la comunidad pueda implementarla fácilmente."
+  ],
+  "whyMatters": "Este caso es un ejemplo práctico de debugging de errores muy comunes en el desarrollo de interfaces web interactivas, un fallo que afecta a miles de proyectos que usan librerías de popups y generación de imágenes en todo el mundo. La solución compartida evita que otros desarrolladores pierdan horas de trabajo en identificar el mismo problema, mejorando la productividad de los equipos de desarrollo, especialmente en el mercado tecnológico español y europeo que crece a un ritmo acelerado. Además, resalta la importancia de dominar el ciclo de vida del DOM en aplicaciones que integran múltiples librerías de terceros, un conocimiento fundamental para cualquier ingeniero frontend que quiera destacar en el sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvt8qt5cvnjzhg9817wgj.png",
+      "alt": "Portada del artículo sobre caza de bugs en desarrollo web",
+      "caption": "Imagen de cabecera del artículo original publicado en Dev.to por el desarrollador Vlox"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DesarrolloWeb",
+    "#Debugging",
+    "#SweetAlert",
+    "#HtmlToImage",
+    "#JavaScript"
+  ],
+  "fullArticle": "La madrugada del pasado 10 de julio, un desarrollador se encontró con un error crítico en su proyecto: el botón de 'Download Card' de su aplicación dejó de funcionar de repente, generando imágenes vacías de 0 bytes al usar la popular librería htmlToImage para capturar elementos del DOM. El problema se producía exclusivamente cuando el elemento a capturar se encontraba dentro de un popup de SweetAlert, una herramienta ampliamente usada para mostrar alertas y formularios modulares en aplicaciones web de todo el mundo.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvt8qt5cvnjzhg9817wgj.png]\nTras analizar el comportamiento de la librería, el desarrollador identificó la causa raíz del fallo: cuando el usuario pulsaba el botón de descarga o confirmación, SweetAlert eliminaba automáticamente todo el árbol DOM del popup, por lo que el elemento a capturar ya no existía en el momento en que htmlToImage intentaba generar la imagen. Para solucionarlo, movió el elemento de previsualización de la tarjeta al DOM del nuevo popup de 'Processing' que se muestra durante la generación de la imagen, de forma que el elemento se mantuviera activo en el documento hasta que se completara la captura. La corrección funcionó a la primera, generando imágenes correctas sin errores, lo que le permitió continuar con su trabajo sin retrasos importantes.\nEl autor ha compartido el bloque de código JavaScript de la solución en su perfil de Github, para que cualquier desarrollador que se encuentre con el mismo fallo pueda implementarla de forma rápida. Este tipo de errores son muy comunes en proyectos que combinan múltiples librerías de terceros, por lo que la comunidad de desarrollo valora especialmente este tipo de aportes prácticos que ahorran horas de debugging a profesionales de todo el mundo, especialmente en mercados europeos como el español donde el sector tecnológico genera más de 45.000 empleos cualificados al año.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T09:34:27.425Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/vlox/how-to-hunt-a-bug-at-10-pm-2a6e"
+    },
+    {
+      "title": "Perfil de Github del autor Vlox",
+      "url": "https://github.com/vlox"
+    },
+    {
+      "title": "Documentación oficial de htmlToImage",
+      "url": "https://html-to-image.vercel.app/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño de las imágenes generadas antes de la corrección",
+      "value": "0 bytes"
+    },
+    {
+      "label": "Hora a la que se detectó el bug",
+      "value": "10 PM"
+    },
+    {
+      "label": "Empleos cualificados generados al año por el sector tech en España",
+      "value": "45.000"
+    },
+    {
+      "label": "Librería de JavaScript afectada por el error",
+      "value": "htmlToImage"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "45b3de4134dc5b77026d4114e4a960bee925f769b5f91ad57c82d264c6e2990c",
+  "title": "El regulador de seguros estadounidense NAIC confirma ser víctima del hackeo masivo de Oracle PeopleSoft por el grupo ShinyHunters",
+  "summary": "La Asociación Nacional de Comisionados de Seguros (NAIC) de EE.UU. confirmó haber sufrido acceso no autorizado a sus sistemas el 11 de junio de 2026, a través de una vulnerabilidad zero-day de Oracle PeopleSoft (CVE-2026-35273) explotada por el grupo ciberdelincuente ShinyHunters. La investigación de la entidad determinó que no se robaron datos personales identificables, información de pago ni datos de cuentas financieras, y que los sistemas de los departamentos de seguros estatales no se vieron afectados. ShinyHunters reclamó inicialmente el robo de más de 105.000 archivos, pero luego rectificó la cifra a 260.000 documentos de declaraciones regulatorias.",
+  "url": "https://www.securityweek.com/insurance-regulators-group-naic-hit-in-oracle-peoplesoft-hack/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-06-29T13:42:28.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2025/10/bank-finance-lender-credit-union-hack.jpeg",
+  "imageAlt": "El regulador de seguros estadounidense NAIC confirma ser víctima del hackeo masivo de Oracle PeopleSoft por el grupo ShinyHunters",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La Asociación Nacional de Comisionados de Seguros (NAIC) de EE.UU. confirmó haber sufrido acceso no autorizado a sus sistemas el 11 de junio de 2026, a través de una vulnerabilidad zero-day de Oracle PeopleSoft (CVE-2026-35273) explotada por el grupo ciberdelincuente ShinyHunters. La investigación de la entidad determinó que no se robaron datos personales identificables, información de pago ni datos de cuentas financieras, y que los sistemas de los departamentos de seguros estatales no se vieron afectados. ShinyHunters reclamó inicialmente el robo de más de 105.000 archivos, pero luego rectificó la cifra a 260.000 documentos de declaraciones regulatorias.",
+  "keyPoints": [
+    "La NAIC, entidad que agrupa a los reguladores de seguros de los 50 estados de EE.UU., confirmó haber sufrido acceso no autorizado a sus sistemas el 11 de junio.",
+    "El ataque explotó una vulnerabilidad zero-day de Oracle PeopleSoft (CVE-2026-35273) que permite ejecución remota de código sin autenticación, detectada por Oracle el 11 de junio.",
+    "El grupo ciberdelincuente ShinyHunters, que afirma haber atacado a más de 100 organizaciones en esta campaña, reclamó el robo de datos de la NAIC el 18 de junio.",
+    "La investigación de la NAIC confirmó que no se robaron datos personales identificables, información de pago ni datos de cuentas financieras, y sus sistemas no fueron afectados."
+  ],
+  "whyMatters": "Este incidente evidencia la gravedad de las vulnerabilidades zero-day en software empresarial ampliamente utilizado como Oracle PeopleSoft, que puede comprometer la seguridad de entidades públicas que manejan datos sensibles de todo un sector estratégico como el asegurador estadounidense. La confirmación por parte de la NAIC, una de las primeras víctimas públicas de esta campaña de ShinyHunters, alerta a cientos de organizaciones que utilizan esta plataforma sobre la necesidad urgente de aplicar parches de seguridad y revisar sus protocolos de protección. Además, la rectificación posterior de los ciberdelincuentes sobre la cantidad y el tipo de datos robados muestra cómo las filtraciones pueden ser exageradas para generar presión, pero el impacto en la confianza de los reguladores, las aseguradoras y los ciudadanos puede ser duradero, obligando a replantear las medidas de protección de datos del sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2025/10/bank-finance-lender-credit-union-hack.jpeg",
+      "alt": "Ilustración de un hackeo a sistemas financieros y de seguros, relacionada con el ataque a la NAIC por la vulnerabilidad de Oracle PeopleSoft",
+      "caption": "Imagen de portada del artículo de SecurityWeek sobre el hackeo a la NAIC"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#ShinyHunters",
+    "#NAIC",
+    "#OraclePeopleSoft",
+    "#CVE202635273",
+    "#FiltracionDatosSeguros"
+  ],
+  "fullArticle": "El 11 de junio de 2026, Oracle publicó una alerta de seguridad fuera de banda para informar sobre una vulnerabilidad zero-day crítica en su software PeopleSoft, identificada como CVE-2026-35273, que permite a atacantes ejecutar código remoto en los sistemas afectados sin necesidad de autenticación. Equipos de seguridad de Google y otras firmas confirmaron poco después que la vulnerabilidad estaba siendo explotada activamente en ataques dirigidos a organizaciones de todo el mundo, sin que Oracle mencionara explícitamente esta explotación en su aviso público inicial.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2025/10/bank-finance-lender-credit-union-hack.jpeg]\n\nEl grupo de ciberdelincuentes ShinyHunters, especializado en el robo y filtración masiva de datos de entidades públicas y privadas, se atribuyó la autoría de esta campaña de ataques, afirmando haber comprometido a más de 100 organizaciones que utilizan PeopleSoft en su infraestructura. El 18 de junio, el grupo añadió la Asociación Nacional de Comisionados de Seguros (NAIC, por sus siglas en inglés) a su sitio web de filtraciones, reclamando el robo de más de 105.000 archivos que sumaban un total de 3,1 terabytes de información, incluyendo 2,1 millones de documentos de declaraciones regulatorias de compañías aseguradoras.\n\nLa NAIC, entidad que agrupa a los reguladores de seguros de los 50 estados de Estados Unidos y se encarga de coordinar políticas, desarrollar leyes modelo y supervisar el sector asegurador a nivel nacional, publicó un aviso de incidente de seguridad en su sitio web el 26 de junio, confirmando que había sufrido acceso no autorizado a sus sistemas el 11 de junio a través de la vulnerabilidad de PeopleSoft. La investigación inicial de la organización reveló que los atacantes accedieron únicamente a información pública de reportes financieros estatutarios, datos de agencias de calificación crediticia, registros de logs antiguos y datos de configuración del sistema, sin que se viera comprometida información personal identificable, datos de pago o información de cuentas financieras de ninguna persona. Asimismo, la NAIC aclaró que los sistemas de los departamentos de seguros estatales y los sistemas de reportes regulatorios no se vieron afectados, desmintiendo las afirmaciones iniciales de ShinyHunters.\n\nDías después de publicar su declaración inicial, el grupo de ciberdelincuentes emitió una actualización en la que admitió que su primera afirmación se basó en una 'interpretación generada por IA de los datos subyacentes', reduciendo la cantidad de documentos de declaraciones regulatorias robados a 260.000 y eliminando todas las referencias a servicios que la NAIC confirmó no fueron comprometidos en el ataque. Hasta el momento, la NAIC es la primera víctima de esta campaña de ShinyHunters que ha confirmado públicamente el compromiso de sus datos, aunque se rumorea que la Universidad de Nottingham también fue objetivo del mismo grupo, sin que haya mencionado la vulnerabilidad de PeopleSoft en su aviso público de incidente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T14:09:43.034Z",
+  "links": [
+    {
+      "title": "Aviso de incidente de seguridad de la NAIC",
+      "url": "https://www.naic.org/security_incident.htm"
+    },
+    {
+      "title": "Artículo original en SecurityWeek",
+      "url": "https://www.securityweek.com/insurance-regulators-group-naic-hit-in-oracle-peoplesoft-hack"
+    },
+    {
+      "title": "Alerta de seguridad de Oracle sobre CVE-2026-35273",
+      "url": "https://www.oracle.com/security-alerts/cve2026-35273.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de detección de la vulnerabilidad",
+      "value": "11 de junio de 2026"
+    },
+    {
+      "label": "Cantidad inicial de archivos que ShinyHunters afirmó robar",
+      "value": "105.000 archivos (3,1 TB)"
+    },
+    {
+      "label": "Cantidad de documentos de declaraciones regulatorias robados según rectificación",
+      "value": "260.000 documentos"
+    },
+    {
+      "label": "Número de organizaciones que ShinyHunters afirma haber atacado en esta campaña",
+      "value": "Más de 100 organizaciones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

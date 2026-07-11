@@ -1,0 +1,83 @@
+{
+  "id": "b7b25639c6d8c50e86024c744d74d0f9d88ab0b324efe0b5bf7ccbf9af86a4a0",
+  "title": "Campaña masiva de ataques de password spray apunta a Azure CLI",
+  "summary": "Entre el 12 y el 21 de junio, Huntress detectó más de 81 millones de intentos de acceso a cuentas de Microsoft 365 a través de la Azure CLI, comprometiendo 78 usuarios en 64 organizaciones. La ofensiva, impulsada por el flujo OAuth ROPC, reveló fallas críticas en la configuración de MFA y la dependencia de listas de contraseñas robadas.",
+  "url": "https://www.securityweek.com/massive-password-spray-campaign-targeting-azure-cli/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-01T07:46:33.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2024/08/Microsoft-Azure.jpeg",
+  "imageAlt": "Campaña masiva de ataques de password spray apunta a Azure CLI",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Entre el 12 y el 21 de junio, Huntress detectó más de 81 millones de intentos de acceso a cuentas de Microsoft 365 a través de la Azure CLI, comprometiendo 78 usuarios en 64 organizaciones. La ofensiva, impulsada por el flujo OAuth ROPC, reveló fallas críticas en la configuración de MFA y la dependencia de listas de contraseñas robadas.",
+  "keyPoints": [
+    "Más de 81 millones de intentos de acceso en 10 días, con 78 usuarios comprometidos en 64 clientes.",
+    "Los atacantes explotaron el flujo OAuth ROPC, que permite autenticación sin MFA interactiva, comprometiendo cuentas aun con MFA habilitada.",
+    "El origen de los ataques provino del ASN AS32167, asociado a LSHIY LLC, con rangos IPv6 registrados en China y EE. UU.",
+    "Huntress reportó un aumento de 155 veces en ataques de password spray en los últimos seis meses, subrayando la urgencia de revisar políticas MFA."
+  ],
+  "whyMatters": "Esta ofensiva demuestra que los flujos de autenticación obsoletos siguen siendo un punto de entrada crítico para los atacantes, incluso cuando las organizaciones implementan MFA. La exposición de 78 cuentas en 64 empresas subraya la necesidad de revisar y reforzar la configuración de MFA para todos los flujos, no solo los interactivos. La magnitud de los intentos de acceso indica que los atacantes están automatizando y escalaron sus operaciones, lo que plantea riesgos crecientes para la continuidad del negocio y la protección de datos sensibles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2024/08/Microsoft-Azure.jpeg",
+      "alt": "Imagen que muestra la interfaz de Azure CLI con código de autenticación",
+      "caption": "La Azure CLI, objetivo de la campaña de password spray"
+    },
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2022/04/SecurityWeek-Small-Dark.png",
+      "alt": "Logotipo de SecurityWeek",
+      "caption": "SecurityWeek, fuente original del informe"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#AzureCLI",
+    "#PasswordSpray",
+    "#MFA",
+    "#OAuthROP",
+    "#Huntress"
+  ],
+  "fullArticle": "En un ataque que se desarrolló entre el 12 y el 21 de junio, la firma de ciberseguridad Huntress descubrió que sus clientes de Microsoft 365 fueron blanco de una campaña masiva de password spray dirigida a la Azure CLI. La ofensiva generó más de 81 millones de intentos de inicio de sesión, culminando en la compromisión de 78 cuentas de usuarios en 64 organizaciones distintas.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2024/08/Microsoft-Azure.jpeg]\n\nLos atacantes aprovecharon el flujo OAuth ROPC (Resource Owner Password Credentials), una práctica obsoleta que permite enviar credenciales directamente al punto final /token sin pasar por un proceso de MFA interactivo. A pesar de que muchas organizaciones tenían MFA activada, la falta de cobertura de este flujo dejó las cuentas vulnerables. Huntress identificó que la configuración de MFA era parcial: no se obligaba para todas las aplicaciones en la nube, se limitaba a ciertos grupos de usuarios o solo en ubicaciones no confiables.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2022/04/SecurityWeek-Small-Dark.png]\n\nEl origen de los ataques provino del ASN AS32167, ligado a LSHIY LLC, una empresa de hosting con rangos IPv6 registrados en Hong Kong, Wuhan y Nueva York, con presencia también en China. A pesar de reportar la actividad maliciosa a LSHIY, la firma no recibió respuesta. En los últimos seis meses, Huntress ha visto un aumento de 155 veces en ataques de password spray, lo que subraya la escalada de esta técnica.\n\nPara mitigar futuros incidentes, las organizaciones deben revisar exhaustivamente sus políticas de MFA, asegurándose de que cubran todos los flujos de autenticación, incluida la ROPC, y considerar la desactivación de este flujo donde sea posible. La campaña demuestra que la ciberseguridad no es solo una cuestión de tecnologías, sino también de configuración y políticas adecuadas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T15:30:43.587Z",
+  "links": [
+    {
+      "title": "Sitio oficial de Huntress",
+      "url": "https://www.huntress.com/"
+    },
+    {
+      "title": "Documentación de Azure sobre OAuth ROPC",
+      "url": "https://learn.microsoft.com/es-es/azure/active-directory/develop/v2-oauth2-ropc"
+    },
+    {
+      "title": "Portal de Seguridad de Microsoft",
+      "url": "https://learn.microsoft.com/es-es/security/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Intentos de inicio de sesión",
+      "value": "81 millones"
+    },
+    {
+      "label": "Cuentas comprometidas",
+      "value": "78"
+    },
+    {
+      "label": "Organizaciones afectadas",
+      "value": "64"
+    },
+    {
+      "label": "Incremento de ataques de spray",
+      "value": "155 veces"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

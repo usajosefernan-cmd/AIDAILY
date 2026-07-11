@@ -1,0 +1,68 @@
+{
+  "id": "1c801044af408a3ec9e8bf197fa2fabedd0aa4a5b6f2f0987ef8bc6bbf8b86d2",
+  "title": "No puedes proteger lo que no ves: la IA oculta y el problema de inventario que amenaza la seguridad empresarial",
+  "summary": "El artículo analiza el creciente riesgo de la 'IA sombra' en empresas, que escapa a los inventarios tradicionales, y propone el AI-BOM como solución para lograr visibilidad y seguridad de los sistemas de inteligencia artificial.",
+  "url": "https://dev.to/anusha_mukka/you-cant-secure-what-you-cant-see-shadow-ai-and-the-inventory-problem-kd4",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T03:41:05.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqzl1h62mpxtkwymo2oj0.png",
+  "imageAlt": "No puedes proteger lo que no ves: la IA oculta y el problema de inventario que amenaza la seguridad empresarial",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza el creciente riesgo de la 'IA sombra' en empresas, que escapa a los inventarios tradicionales, y propone el AI-BOM como solución para lograr visibilidad y seguridad de los sistemas de inteligencia artificial.",
+  "keyPoints": [
+    "El 83% de las empresas aumentó su actividad de IA en el último año, pero los sistemas de gobernanza y visibilidad no han seguido el mismo ritmo de adopción.",
+    "La 'IA sombra' incluye modelos no registrados, pipelines de recuperación y APIs de terceros que carecen de hostname o registro en bases de datos de configuración.",
+    "El AI-BOM (lista de materiales de IA) surge como estándar para registrar modelos, conjuntos de datos, dependencias, capacidades y responsables de cada sistema.",
+    "Este documento estructurado sirve de base para verificación de cadena de suministro, gobernanza de datos y cumplimiento normativo de forma automatizada."
+  ],
+  "whyMatters": "Este tema es crítico porque la falta de visibilidad sobre los sistemas de IA expone a las empresas a filtraciones de datos sensibles, entradas maliciosas sin supervisión y acciones no autorizadas en su nombre. A medida que la IA se integra en más productos y herramientas internas, el riesgo de ciberataques se multiplica si no se puede enumerar todo el patrimonio tecnológico. La adopción del AI-BOM no solo soluciona el problema de inventario, sino que sienta las bases para programas de seguridad maduros y cumplimiento normativo en un entorno regulatorio cada vez más estricto.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqzl1h62mpxtkwymo2oj0.png",
+      "alt": "Portada del artículo sobre IA oculta y problema de inventario en seguridad empresarial",
+      "caption": "Imagen de portada del artículo original de la serie 'Trust the Machine' en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ShadowAI",
+    "#AIBOM",
+    "#SeguridadIA",
+    "#GobernanzaIA"
+  ],
+  "fullArticle": "La adopción descontrolada de sistemas de inteligencia artificial en empresas ha generado un vacío de seguridad que amenaza con convertirse en el talón de Aquiles de la ciberseguridad corporativa en los próximos años. Mientras la mayoría de organizaciones pueden inventariar con precisión sus servicios web, hosts y contenedores, muy pocas tienen un registro completo de los modelos de IA, fine-tunes, pipelines de recuperación, agentes y APIs de terceros que ya están integrados en sus productos y herramientas internas. Esta asimetría entre adopción y supervisión se ha agravado este año, con un crecimiento del 83% en la actividad empresarial de IA, mientras que los mecanismos de gobernanza y visibilidad se quedan muy atrás.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqzl1h62mpxtkwymo2oj0.png]\n\nEl problema no es solo técnico, sino de principio básico de seguridad: no se puede proteger lo que no se ve. Los sistemas de IA no encajan en los inventarios tradicionales, que registran activos con hostname, puerto o entrada en bases de datos de configuración, ya que su perfil de riesgo depende de múltiples dimensiones simultáneas: el modelo utilizado, los datos con los que se alimenta, las herramientas que puede invocar, los usuarios que tienen acceso y el responsable de su operación. Para resolverlo, la industria está adoptando el AI-BOM (lista de materiales de IA), un documento estructurado que registra de forma automatizada la composición de cada sistema de IA, incluyendo nombre y versión del modelo, fuentes de datos, dependencias, capacidades de acción y responsable. Este estándar no solo soluciona el problema de inventario, sino que sirve de base para la verificación de la cadena de suministro, la gobernanza de datos y el cumplimiento normativo, sentando las bases para una seguridad de IA madura y por diseño.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T04:29:51.643Z",
+  "links": [
+    {
+      "title": "Serie 'Trust the Machine' en Dev.to (fuente original)",
+      "url": "https://dev.to/trust-the-machine"
+    },
+    {
+      "title": "Guía oficial de AI-BOM de la Linux Foundation",
+      "url": "https://www.linuxfoundation.org/resources/ai-bom/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Crecimiento interanual de actividad empresarial de IA en 2026",
+      "value": "83%"
+    },
+    {
+      "label": "Campos mínimos que debe incluir un AI-BOM",
+      "value": "5 (modelos, conjuntos de datos, dependencias, capacidades, responsable)"
+    },
+    {
+      "label": "Número de disciplinas de seguridad que se benefician del AI-BOM",
+      "value": "3 (verificación de cadena de suministro, gobernanza de datos, cumplimiento normativo)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

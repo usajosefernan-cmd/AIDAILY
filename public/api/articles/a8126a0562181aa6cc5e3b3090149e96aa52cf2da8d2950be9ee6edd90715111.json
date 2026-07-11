@@ -1,0 +1,76 @@
+{
+  "id": "a8126a0562181aa6cc5e3b3090149e96aa52cf2da8d2950be9ee6edd90715111",
+  "title": "CISA looks to remedy ailments from big May credential leak",
+  "summary": "La Agencia de Seguridad de Infraestructura y Ciberseguridad de EE.UU. (CISA) detalló su respuesta a la grave fuga de credenciales de mayo, que expuso claves privilegiadas de AWS GovCloud en un repositorio público de GitHub, y anunció nuevas medidas de protección, mejora de canales de reporte de vulnerabilidades y planes de respuesta ante incidentes similares.",
+  "url": "https://cyberscoop.com/cisa-credential-leak-forensic-report",
+  "source": "CyberScoop",
+  "sourceUrl": "https://cyberscoop.com/feed/",
+  "publishedAt": "2026-07-10T18:54:28.000Z",
+  "imageUrl": "https://cyberscoop.com/wp-content/uploads/sites/3/2019/03/cisa2-rsa-2019.jpg",
+  "imageAlt": "CISA looks to remedy ailments from big May credential leak",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La Agencia de Seguridad de Infraestructura y Ciberseguridad de EE.UU. (CISA) detalló su respuesta a la grave fuga de credenciales de mayo, que expuso claves privilegiadas de AWS GovCloud en un repositorio público de GitHub, y anunció nuevas medidas de protección, mejora de canales de reporte de vulnerabilidades y planes de respuesta ante incidentes similares.",
+  "keyPoints": [
+    "La fuga se produjo el 15 de mayo, cuando un contratista subió claves privilegiadas de AWS GovCloud a un repositorio público de GitHub sin restricciones de acceso.",
+    "CISA desactivó el repositorio y el entorno de desarrollo asociado, revocó los accesos del responsable y confirmó que ninguna credencial filtrada fue usada fuera de la agencia.",
+    "La agencia adoptó nuevas medidas: monitoreo de subidas a repositorios públicos, rotación total de secretos y creación de protocolos de respuesta para incidentes en GitHub.",
+    "El investigador de GitGuardian que descubrió la fuga elogió la transparencia de CISA, destacando que es la primera vez que una agencia nacional aboga por el escaneo automatizado de secretos."
+  ],
+  "whyMatters": "Esta noticia es relevante porque establece un nuevo precedente en la gestión de incidentes de ciberseguridad por parte de agencias gubernamentales, con medidas que pueden ser adoptadas por entidades europeas y españolas como el INCIBE para reforzar su propia protección. La transparencia mostrada por CISA al detallar tanto los aciertos como los fallos en su respuesta fija un estándar de rendición de cuentas que reduce el riesgo de fugas de datos sensibles en sectores públicos y privados de todo el mundo. Además, la apuesta de la agencia por simplificar el reporte de vulnerabilidades a investigadores externos mejora la colaboración público-privada, un pilar fundamental para hacer frente a amenazas cibernéticas cada vez más sofisticadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2019/03/cisa2-rsa-2019.jpg",
+      "alt": "Edificio de la Agencia de Seguridad de Infraestructura y Ciberseguridad de EE.UU. (CISA) durante el evento RSA 2019",
+      "caption": "Imagen de CISA en el evento de ciberseguridad RSA 2019, utilizada como portada del artículo original. Crédito: Scoop News Group"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#CISA",
+    "#FugaDeCredenciales",
+    "#Ciberseguridad",
+    "#AWSGovCloud"
+  ],
+  "fullArticle": "La Agencia de Seguridad de Infraestructura y Ciberseguridad de Estados Unidos (CISA) hizo pública este jueves un informe forense en el que detalla su respuesta a una de las fugas de credenciales más graves de su historia, ocurrida en mayo de este año. El incidente se produjo cuando un contratista de la agencia subió claves privilegiadas de AWS GovCloud, el entorno de nube segura para organismos públicos estadounidenses, a un repositorio público de GitHub sin ningún tipo de restricción de acceso, exponiendo información sensible de la agencia a cualquier usuario de la plataforma.\n\n[MULTIMEDIA: https://cyberscoop.com/wp-content/uploads/sites/3/2019/03/cisa2-rsa-2019.jpg]\n\nTras tomar conocimiento de la fuga, CISA desactivó de inmediato el repositorio y el entorno de desarrollo asociado, revocó los accesos del responsable del error y realizó un análisis exhaustivo de los logs de acceso, confirmando que ninguna de las credenciales filtradas fue utilizada fuera de la agencia y que no se expusieron datos de clientes ni de misiones. En el informe, los responsables de ciberseguridad de la agencia destacaron que la respuesta se benefició de la aplicación de principios de confianza cero y de capacidades avanzadas de detección de endpoints, pero también reconocieron fallos en la gestión de secretos y la falta de protocolos de respuesta previos para incidentes en plataformas de código abierto. Como medidas correctivas, CISA anunció que implementará un monitoreo continuo de las subidas a repositorios públicos, rotará todos sus secretos existentes y creará un canal simplificado para que los investigadores reporten vulnerabilidades específicas de la agencia, además de desarrollar manuales de respuesta para todo tipo de incidentes. Guillaume Valadon, investigador de GitGuardian que descubrió la fuga, elogió la transparencia de la agencia, señalando que 'es la primera vez que una entidad nacional de ciberseguridad aboga oficialmente por el escaneo automatizado de secretos para prevenir fugas similares', un planteamiento que su equipo lleva tiempo defendiendo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T19:04:08.589Z",
+  "links": [
+    {
+      "title": "Artículo original en CyberScoop",
+      "url": "https://cyberscoop.com/cisa-looks-to-remedy-ailments-from-big-may-credential-leak/"
+    },
+    {
+      "title": "Sitio oficial de la Agencia de Seguridad de Infraestructura y Ciberseguridad de EE.UU. (CISA)",
+      "url": "https://www.cisa.gov/"
+    },
+    {
+      "title": "Sitio del Instituto Nacional de Ciberseguridad de España (INCIBE)",
+      "url": "https://www.incibe.es/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de la fuga de credenciales",
+      "value": "15 de mayo de 2024"
+    },
+    {
+      "label": "Entorno de nube afectado",
+      "value": "AWS GovCloud (entorno seguro para organismos públicos de EE.UU.)"
+    },
+    {
+      "label": "Resultado de la investigación de accesos",
+      "value": "Ninguna credencial filtrada fue utilizada fuera de CISA, sin exposición de datos de clientes o misiones"
+    },
+    {
+      "label": "Investigador que descubrió la fuga",
+      "value": "Guillaume Valadon, investigador de seguridad de GitGuardian"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

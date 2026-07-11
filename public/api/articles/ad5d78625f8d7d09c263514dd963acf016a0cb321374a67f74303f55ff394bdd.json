@@ -1,0 +1,72 @@
+{
+  "id": "ad5d78625f8d7d09c263514dd963acf016a0cb321374a67f74303f55ff394bdd",
+  "title": "React useObjectUrl Hook: Preview Files & Blobs Without Memory Leaks (2026)",
+  "summary": "El nuevo hook useObjectUrl de la librería @reactuses/core resuelve las fugas de memoria causadas por la gestión manual de URL.createObjectURL() en componentes React, automatizando la creación y revocación de URLs de blobs y archivos para previsualizaciones.",
+  "url": "https://dev.to/childrentime/react-useobjecturl-hook-preview-files-blobs-without-memory-leaks-2026-pd8",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T03:11:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhom83ei0rm6jswv59olr.png",
+  "imageAlt": "React useObjectUrl Hook: Preview Files & Blobs Without Memory Leaks (2026)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El nuevo hook useObjectUrl de la librería @reactuses/core resuelve las fugas de memoria causadas por la gestión manual de URL.createObjectURL() en componentes React, automatizando la creación y revocación de URLs de blobs y archivos para previsualizaciones.",
+  "keyPoints": [
+    "Automatiza la creación y revocación de URLs de blobs, eliminando la necesidad de gestionar manualmente URL.revokeObjectURL() en componentes React.",
+    "Soluciona un error muy común en componentes de previsualización de archivos que causa fugas de memoria progresivas durante el uso prolongado de la aplicación.",
+    "Es compatible con renderizado del lado del servidor (SSR), ya que no ejecuta la API de URLs de blobs en el servidor, evitando errores de despliegue.",
+    "Se integra con otros hooks de la misma librería como useFileDialog y useDropZone para cubrir todo el ciclo de vida de manejo de archivos en React."
+  ],
+  "whyMatters": "Esta herramienta es de gran relevancia para los equipos de desarrollo web en España y Europa, donde React es uno de los frameworks más utilizados para construir aplicaciones interactivas como galerías de imágenes, plataformas de contenido y herramientas de edición. Soluciona un problema de rendimiento muy extendido que suele pasar desapercibido en pruebas cortas, pero que genera fugas de memoria que ralentizan las aplicaciones y aumentan los costes de infraestructura al requerir más recursos de servidor y dispositivos de los usuarios. Al automatizar una tarea propensa a errores, reduce la deuda técnica de los proyectos y permite a los desarrolladores centrarse en la lógica de negocio sin preocuparse por la gestión manual del ciclo de vida de las URLs de archivos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhom83ei0rm6jswv59olr.png",
+      "alt": "Ilustración del hook useObjectUrl de React para previsualizar archivos sin fugas de memoria",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to sobre el hook useObjectUrl"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ReactJs",
+    "#UseObjectUrl",
+    "#ReactUsesCore",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "Cuando un usuario sube varias imágenes a un editor de galerías o un cargador de archivos en una aplicación React, es habitual utilizar la API nativa URL.createObjectURL() para generar previsualizaciones en tiempo real sin necesidad de subir los archivos a un servidor. Sin embargo, esta API tiene un fallo muy extendido: cada URL generada se mantiene activa en la memoria del navegador, reteniendo una referencia al archivo original, hasta que se llama explícitamente a URL.revokeObjectURL(). Si esta llamada se olvida, se ejecuta en el momento equivocado o no se gestiona correctamente durante los re-renderizados, cambios de props o desmontajes de componentes, la memoria del navegador se va llenando progresivamente, lo que ralentiza la aplicación y hace que los ventiladores del dispositivo se aceleren en sesiones de uso prolongado, un error que solo se detecta cuando la aplicación lleva abierta mucho tiempo.\n\nPara solucionar este problema de forma definitiva, la librería @reactuses/core ha lanzado el hook useObjectUrl, una herramienta de una sola línea que automatiza todo el ciclo de vida de las URLs de archivos. Al pasarle un objeto File, Blob o MediaSource, el hook devuelve la URL lista para usar en etiquetas <img> o <video>, y se encarga automáticamente de revocarla cuando el componente se desmonta, el archivo cambia o la sesión finaliza, sin necesidad de escribir código de limpieza manual. A diferencia de las implementaciones artesanales con useEffect, que son frágiles y se rompen con refactorizaciones sencillas, la lógica de emparejamiento entre creación y revocación de la URL está auditada en un solo lugar, eliminando la posibilidad de errores humanos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhom83ei0rm6jswv59olr.png]\n\nOtra ventaja clave de useObjectUrl es su compatibilidad total con el renderizado del lado del servidor (SSR): a diferencia de la API nativa URL.createObjectURL(), que no existe en entornos sin DOM, el hook no ejecuta ninguna llamada a la API de URLs durante el renderizado en servidor, devolviendo undefined hasta que se ejecuta el efecto en el cliente, por lo que no requiere guards adicionales de typeof window ni genera errores de despliegue. El hook se integra además con otras herramientas de la misma librería, como useFileDialog para selectores de archivos y useDropZone para zonas de arrastre, cubriendo todo el ciclo de vida de manejo de archivos en aplicaciones React sin necesidad de escribir código de limpieza repetido en cada componente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T03:23:17.545Z",
+  "links": [
+    {
+      "title": "Documentación oficial del hook useObjectUrl",
+      "url": "https://reactuses.com/hooks/use-object-url"
+    },
+    {
+      "title": "Repositorio oficial de @reactuses/core en GitHub",
+      "url": "https://github.com/antfu/reactuses"
+    },
+    {
+      "title": "Artículo original del hook en Dev.to",
+      "url": "https://dev.to/reactuses/react-useobjecturl-hook-preview-files-blobs-without-memory-leaks-2026"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración de sesión en la que se detecta el aumento de memoria",
+      "value": "20 minutos"
+    },
+    {
+      "label": "Cantidad de código necesaria para implementar el hook",
+      "value": "1 línea de código"
+    },
+    {
+      "label": "Número de componentes que suelen replicar la lógica de gestión de URLs por proyecto",
+      "value": "5 o más"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

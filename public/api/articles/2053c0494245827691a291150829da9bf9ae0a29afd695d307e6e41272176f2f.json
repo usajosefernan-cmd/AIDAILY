@@ -1,0 +1,43 @@
+{
+  "aiSummary": "Al cambiar el formato de memoria de NCHW a NHWC en un modelo U‑Net de Photoroom, la latencia de inferencia cayó de 31 ms a 24 ms, sin pérdida de precisión.",
+  "category": "tecnologia",
+  "fullArticle": "Photoroom, la startup que ha revolucionado la eliminación de fondos en tiempo real, ha revelado que una simple modificación en la disposición de la memoria de sus modelos de aprendizaje profundo redujo la latencia de inferencia en un 22 % en GPUs Nvidia A100. El ajuste consiste en pasar de la convención NCHW (channels-first) a NHWC (channels-last), lo que permite que los núcleos tensoriales de Nvidia lean los canales contiguamente y eviten transposiciones intermedias.\n\nEl modelo de Photoroom es un U‑Net de encoder‑decoder que procesa imágenes de 1024 × 1024 píxeles en float16 bajo autocast. Antes del cambio, cada pasada tardaba aproximadamente 31 ms, con cuDNN realizando la mayor parte del tiempo en las convoluciones. Al convertir la entrada y los parámetros a NHWC, el tiempo se redujo a 24 ms, sin que la precisión del modelo se viera afectada. \"El ahorro es inesperado y casi gratuito\", comenta el ingeniero de IA de la compañía.\n\nLa técnica se basa en la arquitectura de los núcleos tensoriales de Nvidia, que están optimizados para operar con la disposición NHWC. Cuando los tensores llegan en NCHW, cuDNN inserta transposiciones para reorganizar los datos, generando sobrecarga. Al mantener el formato consistente, se elimina esa sobrecarga y se aprovecha la contiguidad de los canales.\n\nEste hallazgo subraya la importancia de la ingeniería de bajo nivel en el rendimiento de modelos de IA. En un entorno donde la latencia puede determinar la viabilidad de una aplicación, optimizaciones como esta pueden marcar la diferencia entre una experiencia fluida y un servicio que frustra al usuario. Además, demuestra que la colaboración entre software y hardware sigue siendo un campo fértil para la innovación, especialmente en la era de la computación de propósito general.\n",
+  "hashtags": [
+    "#Nvidia",
+    "#PyTorch",
+    "#TensorCores",
+    "#DeepLearning",
+    "#A100"
+  ],
+  "id": "2053c0494245827691a291150829da9bf9ae0a29afd695d307e6e41272176f2f",
+  "imageAlt": "El formato de memoria channels-last reduce latencia de la red de convolución en 22 % en GPUs Nvidia A100",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx829w9l395k3jlfdvjdu.png",
+  "keyPoints": [
+    "El ajuste de la memoria a NHWC disminuyó la latencia de inferencia de 31 ms a 24 ms, un ahorro del 22 % en GPUs A100.",
+    "El cambio no alteró la precisión del modelo, manteniendo las métricas de segmentación al mismo nivel que el formato NCHW.",
+    "La mejora se debe a que los núcleos tensoriales de Nvidia prefieren la disposición NHWC, evitando transposiciones costosas.",
+    "El beneficio se maximiza con precisión reducida (float16/bfloat16) y en redes con canales amplios, como los bloques encoder de 512 canales.",
+    ""
+  ],
+  "multimedia": [
+    {
+      "alt": "Channels-last memory format cut our conv backbone latency 22%",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx829w9l395k3jlfdvjdu.png"
+    }
+  ],
+  "publishedAt": "2026-06-24T05:36:21.000Z",
+  "scrapedAt": "2026-06-24T16:01:35.965Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "Al cambiar el formato de memoria de NCHW a NHWC en un modelo U‑Net de Photoroom, la latencia de inferencia cayó de 31 ms a 24 ms, sin pérdida de precisión.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "El formato de memoria channels-last reduce latencia de la red de convolución en 22 % en GPUs Nvidia A100",
+  "url": "https://dev.to/elise_moreau/channels-last-memory-format-cut-our-conv-backbone-latency-22-19l2",
+  "whyMatters": "Esta optimización demuestra cómo ajustes de bajo nivel pueden generar mejoras sustanciales en la eficiencia de modelos de IA, reduciendo costes operativos y mejorando la experiencia del usuario final. En un mercado donde la latencia es crítica para aplicaciones en tiempo real, un ahorro del 22 % puede traducirse en menores tiempos de respuesta y mayor escalabilidad. Además, resalta la importancia de aprovechar al máximo la arquitectura de hardware, lo que impulsa la innovación en el desarrollo de software de aprendizaje profundo."
+}

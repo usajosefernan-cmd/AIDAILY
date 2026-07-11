@@ -1,0 +1,90 @@
+{
+  "id": "cd668ec585e5a32edf9edd4593301dd722583dda7344bf9bd57c6e1b1d70872c",
+  "title": "Codename One entrega una aplicación Linux nativa en un solo binario de 5 MB para x64 y Arm",
+  "summary": "El framework Codename One ha lanzado su primera versión de escritorio nativa para Linux, generando un único binario ELF de 5 MB que funciona sin JVM. Utiliza ParparVM para convertir bytecode Java/Kotlin a C, y GTK3 y Cairo para la capa de UI, con soporte completo de 3D vía OpenGL ES. La solución aborda los retos de empaquetado y dependencias, compilando contra glibc 2.17 para garantizar compatibilidad con la mayoría de distribuciones.",
+  "url": "https://dev.to/codenameone/java-to-native-linux-app-one-5mb-binary-x64-and-arm-3cio",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T13:32:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.codenameone.com%2Fblog%2Fjava-to-a-native-linux-app.jpg",
+  "imageAlt": "Codename One entrega una aplicación Linux nativa en un solo binario de 5 MB para x64 y Arm",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El framework Codename One ha lanzado su primera versión de escritorio nativa para Linux, generando un único binario ELF de 5 MB que funciona sin JVM. Utiliza ParparVM para convertir bytecode Java/Kotlin a C, y GTK3 y Cairo para la capa de UI, con soporte completo de 3D vía OpenGL ES. La solución aborda los retos de empaquetado y dependencias, compilando contra glibc 2.17 para garantizar compatibilidad con la mayoría de distribuciones.",
+  "keyPoints": [
+    "Un binario ELF de 5 MB que incluye todo el código y recursos, sin necesidad de JVM ni instaladores.",
+    "ParparVM traduce bytecode Java/Kotlin a C, generando 810 archivos C y 173 métodos nativos para la capa de UI.",
+    "La aplicación usa GTK3 y Cairo para 2D y OpenGL ES para 3D, permitiendo renderizar modelos glTF con materiales propios.",
+    "El empaquetado evita dependencias complejas: se compila contra glibc 2.17 y se enlaza dinámicamente GTK3, lo que garantiza compatibilidad con la mayoría de distribuciones Linux."
+  ],
+  "whyMatters": "Este lanzamiento democratiza el desarrollo multiplataforma al permitir que los mismos proyectos Java/Kotlin se ejecuten de forma nativa en Linux sin JVM, reduciendo la huella de memoria y mejorando el rendimiento. La compatibilidad con arquitecturas x64 y Arm abre la puerta a dispositivos de gama media y servidores, mientras que la adopción de GTK3 y OpenGL ES asegura una experiencia visual coherente con el entorno de escritorio. Para desarrolladores, significa menor complejidad en la cadena de herramientas y una distribución más sencilla, lo que acelera la entrega de software a usuarios finales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.codenameone.com%2Fblog%2Fjava-to-a-native-linux-app.jpg",
+      "alt": "Imagen de portada del artículo Java To Native Linux App",
+      "caption": "Portada que muestra el logo de Codename One y un icono de Linux"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fogbxkkohh9kx34fwfdjt.png",
+      "alt": "Aplicación Codename One renderizada nativamente en Linux mediante GTK3 y Cairo",
+      "caption": "Ejemplo de UI de Codename One con tema Material en un entorno Linux"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmmifi1xjwo04d8u1tawf.png",
+      "alt": "Modelo glTF renderizado por la API 3D de Codename One en Linux",
+      "caption": "Ilustración de un modelo 3D cargado con materiales propios"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi62qyuncwt02lhgqrmj3.png",
+      "alt": "Gradientes CSS renderizados con Cairo en Linux",
+      "caption": "Demostración de los gradientes CSS en la capa 2D de la aplicación"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CodenameOne",
+    "#LinuxNative",
+    "#GTK3",
+    "#OpenGLES"
+  ],
+  "fullArticle": "El día de ayer se anunció la llegada de la primera versión de escritorio nativa de Codename One para Linux, un hito que permite a los desarrolladores Java y Kotlin generar un único binario ELF de 5 MB que se ejecuta sin JVM ni instaladores.\n\nEl núcleo de esta innovación es ParparVM, un traductor que convierte el bytecode de Java/Kotlin a C, el cual luego se compila y enlaza en un binario ELF que incluye todos los recursos de la aplicación. Con 173 métodos nativos cubriendo ventanas, gráficos, texto, redes y más, la capa de UI se construye sobre GTK3 y Cairo, garantizando una apariencia Material Design consistente y un rendimiento superior al de muchas aplicaciones GNOME nativas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.codenameone.com%2Fblog%2Fjava-to-a-native-linux-app.jpg]\n\nLa arquitectura 3D de Codename One se mantiene igual que en iOS y Windows, utilizando OpenGL ES en Linux. Los modelos glTF se cargan con sus materiales originales, y los gradientes CSS, transformaciones y demás efectos 2D se renderizan a través de Cairo con la misma fidelidad que en otras plataformas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmmifi1xjwo04d8u1tawf.png]\n\nEl mayor desafío fue el empaquetado y las dependencias. Compilar contra glibc 2.17 garantiza que el binario funcione en la mayoría de distribuciones desde 2013, mientras que GTK3 se enlaza dinámicamente, eliminando la necesidad de incluir bibliotecas adicionales. Para sistemas basados en musl, como Alpine Linux, se ofrece un objetivo alternativo que compila contra musl, manteniendo la independencia de la libc.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fogbxkkohh9kx34fwfdjt.png]\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi62qyuncwt02lhgqrmj3.png]\n\nCon esta entrega, Codename One consolida su posición como herramienta de desarrollo multiplataforma que no solo simplifica la creación de aplicaciones, sino que también garantiza un rendimiento y una experiencia de usuario nativos en el ecosistema Linux.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T13:44:05.649Z",
+  "links": [
+    {
+      "title": "Sitio oficial de Codename One",
+      "url": "https://www.codenameone.com"
+    },
+    {
+      "title": "Documentación de ParparVM",
+      "url": "https://www.codenameone.com/docs/parparvm"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño del binario",
+      "value": "5 MB"
+    },
+    {
+      "label": "Arquitecturas compatibles",
+      "value": "x64 y Arm64"
+    },
+    {
+      "label": "Versión mínima de glibc",
+      "value": "2.17 (2013)"
+    },
+    {
+      "label": "Métodos nativos",
+      "value": "173"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

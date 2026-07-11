@@ -1,0 +1,77 @@
+{
+  "id": "f207083efe236fb79df371e797b4d3330318a160b97873f6d6558a9bb0e4168f",
+  "title": "Las regulaciones KYB revelan una falla silenciosa: la mayoría de los sistemas no cumplen",
+  "summary": "En el primer semestre de 2025, las organizaciones globales pagaron £1.23 millon en multas KYC/AML, con el caso más destacado siendo la multa de £3 millon a TD Bank por fallos en la verificación de la propiedad de beneficiarios. El artículo detalla los requisitos reales de KYB, las brechas comunes y la arquitectura necesaria para evitar sanciones.",
+  "url": "https://dev.to/stuart_watkins_555e9d30ee/what-kyb-regulations-actually-demand-and-where-most-implementations-quietly-fail-of1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T04:06:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxv7qdgnd8vsbkevlvhf2.png",
+  "imageAlt": "Las regulaciones KYB revelan una falla silenciosa: la mayoría de los sistemas no cumplen",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En el primer semestre de 2025, las organizaciones globales pagaron £1.23 millon en multas KYC/AML, con el caso más destacado siendo la multa de £3 millon a TD Bank por fallos en la verificación de la propiedad de beneficiarios. El artículo detalla los requisitos reales de KYB, las brechas comunes y la arquitectura necesaria para evitar sanciones.",
+  "keyPoints": [
+    "'El caso de TD Bank muestra que la falta de un registro coherente de la verificación puede costar £3 millon y años de supervisión'.",
+    "'El 3 % de los documentos CR12 en Kenia no coinciden con el registro oficial, lo que equivale a 300 verificaciones defectuosas por cada 10 000'.",
+    "'La automatización con IA reduce el tiempo de obtención de UBO de 24‑30 días a solo 2‑3 minutos, un ahorro crítico para la conformidad'.",
+    "'Las regulaciones globales convergen en cuatro requisitos esenciales, pero la mayoría de las implementaciones fragmentan la verificación en controles aislados'."
+  ],
+  "whyMatters": "El incumplimiento de KYB no solo expone a las instituciones a multas multimillonarias, sino que también compromete la integridad del sistema financiero global. Cuando los bancos no pueden demostrar la procedencia de los fondos, se abre la puerta a la lavado de dinero y a la pérdida de confianza de clientes e inversores. Este análisis revela que la solución no está en el código limpio, sino en una arquitectura que garantice un registro auditable y coherente de cada verificación.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxv7qdgnd8vsbkevlvhf2.png",
+      "alt": "Portada del artículo que muestra la temática de regulaciones KYB y multas",
+      "caption": "Imagen de portada que ilustra la importancia de cumplir con las regulaciones KYB"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#KYB",
+    "#AML",
+    "#RegulaciónFinanciera",
+    "#BancaDigital",
+    "#TDBank"
+  ],
+  "fullArticle": "El primer semestre de 2025 vio a las organizaciones globales pagar £1.23 millon en multas por incumplimiento de KYC/AML, con el caso más destacado siendo la multa de £3 millon a TD Bank. La sanción no se debió a lavado de dinero, sino a un sistema de verificación que no podía responder preguntas básicas de los reguladores sobre la propiedad de beneficiarios.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxv7qdgnd8vsbkevlvhf2.png]\n\nEl problema no es la falta de documentación, sino la incapacidad de validar y consolidar la información en un registro coherente. Cuando los reguladores preguntan, el banco no puede presentar una historia que conecte los datos. Esta brecha se repite en todo el sector: las multas se originan porque las organizaciones no recogen, verifican o recuperan datos correctamente.\n\nEn Kenia, el 3 % de los documentos CR12 presentan datos de accionistas o directores que no coinciden con el registro oficial, lo que se traduce en 300 verificaciones defectuosas por cada 10 000. Este número parece pequeño, pero cuando se escala a nivel global, el impacto es enorme. La solución exige que los sistemas comparen cada campo con las fuentes oficiales y marquen las discrepancias por tipo.\n\nAdemás, la edad de los documentos es un requisito no opcional: la mayoría de las jurisdicciones exige una prueba de domicilio de no más de tres meses. Aceptar facturas de ocho meses crea brechas de cumplimiento que se vuelven evidentes cuando los reguladores solicitan pruebas.\n\nLa automatización con IA transforma el proceso. Mientras que la obtención manual de UBO tardaba 24‑30 días, la tecnología actual lo completa en 2‑3 minutos, reduciendo drásticamente el riesgo de sanciones y mejorando la eficiencia operativa.\n\nLos reguladores, como la Ley de Transparencia Corporativa del Reino Unido y la AMLD5/6 de la UE, convergen en cuatro requisitos esenciales. La arquitectura que debe sustentarlos es coherente, auditable y capaz de integrar datos de múltiples registros con estándares de calidad variables.\n\nEl futuro de la conformidad depende de una visión sistémica: cada componente debe generar un registro que pueda ser auditado y que cuente una historia completa de la verificación de la entidad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T04:24:34.750Z",
+  "links": [
+    {
+      "title": "Texto completo de la AMLD5 de la UE",
+      "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32021R2108"
+    },
+    {
+      "title": "Regulación de Transparencia Corporativa del Reino Unido 2023",
+      "url": "https://www.gov.uk/government/publications/economic-crime-and-corporate-transparency-act-2023"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Multas KYC/AML H1 2025",
+      "value": "£1.23 millon"
+    },
+    {
+      "label": "Multa TD Bank",
+      "value": "£3 millon"
+    },
+    {
+      "label": "Tiempo manual UBO",
+      "value": "24‑30 días"
+    },
+    {
+      "label": "Tiempo IA UBO",
+      "value": "2‑3 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

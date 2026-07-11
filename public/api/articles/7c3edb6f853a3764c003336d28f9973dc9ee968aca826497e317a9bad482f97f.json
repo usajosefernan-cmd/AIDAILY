@@ -1,0 +1,73 @@
+{
+  "id": "7c3edb6f853a3764c003336d28f9973dc9ee968aca826497e317a9bad482f97f",
+  "title": "Por qué tu aplicación Vercel no carga en redes móviles (y cómo solucionarlo)",
+  "summary": "Artículo explica por qué las apps alojadas en Vercel fallan al cargar en ciertas redes móviles debido a bloqueos DPI, y ofrece soluciones como usar dominios personalizados y proxies inversos.",
+  "url": "https://dev.to/rabboni_kabongo_4e8e91383/why-your-vercel-app-is-failing-to-load-on-mobile-networks-and-how-to-fix-it-50me",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T13:16:19.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3dljy0l7slnt0tefdxot.png",
+  "imageAlt": "Por qué tu aplicación Vercel no carga en redes móviles (y cómo solucionarlo)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo explica por qué las apps alojadas en Vercel fallan al cargar en ciertas redes móviles debido a bloqueos DPI, y ofrece soluciones como usar dominios personalizados y proxies inversos.",
+  "keyPoints": [
+    "Las aplicaciones en Vercel pueden no cargar en redes móviles específicas como MTN Zambia o Zed Mobile, mientras funcionan en otras como Airtel.",
+    "El problema no radica en el código ni en los encabezados de seguridad, sino en reglas de inspección profunda de paquetes (DPI) en el gateway del operador.",
+    "Los dominios *.vercel.app comparten un conjunto estático de IPs Anycast, lo que los vuelve objetivo de bloqueos y throttling por parte de los operadores.",
+    "La solución más efectiva es migrar a un dominio personalizado y enrutar el tráfico a través de un proxy inverso como Cloudflare."
+  ],
+  "whyMatters": "Este fenómeno puede dejar a usuarios legítimos sin acceso a aplicaciones desplegadas en Vercel, generando frustración y pérdida de confianza. Para desarrolladores y empresas, implica un riesgo de disponibilidad que debe mitigarse mediante arquitecturas resilientes. Comprender los mecanismos de bloqueo a nivel de operador es crucial para garantizar la accesibilidad global de los servicios web.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3dljy0l7slnt0tefdxot.png",
+      "alt": "Ilustración de una aplicación web que falla al cargar en un dispositivo móvil",
+      "caption": "Imagen de portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Vercel",
+    "#DesarrolloWeb",
+    "#RedesMoviles",
+    "#Cloudflare",
+    "#DPI"
+  ],
+  "fullArticle": "Como desarrolladores, adoramos la experiencia de despliegue sin contratiempos de Vercel: empujas a GitHub y tu app está en línea. Sin embargo, recientemente me topé con un problema de red que me hizo cuestionar mi código, mis encabezados de seguridad y mi cordura. Si tus aplicaciones web alojadas en Vercel (subdominios *.vercel.app o dominios personalizados apuntando a Vercel) no cargan en absoluto, presentan timeouts en el handshake HTTPS inicial o tardan minutos en resolverse en redes móviles específicas como MTN Zambia o Zed Mobile, mientras cargan perfectamente en otras como Airtel, no estás loco y no es tu código. Incluso sitios masivos y altamente optimizados, como el famoso portafolio 3D de Bruno Simon, sufren este mismo fallo en estas redes.\n\nEl desglose técnico revela que el problema suele aparecer de repente. Cuando ocurre justo después de un despliegue, la tendencia es culpar cambios recientes. Pero si cambias a una conexión de red diferente (por ejemplo, de WiFi a datos móviles de otro operador), el sitio carga al instante. Un ping a la IP Anycast global de Vercel desde la red afectada muestra latencias bajas (<60 ms) y pérdida de paquetes casi nula, descartando un fallo de enrutamiento básico. La ruptura ocurre en capas superiores: el gateway del operador móvil inspecciona el string SNI del handshake TLS. Si detecta *.vercel.app o un bloque de IPs compartidas de Vercel, sus reglas DPI pueden marcar, throttlear o descartar los paquetes del handshake, dejando al dispositivo esperando una respuesta criptográfica que nunca llega.\n\nPara proteger a tus usuarios de bloqueos a nivel de operador, debes desacoplar el tráfico de las IPs directas de Vercel. Los subdominios gratuitos *.vercel.app comparten un pool masivo y estático de configuraciones Anycast idénticas, lo que los convierte en objetivos principales de bloqueos. Lo más efectivo es usar un dominio personalizado y enrutar el tráfico mediante un proxy inverso como Cloudflare. Esto no solo evita el bloqueo, sino que mejora la resiliencia y el rendimiento global de tu aplicación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3dljy0l7slnt0tefdxot.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T13:26:51.987Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación de Vercel sobre dominios personalizados",
+      "url": "https://vercel.com/docs/custom-domains"
+    },
+    {
+      "title": "Cloudflare - Proxy inverso para mitigar bloqueos",
+      "url": "https://www.cloudflare.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Latencia de ping a Vercel en redes afectadas",
+      "value": "<60 ms"
+    },
+    {
+      "label": "Tiempo de carga en redes con bloqueo DPI",
+      "value": "varios minutos"
+    },
+    {
+      "label": "Operadores móviles con bloqueos reportados",
+      "value": "MTN Zambia, Zed Mobile"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

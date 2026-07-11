@@ -1,0 +1,182 @@
+---
+// LoadMore.astro - Botón de carga infinita / skeleton loading (sintaxis Astro)
+interface Props {
+  hasMore: boolean;
+  loading?: boolean;
+  label?: string;
+}
+
+const { hasMore, loading = false, label = 'Cargar más artículos' } = Astro.props;
+---
+
+{hasMore && (
+  <div class="load-more-container">
+    <button 
+      class="load-more-btn btn btn-secondary btn-lg"
+      disabled={loading}
+      data-load-more
+      aria-busy={loading}
+    >
+      <span class="flex items-center gap-2">
+        {loading ? (
+          <>
+            <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+            </svg>
+            Cargando...
+          </>
+        ) : (
+          <>
+            {label}
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </>
+        )}
+      </span>
+    </button>
+  </div>
+)}
+
+{loading && hasMore && (
+  <div class="skeleton-cards" aria-label="Cargando artículos..." role="status" aria-live="polite">
+    {Array.from({ length: 3 }).map((_, i) => (
+      <article class="news-card skeleton-card" aria-hidden="true" key={i}>
+        <div class="skeleton-hero"></div>
+        <div class="skeleton-content">
+          <div class="skeleton skeleton-meta"></div>
+          <div class="skeleton skeleton-title"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text-short"></div>
+        </div>
+      </article>
+    ))}
+  </div>
+)}
+
+<style>
+  .load-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+  }
+  
+  .load-more-btn {
+    min-width: 200px;
+  }
+  
+  .skeleton-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .skeleton-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    overflow: hidden;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeleton-hero {
+    aspect-ratio: 16/9;
+    background: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  .skeleton-content {
+    padding: 1.25rem;
+  }
+  
+  .skeleton-meta {
+    height: 16px;
+    width: 40%;
+    background: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .skeleton-title {
+    height: 28px;
+    width: 80%;
+    background: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .skeleton-text {
+    height: 16px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skeleton-text-short {
+    height: 16px;
+    width: 60%;
+    background: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton-card,
+    .skeleton-hero,
+    .skeleton-meta,
+    .skeleton-title,
+    .skeleton-text,
+    .skeleton-text-short {
+      animation: none;
+      opacity: 0.5;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .skeleton-cards { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const loadMoreBtn = document.querySelector('[data-load-more]');
+  const skeletonCards = document.querySelector('.skeleton-cards');
+  
+  // IntersectionObserver for infinite scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && loadMoreBtn && !loadMoreBtn.hasAttribute('disabled')) {
+        loadMoreBtn.click();
+      }
+    });
+  }, { rootMargin: '300px', threshold: 0.1 });
+  
+  if (loadMoreBtn) {
+    observer.observe(loadMoreBtn);
+  }
+  
+  // Skeleton cards are observed too
+  if (skeletonCards) {
+    observer.observe(skeletonCards);
+  }
+</script>

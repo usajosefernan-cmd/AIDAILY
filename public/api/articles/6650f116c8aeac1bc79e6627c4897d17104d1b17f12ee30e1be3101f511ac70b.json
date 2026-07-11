@@ -1,0 +1,77 @@
+{
+  "id": "6650f116c8aeac1bc79e6627c4897d17104d1b17f12ee30e1be3101f511ac70b",
+  "title": "La inyección de prompts se convierte en la mayor amenaza para la IA empresarial: ataca agentes, pipelines RAG y routers de modelos",
+  "summary": "La inyección de prompts se posiciona como la vulnerabilidad más crítica de los sistemas de LLM empresariales según OWASP 2025, con ciberdelincuentes usándola en más de 90 organizaciones en 2025 para robar credenciales y criptomonedas. Las técnicas han evolucionado para apuntar a arquitecturas multiagente, pipelines RAG, routers de modelos y memorias a largo plazo, con incidentes reales demostrados en Slack AI y Microsoft 365 Copilot que evidencian que es una amenaza práctica, no teórica.",
+  "url": "https://venturebeat.com/security/prompt-injection-is-exploiting-enterprise-ais-biggest-design-flaws-by-targeting-agents-rag-pipelines-and-model-routers",
+  "source": "VentureBeat",
+  "sourceUrl": "https://venturebeat.com/feed/",
+  "publishedAt": "2026-06-28T18:00:16.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "La inyección de prompts se convierte en la mayor amenaza para la IA empresarial: ataca agentes, pipelines RAG y routers de modelos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La inyección de prompts se posiciona como la vulnerabilidad más crítica de los sistemas de LLM empresariales según OWASP 2025, con ciberdelincuentes usándola en más de 90 organizaciones en 2025 para robar credenciales y criptomonedas. Las técnicas han evolucionado para apuntar a arquitecturas multiagente, pipelines RAG, routers de modelos y memorias a largo plazo, con incidentes reales demostrados en Slack AI y Microsoft 365 Copilot que evidencian que es una amenaza práctica, no teórica.",
+  "keyPoints": [
+    "OWASP posiciona la inyección de prompts como la vulnerabilidad más crítica de los LLM (LLM01) por segundo año consecutivo en su ranking 2025.",
+    "En 2025, ciberdelincuentes aplicaron esta técnica en más de 90 organizaciones para robar credenciales y criptomonedas, elevando su volumen de ataques un 89% anual.",
+    "Las variantes modernas incluyen envenenamiento de pipelines RAG, secuestro de agentes de IA, desbordamiento de contexto y manipulación de routers de modelos.",
+    "Vulnerabilidades reales en Slack AI y Microsoft 365 Copilot demostraron que la inyección de prompts es una amenaza práctica, no teórica, para empresas."
+  ],
+  "whyMatters": "Esta tendencia redefine la seguridad de los sistemas de IA empresariales, que ya se usan en soporte, automatización y análisis de datos a escala. Las organizaciones que no implementen medidas de protección específicas contra la inyección de prompts se exponen a robos de información sensible, interrupción de operaciones y daños reputacionales irreparables. Además, la evolución constante de estas técnicas obliga a los equipos de seguridad y liderazgo a priorizar la auditoría de prompts y la segmentación de permisos en sus despliegues de IA como parte fundamental de su estrategia de ciberseguridad a futuro.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "La inyección de prompts se convierte en la mayor amenaza para la IA empresarial: ataca agentes, pipelines RAG y routers de modelos",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InyeccionDePrompts",
+    "#SeguridadIA",
+    "#LLM",
+    "#RAG",
+    "#OWASP"
+  ],
+  "fullArticle": "En los últimos dos años, las empresas han integrado modelos de lenguaje grandes (LLM) en sus áreas de soporte al cliente, análisis de datos, desarrollo de software y automatización de procesos internos a una escala sin precedentes. Sin embargo, esta adopción masiva ha ido acompañada de una amenaza creciente que aprovecha la brecha entre las suposiciones que tienen los equipos técnicos sobre el comportamiento de estos modelos y sus características reales: la inyección de prompts, una técnica que los ciberdelincuentes han perfeccionado hasta convertirla en el vector de ataque más impactante contra los sistemas de IA empresarial.\n\nSegún el ranking OWASP LLM Top 10 de 2025, la inyección de prompts se mantiene como la categoría de vulnerabilidad más crítica (LLM01) por segundo año consecutivo, debido a la incapacidad de los LLM para diferenciar de forma fiable entre instrucciones legítimas, datos de entrada, contexto y metadatos. Un informe de CrowdStrike de 2026, basado en inteligencia de más de 280 adversarios rastreados, documentó que actores de amenaza inyectaron prompts maliciosos en herramientas de IA generativa legítimas de más de 90 organizaciones durante 2025, utilizando estos accesos para generar comandos que robaron credenciales de usuario y criptomonedas. El informe es categórico: 'Los prompts son el nuevo malware', y señala que el volumen de ataques habilitados por IA aumentó un 89% interanual, con la inyección de prompts funcionando tanto como punto de entrada inicial como multiplicador de fuerza de los ataques.\n\nEsta amenaza no es teórica: en agosto de 2024, investigadores de PromptArmor revelaron una vulnerabilidad de inyección de prompts en Slack AI que permitía a un atacante exfiltrar datos de canales privados a los que no tenía acceso, incluyendo claves API compartidas en canales de desarrolladores, simplemente insertando una instrucción maliciosa en un canal público o en un documento subido. En junio de 2025, investigadores de Aim Security dieron a conocer EchoLeak (CVE-2025-32711, puntuación CVSS 9,3), el primer exploit de inyección de prompts sin interacción demostrado contra un sistema de IA en producción, que afectaba a Microsoft 365 Copilot: con solo enviar un correo electrónico manipulado, sin necesidad de que el usuario realizara ninguna acción, un atacante podía hacer que Copilot accediera a archivos internos y transmitiera su contenido a un servidor controlado por el atacante. Ambas vulnerabilidades ya fueron parcheadas, pero evidencian que la inyección de prompts es una amenaza práctica y repetitiva que las organizaciones deben abordar de forma prioritaria a medida que escalan sus despliegues de IA.\n\nLas técnicas de inyección de prompts han evolucionado significativamente en los últimos años, adaptándose a las arquitecturas de IA modernas: ahora apuntan a sistemas de múltiples agentes, pipelines de generación aumentada por recuperación (RAG), routers de modelos y capacidades de memoria a largo plazo. Los actores de amenaza utilizan métodos como la inyección entre modelos, que corrompe la salida de un LLM para que sea procesada por otros sistemas propagando el daño; el envenenamiento de la cadena de suministro de RAG, donde crean documentación, artículos de blog o archivos README de GitHub maliciosos que son ingeridos por los pipelines de RAG empresariales; el secuestro de agentes de IA, que pueden enviar correos, modificar infraestructura en la nube o ejecutar código con solo una instrucción manipulada; los ataques de desbordamiento de contexto, que aprovechan las ventanas de contexto de millones de tokens para colocar código malicioso que anula todas las instrucciones previas; el envenenamiento de memoria, que inyecta instrucciones que reconfiguran permanentemente el estado del LLM; y la manipulación de routers de modelos, que fuerza la selección del modelo más débil o menos protegido en entornos que usan múltiples LLMs. El reto central para las empresas es la excesiva confianza que depositan en estos sistemas: los LLMs que se despliegan para procesar instrucciones, resumir información y activar flujos de trabajo automatizados no pueden diferenciar de forma fiable entre instrucciones legítimas y datos maliciosos, entre la intención del usuario y los metadatos de la entrada, creando una ventana de oportunidad sin precedentes para los atacantes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T18:02:28.555Z",
+  "links": [
+    {
+      "title": "Ranking OWASP de vulnerabilidades para LLM 2025",
+      "url": "https://genai.owasp.org/llm-top-10/"
+    },
+    {
+      "title": "Informe Global de Amenazas de CrowdStrike 2026",
+      "url": "https://www.crowdstrike.com/en-us/press-releases/2026-crowdstrike-global-threat-report/"
+    },
+    {
+      "title": "Artículo original de VentureBeat sobre inyección de prompts",
+      "url": "https://venturebeat.com/technology/agentic-ai-solved-coding-and-exposed-every-other-problem-in-software-engineering"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Aumento interanual de ataques habilitados por IA",
+      "value": "89%"
+    },
+    {
+      "label": "Organizaciones afectadas por inyección de prompts en 2025",
+      "value": "más de 90"
+    },
+    {
+      "label": "Puntuación CVSS de EchoLeak",
+      "value": "9,3"
+    },
+    {
+      "label": "Número de adversarios rastreados en el informe de CrowdStrike",
+      "value": "más de 280"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

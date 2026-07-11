@@ -1,0 +1,79 @@
+{
+  "id": "13f0bc3a571bec44a5afcd3ffd9c8803a748afbbc0dc8221d840a6a023961b5e",
+  "title": "Apple Hide My Email expone direcciones de correo reales",
+  "summary": "Apple ha dejado sin resolver una vulnerabilidad en su servicio Hide My Email que permite a cualquier atacante descubrir la dirección de correo real detrás de los alias generados, poniendo en riesgo a millones de usuarios de iCloud+.",
+  "url": "https://www.macrumors.com/2026/07/01/hide-my-email-vulnerability-exposes-real-addresses/",
+  "source": "MacRumors",
+  "sourceUrl": "https://www.macrumors.com/macrumors.xml",
+  "publishedAt": "2026-07-01T13:20:19.000Z",
+  "imageUrl": "https://images.macrumors.com/t/YyQOPHtncbrpeB3tj10riaKfVTs=/2250x/article-new/2023/06/General-macOS-Mail-Feature.jpg",
+  "imageAlt": "Apple Hide My Email expone direcciones de correo reales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Apple ha dejado sin resolver una vulnerabilidad en su servicio Hide My Email que permite a cualquier atacante descubrir la dirección de correo real detrás de los alias generados, poniendo en riesgo a millones de usuarios de iCloud+.",
+  "keyPoints": [
+    "La falla permite a atacantes extraer la dirección real de cualquier alias de Hide My Email, con un 100% de éxito en pruebas realizadas por la comunidad.",
+    "El investigador Tyler Murphy reportó la vulnerabilidad a Apple en junio de 2025, pero la compañía no ha implementado una solución definitiva después de más de un año.",
+    "Los usuarios que confían en Hide My Email para proteger su identidad pueden ser expuestos a búsquedas públicas de correo y datos personales.",
+    "Apple afirmó haber abordado el problema en marzo de 2026, pero Murphy confirmó que la vulnerabilidad persistía, lo que ha llevado a la solicitud de suspensión temporal de la creación de nuevos alias."
+  ],
+  "whyMatters": "Esta brecha compromete la confianza en la protección de datos que Apple ofrece a sus usuarios. Si los alias pueden ser rastreados, los atacantes pueden vincular cuentas a información personal, facilitando fraudes y suplantaciones. Además, la falta de respuesta de Apple plantea dudas sobre la eficacia de sus procesos de gestión de vulnerabilidades, lo que podría afectar la reputación de la marca y la adopción de sus servicios de privacidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.macrumors.com/t/YyQOPHtncbrpeB3tj10riaKfVTs=/2250x/article-new/2023/06/General-macOS-Mail-Feature.jpg",
+      "alt": "Imagen que muestra la interfaz de Hide My Email en iCloud+",
+      "caption": "La interfaz de Hide My Email permite generar alias de correo electrónico para proteger la identidad del usuario."
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/1si9WjAK6c0",
+      "alt": "Video explicativo sobre la vulnerabilidad de Hide My Email",
+      "caption": "Video que detalla cómo la vulnerabilidad permite descubrir direcciones reales detrás de los alias."
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Apple",
+    "#HideMyEmail",
+    "#Ciberseguridad",
+    "#ICloud",
+    "#Privacidad"
+  ],
+  "fullArticle": "Apple ha dejado sin resolver una vulnerabilidad en su servicio Hide My Email que permite a cualquier atacante descubrir la dirección de correo real detrás de los alias generados, poniendo en riesgo a millones de usuarios de iCloud+. La falla, descubierta por el investigador Tyler Murphy, quien reportó el hallazgo a Apple en junio de 2025, ha sido confirmada con un 100 % de éxito en pruebas realizadas por voluntarios.\n\n[MULTIMEDIA: https://images.macrumors.com/t/YyQOPHtncbrpeB3tj10riaKfVTs=/2250x/article-new/2023/06/General-macOS-Mail-Feature.jpg]\n\nLa exposición de la dirección real permite a los atacantes vincular el alias a búsquedas públicas de correo y datos personales, lo que aumenta la vulnerabilidad a fraudes, suplantaciones y filtraciones de identidad. Apple afirmó en marzo de 2026 haber “abordado la cuestión en un cambio de sistema reciente”, pero Murphy demostró que la vulnerabilidad persistía, lo que llevó a la solicitud de suspender la creación de nuevos alias como medida intermedia.\n\n[MULTIMEDIA: https://www.youtube.com/embed/1si9WjAK6c0]\n\nA pesar de las respuestas de Apple, la compañía sigue sin publicar una solución concreta y ha pedido a Murphy que no divulgue la vulnerabilidad públicamente hasta que la investigación esté concluida. Con la expectativa de una actualización de seguridad en las próximas semanas, los usuarios de Hide My Email se encuentran en una situación de incertidumbre, mientras la comunidad de seguridad exige una respuesta más rápida y transparente.\n\nLa implicación de esta brecha va más allá de la privacidad individual; plantea interrogantes sobre la fiabilidad de los servicios de protección de datos de Apple y su capacidad para responder a amenazas críticas de manera oportuna. En un entorno donde la protección de la identidad digital es cada vez más crucial, la falta de acción visible puede erosionar la confianza de los consumidores y abrir la puerta a un aumento de los ataques dirigidos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T14:47:43.453Z",
+  "links": [
+    {
+      "title": "Apple - Hide My Email",
+      "url": "https://www.apple.com/icloud/hide-my-email/"
+    },
+    {
+      "title": "MacRumors - Apple Hide My Email Vulnerability",
+      "url": "https://www.macrumors.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de descubrimiento",
+      "value": "Junio 2025"
+    },
+    {
+      "label": "Tasa de explotación",
+      "value": "100 %"
+    },
+    {
+      "label": "Usuarios afectados",
+      "value": "millones de usuarios de iCloud+"
+    },
+    {
+      "label": "Plazo estimado de corrección",
+      "value": "próximas semanas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

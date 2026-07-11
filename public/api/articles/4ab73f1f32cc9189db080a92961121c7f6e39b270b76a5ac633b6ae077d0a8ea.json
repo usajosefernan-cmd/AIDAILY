@@ -1,0 +1,83 @@
+{
+  "id": "4ab73f1f32cc9189db080a92961121c7f6e39b270b76a5ac633b6ae077d0a8ea",
+  "title": "El detector de drift de Terraform detecta cambios peligrosos, pero no quién los hizo",
+  "summary": "El autor describe cómo su herramienta detecta cambios de Terraform en AWS y añade una capa de gravedad y trazabilidad con CloudTrail.",
+  "url": "https://dev.to/hitoshi1964/my-drift-detector-knew-a-security-group-changed-not-that-it-was-dangerous-or-who-opened-it-3phi",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T12:12:15.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4yorjctwfel1er57fd5l.png",
+  "imageAlt": "El detector de drift de Terraform detecta cambios peligrosos, pero no quién los hizo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor describe cómo su herramienta detecta cambios de Terraform en AWS y añade una capa de gravedad y trazabilidad con CloudTrail.",
+  "keyPoints": [
+    "La herramienta compara la infraestructura en vivo con el estado de Terraform para listar recursos que ya no coinciden, detectando 40 cambios críticos en un solo informe.",
+    "Añade una lógica de gravedad que diferencia entre cambios triviales, como renombrar etiquetas, y amenazas reales, como abrir puertos a 0.0.0.0/0.",
+    "Integra CloudTrail Lookup para identificar el autor de cada cambio, cubriendo los últimos 90 días de eventos de gestión en la región.",
+    "La solución es de código abierto bajo MIT, se despliega con Docker Compose y se integra opcionalmente en un proyecto Django sin afectar el núcleo."
+  ],
+  "whyMatters": "El manejo de drift es crítico para la seguridad y la gobernanza de infraestructuras en la nube. Al priorizar cambios peligrosos y rastrear la autoría, las organizaciones pueden responder más rápidamente a vulnerabilidades. Esta herramienta democratiza la visibilidad operativa, reduciendo costes de incidentes y mejorando la confianza en la automatización.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4yorjctwfel1er57fd5l.png",
+      "alt": "Imagen del artículo sobre el detector de drift de Terraform",
+      "caption": "Portada del artículo que muestra el tema de detección de drift en infraestructuras AWS"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community donde se publicó el artículo",
+      "caption": "Logo de la comunidad DEV donde el autor compartió su herramienta"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Terraform",
+    "#AWS",
+    "#CloudTrail",
+    "#DevOps",
+    "#OpenSource"
+  ],
+  "fullArticle": "En el mundo de la infraestructura como código, el drift –la divergencia entre la configuración declarada y la real– puede convertirse en un riesgo de seguridad invisible. El autor, desarrollador de una herramienta de detección de drift de Terraform, comparte cómo su software escanea la infraestructura en vivo de AWS, la compara con el estado de Terraform y genera un informe con cada recurso que ya no coincide, encontrando más de 40 cambios críticos en un solo escaneo. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4yorjctwfel1er57fd5l.png]\n\nEl informe inicial mostraba solo la lista de diferencias, sin indicar cuál era realmente peligrosa. Para resolverlo, se añadió una lógica de gravedad que evalúa cada campo: abrir un puerto a 0.0.0.0/0 se clasifica como incidente crítico, mientras que renombrar una etiqueta se considera un cambio menor. Esta puntuación permite a los equipos priorizar rápidamente los ajustes que requieren atención inmediata.\n\nAdemás, la herramienta consulta CloudTrail mediante la API LookupEvents, lo que permite identificar al autor de cada cambio dentro de los últimos 90 días de eventos de gestión en la región. Esta capa de trazabilidad no solo responde a la pregunta “qué cambió”, sino también “quién lo hizo”, una información esencial para la auditoría y la respuesta a incidentes.\n\nLa solución es de código abierto bajo la licencia MIT, se despliega con Docker Compose y se integra opcionalmente en un proyecto Django sin tocar el núcleo. Al mantener las características avanzadas fuera del core, se garantiza un sistema limpio y seguro, mientras que los usuarios que necesiten mayor visibilidad pueden habilitar el panel de drift‑risk a través de una bandera de características. Esta arquitectura modular facilita la adopción y la personalización según las necesidades de cada organización.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T12:31:50.319Z",
+  "links": [
+    {
+      "title": "Artículo original en DEV.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de Terraform",
+      "url": "https://www.terraform.io/docs"
+    },
+    {
+      "title": "Guía de CloudTrail para auditoría",
+      "url": "https://docs.aws.amazon.com/cloudtrail/latest/userguide/cloudtrail-user-guide.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Cambios detectados en el informe",
+      "value": "40"
+    },
+    {
+      "label": "Cobertura de CloudTrail",
+      "value": "90 días"
+    },
+    {
+      "label": "Licencia de software",
+      "value": "MIT"
+    },
+    {
+      "label": "Tiempo de despliegue con Docker Compose",
+      "value": "menos de 5 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

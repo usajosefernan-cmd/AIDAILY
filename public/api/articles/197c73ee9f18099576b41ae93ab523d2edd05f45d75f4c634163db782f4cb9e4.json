@@ -1,0 +1,41 @@
+{
+  "id": "197c73ee9f18099576b41ae93ab523d2edd05f45d75f4c634163db782f4cb9e4",
+  "title": "Proposed Linux Patch For A Brief Delay To Match PCI Spec Will Hopefully Address Some Bugs",
+  "summary": "Going back to February there was a bug report around the xHCI controller dieing on resume from s2idle when using an AMD Ryzen AI Max+ \"Strix Halo\" Framework Desktop. In turn all USB devices behind the xHCI controller are lost on resume, but unbinding and binding the driver can restore the functionality without a reboot. After months of back and forth communication, it looks like a solution has been figured out and comes down to a nuance of the PCI spec with needing a brief wait...",
+  "url": "https://www.phoronix.com/news/linux-delay-d3cold-patch-fix",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-09T13:35:01.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=framework-desktop-linux&image=framework_desktop_9",
+  "imageAlt": "Proposed Linux Patch For A Brief Delay To Match PCI Spec Will Hopefully Address Some Bugs",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "Going back to February there was a bug report around the xHCI controller dieing on resume from s2idle when using an AMD Ryzen AI Max+ \"Strix Halo\" Framework Desktop. In turn all USB devices behind the xHCI controller are lost on resume, but unbinding and binding the driver can restore the functionality without a reboot. After months of back and forth communication, it looks like a solution has been figured out and comes down to a nuance of the PCI spec with needing a brief wait...",
+  "keyPoints": [
+    "Proposed Linux Patch For A Brief Delay To Match PCI Spec Will Hopefully Address Some Bugs"
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=framework-desktop-linux&image=framework_desktop_9",
+      "alt": "Proposed Linux Patch For A Brief Delay To Match PCI Spec Will Hopefully Address Some Bugs",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "Going back to February there was a bug report around the xHCI controller dieing on resume from s2idle when using an AMD Ryzen AI Max+ \"Strix Halo\" Framework Desktop. In turn all USB devices behind the xHCI controller are lost on resume, but unbinding and binding the driver can restore the functionality without a reboot. After months of back and forth communication, it looks like a solution has been figured out and comes down to a nuance of the PCI spec with needing a brief wait......",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T15:30:13.713Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

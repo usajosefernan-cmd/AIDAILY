@@ -1,0 +1,292 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informe IA • 2026-06-07</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"><\/script>
+    <style>
+      :root{--bg:#0b0f19;--panel:#111827;--ink:#e5e7eb;--sub:#9ca3af;--accent:#60a5fa;--border:#1f2937;--ok:#10b981;--warn:#f59e0b;--danger:#ef4444;}
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{background:var(--bg);color:var(--ink);font-family:ui-sans,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+      .wrap{max-width:1100px;margin:0 auto;padding:40px 16px}
+      header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+      .brand{display:flex;align-items:center;gap:12px}
+      .logo{width:48px;height:48px;background:linear-gradient(135deg,#2563eb,#7c3aed);border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:16px}
+      h1{font-size:24px;font-weight:700}
+      .back{display:inline-flex;align-items:center;gap:6px;color:#9ca3af;text-decoration:none;font-size:13px;margin-bottom:10px}
+      .back:hover{color:#e5e7eb}
+      .hero{background:linear-gradient(180deg,#0b1220,#0f172a);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+      .metric{text-align:center}
+      .metric .num{font-size:30px;font-weight:800;background:linear-gradient(90deg,#fff,#cbd5e1);-webkit-background-clip:text;background-clip:text;color:transparent}
+      .metric .lbl{color:var(--sub);font-size:12px;margin-top:4px}
+      .panels{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:16px}
+      @media(min-width:860px){.panels{grid-template-columns:1fr 1fr}}
+      .panel{background:#0b1220;border:1px solid var(--border);border-radius:14px;padding:16px;overflow:hidden}
+      .panel h2{font-size:15px;margin-bottom:10px;font-weight:600}
+      .grid{display:grid;grid-template-columns:1fr;gap:14px}
+      @media(min-width:780px){.grid{grid-template-columns:1fr 1fr}}
+      .card{background:#0b1018;border:1px solid #1f2937;border-radius:14px;padding:16px;transition:border-color .15s ease}
+      .card:hover{border-color:#334155}
+      .card-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+      .badge{padding:5px 10px;border-radius:999px;border:1px solid var(--bc,#3b82f6);color:var(--bc,#3b82f6);background:color-mix(in srgb, var(--bc,#3b82f6) 10%, transparent);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:700}
+      .time{color:#6b7280;font-size:11px}
+      .title{display:block;color:#e5e7eb;text-decoration:none;font-size:16px;margin-bottom:8px;line-height:1.35;font-weight:600}
+      .title:hover{color:var(--accent)}
+      .summary{color:#9ca3af;font-size:14px;line-height:1.5;margin-bottom:12px}
+      .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+      .tag{padding:3px 9px;border-radius:999px;background:#0b1220;border:1px solid var(--bc,#94a3b8);color:var(--bc,#94a3b8);font-size:11px;font-weight:500}
+      .actions{display:flex;gap:10px;flex-wrap:wrap}
+      button,.primary{cursor:pointer}
+      .primary{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;background:#111827;border:1px solid #273548;color:#e5e7eb;border-radius:10px;text-decoration:none;font-size:13px;font-weight:500}
+      .primary:hover{border-color:#334155}
+      .ghost{padding:8px 10px;background:#0b1220;border:1px solid #1f2937;color:#9ca3af;border-radius:10px;font-size:13px}
+      .ghost:hover{border-color:#334155}
+      .search{display:flex;gap:8px;margin-top:12px}
+      .search input{flex:1;padding:10px 12px;background:#0b1220;color:#e5e7eb;border:1px solid #273548;border-radius:12px;font-size:14px;outline:none}
+      .search input:focus{border-color:#334155}
+      .search button{padding:10px 12px;background:#111827;color:#e5e7eb;border:1px solid #273548;border-radius:12px;cursor:pointer}
+      .search button:hover{border-color:#334155}
+      .kpi-row{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+      .kpi{background:#0b1220;border:1px solid var(--border);border-radius:12px;padding:14px;flex:1;min-width:140px}
+      .kpi .num{font-size:22px;font-weight:700;color:#e5e7eb}
+      .kpi .lbl{color:#6b7280;font-size:12px;margin-top:4px}
+      footer{color:#6b7280;font-size:12px;text-align:right;margin-top:16px}
+      canvas{max-height:220px}
+    </style>
+    </head>
+    <body>
+    <div class="wrap">
+      <a class="back" href="index.html">← Calendario</a>
+      <header>
+        <div class="brand">
+          <div class="logo">IA</div>
+          <div>
+            <h1>Informe diario de IA</h1>
+            <div style="color:#9ca3af;font-size:13px">2026-06-07 · @Pccmi para Emilio</div>
+          </div>
+        </div>
+        <div class="search">
+          <input id="searchInput" placeholder="Filtrar noticias..." />
+          <button id="searchBtn">Filtrar</button>
+        </div>
+      </header>
+
+      <div class="kpi-row">
+        <div class="kpi"><div class="num">10</div><div class="lbl">Noticias</div></div>
+        <div class="kpi"><div class="num">10</div><div class="lbl">Temas únicos</div></div>
+        <div class="kpi"><div class="num">2</div><div class="lbl">Fuentes</div></div>
+        <div class="kpi"><div class="num">2</div><div class="lbl">Categorías activas</div></div>
+      </div>
+
+      <div class="panels">
+        <div class="panel"><h2>📊 Distribución por categoría</h2>
+          <canvas id="catChart"></canvas>
+        </div>
+        <div class="panel"><h2>🏷️ Temas destacados</h2>
+          <canvas id="topicChart"></canvas>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>📰 Noticias Seleccionadas</h2>
+        <div class="grid" id="newsGrid">
+          
+            <article class="card" data-category="tools">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#10b981;color:#10b981">tools</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/c8e8e7g0r82o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">The gamers taking on the industry to stop it switching off games</a>
+              <p class="summary">Stop Killing Games is challenging the idea publishers can shut down a game without making sure it&#x27;s still playable.</p>
+              <div class="tags"><span class="tag" style="border-color:#10b981;color:#10b981">musk</span><span class="tag" style="border-color:#10b981;color:#10b981">spacex</span><span class="tag" style="border-color:#10b981;color:#10b981">elon</span><span class="tag" style="border-color:#10b981;color:#10b981">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/c8e8e7g0r82o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/c8e8e7g0r82o?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="industry">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#f59e0b;color:#f59e0b">industry</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/c98r8r7dz5no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Trump to meet AI leaders to discuss US investment in their companies</a>
+              <p class="summary">The US president said on Friday he expects to meet the leaders of top AI companies next week.</p>
+              <div class="tags"><span class="tag" style="border-color:#f59e0b;color:#f59e0b">musk</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">spacex</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">elon</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/c98r8r7dz5no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/c98r8r7dz5no?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="tools">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#10b981;color:#10b981">tools</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/czx2x3yl9rgo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Raspberry Pi raises profit forecast as AI demand grows</a>
+              <p class="summary">The firm said it expected to deliver adjusted earnings of at least $38m (£28.2m) for the first half of 2026.</p>
+              <div class="tags"><span class="tag" style="border-color:#10b981;color:#10b981">musk</span><span class="tag" style="border-color:#10b981;color:#10b981">spacex</span><span class="tag" style="border-color:#10b981;color:#10b981">elon</span><span class="tag" style="border-color:#10b981;color:#10b981">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/czx2x3yl9rgo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/czx2x3yl9rgo?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="tools">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#10b981;color:#10b981">tools</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/cy5w2k5k5ylo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">From Bitcoin to blockchain: Key cryptocurrency terms and what they mean</a>
+              <p class="summary">As the price of Bitcoin sinks once more, here&#x27;s a guide to some of the trickiest crypto terms.</p>
+              <div class="tags"><span class="tag" style="border-color:#10b981;color:#10b981">musk</span><span class="tag" style="border-color:#10b981;color:#10b981">spacex</span><span class="tag" style="border-color:#10b981;color:#10b981">elon</span><span class="tag" style="border-color:#10b981;color:#10b981">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/cy5w2k5k5ylo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/cy5w2k5k5ylo?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="tools">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#10b981;color:#10b981">tools</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/cx2124z7g45o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">We need to stop AI developing without humans, says Anthropic co-founder</a>
+              <p class="summary">Jack Clark tells BBC&#x27;s Newsnight AI could get to the point where it develops without human input.</p>
+              <div class="tags"><span class="tag" style="border-color:#10b981;color:#10b981">musk</span><span class="tag" style="border-color:#10b981;color:#10b981">spacex</span><span class="tag" style="border-color:#10b981;color:#10b981">elon</span><span class="tag" style="border-color:#10b981;color:#10b981">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/cx2124z7g45o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/cx2124z7g45o?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="tools">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#10b981;color:#10b981">tools</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/c78kmj2kyklo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">The ancient trick making food waste useful and tasty</a>
+              <p class="summary">Instead of throwing away byproducts of food processing, fermentation is making them valuable.</p>
+              <div class="tags"><span class="tag" style="border-color:#10b981;color:#10b981">musk</span><span class="tag" style="border-color:#10b981;color:#10b981">spacex</span><span class="tag" style="border-color:#10b981;color:#10b981">elon</span><span class="tag" style="border-color:#10b981;color:#10b981">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/c78kmj2kyklo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/c78kmj2kyklo?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="tools">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#10b981;color:#10b981">tools</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/c5y71106g07o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Mark Zuckerberg&#x27;s longest-serving employee on AI, jobs - and her boss</a>
+              <p class="summary">Naomi Gleit has weathered many controversies at Meta, but remains in what she tells the BBC is her &quot;dream job&quot;.</p>
+              <div class="tags"><span class="tag" style="border-color:#10b981;color:#10b981">musk</span><span class="tag" style="border-color:#10b981;color:#10b981">spacex</span><span class="tag" style="border-color:#10b981;color:#10b981">elon</span><span class="tag" style="border-color:#10b981;color:#10b981">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/c5y71106g07o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/c5y71106g07o?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="tools">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#10b981;color:#10b981">tools</span>
+                  <span class="time">BBC News</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.bbc.com/news/articles/c0r1975ded7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Who is Elon Musk and what is his net worth?</a>
+              <p class="summary">The boss of X, Tesla and SpaceX is the world&#x27;s richest person and has used his platform to make his views known on a vast array of topics.</p>
+              <div class="tags"><span class="tag" style="border-color:#10b981;color:#10b981">musk</span><span class="tag" style="border-color:#10b981;color:#10b981">spacex</span><span class="tag" style="border-color:#10b981;color:#10b981">elon</span><span class="tag" style="border-color:#10b981;color:#10b981">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.bbc.com/news/articles/c0r1975ded7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.bbc.com/news/articles/c0r1975ded7o?at_medium=RSS&amp;at_campaign=rss').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="industry">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#f59e0b;color:#f59e0b">industry</span>
+                  <span class="time">NYT &gt; Technology</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.nytimes.com/2026/06/05/technology/spacex-indexes-401k.html" target="_blank" rel="noopener">Why the SpaceX IPO Will Affect Your 401(k), Like It or Not</a>
+              <p class="summary">Elon Musk’s rocket company, on the cusp of the largest initial public offering ever, will soon end up in index funds after rule changes by Nasdaq and other index providers.</p>
+              <div class="tags"><span class="tag" style="border-color:#f59e0b;color:#f59e0b">musk</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">spacex</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">elon</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.nytimes.com/2026/06/05/technology/spacex-indexes-401k.html" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.nytimes.com/2026/06/05/technology/spacex-indexes-401k.html').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+            <article class="card" data-category="industry">
+              <div class="card-header">
+                <div>
+                  <span class="badge" style="border-color:#f59e0b;color:#f59e0b">industry</span>
+                  <span class="time">NYT &gt; Technology</span>
+                </div>
+                <span class="time">2026-06-07</span>
+              </div>
+              <a class="title" href="https://www.nytimes.com/2026/06/04/technology/gwynne-shotwell-spacex.html" target="_blank" rel="noopener">Gwynne Shotwell, Elon Musk’s No. 2 at SpaceX, Is the Company’s Steady Hand</a>
+              <p class="summary">Gwynne Shotwell, the president and chief operating officer, is the adult-in-the-room foil to Mr. Musk as SpaceX prepares for a blockbuster initial public offering.</p>
+              <div class="tags"><span class="tag" style="border-color:#f59e0b;color:#f59e0b">musk</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">spacex</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">elon</span><span class="tag" style="border-color:#f59e0b;color:#f59e0b">his</span></div>
+              <div class="actions">
+                <a class="primary" href="https://www.nytimes.com/2026/06/04/technology/gwynne-shotwell-spacex.html" target="_blank" rel="noopener">📰 Abrir noticia</a>
+                <button class="ghost" onclick="navigator.clipboard.writeText('https://www.nytimes.com/2026/06/04/technology/gwynne-shotwell-spacex.html').then(()=>alert('Enlace copiado'))">🔗 Copiar link</button>
+              </div>
+            </article>
+            
+        </div>
+      </div>
+
+      <footer>Informe generado en Oracle VPS · Hermes Agent · 2026-06-07</footer>
+    </div>
+
+    <script>
+    const catLabels=["research", "industry", "tools", "policy"];
+    const catValues=[0, 3, 7, 0];
+    const topicLabels=["musk", "spacex", "elon", "his", "making", "stop", "without", "bbc", "bitcoin", "boss"];
+    new Chart(document.getElementById('catChart'),{type:'bar',data:{labels:catLabels,datasets:[{label:'Noticias',data:catValues,backgroundColor:['#60a5fa','#f59e0b','#10b981','#ef4444'],borderRadius:8}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{color:'#9ca3af'},grid:{color:'#1f2937'}},x:{ticks:{color:'#9ca3af'},grid:{display:false}}}}}); 
+    new Chart(document.getElementById('topicChart'),{type:'polarArea',data:{labels:topicLabels,datasets:[{data:catValues.map(function(v){return v+1}),backgroundColor:['rgba(96,165,250,.6)','rgba(245,158,11,.6)','rgba(16,185,129,.6)','rgba(239,68,68,.6)']}}]},options:{responsive:true,plugins:{legend:{labels:{color:'#e5e7eb'}}},scales:{r:{grid:{color:'#1f2937'},ticks:{display:false}}}}}); 
+
+    document.getElementById('searchBtn').addEventListener('click',function(){{
+      var q=(document.getElementById('searchInput').value||'').toLowerCase();
+      document.querySelectorAll('.card').forEach(function(c){{
+        var text=(c.textContent||'').toLowerCase();
+        c.style.display=text.indexOf(q)!==-1?'':'none';
+      }});
+    }});
+    document.getElementById('searchInput').addEventListener('keyup',function(event){{
+      if(event.key==='Enter') document.getElementById('searchBtn').click();
+    }});
+    <\/script>
+    </body>
+    </html>
+    

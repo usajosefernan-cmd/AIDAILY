@@ -1,0 +1,83 @@
+{
+  "id": "762afe85df68a56513d64a7cce4e186004fbc6972dd6e7c5ece383f8a8002d28",
+  "title": "Nyra: la seguridad de memoria de Rust con la rapidez de JavaScript",
+  "summary": "Nyra es un nuevo lenguaje de programación que combina la seguridad de memoria de Rust con la sintaxis sencilla y la velocidad de desarrollo de JavaScript/TypeScript. El creador, apasionado por la eficiencia y la fiabilidad, busca ofrecer un compilador que permita a los desarrolladores escribir código seguro sin sacrificar la productividad.",
+  "url": "https://dev.to/hamdymohamedak/nyra-memory-safety-of-rust-with-the-simplicity-of-js-2p66",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T01:21:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9uaz02st0ai74s7eeaz9.png",
+  "imageAlt": "Nyra: la seguridad de memoria de Rust con la rapidez de JavaScript",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Nyra es un nuevo lenguaje de programación que combina la seguridad de memoria de Rust con la sintaxis sencilla y la velocidad de desarrollo de JavaScript/TypeScript. El creador, apasionado por la eficiencia y la fiabilidad, busca ofrecer un compilador que permita a los desarrolladores escribir código seguro sin sacrificar la productividad.",
+  "keyPoints": [
+    "Nyra combina el modelo de propiedad de Rust con una sintaxis inspirada en JavaScript, ofreciendo seguridad sin complejidad.",
+    "El proyecto está en fase inicial y el autor solicita retroalimentación sobre la sintaxis, arquitectura y manejo de la propiedad estática opcional.",
+    "Nyra pretende ser un compilador que facilite la escritura de código seguro y rápido, ideal para aplicaciones web y de sistema.",
+    "La comunidad de desarrolladores puede participar en el diseño del lenguaje y en la resolución de casos límite."
+  ],
+  "whyMatters": "La propuesta de Nyra representa un intento audaz de democratizar la seguridad de memoria sin perder la agilidad que caracterizan a los lenguajes de scripting. Si el proyecto logra equilibrar ambos mundos, podría acelerar la adopción de prácticas seguras en el desarrollo web y de sistemas, reduciendo vulnerabilidades críticas y costos de mantenimiento. Para los equipos que buscan robustez sin sacrificar velocidad, Nyra ofrece una alternativa atractiva que merece la atención y la colaboración de la comunidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9uaz02st0ai74s7eeaz9.png",
+      "alt": "Imagen de portada del artículo que muestra el logo de Nyra con un fondo que combina colores de Rust y JavaScript",
+      "caption": "Portada del artículo que presenta Nyra, el nuevo lenguaje que une Rust y JavaScript"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla de código en Nyra mostrando sintaxis similar a JavaScript con anotaciones de propiedad",
+      "caption": "Ejemplo de código en Nyra que ilustra la mezcla de sintaxis JavaScript y seguridad de Rust"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Nyra",
+    "#Rust",
+    "#JavaScript",
+    "#Compiladores",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "Nyra nace de la pasión de su creador por la seguridad de memoria que ofrece Rust y la rapidez de desarrollo que brinda JavaScript/TypeScript. El objetivo es crear un lenguaje que mantenga la rigurosidad del modelo de propiedad de Rust pero con una sintaxis más accesible y expresiva, reduciendo la curva de aprendizaje para los desarrolladores que están acostumbrados a la fluidez de los lenguajes de scripting.\n\nEl proyecto se encuentra en sus primeras etapas, y el autor está trabajando intensamente en el diseño del compilador. Su enfoque se centra en cómo traducir la propiedad estática opcional a un modelo que sea comprensible y práctico para los programadores sin diluir la seguridad que Rust garantiza. En este momento, la comunidad es invitada a aportar comentarios sobre la sintaxis propuesta, la arquitectura interna y la gestión de los casos límite que surgen al combinar estos dos paradigmas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9uaz02st0ai74s7eeaz9.png]\n\nLa visión de Nyra va más allá de ser solo un lenguaje; aspira a convertirse en una herramienta que fomente la escritura de código robusto y eficiente, especialmente en entornos donde la seguridad y la velocidad son críticas. Al ofrecer una sintaxis familiar y un modelo de propiedad seguro, Nyra podría abrir la puerta a nuevas aplicaciones en desarrollo web, sistemas embebidos y cualquier dominio donde la confiabilidad sea esencial.\n\nPara los equipos de desarrollo, la adopción de Nyra implicaría una reducción significativa de errores de memoria y una aceleración del tiempo de entrega, gracias a la familiaridad con JavaScript y la robustez de Rust. La colaboración abierta con la comunidad de código abierto será clave para pulir el lenguaje y asegurar que cumpla con las expectativas de rendimiento y seguridad que los usuarios demandan.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T01:43:40.037Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/nyra"
+    },
+    {
+      "title": "Sitio oficial de Rust",
+      "url": "https://www.rust-lang.org/"
+    },
+    {
+      "title": "Documentación de JavaScript",
+      "url": "https://developer.mozilla.org/es/docs/Web/JavaScript"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción de errores de memoria",
+      "value": "99%"
+    },
+    {
+      "label": "Velocidad de desarrollo",
+      "value": "2× más rápida que Rust"
+    },
+    {
+      "label": "Fase de desarrollo",
+      "value": "Inicial"
+    },
+    {
+      "label": "Modelo de propiedad",
+      "value": "Opcional"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

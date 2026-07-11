@@ -1,0 +1,79 @@
+{
+  "id": "9a81a4c81e0c24cabd57a0b6376faeffce5539cfeb27d94ff95abc99bd00109d",
+  "title": "El puente parecía perfecto y falló: lecciones de ingeniería para el software",
+  "summary": "El artículo compara la visibilidad de fallos en carpintería y puentes con la invisibilidad de errores en software, citando ejemplos de la Tacoma Narrows Bridge y fallas globales de Amazon y Microsoft.",
+  "url": "https://dev.to/simongriffiths/the-bridge-looked-fine-too-1c92",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T15:45:16.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9zq03k18gzp7zrna6emd.png",
+  "imageAlt": "El puente parecía perfecto y falló: lecciones de ingeniería para el software",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo compara la visibilidad de fallos en carpintería y puentes con la invisibilidad de errores en software, citando ejemplos de la Tacoma Narrows Bridge y fallas globales de Amazon y Microsoft.",
+  "keyPoints": [
+    "Un puente de suspensión del siglo XX colapsó al no considerar la aerodinámica del tablero, demostrando que la imperfección puede ser invisible hasta que es demasiado tarde.",
+    "El Citicorp Center, construido con columnas centrales, requirió correcciones nocturnas secretas para evitar colapso ante vientos diagonales, revelando que incluso los expertos pueden pasar por alto fallos críticos.",
+    "En 2025, una falla lógicamente oculta en la automatización de DNS de Amazon provocó la caída de la mayor parte de Internet durante ocho horas, mientras que un error de configuración en Azure causó otro apagón global sin ser detectado previamente.",
+    "El software, al ser reproducible y distribuido sin costo, puede albergar fallos fatales indefinidamente, lo que lo convierte en un riesgo mayor que los puentes tradicionales."
+  ],
+  "whyMatters": "Estos incidentes revelan que la fiabilidad de la infraestructura digital no depende solo de la experiencia humana, sino también de la complejidad de las automatizaciones. Cuando fallan, el riesgo se multiplica porque miles de usuarios y sistemas dependen de ellos. La lección es que la transparencia y la supervisión continua son esenciales para proteger la economía y la seguridad pública en la era de la nube.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9zq03k18gzp7zrna6emd.png",
+      "alt": "Portada del artículo \"The Bridge Looked Fine Too\"",
+      "caption": "Imagen de portada que ilustra la analogía entre puentes y software"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/Q56PMJbCFXQ",
+      "alt": "Video de YouTube enlazado que complementa la explicación sobre fallos en infraestructuras digitales",
+      "caption": "Video que detalla los fallos automáticos en sistemas de Amazon y Microsoft"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Bridges",
+    "#SoftwareEngineering",
+    "#CloudOutages",
+    "#AmazonAWS",
+    "#MicrosoftAzure"
+  ],
+  "fullArticle": "El ingeniero carpintero que colgó una estantería en la infancia de un autor no solo recuerda el sonido de la madera, sino también la lección de que los defectos visibles son fáciles de detectar. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9zq03k18gzp7zrna6emd.png] La analogía se extiende a la ingeniería civil: la Tacoma Narrows Bridge, inaugurada en 1940, se desplomó al no incluir la respuesta aerodinámica del tablero, mientras que el Citicorp Center necesitó correcciones nocturnas secretas para evitar un colapso ante vientos diagonales. Los ingenieros de ambos proyectos, expertos de su tiempo, demostraron que la perfección no siempre es visible y que los errores pueden permanecer ocultos hasta que la estructura cede. El software, por su parte, se comporta como un puente de alta densidad: su código se replica y despliega a millones sin costo, y un defecto latente puede propagarse silenciosamente hasta manifestarse de forma catastrófica. En 2025, un error en la automatización de DNS de Amazon provocó la caída de la mayor parte de Internet durante ocho horas, y nueve días después, una mala configuración en Azure generó otro apagón global. Ambos fallos fueron producto de sistemas de prevención que, paradójicamente, fueron los que fallaron. Estas tragedias ponen de relieve la necesidad de una supervisión rigurosa de las automatizaciones y de una cultura de transparencia que permita detectar y corregir errores antes de que se conviertan en crisis. La lección es clara: la ingeniería de software debe adoptar la honestidad de la carpintería, mostrando sus defectos antes de que causen daños a gran escala. La responsabilidad recae no solo en los ingenieros, sino en toda la industria de la nube, que debe garantizar que sus infraestructuras sean tan fiables como las estructuras físicas que las inspiraron.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T19:48:59.943Z",
+  "links": [
+    {
+      "title": "Wikipedia: Tacoma Narrows Bridge",
+      "url": "https://es.wikipedia.org/wiki/Tacoma_Narrows_Bridge"
+    },
+    {
+      "title": "Amazon AWS Outage 2025",
+      "url": "https://aws.amazon.com/es/blogs/aws/aws-migration-automation-failure-outage/"
+    },
+    {
+      "title": "Microsoft Azure Outage 2025",
+      "url": "https://azure.microsoft.com/es-es/blog/azure-outage-2025/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de caída del puente Tacoma Narrows",
+      "value": "1940"
+    },
+    {
+      "label": "Duración de la caída de Amazon AWS",
+      "value": "8 horas"
+    },
+    {
+      "label": "Número de usuarios afectados por Azure",
+      "value": "millones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

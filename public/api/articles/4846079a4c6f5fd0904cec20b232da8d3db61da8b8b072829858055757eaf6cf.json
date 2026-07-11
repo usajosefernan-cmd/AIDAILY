@@ -1,0 +1,38 @@
+{
+  "id": "4846079a4c6f5fd0904cec20b232da8d3db61da8b8b072829858055757eaf6cf",
+  "title": "E‑‑: The middle ground between English and Python",
+  "summary": "O, ¿qué pasaría si pudieras marcar cuánto inglés hay en tu código, por línea?\n\nLa generación de código LLM moderna tiene una propiedad extraña. El comportamiento de su programa es una función de su indicación, el estado de ánimo del modelo y cualquier contexto que haya en la memoria. No hay ningún artefacto único al que puedas señalar y decir \"...",
+  "url": "https://dev.to/oded_fuhrmann_86130c99a67/e-the-middle-ground-between-english-and-python-5eal",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T19:20:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdnv4rw9vl2dpcnzgonhw.png",
+  "imageAlt": "E‑‑: The middle ground between English and Python",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "O, ¿qué pasaría si pudieras marcar cuánto inglés hay en tu código, por línea?\n\nLa generación de código LLM moderna tiene una propiedad extraña. El comportamiento de su programa es una función de su indicación, el estado de ánimo del modelo y cualquier contexto que haya en la memoria. No hay ningún artefacto único al que puedas señalar y decir \"...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdnv4rw9vl2dpcnzgonhw.png",
+      "alt": "E‑‑: The middle ground between English and Python",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "O, ¿qué pasaría si pudieras marcar cuánto inglés hay en tu código, por línea?\n\nLa generación de código LLM moderna tiene una propiedad extraña. El comportamiento de su programa es una función de su indicación, el estado de ánimo del modelo y cualquier contexto que haya en la memoria. No hay ningún artefacto al que puedas señalar y decir \"esto es lo que funciona\". Misma entrada, diferente salida. Misma solicitud, código diferente.\n\nPuede solucionar esto: almacenar en caché la salida de LLM, congelar las versiones del modelo, prohibir la regeneración en tiempo de ejecución. Pero siempre estás trabajando en torno al LLM, nunca con él.\n\nE... invierte la forma. ¿Qué pasaría si la participación del LLM estuviera restringida a una ranura estructural específica en su código fuente, resuelta una vez en tiempo de compilación y todo lo demás fuera código determinista normal? Ahora puede elegir, por valor, cuánto LLM desea en su programa. Una vez seleccionado, el resultado es reproducible byte por byte.\n\nPuede marcar la proporción Inglés-Python por línea, por valor, por región. Cualquiera que sea el extremo del espectro, tiene sentido ahí mismo.\n\nAquí está la misma intención expresada en tres puntos diferentes del dial.\n\nMixto: la estructura es código, un valor es inglés:\n\nMás inglés: la mayor parte de la intención está descrita, no escrita:\n\nMisma intención. Diferente inglés-P...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T19:45:13.183Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

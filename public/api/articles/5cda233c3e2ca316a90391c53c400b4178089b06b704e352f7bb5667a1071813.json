@@ -1,0 +1,73 @@
+{
+  "id": "5cda233c3e2ca316a90391c53c400b4178089b06b704e352f7bb5667a1071813",
+  "title": "Netflix revoluciona su gestión de datos: reduce un 90% el tiempo de despliegue y un 70% los costes con CloudStream",
+  "summary": "Los ingenieros de Netflix Raj Ummadisetty y Ken Kurzweil presentan el framework CloudStream, una solución arquitectónica que permite migrar terabytes de datos de sistemas offline a sistemas online de forma segura y eficiente. El proyecto, basado en los pilares de seguridad, observabilidad y validación, supuso un cambio de las abstracciones clave-valor de stateless a stateful, logrando una reducción del 90% en el tiempo de despliegue de datos y un 70% en los costes operativos. La capa de abstracción creada gestiona 70 millones de peticiones por segundo en la flota de Cassandra de la compañía, eliminando la necesidad de que los equipos de aplicación gestionen directamente las bases de datos.",
+  "url": "https://www.infoq.com/presentations/netflix-data-offline-online",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-09T15:20:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/netflix-data-offline-online/en/smallimage/rajasekhar-ummadisetty-ken-kurzweil-thumbnail-1782819781543.jpg",
+  "imageAlt": "Netflix revoluciona su gestión de datos: reduce un 90% el tiempo de despliegue y un 70% los costes con CloudStream",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los ingenieros de Netflix Raj Ummadisetty y Ken Kurzweil presentan el framework CloudStream, una solución arquitectónica que permite migrar terabytes de datos de sistemas offline a sistemas online de forma segura y eficiente. El proyecto, basado en los pilares de seguridad, observabilidad y validación, supuso un cambio de las abstracciones clave-valor de stateless a stateful, logrando una reducción del 90% en el tiempo de despliegue de datos y un 70% en los costes operativos. La capa de abstracción creada gestiona 70 millones de peticiones por segundo en la flota de Cassandra de la compañía, eliminando la necesidad de que los equipos de aplicación gestionen directamente las bases de datos.",
+  "keyPoints": [
+    "Netflix desarrolló CloudStream, un framework repetible de captura, conversión y despliegue para migrar terabytes de datos de sistemas offline a online.",
+    "La transformación arquitectónica cambió las abstracciones clave-valor de stateless a stateful, logrando una reducción del 90% en el tiempo de despliegue de datos.",
+    "El modelo se basa en tres pilares: seguridad, observabilidad y validación, que generan confianza en los stakeholders y protegen a usuarios y sistemas.",
+    "La capa de abstracción de datos gestiona 70 millones de peticiones por segundo en la flota de Cassandra de Netflix, optimizando el rendimiento y reduciendo la carga de los equipos."
+  ],
+  "whyMatters": "Este desarrollo supone un hito para la ingeniería de datos a escala, ya que demuestra que es posible migrar volúmenes masivos de información a sistemas en línea sin sacrificar seguridad ni rendimiento, reduciendo drásticamente costes y tiempos de despliegue. Los pilares de confianza, observabilidad y validación planteados por el equipo de Netflix se convierten en un referente para equipos de ingeniería de todo el mundo que buscan escalar sus arquitecturas sin perder control sobre los procesos. Para el ecosistema tecnológico español y europeo, la implementación de este tipo de frameworks abre la puerta a la modernización de plataformas de datos legacy, mejorando la competitividad de empresas que dependen de servicios en tiempo real para sus usuarios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/netflix-data-offline-online/en/smallimage/rajasekhar-ummadisetty-ken-kurzweil-thumbnail-1782819781543.jpg",
+      "alt": "Miniatura de la presentación de Raj Ummadisetty y Ken Kurzweil sobre la migración de datos de Netflix en InfoQ",
+      "caption": "Presentación 'Acelerando los datos de Netflix: un viaje interdepartamental de offline a online' impartida por los ingenieros de la plataforma de datos de Netflix"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Netflix",
+    "#CloudStream",
+    "#ArquitecturaDeSoftware",
+    "#IngenieriaDeDatos",
+    "#DataPlatform"
+  ],
+  "fullArticle": "Los ingenieros de la plataforma de datos de Netflix, Raj Ummadisetty y Ken Kurzweil, presentaron en InfoQ el framework CloudStream, una solución arquitectónica que ha transformado la forma en la que la plataforma migra terabytes de información de sus sistemas de datos offline (almacenes de datos empresariales sin acceso en tiempo real) a sus sistemas online de acceso inmediato para dispositivos como televisores. El proyecto supuso un cambio radical en la arquitectura de abstracciones clave-valor de la compañía, pasando de un modelo sin estado a uno con estado, que permitió reducir el tiempo de despliegue de datos en un 90% y los costes operativos asociados en un 70%.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/netflix-data-offline-online/en/smallimage/rajasekhar-ummadisetty-ken-kurzweil-thumbnail-1782819781543.jpg]\n\nEl pilar fundamental de todo el desarrollo fue el principio de que 'la confianza es la moneda de cambio', que se materializó en tres ejes: seguridad, observabilidad y validación. La capa de abstracción de datos creada por el equipo permite que solo el 16% de la flota de bases de datos Cassandra de Netflix sea accedida directamente por las aplicaciones, gestionando el resto de las peticiones (70 millones de consultas por segundo en total) de forma centralizada. Esto elimina la necesidad de que los equipos de aplicación conozcan los detalles de la tecnología de base de datos o se ocupen de la gestión de clústeres, permitiéndoles centrarse en sus problemas de negocio principales.\n\nLa generalización del proceso de migración en un framework repetible de captura, conversión y despliegue permite a Netflix escalar esta solución a nuevos casos de uso de forma rápida y segura. Para el sector tecnológico, especialmente para empresas europeas y españolas que manejan grandes volúmenes de datos en plataformas legacy, este modelo supone un referente para modernizar arquitecturas sin interrumpir el servicio, reduciendo costes y mejorando el rendimiento de los sistemas en tiempo real.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T15:25:16.327Z",
+  "links": [
+    {
+      "title": "Presentación original en InfoQ: Acelerando los datos de Netflix",
+      "url": "https://www.infoq.com/presentations/netflix-data-offline-online/"
+    },
+    {
+      "title": "Sitio oficial de QCon San Francisco, conferencia de desarrollo software",
+      "url": "https://qconsf.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción del tiempo de despliegue de datos",
+      "value": "90%"
+    },
+    {
+      "label": "Reducción de costes operativos de datos",
+      "value": "70%"
+    },
+    {
+      "label": "Peticiones por segundo gestionadas por la capa de abstracción",
+      "value": "70 millones de QPS"
+    },
+    {
+      "label": "Porcentaje de flota de Cassandra accedida directamente por aplicaciones",
+      "value": "16%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

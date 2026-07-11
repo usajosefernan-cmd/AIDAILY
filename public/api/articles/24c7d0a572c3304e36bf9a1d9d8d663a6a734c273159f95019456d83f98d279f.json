@@ -1,0 +1,83 @@
+{
+  "id": "24c7d0a572c3304e36bf9a1d9d8d663a6a734c273159f95019456d83f98d279f",
+  "title": "Desarrollador Crea Verificador de Cumplimiento RFP con IA en Una Sola Sesión: Pila Tecnológica Completa Revelada",
+  "summary": "Un desarrollador construye una herramienta gratuita que analiza automáticamente la conformidad de propuestas técnicas frente a pliegos de condiciones, usando Groq (llama-3.3-70b) y Cloudflare Workers. Sin base de datos, sin cuentas, procesa documentos en 15 segundos y detecta diferencias críticas como 'Cyber Essentials' vs 'Cyber Essentials Plus' que causan descalificaciones automáticas.",
+  "url": "https://dev.to/vystartasv/i-built-an-rfp-compliance-checker-in-one-session-heres-the-exact-stack-3kbe",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T22:19:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3rteg14l53jz6b0ci1t0.png",
+  "imageAlt": "Desarrollador Crea Verificador de Cumplimiento RFP con IA en Una Sola Sesión: Pila Tecnológica Completa Revelada",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador construye una herramienta gratuita que analiza automáticamente la conformidad de propuestas técnicas frente a pliegos de condiciones, usando Groq (llama-3.3-70b) y Cloudflare Workers. Sin base de datos, sin cuentas, procesa documentos en 15 segundos y detecta diferencias críticas como 'Cyber Essentials' vs 'Cyber Essentials Plus' que causan descalificaciones automáticas.",
+  "keyPoints": [
+    "Herramienta open-source analiza pliegos de 200 páginas y detecta gaps de cumplimiento en 15 segundos usando IA gratuita de Groq",
+    "Arquitectura serverless: 180 líneas en Cloudflare Worker + HTML vanilla, cero infraestructura, cero almacenamiento de datos",
+    "El reto real fue ingeniería de prompts para obtener JSON consistente desde PDFs, tablas multi-columna y texto escaneado",
+    "Próximo paso: validador de lenguaje claro para que evaluadores entiendan las propuestas técnicas sin ambigüedades"
+  ],
+  "whyMatters": "Esta solución democratiza el acceso a herramientas de compliance que antes requerían equipos legales costosos o software empresarial caro. Al eliminar barreras de entrada (sin registro, sin coste, privacidad total), permite a PYMES y freelancers competir en licitaciones públicas complejas donde un error de terminología supone la exclusión automática. El enfoque 'local-first' y serverless marca tendencia en desarrollo de utilidades IA prácticas y éticas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3rteg14l53jz6b0ci1t0.png",
+      "alt": "Captura de pantalla del verificador RFP mostrando la interfaz lado a lado con pliego y respuesta, y la matriz de cumplimiento resultante",
+      "caption": "Interfaz del verificador RFP: pliego a la izquierda, respuesta a la derecha, matriz de cumplimiento abajo"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/kW7U1GNjG-c",
+      "alt": "Video demostración del verificador RFP analizando un pliego real de servicios IT gestionados",
+      "caption": "Demostración completa: análisis de pliego real en 15 segundos con Groq y Cloudflare Workers"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Groq",
+    "#CloudflareWorkers",
+    "#Llama3",
+    "#RFPCompliance",
+    "#ServerlessAI"
+  ],
+  "fullArticle": "Un desarrollador ha demostrado que es posible construir una herramienta de compliance empresarial robusta en una sola tarde de viernes. El verificador RFP permite pegar el pliego técnico y el borrador de respuesta, y devuelve una matriz de cumplimiento categorizada por requisito: cubierto, parcial o faltante, con sugerencias concretas para cada brecha. La arquitectura es radicalmente simple: un único Cloudflare Worker de 180 líneas JavaScript que recibe el texto, lo envía a la API gratuita de Groq (ejecutando llama-3.3-70b) y devuelve JSON estructurado. El frontend es un solo archivo HTML con JavaScript vainilla, temas claro/oscuro y diseño responsive. Sin cuentas, sin base de datos, sin persistencia: abres, usas, cierras.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3rteg14l53jz6b0ci1t0.png]\n\nEl verdadero desafío no fue el despliegue —'npx wrangler deploy' y listo— sino la ingeniería de prompts. Lograr que el LLM devolviera JSON consistente frente a formatos heterogéneos (PDFs como texto plano, tablas de licitación multi-columna, secciones escaneadas) requirió más iteraciones que todo el pipeline de CI/CD. La solución combinó tres técnicas: few-shot examples con casos edge, esquema JSON estricto en el system prompt y post-procesado determinista. El resultado procesa un pliego real de servicios IT gestionados en ~15 segundos, con 30 análisis diarios gratis y opción BYOK para claves propias. El autor ya prepara la siguiente herramienta: un validador de lenguaje llano para que los evaluadores no técnicos entiendan las propuestas, porque 'si el evaluador no entiende tu oferta, ya has perdido'.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T22:47:57.478Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to con código y despliegue",
+      "url": "https://dev.to/usuario/i-built-an-rfp-compliance-checker-in-one-session-heres-the-exact-stack"
+    },
+    {
+      "title": "Documentación de Groq Cloud API (tier gratuito)",
+      "url": "https://console.groq.com/docs"
+    },
+    {
+      "title": "Guía de Cloudflare Workers para despliegue serverless",
+      "url": "https://developers.cloudflare.com/workers/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de análisis por pliego",
+      "value": "~15 segundos"
+    },
+    {
+      "label": "Líneas de código del backend",
+      "value": "180 líneas JavaScript"
+    },
+    {
+      "label": "Análisis diarios en tier gratuito",
+      "value": "30 análisis/día"
+    },
+    {
+      "label": "Modelo LLM utilizado",
+      "value": "llama-3.3-70b en Groq"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

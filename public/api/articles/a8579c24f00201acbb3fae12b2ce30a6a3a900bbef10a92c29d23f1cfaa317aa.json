@@ -1,0 +1,76 @@
+{
+  "id": "a8579c24f00201acbb3fae12b2ce30a6a3a900bbef10a92c29d23f1cfaa317aa",
+  "title": "GitHub Actions revoluciona la automatización de CI/CD con soporte multiplataforma",
+  "summary": "GitHub Actions facilita la automatización de flujos de trabajo de software, ofreciendo CI/CD de clase mundial, compatibilidad con múltiples sistemas operativos y lenguajes, y runners tanto en la nube como on-prem.",
+  "url": "https://github.com/features/actions",
+  "source": "GitHub Trending",
+  "sourceUrl": "https://github.com/trending",
+  "publishedAt": "2026-06-27T14:36:44.479Z",
+  "imageUrl": "https://images.ctfassets.net/8aevphvgewt8/63gHnduk1FaJfdjcP9gGKe/3b7a9634823e54957e885a25b0e5ebc1/features-actions-social.jpg",
+  "imageAlt": "GitHub Actions revoluciona la automatización de CI/CD con soporte multiplataforma",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "GitHub Actions facilita la automatización de flujos de trabajo de software, ofreciendo CI/CD de clase mundial, compatibilidad con múltiples sistemas operativos y lenguajes, y runners tanto en la nube como on-prem.",
+  "keyPoints": [
+    "Permite crear, probar y desplegar código en cualquier lenguaje con runners nativos en Linux, macOS, Windows, ARM, GPU y contenedores.",
+    "Los workflows pueden ejecutarse en VMs propias o en la nube, con la opción de runners autoalojados para mayor control de la infraestructura.",
+    "La integración con GitHub Packages simplifica la gestión de dependencias y versiones, aprovechando un CDN global para descargas rápidas.",
+    "Los minutos gratuitos mensuales y la selección de runners disponibles varían según el plan, lo que permite optimizar costes para proyectos públicos."
+  ],
+  "whyMatters": "La capacidad de automatizar todo el ciclo de vida del software sin salir de GitHub reduce significativamente los tiempos de entrega y la posibilidad de errores humanos. Para equipos que dependen de CI/CD, GitHub Actions ofrece una alternativa integrada que elimina la necesidad de gestionar herramientas externas, lo que se traduce en menor complejidad operativa y mayor velocidad de innovación. Además, la posibilidad de ejecutar workflows en entornos híbridos (cloud y on-prem) abre la puerta a estrategias de desarrollo más flexibles y seguras.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.ctfassets.net/8aevphvgewt8/63gHnduk1FaJfdjcP9gGKe/3b7a9634823e54957e885a25b0e5ebc1/features-actions-social.jpg",
+      "alt": "Imagen que muestra la interfaz de GitHub Actions con opciones de construcción, prueba y despliegue en múltiples entornos",
+      "caption": "Interfaz de GitHub Actions que facilita la construcción, empaquetado y despliegue de proyectos en cualquier lenguaje, sin necesidad de ejecutar código manualmente."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GitHubActions",
+    "#CI_CD",
+    "#DevOps",
+    "#Automatizacion"
+  ],
+  "fullArticle": "GitHub Actions ha consolidado su posición como la herramienta de automatización de flujos de trabajo más completa del ecosistema de desarrollo. Con un enfoque centrado en la experiencia del usuario, permite a los equipos construir, probar y desplegar código directamente desde el repositorio, sin la necesidad de herramientas externas.\n\nLa plataforma soporta una amplia gama de sistemas operativos y arquitecturas, incluyendo Linux, macOS, Windows, ARM, GPU y contenedores, lo que facilita la ejecución de tareas en el entorno que mejor se adapte a cada proyecto. Además, los usuarios pueden elegir entre runners compartidos, autoalojados en la nube o on-prem, ofreciendo un control total sobre la infraestructura y la seguridad.\n\n[MULTIMEDIA: https://images.ctfassets.net/8aevphvgewt8/63gHnduk1FaJfdjcP9gGKe/3b7a9634823e54957e885a25b0e5ebc1/features-actions-social.jpg]\n\nGitHub Actions también se integra de manera nativa con GitHub Packages, lo que simplifica la gestión de dependencias y la publicación de paquetes. Los usuarios pueden aprovechar un CDN global para acelerar las descargas y garantizar una experiencia fluida para los desarrolladores en todo el mundo. La plataforma ofrece soporte para lenguajes populares como Node.js, Python, Java, Ruby, PHP, Go, Rust y .NET, lo que la convierte en una opción versátil para cualquier stack tecnológico.\n\nLa política de minutos gratuitos mensuales varía según el plan, pero los repositorios públicos obtienen acceso ilimitado a runners compartidos, mientras que los repositorios privados pueden beneficiarse de minutos adicionales en función del nivel de suscripción. Esta flexibilidad permite a las organizaciones escalar sus pipelines de CI/CD sin incurrir en costos inesperados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T14:39:56.845Z",
+  "links": [
+    {
+      "title": "Documentación oficial de GitHub Actions (en español)",
+      "url": "https://docs.github.com/es/actions"
+    },
+    {
+      "title": "Planificación y precios de GitHub Actions",
+      "url": "https://github.com/pricing"
+    },
+    {
+      "title": "Blog de GitHub sobre nuevas funcionalidades de Actions",
+      "url": "https://github.blog/category/actions/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Minutos gratuitos mensuales",
+      "value": "2,000 minutos"
+    },
+    {
+      "label": "Lenguajes soportados",
+      "value": "Node.js, Python, Java, Ruby, PHP, Go, Rust, .NET"
+    },
+    {
+      "label": "Sistemas operativos compatibles",
+      "value": "Linux, macOS, Windows, ARM, GPU, contenedores"
+    },
+    {
+      "label": "Tipos de runners disponibles",
+      "value": "Compartidos, autoalojados en la nube, on-prem"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

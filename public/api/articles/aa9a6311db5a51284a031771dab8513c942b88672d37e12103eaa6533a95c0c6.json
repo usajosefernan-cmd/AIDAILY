@@ -1,0 +1,76 @@
+{
+  "id": "aa9a6311db5a51284a031771dab8513c942b88672d37e12103eaa6533a95c0c6",
+  "title": "DevOps Maturity: la herramienta open source que elimina a los consultores y mide la madurez de tu equipo en un minuto",
+  "summary": "Se presenta DevOps Maturity, una herramienta open source y automatizable que permite evaluar la madurez DevOps de un equipo en 60 segundos, sin necesidad de consultores externos, con integración en flujos de CI/CD y generación de badges automáticos.",
+  "url": "https://dev.to/shenxianpeng/measuring-devops-maturity-without-a-consultant-an-open-source-automatable-baseline-108",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T11:57:08.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkiu7znhn0m4md9cigta0.png",
+  "imageAlt": "DevOps Maturity: la herramienta open source que elimina a los consultores y mide la madurez de tu equipo en un minuto",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se presenta DevOps Maturity, una herramienta open source y automatizable que permite evaluar la madurez DevOps de un equipo en 60 segundos, sin necesidad de consultores externos, con integración en flujos de CI/CD y generación de badges automáticos.",
+  "keyPoints": [
+    "La herramienta es open source, licenciada bajo Apache 2.0 y desarrollada en Python, accesible para cualquier equipo sin costes adicionales.",
+    "Genera una puntuación global de madurez, niveles clasificados (WIP, PASSING, BRONCE, PLATA, ORO) y recomendaciones priorizadas por categoría.",
+    "Se integra de forma nativa en flujos de CI/CD y genera badges automáticos que se actualizan con cada cambio en el repositorio.",
+    "Infiere las respuestas a partir del README, configuración de CI y estructura de archivos del repositorio, compatible con modelos de IA como OpenAI, Anthropic, Gemini y Ollama local."
+  ],
+  "whyMatters": "Esta herramienta supone un cambio de paradigma en la evaluación de la madurez DevOps, eliminando la barrera de coste y tiempo que suponen los consultores externos, accesible para equipos de cualquier tamaño, desde startups hasta grandes empresas. Su naturaleza open source y automatizable permite integrar la medición de madurez en el flujo de trabajo diario, sin interrupciones, fomentando la mejora continua basada en datos objetivos. A largo plazo, democratiza el acceso a métricas de calidad DevOps, reduciendo la brecha entre equipos con recursos limitados y grandes corporaciones, y establece un estándar abierto que la comunidad puede mejorar de forma colaborativa.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkiu7znhn0m4md9cigta0.png",
+      "alt": "Imagen de portada del artículo sobre la herramienta de medición de madurez DevOps open source",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que presenta la herramienta DevOps Maturity"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DevOpsMaturity",
+    "#HerramientaOpenSource",
+    "#AutomatizacionCI",
+    "#EvaluacionDevOps"
+  ],
+  "fullArticle": "Durante años, la medición de la madurez DevOps ha estado reservada a equipos con presupuestos elevados, que contratan consultores externos para rellenar interminables hojas de cálculo y elaborar informes personalizados que pocas veces se adaptan a la realidad operativa de cada organización. Esta barrera de entrada ha generado una brecha significativa entre grandes corporaciones y equipos pequeños, que no pueden acceder a evaluaciones objetivas de sus procesos de desarrollo y despliegue. Ahora, un nuevo proyecto open source promete cambiar esta dinámica de forma radical: se trata de DevOps Maturity, una especificación y conjunto de herramientas diseñadas para ofrecer una evaluación rápida, automatizable y accesible para cualquier equipo, sin necesidad de conocimientos avanzados en métricas de madurez.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkiu7znhn0m4md9cigta0.png]\n\nLa herramienta se basa en una checklist ponderada que cubre todo el ciclo de vida DevOps, no solo un área concreta como la integración continua o la monitorización, lo que la diferencia de otras soluciones especializadas que se centran en un solo eje de evaluación. Su funcionamiento es extremadamente sencillo: se puede instalar directamente con pip, ejecutar en menos de 60 segundos y almacenar la configuración en un archivo devops-maturity.yml dentro del repositorio del proyecto. Los resultados incluyen una puntuación global, una clasificación por niveles (que van desde WIP, el nivel inicial, hasta ORO, el máximo de madurez), puntuaciones desglosadas por categoría y recomendaciones priorizadas para mejorar en cada área.\n\nUna de sus funcionalidades más útiles es la generación automática de badges que se pueden incluir en el README del repositorio, y que se actualizan de forma automática cada vez que se producen cambios en el código o en la configuración del proyecto, gracias a su integración nativa con GitHub Actions. La evaluación se realiza de forma automática infiriendo las respuestas a partir del contenido del README, la configuración de CI/CD y la estructura de archivos del repositorio, sin necesidad de que el equipo rellene formularios manualmente. Además, es compatible con modelos de inteligencia artificial de terceros como OpenAI, Anthropic o Gemini, o se puede ejecutar de forma completamente local usando Ollama, para equipos que no quieren compartir datos con servicios externos.\n\nDesarrollada en Python bajo licencia Apache 2.0, la herramienta ha sido construida mayoritariamente por un solo desarrollador, que ahora busca feedback de la comunidad para ajustar los criterios y pesos de la checklist, identificando posibles áreas faltantes o ponderaciones incorrectas. Su naturaleza open source permite que cualquier equipo pueda adaptarla a sus necesidades específicas, añadiendo categorías personalizadas o modificando los pesos de los criterios para alinearlos con sus objetivos estratégicos. A diferencia de las herramientas de evaluación profunda que existen en el mercado, DevOps Maturity no busca competir con ellas, sino actuar como una primera evaluación rápida que ayude a los equipos a identificar en qué áreas necesitan profundizar con soluciones más especializadas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T12:11:03.717Z",
+  "links": [
+    {
+      "title": "Artículo original de la noticia en Dev.to",
+      "url": "https://dev.to/articles/measuring-devops-maturity-without-a-consultant"
+    },
+    {
+      "title": "Repositorio oficial de DevOps Maturity en GitHub",
+      "url": "https://github.com/devops-maturity/devops-maturity"
+    },
+    {
+      "title": "Guía de buenas prácticas DevOps del SEI",
+      "url": "https://www.sei.cmu.edu/our-work/devops/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de ejecución de la evaluación",
+      "value": "60 segundos"
+    },
+    {
+      "label": "Número de niveles de madurez",
+      "value": "5 (WIP, PASSING, BRONCE, PLATA, ORO)"
+    },
+    {
+      "label": "Licencia de la herramienta",
+      "value": "Apache 2.0"
+    },
+    {
+      "label": "Lenguaje de programación base",
+      "value": "Python"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

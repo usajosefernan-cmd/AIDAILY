@@ -1,0 +1,69 @@
+{
+  "id": "d23e60d941a3b9277654cdfc31e887ad8c232c134ab95539b6af6a8ed9e73e0b",
+  "title": "Cómo prepararte para una entrevista de Go: Guía práctica para ingenieros de nivel medio y senior",
+  "summary": "El artículo ofrece un mapa de estudio estructurado que va más allá de la sintaxis de Go, enfocándose en conceptos de concurrencia, diseño de API y manejo de errores, esenciales para roles intermedios y senior.",
+  "url": "https://dev.to/nazar_boyko/how-to-prepare-for-a-golang-interview-a-practical-guide-for-mid-senior-engineers-200p",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T15:12:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.weserv.nl%2F%3Furl%3Dhttps%253A%252F%252Fwww.nazarboyko.com%252Fassets%252Fimgs%252Farticles%252Fhow-to-prepare-for-a-golang-interview%252Fcover.webp%26w%3D1600%26h%3D672%26fit%3Dcover%26a%3Dtop%26output%3Dwebp",
+  "imageAlt": "Cómo prepararte para una entrevista de Go: Guía práctica para ingenieros de nivel medio y senior",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo ofrece un mapa de estudio estructurado que va más allá de la sintaxis de Go, enfocándose en conceptos de concurrencia, diseño de API y manejo de errores, esenciales para roles intermedios y senior.",
+  "keyPoints": [
+    "La entrevista de Go evalúa tanto fundamentos como capas superiores, diferenciando a los ingenieros senior por su dominio de memoria y concurrencia.",
+    "El lenguaje no distingue visibilidad por modificadores; la exportación se controla por la capitalización y el alcance del paquete.",
+    "Los valores cero son útiles: tipos como sync.Mutex y bytes.Buffer funcionan sin inicialización explícita, lo que influye en el diseño de APIs.",
+    "Evitar la supresión silenciosa de errores y usar retornos nombrados con moderación mejora la legibilidad y la mantenibilidad del código."
+  ],
+  "whyMatters": "Comprender estos niveles de evaluación es crucial porque las entrevistas de Go se centran en la capacidad de diseñar sistemas escalables y seguros. Un candidato que domina memoria, concurrencia y diseño de API no solo responde preguntas, sino que también aporta soluciones robustas a proyectos críticos. En un mercado donde Go lidera en microservicios y nube, dominar estos aspectos puede ser la diferencia entre avanzar o quedarse atrás.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.weserv.nl%2F%3Furl%3Dhttps%253A%252F%252Fwww.nazarboyko.com%252Fassets%252Fimgs%252Farticles%252Fhow-to-prepare-for-a-golang-interview%252Fcover.webp%26w%3D1600%26h%3D672%26fit%3Dcover%26a%3Dtop%26output%3Dwebp",
+      "alt": "Portada ilustrativa del artículo sobre preparación para entrevistas de Go",
+      "caption": "Imagen de portada que muestra el título y la temática de la guía de entrevistas de Go"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Golang",
+    "#EntrevistaTech",
+    "#DesarrolloSoftware",
+    "#ProgramacionGo",
+    "#IngenieriaSoftware"
+  ],
+  "fullArticle": "El lenguaje Go, aunque intencionalmente pequeño, exige de los candidatos una comprensión profunda de la memoria, la concurrencia y el diseño de API. En lugar de limitarse a preguntas de sintaxis, las entrevistas buscan evaluar cómo un ingeniero maneja goroutines, canales y la propagación de errores en un entorno de producción.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.weserv.nl%2F%3Furl%3Dhttps%253A%252F%252Fwww.nazarboyko.com%252Fassets%252Fimgs%252Farticles%252Fhow-to-prepare-for-a-golang-interview%252Fcover.webp%26w%3D1600%26h%3D672%26fit%3Dcover%26a%3Dtop%26output%3Dwebp] \n\nEl artículo destaca que la ausencia de modificadores de acceso tradicionales obliga a los desarrolladores a decidir qué exportar mediante la capitalización, lo que influye directamente en la arquitectura de paquetes y la seguridad de la API. Además, se subraya la importancia de los valores cero, ya que tipos como sync.Mutex o strings.Builder son útiles sin inicialización, lo que facilita la creación de tipos con comportamiento predecible.\n\nOtro punto crítico es la gestión de errores: se advierte contra la supresión silenciosa y se recomienda usar retornos nombrados con prudencia para mantener la claridad del flujo de control. Estas prácticas no solo hacen que el código sea más legible, sino que también reducen la probabilidad de fallos en producción.\n\nFinalmente, el autor propone un mapa de estudio que cubre 10 conceptos clave, desde la concurrencia hasta la optimización de rendimiento, ofreciendo a los ingenieros un recurso estructurado para prepararse antes de la entrevista y como referencia rápida durante los múltiples rondas de evaluación.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T15:19:14.847Z",
+  "links": [
+    {
+      "title": "Guía original en dev.to",
+      "url": "https://dev.to/nazarboyko/how-to-prepare-for-a-golang-interview-5p5c"
+    },
+    {
+      "title": "Documentación oficial de Go: Effective Go",
+      "url": "https://golang.org/doc/effective_go"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión actual de Go",
+      "value": "1.22"
+    },
+    {
+      "label": "Conceptos clave cubiertos",
+      "value": "10"
+    },
+    {
+      "label": "Empresas que usan Go",
+      "value": "35%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

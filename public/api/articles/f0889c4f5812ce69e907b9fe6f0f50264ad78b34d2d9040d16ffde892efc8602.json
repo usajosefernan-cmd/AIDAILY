@@ -1,0 +1,77 @@
+{
+  "id": "f0889c4f5812ce69e907b9fe6f0f50264ad78b34d2d9040d16ffde892efc8602",
+  "title": "OpenClaw, el agente AI de código abierto, llega con app nativa a iOS",
+  "summary": "El proyecto de código abierto OpenClaw, que permite a los usuarios integrar modelos de IA con sus dispositivos y aplicaciones, ha lanzado su primera app nativa para iPhone y iPad. La nueva herramienta sustituye los métodos improvisados que utilizaban Telegram o WhatsApp, ofreciendo una interfaz segura y directa que funciona con un gateway local.",
+  "url": "https://www.macrumors.com/2026/06/29/openclaw-ios-app/",
+  "source": "MacRumors",
+  "sourceUrl": "https://www.macrumors.com/macrumors.xml",
+  "publishedAt": "2026-06-29T22:42:11.000Z",
+  "imageUrl": "https://images.macrumors.com/t/hqosQQSAmMaFdg36lrKX704rm4Q=/1600x/article-new/2026/06/openclaw.jpg",
+  "imageAlt": "OpenClaw, el agente AI de código abierto, llega con app nativa a iOS",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El proyecto de código abierto OpenClaw, que permite a los usuarios integrar modelos de IA con sus dispositivos y aplicaciones, ha lanzado su primera app nativa para iPhone y iPad. La nueva herramienta sustituye los métodos improvisados que utilizaban Telegram o WhatsApp, ofreciendo una interfaz segura y directa que funciona con un gateway local.",
+  "keyPoints": [
+    "OpenClaw ahora cuenta con una app nativa que reemplaza los trucos con Telegram y WhatsApp para acceso móvil",
+    "El agente AI se ejecuta en un gateway local y permite conectar modelos de Claude, OpenAI, Gemini y más",
+    "La app requiere permisos amplios en el gateway y es vulnerable a inyecciones de prompt, lo que plantea riesgos de seguridad",
+    "El cambio de nombre de Clawdbot a OpenClaw se debió a una disputa con Anthropic sobre el uso de su nombre"
+  ],
+  "whyMatters": "La llegada de OpenClaw a iOS marca un hito en la democratización de la inteligencia artificial, al ofrecer una solución de código abierto que funciona directamente en dispositivos móviles. Este avance reduce la dependencia de servicios en la nube y permite a los usuarios controlar sus datos con mayor privacidad. Además, la integración directa con aplicaciones de mensajería y dispositivos abre nuevas posibilidades para la automatización personal y empresarial, lo que puede impulsar la adopción de IA en entornos de trabajo y en el hogar.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.macrumors.com/t/hqosQQSAmMaFdg36lrKX704rm4Q=/1600x/article-new/2026/06/openclaw.jpg",
+      "alt": "Pantalla de la app OpenClaw mostrando la interfaz de chat",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/1si9WjAK6c0",
+      "alt": "Video explicativo sobre la app OpenClaw para iOS",
+      "caption": "Video que muestra la funcionalidad de la app OpenClaw en dispositivos iOS"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OpenClaw",
+    "#IAdeCódigoAbierto",
+    "#IOS"
+  ],
+  "fullArticle": "OpenClaw, el agente de inteligencia artificial de código abierto que permite a los usuarios conectar modelos de IA con sus dispositivos y aplicaciones, ha lanzado su primera app nativa para iPhone y iPad. La nueva herramienta sustituye los métodos improvisados que utilizaban Telegram o WhatsApp para acceder al agente en movimiento, ofreciendo una interfaz directa y segura que funciona con un gateway local.\n\nEl funcionamiento de OpenClaw se basa en un gateway que se ejecuta en un Mac o PC. Los usuarios pueden conectar una clave API de Claude, OpenAI, Gemini u otros servicios de IA, lo que permite al modelo acceder a aplicaciones de mensajería, archivos, navegadores web y más. La app iOS, disponible de forma gratuita en la App Store, se integra con este gateway para ofrecer chat, aprobaciones por voz, compartición de contenido y automatizaciones conscientes del dispositivo.\n\n[MULTIMEDIA: https://images.macrumors.com/t/hqosQQSAmMaFdg36lrKX704rm4Q=/1600x/article-new/2026/06/openclaw.jpg]\n\nAunque la herramienta es poderosa, presenta riesgos significativos. La necesidad de permisos amplios en el gateway y la vulnerabilidad a inyecciones de prompt pueden exponer datos sensibles. Además, el cambio de nombre de Clawdbot a OpenClaw se debió a una disputa con Anthropic, que reclamó el uso de su nombre.\n\nLa llegada de OpenClaw a iOS abre nuevas posibilidades para la automatización personal y profesional. Al permitir la integración directa con dispositivos móviles, los usuarios pueden controlar flujos de trabajo complejos sin depender de soluciones propietarias. Este desarrollo también destaca la creciente importancia de la IA de código abierto como alternativa viable a los gigantes de la industria, ofreciendo mayor transparencia y control.\n\n[MULTIMEDIA: https://www.youtube.com/embed/1si9WjAK6c0]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T23:03:27.716Z",
+  "links": [
+    {
+      "title": "MacRumors – OpenClaw llega a iOS",
+      "url": "https://www.macrumors.com/2026/06/openclaw-ios-app/"
+    },
+    {
+      "title": "Repositorio oficial de OpenClaw en GitHub",
+      "url": "https://github.com/openclaw/openclaw"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "Junio 2026"
+    },
+    {
+      "label": "Disponibilidad",
+      "value": "Gratis en la App Store"
+    },
+    {
+      "label": "Requisitos de gateway",
+      "value": "Mac o PC con acceso local"
+    },
+    {
+      "label": "Modelo de IA compatible",
+      "value": "Claude, OpenAI, Gemini"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

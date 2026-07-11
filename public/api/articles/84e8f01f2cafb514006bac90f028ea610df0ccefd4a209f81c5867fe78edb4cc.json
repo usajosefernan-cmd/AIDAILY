@@ -1,0 +1,67 @@
+{
+  "id": "84e8f01f2cafb514006bac90f028ea610df0ccefd4a209f81c5867fe78edb4cc",
+  "title": "Inithouse lanza Pet Imagination: retratos de mascotas en 9 estilos en menos de 60 segundos",
+  "summary": "El estudio Inithouse ha desarrollado una pipeline de IA que convierte fotos de mascotas en retratos artísticos en menos de un minuto, ofreciendo nueve estilos distintos sin necesidad de registro.",
+  "url": "https://dev.to/jakub_inithouse/pet-imagination-by-inithouse-our-ai-pet-portrait-pipeline-9-styles-under-60-seconds-2b1o",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T11:14:52.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgk23n1b9kt23rl7td0kx.png",
+  "imageAlt": "Inithouse lanza Pet Imagination: retratos de mascotas en 9 estilos en menos de 60 segundos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El estudio Inithouse ha desarrollado una pipeline de IA que convierte fotos de mascotas en retratos artísticos en menos de un minuto, ofreciendo nueve estilos distintos sin necesidad de registro.",
+  "keyPoints": [
+    "La herramienta valida, comprime y detecta la especie de la mascota antes de generar la imagen, garantizando coherencia en los resultados.",
+    "El pipeline utiliza una plantilla de prompt fija y parámetros de estilo específicos, reduciendo la latencia y manteniendo calidad constante.",
+    "Optimizaciones como preprocesamiento paralelo y caché de prompts han permitido bajar el tiempo total a menos de 60 segundos.",
+    "El proceso elimina la imagen original tras la generación, evitando almacenamiento y preocupaciones de privacidad."
+  ],
+  "whyMatters": "Esta innovación demuestra cómo la IA puede ofrecer experiencias personalizadas y rápidas a consumidores, reduciendo la brecha entre creatividad humana y automatización. Al eliminar la necesidad de cuentas y esperar largos tiempos de procesamiento, Inithouse abre la puerta a aplicaciones comerciales de generación de arte instantáneo, lo que puede impulsar nuevos modelos de negocio en el sector de mascotas y entretenimiento digital. El enfoque de privacidad también establece un estándar para el manejo responsable de datos sensibles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgk23n1b9kt23rl7td0kx.png",
+      "alt": "Pantalla principal de Pet Imagination mostrando el proceso de generación de retratos de mascotas",
+      "caption": "Pantalla principal de Pet Imagination, donde el usuario sube su foto y selecciona el estilo deseado."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PetImagination",
+    "#Inithouse",
+    "#IAdeMascotas"
+  ],
+  "fullArticle": "Inithouse, el estudio que ha consolidado una cartera de productos paralelos, ha presentado Pet Imagination, una solución de IA que transforma fotos de mascotas en retratos artísticos en nueve estilos distintos en menos de un minuto. El usuario simplemente sube una imagen, elige el estilo y recibe el resultado sin registro ni demoras.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgk23n1b9kt23rl7td0kx.png]\n\nLa pipeline comienza con una validación rápida: formato, tamaño y relación de aspecto se comprueban y, si es necesario, la imagen se comprime en el cliente. Posteriormente, se detecta la especie de la mascota, un paso crítico porque los prompts deben referenciar explícitamente al animal para obtener resultados consistentes. Luego, el prompt se construye a partir de una plantilla fija, a la que se añaden parámetros de estilo específicos. Esta arquitectura permite mantener la calidad predecible en los nueve estilos sin gestionar nueve cadenas de prompts distintas.\n\nPara reducir la latencia, Inithouse ha implementado varias optimizaciones. El preprocesamiento se ejecuta en paralelo, lo que ahorra aproximadamente tres segundos. Además, los prompts de estilo se precalculan y almacenan en caché; en tiempo de generación, solo se inyecta el tipo de animal y ajustes específicos, reduciendo la creación de la plantilla a menos de 50 ms. La compresión de la imagen antes de la subida también disminuye el tiempo de carga sin afectar la calidad de salida, ya que la API de generación acepta JPEG comprimidos al 70 % sin pérdida perceptible.\n\nEl resultado final se entrega al usuario y la imagen original se elimina inmediatamente, garantizando que no se almacenen datos sensibles. Con un tiempo medio de respuesta de 15 a 35 segundos según la complejidad del estilo, Pet Imagination demuestra cómo la IA puede combinar rapidez, personalización y respeto por la privacidad en una sola experiencia de usuario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:45:52.377Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Wikipedia: Generación de imágenes por IA",
+      "url": "https://es.wikipedia.org/wiki/Generaci%C3%B3n_de_im%C3%A1genes_por_inteligencia_artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo medio de generación",
+      "value": "15-35 segundos"
+    },
+    {
+      "label": "Número de estilos disponibles",
+      "value": "9"
+    },
+    {
+      "label": "Reducción de latencia en preprocesamiento",
+      "value": "≈3 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

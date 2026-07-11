@@ -1,0 +1,72 @@
+{
+  "id": "d8fab2ad7a1d0d430e237a7a3c1755ce22195c506c142f03f2e73a560450e5b6",
+  "title": "Hackers explotan una vulnerabilidad crítica en Adobe ColdFusion con puntuación máxima de riesgo",
+  "summary": "Se han detectado ataques activos que aprovechan una falla crítica recientemente parcheada en Adobe ColdFusion, con una puntuación CVSS de 10/10, representando un riesgo inminente para sistemas empresariales.",
+  "url": "https://www.securityweek.com/critical-adobe-coldfusion-vulnerability-exploited-in-attacks",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-07T12:38:34.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Hackers explotan una vulnerabilidad crítica en Adobe ColdFusion con puntuación máxima de riesgo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se han detectado ataques activos que aprovechan una falla crítica recientemente parcheada en Adobe ColdFusion, con una puntuación CVSS de 10/10, representando un riesgo inminente para sistemas empresariales.",
+  "keyPoints": [
+    "La vulnerabilidad CVE-2026-48282 en Adobe ColdFusion tiene una puntuación CVSS de 10/10, el nivel máximo de severidad.",
+    "Ataques en curso están explotando activamente esta falla, permitiendo acceso remoto no autorizado a servidores.",
+    "Adobe ya lanzó un parche de seguridad, pero muchos sistemas permanecen sin actualizar, exponiendo datos sensibles.",
+    "ColdFusion es ampliamente usado en entornos empresariales, lo que amplifica el impacto potencial de estos ciberataques."
+  ],
+  "whyMatters": "Esta vulnerabilidad representa una amenaza crítica para la seguridad de innumerables organizaciones que dependen de Adobe ColdFusion para sus aplicaciones web y servicios internos. La explotación activa antes de la aplicación generalizada de parches aumenta el riesgo de filtraciones de datos, robo de información confidencial y compromiso de infraestructuras críticas. Los equipos de seguridad deben priorizar la actualización inmediata y revisar sus sistemas en busca de indicadores de compromiso, ya que los actores maliciosos suelen capitalizar estas ventanas de oportunidad con gran rapidez.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "alt": "Hackers explotan una vulnerabilidad crítica en Adobe ColdFusion con puntuación máxima de riesgo",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#AdobeColdFusion",
+    "#CVE202648282",
+    "#Ciberseguridad",
+    "#VulnerabilidadCritica"
+  ],
+  "fullArticle": "Una vulnerabilidad crítica en Adobe ColdFusion, identificada como CVE-2026-48282, está siendo explotada activamente por hackers en todo el mundo. Con una puntuación CVSS de 10/10, esta falla permite a los atacantes ejecutar código remoto en servidores afectados, comprometiendo la confidencialidad, integridad y disponibilidad de los sistemas. Aunque Adobe emitió un parche de seguridad, la explotación en tiempo real subraya la urgencia de aplicar actualizaciones de inmediato.\n\nColdFusion, una plataforma popular para el desarrollo de aplicaciones web empresariales, es el vector de ataque, lo que convierte a esta vulnerabilidad en una preocupación mayúscula para sectores como finanzas, salud y gobierno. La capacidad de los ciberdelincuentes para infiltrarse en servidores sin autenticación previa eleva el riesgo de filtraciones masivas y operaciones de ransomware. Se recomienda a los administradores revisar sus entornos, implementar medidas de mitigación temporales y monitorear actividades sospechosas mientras completan la actualización.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T04:50:33.820Z",
+  "links": [
+    {
+      "title": "Artículo original en SecurityWeek",
+      "url": "https://www.securityweek.com/critical-adobe-coldfusion-vulnerability-exploited-in-attacks/"
+    },
+    {
+      "title": "Entrada en el NVD para CVE-2026-48282",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48282"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Identificador CVE",
+      "value": "CVE-2026-48282"
+    },
+    {
+      "label": "Puntuación CVSS",
+      "value": "10/10"
+    },
+    {
+      "label": "Estado de explotación",
+      "value": "Activa en ataques reales"
+    },
+    {
+      "label": "Año de publicación",
+      "value": "2026"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

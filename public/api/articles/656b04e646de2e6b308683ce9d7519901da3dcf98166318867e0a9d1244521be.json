@@ -1,0 +1,77 @@
+{
+  "id": "656b04e646de2e6b308683ce9d7519901da3dcf98166318867e0a9d1244521be",
+  "title": "Momentic abandona PostgreSQL por ClickHouse y escala su caché a 20.000 millones de entradas sin sacrificar velocidad",
+  "summary": "Momentic, plataforma de pruebas de software con IA, migró su sistema de caché de PostgreSQL a ClickHouse para superar limitaciones de rendimiento al crecer de 80.000 a 1.000 millones de entradas. La nueva arquitectura, basada en índices primarios dispersos y vistas materializadas, permite manejar 2 millones de consultas diarias con latencia promedio de 250 ms, eliminando además la capa de Redis.",
+  "url": "https://www.infoq.com/news/2026/07/momentic-postgres-clickhouse",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-07T20:00:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/rust-autonomous-mobile-robots/en/smallimage/andy-brinkmeyer-thumbnail-1782817486635.jpeg",
+  "imageAlt": "Momentic abandona PostgreSQL por ClickHouse y escala su caché a 20.000 millones de entradas sin sacrificar velocidad",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Momentic, plataforma de pruebas de software con IA, migró su sistema de caché de PostgreSQL a ClickHouse para superar limitaciones de rendimiento al crecer de 80.000 a 1.000 millones de entradas. La nueva arquitectura, basada en índices primarios dispersos y vistas materializadas, permite manejar 2 millones de consultas diarias con latencia promedio de 250 ms, eliminando además la capa de Redis.",
+  "keyPoints": [
+    "El crecimiento explosivo de la caché, de 80.000 a 1.000 millones de entradas, generó contención de locks y alto consumo de recursos en PostgreSQL.",
+    "ClickHouse, con índices primarios dispersos, reduce las búsquedas a unos pocos granos de datos, mejorando la eficiencia a escala.",
+    "El rediseño de consultas a operaciones de INSERT con ReplacingMergeTree permitió eliminar Redis y simplificar significativamente la arquitectura.",
+    "La migración gradual con doble escritura y consultas sombra garantizó cero errores, escalando a 20.000 millones de entradas."
+  ],
+  "whyMatters": "Este caso de estudio demuestra que la elección de la arquitectura de base de datos es crítica para el crecimiento exponencial de las empresas tecnológicas. Momentic no solo resolvió una limitación inmediata de rendimiento, sino que simplificó su stack eliminando capas intermedias como Redis, reduciendo costos y complejidad operativa. La estrategia de migración segura, con tráfico en sombra y rollback gradual, establece un patrón replicable para otras organizaciones que enfrentan desafíos similares de escalabilidad. Además, subraya la importancia de adaptar el modelo de datos al acceso real, como lo lograron con la clave primaria compuesta y las vistas materializadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/rust-autonomous-mobile-robots/en/smallimage/andy-brinkmeyer-thumbnail-1782817486635.jpeg",
+      "alt": "Switching from PostgreSQL to ClickHouse for Improved Performance and Scalability",
+      "caption": "Practical Robustness: Going Beyond Memory Safety in Rust"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#PostgreSQL",
+    "#ClickHouse",
+    "#Momentic",
+    "#ArquitecturaDeDatos",
+    "#Escalabilidad"
+  ],
+  "fullArticle": "Momentic, la compañía detrás de una plataforma de pruebas de software impulsada por IA, enfrentó un crecimiento exponencial en su sistema de caché que expuso las limitaciones de PostgreSQL. La tabla pasó de 80.000 a 1.000 millones de entradas, generando contención de locks y un consumo desmedido de recursos bajo una carga intensiva de lecturas y escrituras. Con 600.000 consultas diarias y el requisito de latencia sub-segundo, la empresa inició la migración a ClickHouse, una base de datos columnar que prometía escalar sin degradar el rendimiento.\n\nLa clave del éxito residió en el diseño de la clave primaria, que combina test ID, step ID, versión de Momentic, rama Git y timestamp de commit. Esta estructura permite a ClickHouse, mediante índices primarios dispersos, narrowing a un número reducido de 'granos' de datos, evitando que el costo de consulta crezca con el volumen. Para las ramas principales, donde las búsquedas podían abarcar miles de entradas, Momentic implementó vistas materializadas que precomputan los timestamps disponibles por test ID, saltando directamente a la partición correcta. Además, reemplazó tres consultas separadas por un flujo de INSERTs con ReplacingMergeTree, que gestiona la deduplicación asíncrona, y eliminó por completo la capa de Redis, que había perdido utilidad por la alta cardinalidad de las claves.\n\nLa migración se ejecutó en paralelo: mientras PostgreSQL servía el tráfico productivo, ClickHouse recibía consultas sombra cuyos resultados se comparaban para garantizar la corrección. Tras validar la consistencia, el tráfico se trasladó gradualmente, manteniendo doble escritura durante un periodo para permitir rollback seguro. El resultado fue una caché de 20.000 millones de entradas que soporta más de 2 millones de consultas diarias con una latencia promedio de 250 ms, consolidando una arquitectura robusta y preparada para el crecimiento continuo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T20:13:45.117Z",
+  "links": [
+    {
+      "title": "Artículo original en InfoQ",
+      "url": "https://www.infoq.com/articles/postgresql-clickhouse-migration/"
+    },
+    {
+      "title": "Documentación oficial de ClickHouse",
+      "url": "https://clickhouse.com/docs"
+    },
+    {
+      "title": "Sitio web de Momentic",
+      "url": "https://www.momentic.io"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Entradas en caché tras la migración",
+      "value": "20.000 millones"
+    },
+    {
+      "label": "Consultas diarias manejadas",
+      "value": "2 millones"
+    },
+    {
+      "label": "Latencia promedio de respuesta",
+      "value": "250 ms"
+    },
+    {
+      "label": "Crecimiento de entradas antes de migrar",
+      "value": "De 80.000 a 1.000 millones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,73 @@
+{
+  "id": "53bdaf9813b5685c24a555f8a1eea2b6fbe9d53cfe0796f876b0ffae7ec367f4",
+  "title": "BrewCore revoluciona el espresso casero con IA y serverless en Vercel",
+  "summary": "Un desarrollador crea BrewCore, una app full‑stack que combina Next.js 15, Vercel, DynamoDB y Amazon Bedrock para registrar, analizar y mejorar cada shot de espresso en casa mediante IA.",
+  "url": "https://dev.to/himaatluri/building-brewcore-espresso-tracking-on-vercel-dynamodb-and-amazon-bedrock-3hmf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T23:36:29.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0def2299ntaoltplio2b.png",
+  "imageAlt": "BrewCore revoluciona el espresso casero con IA y serverless en Vercel",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador crea BrewCore, una app full‑stack que combina Next.js 15, Vercel, DynamoDB y Amazon Bedrock para registrar, analizar y mejorar cada shot de espresso en casa mediante IA.",
+  "keyPoints": [
+    "BrewCore trata el espresso como un instrumento de precisión, registrando gramaje, tiempo y presión para cada taza.",
+    "La arquitectura usa ocho tablas DynamoDB optimizadas para búsquedas O(1) y evita escaneos costosos.",
+    "El asistente de IA consulta el historial del usuario mediante el modelo nova‑micro de Amazon Bedrock para sugerir ajustes.",
+    "Todo se despliega sin gestionar infraestructura gracias a Vercel y AWS SDK v3 en Server Actions."
+  ],
+  "whyMatters": "BrewCore muestra cómo el enfoque serverless y la IA pueden aplicarse a nichos cotidianos como el café de especialidad, transformando un hobby en una práctica basada en datos. Al demostrar que incluso un proceso tan artesanal como el espresso puede beneficiarse de análisis en tiempo real y recomendaciones automatizadas, abre la puerta a otras aplicaciones domesticas de bajo costo pero alto impacto. Además, el proyecto sirve como caso de estudio para desarrolladores que buscan combinar Next.js, DynamoDB y Bedrock en soluciones reales y escalables.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0def2299ntaoltplio2b.png",
+      "alt": "Imagen de portada que muestra la interfaz de BrewCore con gráficos de extracción de espresso",
+      "caption": "Portada del artículo: Building BrewCore: Espresso Tracking on Vercel, DynamoDB, and Amazon Bedrock"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#BrewCore",
+    "#Vercel",
+    "#AmazonBedrock",
+    "#DynamoDB",
+    "#NextJS"
+  ],
+  "fullArticle": "El espresso casero siempre ha sido un equilibrio delicado entre arte y ciencia. Los baristas caseros anotan el peso del café, el tiempo de extracción y la presión en notas adhesivas o en su memoria, lo que dificulta aprender de los errores cuando un shot sale ácido o amargo. Este vacío de datos fue la inspiración detrás de BrewCore, una aplicación presentada en el H0 Hackathon que busca tratar cada preparación como un experimento medible y reproducible.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0def2299ntaoltplio2b.png]\n\nBrewCore está construido con un stack totalmente serverless: el frontend es una PWA responsive desarrollada en Next.js 15 y alojada en Vercel, donde todas las interacciones del usuario se gestionan mediante Server Actions que se comunican directamente con AWS. La autenticación se delega a Amazon Cognito a través del SDK de Amplify, garantizando tokens seguros sin necesidad de un backend tradicional. Para la persistencia, el proyecto emplea ocho tablas DynamoDB diseñadas específicamente para los patrones de acceso de la interfaz, logrando búsquedas O(1) mediante claves primarias y Global Secondary Indexes, evitando así los costosos escaneos típicos de bases de datos relacionales.\n\nLa verdadera innovación aparece cuando el usuario solicita ayuda para \"dial‑in\" su máquina. En ese momento, la app recopila el historial de preparaciones del usuario y lo envía al modelo nova‑micro de Amazon Bedrock mediante su API Converse. El modelo, entrenado para comprender patrones de generación de texto, devuelve recomendaciones concretas sobre ajuste de molienda, temperatura o tiempo, basándose únicamente en los datos históricos del propio usuario. Este enfoque elimina la necesidad de bases de datos relacionales pesadas y muestra cómo una IA ligera puede ofrecer valor inmediato en un dominio tan específico como el café.\n\nMás allá del hackathon, BrewCore plantea una visión más amplia: la posibilidad de aplicar técnicas de IA y computación sin servidor a actividades cotidianas que hasta ahora se han gestionado de forma intuitiva. Al transformar el ritual del espresso en un flujo de datos accionables, el proyecto no solo mejora la calidad de la taza en casa, sino que también inspira a otros desarrolladores a pensar en cómo la analítica y la IA pueden enriquecer experiencias aparentemente simples, desde la cocina hasta el cuidado personal.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T00:12:56.598Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/yourusername/building-brewcore-espresso-tracking-on-vercel-dynamodb-and-amazon-bedrock-XXXX"
+    },
+    {
+      "title": "Documentación de Amazon Bedrock",
+      "url": "https://aws.amazon.com/bedrock/"
+    },
+    {
+      "title": "Guía de Next.js 15 Server Actions",
+      "url": "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de tablas DynamoDB utilizadas",
+      "value": "8"
+    },
+    {
+      "label": "Modelo de IA empleado para recomendaciones",
+      "value": "nova-micro"
+    },
+    {
+      "label": "Tiempo estimado de desarrollo durante el hackathon",
+      "value": "24 horas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

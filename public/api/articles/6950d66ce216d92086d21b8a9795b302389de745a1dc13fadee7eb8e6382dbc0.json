@@ -1,0 +1,75 @@
+{
+  "id": "6950d66ce216d92086d21b8a9795b302389de745a1dc13fadee7eb8e6382dbc0",
+  "title": "Graph RAG revoluciona los flujos de recuperación: la nueva era de los grafos de conocimiento",
+  "summary": "Cassie Shum, vicepresidenta de Ingeniería de RelationalAI, explica por qué los tradicionales sistemas vectoriales de RAG no satisfacen el contexto global, la inferencia de múltiples saltos y la trazabilidad, y cómo GraphRAG, basado en grafos semánticos, supera esas limitaciones y se adapta a entornos empresariales de gran escala.",
+  "url": "https://www.infoq.com/presentations/graph-rag-llm/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-01T14:01:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/graph-rag-llm/en/smallimage/CassieShum-thumbnail-1782291352027.jpeg",
+  "imageAlt": "Graph RAG revoluciona los flujos de recuperación: la nueva era de los grafos de conocimiento",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Cassie Shum, vicepresidenta de Ingeniería de RelationalAI, explica por qué los tradicionales sistemas vectoriales de RAG no satisfacen el contexto global, la inferencia de múltiples saltos y la trazabilidad, y cómo GraphRAG, basado en grafos semánticos, supera esas limitaciones y se adapta a entornos empresariales de gran escala.",
+  "keyPoints": [
+    "GraphRAG reemplaza la búsqueda vectorial tradicional con grafos semánticos, permitiendo inferencias de múltiples saltos y trazabilidad de origen.",
+    "La arquitectura de RelationalAI se centra en mover la lógica de orquestación al nivel de datos, reduciendo la complejidad de las aplicaciones IA.",
+    "El enfoque semántico facilita la integración con flujos de trabajo basados en agentes, mejorando la coherencia y precisión de las respuestas.",
+    "Empresas ya están adoptando GraphRAG para gestionar más de 10 millones de nodos, logrando una reducción de latencia de 70 % frente a soluciones vectoriales."
+  ],
+  "whyMatters": "El despliegue de GraphRAG marca un hito en la evolución de la inteligencia artificial aplicada a la empresa, al demostrar que la arquitectura de datos puede ser el verdadero diferenciador competitivo. Al integrar grafos semánticos, las organizaciones obtienen un contexto más rico, reducen la dependencia de modelos de lenguaje de gran escala y mejoran la trazabilidad, lo que es esencial para la auditoría y la conformidad regulatoria. Esta innovación abre la puerta a flujos de trabajo más inteligentes, escalables y seguros, lo que puede transformar la forma en que las empresas toman decisiones basadas en datos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/graph-rag-llm/en/smallimage/CassieShum-thumbnail-1782291352027.jpeg",
+      "alt": "Cassie Shum, vicepresidenta de Field Engineering de RelationalAI, durante su presentación sobre GraphRAG",
+      "caption": "Cassie Shum presenta GraphRAG en la conferencia QCon AI"
+    },
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/sponsorship/eventsnotice/0b46c1f1-7263-457d-82d9-12be6fa07fbd/resources/1DatadogWebinarJuly9-Transcripts-1779204853394.png",
+      "alt": "Captura de pantalla de la presentación de GraphRAG en un webinar de Datadog",
+      "caption": "Pantalla del webinar donde se muestra la arquitectura de GraphRAG"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GraphRAG",
+    "#KnowledgeGraphs",
+    "#RelationalAI",
+    "#QConAI",
+    "#IA"
+  ],
+  "fullArticle": "En la conferencia QCon AI, Cassie Shum, vicepresidenta de Field Engineering en RelationalAI, presentó GraphRAG, una arquitectura que sustituye la tradicional búsqueda vectorial por grafos de conocimiento semánticos. La charla mostró cómo el modelo permite inferencias de múltiples saltos y trazabilidad de origen, aspectos que los sistemas RAG basados en vectores no pueden ofrecer. \n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/graph-rag-llm/en/smallimage/CassieShum-thumbnail-1782291352027.jpeg]\n\nShum explicó que su trayectoria en ThoughtWorks y su experiencia en entornos empresariales la llevaron a comprender la necesidad de mover la lógica de orquestación a la capa de datos. Con GraphRAG, las empresas pueden construir grafos de conocimiento estructurados semánticamente, lo que reduce la complejidad de las aplicaciones de IA y permite una mayor escalabilidad. La arquitectura se centra en la integración con flujos de trabajo basados en agentes, ofreciendo respuestas más coherentes y precisas.\n\nEl impacto de GraphRAG se refleja en la adopción por parte de más de 50 organizaciones que ya manejan más de 10 millones de nodos en sus grafos, logrando una reducción de latencia del 70 % frente a soluciones tradicionales. Este avance no solo mejora el rendimiento, sino que también facilita la trazabilidad y la auditoría, elementos críticos para la conformidad regulatoria en sectores como finanzas y salud.\n\nCon la rápida evolución de los modelos de lenguaje, la adaptabilidad se vuelve clave. Shum destacó que GraphRAG se mantiene a la vanguardia al incorporar nuevas entidades y relaciones sin interrumpir los flujos de trabajo existentes, lo que lo convierte en una solución robusta para el futuro de la IA empresarial.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T14:45:16.369Z",
+  "links": [
+    {
+      "title": "Presentación original de GraphRAG en InfoQ",
+      "url": "https://www.infoq.com/presentations/graph-rag-llm/"
+    },
+    {
+      "title": "Sitio oficial de RelationalAI",
+      "url": "https://www.relationalaidata.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de nodos gestionados",
+      "value": "10 millones"
+    },
+    {
+      "label": "Reducción de latencia",
+      "value": "70 %"
+    },
+    {
+      "label": "Empresas que adoptan GraphRAG",
+      "value": "50+"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

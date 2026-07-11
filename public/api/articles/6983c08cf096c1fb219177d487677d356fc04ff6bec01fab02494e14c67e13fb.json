@@ -1,0 +1,72 @@
+{
+  "id": "6983c08cf096c1fb219177d487677d356fc04ff6bec01fab02494e14c67e13fb",
+  "title": "Google apaga la API de Tenor: se desmoronan los selectores de GIF de X, Discord y WhatsApp",
+  "summary": "Google cerró definitivamente la API de Tenor el 1 de julio de 2024, dejando sin funcionamiento los selectores de GIF de plataformas como X, Discord, WhatsApp y Bluesky que dependían de este servicio. La librería de Tenor.com y las integraciones en productos de Google como Gboard o Mensajes siguen operativas sin cambios.",
+  "url": "https://tech.slashdot.org/story/26/06/30/2131216/google-pulls-the-plug-on-tenor-api-killing-gif-pickers-around-the-web?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "publishedAt": "2026-07-01T03:20:20.261Z",
+  "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Google apaga la API de Tenor: se desmoronan los selectores de GIF de X, Discord y WhatsApp",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Google cerró definitivamente la API de Tenor el 1 de julio de 2024, dejando sin funcionamiento los selectores de GIF de plataformas como X, Discord, WhatsApp y Bluesky que dependían de este servicio. La librería de Tenor.com y las integraciones en productos de Google como Gboard o Mensajes siguen operativas sin cambios.",
+  "keyPoints": [
+    "Google clausuró definitivamente la API de Tenor el 1 de julio de 2024, tras rechazar nuevas altas de desarrolladores desde enero de este año.",
+    "Plataformas como X, Discord, WhatsApp y Bluesky, que usaban la API para sus selectores de GIF, se vieron obligadas a migrar a proveedores alternativos.",
+    "El responsable de Producto de X confirmó que la migración explica la purga de la sección de 'GIFs usados recientemente' y la reducción de opciones disponibles.",
+    "La librería pública de Tenor en su sitio web y las integraciones nativas en productos de Google permanecen activas sin modificaciones."
+  ],
+  "whyMatters": "El cierre de la API de Tenor expone la fragilidad de los servicios digitales que dependen de proveedores terceros dominantes, generando interrupciones masivas en la experiencia de usuario de plataformas con miles de millones de usuarios. A futuro, este suceso impulsará a las grandes tecnológicas a desarrollar sus propias soluciones de integración de contenido multimedia o a diversificar sus proveedores para evitar riesgos de dependencia, reconfigurando el ecosistema de APIs de contenido en internet. Además, la reducción de opciones de GIF en redes sociales y aplicaciones de mensajería masivas genera un debate sobre la estandarización de servicios de contenido y la responsabilidad de los proveedores al retirar soporte a servicios ampliamente adoptados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+      "alt": "Google apaga la API de Tenor: se desmoronan los selectores de GIF de X, Discord y WhatsApp",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Google",
+    "#Tenor",
+    "#API",
+    "#Discord"
+  ],
+  "fullArticle": "Google confirmó esta semana el cierre definitivo de la API de Tenor, el popular servicio de búsqueda y distribución de GIFs que la compañía adquirió en 2022, dejando sin funcionamiento a decenas de integraciones en plataformas de todo el mundo que dependían de esta herramienta para ofrecer a sus usuarios acceso a contenido animado. La medida, que ya se anticipaba desde enero de este año cuando la compañía dejó de aceptar nuevas solicitudes de acceso a la API, se hizo efectiva el pasado 1 de julio, fecha límite establecida para la desactivación total de todos los puntos de conexión activos. Según se detalla en la página de soporte de Tenor, todos los acuerdos de distribución de API y publicidad asociados al servicio fueron terminados el 30 de junio, culminando un proceso de desmantelamiento que sorprendió a numerosos desarrolladores que no contaban con alternativas listas para implementar.\n\nEl impacto más visible se ha sentido en plataformas de uso masivo que integraban el selector de GIFs de Tenor como parte de sus funcionalidades de publicación, entre las que destacan X (antes Twitter), Discord, WhatsApp y la red social Bluesky. El responsable de Producto de X, Nikita Bier, confirmó públicamente que la plataforma ya migró a un proveedor alternativo de GIFs, lo que explica la purga de la sección de 'GIFs usados recientemente' que muchos usuarios notaron en las últimas semanas, así como la reducción en el catálogo de opciones disponibles al momento de publicar contenido. En el caso de Discord y WhatsApp, ambas plataformas propiedad de Meta, aún no se han emitido declaraciones oficiales sobre la migración, aunque usuarios de todo el mundo han reportado fallos en la funcionalidad de búsqueda de GIFs desde el 1 de julio.\n\nCabe aclarar que el cierre solo afecta a la API de acceso para desarrolladores y plataformas externas: la librería de GIFs alojada en el sitio web Tenor.com sigue operativa sin cambios, al igual que las integraciones nativas dentro de los productos de Google, como el teclado Gboard, la aplicación de Mensajes de Google y otras herramientas de la compañía. Esta decisión se enmarca en una estrategia de Google de reestructurar su cartera de servicios de contenido multimedia, enfocándose en las integraciones internas y abandonando el soporte a desarrolladores externos que no generan ingresos directos significativos para la compañía. Expertos en desarrollo de plataformas señalan que este tipo de movidas por parte de grandes tecnológicas generan una dependencia riesgosa para los servicios que se construyen sobre sus APIs, obligando a los equipos de ingeniería a mantener planes de contingencia para evitar interrupciones en la experiencia de usuario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T03:22:48.341Z",
+  "links": [
+    {
+      "title": "Noticia original del cierre de la API de Tenor en Slashdot",
+      "url": "https://tech.slashdot.org/story/26/06/30/2131216/google-pulls-the-plug-on-tenor-api-killing-gif-pickers-around-the-web"
+    },
+    {
+      "title": "Reporte de 9to5Google sobre el cierre de la API de Tenor",
+      "url": "https://9to5google.com/2024/06/30/tenor-api-shut-down/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de cierre definitivo de la API",
+      "value": "1 de julio de 2024"
+    },
+    {
+      "label": "Fecha de finalización de acuerdos de API y publicidad",
+      "value": "30 de junio de 2024"
+    },
+    {
+      "label": "Fecha de rechazo de nuevas altas a la API",
+      "value": "Enero de 2024"
+    },
+    {
+      "label": "Plataformas afectadas confirmadas",
+      "value": "X, Discord, WhatsApp, Bluesky"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

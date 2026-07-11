@@ -1,0 +1,72 @@
+{
+  "id": "6e1929418ffd9766640de45621608e43fe927ce75d5a750b9941492db20f94fb",
+  "title": "Hicimos una recepcionista de IA: lo más difícil no era hacerla sonar como una persona",
+  "summary": "Un equipo desarrolló Ava, una inteligencia artificial recepcionista para clínicas dentales, descubriendo que el mayor reto no es la naturalidad de la voz, sino la comprensión del habla real, el manejo de silencios en llamadas y evitar respuestas erróneas que dañen la reputación del negocio.",
+  "url": "https://dev.to/syednoor760dev/we-built-an-ai-receptionist-the-hard-part-wasnt-making-it-sound-human-1le1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T19:19:45.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0ax8grort5ywwmylrp4p.png",
+  "imageAlt": "Hicimos una recepcionista de IA: lo más difícil no era hacerla sonar como una persona",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un equipo desarrolló Ava, una inteligencia artificial recepcionista para clínicas dentales, descubriendo que el mayor reto no es la naturalidad de la voz, sino la comprensión del habla real, el manejo de silencios en llamadas y evitar respuestas erróneas que dañen la reputación del negocio.",
+  "keyPoints": [
+    "El equipo desarrolló Ava, una IA recepcionista para atender llamadas fuera de horario en clínicas dentales y reservar citas sin intervención humana.",
+    "La naturalidad de la voz de Ava no supuso un reto, ya que los motores actuales generan voces cálidas indistinguibles de una persona en los primeros segundos.",
+    "Los verdaderos obstáculos fueron la comprensión del habla coloquial, los acentos, las pausas y evitar respuestas erróneas que dañen la confianza del cliente.",
+    "El mayor aprendizaje fue enseñar a la IA a reconocer los límites de su conocimiento y abstenerse de responder cuando no tiene la información correcta."
+  ],
+  "whyMatters": "Este desarrollo marca un punto de inflexión en la adopción de agentes de IA para atención al cliente, ya que demuestra que la confianza del usuario no depende de la naturalidad de la interfaz, sino de la fiabilidad de las respuestas. Para pequeños y medianos negocios, herramientas como Ava suponen una oportunidad para ampliar su horario de atención sin incurrir en costes de personal adicional, siempre que se implementen con salvaguardas que eviten errores que dañen su reputación. A largo plazo, el criterio de 'restricción' que aplicaron los desarrolladores sentará un precedente para el diseño de agentes autónomos en sectores regulados como la sanidad o los servicios financieros, donde un error puede tener consecuencias graves para los usuarios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0ax8grort5ywwmylrp4p.png",
+      "alt": "Ilustración de portada del artículo sobre la recepcionista de IA Ava, con un teléfono y elementos de interfaz de voz",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AvaIA",
+    "#IAParaNegocios",
+    "#AgentesAutonomosIA",
+    "#DesarrollodeIA"
+  ],
+  "fullArticle": "La escena se repite cada noche en cientos de pequeños negocios: son las 20:40 de un martes, la clínica dental ya está cerrada, la recepción está a oscuras y suena el teléfono. Al otro lado de la línea, un paciente nuevo quiere reservar una limpieza, pero la llamada se pierde en el buzón de voz, y el usuario termina llamando a la competencia. Un equipo de desarrolladores quiso probar qué pasaba si alguien contestaba en ese horario, así que crearon Ava: una inteligencia artificial que responde el teléfono, mantiene conversaciones naturales y reserva citas de forma autónoma, sin necesidad de intervención humana.\n\nLa suposición inicial era que el mayor reto sería hacer que la voz de Ava sonara lo suficientemente humana como para no ser detectada de inmediato, pero resultó ser la parte más sencilla del proyecto. Hace solo unos años, las voces de las IAs eran planas, robóticas y fácilmente identificables, pero los motores de síntesis de voz actuales generan tonos cálidos y naturales que la mayoría de los usuarios no logran identificar como artificiales en los primeros segundos de conversación. Este hallazgo desmiente la creencia generalizada de que la naturalidad de la voz es el factor determinante para la adopción de estos sistemas: la voz es solo un requisito mínimo, los verdaderos fallos se esconden en el funcionamiento interno del agente, en los detalles que nunca aparecen en los videos de demostración vistosos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0ax8grort5ywwmylrp4p.png]\n\nLas primeras versiones de Ava sonaban perfectamente, pero eran completamente incapaces de entender el habla real de los usuarios: las frases entrecortadas, las pausas, los acentos regionales o las interrupciones hacían que el sistema de reconocimiento de voz captara solo fragmentos de la conversación, interpretara que el usuario había terminado de hablar y diera respuestas completamente erróneas, generando el frustrante bucle de '¿puede repetir, por favor?' que hace que los usuarios prefieran esperar a hablar con una persona. Para solucionarlo, el equipo modificó el motor de reconocimiento de voz y programó a la IA para que esperara una fracción de segundo más antes de dar por finalizada la intervención del usuario, un cambio poco vistoso pero fundamental para pasar de una demo funcional a una herramienta utilizable en entornos reales.\n\nOtro hallazgo inesperado fue que, en el contexto de una llamada telefónica, cualquier silencio de más de un segundo se interpreta automáticamente como una falla en la línea de comunicación. A diferencia de los chats de texto, donde una breve pausa para procesar información no genera molestias, en una conversación telefónica el cerebro del usuario asume que algo va mal en el acto. Por eso, los desarrolladores diseñaron a Ava para que nunca se quedara callada: si necesita tiempo para consultar información en el sistema, dice frases naturales como 'un momento mientras consulto eso', un detalle pequeño que marca la diferencia entre una llamada fluida y una experiencia frustrante para el cliente.\n\nEl riesgo más grave de un agente telefónico de IA no es que suene robótico o forzado, sino que suene perfectamente humano mientras da respuestas completamente erróneas: reserva citas en fechas que no existen, promete descuentos que no están disponibles o da información falsa en nombre del negocio. Un agente que miente o se equivoca con confianza es peor que no tener ningún agente, porque genera daños irreparables en la relación con el cliente cuando el propietario del negocio no está presente para corregir el error. Por eso, el trabajo más importante que realizó el equipo no fue hacer a Ava más inteligente o capaz de realizar más tareas, sino enseñarle restricción: la capacidad de reconocer los límites de su conocimiento y abstenerse de responder cuando no tiene la información correcta. Ninguno de estos detalles aparece en las demostraciones vistosas que se presentan en eventos de tecnología, pero son los que hacen que la herramienta sea lo suficientemente fiable como para dejarla funcionando sin supervisión en un negocio real.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T20:46:33.864Z",
+  "links": [
+    {
+      "title": "Artículo original publicado en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Guía de implementación de agentes de IA para pequeñas empresas",
+      "url": "https://www.pymesyautonomos.com/tecnologia/agentes-ia-para-pymes"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Horario de la llamada de prueba inicial",
+      "value": "20:40 de un martes, fuera del horario de atención de la clínica"
+    },
+    {
+      "label": "Tiempo de silencio máximo tolerado en llamadas sin generar percepción de fallo",
+      "value": "1 segundo"
+    },
+    {
+      "label": "Porcentaje de usuarios que no detectan la voz de Ava como IA en los primeros segundos",
+      "value": "Mayoría de los usuarios"
+    },
+    {
+      "label": "Ajuste clave en el motor de reconocimiento de voz para evitar errores",
+      "value": "Espera de una fracción de segundo adicional antes de dar por finalizada la intervención del usuario"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

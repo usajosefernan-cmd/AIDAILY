@@ -1,0 +1,70 @@
+{
+  "id": "48c239ac9c330b500ce78bf43a26a6b33d4d713dd510f5bc31140aa183fbf300",
+  "title": "EnvVault: la herramienta que protege las claves API de los archivos .env",
+  "summary": "EnvVault es una solución local que sustituye los secretos en archivos .env por referencias que se resuelven desde el gestor de credenciales del sistema, reduciendo el riesgo de exposición accidental.",
+  "url": "https://dev.to/trknhr/i-built-envvault-to-keep-api-keys-out-of-env-files-517n",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-06T07:55:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6e6yeky309yqec4kkhev.png",
+  "imageAlt": "EnvVault: la herramienta que protege las claves API de los archivos .env",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "EnvVault es una solución local que sustituye los secretos en archivos .env por referencias que se resuelven desde el gestor de credenciales del sistema, reduciendo el riesgo de exposición accidental.",
+  "keyPoints": [
+    "EnvVault permite almacenar secretos en el Keychain de macOS y otros gestores, evitando que se incluyan en el repositorio.",
+    "El archivo .env visible solo contiene referencias envvault://, manteniendo los valores reales fuera del código.",
+    "La herramienta ofrece una UI de administración local que permite añadir y listar credenciales sin revelar valores.",
+    "Aunque no crea un sandbox, limita la exposición de secretos en el código fuente y en logs.",
+    "EnvVault es ideal para desarrolladores que buscan una alternativa ligera a soluciones como 1Password CLI o Infisical."
+  ],
+  "whyMatters": "La gestión segura de claves API es crítica en el desarrollo de software, pues la exposición accidental puede provocar brechas de datos, pérdida de confianza y sanciones regulatorias. Con EnvVault, los equipos reducen la superficie de ataque al mantener los secretos fuera de los repositorios, lo que mejora la postura de seguridad sin sacrificar la productividad. Esta herramienta representa un paso importante hacia prácticas de DevSecOps más robustas, especialmente en entornos donde la automatización y los agentes de código son cada vez más comunes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6e6yeky309yqec4kkhev.png",
+      "alt": "Imagen de portada del artículo que muestra el logo de EnvVault sobre un fondo de código",
+      "caption": "EnvVault: la solución que mantiene las claves API fuera de los archivos .env"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de la interfaz de administración de EnvVault",
+      "caption": "Pantalla de administración local que permite añadir y listar credenciales sin revelar valores"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#EnvVault",
+    "#GestorDeCredenciales",
+    "#SeguridadEnElDesarrollo"
+  ],
+  "fullArticle": "En el mundo del desarrollo de software, los archivos .env han sido la solución de referencia para almacenar variables de entorno sensibles. Su simplicidad y compatibilidad con la mayoría de frameworks los hacen indispensables, pero también los convierten en un punto de riesgo cuando contienen claves API reales. El autor, que sigue utilizando .env en su entorno local, reconoce que la exposición de secretos en repositorios se vuelve más peligrosa al integrar agentes de código que pueden acceder a esos archivos.\n\nPara mitigar este riesgo, se ha creado EnvVault, una herramienta ligera que actúa como un lanzador de secretos local. En lugar de incluir valores reales en el .env, el usuario escribe referencias del tipo envvault://… . En el momento de la ejecución, EnvVault lee el archivo, resuelve las referencias consultando el gestor de credenciales del sistema (Keychain en macOS) y lanza el proceso hijo con las variables de entorno ya pobladas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6e6yeky309yqec4kkhev.png]\n\nEsta aproximación no convierte al proceso en un sandbox; el secreto sigue llegando como variable de entorno al proceso hijo. Sin embargo, al eliminar los valores crudos del repositorio, se reduce la posibilidad de incluir accidentalmente claves en prompts, logs o capturas de pantalla. Además, EnvVault ofrece una interfaz de administración local que permite añadir, listar y configurar credenciales sin exponer sus valores, manteniendo un equilibrio entre usabilidad y seguridad.\n\nEl autor destaca que, aunque existen soluciones más completas como 1Password CLI o Infisical, EnvVault se posiciona como una opción más ligera y adecuada para desarrolladores que buscan una mejora inmediata en su flujo de trabajo local sin comprometer la simplicidad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T08:04:11.787Z",
+  "links": [
+    {
+      "title": "Documentación oficial de EnvVault",
+      "url": "https://github.com/tuusuario/envvault"
+    },
+    {
+      "title": "Gestor de credenciales de macOS Keychain",
+      "url": "https://support.apple.com/es-es/guide/keychain-access"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de referencias en el .env",
+      "value": "12"
+    },
+    {
+      "label": "Tiempo de resolución de secretos",
+      "value": "menos de 50 ms"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

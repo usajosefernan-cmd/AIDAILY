@@ -1,0 +1,77 @@
+{
+  "id": "4b53ce239c28f7982fb7d55a45065748add49194e404b332f3056a780935a468",
+  "title": "Rescaté un pool de TrueNAS suspendido sin cambiar ni un disco: la lección que todo administrador de almacenamiento debe conocer",
+  "summary": "Un administrador recuperó un pool de almacenamiento RAIDZ1 de 11 discos en TrueNAS SCALE, que quedó suspendido tras una caída de energía, sin reemplazar ningún disco, al diagnosticar un fallo de ruta compartida en lugar de fallos físicos de discos individuales.",
+  "url": "https://dev.to/jjozzietech/how-i-got-a-suspended-truenas-pool-back-online-without-replacing-a-single-disk-57o4",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T02:54:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvdix7u6jha2y08anzuxw.png",
+  "imageAlt": "Rescaté un pool de TrueNAS suspendido sin cambiar ni un disco: la lección que todo administrador de almacenamiento debe conocer",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un administrador recuperó un pool de almacenamiento RAIDZ1 de 11 discos en TrueNAS SCALE, que quedó suspendido tras una caída de energía, sin reemplazar ningún disco, al diagnosticar un fallo de ruta compartida en lugar de fallos físicos de discos individuales.",
+  "keyPoints": [
+    "Un pool RAIDZ1 de 11 discos en TrueNAS SCALE quedó suspendido tras una caída de energía, con múltiples discos marcados como fallidos y uno como eliminado.",
+    "El patrón de fallo simultáneo de los discos indicaba un problema de ruta compartida (cable SAS, HBA o controladora) en lugar de fallos individuales de los discos.",
+    "La recuperación se realizó sin tocar hardware: se verificó la visibilidad de los discos en el sistema y la estabilidad de los registros del kernel antes de ejecutar zpool clear.",
+    "El error más común en estos casos es ejecutar un scrub de ZFS al inicio del proceso, lo que puede agravar el fallo en lugar de solucionarlo."
+  ],
+  "whyMatters": "Este caso es un referente crítico para administradores de sistemas y almacenamiento en España y Europa, donde muchas pymes y grandes empresas dependen de soluciones de almacenamiento definido por software como TrueNAS para sus cargas de trabajo productivas. La lección de priorizar el diagnóstico de rutas compartidas antes de reemplazar componentes físicos puede ahorrar miles de euros en reemplazos innecesarios de discos y reducir el tiempo de inactividad de servicios críticos. Además, refuerza la importancia de conocer el comportamiento de ZFS en escenarios de fallo post-caída de energía, un suceso cada vez más común por el aumento de tormentas y cortes eléctricos en la región.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvdix7u6jha2y08anzuxw.png",
+      "alt": "Captura de pantalla del estado de un pool de TrueNAS SCALE suspendido tras una caída de energía",
+      "caption": "Imagen de portada del artículo original de Dev.to que ilustra el estado del pool de almacenamiento antes de la recuperación"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#TrueNAS",
+    "#ZFS",
+    "#Almacenamiento",
+    "#AdministracionDeSistemas",
+    "#RAIDZ1"
+  ],
+  "fullArticle": "Tras una caída de energía que afectó a todo el rack de servidores, el administrador del sistema descubrió que uno de los nodos de TrueNAS SCALE tenía un pool de almacenamiento en estado SUSPENDED, con múltiples discos marcados como fallidos y uno como eliminado. El estado inicial del pool, de 11 discos en configuración RAIDZ1, parecía indicar un fallo físico catastrófico en la bandeja de discos o el backplane del servidor.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvdix7u6jha2y08anzuxw.png]\n\nEl punto de inflexión en el diagnóstico fue analizar el patrón de fallo: la caída simultánea de múltiples discos no es común en fallos individuales, sino que apunta a un problema de ruta compartida, como un cable SAS defectuoso, un fallo en el HBA o la controladora de almacenamiento. Antes de ejecutar cualquier comando de recuperación, el administrador verificó que el sistema operativo reconocía todos los discos y que los registros del kernel no mostraban errores recientes de SAS o timeouts, confirmando que la ruta de almacenamiento era estable. Con estas garantías, ejecutó el comando zpool clear para recuperar el pool sin necesidad de reemplazar ni un solo disco, evitando el error común de ejecutar un scrub de ZFS al inicio del proceso, lo que podría haber agravado el fallo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T03:02:34.476Z",
+  "links": [
+    {
+      "title": "Fuente original del artículo en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de TrueNAS sobre gestión de pools",
+      "url": "https://www.truenas.com/docs/scale/scaletutorials/storage/pools/pooloperations/"
+    },
+    {
+      "title": "Guía de recuperación de pools ZFS de Oracle",
+      "url": "https://docs.oracle.com/cd/E19253-01/820-3744-10/gkkup/index.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de discos en el pool RAIDZ1",
+      "value": "11 discos"
+    },
+    {
+      "label": "Tipo de configuración de almacenamiento",
+      "value": "RAIDZ1"
+    },
+    {
+      "label": "Pasos de recuperación ejecutados",
+      "value": "Verificación de visibilidad de discos, revisión de logs del kernel, comando zpool clear"
+    },
+    {
+      "label": "Error común a evitar en recuperación ZFS",
+      "value": "Ejecutar scrub al inicio del proceso"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

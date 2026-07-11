@@ -1,0 +1,73 @@
+{
+  "aiSummary": "Se presentan dos servidores MCP de código abierto y licencia MIT, diseñados para almacenar memoria y contexto de agentes de IA de forma completamente local, sin enviar datos a la nube, ideales para entornos regulados como defensa, salud o finanzas.",
+  "category": "tecnologia",
+  "fullArticle": "La mayoría de las herramientas de memoria y contexto para agentes de inteligencia artificial actuales envían los datos del usuario a servidores en la nube de terceros, una opción inviable para entornos regulados, aislados o para equipos con políticas estrictas de privacidad. Esta limitación ha llevado a un grupo de desarrolladores a crear una alternativa completamente local, basada en servidores MCP de código abierto y licencia MIT, que ejecuta todo el procesamiento en el hardware del propio usuario sin necesidad de conexión a internet.\n\nEl primero de estos desarrollos es Mimir, un binario Rust de apenas 8 megabytes que cifra toda la información en reposo con el estándar AES-256-GCM, sin requerir claves API, descargas de modelos de lenguaje ni acceso a la red en ningún momento, ya que los embeddings necesarios para la búsqueda densa están integrados directamente en el propio binario. Una de sus funcionalidades más innovadoras es su naturaleza bitemporal: cada hecho almacenado incluye una ventana de validez, por lo que los usuarios pueden consultar la memoria 'en un momento concreto del pasado' y actualar datos sin necesidad de borrar el historial completo. La herramienta incluye 43 utilidades MCP y combina búsqueda por SQLite y FTS5 para ofrecer resultados rápidos tanto por palabras clave como por similitud semántica.\n\nEl segundo desarrollo, Perseus, adopta un enfoque distinto para la gestión del contexto: en lugar de que el agente redescubra en cada sesión el estado del repositorio git, los servicios en ejecución y el estado de las pruebas mediante una cadena de llamadas a herramientas, compila toda esta información en un briefing listo para usar en el momento en que se inicia la sesión, lo que garantiza resultados deterministas y estables a nivel de byte: el mismo estado del repositorio siempre genera el mismo contexto compilado.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhel8b2jyh0ibw49irhaa.png]\nLos resultados de rendimiento son notables: en consultas parafraseadas, los embeddings offline integrados en Mimir alcanzan un 91,7% de recuperación en la primera consulta y un 100% en las cinco primeras, frente al 4,2% de la búsqueda por palabras clave naive. Por su parte, Perseus mantiene una cobertura total de respuestas con un tamaño de contexto fijo y determinista, mientras que los sistemas de recuperación aumentada ajustados empiezan a omitir datos en el mismo presupuesto de tokens.\n\nAmbas herramientas son compatibles con cualquier cliente MCP, incluyendo Claude Code, Cursor, Cline o agentes personalizados, y están listadas en el registro oficial de MCP. Sus desarrolladores son transparentes sobre una limitación: el índice FTS5 necesario para la búsqueda rápida por palabras clave se almacena en texto plano, aunque el registro subyacente sí está cifrado en reposo, una decisión que documentan abiertamente en lugar de exagerar sus capacidades de cifrado. Para equipos que necesiten implementar estas soluciones en entornos donde la memoria en la nube no es una opción, los desarrolladores ofrecen proyectos de integración piloto de 2 a 4 semanas, en los que despliegan Mimir y Perseus en el entorno del cliente y demuestran la calidad de recuperación con sus propios datos.",
+  "hashtags": [
+    "#MimirIA",
+    "#PerseusIA",
+    "#AgentesLocales",
+    "#MemoriaDeAgentes",
+    "#MCP"
+  ],
+  "id": "b8296ee5a29e3aaa010a6f8ddb289066b9ae978c826d3179d145b191bb1d7f87",
+  "imageAlt": "Memoria de agentes de IA 100% local: tus datos nunca abandonan tu máquina sin necesidad de nube",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhel8b2jyh0ibw49irhaa.png",
+  "interestingData": [
+    {
+      "label": "Tamaño del binario de Mimir",
+      "value": "~8 MB"
+    },
+    {
+      "label": "Recuperación en primera consulta de Mimir",
+      "value": "91,7%"
+    },
+    {
+      "label": "Recuperación en primeras 5 consultas de Mimir",
+      "value": "100%"
+    },
+    {
+      "label": "Duración de proyectos de integración piloto",
+      "value": "2 a 4 semanas"
+    }
+  ],
+  "keyPoints": [
+    "Los servidores Mimir y Perseus son de código abierto, licencia MIT y funcionan de forma completamente local sin necesidad de acceso a internet.",
+    "Mimir cifra todos los datos en reposo con AES-256-GCM, usa un binario Rust de ~8MB sin necesidad de claves API ni descargas de modelos.",
+    "Perseus compila el contexto de git, servicios y estado de pruebas en un briefing determinista al inicio de cada sesión de agente.",
+    "Ambas herramientas alcanzan un 91,7% de recuperación en la primera consulta con búsqueda densa offline, superando ampliamente la búsqueda por palabras clave."
+  ],
+  "links": [
+    {
+      "title": "Repositorio oficial de Mimir en GitHub",
+      "url": "https://github.com/Perseus-Computing-LLC/mimir"
+    },
+    {
+      "title": "Repositorio oficial de Perseus en GitHub",
+      "url": "https://github.com/Perseus-Computing-LLC/perseus"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Imagen de portada del artículo sobre soluciones de memoria local para agentes de inteligencia artificial",
+      "caption": "Imagen de portada que ilustra la propuesta de memoria y contexto de agentes 100% local sin salida de datos a la nube",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhel8b2jyh0ibw49irhaa.png"
+    }
+  ],
+  "publishedAt": "2026-06-30T21:54:31.000Z",
+  "scrapedAt": "2026-06-30T22:05:38.334Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "Se presentan dos servidores MCP de código abierto y licencia MIT, diseñados para almacenar memoria y contexto de agentes de IA de forma completamente local, sin enviar datos a la nube, ideales para entornos regulados como defensa, salud o finanzas.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Memoria de agentes de IA 100% local: tus datos nunca abandonan tu máquina sin necesidad de nube",
+  "url": "https://dev.to/perseusai/agent-memory-and-context-that-never-leaves-your-machine-44j",
+  "whyMatters": "Esta propuesta soluciona una barrera crítica para la adopción de agentes de IA en sectores altamente regulados como defensa, sanidad, finanzas o legal, donde el envío de datos a la nube está prohibido por normativas de privacidad y seguridad. Al eliminar la dependencia de servicios externos, se reduce la latencia, se mejora el determinismo de las respuestas y se evitan costes asociados a transferencia y almacenamiento en la nube. Además, al ser de código abierto y con benchmarks re-runnables offline, las organizaciones pueden auditar el comportamiento de las herramientas y validar su rendimiento con sus propios datos antes de implementarlas.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

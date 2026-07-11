@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Portal from '../components/Portal.jsx';
+import { getDatesToBuild } from '../lib/sources';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+export async function getStaticPaths() {
+  const dates = getDatesToBuild().map(d => ({ params: { date: d } }));
+  return dates;
+}
+
+const { date } = Astro.params;
+
+let initialArticles = [];
+try {
+  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
+  const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
+  if (Array.isArray(cacheData)) {
+    initialArticles = cacheData.filter(art => {
+      try {
+        return new Date(art.publishedAt || art.published).toISOString().split('T')[0] === date;
+      } catch (e) {
+        return false;
+      }
+    });
+    // Ordenar descendente
+    initialArticles.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
+  }
+} catch (e) {
+  console.error("Error al cargar cache-news.json en [date].astro:", e);
+}
+---
+
+<Layout title={`AIDAILY — Archivo ${date}`} description={`Archivo de noticias del día ${date}.`}>
+  <Portal client:load recentArticles={initialArticles} totalArticlesCount={initialArticles.length} />
+</Layout>

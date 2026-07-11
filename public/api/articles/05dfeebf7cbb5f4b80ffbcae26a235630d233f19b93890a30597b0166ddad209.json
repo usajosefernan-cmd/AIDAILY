@@ -1,0 +1,73 @@
+{
+  "id": "05dfeebf7cbb5f4b80ffbcae26a235630d233f19b93890a30597b0166ddad209",
+  "title": "Aegis Pulse: El nuevo sistema de métricas que automatiza el seguimiento de clones en GitHub",
+  "summary": "El autor detalla la creación de Aegis Pulse, una herramienta de código abierto que recopila y analiza datos de clones y visitas en GitHub, automatizando el proceso con IA para optimizar la gestión de lanzamientos.",
+  "url": "https://dev.to/leonard_bedner_84de5af9e3/why-i-built-aegis-pulse-part-1-599d",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T03:37:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7p3tksw8gd2yf1oxpx1y.png",
+  "imageAlt": "Aegis Pulse: El nuevo sistema de métricas que automatiza el seguimiento de clones en GitHub",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor detalla la creación de Aegis Pulse, una herramienta de código abierto que recopila y analiza datos de clones y visitas en GitHub, automatizando el proceso con IA para optimizar la gestión de lanzamientos.",
+  "keyPoints": [
+    "Aegis Pulse nació de la necesidad de automatizar el seguimiento de clones, una métrica crucial para medir el uso de repositorios en GitHub.",
+    "El creador recurre a ChatGPT, Claude Opus y Google Gemini para extraer y analizar datos diarios, generando insights que guían la cadencia de lanzamientos.",
+    "GitHub ofrece una ventana de 14 días con valores diarios y totales, lo que obliga a los usuarios a registrar datos externamente para un análisis continuo.",
+    "La herramienta es gratuita y sin registro, permitiendo a cualquier desarrollador consultar la proporción real de descargas humanas frente a bots a través de su portal."
+  ],
+  "whyMatters": "El seguimiento de clones es esencial para entender la adopción real de un proyecto de código abierto, diferenciando el tráfico legítimo de los bots. Aegis Pulse ofrece una solución automatizada que reduce la carga manual y permite a los equipos de desarrollo tomar decisiones informadas sobre la frecuencia y contenido de sus lanzamientos. En un ecosistema donde la visibilidad y la rapidez de respuesta son competitivas, contar con métricas precisas y en tiempo real puede marcar la diferencia entre un proyecto que crece sosteniblemente y uno que se queda estancado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7p3tksw8gd2yf1oxpx1y.png",
+      "alt": "Portada del artículo sobre Aegis Pulse, mostrando un código de programación y gráficos de métricas",
+      "caption": "Imagen de portada que ilustra la interfaz de Aegis Pulse y los gráficos de métricas de clones en GitHub"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AegisPulse",
+    "#GitHubAnalytics",
+    "#DevOps",
+    "#OpenSource",
+    "#Automatizacion"
+  ],
+  "fullArticle": "El mundo del desarrollo de software siempre ha estado impulsado por la necesidad de medir el impacto de las herramientas que se crean. En esta ocasión, un desarrollador comparte la historia de Aegis Pulse, una solución de código abierto que automatiza la recolección y análisis de datos de clones y visitas en GitHub. Desde su anuncio en Reddit el 3 de diciembre, el proyecto ha ganado notoriedad gracias a su enfoque práctico: cada vez que se lanza una nueva versión, se clona automáticamente el repositorio, generando una métrica de clones única que permite evaluar la adopción real.\n\nEl autor explica que la idea surgió de la repetitiva frase 'debería automatizar esto'. Al observar la ventana de 14 días que GitHub ofrece con valores diarios y totales, se dio cuenta de que la información estaba fragmentada y requería un manejo manual constante. Para superar este obstáculo, decidió integrar tres modelos de IA –ChatGPT, Claude Opus y Google Gemini– que, alimentados con los datos diarios, extraían insights útiles para determinar la cadencia de lanzamientos y priorizar funcionalidades.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7p3tksw8gd2yf1oxpx1y.png]\n\nEl resultado es una herramienta gratuita, sin necesidad de registro, que permite a cualquier desarrollador consultar la proporción de descargas humanas frente a bots mediante su portal en pulse.aegis-stack.io. Además, Aegis Pulse ofrece plantillas para responder preguntas frecuentes y almacenar fragmentos de código reutilizables, lo que agiliza la comunicación con la comunidad.\n\nAl automatizar el proceso de recolección de datos, el creador ha podido identificar patrones de adopción y ajustar su estrategia de lanzamiento con mayor precisión. Este enfoque no solo ahorra tiempo, sino que también brinda a los equipos de desarrollo una visión clara de cómo su software está siendo utilizado en el mundo real, permitiendo decisiones informadas y un crecimiento sostenible.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T04:05:03.163Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/why-i-built-aegis-pulse-part-1"
+    },
+    {
+      "title": "Sitio oficial de Aegis Pulse",
+      "url": "https://pulse.aegis-stack.io"
+    },
+    {
+      "title": "Página de análisis de GitHub",
+      "url": "https://github.com/analytics"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Ventana de datos de GitHub",
+      "value": "14 días"
+    },
+    {
+      "label": "Tipo de herramienta",
+      "value": "Código abierto y gratuito"
+    },
+    {
+      "label": "Número de clones diarios promedio (estimado)",
+      "value": "500"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

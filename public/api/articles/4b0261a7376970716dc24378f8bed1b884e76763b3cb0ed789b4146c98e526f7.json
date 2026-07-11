@@ -1,0 +1,68 @@
+{
+  "id": "4b0261a7376970716dc24378f8bed1b884e76763b3cb0ed789b4146c98e526f7",
+  "title": "Media Over QUIC (MoQ): el protocolo que unifica la baja latencia de WebRTC y la escalabilidad de DASH",
+  "summary": "Media Over QUIC (MoQ) es un protocolo en estandarización por la IETF que combina la baja latencia de WebRTC para aplicaciones en tiempo real con la escalabilidad de DASH para transmisiones masivas, utilizando QUIC como transporte base y una arquitectura de relays para eliminar la necesidad de CDNs y SFUs.",
+  "url": "https://www.theregister.com/networks/2026/07/08/media-over-quic-can-scale-real-time-streaming-and-carry-the-worlds-vids/5268101",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-07-08T06:01:00.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Media Over QUIC (MoQ): el protocolo que unifica la baja latencia de WebRTC y la escalabilidad de DASH",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Media Over QUIC (MoQ) es un protocolo en estandarización por la IETF que combina la baja latencia de WebRTC para aplicaciones en tiempo real con la escalabilidad de DASH para transmisiones masivas, utilizando QUIC como transporte base y una arquitectura de relays para eliminar la necesidad de CDNs y SFUs.",
+  "keyPoints": [
+    "MoQ se sitúa entre WebRTC (baja latencia para videoconferencias) y DASH (escalabilidad para streaming bajo demanda), combinando lo mejor de ambos protocolos.",
+    "Usa QUIC como transporte base, aprovechando sus flujos ligeros para priorizar paquetes y evitar bloqueos que generen retrasos en transmisiones en tiempo real.",
+    "Su arquitectura de publicación/suscripción con relays replica el contenido sin necesidad de conexiones directas entre emisores y receptores, simplificando la escalabilidad.",
+    "Podría eliminar la dependencia de CDNs y SFUs, reduciendo costos de infraestructura para plataformas de streaming y herramientas de videoconferencia masivas."
+  ],
+  "whyMatters": "MoQ representa un avance estratégico para la industria de la transmisión de contenidos multimedia, ya que resuelve una limitación histórica: la imposibilidad de contar con baja latencia y escalabilidad masiva en un solo protocolo. Su adopción podría reducir drásticamente los costos de infraestructura de plataformas de streaming y herramientas de videoconferencia, al eliminar la necesidad de desplegar CDNs y SFUs especializados. A largo plazo, podría convertirse en el estándar universal para todo tipo de transmisiones de video, desde eventos deportivos en vivo hasta contenidos bajo demanda, democratizando el acceso a transmisiones de alta calidad sin necesidad de inversiones millonarias en infraestructura.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+      "alt": "Media Over QUIC (MoQ): el protocolo que unifica la baja latencia de WebRTC y la escalabilidad de DASH",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#MediaOverQUIC",
+    "#MoQ",
+    "#QUIC",
+    "#Streaming"
+  ],
+  "fullArticle": "El protocolo Media Over QUIC (MoQ), actualmente en fase de estandarización por la IETF, promete resolver una de las grandes limitaciones históricas de la transmisión de video en internet: la imposibilidad de combinar la baja latencia necesaria para aplicaciones en tiempo real con la escalabilidad requerida para llegar a millones de espectadores de forma simultánea. Hasta ahora, las plataformas de videoconferencia como Google Meet, Zoom o Microsoft Teams dependen de WebRTC, un protocolo que ofrece retrasos mínimos pero requiere de complejas redes de nodos de reenvío selectivo (SFUs) para escalar a reuniones con cientos de participantes. Por otro lado, los servicios de streaming bajo demanda como Netflix o YouTube utilizan DASH, un protocolo que se apoya en la infraestructura de redes de distribución de contenido (CDNs) para llegar a millones de usuarios, pero no es capaz de ofrecer la baja latencia necesaria para eventos en vivo o interacciones en tiempo real.\n\nMoQ resuelve esta limitación al construir su arquitectura sobre QUIC, el protocolo de transporte que ya se utiliza para el tráfico HTTP/3, aprovechando sus flujos ligeros e independientes para priorizar los paquetes de mayor importancia y descartar aquellos que generen retrasos innecesarios. En lugar de depender de CDNs o SFUs, MoQ introduce relays que operan bajo un modelo de publicación/suscripción: los emisores publican el contenido en una 'pista' (track) y los relays se encargan de replicarlo a todos los suscriptores, sin necesidad de que ambos grupos establezcan conexiones directas entre sí. Esta aproximación no solo simplifica la infraestructura necesaria para operar servicios de streaming, sino que también reduce los costos de operación y mejora la resiliencia de las transmisiones, especialmente en escenarios de alta demanda como eventos deportivos o conferencias mundiales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T09:14:11.369Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Media Over QUIC en la IETF",
+      "url": "https://www.ietf.org/archive/id/draft-ietf-moq-transport-00.html"
+    },
+    {
+      "title": "Artículo original en The Register",
+      "url": "https://www.theregister.com/2024/05/22/media_over_quic_moq/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tecnologías existentes que complementa",
+      "value": "WebRTC (baja latencia) y DASH (escalabilidad)"
+    },
+    {
+      "label": "Infraestructura que elimina",
+      "value": "CDNs y SFUs de videoconferencia"
+    },
+    {
+      "label": "Mecanismo de control de latencia",
+      "value": "Priorización de flujos ligeros independientes de QUIC"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

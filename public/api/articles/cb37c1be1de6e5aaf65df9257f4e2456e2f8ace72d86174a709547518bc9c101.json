@@ -1,0 +1,69 @@
+{
+  "id": "cb37c1be1de6e5aaf65df9257f4e2456e2f8ace72d86174a709547518bc9c101",
+  "title": "El Secreto de los Decoradores en Python: Solo Son Funciones y Aquí Está la Prueba",
+  "summary": "Un artículo de Dev.to desmitifica el funcionamiento de los decoradores en Python, demostrando que el símbolo @ es solo azúcar sintáctico y que los decoradores son funciones que toman y devuelven funciones, con ejemplos prácticos de ejecución.",
+  "url": "https://dev.to/ameer_abdullah_68d48c8496/decorators-are-just-functions-here-is-proof-5ejh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T07:31:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa10pkrj5bihba0yaq5i1.webp",
+  "imageAlt": "El Secreto de los Decoradores en Python: Solo Son Funciones y Aquí Está la Prueba",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un artículo de Dev.to desmitifica el funcionamiento de los decoradores en Python, demostrando que el símbolo @ es solo azúcar sintáctico y que los decoradores son funciones que toman y devuelven funciones, con ejemplos prácticos de ejecución.",
+  "keyPoints": [
+    "El símbolo @ en Python es azúcar sintáctico que el intérprete convierte en una asignación automática de la función decorada.",
+    "Un decorador es una función que recibe otra función como argumento y devuelve una nueva función, normalmente un wrapper.",
+    "El código dentro del decorador pero fuera del wrapper se ejecuta en el momento de la decoración, no en la llamada a la función.",
+    "Los decoradores apilados se aplican de abajo hacia arriba, envolviendo la función original en capas sucesivas de funcionalidad."
+  ],
+  "whyMatters": "Entender el mecanismo interno de los decoradores es fundamental para cualquier desarrollador Python, ya que estos patrones se usan extensamente en frameworks web como Flask o Django, así como en bibliotecas de automatización y pruebas. Dominar este concepto permite escribir código más limpio, mantenible y predecible, reduciendo errores comunes al depurar funciones decoradas. En el mercado laboral español y europeo, donde la demanda de profesionales con conocimientos avanzados de Python es alta, comprender estos detalles marca la diferencia en entrevistas técnicas y en la calidad de los proyectos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa10pkrj5bihba0yaq5i1.webp",
+      "alt": "Imagen de portada del artículo sobre decoradores en Python",
+      "caption": "Imagen de portada del artículo de Dev.to que explica el funcionamiento interno de los decoradores en Python"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Python",
+    "#Decoradores",
+    "#Programacion",
+    "#DesarrolloWeb",
+    "#Tech"
+  ],
+  "fullArticle": "Los decoradores son uno de los patrones más poderosos y a menudo mal interpretados de Python. Un artículo publicado en Dev.to desvela que su funcionamiento no tiene misterio: el símbolo @ no es más que azúcar sintáctico que Python convierte en una asignación automática. Cuando aplicas un decorador a una función, el intérprete ejecuta internamente una operación del tipo funcion = decorador(funcion), sin necesidad de escribirla explícitamente. Este mecanismo simple es la clave para entender cómo se modifican las funciones sin alterar su código fuente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa10pkrj5bihba0yaq5i1.webp]\n\nEl artículo ilustra el proceso con un ejemplo práctico: un decorador que imprime un mensaje antes y después de llamar a la función original. En este caso, el código fuera del wrapper se ejecuta en el momento de la decoración, mientras que el código dentro del wrapper se ejecuta cada vez que se llama a la función. Además, se explica cómo funcionan los decoradores apilados: cuando usas @bold @italic, primero se aplica italic y luego bold, resultando en un envoltorio anidado que produce <b><i>texto</i></b>. Este conocimiento es esencial para dominar herramientas como FastAPI, donde los decoradores definen rutas y validaciones, y para escribir código más eficiente y legible.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T07:45:36.007Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/username/decorators-are-just-functions-here-is-proof"
+    },
+    {
+      "title": "Documentación oficial de Python sobre decoradores",
+      "url": "https://docs.python.org/3/glossary.html#term-decorator"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Símbolo de decorador en Python",
+      "value": "@"
+    },
+    {
+      "label": "Momento de ejecución del código exterior al wrapper",
+      "value": "Tiempo de decoración"
+    },
+    {
+      "label": "Orden de aplicación de decoradores apilados",
+      "value": "De abajo hacia arriba"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

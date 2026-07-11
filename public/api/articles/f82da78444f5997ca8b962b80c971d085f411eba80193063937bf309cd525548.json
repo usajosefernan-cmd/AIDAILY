@@ -1,0 +1,68 @@
+{
+  "id": "f82da78444f5997ca8b962b80c971d085f411eba80193063937bf309cd525548",
+  "title": "GuardFall: los viejos trucos de inyección de shell burlan las barreras de seguridad de la IA moderna",
+  "summary": "Investigadores de Adversa AI revelan que 10 de 11 agentes de codificación con IA de código abierto fueron vulnerados mediante técnicas de inyección de shell conocidas desde los años 80, evidenciando fallos críticos en las salvaguardias actuales.",
+  "url": "https://dev.to/coridev/guardfall-when-decades-old-shell-injection-tricks-beat-modern-ai-safety-guardrails-1lh1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T05:18:58.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnndbunehbxzsmbhwtgtl.png",
+  "imageAlt": "GuardFall: los viejos trucos de inyección de shell burlan las barreras de seguridad de la IA moderna",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores de Adversa AI revelan que 10 de 11 agentes de codificación con IA de código abierto fueron vulnerados mediante técnicas de inyección de shell conocidas desde los años 80, evidenciando fallos críticos en las salvaguardias actuales.",
+  "keyPoints": [
+    "10 de 11 agentes de codificación con IA de código abierto fueron burlados con técnicas de inyección de shell que datan de los años 80.",
+    "Solo el agente 'Continue' resistió el ataque; los demás permitieron comandos maliciosos sin activar sus sistemas de seguridad.",
+    "La vulnerabilidad GuardFall explota el vacío entre lo que el agente cree ejecutar y lo que el shell interpreta realmente.",
+    "Los investigadores señalan que las comprobaciones de seguridad integradas en el propio agente son insuficientes y se necesita una capa de inspección externa."
+  ],
+  "whyMatters": "GuardFall evidencia que la seguridad de los agentes de IA no depende solo de modelos más avanzados, sino de capas de inspección independientes que no confíen en el propio razonamiento del agente. Esto es crítico para entornos de CI/CD y desarrollo local, donde un comando malicioso puede comprometer infraestructura completa, credenciales y datos sensibles. La industria debe replantearse el diseño de las salvaguardias, priorizando inspecciones externas sobre comprobaciones internas integradas en el modelo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnndbunehbxzsmbhwtgtl.png",
+      "alt": "Imagen de portada del artículo sobre GuardFall",
+      "caption": "Imagen de portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GuardFall",
+    "#InyeccionShell",
+    "#SeguridadIA",
+    "#AgentesIA"
+  ],
+  "fullArticle": "La seguridad de los agentes de inteligencia artificial dedicados a la programación ha sufrido un duro revés. Un equipo de investigadores de Adversa AI ha publicado un estudio en el que demuestra que 10 de los 11 agentes de codificación de código abierto más populares pueden ser burlados mediante técnicas de inyección de shell que tienen décadas de antigüedad. El ataque, bautizado como GuardFall, no utiliza métodos novedosos de jailbreak para modelos de lenguaje ni complejas técnicas de aprendizaje adversarial, sino que se apoya en vectores de ataque clásicos como la sustitución de comandos o la manipulación de la variable $PATH, conocidos desde los años 80.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnndbunehbxzsmbhwtgtl.png]\n\nEl único agente que resistió el ataque fue Continue, mientras que el resto permitió que comandos maliciosos se filtraran a través de sus supuestas barreras de seguridad como si estas no existieran. Lo más preocupante es que la mayoría de estos agentes sí cuentan con sistemas de protección, pero estos fallan al no diferenciar entre la intención semántica del comando y su forma superficial. Los investigadores explican que el ataque GuardFall se aprovecha del lapso temporal entre la verificación de seguridad y la ejecución real del comando por el shell: mientras la capa de inspección ve una instrucción aparentemente benigna, el shell interpreta una versión completamente diferente gracias al uso de metacaracteres, expansión de variables o sustitución de comandos.\n\nEsta vulnerabilidad no es un mero ejercicio académico. Cualquier desarrollador o empresa que utilice agentes de IA en entornos de integración continua, desarrollo local o sistemas que accedan a infraestructura real está expuesto a un riesgo concreto. Un atacante podría, por ejemplo, hacer que un agente ejecute un comando que elimine archivos, exfiltre credenciales o instale malware, todo ello sin activar ninguna alerta. La analogía con inyecciones SQL o inyección de comandos en aplicaciones web es directa, pero con una diferencia clave: el 'víctima' ya no es un script PHP, sino un agente autónomo con acceso al sistema de archivos, la red y, en muchos casos, variables de entorno con credenciales sensibles.\n\nLos investigadores identificaron tres razones principales por las que los agentes fallaron. Primero, las comprobaciones de seguridad se basan en coincidencias de patrones superficiales, no en la intención semántica, por lo que comandos ofuscados mediante sustitución o tuberías pasan desapercibidos. Segundo, muchos agentes confían implícitamente en los argumentos que ellos mismos generan, inspeccionando solo las entradas del usuario, pero no los datos obtenidos de archivos o URLs que pueden estar envenenados. Tercero, la capa de inspección está integrada en el propio bucle de razonamiento del agente, lo que la hace vulnerable a manipulaciones similares a las que afectan a todo el sistema. La solución, según Adversa AI, pasa por implementar capas de inspección externas e independientes que analicen los comandos antes de su ejecución, sin depender del juicio del propio agente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T05:23:12.280Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/adversa_ai/guardfall-when-decades-old-shell-injection-tricks-beat-modern-ai-safety-guardrails-1e0"
+    },
+    {
+      "title": "Información sobre inyección de comandos en OWASP",
+      "url": "https://owasp.org/www-community/attacks/Command_Injection"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Agentes vulnerados",
+      "value": "10 de 11"
+    },
+    {
+      "label": "Antigüedad de las técnicas",
+      "value": "Desde los años 80"
+    },
+    {
+      "label": "Agente resistente",
+      "value": "Continue"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

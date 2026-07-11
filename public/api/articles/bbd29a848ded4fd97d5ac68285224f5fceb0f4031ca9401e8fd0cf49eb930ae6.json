@@ -1,0 +1,75 @@
+{
+  "id": "bbd29a848ded4fd97d5ac68285224f5fceb0f4031ca9401e8fd0cf49eb930ae6",
+  "title": "El tier Terra de 2,50$ de GPT-5.6 es el que deberías implementar primero: te explicamos por qué",
+  "summary": "Se lanzó GPT-5.6 con tres tiers diferenciados (Sol, Terra, Luna) y una ventana de contexto de 1,05 millones de tokens. Un análisis de costos concluye que el tier Terra es la opción más rentable para la mayoría de cargas de trabajo de producción, al equilibrar rendimiento y precio, mientras que el alias por defecto gpt-5.6 apunta al tier más caro (Sol) que puede generar facturas hasta el doble de lo estimado.",
+  "url": "https://dev.to/tokenmixai/i-did-the-math-on-gpt-56-the-250-terra-tier-is-the-one-id-ship-first-1aja",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T03:21:55.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.tokenmix.ai%2Ftongyong.png",
+  "imageAlt": "El tier Terra de 2,50$ de GPT-5.6 es el que deberías implementar primero: te explicamos por qué",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se lanzó GPT-5.6 con tres tiers diferenciados (Sol, Terra, Luna) y una ventana de contexto de 1,05 millones de tokens. Un análisis de costos concluye que el tier Terra es la opción más rentable para la mayoría de cargas de trabajo de producción, al equilibrar rendimiento y precio, mientras que el alias por defecto gpt-5.6 apunta al tier más caro (Sol) que puede generar facturas hasta el doble de lo estimado.",
+  "keyPoints": [
+    "GPT-5.6 se lanzó con tres tiers diferenciados (Sol, Terra, Luna) en lugar de un solo modelo con etiquetas de marketing, cada uno con ID de modelo explícito para facilitar la auditoría de costos.",
+    "El alias sin sufijo gpt-5.6 apunta al tier Sol, el más caro, por lo que no se recomienda usarlo en servicios de producción sensibles al costo sin evaluaciones previas.",
+    "OpenAI recomienda Sol para razonamiento y codificación compleja, Terra para equilibrio entre inteligencia y costo, y Luna para cargas de trabajo de alto volumen.",
+    "Un análisis de costos de cuatro cargas de trabajo mensuales demostró que Sol solo supera a Terra económicamente si ahorra más de 440 dólares al mes en reintentos, tareas fallidas o revisiones de ingeniería."
+  ],
+  "whyMatters": "Este análisis tiene un impacto directo para empresas y equipos de desarrollo de España y Europa que implementan modelos de lenguaje grande en sus productos, ya que evita costos innecesarios por el uso de tiers más caros sin justificación de rendimiento. La recomendación de priorizar el tier Terra supone un ahorro potencial de cientos de euros mensuales para pymes y startups que no necesitan la capacidad de razonamiento extremo de Sol, permitiendo destinar esos recursos a otras áreas de innovación. Además, la claridad en la estructura de IDs de modelo y la auditoría de costos que propone el artículo se alinea con las normativas de transparencia algorítmica que se están implementando en la Unión Europea, por lo que su aplicación reduce riesgos de cumplimiento regulatorio.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.tokenmix.ai%2Ftongyong.png",
+      "alt": "Imagen de portada del artículo sobre el análisis de costos de los tiers de GPT-5.6",
+      "caption": "Portada del artículo original de Dev.to que analiza los precios y recomendaciones de uso de los tiers de GPT-5.6"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GPT56",
+    "#InteligenciaArtificial",
+    "#CostosIA"
+  ],
+  "fullArticle": "El lanzamiento de GPT-5.6 ha generado una oleada de opiniones en redes y blogs de desarrollo, muchas de ellas exageradas: desde quienes afirman que su ventana de contexto de 1,05 millones de tokens elimina la necesidad de preocuparse por el tamaño de los prompts, hasta quienes recomiendan usar el modelo sin evaluar su impacto en la factura. Tras revisar la documentación oficial de rollout, la guía de migración, la tabla de precios y la ficha técnica del modelo, un análisis independiente concluye que la opción más útil para la mayoría de cargas de trabajo de producción no es el modelo 'bandera' Sol, sino el tier Terra, con un precio de 2,50 dólares por millón de tokens de entrada.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.tokenmix.ai%2Ftongyong.png]\n\nA diferencia de lo que podría parecer, GPT-5.6 no es un solo modelo con etiquetas de marketing, sino una familia de tres tiers con identificadores de modelo explícitos: Sol, para razonamiento y codificación compleja; Terra, que equilibra capacidad intelectual y costo; y Luna, para cargas de trabajo de alto volumen. El alias sin sufijo gpt-5.6 que se usa por defecto apunta a Sol, el tier más caro, por lo que su uso en servicios sensibles al costo sin una evaluación previa puede generar facturas casi el doble de lo estimado. Un análisis de cuatro cargas de trabajo mensuales representativas a las tarifas estándar de OpenAI demostró que Sol solo supera a Terra económicamente si ahorra más de 440 dólares al mes en reintentos, tareas fallidas o revisiones de ingeniería, un umbral que no siempre se cumple en proyectos de migración estándar.\n\nAdemás, la ventana de contexto de 1,05 millones de tokens es real, pero incluye un multiplicador de costo para entradas superiores a 272.000 tokens, que se cobran al doble del precio estándar de entrada y 1,5 veces el precio de salida para toda la solicitud. Para equipos de desarrollo de España y Europa, la recomendación de priorizar el tier Terra supone un ahorro directo que puede ascender a cientos de euros mensuales, además de simplificar la auditoría de costos al usar identificadores de modelo explícitos en lugar de alias genéricos, un aspecto especialmente relevante de cara al cumplimiento de las normativas de transparencia algorítmica de la UE.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T03:46:46.518Z",
+  "links": [
+    {
+      "title": "Artículo original de análisis de costos de GPT-5.6 en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Tabla de precios oficial de OpenAI para modelos GPT",
+      "url": "https://openai.com/api/pricing/"
+    },
+    {
+      "title": "Documentación oficial del modelo GPT-5.6 de OpenAI",
+      "url": "https://platform.openai.com/docs/models/gpt-5.6"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precio del tier Terra de GPT-5.6",
+      "value": "2,50 dólares por millón de tokens de entrada"
+    },
+    {
+      "label": "Ventana de contexto máxima de GPT-5.6",
+      "value": "1,05 millones de tokens"
+    },
+    {
+      "label": "Umbral de tokens para multiplicador de precio",
+      "value": "272.000 tokens de entrada"
+    },
+    {
+      "label": "Ahorro mínimo mensual necesario para que Sol sea más rentable que Terra",
+      "value": "440 dólares al mes"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

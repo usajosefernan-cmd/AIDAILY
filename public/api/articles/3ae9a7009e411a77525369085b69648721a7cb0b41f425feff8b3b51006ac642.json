@@ -1,0 +1,77 @@
+{
+  "id": "3ae9a7009e411a77525369085b69648721a7cb0b41f425feff8b3b51006ac642",
+  "title": "Epic Clarity Data Model Guide for Healthcare Data Engineers",
+  "summary": "Epic está instalado en el 38% de los hospitales de EE.UU., por lo que dominar su base de datos Clarity es imprescindible para ingenieros de datos sanitarios. Esta guía explica su arquitectura, convenciones de nomenclatura y mejores prácticas para extraer y estandarizar datos clínicos, administrativos y operativos en plataformas como Snowflake o BigQuery.",
+  "url": "https://dev.to/season_mudbhary_7856e4083/epic-clarity-data-model-guide-for-healthcare-data-engineers-h8e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T02:20:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fesz8l2h08h7iyv9bvpc1.png",
+  "imageAlt": "Epic Clarity Data Model Guide for Healthcare Data Engineers",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Epic está instalado en el 38% de los hospitales de EE.UU., por lo que dominar su base de datos Clarity es imprescindible para ingenieros de datos sanitarios. Esta guía explica su arquitectura, convenciones de nomenclatura y mejores prácticas para extraer y estandarizar datos clínicos, administrativos y operativos en plataformas como Snowflake o BigQuery.",
+  "keyPoints": [
+    "Epic está instalado en aproximadamente el 38% de los hospitales de Estados Unidos, por lo que dominar su modelo de datos es una habilidad imprescindible para ingenieros de datos sanitarios.",
+    "Epic Clarity es la base de datos relacional de informes del ecosistema Epic EHR, con una copia optimizada para lectura de datos clínicos, administrativos y operativos extraída cada noche de Chronicles.",
+    "A diferencia de Chronicles, que usa un formato columnar propietario, Clarity funciona sobre Microsoft SQL Server con un esquema relacional estándar consultable por cualquier ingeniero de datos con conocimientos de SQL.",
+    "La guía detalla las cuatro capas de la arquitectura de datos de Epic, las convenciones de nomenclatura específicas de Clarity y mejores prácticas para replicar datos en plataformas como Snowflake o BigQuery."
+  ],
+  "whyMatters": "Dominar el modelo de datos de Epic Clarity no es solo una habilidad técnica especializada, sino una ventaja competitiva estratégica en un sector como el sanitario, donde la analítica de datos es cada vez más clave para mejorar la calidad de la atención, reducir costes y optimizar la operativa de los centros. Su presencia en el 38% de los hospitales de Estados Unidos y su creciente implantación en sistemas de salud de España y Europa convierten este conocimiento en un requisito cada vez más demandado por equipos de ingeniería de datos de hospitales, aseguradoras y empresas de tecnología sanitaria. Además, la estandarización de los datos extraídos de Clarity permite cumplir con normativas de protección de datos como el RGPD y habilitar proyectos de inteligencia artificial aplicada a la salud, con un impacto directo en la innovación del sector a corto y medio plazo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fesz8l2h08h7iyv9bvpc1.png",
+      "alt": "Portada de la guía del modelo de datos Epic Clarity para ingenieros de datos sanitarios",
+      "caption": "Imagen de portada del artículo original de Dev.to que presenta la guía de Epic Clarity"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#EpicClarity",
+    "#IngenieríaDatosSanitarios",
+    "#EHR",
+    "#Snowflake",
+    "#BigQuery"
+  ],
+  "fullArticle": "La digitalización del sector sanitario ha convertido a los sistemas de Historial Electrónico de Salud (EHR) en el núcleo de la operativa de hospitales y centros de atención médica de todo el mundo. Epic es uno de los proveedores líderes a nivel global de estas soluciones, con una cuota de mercado del 38% en hospitales de Estados Unidos y una implantación creciente en sistemas de salud de España y Europa, donde cada vez más centros públicos y privados apuestan por sus herramientas para digitalizar la gestión clínica, administrativa y operativa. Para los ingenieros de datos que trabajan en este sector, dominar el modelo de datos de Epic es una habilidad estratégica que permite extraer valor de la enorme cantidad de información generada en la actividad diaria de los centros.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fesz8l2h08h7iyv9bvpc1.png]\n\nEpic Clarity es la base de datos relacional de informes del ecosistema Epic EHR, que contiene una copia optimizada para lectura de datos clínicos, administrativos y operativos extraída cada noche de Chronicles, el almacén operativo subyacente de la plataforma. A diferencia de Chronicles, que utiliza un formato columnar propietario que solo se puede consultar con herramientas específicas de Epic, Clarity se ejecuta sobre Microsoft SQL Server con un esquema relacional estándar, por lo que cualquier ingeniero de datos con conocimientos de SQL puede acceder a su información sin necesidad de software exclusivo. Esta característica convierte a Clarity en el punto de extracción principal para los equipos de analítica de los sistemas de salud que construyen almacenes de datos en plataformas modernas como Snowflake, Databricks o BigQuery.\n\nLa guía presentada desglosa los elementos esenciales para trabajar con Clarity de forma efectiva, comenzando por las cuatro capas de la arquitectura de datos de Epic, un conocimiento imprescindible antes de construir cualquier pipeline o informe basado en datos de la plataforma. Aunque Clarity cuenta con miles de tablas, la mayor parte del trabajo de ingeniería de datos se centra en un conjunto core de tablas, y la guía también detalla las convenciones de nomenclatura específicas de Clarity, que difieren significativamente de los estándares ISO-11179, así como buenas prácticas clave: almacenar siempre los identificadores como VARCHAR en lugar de INTEGER, usar las tablas ZC_ para decodificar los campos de código _C, incluir siempre el campo LINE en las cláusulas GROUP BY y ORDER BY al agregar datos de tablas multivalor, y usar herramientas como dbt para estandarizar la nomenclatura de columnas y garantizar la calidad de los datos después de replicar las tablas de Clarity en plataformas de almacenamiento modernas. Además, la guía incluye plantillas reutilizables para responder preguntas frecuentes y almacenar fragmentos de código para proyectos futuros.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T02:42:08.626Z",
+  "links": [
+    {
+      "title": "Guía interactiva completa de Epic Clarity con herramientas y glosario",
+      "url": "https://mdatool.com/guides/epic-clarity"
+    },
+    {
+      "title": "Página oficial de Epic sobre la base de datos Clarity",
+      "url": "https://www.epic.com/software/clarity"
+    },
+    {
+      "title": "Documentación abierta de la API de Epic Clarity",
+      "url": "https://open.epic.com/apis/clarity"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de hospitales de EE.UU. con Epic instalado",
+      "value": "38%"
+    },
+    {
+      "label": "Frecuencia de actualización de datos en Clarity",
+      "value": "Extracción nocturna desde Chronicles"
+    },
+    {
+      "label": "Sistema de gestión de bases de datos de Clarity",
+      "value": "Microsoft SQL Server"
+    },
+    {
+      "label": "Plataformas de almacenamiento compatibles para replicar Clarity",
+      "value": "Snowflake, Databricks y BigQuery"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

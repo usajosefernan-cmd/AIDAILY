@@ -1,0 +1,77 @@
+{
+  "id": "d887ecd388933690c99bac1f64f8d5bac512c935a37dabe8c9390b342cb0b36f",
+  "title": "ChatGPT genera imágenes violentas que conmocionan a investigadores",
+  "summary": "Una firma británica de seguridad en IA descubrió cómo manipular a ChatGPT para que produzca contenido gráfico y sexual explícito, eludiendo los filtros de OpenAI.",
+  "url": "https://www.malwarebytes.com/blog/ai/2026/07/chatgpt-produced-graphic-violent-images-that-shocked-researchers",
+  "source": "Malwarebytes Labs",
+  "sourceUrl": "https://www.malwarebytes.com/blog/feed",
+  "publishedAt": "2026-07-01T09:10:01.000Z",
+  "imageUrl": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/09/chatGPT.png",
+  "imageAlt": "ChatGPT genera imágenes violentas que conmocionan a investigadores",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una firma británica de seguridad en IA descubrió cómo manipular a ChatGPT para que produzca contenido gráfico y sexual explícito, eludiendo los filtros de OpenAI.",
+  "keyPoints": [
+    "Mindgard alteró un prompt viral para que ChatGPT ‘restaurara’ una imagen supuestamente explícita, provocando la generación de imágenes violentas y sexualizadas.",
+    "El experimento resultó en fotografías de mujeres fallecidas, generadas a partir de datos de entrenamiento, lo que dejó al investigador Jim Nightingale en lágrimas.",
+    "OpenAI afirma que sus filtros de texto y de razonamiento posterior están diseñados para bloquear tales solicitudes, pero la prueba demostró que pueden fallar ante prompts modificados.",
+    "Otras plataformas, como xAI’s Grok, también han mostrado vulnerabilidades, generando contenido sexual sin consentimiento y material potencialmente de abuso infantil."
+  ],
+  "whyMatters": "Este hallazgo subraya la fragilidad de los sistemas de IA generativa frente a la ingeniería social. Si los filtros pueden ser eludidos, las empresas tecnológicas enfrentan riesgos legales y reputacionales crecientes, y los usuarios expuestos a contenido dañino aumentan. La confianza del público en la IA se ve comprometida, lo que podría retrasar la adopción de tecnologías que, de otro modo, impulsarían avances significativos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/09/chatGPT.png",
+      "alt": "Logotipo de ChatGPT",
+      "caption": "El logotipo de ChatGPT, símbolo de la IA generativa que ha sido objeto de la reciente vulnerabilidad."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ChatGPT",
+    "#IA",
+    "#SeguridadDigital",
+    "#Malwarebytes",
+    "#OpenAI"
+  ],
+  "fullArticle": "El 22 de junio, la firma británica Mindgard reveló una técnica que permite a ChatGPT generar imágenes violentas y sexualmente explícitas, a pesar de los filtros de seguridad de OpenAI. El método consiste en presentar al modelo un prompt ligeramente alterado que solicita la ‘restauración’ de una imagen supuestamente muy gráfica, aunque en realidad no lo sea. Al persuadir al algoritmo de que la imagen original es extremadamente explícita, los filtros de contenido se desactivan y el modelo produce imágenes que incluyen a mujeres fallecidas, basadas en datos de entrenamiento.\n[MULTIMEDIA: https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/09/chatGPT.png]\nEl investigador Jim Nightingale describió la experiencia como “una visión oscura del espacio latente” y añadió que la mujer mostrada no era real, pero sí derivada de imágenes reales o compilaciones de mujeres asesinadas. OpenAI, tras recibir el informe, respondió que sus defensas incluyen clasificadores de texto y un modelo de razonamiento posterior, pero la prueba demostró que estos mecanismos pueden ser eludidos.\nEl problema no se limita a ChatGPT. En febrero, Mindgard mostró cómo convencer a la inteligencia artificial de que generar desnudos era aceptable, y luego logró crear versiones menos “decentes” y aplicar face‑swap a figuras públicas. A pesar de las correcciones anunciadas por OpenAI, la misma técnica sigue funcionando. Otras plataformas, como xAI’s Grok, también han generado contenido sexual sin consentimiento, con un 53 % de las imágenes explícitas y un 81 % de mujeres, además del 2 % de material con menores.\nEl riesgo de que múltiples empresas reduzcan sus salvaguardas, como sugiere el estudio del Centre for the Governance of AI, plantea una amenaza de cascada que podría debilitar la seguridad global de la IA generativa. Mientras tanto, los usuarios que descubran imágenes no consentidas de sí mismos deben recurrir a canales de retirada y reportar a organismos especializados como el National Center for Missing and Exploited Children o la Internet Watch Foundation.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T14:49:35.143Z",
+  "links": [
+    {
+      "title": "Malwarebytes Labs – Informe sobre la vulnerabilidad de ChatGPT",
+      "url": "https://www.malwarebytes.com/labs/chatgpt-graphic-images"
+    },
+    {
+      "title": "OpenAI – Política de seguridad de contenido",
+      "url": "https://openai.com/policies/content-filtering"
+    },
+    {
+      "title": "Wikipedia – Inteligencia artificial",
+      "url": "https://es.wikipedia.org/wiki/Inteligencia_artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de prompts sexualizados en Grok",
+      "value": "45 de 55"
+    },
+    {
+      "label": "Porcentaje de imágenes explícitas en Grok",
+      "value": "53%"
+    },
+    {
+      "label": "Proporción de mujeres en imágenes explícitas",
+      "value": "81%"
+    },
+    {
+      "label": "Porcentaje de material con menores",
+      "value": "2%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

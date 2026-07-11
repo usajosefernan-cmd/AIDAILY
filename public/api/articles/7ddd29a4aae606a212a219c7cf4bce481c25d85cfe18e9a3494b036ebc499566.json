@@ -1,0 +1,73 @@
+{
+  "id": "7ddd29a4aae606a212a219c7cf4bce481c25d85cfe18e9a3494b036ebc499566",
+  "title": "Cloudflare lanza controles de bots que convierten el acceso de agentes en una configuración",
+  "summary": "El 1 de julio de 2026 Cloudflare introdujo un paquete que separa los bots de búsqueda, agentes y entrenamiento, permite a los propietarios de sitios controlar quién accede a su contenido y monetizarlo mediante un nuevo portal de pagos. La iniciativa responde a la baja tasa de clics en resúmenes de IA y busca trasladar la responsabilidad desde el código del sitio al panel de control del CDN.",
+  "url": "https://dev.to/turva-dev/agent-access-is-now-a-setting-2b6b",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-02T12:56:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh2lm39hxyk20seiddh5r.png",
+  "imageAlt": "Cloudflare lanza controles de bots que convierten el acceso de agentes en una configuración",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El 1 de julio de 2026 Cloudflare introdujo un paquete que separa los bots de búsqueda, agentes y entrenamiento, permite a los propietarios de sitios controlar quién accede a su contenido y monetizarlo mediante un nuevo portal de pagos. La iniciativa responde a la baja tasa de clics en resúmenes de IA y busca trasladar la responsabilidad desde el código del sitio al panel de control del CDN.",
+  "keyPoints": [
+    "Cloudflare despliega controles de bots que distinguen entre buscadores, agentes de IA y bots de entrenamiento, con toggles de bloqueo per-crawler y actualizaciones automáticas.",
+    "La nueva función permite cobrar por cada uso de contenido, pasando de un modelo Pay‑Per‑Crawl a Pay‑Per‑Use, y ofrece un gateway de pagos x402 para recursos que superen un umbral.",
+    "El paquete responde a una encuesta de Pew Research que mostró que solo el 8 % de los usuarios hacen clic en resultados tradicionales cuando aparece un resumen de IA.",
+    "Los administradores deben revisar la configuración del edge (robots.txt, WAF y lista de crawlers) para garantizar la coherencia con la estrategia de contenido y evitar pérdidas de visibilidad."
+  ],
+  "whyMatters": "Esta transformación redefine la forma en que los creadores de contenido monetizan su información en la era de los agentes inteligentes. Al mover el control de los bots al panel de Cloudflare, se reduce la dependencia de código personalizado y se facilita la adopción de modelos de pago por acceso, lo que puede generar ingresos adicionales y proteger la propiedad intelectual. Además, el cambio obliga a las webs a revisar sus políticas de acceso, lo que impacta directamente en la visibilidad de sus páginas en los resultados de búsqueda y en la experiencia del usuario.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh2lm39hxyk20seiddh5r.png",
+      "alt": "Imagen que muestra la portada del artículo sobre la nueva configuración de acceso de agentes en Cloudflare",
+      "caption": "Portada del artículo que anuncia la nueva funcionalidad de Cloudflare para controlar el acceso de bots y agentes."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Cloudflare",
+    "#IA",
+    "#MonetizacionWeb",
+    "#Bots",
+    "#CDN"
+  ],
+  "fullArticle": "El 1 de julio de 2026, Cloudflare lanzó su segundo paquete de Content Independence Day, un conjunto de controles de bots que separa los rastreadores de búsqueda, los agentes de IA y los bots de entrenamiento. Con esta actualización, los propietarios de sitios ya no dependen del código en sus servidores para gestionar quién accede a su contenido; todo se gestiona desde el panel de control del CDN.\n\nEl paquete incluye toggles de bloqueo per‑crawler, un programa de investigación que detecta cambios reales en las páginas y experimentos que convierten el modelo Pay‑Per‑Crawl en Pay‑Per‑Use. Además, se ha añadido una lista de espera para un gateway que cobra por cualquier recurso que supere un umbral x402, eliminando la necesidad de una propia pila de pagos. De acuerdo con Cloudflare, más del 20 % del web se encuentra detrás de su red, y los nuevos controles permiten bloquear o permitir bots con mayor precisión.\n\nUn caso ilustrativo es el de un sitio que, tras revisar su lista de crawlers, descubrió que siete entradas estaban bloqueadas, entre ellas el Internet Archive y un motor de búsqueda IA que paga a los editores. Aunque el marcado no lo revelaba, el bloqueo se detectaba en el panel de control, lo que explicaba la ausencia de su contenido en los resultados de IA.\n\nEl objetivo principal de la iniciativa es responder a una encuesta de Pew Research Center de 2025 que reveló que, cuando Google muestra un resumen IA, los usuarios hacen clic en un resultado tradicional solo el 8 % de las veces y en el enlace dentro del resumen apenas el 1 %.\n\nPara contrarrestar esta baja conversión, Cloudflare propone que la propia cita sea pagable. Empresas como Ceramic.ai pagan a los editores por cada consulta, You.com permite a los agentes comprar páginas premium y los sitios participantes obtienen informes detallados sobre las consultas IA que han surfado su contenido.\n\nEn los últimos siete días, el sitio en cuestión respondió 604 peticiones de bots IA y de búsqueda, generando 88 visitas humanas, la mayoría provenientes de Google, con Meta, DuckDuckGo y Bing como secundarios. El nuevo programa evaluará si esos accesos comienzan a generar ingresos.\n\nEl gateway de monetización, con su protocolo x402, permite cobrar por páginas, datasets, APIs o herramientas MCP sin necesidad de una infraestructura propia. El precio se aplica automáticamente cuando un agente intenta acceder a un recurso bloqueado, devolviendo un 402 con los términos reales en lugar de una pantalla de checkout falsa.\n\nPara auditar la preparación de un sitio para agentes, Cloudflare recomienda revisar la configuración del edge junto con el contenido, asegurándose de que robots.txt, WAF y la lista de crawlers reflejen la misma política de acceso que la estrategia de contenido.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh2lm39hxyk20seiddh5r.png]\n\nPara más información, contacte a info@turva.dev.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-02T13:05:09.919Z",
+  "links": [
+    {
+      "title": "Blog oficial de Turva sobre la configuración de acceso de agentes",
+      "url": "https://turva.dev/blog/agent-access-is-now-a-setting"
+    },
+    {
+      "title": "Pew Research Center – Encuesta sobre el comportamiento de los usuarios con resúmenes de IA",
+      "url": "https://www.pewresearch.org/internet/2025/04/15/ai-summaries-user-behavior/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de web detrás de Cloudflare",
+      "value": "Más del 20 %"
+    },
+    {
+      "label": "Tasa de clics en resultados tradicionales cuando aparece un resumen IA",
+      "value": "8 %"
+    },
+    {
+      "label": "Tasa de clics en enlaces dentro del resumen IA",
+      "value": "1 %"
+    },
+    {
+      "label": "Número de peticiones de bots IA en 7 días",
+      "value": "604"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

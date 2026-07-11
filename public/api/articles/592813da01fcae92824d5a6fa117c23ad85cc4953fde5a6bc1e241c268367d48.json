@@ -1,0 +1,68 @@
+{
+  "id": "592813da01fcae92824d5a6fa117c23ad85cc4953fde5a6bc1e241c268367d48",
+  "title": "Los agentes autónomos ya tienen control interno de pagos, pero la brecha de rendición de cuentas externa sigue sin resolverse",
+  "summary": "Grandes proveedores de servicios en la nube y pagos lanzan soluciones para registrar las decisiones de pago de agentes autónomos y cerrar la brecha de rendición de cuentas interna. Sin embargo, el artículo advierte que aún falta una capa de verificación externa entre proveedores para que las transacciones entre agentes de distintas plataformas sean confiables.",
+  "url": "https://dev.to/zse4321/the-inside-is-filling-in-what-about-the-outside-1man",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T16:49:43.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5igimj6eu51za8xw4tsh.png",
+  "imageAlt": "Los agentes autónomos ya tienen control interno de pagos, pero la brecha de rendición de cuentas externa sigue sin resolverse",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Grandes proveedores de servicios en la nube y pagos lanzan soluciones para registrar las decisiones de pago de agentes autónomos y cerrar la brecha de rendición de cuentas interna. Sin embargo, el artículo advierte que aún falta una capa de verificación externa entre proveedores para que las transacciones entre agentes de distintas plataformas sean confiables.",
+  "keyPoints": [
+    "Proveedores de nube y pagos lanzan infraestructuras que permiten a agentes autónomos aprobar y ejecutar pagos con límites de gasto y auditoría integrada.",
+    "Estas soluciones cierran la brecha de rendición de cuentas dentro del ecosistema de un solo proveedor, pero no resuelven la verificación entre plataformas distintas.",
+    "Cuando agentes de diferentes proveedores transaccionan entre sí, los registros de auditoría internos solo son testimonios unilaterales sin validez externa.",
+    "La solución requiere una capa de referencia externa 'ciega al contenido' que no acceda a la lógica interna de las empresas para ser confiable para todas las partes."
+  ],
+  "whyMatters": "Este tema es estratégico para el futuro de la economía de agentes autónomos, que se prevé que mueva billones de dólares en transacciones anuales en los próximos años. Sin una capa de rendición de cuentas externa interoperable, las empresas no adoptarán agentes que interactúen con plataformas de terceros por miedo a conflictos sin resolver. Además, la necesidad de proteger secretos comerciales y lógicas de pricing hace que las soluciones internas no sean suficientes, por lo que el desarrollo de estándares de verificación externa se convertirá en un pilar de la regulación de IA en los próximos años.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5igimj6eu51za8xw4tsh.png",
+      "alt": "Imagen de portada del artículo sobre la brecha de rendición de cuentas en pagos de agentes autónomos",
+      "caption": "Imagen de portada del artículo original de Dev.to que ilustra la temática de la brecha interna y externa en la rendición de cuentas de agentes autónomos"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesAutonomos",
+    "#RendicionDeCuentasIA",
+    "#PagosAutomatizados",
+    "#EconomiaDeAgentes"
+  ],
+  "fullArticle": "En los últimos meses, gigantes de la computación en la nube y procesadores de pagos han lanzado de forma consecutiva servicios orientados a resolver una de las principales barreras para la adopción de agentes autónomos: la rendición de cuentas. Estas soluciones permiten que un agente descubra, apruebe y ejecute pagos de forma autónoma, con gestión de billeteras, límites de gasto basados en políticas y un registro de auditoría completo integrado, sin necesidad de infraestructura adicional. Este avance es un paso fundamental, ya que extiende el control que las organizaciones tenían solo sobre los gastos de empleados humanos a las transacciones realizadas por sistemas de inteligencia artificial, eliminando barreras regulatorias y de gestión de riesgo de modelos que impedían que las transacciones autónomas fueran una realidad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5igimj6eu51za8xw4tsh.png]\n\nSin embargo, como advierte el artículo original, estas soluciones solo cierran la 'brecha interna' de rendición de cuentas, es decir, la que existe dentro del ecosistema de un solo proveedor. Cuando un agente de una plataforma transacciona con un servicio externo, o cuando dos agentes de proveedores distintos tienen un desacuerdo sobre lo ocurrido, el registro de auditoría de cada parte no es más que una declaración unilateral de su propia versión de los hechos. Este no es un fallo de los proveedores, sino un problema estructural: al igual que la contabilidad interna de una empresa no puede reemplazar a un auditor externo, un registro de auditoría que solo ve su propia actividad no puede servir como referencia para terceros.\n\nLa solución a esta brecha externa requiere una capa de verificación que no acceda al contenido de las decisiones de los agentes, es decir, que sea 'ciega al contenido', para no exponer secretos comerciales, lógicas de pricing o estrategias de las empresas. Esta capa externa no compite con las auditorías internas, sino que las complementa: la primera asegura que los agentes se comporten bien dentro de su propio ecosistema, la segunda hace que los acuerdos entre ecosistemas distintos sean verificables. A medida que la infraestructura interna se vuelve más robusta, la necesidad de esta referencia externa se vuelve más urgente para que la economía de agentes autónomas alcance su potencial.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T17:07:24.599Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Marco regulatorio de IA de la Unión Europea",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-act"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tendencia actual en infraestructura de agentes",
+      "value": "Lanzamiento masivo de soluciones de auditoría interna de pagos por proveedores de nube en 2024"
+    },
+    {
+      "label": "Problema estructural no resuelto",
+      "value": "Falta de una capa de verificación externa interoperable entre plataformas de agentes"
+    },
+    {
+      "label": "Requisito indispensable de la verificación externa",
+      "value": "Ceguera al contenido de las decisiones de los agentes para proteger secretos comerciales"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

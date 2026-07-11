@@ -1,0 +1,71 @@
+{
+  "id": "1e7cbb4169926ae2fe5f32f2fe92af00b4ecaeefc61e2f77c41a873d09cc5381",
+  "title": "Un intercambio de eventos con consistencia total: la innovación de Amazon Aurora DSQL",
+  "summary": "El proyecto Parity combina la coincidencia de órdenes y el liquidado en una sola transacción gracias a Amazon Aurora DSQL, eliminando la necesidad de conciliaciones y reduciendo la latencia.",
+  "url": "https://dev.to/saatwik_kumaryadav_8b656/designing-a-strongly-consistent-event-exchange-on-amazon-aurora-dsql-2bi",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T17:12:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmoqoscdv4z1bs491cch8.png",
+  "imageAlt": "Un intercambio de eventos con consistencia total: la innovación de Amazon Aurora DSQL",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El proyecto Parity combina la coincidencia de órdenes y el liquidado en una sola transacción gracias a Amazon Aurora DSQL, eliminando la necesidad de conciliaciones y reduciendo la latencia.",
+  "keyPoints": [
+    "Pariy utiliza Aurora DSQL para fusionar el matching y el settlement en una única transacción, reduciendo la sobrecarga operativa a cero.",
+    "Aurora DSQL emplea control de concurrencia optimista con aislamiento de instantáneas, garantizando la consistencia siempre que las filas no sufran contención.",
+    "El diseño de Pariy evita saldos negativos y doble gasto mediante la lógica de la base de datos; los débito simultáneos entran en conflicto y se reintentan.",
+    "La prueba de estrés con más de 200 operaciones concurrentes valida que las invariantes de doble entrada se mantienen en tiempo real mediante un endpoint /api/proof."
+  ],
+  "whyMatters": "Esta arquitectura demuestra que los mercados financieros pueden operar con consistencia total sin la pesada infraestructura tradicional de reconciliación. Al eliminar la necesidad de procesos de conciliación nocturnos, las plataformas pueden ofrecer liquidez instantánea y mayor confianza a los usuarios. El enfoque de Pariy abre la puerta a nuevos modelos de negocio en fintech, permitiendo la creación de mercados descentralizados con garantías de integridad de datos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmoqoscdv4z1bs491cch8.png",
+      "alt": "Diseñando un intercambio de eventos con consistencia fuerte en Amazon Aurora DSQL",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AmazonAurora",
+    "#DSQL",
+    "#FintechInnovation"
+  ],
+  "fullArticle": "El ecosistema de mercados financieros se ha visto durante décadas limitado por la necesidad de sistemas de contabilidad separados para el matching de órdenes y el liquidado de transacciones. En una propuesta audaz, el equipo detrás de Pariy ha diseñado un intercambio de eventos con consistencia total utilizando Amazon Aurora DSQL, una base de datos SQL sin servidor que combina la escalabilidad de la nube con la coherencia fuerte y el control de concurrencia optimista.\n\nAurora DSQL ofrece aislamiento de instantáneas, lo que permite que una transacción lea un snapshot consistente y solo se comprometa si nadie más ha modificado las filas involucradas. Esta característica es ideal cuando las operaciones tocan filas distintas, pero puede presentar problemas bajo contención de filas calientes. Pariy aborda este desafío diseñando su modelo de datos alrededor de la granularidad de las operaciones: cada ‘fill’ transfiere efectivo y contratos de forma que el saldo total se conserva, reduciendo el tamaño de la ventana de conflicto y haciendo que los reintentos sean raros.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmoqoscdv4z1bs491cch8.png]\n\nEl sistema garantiza que no existan saldos negativos ni doble gasto al hacer que la base de datos sea la única fuente de verdad. Si un comprador no puede financiar el ‘fill’, la transacción no se ejecuta; en caso de una carrera, dos débitos concurrentes no pueden comprometerse simultáneamente, ya que uno entrará en conflicto con OCC y se reintentará contra el saldo actualizado. Además, la liquidez se gestiona en una única transacción: los contratos ganadores reciben 100¢ y los perdedores 0¢, manteniendo la suma neta en cero.\n\nUna prueba de estrés con más de 200 operaciones concurrentes en mercados diferentes demostró que las invariantes de doble entrada se pueden consultar en tiempo real. Un endpoint /api/proof calcula estos valores directamente desde Aurora DSQL en cada solicitud, lo que elimina la necesidad de procesos de reconciliación nocturnos. El esquema de la base de datos, diseñado para PostgreSQL compatible, permite que la misma aplicación se ejecute en PostgreSQL local durante el desarrollo y en Aurora DSQL en producción con un solo cambio de variable de entorno.\n\nEl proyecto Pariy, presentado en el H0 Hackathon, ejemplifica cómo la arquitectura de bases de datos modernas puede redefinir la infraestructura de los mercados financieros, ofreciendo una solución escalable, coherente y con mínima sobrecarga operativa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T18:33:25.876Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/pariy-aurora-dsql"
+    },
+    {
+      "title": "Documentación oficial de Amazon Aurora DSQL",
+      "url": "https://docs.aws.amazon.com/dynamodb/latest/developerguide/aurora-dsql.html"
+    },
+    {
+      "title": "Blog de AWS sobre Aurora DSQL",
+      "url": "https://aws.amazon.com/blogs/aws/amazon-aurora-dsql/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Operaciones concurrentes en prueba",
+      "value": "200"
+    },
+    {
+      "label": "Consumo de sobrecarga operativa",
+      "value": "0%"
+    },
+    {
+      "label": "Aislamiento de transacciones",
+      "value": "Snapshot Isolation"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,38 @@
+{
+  "id": "b8d67d38c91930194207834c513cd024eacce1712356d8fa178f87e0165abe25",
+  "title": "Google's TabFM skips per-dataset training and still predicts on tables it's never seen",
+  "summary": "<p>La gran mayoría de los datos empresariales son tabulares (se almacenan en almacenes de datos, CRM y libros de contabilidad financieros). Sin embargo, crear un modelo fiable a partir de ellos implica entrenar uno nuevo desde cero para cada conjunto de datos y luego mantener ciclos de ajuste de hiperparámetros, ingeniería de funciones y reentrenamiento de canales...",
+  "url": "https://venturebeat.com/technology/googles-tabfm-skips-per-dataset-training-and-still-predicts-on-tables-its-never-seen",
+  "source": "VentureBeat",
+  "sourceUrl": "https://venturebeat.com/feed/",
+  "publishedAt": "2026-07-10T16:14:24.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Google's TabFM skips per-dataset training and still predicts on tables it's never seen",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "<p>La gran mayoría de los datos empresariales son tabulares (se almacenan en almacenes de datos, CRM y libros de contabilidad financieros). Sin embargo, crear un modelo fiable a partir de ellos implica entrenar uno nuevo desde cero para cada conjunto de datos y luego mantener ciclos de ajuste de hiperparámetros, ingeniería de funciones y reentrenamiento de canales...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+      "alt": "Google's TabFM skips per-dataset training and still predicts on tables it's never seen",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "Startups",
+  "hashtags": [],
+  "fullArticle": "<p>La gran mayoría de los datos empresariales son tabulares (se almacenan en almacenes de datos, CRM y libros de contabilidad financieros). Sin embargo, crear un modelo fiable a partir de ellos implica entrenar uno nuevo desde cero para cada conjunto de datos y, luego, mantener ciclos de ajuste de hiperparámetros, ingeniería de funciones y volver a entrenar los canales para luchar contra la deriva de datos. Google Research propone una solución: <a href=\"https://research.google/blog/introtaining-tabfm-a-zero-shot-foundation-model-for-tabular-data/\">un nuevo modelo básico llamado TabFM</a> que trata la predicción tabular como un problema de aprendizaje en contexto.</p><p>Puede generar predicciones para una tabla nueva e invisible en un solo paso hacia adelante. Para los desarrolladores empresariales y los ingenieros de IA, esto reduce el tiempo de producción, desde semanas de ingeniería de canalización hasta una única llamada API.</p><h2>El desafío del aprendizaje automático tradicional</h2><p>Para extraer predicciones confiables de un árbol impulsado por gradiente, los científicos de datos deben construir y mantener canales de datos complejos. Tienen que limpiar entradas desordenadas, imputar valores faltantes, codificar variables categóricas en formatos numéricos y diseñar cruces de características personalizadas.</p><p>Una vez que los datos están listos, deben ejecutar hiperparámetros repetitivos...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T17:47:28.001Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

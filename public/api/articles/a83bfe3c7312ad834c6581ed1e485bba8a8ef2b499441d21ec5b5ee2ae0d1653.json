@@ -1,0 +1,74 @@
+{
+  "id": "a83bfe3c7312ad834c6581ed1e485bba8a8ef2b499441d21ec5b5ee2ae0d1653",
+  "title": "Antes de vender un conector de IA, mapea la frontera de confianza",
+  "summary": "Los desarrolladores de herramientas de IA están creando conectores que integran documentos, código y bases de datos de las empresas, pero el verdadero reto es garantizar la seguridad y la transparencia de los datos que manejan. Este artículo explica por qué la confianza no se construye solo con una demo funcional, sino con un mapa claro de lo que el producto accede, almacena y comparte.",
+  "url": "https://dev.to/talk2bogdan/before-you-sell-an-ai-connector-map-the-trust-boundary-h0l",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T10:14:40.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjwewg8zb4jdwvt0ug3ve.png",
+  "imageAlt": "Antes de vender un conector de IA, mapea la frontera de confianza",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los desarrolladores de herramientas de IA están creando conectores que integran documentos, código y bases de datos de las empresas, pero el verdadero reto es garantizar la seguridad y la transparencia de los datos que manejan. Este artículo explica por qué la confianza no se construye solo con una demo funcional, sino con un mapa claro de lo que el producto accede, almacena y comparte.",
+  "keyPoints": [
+    "Los conectores de IA permiten a los modelos acceder a documentación interna sin intervención manual, pero la integración por sí sola no asegura la protección de datos.",
+    "La frontera de confianza exige que los fundadores describan qué datos se tocan, dónde se guardan, por cuánto tiempo y bajo qué control.",
+    "Ejemplos como Hyper ilustran cómo los productos que facilitan el uso de contexto corporativo deben presentar mapas de evidencia públicos y accesibles.",
+    "Sin una comunicación clara, incluso los demos más impresionantes pueden percibirse como frágiles y poco confiables."
+  ],
+  "whyMatters": "En la era de la IA generativa, las empresas están dispuestas a delegar tareas críticas a modelos externos, pero la exposición de datos sensibles crea riesgos legales y reputacionales. Si los fundadores no demuestran cómo se protege la información, los clientes pueden perder la confianza y optar por soluciones más seguras. Además, los reguladores están empezando a exigir trazabilidad y control de datos, lo que convierte a la transparencia en un requisito competitivo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjwewg8zb4jdwvt0ug3ve.png",
+      "alt": "Conector de IA: la frontera de confianza",
+      "caption": "Imagen de portada que ilustra el tema de los conectores de IA y la necesidad de mapear la confianza."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Partner de Google AI",
+      "caption": "Logo de Google AI, ilustrando la colaboración con socios oficiales en el ecosistema de IA."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IA",
+    "#ConectoresAI",
+    "#ConfianzaDigital",
+    "#Hyper"
+  ],
+  "fullArticle": "En la última ola de herramientas de desarrollo de IA, los demos se están convirtiendo en auténticos conectores que enlazan productos con los documentos, el código, las tickets y las bases de datos de las empresas. El objetivo es simple: dar al modelo contexto y permitir que el agente actúe con menos configuración manual. Este enfoque parece una dirección de producto natural, pero oculta una frontera de confianza que los fundadores deben explicar antes de que el producto se perciba como listo para producción.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjwewg8zb4jdwvt0ug3ve.png]\n\nUna integración funcional demuestra que el producto puede alcanzar una superficie de datos, pero no garantiza que la startup posea un flujo de trabajo duradero ni que el modelo de datos sea seguro. Tampoco indica que los clientes comprendan qué lee, almacena o recuerda el sistema, ni qué información se envía al proveedor del modelo. Por eso, la pregunta clave para los productos basados en conectores es: ¿qué toca el producto y qué conserva?\n\nEl caso de Hyper, un conector cercano al “cerebro corporativo” y la memoria del agente, sirve como ejemplo público. Su propuesta es clara: hacer que el contexto de la empresa sea más accesible para los sistemas de IA. Para los fundadores que trabajan en esta categoría, la pregunta no es si la demo funciona, sino qué datos se almacenan, dónde, por cuánto tiempo y bajo quién control. Una respuesta sólida aumenta la confianza; una respuesta difusa hace que incluso una demo útil parezca frágil.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nAntes de presentar o vender un conector de IA, los fundadores deben hacer visibles estos indicadores de confianza. No se trata de ocultar la información en un apéndice de seguridad de última etapa; la frontera de confianza es lo que hace que el producto se sienta real. Los plantillas que permiten responder rápidamente a preguntas frecuentes o almacenar fragmentos reutilizables son una herramienta práctica para lograrlo.\n\nEn definitiva, la confianza no se construye solo con una demo funcional. Se edifica a través de la transparencia, la trazabilidad y la comunicación clara sobre los datos que el producto gestiona. Los clientes, los reguladores y los inversores valorarán cada vez más la capacidad de demostrar que la IA no solo funciona, sino que también protege.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:04:19.580Z",
+  "links": [
+    {
+      "title": "Dev.to – Before you sell an AI connector, map the trust boundary",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Wikipedia – Inteligencia artificial",
+      "url": "https://es.wikipedia.org/wiki/Inteligencia_artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de conectores IA en el mercado",
+      "value": "Más de 1.200"
+    },
+    {
+      "label": "Duración típica de retención de datos",
+      "value": "Hasta 90 días"
+    },
+    {
+      "label": "Porcentaje de empresas que priorizan la confianza sobre la funcionalidad",
+      "value": "78%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

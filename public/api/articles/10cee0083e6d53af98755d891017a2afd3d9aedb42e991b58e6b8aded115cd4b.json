@@ -1,0 +1,77 @@
+{
+  "id": "10cee0083e6d53af98755d891017a2afd3d9aedb42e991b58e6b8aded115cd4b",
+  "title": "Doble sensor en Arduino: ultrasonido e infrarrojos se unen para detectar obstáculos en 360 grados sin fallos",
+  "summary": "Un maker taiwanés desarrolla un sistema de detección de obstáculos para robots pequeños que combina sensores ultrasónicos HC-SR04 e infrarrojos, solucionando fallos en materiales absorbentes y evitando bloqueos por falta de señal.",
+  "url": "https://dev.to/_0c004e5fde78250aee362/yong-chao-sheng-bo-jia-hong-wai-xian-da-cheng-quan-xiang-zhang-ai-zhen-ce-arduino-shuang-gan-ce-qi-zheng-he-5ge2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T01:27:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F30ea60onob8gjg124wzg.png",
+  "imageAlt": "Doble sensor en Arduino: ultrasonido e infrarrojos se unen para detectar obstáculos en 360 grados sin fallos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un maker taiwanés desarrolla un sistema de detección de obstáculos para robots pequeños que combina sensores ultrasónicos HC-SR04 e infrarrojos, solucionando fallos en materiales absorbentes y evitando bloqueos por falta de señal.",
+  "keyPoints": [
+    "La combinación de sensores ultrasónicos HC-SR04 e infrarrojos complementa sus limitaciones físicas, detectando obstáculos que cada uno por separado no captaría.",
+    "Se implementa un timeout de 3 milisegundos en la función pulseIn() para evitar bloqueos del sistema cuando el ultrasonido no recibe eco.",
+    "El costo total de los componentes para el sistema de detección no supera los 300 dólares taiwaneses, haciéndolo accesible para proyectos de bajo presupuesto.",
+    "El diseño puede adaptarse a robots seguidores de línea instalando el sensor infrarrojo hacia abajo para detectar el borde de superficies."
+  ],
+  "whyMatters": "Este desarrollo demuestra de forma práctica y accesible el concepto de fusión de sensores, un pilar fundamental en la robótica moderna y los vehículos autónomos. Al solucionar fallos comunes en detección de materiales absorbentes y evitar bloqueos por falta de señal, ofrece una base replicable para proyectos educativos, makers y prototipos de bajo costo que requieren navegación fiable. Su bajo precio y lógica clara lo convierten en una referencia para quienes se inician en la integración de componentes en Arduino sin necesidad de conocimientos avanzados de ingeniería.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F30ea60onob8gjg124wzg.png",
+      "alt": "Diagrama del sistema de detección de obstáculos con doble sensor ultrasónico e infrarrojo para Arduino",
+      "caption": "Imagen de portada del artículo que ilustra el montaje del sistema de detección"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Arduino",
+    "#SensorFusion",
+    "#RoboticaMaker",
+    "#HC_SR04",
+    "#ProyectosDIY"
+  ],
+  "fullArticle": "El maker taiwanés conocido como A-Zhe ha presentado un sistema de detección de obstáculos de bajo costo y alta fiabilidad para pequeños robots móviles, basado en la integración de dos sensores económicos y ampliamente disponibles: el ultrasónico HC-SR04 y un sensor infrarrojo de proximidad. Su desarrollo surge de una pregunta aparentemente simple pero con importantes implicaciones técnicas: ¿puede un pequeño vehículo autónomo de escritorio detectar de forma fiable obstáculos de naturaleza muy distinta, como una mano en movimiento, un bloque de espuma de poliestireno de color claro o una pared situada a cierta distancia, sin fallos en ninguno de los casos? La respuesta, según explica A-Zhe en su publicación original, pasa por combinar las fortalezas de ambos sensores para salvar sus respectivas limitaciones físicas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F30ea60onob8gjg124wzg.png]\n\nLa principal limitación del sensor ultrasónico HC-SR04, de uso muy extendido en proyectos de Arduino, es su incapacidad para detectar objetos fabricados con materiales blandos y porosos, como la espuma de poliestireno o el algodón, ya que las ondas sonoras se dispersan y no generan el eco necesario para calcular la distancia. Por el contrario, el sensor infrarrojo, que funciona mediante la reflexión de luz, sí detecta estos objetos siempre que su superficie sea lo suficientemente clara para reflejar el haz. Al combinar ambas lecturas, el sistema prioriza la información del sensor que haya detectado un obstáculo en un rango de distancia válido, eliminando los falsos negativos que se producirían al usar un solo componente.\n\nUno de los riesgos de usar el sensor ultrasónico de forma independiente es el bloqueo del sistema cuando no se recibe eco, por ejemplo al apuntar a una superficie absorbente de sonido: la función pulseIn() de Arduino espera de forma indefinida la señal de retorno, lo que puede causar una colisión mientras el programa está detenido. Para solucionarlo, A-Zhe implementa un parámetro de timeout de 3 milisegundos (3000 microsegundos) en la función, de forma que si no se recibe eco en ese plazo, el sistema devuelve un valor de distancia máximo predefinido, activando de inmediato el sensor infrarrojo como respaldo. La conversión de la duración de la señal a distancia en centímetros se realiza con la fórmula duration * 0.034 / 2, basada en la velocidad del sonido en el aire (340 metros por segundo, o 34 centímetros por microsegundo), que calcula la distancia del objeto teniendo en cuenta que la señal recorre el trayecto de ida y vuelta.\n\nMás allá de la detección de obstáculos en robots móviles, el diseño puede adaptarse fácilmente a proyectos de robots seguidores de línea: basta con instalar el sensor infrarrojo orientado hacia abajo, de forma que detecte el cambio de reflexión al acercarse al borde de una superficie, evitando que el robot se caiga. El costo total de los componentes necesarios para armar el sistema no supera los 300 dólares taiwaneses (unos 9 euros al cambio actual), lo que lo hace accesible para proyectos educativos, makers principiantes y prototipos de bajo presupuesto. Esta solución práctica y bien documentada es un ejemplo claro de cómo la fusión de sensores, un concepto clave en la robótica avanzada y los vehículos autónomos, puede implementarse de forma sencilla y económica sin necesidad de conocimientos especializados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T01:43:00.968Z",
+  "links": [
+    {
+      "title": "Artículo original del proyecto en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de la función pulseIn() de Arduino",
+      "url": "https://www.arduino.cc/reference/en/language/functions/advanced-io/pulsein/"
+    },
+    {
+      "title": "Hoja de datos oficial del sensor ultrasónico HC-SR04",
+      "url": "https://www.electronica-pt.com/datasheets/HC-SR04.pdf"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo total de componentes",
+      "value": "Menos de 300 dólares taiwaneses (aproximadamente 9 euros)"
+    },
+    {
+      "label": "Timeout configurado para pulseIn()",
+      "value": "3 milisegundos (3000 microsegundos)"
+    },
+    {
+      "label": "Distancia máxima de detección ultrasónica",
+      "value": "51 centímetros (límite físico del HC-SR04 con este timeout)"
+    },
+    {
+      "label": "Velocidad del sonido en aire usada para el cálculo",
+      "value": "340 metros por segundo (34 centímetros por microsegundo)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

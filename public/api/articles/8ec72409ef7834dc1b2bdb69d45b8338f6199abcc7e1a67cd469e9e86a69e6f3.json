@@ -1,0 +1,73 @@
+{
+  "id": "8ec72409ef7834dc1b2bdb69d45b8338f6199abcc7e1a67cd469e9e86a69e6f3",
+  "title": "Genera tipos TypeScript desde JSON sin errores: el truco para no fallar con campos opcionales",
+  "summary": "El artículo explica el fallo más común en las herramientas de conversión de JSON a TypeScript: basarse solo en la primera muestra de datos, lo que genera tipos incorrectos al omitir campos opcionales o tipos variables. Presenta una solución que fusiona todas las claves de los elementos de un array y destaca la herramienta Skojio que implementa esta corrección.",
+  "url": "https://dev.to/skojiocommunity/how-to-generate-typescript-types-from-json-without-getting-optional-fields-wrong-4nk0",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T10:05:03.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fskojio.com%2Fblog%2Fcovers%2Fjson-to-typescript-interfaces.jpg",
+  "imageAlt": "Genera tipos TypeScript desde JSON sin errores: el truco para no fallar con campos opcionales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica el fallo más común en las herramientas de conversión de JSON a TypeScript: basarse solo en la primera muestra de datos, lo que genera tipos incorrectos al omitir campos opcionales o tipos variables. Presenta una solución que fusiona todas las claves de los elementos de un array y destaca la herramienta Skojio que implementa esta corrección.",
+  "keyPoints": [
+    "El error más frecuente en los convertidores JSON a TypeScript es el 'problema de una sola muestra': solo analizan el primer elemento de un array, ignorando el resto.",
+    "Este fallo genera tipos que marcan campos opcionales como obligatorios, o que asignan un tipo fijo a campos que pueden variar entre números y cadenas en diferentes registros.",
+    "La solución consiste en fusionar la unión de todas las claves presentes en cada elemento del array de JSON para generar interfaces correctas y completas.",
+    "Las herramientas de calidad también deben extraer objetos anidados en interfaces separadas, reutilizarlas cuando se repitan y evitar duplicados innecesarios."
+  ],
+  "whyMatters": "Este problema afecta a millones de desarrolladores que usan convertidores automáticos para agilizar la integración con APIs, ya que un tipo incorrecto genera errores en tiempo de ejecución muy difíciles de depurar, pues TypeScript no los detecta en compilación. A medida que las arquitecturas de software se basan cada vez más en el tipado estático para reducir fallos, la precisión de estas herramientas se convierte en un factor crítico para la productividad y la estabilidad de los proyectos. Entender este fallo y usar herramientas que lo solucionen permite evitar horas de depuración y garantizar que el tipado sea fiel a la realidad de los datos que devuelve la API.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fskojio.com%2Fblog%2Fcovers%2Fjson-to-typescript-interfaces.jpg",
+      "alt": "Portada del artículo sobre generación de tipos TypeScript desde JSON",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#TypeScript",
+    "#JSON",
+    "#DesarrolloWeb",
+    "#HerramientasDev",
+    "#APIs"
+  ],
+  "fullArticle": "Si alguna vez has pegado un objeto JSON en una herramienta de conversión a TypeScript y has obtenido una interfaz limpia, solo para que al día siguiente tu API devuelva una estructura ligeramente diferente y rompa tu compilación, has sufrido el 'problema de una sola muestra'. Se trata del fallo más común y menos comentado en la conversión de JSON a TypeScript, y es fundamental entenderlo antes de confiar en cualquier tipo generado en un proyecto real. En esencia, convertir JSON a TypeScript es un ejercicio de mapeo estructural: los tipos de valor de JSON (cadena, número, booleano, nulo, array, objeto) tienen contrapartes directas en TypeScript, por lo que para un objeto simple el trabajo es trivial. La complejidad aparece cuando la muestra de JSON es un array de objetos, la forma que tienen casi todas las respuestas de APIs REST reales.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fskojio.com%2Fblog%2Fcovers%2Fjson-to-typescript-interfaces.jpg]\n\nEl error se produce cuando la herramienta solo analiza el primer elemento del array: si un usuario de la lista no tiene el campo email porque se registró por SSO, el tipo generado marcará email como obligatorio, cuando en realidad es opcional. Este fallo no se manifiesta de inmediato, sino que aparece en tiempo de ejecución como un valor undefined donde TypeScript prometía una cadena, ya que el compilador no tuvo forma de detectar la ausencia del campo en la muestra inicial. Lo mismo ocurre con los tipos de los campos: si un campo es número en un registro y cadena en otro (por ejemplo, durante una migración de API, o cuando un campo a veces es un ID y otras veces un slug), un convertidor que solo muestree el primer elemento asignará el tipo incorrecto y romperá el código en cuanto aparezca el valor de otro tipo. La solución, aunque tediosa de implementar correctamente, es simple en teoría: cuando la raíz del JSON es un array de objetos similares, hay que fusionar la unión de todas las claves vistas en cada elemento, no solo la primera. Esta lógica también aplica a objetos anidados: si un array de etiquetas dentro de un registro tiene un elemento sin el campo peso, esa opcionalidad debe mantenerse al fusionar los registros externos, un detalle fácil de ignorar en niveles de anidación profundos. Por otro lado, los objetos anidados plantean una decisión de diseño: si escribir la forma en línea o extraerla a una interfaz con nombre propio, que suele ser más legible y permite reutilizar el tipo en otros lugares, además de evitar duplicados cuando la misma estructura aparece en varias propiedades. La herramienta Skojio JSON to TypeScript Converter resuelve específicamente el problema de la muestra única: al pegar un objeto o array de objetos, fusiona todas las claves de todos los elementos, genera interfaces separadas para objetos anidados y elimina duplicados, ofreciendo un tipado preciso y fiel a la realidad de los datos de la API.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T10:25:26.013Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/skojio/how-to-generate-typescript-types-from-json-without-getting-optional-fields-wrong"
+    },
+    {
+      "title": "Convertidor JSON a TypeScript de Skojio",
+      "url": "https://skojio.com/json-to-typescript"
+    },
+    {
+      "title": "Documentación oficial de TypeScript sobre interfaces",
+      "url": "https://www.typescriptlang.org/docs/handbook/interfaces.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fallo más común en convertidores JSON a TypeScript",
+      "value": "Análisis solo del primer elemento de arrays de objetos"
+    },
+    {
+      "label": "Nivel de anidación donde suele perderse la opcionalidad de campos",
+      "value": "2 niveles o más"
+    },
+    {
+      "label": "Herramienta que soluciona el problema de la muestra única",
+      "value": "Skojio JSON to TypeScript Converter"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

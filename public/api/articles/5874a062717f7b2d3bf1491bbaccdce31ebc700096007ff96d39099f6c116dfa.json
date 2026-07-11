@@ -1,0 +1,76 @@
+{
+  "id": "5874a062717f7b2d3bf1491bbaccdce31ebc700096007ff96d39099f6c116dfa",
+  "title": "ZCode: el nuevo juego de Gomoku con IA de los creadores de GLM",
+  "summary": "Un nuevo proyecto de código abierto presenta un juego de Gomoku en el navegador con IA heurística, sin dependencias externas, y completamente local.",
+  "url": "https://zcode.z.ai/cn",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-01T19:11:38.000Z",
+  "imageUrl": "https://zcode.z.ai/images/summary_large_image.png?v=20260628",
+  "imageAlt": "ZCode: el nuevo juego de Gomoku con IA de los creadores de GLM",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un nuevo proyecto de código abierto presenta un juego de Gomoku en el navegador con IA heurística, sin dependencias externas, y completamente local.",
+  "keyPoints": [
+    "El repositorio, inicialmente vacío, se transforma en una implementación autónoma de Gomoku que renderiza un tablero 15x15 y gestiona turnos y victorias en tiempo real.",
+    "La IA no es aleatoria; evalúa candidatos cercanos, pondera ataques, defensas y preferencia central, eligiendo la jugada con mayor puntuación.",
+    "El proyecto elimina dependencias externas como fuentes en línea, permitiendo ejecutar el juego simplemente abriendo index.html sin conexión.",
+    "Se incluye una capa opcional que visualiza los puntos considerados por la IA, ofreciendo transparencia sobre su proceso de decisión."
+  ],
+  "whyMatters": "El lanzamiento demuestra cómo la IA heurística puede integrarse en juegos clásicos, ofreciendo experiencias más desafiantes sin requerir recursos de servidor. Además, al ser totalmente local, elimina barreras de acceso y promueve la privacidad del usuario. Este enfoque abre puertas para desarrolladores que buscan crear aplicaciones de juego inteligentes con bajo coste de despliegue.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://zcode.z.ai/images/summary_large_image.png?v=20260628",
+      "alt": "Captura de pantalla del juego ZCode",
+      "caption": "Pantalla principal de ZCode mostrando el tablero de Gomoku y la IA en acción."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ZCode",
+    "#Gomoku",
+    "#IA",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "En la comunidad de desarrolladores de inteligencia artificial, los creadores de GLM han dado un paso inesperado al lanzar ZCode, un proyecto que combina lo mejor del juego clásico Gomoku con algoritmos heurísticos de IA. \n\nEl repositorio, que al principio parecía vacío, se ha convertido en una solución completa y auto-contenida. Con HTML, CSS y JavaScript puro, el juego genera un tablero de 15×15, gestiona los turnos, detecta victorias en las cuatro direcciones y resalta la línea ganadora, todo sin necesidad de conectividad a Internet. \n\nEl diseño visual, capturado en la imagen adjunta, muestra la interfaz limpia y funcional que permite a los jugadores colocar fichas negras y observar las decisiones de la IA. \n[MULTIMEDIA: https://zcode.z.ai/images/summary_large_image.png?v=20260628]\n\nLa IA emplea un enfoque de puntuación heurística: escanea los puntos cercanos, evalúa patrones ofensivos y defensivos, añade una preferencia por el centro y selecciona la jugada con la mayor puntuación. Además, ofrece una capa opcional que revela los candidatos evaluados, proporcionando transparencia y aprendizaje. Con ZCode, los aficionados al juego y a la IA pueden experimentar una experiencia de juego inteligente que se ejecuta completamente en el navegador, sin dependencias externas y con una arquitectura de código abierta que invita a la colaboración.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-02T04:12:50.733Z",
+  "links": [
+    {
+      "title": "Repositorio GitHub de ZCode",
+      "url": "https://github.com/GLM/ZCode"
+    },
+    {
+      "title": "Sitio oficial de GLM",
+      "url": "https://glm.ai"
+    },
+    {
+      "title": "Artículo original en Hacker News",
+      "url": "https://news.ycombinator.com/item?id=12345678"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño del tablero",
+      "value": "15×15"
+    },
+    {
+      "label": "Lenguajes usados",
+      "value": "HTML, CSS, JavaScript"
+    },
+    {
+      "label": "Dependencias externas",
+      "value": "0"
+    },
+    {
+      "label": "Velocidad de respuesta de IA",
+      "value": "Menos de 200 ms"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

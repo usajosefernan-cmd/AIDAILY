@@ -1,0 +1,68 @@
+{
+  "id": "54685cc62bdba771fbcd5614a12e862a4674af7514eeb1fa8eed1c30d7b675aa",
+  "title": "El HTML semántico: la superpotencia oculta que transforma la accesibilidad y el posicionamiento de tu sitio web",
+  "summary": "Un desarrollador comparte su experiencia al descubrir que el HTML semántico, más allá de definir la estructura visual de una web, es una herramienta clave para mejorar la accesibilidad y el SEO, con ejemplos prácticos de mejoras aplicadas en su portafolio personal durante el programa IYF Temporada 11.",
+  "url": "https://dev.to/gladwell_wathuti/why-semantic-html-is-a-superpower-for-your-website-1hoh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T18:23:54.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frk8b1wticcq40vckw4zv.png",
+  "imageAlt": "El HTML semántico: la superpotencia oculta que transforma la accesibilidad y el posicionamiento de tu sitio web",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador comparte su experiencia al descubrir que el HTML semántico, más allá de definir la estructura visual de una web, es una herramienta clave para mejorar la accesibilidad y el SEO, con ejemplos prácticos de mejoras aplicadas en su portafolio personal durante el programa IYF Temporada 11.",
+  "keyPoints": [
+    "El HTML semántico utiliza etiquetas con significado propio (como <header>, <article>, <nav>) en lugar de solo definir disposición visual, mejorando la estructura del código.",
+    "La implementación de atributos alt descriptivos en imágenes permite a los lectores de pantalla describir el contenido a usuarios con discapacidad visual.",
+    "Sustituir contenedores genéricos <div> por etiquetas semánticas en galerías y secciones clave aumenta la accesibilidad y el posicionamiento en buscadores.",
+    "El autor aplicó estas mejoras durante una auditoría de accesibilidad en el marco del programa IYF Temporada 11 para su portafolio personal."
+  ],
+  "whyMatters": "La adopción de HTML semántico no es una mera cuestión de buenas prácticas de codificación, sino un paso estratégico para garantizar la inclusión digital de millones de usuarios con discapacidades que dependen de tecnologías de asistencia. A largo plazo, su implementación reduce la brecha digital, mejora el posicionamiento en motores de búsqueda al facilitar la interpretación del contenido por parte de los rastreadores, y establece estándares de calidad que benefician a todo el ecosistema web. Para desarrolladores y empresas, invertir en estas prácticas desde las fases iniciales de proyecto evita costosos rediseños futuros y mejora la reputación de marca al demostrar compromiso con la accesibilidad universal.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frk8b1wticcq40vckw4zv.png",
+      "alt": "Portada del artículo sobre HTML semántico como herramienta de accesibilidad web",
+      "caption": "Imagen de portada del artículo publicado en Dev.to por Gladwell Muthoni sobre la importancia del HTML semántico"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#HTMLSemantico",
+    "#AccesibilidadWeb",
+    "#DesarrolloWeb",
+    "#IYFTemporada11"
+  ],
+  "fullArticle": "En un momento en el que la inclusión digital se ha convertido en un eje central del desarrollo tecnológico global, una práctica de codificación a menudo subestimada está ganando terreno como herramienta imprescindible para construir webs más justas y eficientes: el HTML semántico. Esta premisa es el eje del artículo publicado en Dev.to por el desarrollador Gladwell Muthoni, quien durante la construcción de su portafolio personal en el marco del programa IYF Temporada 11, descubrió que escribir código va mucho más allá de lograr que una página se vea 'correctamente' en pantalla: se trata de garantizar que sea accesible para todos los usuarios, independientemente de sus capacidades.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frk8b1wticcq40vckw4zv.png]\n\nA diferencia de las etiquetas HTML genéricas que solo indican cómo debe disponerse el contenido en la interfaz, el HTML semántico utiliza etiquetas que aportan un significado intrínseco a cada sección de la página: <header> para la cabecera, <nav> para la navegación, <article> para contenidos independientes, <section> para secciones temáticas o <footer> para el pie de página. Esta distinción no es un mero capricho de estandarización: permite a los motores de búsqueda interpretar correctamente la estructura y el peso de cada contenido, mejorando el posicionamiento SEO, y sobre todo, facilita que las tecnologías de asistencia, como los lectores de pantalla, puedan navegar y describir el sitio a usuarios con discapacidad visual o cognitiva.\n\nLa prueba de su impacto la encontró el propio Muthoni durante la auditoría de accesibilidad correspondiente a la tarea 2.3 del programa, donde identificó tres fallos críticos en su portafolio inicial. El primero de ellos era la ausencia de atributos alt en varias imágenes, un error que impedía a los lectores de pantalla describir el contenido visual a usuarios invidentes. La solución fue tan sencilla como efectiva: añadir descripciones contextuales precisas, como alt='Retrato de Gladwell Muthoni, estudiante de desarrollo web', que aportan la información necesaria sin alterar la experiencia de usuario visual.\n\nEl segundo fallo detectado fue la dependencia de contenedores genéricos <div> para estructurar su galería de proyectos, una práctica que no aporta ningún significado a la estructura del documento. Al sustituir estos contenedores por etiquetas semánticas adecuadas, no solo mejoró la accesibilidad de la sección, sino que también facilitó la reutilización de código mediante plantillas que le permiten responder preguntas frecuentes o almacenar fragmentos de código para usar en otros proyectos. Este cambio, aunque aparentemente menor, tiene un efecto multiplicador: reduce la carga de mantenimiento del código y garantiza que cualquier usuario, sin importar sus capacidades, pueda acceder a todo el contenido del portafolio.\n\nLa difusión de esta experiencia en la comunidad de desarrollo refuerza la necesidad de incorporar la accesibilidad como un requisito no negociable desde las fases iniciales de cualquier proyecto web, y no como un añadido posterior. En un ecosistema digital donde más de mil millones de personas en el mundo viven con algún tipo de discapacidad, adoptar prácticas como el HTML semántico no es solo una cuestión de cumplimiento normativo, sino un compromiso con la construcción de una web verdaderamente universal, donde el acceso a la información no dependa de las capacidades físicas o cognitivas de cada usuario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T18:46:27.007Z",
+  "links": [
+    {
+      "title": "Repositorio del portafolio desarrollado en el programa IYF Temporada 11",
+      "url": "https://github.com/gladwellmuthoni/iyf-s11-week-01-gladwellmuthoni.git"
+    },
+    {
+      "title": "Guía oficial de MDN sobre HTML semántico",
+      "url": "https://developer.mozilla.org/es/docs/Glossary/Semantic_HTML"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fallos de accesibilidad detectados en la auditoría inicial",
+      "value": "3"
+    },
+    {
+      "label": "Programa de formación en el que se enmarca el proyecto",
+      "value": "IYF Temporada 11"
+    },
+    {
+      "label": "Porcentaje de población mundial con discapacidad que se beneficia de la accesibilidad web",
+      "value": "15% (datos de la OMS)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

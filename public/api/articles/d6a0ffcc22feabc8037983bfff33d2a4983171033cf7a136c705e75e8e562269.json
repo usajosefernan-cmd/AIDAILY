@@ -1,0 +1,76 @@
+{
+  "id": "d6a0ffcc22feabc8037983bfff33d2a4983171033cf7a136c705e75e8e562269",
+  "title": "Kokoro revoluciona la síntesis de voz local: 82M de parámetros, calidad excepcional y cero dependencia de la nube",
+  "summary": "Kokoro es un modelo de texto a voz de código abierto de 82 millones de parámetros que genera habla realista en varios idiomas, funciona completamente en dispositivos locales sin necesidad de GPU y prioriza la privacidad del usuario, con opciones de despliegue sencillas como contenedores Docker.",
+  "url": "https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-07T18:24:10.000Z",
+  "imageUrl": "https://ariya.io//images/2026/03/kokoro.png",
+  "imageAlt": "Kokoro revoluciona la síntesis de voz local: 82M de parámetros, calidad excepcional y cero dependencia de la nube",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Kokoro es un modelo de texto a voz de código abierto de 82 millones de parámetros que genera habla realista en varios idiomas, funciona completamente en dispositivos locales sin necesidad de GPU y prioriza la privacidad del usuario, con opciones de despliegue sencillas como contenedores Docker.",
+  "keyPoints": [
+    "Kokoro es un modelo TTS de código abierto de 82 millones de parámetros que produce habla realista en varios idiomas, con 50 voces distintas optimizadas principalmente para inglés.",
+    "El modelo funciona completamente en equipos locales sin necesidad de GPU, aprovechando solo la CPU, por lo que no requiere conexión a internet ni compromete la privacidad del usuario.",
+    "Su despliegue es sencillo gracias a la imagen de contenedor preconfigurada Kokoro-FastAPI, de 5 GB de tamaño, que incluye modelos de voz predescargados y una interfaz web accesible en localhost:8880/web.",
+    "El sistema es compatible con la API de voz de OpenAI, por lo que se puede integrar fácilmente en aplicaciones existentes que ya usen ese servicio, con código de ejemplo disponible en GitHub."
+  ],
+  "whyMatters": "Esta noticia es clave porque demuestra que la generación de voz de alta calidad ya no depende exclusivamente de servicios en la nube pagos ni de hardware de gama alta. Al funcionar de forma local en CPUs, incluso antiguas, elimina riesgos de privacidad, reduce costos de operación y abre la puerta a implementaciones en entornos con restricciones de conectividad. Su compatibilidad con la API de OpenAI facilita la migración de aplicaciones existentes sin necesidad de reescribir código, lo que acelerará su adopción en sectores como la accesibilidad, la creación de contenido y los asistentes virtuales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://ariya.io//images/2026/03/kokoro.png",
+      "alt": "Captura de pantalla del modelo de texto a voz Kokoro ejecutándose en un equipo local, mostrando la interfaz web de generación de audio.",
+      "caption": "Imagen de portada del artículo original que presenta el modelo Kokoro de síntesis de voz local."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#KokoroTTS",
+    "#TextoAVoz",
+    "#IAOpenSource",
+    "#PrivacidadDigital"
+  ],
+  "fullArticle": "Hace pocos años, la síntesis de voz realista en entornos locales parecía una quimera reservada a servidores de alto rendimiento o servicios en la nube de pago. Ahora, modelos como Kokoro han roto esa barrera: con solo 82 millones de parámetros, ofrece una calidad de habla excepcional en varios idiomas, funciona completamente en la CPU de equipos convencionales y, lo más importante, no envía datos a servidores externos, protegiendo así la privacidad del usuario. La prueba de su eficiencia es que incluso una CPU de 12 años de antigüedad es capaz de generar audio de alta calidad sin problemas, como demuestran las pruebas de rendimiento realizadas por sus desarrolladores.\n\nEl despliegue de Kokoro es sorprendentemente sencillo gracias a la imagen de contenedor preconfigurada Kokoro-FastAPI, que incluye todos los modelos de voz predescargados y una interfaz web lista para usar, accesible en la dirección localhost:8880/web. Esta imagen, de aproximadamente 5 GB de tamaño, también expone una interfaz compatible con la API de voz de OpenAI, por lo que cualquier aplicación que ya use ese servicio puede migrar a Kokoro sin necesidad de modificar su código base. Para facilitar las pruebas, los desarrolladores han publicado código de ejemplo en JavaScript y Python en el repositorio GitHub speak, que permite generar audio y reproducirlo automáticamente si se tiene instalado SoX.\n\n[MULTIMEDIA: https://ariya.io//images/2026/03/kokoro.png]\n\nAunque Kokoro es una opción muy sólida para usuarios que priorizan la privacidad y el bajo consumo de recursos, existe una alternativa similar llamada Speaches que, además de TTS, incluye el sistema de reconocimiento de voz Whisper de OpenAI, ideal para aplicaciones que necesiten tanto texto a voz como voz a texto. La llegada de modelos como estos supone un punto de inflexión en el sector de la síntesis de voz, ya que democratiza el acceso a herramientas de alta calidad sin necesidad de inversiones costosas en hardware o suscripciones a servicios en la nube, abriendo la puerta a innovaciones en accesibilidad, creación de contenido y asistentes virtuales para todo tipo de usuarios y organizaciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T05:45:15.037Z",
+  "links": [
+    {
+      "title": "Lista completa de voces disponibles para Kokoro",
+      "url": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md"
+    },
+    {
+      "title": "Repositorio de código de ejemplo para probar Kokoro",
+      "url": "https://github.com/remotebrowser/speak"
+    },
+    {
+      "title": "Speaches: servicio alternativo de TTS compatible con OpenAI",
+      "url": "https://speaches.ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño del modelo Kokoro",
+      "value": "82 millones de parámetros"
+    },
+    {
+      "label": "Tamaño de la imagen de contenedor Kokoro-FastAPI",
+      "value": "5 GB"
+    },
+    {
+      "label": "Número de voces disponibles",
+      "value": "Alrededor de 50 voces distintas"
+    },
+    {
+      "label": "Antigüedad mínima de CPU compatible",
+      "value": "12 años"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

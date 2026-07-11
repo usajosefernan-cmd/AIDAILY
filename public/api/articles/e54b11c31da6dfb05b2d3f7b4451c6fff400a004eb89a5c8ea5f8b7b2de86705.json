@@ -1,0 +1,78 @@
+{
+  "id": "e54b11c31da6dfb05b2d3f7b4451c6fff400a004eb89a5c8ea5f8b7b2de86705",
+  "title": "Por qué elegimos construir productos reales en una industria llena de atajos",
+  "summary": "El equipo de Pewarisgroup, división tecnológica de la plataforma de juegos Pewaristoto, comparte las lecciones aprendidas en un año de desarrollo de productos digitales centrados en la utilidad para el usuario, rechazando las tácticas de crecimiento basadas en trucos de SEO y monetización intrusiva. A diferencia de la industria que prioriza el tráfico efímero, apuestan por construir herramientas que los usuarios necesiten realmente, sobreviviendo a las actualizaciones de algoritmo por su valor práctico. El artículo detalla su experiencia desarrollando un sistema de datos de pronósticos de togel para 70 mercados mundiales, con soluciones de scraping propio para garantizar la fiabilidad de la información.",
+  "url": "https://dev.to/pewarisgroup/kenapa-kami-pilih-bangun-produk-nyata-di-industri-yang-penuh-jalan-pintas-1jbi",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T05:23:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6z0k1dov7k0cohwwjizn.png",
+  "imageAlt": "Por qué elegimos construir productos reales en una industria llena de atajos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El equipo de Pewarisgroup, división tecnológica de la plataforma de juegos Pewaristoto, comparte las lecciones aprendidas en un año de desarrollo de productos digitales centrados en la utilidad para el usuario, rechazando las tácticas de crecimiento basadas en trucos de SEO y monetización intrusiva. A diferencia de la industria que prioriza el tráfico efímero, apuestan por construir herramientas que los usuarios necesiten realmente, sobreviviendo a las actualizaciones de algoritmo por su valor práctico. El artículo detalla su experiencia desarrollando un sistema de datos de pronósticos de togel para 70 mercados mundiales, con soluciones de scraping propio para garantizar la fiabilidad de la información.",
+  "keyPoints": [
+    "Pewarisgroup, división tecnológica de la plataforma de juegos Pewaristoto, apuesta por productos útiles en lugar de tácticas de SEO agresivas y monetización intrusiva.",
+    "El equipo rechaza el ciclo de actualizaciones de Google que derrumban sitios basados en enlaces y keywords, priorizando usuarios recurrentes por necesidad del producto.",
+    "Para su servicio de pronósticos de togel, desarrollaron un sistema de scraping de datos de 70 mercados mundiales con doble fuente para garantizar fiabilidad.",
+    "Su principio fundacional es que el software debe servir a las personas, no al revés, diferenciándose de la industria que trata a los usuarios como simples fuentes de ingresos."
+  ],
+  "whyMatters": "Esta estrategia representa una ruptura con el modelo predominante de crecimiento digital basado en trucos de algoritmo y monetización intrusiva, que ha generado desconfianza generalizada entre los usuarios. Al priorizar la utilidad real y la fidelidad de los usuarios por encima de las métricas de tráfico efímero, Pewarisgroup establece un precedente para desarrolladores que buscan sostenibilidad a largo plazo en sectores saturados. Su enfoque demuestra que es posible construir productos resistentes a cambios de algoritmo y generar lealtad sin depender de prácticas de crecimiento cuestionables, lo que podría redefinir las métricas de éxito en la industria tecnológica indonesia y mercados emergentes similares.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6z0k1dov7k0cohwwjizn.png",
+      "alt": "Portada del artículo que explica la apuesta de Pewarisgroup por productos tecnológicos útiles en lugar de atajos de crecimiento",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de la comunidad de desarrolladores DEV Community, plataforma donde se publicó el artículo original",
+      "caption": "Logotipo de DEV Community, fuente original del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Pewarisgroup",
+    "#NextJS",
+    "#ReactNative",
+    "#EstrategiaDigital"
+  ],
+  "fullArticle": "Este artículo no es una historia de éxito. El equipo de Pewarisgroup, división tecnológica de la plataforma de juegos en línea Pewaristoto, se encuentra en pleno proceso de desarrollo, y sus resultados aún no son dramáticos, pero las lecciones aprendidas en el último año merecen ser compartidas no como consejos, sino como el registro de un equipo que ha aprendido todo en el camino. A diferencia de un estudio indie que empieza desde cero o de un gran equipo con recursos ilimitados, se trata de un grupo pequeño con roles perfectamente definidos, que por primera vez implementó todo su stack tecnológico actual —Next.js, Express, React Native, Cloudflare, integración con Football API y notificaciones push— al iniciar el proyecto.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6z0k1dov7k0cohwwjizn.png]\n\nEl motor que impulsó la creación de Pewarisgroup como división independiente con una misión diferenciada fue una frustración compartida por millones de usuarios indonesios: la experiencia de abrir aplicaciones aparentemente útiles como calculadoras o calendarios, solo para encontrarse con pantallas de anuncios a pantalla completa, cuentas regresivas y botones de cierre diminutos que impiden su uso inmediato. Como equipo indonesio, se cansaron de ver cómo los usuarios eran tratados como simples 'ojos' para monetizar, en lugar de personas que necesitan herramientas funcionales. Esta reflexión, surgida en conversaciones internas sobre el tamaño del mercado de juegos de azar en Indonesia y la experiencia de uso de aplicaciones cotidianas, derivó en un principio fundacional innegociable: el software debe servir a los seres humanos, no al revés.\n\nFrente a la industria que normaliza el crecimiento basado en plantillas de SEO, compra de backlinks, redes privadas de blogs (PBN) y contenido de baja calidad para dirigir tráfico a sitios monetizados, el equipo observó un ciclo destructivo que se repite sin cesar: tras una actualización del núcleo de Google, todos los sitios construidos bajo estas tácticas se derrumban, los operadores entran en pánico, reconstruyen con dominios nuevos y repiten la misma estrategia, solo para volver a ser eliminados por la siguiente actualización. Por eso se preguntaron por qué no construir algo que no pudiera ser borrado por un algoritmo: un producto que sobreviviera no por esquivar las reglas, sino por ser genuinamente necesario para los usuarios. Entienden que un usuario que abre una aplicación cada día por necesidad, no por un clic accidental en Google, no es tráfico efímero: es un usuario real, inmune a los cambios de algoritmo.\n\nEste enfoque se materializó en su servicio de pronósticos de resultados de togel, para el que necesitaban datos en tiempo real, precisos y fiables de 70 mercados de todo el mundo. Al no existir ningún proveedor con una API oficial para este tipo de datos, optaron por una solución de scraping de información pública que normalizan ellos mismos, con un sistema de doble fuente por mercado: una principal y una de respaldo, para garantizar la actualización incluso si una fuente falla. Esta aproximación, aunque menos elegante que una API oficial, les dio control total sobre los datos: saben exactamente de dónde provienen, qué tan frescos son y cómo actuar ante cualquier incidencia.\n\nSu metodología de trabajo se resume en una frase: primero comprobar si funciona, y si funciona, seguir adelante. Esto les ha permitido lanzar productos rápidamente, aunque también les ha hecho enfrentarse a brechas imprevistas en el camino. Su apuesta por el crecimiento lento pero sostenible, centrado en la utilidad real para el usuario, supone un contrapunto necesario en una industria que prioriza las métricas de tráfico a corto plazo por encima de la experiencia del usuario, y establece un modelo a seguir para equipos pequeños que buscan construir productos duraderos sin depender de atajos o prácticas de crecimiento cuestionables.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T05:46:17.297Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/pewarisgroup/kenapa-kami-pilih-bangun-produk-nyata-di-industri-yang-penuh-jalan-pintas-4j8e"
+    },
+    {
+      "title": "Sitio oficial de Pewaristoto Predicciones",
+      "url": "https://pewaristotoprediksi.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Mercados de togel cubiertos",
+      "value": "70 mercados globales"
+    },
+    {
+      "label": "Periodo de desarrollo y aprendizaje del equipo",
+      "value": "1 año"
+    },
+    {
+      "label": "Fuentes de datos por mercado de togel",
+      "value": "2 fuentes por mercado (primaria y de respaldo)"
+    },
+    {
+      "label": "Tecnologías nuevas implementadas por el equipo",
+      "value": "6 (Next.js, Express, React Native, Cloudflare, Football API, notificaciones push)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

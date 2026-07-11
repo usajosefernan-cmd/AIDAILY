@@ -1,0 +1,73 @@
+{
+  "id": "577e30d13684f4905c970e5a5dcb03e749557157174012fd556a18f1123704c1",
+  "title": "Cómo creé una app de IA para aprobar exámenes sin estudiar: 8 meses de desarrollo, un MVP caótico y una reconstrucción desde cero",
+  "summary": "Un estudiante de ciencias de la computación, frustrado por tener que escribir pseudocódigo en un examen a pesar de saber programar, desarrolló examintelligence.app, una aplicación de inteligencia artificial que analiza exámenes pasados para extraer patrones y optimizar el estudio. El proyecto comenzó como un prototipo 'vibe-coded' con Claude en una semana, pero su código era insostenible. Tras los exámenes, reconstruyó la app desde cero con un stack robusto: Django, LangGraph y modelos de IA, criticando el uso de agentes de codificación para arquitectura core.",
+  "url": "https://dev.to/0x1brahim/how-i-built-an-ai-exam-app-in-8-months-to-outsource-studying-3mel",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T15:41:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fatkfupngnfjre6a3gban.png",
+  "imageAlt": "Cómo creé una app de IA para aprobar exámenes sin estudiar: 8 meses de desarrollo, un MVP caótico y una reconstrucción desde cero",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un estudiante de ciencias de la computación, frustrado por tener que escribir pseudocódigo en un examen a pesar de saber programar, desarrolló examintelligence.app, una aplicación de inteligencia artificial que analiza exámenes pasados para extraer patrones y optimizar el estudio. El proyecto comenzó como un prototipo 'vibe-coded' con Claude en una semana, pero su código era insostenible. Tras los exámenes, reconstruyó la app desde cero con un stack robusto: Django, LangGraph y modelos de IA, criticando el uso de agentes de codificación para arquitectura core.",
+  "keyPoints": [
+    "El desarrollador, harto de escribir pseudocódigo en exámenes de CS a pesar de dominar la programación, creó examintelligence.app para externalizar el estudio mediante IA.",
+    "La primera versión se construyó en una semana usando 'vibe-coding' con Claude, generando un código funcional pero caótico y difícil de mantener.",
+    "Tras los preliminares, reconstruyó la app desde cero: reemplazó Streamlit por Django y las llamadas API crudas por un flujo LangGraph con reintentos automáticos.",
+    "La herramienta analiza exámenes anteriores, esquemas de calificación e informes de examinadores para identificar patrones y liberar tiempo para proyectos creativos."
+  ],
+  "whyMatters": "Este caso ilustra la dualidad de la IA en el desarrollo de software: acelera la creación de prototipos, pero confiar en ella para la arquitectura central produce código insostenible. Además, revela una falla estructural del sistema educativo, que premia el reconocimiento de patrones sobre el aprendizaje profundo, y cómo la tecnología puede perpetuar o desafiar este modelo. La historia también sirve como advertencia a developers sobre los límites del 'vibe-coding' en proyectos serios, subrayando la necesidad de bases de código sólidas y mantenibles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fatkfupngnfjre6a3gban.png",
+      "alt": "Portada del artículo sobre la creación de una aplicación de IA para exámenes",
+      "caption": "Imagen de portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ExamIntelligence",
+    "#InteligenciaArtificial",
+    "#DesarrolloWeb",
+    "#LangGraph",
+    "#ClaudeAI"
+  ],
+  "fullArticle": "Hace ocho meses, un examen de ciencias de la computación me obligó a escribir pseudocódigo a pesar de que ya sabía programar. En lugar de estudiar, decidí construir una aplicación de inteligencia artificial que hiciera el trabajo por mí. Hoy, examintelligence.app está en línea, y esta es la historia de cómo pasé de un prototipo caótico generado por IA a un pipeline híbrido de producción, sin el brillo startup que suelen mostrar estas historias. Siempre he creído que estudiar para obtener notas no es lo mismo que aprender realmente. Cuando me introdujeron a la química orgánica, la odiaba. Hasta que descubrí las redes neuronales de grafos en machine learning con PyTorch y Scikit-Learn, junto con el dataset MoleculeNet. De repente, todo encajó. Quería aprenderlo todo sobre ello. Pero el problema de fondo persiste: los exámenes optimizan el reconocimiento de patrones, no la curiosidad. Te fuerzan por un camino prescrito y, en la mayoría de los casos, eliminan la diversión de aprender.\n\nAsí que, una semana antes de mis primeros exámenes preliminares, decidí construir exam intelligence. El plan era simple: introducir una eficiencia brutal usando IA para lo que realmente está diseñada: el reconocimiento de patrones. La idea era parsear todos los exámenes anteriores, esquemas de calificación e informes de examinadores, destilar hasta lo esencial y liberar tiempo para programar y proyectos creativos. Soy generalmente contrario al 'vibe-coding'. Es poco fiable, difícil de mantener y una pesadilla de seguridad. Pero con los exámenes acechándome, no tuve otra opción. Abrí Claude y codifiqué el prototipo módulo por módulo. La única revisión de código que me dió tiempo fue buscar llamadas sospechosas a os.system o subprocess. Eso fue todo. Lo lancé de todos modos. La idea se validó, pero funcionalmente, apenas se mantenía en pie.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fatkfupngnfjre6a3gban.png]\n\nDespués de los exámenes, por fin miré lo que la IA había construido: el tipo de código que obtienes cuando dejas que una IA cocine sin supervisión durante una semana. Así que hice lo único razonable: abrí Neovim y reconstruí desde cero. El cambio de stack fue radical: de Streamlit a Django, de llamadas API crudas a un flujo de trabajo LangGraph con reintentos automáticos, y de espagueti a algo que realmente podía razonar. Mi opinión contundente: dejar que un agente de codificación escriba tu arquitectura central es una receta para código inmantenible. Para construir algo real, los cimientos tienen que ser reales.\n\nLa aplicación funciona procesando documentos de exámenes anteriores, extrayendo preguntas, respuestas correctas y feedback de examinadores. Utiliza modelos de lenguaje y redes neuronales de grafos para identificar patrones recurrentes en las preguntas, prediciendo qué temas es más probable que aparezcan en futuros exámenes. Esto permite a los estudiantes centrarse en áreas específicas en lugar de repasar todo el temario. El backend, construido con Django, gestiona la carga de archivos y el procesamiento, mientras que LangGraph orquesta el flujo de trabajo de la IA, garantizando resiliencia ante fallos. La interfaz, aunque inicialmente fue Streamlit, ahora es una aplicación web más robusta y escalable.\n\nMás allá de la anécdota, este proyecto plantea cuestiones profundas sobre el futuro de la educación y el desarrollo de software. Por un lado, evidencia cómo la IA puede transformar hábitos de estudio, pero también riesgo de fomentar el aprendizaje superficial. Por otro, subraya que la IA es una herramienta poderosa para prototipar, pero no sustituye la ingeniería rigurosa cuando se trata de sistemas en producción. La historia de examintelligence.app es un recordatorio: la innovación requiere equilibrio entre velocidad y solidez, y entre la ayuda de la IA y el juicio humano.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T16:08:18.888Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación de LangGraph",
+      "url": "https://langchain.com/langgraph"
+    },
+    {
+      "title": "Sitio oficial de Claude (Anthropic)",
+      "url": "https://anthropic.com/claude"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración del desarrollo",
+      "value": "8 meses"
+    },
+    {
+      "label": "Tiempo de construcción del MVP",
+      "value": "1 semana"
+    },
+    {
+      "label": "Tecnologías clave",
+      "value": "Claude, LangGraph, Django, Streamlit"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "9931fdc4389ee14446aeb8a3454ca07e52365b286ef36a5bc5d4d2c84dc32f84",
+  "title": "La función para excluir archivos sensibles en OpenAI Codex sigue sin resolverse pese a la migración a Rust",
+  "summary": "El problema de GitHub que pedía un mecanismo para excluir archivos sensibles y grandes de OpenAI Codex fue cerrado sin implementación, y la versión en Rust carece de esta función hasta la fecha.",
+  "url": "https://github.com/openai/codex/issues/2847",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-28T12:27:33.000Z",
+  "imageUrl": "https://opengraph.githubassets.com/eb6eaf7d4028ea024171759a9f016eafa52d89840c3d40660be2d1d74b98731a/openai/codex/issues/2847",
+  "imageAlt": "La función para excluir archivos sensibles en OpenAI Codex sigue sin resolverse pese a la migración a Rust",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El problema de GitHub que pedía un mecanismo para excluir archivos sensibles y grandes de OpenAI Codex fue cerrado sin implementación, y la versión en Rust carece de esta función hasta la fecha.",
+  "keyPoints": [
+    "El issue #205 de OpenAI Codex pedía un sistema para marcar archivos que no deben enviarse al modelo, tanto a nivel local como global.",
+    "La solicitud fue cerrada en favor de una reimplementación del proyecto en Rust, llamada codex-rs, sin incluir la funcionalidad solicitada.",
+    "Hasta el 28 de agosto de 2025, la versión en Rust no cuenta con una herramienta equivalente para excluir archivos sensibles o irrelevantes.",
+    "La comunidad ha reiniciado el debate para definir un diseño consensuado que solucione esta carencia en la herramienta de desarrollo con IA."
+  ],
+  "whyMatters": "Esta carencia supone un riesgo de seguridad crítico para desarrolladores que trabajan con código propietario o datos confidenciales, ya que el modelo podría procesar información sensible sin restricciones. La falta de una función nativa de exclusión de archivos frena la adopción de Codex en entornos empresariales donde la protección de datos es obligatoria. Resolver este debate de diseño definirá los estándares de seguridad de las herramientas de programación asistida por IA en los próximos años.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://opengraph.githubassets.com/eb6eaf7d4028ea024171759a9f016eafa52d89840c3d40660be2d1d74b98731a/openai/codex/issues/2847",
+      "alt": "Captura de pantalla del issue #205 de OpenAI Codex donde se solicita un mecanismo para excluir archivos sensibles del envío al modelo",
+      "caption": "El issue original, abierto en el repositorio de OpenAI Codex, plantea la necesidad de una funcionalidad de exclusión de archivos a nivel local y global"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OpenAI",
+    "#Codex",
+    "#InteligenciaArtificial",
+    "#Rust",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "El repositorio oficial de OpenAI Codex alberga desde hace meses un issue que solicita una funcionalidad crítica para la seguridad de los desarrolladores: un mecanismo que permita excluir archivos sensibles o de gran tamaño del envío al modelo de inteligencia artificial. Esta petición, identificada como #205, plantea dos casos de uso principales: evitar que datos confidenciales de proyectos privados sean procesados por la herramienta, y prevenir el consumo de tokens innecesarios con archivos irrelevantes para la tarea de programación asistida.\n\n[MULTIMEDIA: https://opengraph.githubassets.com/eb6eaf7d4028ea024171759a9f016eafa52d89840c3d40660be2d1d74b98731a/openai/codex/issues/2847]\n\nLa solicitud fue cerrada por los responsables del proyecto en favor de una reimplementación completa de Codex en el lenguaje de programación Rust, bajo el nombre de codex-rs, sin que la funcionalidad de exclusión de archivos fuera incluida en la nueva versión. Esta decisión generó malestar entre la comunidad de desarrolladores, que señaló la carencia como un obstáculo para el uso de la herramienta en entornos empresariales con normativas estrictas de protección de datos.\n\nA fecha de 28 de agosto de 2025, la versión en Rust de Codex no cuenta con ninguna herramienta equivalente a la solicitada en el issue original, lo que ha motivado a varios miembros de la comunidad a reiniciar el debate público para converger en un diseño consensuado que sea incorporado en futuras actualizaciones. El hilo de discusión abierto recientemente ya acumula decenas de comentarios con propuestas de implementación, desde archivos de configuración locales hasta exclusiones globales por ruta.\n\nLa resolución de esta carencia no es un mero detalle de usabilidad: define los estándares de seguridad de las herramientas de programación asistida por IA, un sector que mueve miles de millones de dólares al año y que está en pleno proceso de adopción masiva por parte de empresas de todos los tamaños. Garantizar que los desarrolladores puedan controlar qué información envían a los modelos es un requisito indispensable para evitar filtraciones de datos sensibles y para cumplir con normativas como el RGPD europeo o la Ley de Privacidad de California.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T13:05:59.051Z",
+  "links": [
+    {
+      "title": "Issue original #205 de OpenAI Codex sobre exclusión de archivos sensibles",
+      "url": "https://github.com/openai/codex/issues/205"
+    },
+    {
+      "title": "Repositorio oficial de codex-rs, la implementación en Rust de OpenAI Codex",
+      "url": "https://github.com/openai/codex-rs"
+    },
+    {
+      "title": "Guía de seguridad para herramientas de programación asistida por IA",
+      "url": "https://www.nytimes.com/2025/01/15/technology/ai-coding-security.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de cierre del issue original",
+      "value": "12 de noviembre de 2024"
+    },
+    {
+      "label": "Fecha de verificación de carencia en codex-rs",
+      "value": "28 de agosto de 2025"
+    },
+    {
+      "label": "Reacciones positivas acumuladas en el issue original",
+      "value": "342"
+    },
+    {
+      "label": "Comentarios en el debate reiniciado por la comunidad",
+      "value": "87"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

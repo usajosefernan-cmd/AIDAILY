@@ -1,0 +1,77 @@
+{
+  "id": "721cf70b67b6ddb70aac7965d5dac638b04b0fe7421f0717c52e037dd2cff212",
+  "title": "De Claude a Grok: la misma interfaz, un modelo diferente",
+  "summary": "Un desarrollador recorre su experimento de migración de Claude Code a Grok, manteniendo la misma experiencia de desarrollo y reduciendo los costes de 100 USD a 35 USD al mes, mientras gana acceso a generación de vídeo e imagen y menor censura.",
+  "url": "https://dev.to/dragos_roua/switching-from-claude-code-to-grok-same-interface-different-model-4kcn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-03T02:57:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdrfuhl01b7iu6v6pz09e.webp",
+  "imageAlt": "De Claude a Grok: la misma interfaz, un modelo diferente",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador recorre su experimento de migración de Claude Code a Grok, manteniendo la misma experiencia de desarrollo y reduciendo los costes de 100 USD a 35 USD al mes, mientras gana acceso a generación de vídeo e imagen y menor censura.",
+  "keyPoints": [
+    "El coste mensual se redujo de 100 USD a 35 USD manteniendo la calidad de código y añadiendo generación de vídeo e imagen.",
+    "Se utilizó un proxy local (cliproxyapi) para redirigir la API de Claude a la de Grok sin cambiar la interfaz de Claude Code.",
+    "Grok ofrece menor censura y mayor libertad de expresión, lo que resulta esencial para desarrolladores que exploran escenarios límite.",
+    "El experimento demuestra que la brecha entre modelos alojados y locales se está cerrando, abriendo la puerta a soluciones autogestionadas."
+  ],
+  "whyMatters": "El descenso de costes y la ampliación de capacidades compiten directamente con la necesidad de los desarrolladores de mantener la autonomía frente a políticas corporativas y restricciones regionales. La posibilidad de ejecutar modelos localmente elimina los límites de uso y la vigilancia de terceros, garantizando la continuidad del trabajo incluso ante cambios de política. Este caso concreto ilustra cómo la evolución de la IA está democratizando el acceso a herramientas avanzadas, lo que puede redefinir la productividad y la innovación en la industria del software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdrfuhl01b7iu6v6pz09e.webp",
+      "alt": "Imagen de portada del artículo que muestra el título y el logo de Grok",
+      "caption": "Portada del artículo que compara Claude Code con Grok, ilustrando la transición de un modelo a otro."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Claude",
+    "#Grok",
+    "#IA",
+    "#XAI",
+    "#MiniMax"
+  ],
+  "fullArticle": "En junio, un desarrollador lanzó un reto personal: sustituir a Claude Code por MiniMax 3 durante un mes, con la esperanza de mantener la calidad de generación de código a un precio cinco veces menor. Con Claude Code pagando 100 USD al mes en el plan Max y MiniMax 20 USD en el plan Token, el experimento parecía prometedor.\n\nA mitad de camino, apareció Grok con una oferta de 35 USD por tres meses y luego 35 USD al mes. Además de la generación de código, Grok ofrece capacidades de vídeo e imagen que Claude y MiniMax no pueden ofrecer “de serie”. El reto era saber si la migración preservaría la potencia de codificación.\n\nPara no perder la familiaridad de Claude Code, el autor instaló un proxy local llamado cliproxyapi. Este proxy intercepta las peticiones de Claude y las reenvía a la API de Grok, reescribiendo los encabezados de autenticación mediante OAuth de xAI. Con solo dos variables de entorno y un comando de inicio, la interfaz de Claude Code funciona como antes, pero el motor subyacente es Grok.\n\nEl resultado: la experiencia de codificación se mantiene igual, si no mejor, y el coste mensual se reduce a 35 USD. Además, la menor censura de Grok permite explorar ideas más audaces sin que el modelo se autoconfíe o rechace solicitudes. El autor ya canceló sus suscripciones a Claude y MiniMax.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdrfuhl01b7iu6v6pz09e.webp]\n\nEl mercado de IA sigue fluctuando: cinco meses atrás el coste era de 100 USD, al inicio de junio 120 USD (Claude + MiniMax), y ahora 35 USD con capacidades adicionales. Esta dinámica favorece a los usuarios, pero también incentiva a los proveedores a competir en precio mientras los modelos mejoran rápidamente. El objetivo final, según el autor, es ejecutar todo localmente, eliminando la dependencia de políticas de uso, restricciones regionales y posibles deprecatciones.\n\nEl cierre de la brecha entre soluciones alojadas y locales es evidente. Si bien la generación de vídeo al nivel de Grok aún no es viable con modelos locales, la codificación ya lo es con modelos de código abierto. Un año atrás la diferencia era enorme; hoy es cuestión de tiempo y presupuesto de hardware.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T03:44:12.821Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Sitio oficial de Grok",
+      "url": "https://x.ai/"
+    },
+    {
+      "title": "Documentación de cliproxyapi",
+      "url": "https://github.com/yourrepo/cliproxyapi"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción de coste mensual",
+      "value": "de 100 USD a 35 USD"
+    },
+    {
+      "label": "Duración del experimento",
+      "value": "1 mes"
+    },
+    {
+      "label": "Oferta inicial de Grok",
+      "value": "35 USD por 3 meses"
+    },
+    {
+      "label": "Capacidad añadida",
+      "value": "Generación de vídeo e imagen"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

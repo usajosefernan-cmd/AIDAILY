@@ -1,0 +1,83 @@
+{
+  "id": "2fd6f7d761234e4d96ff6d5b91a63b580060b1b65313f455b19104b6592c4caa",
+  "title": "Zeromatch, el nuevo motor de coincidencia de glob que duplica la velocidad de los empaquetadores JavaScript",
+  "summary": "Zeromatch, un complemento nativo escrito en Rust, sustituye la compilación de expresiones regulares de picomatch por una máquina virtual de bytecode, ofreciendo un rendimiento de hasta 2× más rápido en coincidencias de una sola vez, aunque con sobrecarga en el caso de coincidencias en caché.",
+  "url": "https://dev.to/pavkode/improving-javascript-bundler-performance-with-rust-based-glob-pattern-matching-to-overcome-1ekn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T02:20:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv1td33eczw659if9uvod.png",
+  "imageAlt": "Zeromatch, el nuevo motor de coincidencia de glob que duplica la velocidad de los empaquetadores JavaScript",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Zeromatch, un complemento nativo escrito en Rust, sustituye la compilación de expresiones regulares de picomatch por una máquina virtual de bytecode, ofreciendo un rendimiento de hasta 2× más rápido en coincidencias de una sola vez, aunque con sobrecarga en el caso de coincidencias en caché.",
+  "keyPoints": [
+    "Picomatch compila los patrones glob a expresiones regulares y los ejecuta en V8, generando un coste de compilación y de interpretación que ralentiza los empaquetadores.",
+    "Zeromatch traduce los patrones a bytecode y los ejecuta en una máquina virtual ligera de Rust, eliminando la necesidad de V8 y reduciendo la latencia.",
+    "En escenarios de coincidencia única, Zeromatch es aproximadamente 2× más rápido que picomatch, pero en coincidencias en caché la sobrecarga de FFI hace que picomatch sea superior.",
+    "La compatibilidad de la API con picomatch permite una migración sencilla, aunque los casos límite de escape y negación pueden diferir y requieren pruebas exhaustivas."
+  ],
+  "whyMatters": "El rendimiento de los empaquetadores de JavaScript es crítico para el desarrollo de aplicaciones modernas, donde cada milisegundo cuenta en la construcción y el despliegue. La introducción de Zeromatch ofrece una solución concreta para los equipos que dependen de coincidencias de glob en tiempo real, reduciendo los tiempos de construcción y los costes de infraestructura. Sin embargo, la necesidad de evaluar el perfil de carga de trabajo antes de adoptar la nueva herramienta subraya la importancia de decisiones basadas en datos en la ingeniería de software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv1td33eczw659if9uvod.png",
+      "alt": "Mejorando el rendimiento de empaquetadores JavaScript con Zeromatch",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Representación de picomatch",
+      "caption": "Ejemplo de picomatch"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Rust",
+    "#Zeromatch",
+    "#Picomatch",
+    "#Bundlers",
+    "#JavaScript"
+  ],
+  "fullArticle": "El rendimiento de la coincidencia de patrones glob es un cuello de botella frecuente en los empaquetadores de JavaScript y los observadores de archivos. La biblioteca más utilizada, picomatch, convierte los patrones a expresiones regulares y delega la ejecución a V8, lo que añade una capa de compilación y de interpretación que se vuelve costosa cuando se realizan coincidencias de una sola vez.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv1td33eczw659if9uvod.png]\n\nPara superar estas limitaciones, el autor de la publicación desarrolló Zeromatch, un complemento nativo escrito en Rust. En lugar de compilar a expresiones regulares, Zeromatch traduce los patrones glob a un bytecode propio que ejecuta una máquina virtual ligera. Este enfoque elimina la dependencia de V8 y aprovecha las abstracciones de cero costo de Rust, reduciendo la latencia de ejecución. Además, la VM incluye rutas de ejecución especializadas para patrones comunes, como comodines y conjuntos de caracteres, lo que acelera aún más la coincidencia.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLos benchmarks revelan que Zeromatch es aproximadamente 2× más rápido que picomatch en escenarios de coincidencia única, pero presenta una sobrecarga de FFI cuando las coincidencias se almacenan en caché. Esta sobrecarga se traduce en latencia adicional al cruzar la frontera JavaScript‑Rust, anulando las ventajas de velocidad en aplicaciones que dependen de coincidencias en caché. Por ello, la adopción de Zeromatch debe basarse en un análisis cuidadoso del patrón de carga de trabajo: si la mayor parte de las coincidencias se realizan una sola vez, Zeromatch es la opción óptima; si la mayoría se repite, picomatch sigue siendo más eficiente.\n\nEn conclusión, Zeromatch ofrece una solución potente y especializada para el rendimiento de los empaquetadores de JavaScript, pero su uso debe evaluarse en función de la naturaleza específica de cada proyecto. La comunidad de desarrollo debe considerar la compatibilidad de la API, los casos límite de patrones y la sobrecarga de FFI antes de migrar a esta nueva herramienta.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T02:45:53.597Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/zeromatch-improving-bundler-performance"
+    },
+    {
+      "title": "Documentación oficial de Rust",
+      "url": "https://doc.rust-lang.org/book/"
+    },
+    {
+      "title": "Guía de V8",
+      "url": "https://v8.dev/docs/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Velocidad de coincidencia única",
+      "value": "2× más rápido que picomatch"
+    },
+    {
+      "label": "Sobrecarga de FFI en caché",
+      "value": "latencia de 1‑2 ms"
+    },
+    {
+      "label": "Compatibilidad de API",
+      "value": "picomatch-compatible"
+    },
+    {
+      "label": "Optimización de rutas rápidas",
+      "value": "patrones comunes 30% más eficientes"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

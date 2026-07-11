@@ -1,0 +1,75 @@
+{
+  "id": "582ea425569ed53b3ed5d923fce2e1af8188e2e3933a18324320645a9c4d6da0",
+  "title": "La nueva versión 0.0.2 de Knowledge and Memory Management apuesta por la portabilidad y la IA",
+  "summary": "La actualización 0.0.2 del sistema de gestión de conocimiento y memoria elimina las rutas codificadas, introduce el uso del entorno $AGENT_HOME y combina un motor vectorial HNSW con un índice clave‑valor, permitiendo a los agentes recopilar, almacenar y recuperar información de forma eficiente y escalable.",
+  "url": "https://dev.to/manoir_yantai_f22f01340f0/knowledge-and-memory-management-v002-portable-knowledge-collection-2jdj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T12:01:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7vl8t5wf0u5sgyyo746m.png",
+  "imageAlt": "La nueva versión 0.0.2 de Knowledge and Memory Management apuesta por la portabilidad y la IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La actualización 0.0.2 del sistema de gestión de conocimiento y memoria elimina las rutas codificadas, introduce el uso del entorno $AGENT_HOME y combina un motor vectorial HNSW con un índice clave‑valor, permitiendo a los agentes recopilar, almacenar y recuperar información de forma eficiente y escalable.",
+  "keyPoints": [
+    "El lanzamiento sustituye todas las rutas fijas por la variable $AGENT_HOME, garantizando configuraciones portables entre equipos, CI y contenedores.",
+    "Los coleccionistas de web, vídeo y artículos normalizan metadatos y emplean filtros personalizados, evitando duplicados mediante hashing y deduplicación a nivel de fuente.",
+    "La memoria se construye con un vector‑store HNSW y un índice clave‑valor, usando embeddings all‑MiniLM‑L6‑v2 para segmentar y buscar semánticamente.",
+    "El commit automático de 100 entradas y el uso de mmap en la base de datos permiten manejar más de 500 000 registros con un sobre‑costo de memoria predecible."
+  ],
+  "whyMatters": "Esta actualización marca un hito en la construcción de agentes autónomos que necesitan aprender de fuentes diversas sin depender de configuraciones específicas del entorno. Al centralizar la raíz de almacenamiento en $AGENT_HOME, los equipos pueden compartir y versionar fácilmente sus agentes, reduciendo errores de despliegue y acelerando la integración continua. La combinación de embeddings y un índice HNSW no solo mejora la velocidad de recuperación, sino que también abre la puerta a aplicaciones de IA conversacional y de recomendación más sofisticadas, lo que posiciona a la plataforma como una base sólida para futuros desarrollos de inteligencia artificial aplicada.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7vl8t5wf0u5sgyyo746m.png",
+      "alt": "Portada del artículo sobre la actualización 0.0.2 de Knowledge and Memory Management",
+      "caption": "Imagen que muestra el título y la versión 0.0.2 del sistema de gestión de conocimiento"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de la interfaz de configuración del agente",
+      "caption": "Pantalla que muestra la configuración de $AGENT_HOME y los parámetros de los coleccionistas"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#KnowledgeManagement",
+    "#VectorStore",
+    "#Embeddings",
+    "#HNSW",
+    "#AGENTHOME"
+  ],
+  "fullArticle": "El nuevo lanzamiento 0.0.2 de Knowledge and Memory Management redefine la forma en que los agentes recopilan y retienen información. Con la eliminación de rutas codificadas y la adopción del entorno $AGENT_HOME, el sistema ahora puede operar en cualquier infraestructura, desde ordenadores de desarrollo hasta pipelines de CI y contenedores Docker, sin ajustes manuales. Este cambio de paradigma simplifica la colaboración y garantiza que los agentes compartan un árbol de almacenamiento común y coherente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7vl8t5wf0u5sgyyo746m.png]\n\nLos coleccionistas de contenido están diseñados para ser específicos de la fuente pero con una interfaz homogénea. El scraper web elimina scripts, descarga imágenes bajo límites de tamaño y extrae texto legible mediante un parser configurable. Los vídeos se procesan a través de APIs de transcripción de YouTube y Vimeo, con la opción de extraer fotogramas para material con diapositivas. Los artículos se ingieren vía RSS o URLs directas, aplicando un resumen automático para piezas extensas. Cada colector normaliza metadatos como título, URL, timestamp y idioma, y envía el payload a una cola de staging donde se aplica deduplicación a nivel de URL y hash.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLa capa de memoria combina un vector‑store HNSW con un índice clave‑valor. Cada entrada de conocimiento se fragmenta, se genera un embedding con el modelo all‑MiniLM‑L6‑v2 y se inserta en la base de datos vectorial. El índice de clave‑valor guarda metadatos y relaciones, permitiendo recorridos de grafos entre ítems relacionados. Cuando llega un nuevo dato, el gestor verifica similitud semántica y actualiza timestamps y referencias en lugar de crear duplicados. La búsqueda admite filtros por fuente y ventana de recencia, y los resultados se clasifican por similitud coseno y frescura de origen.\n\nEl rendimiento se optimiza mediante commits automáticos cada 100 entradas y el uso de mmap para índices grandes, manteniendo la sobrecarga de memoria bajo control incluso con más de 500 000 registros. Los coleccionistas son I/O‑bound y aprovechan la caché de $AGENT_HOME para evitar solicitudes de red redundantes. La próxima versión incluirá la fusión cruzada de fuentes y la recolección incremental de basura, consolidando aún más la arquitectura para agentes de producción que aprendan del web sin hacks de entorno.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T12:26:52.830Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/knowledge-and-memory-management-v0-0-2-portable-knowledge-collection"
+    },
+    {
+      "title": "Documentación de all-MiniLM-L6-v2",
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de entradas en la base de datos",
+      "value": "500k+"
+    },
+    {
+      "label": "Tamaño de commit automático",
+      "value": "100 entradas"
+    },
+    {
+      "label": "Modelo de embedding",
+      "value": "all-MiniLM-L6-v2"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

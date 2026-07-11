@@ -1,0 +1,75 @@
+{
+  "id": "0fa3aa26b394525ad96d1797fcdbbb6295fbcc5ac85f8bc339491d1b07b9fccf",
+  "title": "Escaneé Cal.com con mi CLI basada en evidencia: el mejor resultado fue lo que se negó a afirmar",
+  "summary": "Un desarrollador escanea el repositorio de Cal.com con su herramienta CLI DevTime, que detecta funcionalidades basándose en evidencia concreta. El hallazgo más relevante fue que la herramienta se negó a confirmar la existencia de webhooks de facturación, ya que en el repositorio open source solo hay un stub, no la implementación real reservada para la edición empresarial.",
+  "url": "https://dev.to/shakargy/i-scanned-calcom-with-my-evidence-based-cli-the-best-result-was-what-it-refused-to-say-7gj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T21:54:36.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5dvtakxslgh7xhaphe1t.png",
+  "imageAlt": "Escaneé Cal.com con mi CLI basada en evidencia: el mejor resultado fue lo que se negó a afirmar",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador escanea el repositorio de Cal.com con su herramienta CLI DevTime, que detecta funcionalidades basándose en evidencia concreta. El hallazgo más relevante fue que la herramienta se negó a confirmar la existencia de webhooks de facturación, ya que en el repositorio open source solo hay un stub, no la implementación real reservada para la edición empresarial.",
+  "keyPoints": [
+    "DevTime es una CLI local sin telemetría ni ejecución de código en la nube, que escanea repositorios y detecta funcionalidades clave vinculando cada afirmación a evidencia concreta.",
+    "Al analizar Cal.com, la herramienta confirmó la autenticación, pero arrojó baja confianza en los webhooks de facturación, lo que resultó ser un hallazgo acertado.",
+    "El repositorio open source de Cal.com solo contiene un stub del archivo stripe/webhook.ts, sin implementación real de webhooks, que está reservada para la edición empresarial.",
+    "El escáner también falló al no detectar el sistema de trabajos en segundo plano y las superficies de permisos de administrador existentes en el código de la plataforma."
+  ],
+  "whyMatters": "Este caso demuestra la importancia de las herramientas de análisis de código basadas en evidencia frente a los métodos que se basan solo en nombres de archivos o suposiciones, evitando afirmaciones falsas sobre funcionalidades de software. Para empresas y desarrolladores, resalta el riesgo de asumir características en repositorios open source sin verificar su implementación real, especialmente en productos con ediciones empresariales cerradas. A futuro, este enfoque puede mejorar la transparencia de los proyectos open source y la confianza en los análisis automáticos de código, un aspecto crítico para la seguridad y la toma de decisiones en el sector tecnológico.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5dvtakxslgh7xhaphe1t.png",
+      "alt": "Portada del artículo sobre el escaneo de Cal.com con la herramienta DevTime",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/1Hiu3Y9J_SI",
+      "alt": "Video explicativo sobre el escaneo de Cal.com con la CLI basada en evidencia DevTime",
+      "caption": "Video de YouTube complementario al artículo sobre la herramienta de análisis de código"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CalCom",
+    "#DevTimeCLI",
+    "#AnalisisDeCodigo",
+    "#OpenSource",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "Esta semana, un desarrollador decidió escanear el repositorio de Cal.com, la popular plataforma open source de programación de citas, con su herramienta CLI DevTime, creada para analizar código y explicar su funcionamiento a partir de evidencia concreta. La expectativa inicial era encontrar errores y fallos en el análisis, pero el resultado más interesante fue precisamente lo que la herramienta se negó a afirmar. DevTime funciona de forma local, sin telemetría, sin ejecución de código en la nube y sin uso de IA, detectando un conjunto cerrado de conceptos como autenticación, webhooks de facturación o trabajos en segundo plano, y vinculando cada afirmación a archivos de evidencia, además de reportar incertidumbre cuando no puede probar algo.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5dvtakxslgh7xhaphe1t.png]\nAl analizar la integración con Stripe de Cal.com, la herramienta arrojó una confianza baja en la existencia de webhooks de facturación, un resultado que el desarrollador consideró inicialmente un fallo, ya que la plataforma es un SaaS de programación con dicha integración. Sin embargo, al verificar manualmente el repositorio, encontró el archivo stripe/webhook.ts que cabría esperar, pero se trataba solo de un stub sin implementación real de manejo de webhooks, que está reservada para la edición empresarial de la plataforma. La negativa de DevTime a afirmar la existencia de esta funcionalidad fue, por tanto, la respuesta correcta, ya que no había evidencia de comportamiento en el repositorio open source.\n[MULTIMEDIA: https://www.youtube.com/embed/1Hiu3Y9J_SI]\nAdemás de este acierto, la herramienta también presentó fallos relevantes: no detectó el sistema de trabajos en segundo plano de Cal.com, que cuenta con paquetes Tasker, procesadores de tareas y rutas cron, ni las superficies de permisos de administrador existentes en el código. Este caso ejemplifica la tesis de DevTime: una historia construida solo a partir de nombres de archivos habría sido incorrecta, por lo que la herramienta prefiere reportar incertidumbre cuando no puede probar sus afirmaciones, evitando conclusiones falsas en el análisis de código.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T22:22:39.366Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/caldotcom/i-scanned-calcom-with-my-evidence-based-cli-the-best-result-was-what-it-refused-to-say-2h8j"
+    },
+    {
+      "title": "Sitio oficial de Cal.com",
+      "url": "https://cal.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de escaneo local",
+      "value": "4,2 segundos"
+    },
+    {
+      "label": "Conceptos que detecta DevTime",
+      "value": "7 (autenticación, facturación, webhooks, trabajos en segundo plano, exportación de datos, permisos de administrador, carga de archivos)"
+    },
+    {
+      "label": "Fallos detectados en el análisis de Cal.com",
+      "value": "3 (baja confianza en webhooks de facturación, subestimación de trabajos en segundo plano, omisión de permisos de administrador)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

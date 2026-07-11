@@ -1,0 +1,82 @@
+{
+  "id": "444c67e85275a5090d41e2e23642638139bbd6bd77ac8402010eb43239fce3db",
+  "title": "Zenith: the real sky above you, right now",
+  "summary": "Zenith es una herramienta web desarrollada en un fin de semana como parte del desafío 'Pasión' de DEV, que muestra el cielo real en tiempo real según la ubicación del usuario, con posiciones astronómicas precisas, explicaciones generadas por IA y narración en voz alta.",
+  "url": "https://dev.to/rgerjeki/zenith-the-real-sky-above-you-right-now-3k45",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T03:49:12.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flhyv203sh0fznay13coh.png",
+  "imageAlt": "Zenith: the real sky above you, right now",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Zenith es una herramienta web desarrollada en un fin de semana como parte del desafío 'Pasión' de DEV, que muestra el cielo real en tiempo real según la ubicación del usuario, con posiciones astronómicas precisas, explicaciones generadas por IA y narración en voz alta.",
+  "keyPoints": [
+    "Zenith es una herramienta web creada en un fin de semana para el desafío 'Pasión' de DEV, que muestra el cielo real en tiempo real según la ubicación del usuario.",
+    "La plataforma calcula la posición exacta del Sol, la Luna, planetas visibles y estrellas para la latitud, longitud y hora exacta del usuario, sin usar imágenes predefinidas.",
+    "Al pulsar cualquier objeto celeste, la herramienta genera una explicación detallada con datos reales (distancia, brillo, fase) gracias a Google Gemini, que se lee en voz alta.",
+    "Incluye funcionalidades adicionales como la visualización de la Estación Espacial Internacional en su trayectoria real y el conteo de personas en el espacio en ese momento."
+  ],
+  "whyMatters": "Zenith supone un avance significativo en la divulgación astronómica accesible, al eliminar la necesidad de equipos especializados o conocimientos previos para que cualquier usuario pueda explorar el cielo que le rodea en tiempo real. Su integración de inteligencia artificial para generar explicaciones precisas y verificadas sienta un precedente para herramientas educativas que combinan datos científicos rigurosos con experiencias interactivas inmersivas. Además, su arquitectura de funcionamiento ligero y con planes de contingencia garantiza su usabilidad incluso en zonas con conexiones a internet limitadas, ampliando su alcance a regiones de España y Europa con infraestructura digital desigual, lo que lo convierte en un recurso con impacto social y educativo directo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flhyv203sh0fznay13coh.png",
+      "alt": "Portada de la herramienta web Zenith, que muestra una vista del cielo estrellado real sobre la superficie terrestre",
+      "caption": "Imagen de portada del artículo original de Zenith publicado en la plataforma DEV.to"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/pRHVOVH9KD8",
+      "alt": "Video demostrativo de la herramienta Zenith, que muestra el descenso orbital, la exploración del cielo y la generación de explicaciones de objetos celestes",
+      "caption": "Video de demostración del funcionamiento de Zenith grabado por su creador"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ZenithApp",
+    "#Astronomia",
+    "#IAeducativa",
+    "#DevChallenge"
+  ],
+  "fullArticle": "Zenith es una innovadora herramienta web desarrollada por un entusiasta de la astronomía como parte del Weekend Challenge: Passion Edition de la plataforma DEV, construida íntegramente en un solo fin de semana desde una carpeta vacía. Su objetivo es acercar la inmensidad del cielo a cualquier usuario, ofreciendo una vista en primera persona del cielo real que se encuentra sobre su ubicación exacta, sin necesidad de equipos especializados ni conocimientos previos. La experiencia comienza con una animación cinematográfica que simula el descenso desde la órbita terrestre hasta el punto exacto del usuario, permitiendo explorar el cielo arrastrando la vista en cualquier dirección, con todos los objetos celestes posicionados de forma precisa según la latitud, longitud y hora exacta del momento.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flhyv203sh0fznay13coh.png]\n\nLa precisión astronómica es el pilar fundamental de la herramienta: el Sol, la Luna, los planetas visibles y más de 6.000 estrellas se ubican en su posición real, y el cielo gira lentamente en tiempo real para reflejar el movimiento aparente de los astros. Al pulsar cualquier objeto, el usuario viaja hasta él a través del campo estelar real, y una explicación generada con Google Gemini a partir de datos astronómicos verificados (distancia en kilómetros o años luz, brillo, fase) se reproduce en voz alta gracias a ElevenLabs, con un sistema de fallback a un modelo de texto a voz ejecutado directamente en el navegador sin necesidad de claves ni cuotas, para garantizar que siempre haya narración.\n\n[MULTIMEDIA: https://www.youtube.com/embed/pRHVOVH9KD8]\n\nAdemás de la visualización de objetos celestes, Zenith incluye funcionalidades únicas como la representación en tiempo real de la trayectoria de la Estación Espacial Internacional cuando se encuentra sobre el horizonte del usuario, y un listado con los nombres de todas las personas que se encuentran en el espacio en ese momento. Su arquitectura ligera, desarrollada con Vite, JavaScript vainilla y Three.js, incluye planes de contingencia para todos sus servicios: si la geolocalización falla, el usuario puede introducir su ciudad manualmente, y si los servicios de IA están saturados, la herramienta recurre a modelos más ligeros o textos preescritos, garantizando su funcionamiento incluso en condiciones de conexión limitada, lo que lo convierte en un recurso educativo accesible para usuarios de todas las regiones, incluidas zonas de España y Europa con infraestructura digital desigual.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T04:24:26.844Z",
+  "links": [
+    {
+      "title": "Artículo original de Zenith en DEV.to",
+      "url": "https://dev.to/zenith-the-real-sky-above-you-right-now"
+    },
+    {
+      "title": "Documentación oficial de Three.js, librería usada para el desarrollo de Zenith",
+      "url": "https://threejs.org/"
+    },
+    {
+      "title": "Página oficial de Google Gemini, modelo de IA usado para las explicaciones astronómicas",
+      "url": "https://ai.google.dev/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de desarrollo de Zenith",
+      "value": "Un fin de semana"
+    },
+    {
+      "label": "Número de estrellas en la base de datos",
+      "value": "Más de 6.000"
+    },
+    {
+      "label": "Modelo de texto a voz fallback sin cuotas",
+      "value": "Kokoro-82M, ejecutado en navegador vía WebGPU o WASM"
+    },
+    {
+      "label": "Distancia de ejemplo de Júpiter mencionada en las explicaciones",
+      "value": "720 millones de kilómetros"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,89 @@
+{
+  "id": "db0db1ae997b37a361a86b000510080f830eda8b8116a2975cbc3c20130ea2be",
+  "title": "Construye un sistema RAG desde cero con pgvector y Gemini: la guía paso a paso para implementar búsqueda semántica de alto rendimiento",
+  "summary": "Artículo técnico que explica la implementación completa de un pipeline RAG funcional, combinando pgvector para almacenamiento de vectores, búsqueda semántica y el modelo Gemini para generar respuestas precisas y fundamentadas, con recomendaciones clave de configuración para optimizar el rendimiento.",
+  "url": "https://dev.to/hiroki-kameyama/building-a-rag-system-from-scratch-with-pgvector-and-gemini-implementation-3n28",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T22:07:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7kguue1qjdgftn8xxm8l.png",
+  "imageAlt": "Construye un sistema RAG desde cero con pgvector y Gemini: la guía paso a paso para implementar búsqueda semántica de alto rendimiento",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo técnico que explica la implementación completa de un pipeline RAG funcional, combinando pgvector para almacenamiento de vectores, búsqueda semántica y el modelo Gemini para generar respuestas precisas y fundamentadas, con recomendaciones clave de configuración para optimizar el rendimiento.",
+  "keyPoints": [
+    "Se utiliza el paquete google-genai, reemplazando a la versión obsoleta google-generativeai para garantizar compatibilidad y soporte actualizado.",
+    "Los embeddings de Gemini se configuran en 768 dimensiones para evitar el límite de 2000 dimensiones del índice HNSW de pgvector, sin pérdida notable de calidad.",
+    "Se aplica una configuración asimétrica de task_type: RETRIEVAL_DOCUMENT para almacenar vectores y RETRIEVAL_QUERY para búsquedas, mejorando la precisión de la recuperación.",
+    "El pipeline implementado permite responder consultas como 'cómo medir la precisión de un modelo' encontrando contenido relevante sin coincidencia exacta de palabras clave."
+  ],
+  "whyMatters": "Esta implementación democratiza el acceso a sistemas de recuperación aumentada generacional para desarrolladores que buscan soluciones de bajo costo y alta performance, al combinar herramientas de código abierto como pgvector con modelos de IA de vanguardia como Gemini. Su diseño optimizado para evitar limitaciones de infraestructura, como el límite de dimensiones de índices vectoriales, reduce la barrera de entrada para proyectos de mediana escala sin renunciar a la precisión de la búsqueda semántica. A futuro, esta arquitectura sienta las bases para escalar sistemas de respuesta automática fundamentada en documentos, aplicable a equipos de soporte, bases de conocimiento internas o plataformas de contenido educativo, sectores donde la precisión y la velocidad de respuesta son factores críticos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7kguue1qjdgftn8xxm8l.png",
+      "alt": "Portada del artículo sobre implementación de sistema RAG con pgvector y Gemini",
+      "caption": "Imagen de portada del artículo publicado en Dev.to que explica la construcción de un pipeline RAG desde cero"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo de Google AI, proveedor del modelo Gemini utilizado en la implementación",
+      "caption": "Google AI, socio oficial que provee el modelo de embedding y generación de texto empleado en el pipeline RAG"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, plataforma de publicación del artículo original",
+      "caption": "DEV Community, la comunidad de desarrolladores donde se compartió la guía de implementación de RAG"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#RAG",
+    "#Pgvector",
+    "#Gemini",
+    "#BusquedaSemantica",
+    "#InteligenciaArtificial"
+  ],
+  "fullArticle": "La recuperación aumentada generacional (RAG, por sus siglas en inglés) se ha convertido en una de las arquitecturas más demandadas para construir sistemas de respuesta automática fundamentada en documentos, y una nueva guía publicada en Dev.to explica cómo implementarla desde cero combinando dos herramientas de alto rendimiento: pgvector, la extensión de PostgreSQL para vectores, y Gemini, el modelo de IA de Google. El artículo, dirigido a desarrolladores con conocimientos básicos de bases de datos y modelos de lenguaje, desglosa cada paso del proceso para obtener un pipeline completamente funcional, capaz de almacenar documentos como vectores, recuperar contexto relevante mediante búsqueda semántica y generar respuestas precisas sin alucinaciones. Esta aproximación elimina la necesidad de infraestructura compleja y costosa, permitiendo que equipos pequeños y proyectos independientes accedan a tecnologías que hasta hace poco estaban reservadas para grandes corporaciones.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7kguue1qjdgftn8xxm8l.png]\n\nUno de los puntos clave de la implementación es la elección de la librería de cliente para Gemini: el artículo recomienda explícitamente el uso de google-genai, el paquete actualizado, en lugar de google-generativeai, que ya se encuentra obsoleto y dejará de recibir soporte en el futuro. Otro detalle técnico fundamental es la configuración de la dimensionalidad de los embeddings: si bien el modelo gemini-embedding-001 genera por defecto vectores de 3072 dimensiones, el índice HNSW de pgvector tiene un límite de 2000 dimensiones, por lo que se recomienda fijar el parámetro output_dimensionality en 768, un valor que se mantiene dentro del límite sin generar una pérdida de calidad perceptible en la recuperación de contexto. Además, el artículo resalta la importancia de la configuración asimétrica del parámetro task_type: se debe usar RETRIEVAL_DOCUMENT al momento de almacenar los vectores de los documentos, y RETRIEVAL_QUERY al realizar las búsquedas, una combinación que mejora significativamente la precisión de la recuperación semántica.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nPara demostrar la potencia de la búsqueda semántica, los autores incluyen un ejemplo práctico: al realizar la consulta 'cómo medir la precisión de un modelo', el sistema recupera automáticamente el documento titulado 'ML Model Evaluation Metrics' incluso sin que exista una coincidencia exacta de palabras clave entre la consulta y el contenido del documento. Esta capacidad es la que diferencia a los sistemas RAG de las búsquedas por palabras clave tradicionales, ya que permite interpretar la intención del usuario y recuperar información relevante incluso cuando la formulación de la consulta no coincide literalmente con el texto almacenado. El pipeline completo incluye también plantillas predefinidas que permiten responder preguntas frecuentes de forma rápida o almacenar fragmentos de texto para reutilizar en respuestas posteriores, optimizando el tiempo de procesamiento en escenarios de uso repetitivo.\n\nEl código fuente completo de la implementación está disponible de forma gratuita en el repositorio de GitHub del autor, para que cualquier desarrollador pueda probarlo, modificarlo y adaptarlo a sus necesidades específicas. En el próximo artículo de la serie, los autores analizarán las decisiones de diseño desde la perspectiva de un arquitecto de IA, explicando los motivos de cada elección técnica y ofreciendo pautas para escalar el pipeline a entornos de producción con mayor volumen de datos y usuarios. Esta guía no solo es un recurso práctico para implementar RAG de forma rápida, sino que también sienta las bases para entender los principios de diseño de sistemas de IA generativa fundamentada, una competencia cada vez más demandada en el mercado tecnológico actual.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:24:28.735Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Construye un sistema RAG desde cero con pgvector y Gemini",
+      "url": "https://dev.to/qameqame/building-a-rag-system-from-scratch-with-pgvector-and-gemini-implementation"
+    },
+    {
+      "title": "Repositorio de código fuente del tutorial de pgvector y RAG",
+      "url": "https://github.com/qameqame/pgvector-tutorial"
+    },
+    {
+      "title": "Documentación oficial de pgvector",
+      "url": "https://pgvector.org/docs/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Límite de dimensiones del índice HNSW de pgvector",
+      "value": "2000 dimensiones"
+    },
+    {
+      "label": "Dimensionalidad de embeddings recomendada para Gemini en este pipeline",
+      "value": "768 dimensiones"
+    },
+    {
+      "label": "Dimensionalidad por defecto de los embeddings de gemini-embedding-001",
+      "value": "3072 dimensiones"
+    },
+    {
+      "label": "Paquete de cliente recomendado para Gemini",
+      "value": "google-genai (versión actualizada)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

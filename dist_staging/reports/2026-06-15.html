@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe IA · 2026-06-15</title>
+<meta name="description" content="Resumen diario de noticias IA del 2026-06-15: research, industria, herramientas y policy. Fuentes: Xataka, Gizmodo, The Verge, Ars Technica, VentureBeat, TechCrunch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0d12; --bg-elev:#11151c; --bg-card:#161b26;
+    --border:#232a3a; --border-hover:#303a50;
+    --ink:#f1f3f5; --ink-dim:#9aa4b2; --ink-muted:#6b7583;
+    --accent:#22d3ee; --accent-dim:#06b6d4; --accent-bg:rgba(34,211,238,.08);
+    --purple:#c084fc; --purple-bg:rgba(192,132,252,.08);
+    --green:#4ade80; --green-bg:rgba(74,222,128,.08);
+    --orange:#fbbf24; --orange-bg:rgba(251,191,36,.08);
+    --red:#f87171; --red-bg:rgba(248,113,113,.08);
+    --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:20px;
+    --shadow-sm:0 2px 8px rgba(0,0,0,.25); --shadow-md:0 8px 24px rgba(0,0,0,.35); --shadow-lg:0 16px 48px rgba(0,0,0,.45);
+    --trans-fast:120ms ease; --trans-base:200ms ease; --trans-slow:300ms ease;
+    --font-sans:'Inter',system-ui,-apple-system,sans-serif; --font-display:'Space Grotesk',system-ui,sans-serif;
+  }
+  @media(prefers-color-scheme:light){:root{--bg:#f8fafc;--bg-elev:#fff;--bg-card:#fff;--border:#e2e8f0;--border-hover:#cbd5e1;--ink:#0f172a;--ink-dim:#475569;--ink-muted:#94a3b8;--accent:#0891b2;--accent-bg:rgba(8,145,178,.1);--purple:#9333ea;--purple-bg:rgba(147,51,234,.1);--green:#16a34a;--green-bg:rgba(22,163,74,.1);--orange:#d97706;--orange-bg:rgba(217,119,6,.1);--red:#dc2626;--red-bg:rgba(220,38,38,.1);}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:15px;line-height:1.6;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+  .wrap-wide{max-width:1440px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  .site-header{position:sticky;top:0;z-index:100;background:rgba(10,13,18,.85);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--border)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand-logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--purple));display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:14px;color:#051018;letter-spacing:.5px}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1}
+  .brand-name{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.3px}
+  .brand-tag{font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.6px;font-weight:500}
+  .nav{display:flex;align-items:center;gap:4px}
+  .nav-link{padding:8px 14px;border-radius:var(--radius-md);font-size:13px;font-weight:500;color:var(--ink-dim);transition:color var(--trans-fast),background var(--trans-fast)}
+  .nav-link:hover,.nav-link.active{color:var(--ink);background:var(--bg-card)}
+  .nav-link.active::after{content:"";display:block;width:6px;height:6px;margin:6px auto 0;border-radius:50%;background:var(--accent)}
+
+  /* Hero */
+  .hero{padding:48px 0 32px}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  @media(min-width:1024px){.hero-grid{grid-template-columns:1.4fr 1fr}}
+  .hero-main{position:relative;border-radius:var(--radius-xl);overflow:hidden;background:var(--bg-card);border:1px solid var(--border);min-height:360px;display:flex;flex-direction:column}
+  .hero-main-img{position:absolute;inset:0;object-fit:cover;opacity:.35;transition:opacity var(--trans-slow),transform var(--trans-slow)}
+  .hero-main:hover .hero-main-img{opacity:.5;transform:scale(1.02)}
+  .hero-main-content{position:relative;z-index:1;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px}
+  .hero-kicker{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--accent-bg);color:var(--accent);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;width:fit-content}
+  .hero-title{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.5px;margin-bottom:12px}
+  .hero-excerpt{font-size:17px;color:var(--ink-dim);line-height:1.6;max-width:560px;margin-bottom:20px}
+  .hero-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--ink-muted)}
+  .hero-meta time{display:flex;align-items:center;gap:4px}
+  .hero-meta .author{display:flex;align-items:center;gap:6px}
+  .hero-meta .avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--accent));display:grid;place-items:center;font-weight:700;font-size:11px;color:#051018}
+
+  .hero-side{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:640px){.hero-side{grid-template-columns:1fr 1fr}}
+  .hero-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--bg-card);border:1px solid var(--border);min-height:170px;display:flex;flex-direction:column;transition:border-color var(--trans-base),box-shadow var(--trans-base),transform var(--trans-fast)}
+  .hero-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+  .hero-card-img{position:absolute;inset:0;object-fit:cover;opacity:.25;transition:opacity var(--trans-base)}
+  .hero-card:hover .hero-card-img{opacity:.4}
+  .hero-card-content{position:relative;z-index:1;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;min-height:170px}
+  .hero-card-kicker{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:4px 10px;border-radius:999px;background:var(--purple-bg);color:var(--purple);width:fit-content;margin-bottom:8px}
+  .hero-card-title{font-family:var(--font-display);font-weight:600;font-size:16px;line-height:1.3;margin-bottom:8px}
+  .hero-card-meta{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--ink-muted)}
+
+  /* Sections */
+  .section{padding:32px 0}
+  .section-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+  .section-title{font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:-.3px}
+  .section-link{font-size:13px;font-weight:500;color:var(--accent);display:flex;align-items:center;gap:4px;transition:gap var(--trans-fast)}
+  .section-link:hover{gap:8px}
+
+  /* Article Grid */
+  .articles-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:640px){.articles-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.articles-grid{grid-template-columns:repeat(3,1fr)}}
+  .article{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--bg-card);border:1px solid var(--border);display:flex;flex-direction:column;transition:border-color var(--trans-base),box-shadow var(--trans-base),transform var(--trans-fast)}
+  .article:hover{border-color:var(--border-hover);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+  .article-img{aspect-ratio:16/10;object-fit:cover;width:100%;background:var(--bg-elev);transition:transform var(--trans-slow)}
+  .article:hover .article-img{transform:scale(1.03)}
+  .article-body{padding:20px;display:flex;flex-direction:column;flex:1}
+  .article-kicker{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+  .tag{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+  .tag-research{background:var(--purple-bg);color:var(--purple)}
+  .tag-industria{background:var(--accent-bg);color:var(--accent)}
+  .tag-herramientas{background:var(--green-bg);color:var(--green)}
+  .tag-policy{background:var(--orange-bg);color:var(--orange)}
+  .tag-general{background:var(--border);color:var(--ink-dim)}
+  .article-title{font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.35;margin-bottom:8px;transition:color var(--trans-fast)}
+  .article:hover .article-title{color:var(--accent)}
+  .article-excerpt{font-size:14px;color:var(--ink-dim);line-height:1.6;flex:1;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .article-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid var(--border);font-size:12px;color:var(--ink-muted)}
+  .article-meta time{display:flex;align-items:center;gap:4px}
+  .article-meta .read-time::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--ink-muted);margin-right:6px}
+
+  /* Article Full (reports/YYYY-MM-DD.html) */
+  .article-full{max-width:900px;margin:0 auto;padding:40px 20px}
+  .article-full-header{margin-bottom:32px;border-bottom:1px solid var(--border);padding-bottom:24px}
+  .article-full-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
+  .article-full-title{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.15;letter-spacing:-.5px;margin-bottom:16px}
+  .article-full-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink-muted)}
+  .article-full-meta .source-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:var(--accent-bg);color:var(--accent);font-size:11px;font-weight:600}
+  .article-full-image{border-radius:var(--radius-lg);overflow:hidden;margin-bottom:32px;aspect-ratio:16/9;background:var(--bg-elev)}
+  .article-full-image img{width:100%;height:100%;object-fit:cover}
+  .article-full-content{font-size:17px;line-height:1.8;color:var(--ink)}
+  .article-full-content p{margin-bottom:16px}
+  .article-full-content h2{font-family:var(--font-display);font-weight:700;font-size:24px;margin:32px 0 16px;color:var(--ink)}
+  .article-full-content h3{font-family:var(--font-display);font-weight:600;font-size:20px;margin:24px 0 12px;color:var(--ink)}
+  .article-full-content ul, .article-full-content ol{margin:16px 0 16px 24px}
+  .article-full-content li{margin-bottom:8px}
+  .article-full-content blockquote{border-left:3px solid var(--accent);padding-left:16px;margin:24px 0;color:var(--ink-dim);font-style:italic}
+  .article-full-content a{color:var(--accent);text-decoration:underline}
+  .article-full-content a:hover{color:var(--accent-dim)}
+  .article-full-content img{border-radius:var(--radius-md);margin:16px 0}
+  .article-full-content figure{margin:24px 0}
+  .article-full-content figcaption{text-align:center;font-size:13px;color:var(--ink-muted);margin-top:8px}
+  .article-full-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+  .article-full-source{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px}
+  .article-full-source a{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--accent-bg);color:var(--accent);border-radius:var(--radius-md);font-weight:600;font-size:14px;transition:background var(--trans-fast)}
+  .article-full-source a:hover{background:var(--accent);color:#051018}
+
+  /* Newsletter CTA */
+  .newsletter{background:linear-gradient(135deg,rgba(34,211,238,.06),rgba(192,132,252,.06));border:1px solid var(--border);border-radius:var(--radius-xl);padding:48px 32px;text-align:center;margin:32px 0}
+  .newsletter h3{font-family:var(--font-display);font-weight:700;font-size:24px;margin-bottom:8px}
+  .newsletter p{color:var(--ink-dim);margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto}
+  .newsletter-form{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+  .newsletter-input{flex:1;min-width:220px;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-md);color:var(--ink);font-size:14px;outline:none;transition:border-color var(--trans-fast)}
+  .newsletter-input:focus{border-color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:var(--radius-md);font-weight:600;font-size:14px;cursor:pointer;transition:all var(--trans-fast);border:1px solid transparent}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-dim));color:#051018}
+  .btn-primary:hover{box-shadow:0 8px 24px rgba(34,211,238,.3);transform:translateY(-1px)}
+  .btn-ghost{background:var(--bg-card);border-color:var(--border);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--border-hover);background:var(--bg-elev)}
+
+  /* Footer */
+  .site-footer{border-top:1px solid var(--border);padding:40px 0 24px;margin-top:16px}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:32px}
+  @media(min-width:768px){.footer-grid{grid-template-columns:2fr repeat(3,1fr)}}
+  .footer-brand{max-width:320px}
+  .footer-logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--purple));display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:16px;color:#051018;margin-bottom:12px}
+  .footer-desc{font-size:14px;color:var(--ink-dim);line-height:1.7;margin-bottom:16px}
+  .social{display:flex;gap:10px}
+  .social a{width:36px;height:36px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:grid;place-items:center;color:var(--ink-dim);font-size:16px;transition:all var(--trans-fast)}
+  .social a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .footer-col h4{font-family:var(--font-display);font-weight:600;font-size:14px;margin-bottom:16px;color:var(--ink)}
+  .footer-links{display:flex;flex-direction:column;gap:10px}
+  .footer-links a{font-size:13px;color:var(--ink-dim);transition:color var(--trans-fast)}
+  .footer-links a:hover{color:var(--accent)}
+  .footer-bottom{margin-top:40px;padding-top:24px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-muted)}
+
+  /* Empty / Loading */
+  .empty-state{text-align:center;padding:80px 20px;color:var(--ink-muted)}
+  .empty-state svg{width:64px;height:64px;margin-bottom:16px;opacity:.5}
+  .skeleton{background:linear-gradient(90deg,var(--bg-card) 25%,var(--bg-elev) 50%,var(--bg-card) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:var(--radius-md)}
+  @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+  /* Scrollbar */
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+  ::-webkit-scrollbar-thumb:hover{background:var(--border-hover)}
+
+  /* Focus */
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/ia-daily/" class="brand" aria-label="IA Daily - Inicio">
+      <span class="brand-logo" aria-hidden="true">IA</span>
+      <div class="brand-text">
+        <span class="brand-name">IA Daily</span>
+        <span class="brand-tag">Informe del 2026-06-15</span>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="/ia-daily/" class="nav-link">← Volver al inicio</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap-wide">
+
+  <section class="section" id="research">
+    <header class="section-header"><h2 class="section-title">🔬 Research</h2></header>
+    <div class="articles-grid" role="list">
+
+      <article class="article" role="listitem">
+        <a href="reports/20260615-el-mayor-experto-en-fakes-ia-ha-perdido-la-esperanza-en-un-a.html" class="article-link" aria-label="Leer: El mayor experto en fakes IA ha perdido la esperanza: "En un año o dos, todo nuestro sistema visual será inútil"">
+          <img class="article-img" src="https://picsum.photos/seed/20260615-el-mayor-experto-en-fakes-ia-ha-perdido-la-esperanza-en-un-a/800/500.jpg" alt="" loading="lazy" width="800" height="500">
+          <div class="article-body">
+            <div class="article-kicker"><span class="tag tag-research">Research</span></div>
+            <h3 class="article-title">El mayor experto en fakes IA ha perdido la esperanza: "En un año o dos, todo nuestro sistema visual será inútil"</h3>
+            <p class="article-excerpt">Si él no puede y lleva 20 años trabajando en este ámbito, imaginad nosotros. LEER MÁS »</p>
+            <div class="article-meta">
+              <time datetime="2026-06-15">15 Jun</time>
+              <span class="read-time">1 min</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="article" role="listitem">
+        <a href="reports/20260615-sam-altman-me-alegra-haberme-equivocado-en-esto-pensé-que-la.html" class="article-link" aria-label="Leer: Sam Altman: "Me alegra haberme equivocado en esto, pensé que la eliminación de puestos de trabajo ya habría tenido más impacto"">
+          <img class="article-img" src="https://picsum.photos/seed/20260615-sam-altman-me-alegra-haberme-equivocado-en-esto-pensé-que-la/800/500.jpg" alt="" loading="lazy" width="800" height="500">
+          <div class="article-body">
+            <div class="article-kicker"><span class="tag tag-research">Research</span></div>
+            <h3 class="article-title">Sam Altman: "Me alegra haberme equivocado en esto, pensé que la eliminación de puestos de trabajo ya habría tenido más impacto"</h3>
+            <p class="article-excerpt">Ni quienes desarrollan la IA ni quienes la implantan han logrado anticipar su impacto real. El futuro laboral sigue moviéndose entre la calma y el miedo LEER MÁS »</p>
+            <div class="article-meta">
+              <time datetime="2026-06-15">15 Jun</time>
+              <span class="read-time">1 min</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div></section>
+
+  <section class="section" id="industria">
+    <header class="section-header"><h2 class="section-title">🏭 Industria</h2></header>
+    <div class="articles-grid" role="list">
+
+      <article class="article" role="listitem">
+        <a href="reports/20260615-meta-gastó-al-menos-14000-millones-de-dólares-para-ganar-la-.html" class="article-link" aria-label="Leer: Meta gastó al menos 14.000 millones de dólares para ganar la carrera de la IA. Ha pasado un año y sigue exactamente donde estaba">
+          <img class="article-img" src="https://picsum.photos/seed/20260615-meta-gastó-al-menos-14000-millones-de-dólares-para-ganar-la-/800/500.jpg" alt="" loading="lazy" width="800" height="500">
+          <div class="article-body">
+            <div class="article-kicker"><span class="tag tag-industria">Industria</span></div>
+            <h3 class="article-title">Meta gastó al menos 14.000 millones de dólares para ganar la carrera de la IA. Ha pasado un año y sigue exactamente donde estaba</h3>
+            <p class="article-excerpt">Sigue en duda si todo lo que ha movido Meta basta para cambiar su posición en la IA generativa. LEER MÁS »</p>
+            <div class="article-meta">
+              <time datetime="2026-06-15">15 Jun</time>
+              <span class="read-time">1 min</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div></section>
+
+  <section class="newsletter" aria-labelledby="nl-title">
+    <h3 id="nl-title">¿Quieres recibir el próximo informe?</h3>
+    <p>Suscríbete y recíbelo cada mañana en tu bandeja. Sin spam, solo señal.</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="tu@email.com" aria-label="Email" required>
+      <button type="submit" class="btn btn-primary">Suscribirme</button>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo" aria-hidden="true">IA</div>
+      <p class="footer-desc">IA Daily — Tu dosis diaria de inteligencia artificial. Curado para builders, researchers y curiosos.</p>
+      <div class="social" aria-label="Redes sociales">
+        <a href="#" aria-label="Twitter/X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 9.72h-3.308l-7.227-8.26-8.502 9.72h-3.308l8.502-9.72-7.227-8.26h3.308l7.227 8.26-8.502-9.72zm-11.02 13.5h3.308l-8.502-9.72-7.227 8.26h-3.308l7.227 8.26z"/></svg></a>
+        <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="#" aria-label="RSS"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 019 9"></path><path d="M4 4a16 16 0 0116 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Categorías</h4>
+      <nav class="footer-links">
+        <a href="#research">Research</a>
+        <a href="#industria">Industria</a>
+        <a href="#herramientas">Herramientas</a>
+        <a href="#policy">Policy</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h4>Enlaces</h4>
+      <nav class="footer-links">
+        <a href="/ia-daily/">Inicio</a>
+        <a href="#archive">Archivo completo</a>
+        <a href="#about">Sobre IA Daily</a>
+        <a href="#privacy">Privacidad</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h4>Fuentes</h4>
+      <nav class="footer-links">
+        <a href="https://www.xataka.com/tag/inteligencia-artificial" target="_blank" rel="noopener">Xataka IA</a>
+        <a href="https://www.gizmodo.es/tag/inteligencia-artificial" target="_blank" rel="noopener">Gizmodo IA</a>
+        <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener">The Verge AI</a>
+        <a href="https://arstechnica.com/tag/ai/" target="_blank" rel="noopener">Ars Technica AI</a>
+        <a href="https://venturebeat.com/category/ai/" target="_blank" rel="noopener">VentureBeat AI</a>
+        <a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener">TechCrunch AI</a>
+      </nav>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 IA Daily · Generado automáticamente</span>
+    <span>Datos: Fuentes reales · Sin mock</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('newsletter-form')?.addEventListener('submit',e=>{
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  const original=btn.textContent;
+  btn.textContent='¡Suscrito!';
+  btn.classList.remove('btn-primary');
+  btn.classList.add('btn-ghost');
+  setTimeout(()=>{btn.textContent=original;btn.classList.add('btn-primary');btn.classList.remove('btn-ghost')},2000);
+});
+</script>
+</body>
+
+</html>

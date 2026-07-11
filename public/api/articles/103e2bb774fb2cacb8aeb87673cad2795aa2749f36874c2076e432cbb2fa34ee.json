@@ -1,0 +1,100 @@
+{
+  "id": "103e2bb774fb2cacb8aeb87673cad2795aa2749f36874c2076e432cbb2fa34ee",
+  "title": "Linux en la Atari Jaguar: el ambicioso proyecto que rescata del olvido a la consola más fracasada de los 90",
+  "summary": "Un grupo de desarrolladores está portando el kernel de Linux a la Atari Jaguar, la consola de 1993 que fue un fracaso comercial, utilizando la versión uClinux para sistemas sin unidad de gestión de memoria y adaptándose a sus limitaciones de hardware de 2 MB de RAM.",
+  "url": "https://cakehonolulu.github.io/linux-for-jaguar/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-06T18:35:54.000Z",
+  "imageUrl": "https://www.hwlegend.tech/wp-content/uploads/2011/03/Atari-Jaguar.png",
+  "imageAlt": "Linux en la Atari Jaguar: el ambicioso proyecto que rescata del olvido a la consola más fracasada de los 90",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un grupo de desarrolladores está portando el kernel de Linux a la Atari Jaguar, la consola de 1993 que fue un fracaso comercial, utilizando la versión uClinux para sistemas sin unidad de gestión de memoria y adaptándose a sus limitaciones de hardware de 2 MB de RAM.",
+  "keyPoints": [
+    "La Atari Jaguar, lanzada en 1993 con promesa de 64 bits, fue un fracaso comercial incluso con su expansión Jaguar CD.",
+    "El kernel de Linux cuenta con soporte nativo para la familia de procesadores Motorola 68000, usados en la consola.",
+    "uClinux, versión de Linux para sistemas sin unidad de gestión de memoria, es la base del port para la Jaguar.",
+    "El principal reto del proyecto es optimizar el uso de los 2 MB de RAM de la consola para evitar errores de memoria."
+  ],
+  "whyMatters": "Este proyecto no es solo un ejercicio de nostalgia: demuestra la flexibilidad del kernel de Linux para adaptarse a hardware extremadamente limitado, abriendo la puerta a ports para dispositivos embebidos antiguos o de bajo recursos que de otro modo serían descartados. Además, revitaliza el ecosistema de una consola que se consideraba obsoleta, permitiendo a entusiastas ejecutar software moderno en un hardware de hace más de 30 años. A largo plazo, sienta las bases para experimentos similares en otras plataformas retro, promoviendo la conservación digital y el acceso a la historia de la computación sin depender de hardware propietario obsoleto.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.hwlegend.tech/wp-content/uploads/2011/03/Atari-Jaguar.png",
+      "alt": "Consola de videojuegos Atari Jaguar lanzada en 1993",
+      "caption": "Atari Jaguar, la consola de 64 bits que fue un fracaso comercial en los 90"
+    },
+    {
+      "type": "image",
+      "url": "https://www.autoitscript.com/site/wp-content/uploads/2019/03/mc68000_640x314.jpg",
+      "alt": "Procesador Motorola 68000, usado en la Atari Jaguar",
+      "caption": "Motorola 68000, procesador CISC de 16/32 bits que equipa la consola"
+    },
+    {
+      "type": "image",
+      "url": "https://cakehonolulu.github.io/images/linux_jaguar/uclibc.png",
+      "alt": "Biblioteca C uClibc adaptada para sistemas sin MMU",
+      "caption": "uClibc, versión ligera de la biblioteca C usada en el port de Linux para Jaguar"
+    },
+    {
+      "type": "image",
+      "url": "https://cakehonolulu.github.io/images/linux_jaguar/buildroot.png",
+      "alt": "Herramienta de construcción Buildroot usada en el port de Linux a Jaguar",
+      "caption": "Buildroot, herramienta utilizada para generar el sistema mínimo para la consola"
+    },
+    {
+      "type": "image",
+      "url": "https://cakehonolulu.github.io/images/linux_jaguar/boot.png",
+      "alt": "Proceso de arranque de Linux en la Atari Jaguar",
+      "caption": "Captura del proceso de arranque del kernel Linux en la consola retro"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AtariJaguar",
+    "#Linux",
+    "#SoftwareLibre",
+    "#RetroInformatica"
+  ],
+  "fullArticle": "Lanzada en Norteamérica en noviembre de 1993, la Atari Jaguar llegó al mercado con la promesa de ser la consola más potente de su generación, gracias a su arquitectura de 64 bits ampliamente debatida. Sin embargo, el dispositivo se convirtió en un fracaso comercial absoluto, incluso después del lanzamiento de su expansión Jaguar CD, que vendió aún menos unidades en un intento desesperado por competir con Sony PlayStation y Sega Saturn. Hoy, décadas después de su retiro, un grupo de desarrolladores está rescatando esta pieza de la historia de los videojuegos al portar el kernel de Linux a su hardware.\n[MULTIMEDIA: https://www.hwlegend.tech/wp-content/uploads/2011/03/Atari-Jaguar.png]\n\nEl proyecto se apoya en el soporte nativo que Linux tiene para la familia de procesadores Motorola 68000, una línea de CPUs CISC con capacidades mixtas de 16 y 32 bits que equipaba la Jaguar. Este soporte se encuentra organizado de forma ordenada en el directorio arch/m68k/ del kernel, y cubre desde el modelo original 68000 hasta versiones más avanzadas como el 68040. El procesador de la consola, un 68000 con bus de direcciones de 24 bits, permitía direccionar hasta 16 MB de memoria, una cantidad muy limitada para los estándares actuales pero habitual en la época de su lanzamiento en 1979.\n[MULTIMEDIA: https://www.autoitscript.com/site/wp-content/uploads/2019/03/mc68000_640x314.jpg]\n\nEl mayor obstáculo para el port no es la arquitectura en sí, sino la ausencia de unidad de gestión de memoria (MMU) en el procesador de la Jaguar, un componente que se considera casi indispensable para ejecutar Linux de forma estable. Para salvar este escollo, los desarrolladores utilizan uClinux, una versión del kernel adaptada para sistemas sin MMU que se integró oficialmente en el código principal de Linux y que incluye el modelo de memoria plano necesario para este tipo de hardware. Una vez configurados los parámetros adecuados en el menú de configuración del kernel para desactivar el uso de MMU, el proceso de compilación se completa sin errores, pero el reto no hace más que comenzar.\n[MULTIMEDIA: https://cakehonolulu.github.io/images/linux_jaguar/uclibc.png]\n\nLa consola solo cuenta con 2 MB de RAM mapeados en la dirección 0x000000, además de hasta 6 MB de ROM en el cartucho y dos chips personalizados (Tom y Jerry, que funcionan como GPU y DSP) también mapeados en memoria. Este reducido espacio de memoria supone un desafío enorme: incluso después de eliminar funcionalidades innecesarias del kernel y desactivar los modos de depuración, es fácil encontrarse con errores de falta de memoria (OOM) al intentar cargar el sistema, sin contar el espacio que ocuparía un initramfs. Los desarrolladores utilizan herramientas como Buildroot para generar un sistema mínimo optimizado, reduciendo al máximo el tamaño de todos los componentes para que quepa en la memoria limitada de la consola.\n[MULTIMEDIA: https://cakehonolulu.github.io/images/linux_jaguar/buildroot.png]\n[MULTIMEDIA: https://cakehonolulu.github.io/images/linux_jaguar/boot.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T00:05:32.438Z",
+  "links": [
+    {
+      "title": "Proyecto de port de Linux a Atari Jaguar en GitHub",
+      "url": "https://github.com/cakehonolulu/linux-jaguar"
+    },
+    {
+      "title": "Página oficial de uClinux",
+      "url": "https://www.uclinux.org/"
+    },
+    {
+      "title": "Artículo de Wikipedia sobre la Atari Jaguar",
+      "url": "https://es.wikipedia.org/wiki/Atari_Jaguar"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de lanzamiento de la Atari Jaguar",
+      "value": "1993"
+    },
+    {
+      "label": "Cantidad de RAM de la consola",
+      "value": "2 MB"
+    },
+    {
+      "label": "Procesador equipado",
+      "value": "Motorola 68000"
+    },
+    {
+      "label": "Año de lanzamiento del procesador 68000",
+      "value": "1979"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

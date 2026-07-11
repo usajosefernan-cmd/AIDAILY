@@ -1,0 +1,44 @@
+---
+interface Props {
+  data: import('../lib/sources').ChartData;
+  id: string;
+}
+const { data, id } = Astro.props;
+const colors = ['#00d4aa', '#6366f1', '#f97316', '#eab308', '#ec4899', '#06b6d4'];
+const datasetsWithColors = data.data.datasets.map((d, i) => ({
+  ...d,
+  borderColor: d.borderColor || colors[i % colors.length],
+  backgroundColor: d.backgroundColor || (colors[i % colors.length] + '33'),
+  tension: 0.3,
+  pointRadius: 4,
+  pointHoverRadius: 6
+}));
+const chartConfig = {
+  type: data.type,
+  data: { labels: data.data.labels, datasets: datasetsWithColors },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: 'var(--fg-muted)', font: { size: 11 } } },
+      tooltip: { backgroundColor: 'var(--card)', titleColor: 'var(--fg)', bodyColor: 'var(--fg)', borderColor: 'var(--border)', borderWidth: 1, padding: 12 }
+    },
+    scales: data.type !== 'doughnut' ? {
+      x: { grid: { color: 'var(--border)' }, ticks: { color: 'var(--fg-muted)', font: { size: 10 } } },
+      y: { grid: { color: 'var(--border)' }, ticks: { color: 'var(--fg-muted)', font: { size: 10 } }, beginAtZero: true }
+    } : {}
+  }
+};
+---
+
+<canvas id={id} aria-label={`Gráfico: ${data.type}`} data-config={JSON.stringify(chartConfig)}></canvas>
+<script>
+  const load = () => {
+    if (!window.Chart) return;
+    const canvas = document.currentScript?.previousElementSibling;
+    if (!canvas?.tagName?.includes('CANVAS')) return;
+    const config = JSON.parse(canvas.dataset.config || '{}');
+    new Chart(canvas, config);
+  };
+  load();
+</script>

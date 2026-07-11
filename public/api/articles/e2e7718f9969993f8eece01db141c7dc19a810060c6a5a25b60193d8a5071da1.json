@@ -1,0 +1,73 @@
+{
+  "id": "e2e7718f9969993f8eece01db141c7dc19a810060c6a5a25b60193d8a5071da1",
+  "title": "Construir un Data Lakehouse On-Premise sin Bloqueo de Proveedores",
+  "summary": "El artículo detalla cómo montar una plataforma analítica moderna en servidores locales, empleando exclusivamente software libre y evitando costos de licencias y dependencias de un solo proveedor.",
+  "url": "https://dev.to/cybermeshsec/how-to-build-a-modern-on-premise-data-lakehouse-without-vendor-lock-in-5440",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T01:20:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxammr4s0e58h0s2zu5pc.png",
+  "imageAlt": "Construir un Data Lakehouse On-Premise sin Bloqueo de Proveedores",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla cómo montar una plataforma analítica moderna en servidores locales, empleando exclusivamente software libre y evitando costos de licencias y dependencias de un solo proveedor.",
+  "keyPoints": [
+    "Separar el cómputo del almacenamiento permite escalar sin depender de un único proveedor y reduce costos operativos.",
+    "MinIO sustituye a HDFS y S3, ofreciendo compatibilidad total con la API de Amazon pero ejecutándose en discos NVMe con XFS.",
+    "Apache Iceberg añade transacciones ACID y evolución de esquemas a los datos, mientras que Project Nessie actúa como catálogo Git‑like.",
+    "Trino, dlt y dbt Core forman una cadena de procesamiento distribuido y transformación que evita la duplicación de datos y facilita la gobernanza."
+  ],
+  "whyMatters": "La adopción de un Data Lakehouse on‑premise permite a las organizaciones mantener el control total sobre sus datos, cumpliendo con regulaciones de privacidad y reduciendo la dependencia de servicios en la nube. Al emplear herramientas open‑source, se eliminan costos de licencias que pueden superar el 30 % del presupuesto de TI, lo que resulta en ahorros significativos. Además, la arquitectura propuesta facilita la integración con sistemas operacionales existentes, lo que acelera la toma de decisiones basada en datos en entornos corporativos críticos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxammr4s0e58h0s2zu5pc.png",
+      "alt": "Representación gráfica del Data Lakehouse on‑premise",
+      "caption": "Imagen de portada que ilustra la arquitectura propuesta para un Data Lakehouse sin dependencia de proveedores."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#DataLakehouse",
+    "#OpenSource",
+    "#MinIO",
+    "#Trino",
+    "#ApacheIceberg"
+  ],
+  "fullArticle": "El auge de la analítica avanzada suele impulsar a las empresas a migrar sus infraestructuras a la nube, pero la realidad operativa, los presupuestos y las exigencias de cumplimiento a menudo obligan a mantener los datos en servidores locales. En este contexto, el autor presenta una solución integral que combina las mejores herramientas open‑source para construir un Data Lakehouse completamente autónomo.\n\nLa arquitectura se basa en la separación clásica de cómputo y almacenamiento. En lugar de los tradicionales clústeres Hadoop, se emplea MinIO para la capa de almacenamiento. Este motor sustituye a HDFS y a Amazon S3, ofreciendo compatibilidad con la API de S3 pero ejecutándose directamente sobre discos NVMe con un sistema de archivos XFS, garantizando un rendimiento de I/O que satisface cargas analíticas intensivas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxammr4s0e58h0s2zu5pc.png]\n\nPara el manejo de metadatos, Apache Iceberg actúa como motor de tablas, introduciendo transacciones ACID, evolución de esquemas sin interrupciones y la característica de Time Travel que permite consultar estados pasados de los datos. Project Nessie complementa a Iceberg ofreciendo un catálogo con experiencia Git‑like, donde los usuarios pueden crear ramas, commits y tags directamente sobre los datos.\n\nLa capa de cómputo se implementa con Trino, un motor de consulta distribuido que permite federar consultas entre el Lakehouse y bases de datos operacionales como SQL Server o MySQL, evitando la duplicación de datos. Para la ingesta y transformación, se combinan dlt (Data Load Tool) y dbt Core, creando pipelines resilientes, versionados y documentados que convierten el SQL en un proceso de ingeniería de software.\n\nEl resultado es una plataforma analítica moderna, escalable y sin bloqueos de proveedores, con costos de licencias prácticamente nulos y una gobernanza robusta que facilita la adopción de prácticas de datos responsables.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T01:43:47.631Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/your-article-link"
+    },
+    {
+      "title": "Documentación de MinIO",
+      "url": "https://min.io/docs"
+    },
+    {
+      "title": "Guía de Apache Iceberg",
+      "url": "https://iceberg.apache.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de componentes open-source",
+      "value": "5"
+    },
+    {
+      "label": "Costo de licencias evitado",
+      "value": "$0"
+    },
+    {
+      "label": "Tiempo estimado de implementación",
+      "value": "3 meses"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

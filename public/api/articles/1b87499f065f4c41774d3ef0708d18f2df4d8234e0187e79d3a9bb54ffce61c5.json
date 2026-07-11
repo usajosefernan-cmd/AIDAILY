@@ -1,0 +1,83 @@
+{
+  "id": "1b87499f065f4c41774d3ef0708d18f2df4d8234e0187e79d3a9bb54ffce61c5",
+  "title": "El espionaje contra el Parlamento Europeo: el caso del diputado griego Stelios Kouloglou",
+  "summary": "El periodista y diputado Stelios Kouloglou fue infectado con el spyware Pegasus en varias ocasiones mientras trabajaba en el Comité de Investigación del Parlamento Europeo. El ataque se produjo justo antes de reuniones clave y visitas de investigación, evidenciando un objetivo estratégico y la vulnerabilidad de los funcionarios europeos ante la vigilancia clandestina.",
+  "url": "https://citizenlab.ca/research/member-of-committee-investigating-spyware-hacked-with-pegasus/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-03T20:38:26.000Z",
+  "imageUrl": "https://citizenlab.ca/wp-content/uploads/2026/07/olive-oil-report-web.jpg",
+  "imageAlt": "El espionaje contra el Parlamento Europeo: el caso del diputado griego Stelios Kouloglou",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El periodista y diputado Stelios Kouloglou fue infectado con el spyware Pegasus en varias ocasiones mientras trabajaba en el Comité de Investigación del Parlamento Europeo. El ataque se produjo justo antes de reuniones clave y visitas de investigación, evidenciando un objetivo estratégico y la vulnerabilidad de los funcionarios europeos ante la vigilancia clandestina.",
+  "keyPoints": [
+    "Kouloglou, diputado independiente de la lista Syriza, fue infectado con Pegasus el 21 de octubre de 2022, justo antes de las audiencias del Comité PEGA sobre spyware.",
+    "El spyware también atacó su teléfono el 6 y 7 de marzo de 2023, coincidiendo con la planificación de visitas de investigación a Grecia y Chipre.",
+    "El Citizen Lab detectó tres notificaciones de Apple sobre amenazas mercenarias, pero el diputado no recuerda haberlas recibido.",
+    "El caso subraya la vulnerabilidad de los legisladores europeos y la necesidad de reforzar la ciberseguridad en las instituciones de la UE."
+  ],
+  "whyMatters": "El espionaje de un diputado del Parlamento Europeo demuestra que las instituciones de la UE no están exentas de la vigilancia clandestina. El caso revela cómo los gobiernos europeos utilizan spyware para monitorear a sus propios representantes, socavando la confianza pública y la integridad democrática. Además, expone brechas críticas en la seguridad de los dispositivos móviles de alto nivel, lo que exige una revisión urgente de las políticas de ciberseguridad y la protección de los datos de los funcionarios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://citizenlab.ca/wp-content/uploads/2026/07/olive-oil-report-web.jpg",
+      "alt": "Imagen de portada que muestra el título del artículo sobre el espionaje del Parlamento Europeo",
+      "caption": "Portada del informe del Citizen Lab sobre el caso de Pegasus contra el diputado Stelios Kouloglou."
+    },
+    {
+      "type": "image",
+      "url": "https://citizenlab.ca/wp-content/uploads/2026/06/image.jpeg",
+      "alt": "Fotografía del periodista y diputado Stelios Kouloglou",
+      "caption": "Kouloglou, periodista y diputado, frente a la sede del Parlamento Europeo."
+    },
+    {
+      "type": "image",
+      "url": "https://citizenlab.ca/wp-content/uploads/2026/06/Cellebrite-v3-8-e1782229926685.jpg",
+      "alt": "Herramienta forense Cellebrite usada para analizar el dispositivo de Kouloglou",
+      "caption": "Cellebrite, herramienta forense que reveló la presencia de Pegasus en el teléfono de Kouloglou."
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Pegasus",
+    "#ParlamentoEuropeo",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "El periodista y diputado griego Stelios Kouloglou, quien se desempeñó como miembro sustituto del Comité de Investigación del Parlamento Europeo sobre el uso de spyware, fue víctima de una serie de ataques con el software espía Pegasus. El primer ataque se detectó el 21 de octubre de 2022, cuando el dispositivo de Kouloglou fue comprometido a través del exploit PWNYOURHOME, un ataque de \"zero‑click\" que aprovechó una vulnerabilidad en HomeKit de Apple. El ataque ocurrió exactamente tres días antes de las audiencias del Comité PEGA sobre el uso de spyware en Europa, lo que sugiere una planificación deliberada para obtener información privilegiada.\n\n[MULTIMEDIA: https://citizenlab.ca/wp-content/uploads/2026/07/olive-oil-report-web.jpg]\n\nEl Citizen Lab confirmó que el spyware Pegasus también logró infectar el teléfono de Kouloglou el 6 y 7 de marzo de 2023, durante la fase de preparación de las visitas de investigación a Grecia y Chipre. En ambas ocasiones, el dispositivo estaba ejecutando iOS 15.5, lo que indica que la vulnerabilidad no había sido parcheada a tiempo. Los análisis forenses revelaron que los atacantes utilizaban la misma técnica de envío de un archivo NSKeyedArchive malicioso que explotaba la vulnerabilidad de HomeKit y luego se propagaba a través de MessagesBlastDoorService.\n\n[MULTIMEDIA: https://citizenlab.ca/wp-content/uploads/2026/06/image.jpeg]\n\nKouloglou recibió tres notificaciones de Apple sobre amenazas mercenarias en marzo, agosto y abril, pero afirmó no haberlas recordado. Las alertas de Apple suelen enviarse en lotes, a veces con meses de retraso, lo que dificulta la respuesta inmediata. El caso subraya la brecha entre la detección de amenazas y la reacción de los usuarios finales.\n\nEl espionaje de un diputado del Parlamento Europeo no es aislado. Investigaciones recientes han demostrado que gobiernos de la UE han utilizado spyware para vigilar a periodistas, activistas y políticos. La exposición de estos ataques plantea preguntas críticas sobre la protección de la privacidad y la soberanía de los funcionarios públicos, así como sobre la necesidad de establecer estándares de seguridad más rigurosos en la UE.\n\n[MULTIMEDIA: https://citizenlab.ca/wp-content/uploads/2026/06/Cellebrite-v3-8-e1782229926685.jpg]\n\nEl caso de Kouloglou sirve como advertencia de que la ciberseguridad no es solo una cuestión técnica, sino también política y ética. La vulnerabilidad de los dispositivos de los legisladores europeos abre la puerta a la manipulación de procesos decisorios y a la erosión de la confianza pública en las instituciones democráticas. La UE debe responder con políticas claras, auditorías independientes y la adopción de tecnologías de defensa más robustas para proteger a sus representantes y a los ciudadanos que representan.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T22:11:42.922Z",
+  "links": [
+    {
+      "title": "Informe completo del Citizen Lab sobre Pegasus",
+      "url": "https://citizenlab.ca/2026/07/pegasus-investigation/"
+    },
+    {
+      "title": "Sitio oficial del Parlamento Europeo",
+      "url": "https://www.europarl.europa.eu/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha clave de infección",
+      "value": "21 de octubre de 2022"
+    },
+    {
+      "label": "Número de infecciones detectadas",
+      "value": "3"
+    },
+    {
+      "label": "Versión de iOS comprometida",
+      "value": "iOS 15.5"
+    },
+    {
+      "label": "Exploit utilizado",
+      "value": "PWNYOURHOME"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

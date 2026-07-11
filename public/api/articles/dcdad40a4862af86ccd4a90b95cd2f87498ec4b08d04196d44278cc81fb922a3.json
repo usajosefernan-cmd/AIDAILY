@@ -1,0 +1,77 @@
+{
+  "id": "dcdad40a4862af86ccd4a90b95cd2f87498ec4b08d04196d44278cc81fb922a3",
+  "title": "La seguridad Web3 tiene dos caras y la industria está ignorando una de ellas: el monitoreo post-despliegue",
+  "summary": "El artículo diferencia dos modos de fallo de seguridad en Web3: los errores de código detectables antes de desplegar un contrato (pre-despliegue) y las estafas, rug pulls y honeypots que surgen después de su lanzamiento (post-despliegue). Usa los hackeos de Ronin, Euler Finance y Nomad Bridge como ejemplos, y critica que la industria se centra solo en auditorías pre-despliegue, ignorando la necesidad de monitoreo en tiempo real una vez el contrato está en la blockchain.",
+  "url": "https://dev.to/ninjafromqueens/pre-deploy-vs-post-deploy-web3-security-two-different-problems-1kb1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T02:39:50.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff0t2qf9gabifegrh3te0.png",
+  "imageAlt": "La seguridad Web3 tiene dos caras y la industria está ignorando una de ellas: el monitoreo post-despliegue",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo diferencia dos modos de fallo de seguridad en Web3: los errores de código detectables antes de desplegar un contrato (pre-despliegue) y las estafas, rug pulls y honeypots que surgen después de su lanzamiento (post-despliegue). Usa los hackeos de Ronin, Euler Finance y Nomad Bridge como ejemplos, y critica que la industria se centra solo en auditorías pre-despliegue, ignorando la necesidad de monitoreo en tiempo real una vez el contrato está en la blockchain.",
+  "keyPoints": [
+    "El hackeo de $625 millones del puente Ronin en 2022 fue un ataque de ingeniería social a las claves de los validadores, no un error en el código del contrato.",
+    "El exploit de $197 millones de Euler Finance en marzo de 2023 fue una falla de código que tres firmas auditoras no detectaron en siete meses de producción.",
+    "Se lanzaron más de 50.000 tokens honeypot en Ethereum durante 2023, estafas que no se identifican con auditorías pre-despliegue de código.",
+    "El hackeo de $190 millones del puente Nomad en agosto de 2022 se originó por una mala configuración que el monitoreo en tiempo real habría detectado a tiempo."
+  ],
+  "whyMatters": "Esta distinción entre fallos pre y post desplegamiento redefine el paradigma de seguridad en el ecosistema Web3, que actualmente invierte la mayor parte de sus recursos en auditorías de código iniciales mientras ignora la capa de monitoreo posterior, donde se concentran la mayoría de estafas a usuarios finales. La falta de herramientas especializadas en la fase posterior a la implementación deja expuestos a inversores minoristas y protocolos con activos por valor de cientos de millones de dólares, como lo demuestran las pérdidas recurrentes en puentes blockchain y tokens fraudulentos. A largo plazo, la adopción masiva de esta tecnología dependerá de que la industria desarrolle soluciones integrales que cubran ambas fases, abandonando la idea errónea de que una auditoría inicial es suficiente para garantizar la seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff0t2qf9gabifegrh3te0.png",
+      "alt": "Gráfica comparativa entre seguridad pre-despliegue y post-despliegue en Web3",
+      "caption": "Imagen de portada del artículo original que ilustra la distinción entre los dos tipos de fallos de seguridad en el ecosistema blockchain"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Web3Seguridad",
+    "#HackeoRonin",
+    "#EulerFinance",
+    "#MonitoreoPostDespliegue",
+    "#SmartContracts"
+  ],
+  "fullArticle": "Los hackeos millonarios que han sacudido el ecosistema Web3 en los últimos años no son producto de errores de código inevitables, sino de una falla estructural en la industria de la seguridad: se centra casi exclusivamente en detectar fallos antes de desplegar los contratos, ignorando por completo la capa de monitoreo posterior a su lanzamiento en la blockchain. El hackeo de $625 millones del puente Ronin en 2022 y el exploit de $197 millones de Euler Finance en 2023 son dos ejemplos paradigmáticos de fallos completamente distintos que ponen de manifiesto esta brecha: el primero fue un ataque de ingeniería social a las claves de los validadores, sin intervención de un bug en el código, mientras que el segundo se debió a una vulnerabilidad en la función donateToReserves() que pasó desapercibida para tres firmas auditoras durante siete meses de funcionamiento en producción.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff0t2qf9gabifegrh3te0.png]\nLa fase pre-despliegue de seguridad se centra en analizar el código fuente del contrato antes de que se publique en la blockchain, identificando vulnerabilidades como errores de reentrancia, fallos en los controles de acceso o vectores de manipulación de oráculos. En esta etapa se realizan las auditorías manuales que cobran entre $100.000 y $300.000 por proyecto, así como análisis con herramientas asistidas por inteligencia artificial que pueden detectar fallos sistemáticos en menos de un minuto, aunque no reemplazan una auditoría manual profunda en protocolos con activos por valor de decenas de millones de dólares. El caso de Euler Finance es el ejemplo más claro de una falla pre-despliegue: la función vulnerable estuvo presente en el código desde agosto de 2022, siete meses antes de que fuera explotada, y ninguna de las tres auditorías que se realizaron en ese periodo logró identificarla.\nUna vez que el contrato está desplegado en la blockchain, la superficie de amenaza cambia por completo: ya no se trata de detectar errores de código, sino de identificar estafas, tokens fraudulentos y configuraciones maliciosas que no se pueden detectar con análisis estáticos del código. Los rug pulls, por ejemplo, no requieren código defectuoso: el token Squid Game de 2021 tenía un contrato técnicamente funcional, pero con una restricción de venta que solo permitía al deployer retirar fondos, una funcionalidad que una auditoría habría detectado, pero que la mayoría de los inversores nunca revisó. Los honeypots siguen el mismo patrón: tokens con una función de compra que funciona correctamente, pero cuya función de venta falla de forma silenciosa, y se estima que se lanzaron más de 50.000 de estos tokens solo en Ethereum durante 2023, según datos de análisis on-chain. Ninguna herramienta de auditoría pre-despliegue puede ayudar a un inversor que adquiere uno de estos tokens dos semanas después de su lanzamiento, cuando no tiene acceso al código fuente original.\nEl caso del puente Nomad ilustra el coste de ignorar la capa de monitoreo post-despliegue: en agosto de 2022 perdió $190 millones, cuatro meses después de haber pasado una revisión de seguridad, cuando un atacante explotó una mala configuración en una sola transacción, seguida de cientos de transacciones copycat que drenaron los fondos de forma automática. Un sistema de monitoreo en tiempo real habría detectado la primera transacción anómala y activado una alerta antes de que se perdiera la mayor parte de los fondos. La industria de la seguridad Web3 ha normalizado durante años un atajo mental peligroso: equiparar seguridad a la simple realización de una auditoría, un mero requisito de checklist que no garantiza nada una vez que el contrato está en producción. Una auditoría solo demuestra que un investigador revisó el código en un momento puntual, pero no dice nada sobre la seguridad del protocolo a lo largo del tiempo, ni sobre los riesgos de estafas externas que afectan a los usuarios. Por ello, es urgente que el ecosistema adopte un enfoque de seguridad integral que combine auditorías pre-despliegue con monitoreo post-despliegue, para proteger tanto a los desarrolladores como a los inversores en un entorno que aún se encuentra en fase de maduración.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T03:03:46.074Z",
+  "links": [
+    {
+      "title": "Análisis del hackeo del puente Ronin en CoinDesk",
+      "url": "https://www.coindesk.com/tech/2022/03/29/ronin-network-bridge-hacked-for-625-million/"
+    },
+    {
+      "title": "Informe post-mortem oficial del exploit de Euler Finance",
+      "url": "https://euler.finance/blog/post-mortem"
+    },
+    {
+      "title": "Guía de monitoreo de smart contracts de OpenZeppelin",
+      "url": "https://www.openzeppelin.com/solutions/defense"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Pérdida por hackeo del puente Ronin",
+      "value": "$625 millones"
+    },
+    {
+      "label": "Pérdida por exploit de Euler Finance",
+      "value": "$197 millones"
+    },
+    {
+      "label": "Tokens honeypot lanzados en Ethereum en 2023",
+      "value": "50.000"
+    },
+    {
+      "label": "Pérdida por hackeo del puente Nomad",
+      "value": "$190 millones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

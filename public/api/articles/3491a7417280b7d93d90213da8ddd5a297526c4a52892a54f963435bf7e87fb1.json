@@ -1,0 +1,76 @@
+{
+  "id": "3491a7417280b7d93d90213da8ddd5a297526c4a52892a54f963435bf7e87fb1",
+  "title": "Pregunta de entrevista de ingeniería de software que destaca por su utilidad: calcular la mediana",
+  "summary": "Un entrevistador técnico comparte su pregunta favorita para evaluar candidatos a puestos de ingeniería de software: implementar una función que calcule la mediana de un array de números, explicando su valor para explorar conocimientos profundos de algoritmos sin recurrir a acertijos sin utilidad.",
+  "url": "https://krisshamloo.com/blog/007",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-09T00:38:02.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Pregunta de entrevista de ingeniería de software que destaca por su utilidad: calcular la mediana",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un entrevistador técnico comparte su pregunta favorita para evaluar candidatos a puestos de ingeniería de software: implementar una función que calcule la mediana de un array de números, explicando su valor para explorar conocimientos profundos de algoritmos sin recurrir a acertijos sin utilidad.",
+  "keyPoints": [
+    "El entrevistador descarta las preguntas tipo acertijo por considerarlas de bajo valor, apostando por ejercicios prácticos con múltiples aristas de análisis.",
+    "La pregunta propuesta consiste en implementar una función que calcule la mediana de un array de números, un concepto estadístico básico.",
+    "La implementación de referencia en Python incluye comentarios para guiar la discusión sobre optimización y manejo de casos borde.",
+    "Este tipo de ejercicios evalúa tanto la capacidad de codificación como el razonamiento lógico y el conocimiento de estructuras de datos."
+  ],
+  "whyMatters": "Esta metodología de entrevista impacta directamente en la calidad de la contratación de talento tecnológico en España y Europa, donde la demanda de ingenieros de software cualificados supera ampliamente la oferta. A diferencia de los acertijos sin aplicación real, esta pregunta permite a los candidatos demostrar habilidades prácticas que se aplican directamente en el desarrollo de productos, lo que se traduce en equipos más productivos y menos rotación de personal. Además, promueve procesos de selección más transparentes y justos, donde los candidatos saben qué competencias se evalúan, reduciendo la ansiedad y mejorando la experiencia de contratación para ambas partes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+      "alt": "Pregunta de entrevista de ingeniería de software que destaca por su utilidad: calcular la mediana",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#EntrevistasTecnicas",
+    "#IngenieriaSoftware",
+    "#Algoritmos",
+    "#ContratacionTech"
+  ],
+  "fullArticle": "En el ámbito de las entrevistas técnicas para puestos de ingeniería de software, existe un debate constante sobre qué tipo de preguntas son más efectivas para evaluar las habilidades reales de los candidatos. Un entrevistador con amplia experiencia en procesos de selección para empresas tecnológicas ha compartido su pregunta favorita, alejándose de los clásicos acertijos sin aplicación práctica que suelen generar más frustración que valor. Su propuesta es simple pero con múltiples aristas de análisis: escribir una función que reciba un array de números y devuelva su mediana, un ejercicio que permite evaluar conocimientos de algoritmos, manejo de casos borde y capacidad de optimización.\n\nLa implementación de referencia presentada, escrita en Python, incluye comentarios que guían la discusión durante la entrevista, permitiendo al entrevistador profundizar en temas como la complejidad temporal de diferentes enfoques, el manejo de arrays con número par e impar de elementos y la elección de estructuras de datos adecuadas. Este tipo de preguntas se alinea con las tendencias actuales de contratación en el sector tecnológico europeo, donde las empresas priorizan la evaluación de habilidades prácticas sobre conocimientos teóricos descontextualizados. Al centrarse en un problema estadístico básico pero con múltiples capas de profundidad, la pregunta permite a los candidatos demostrar su capacidad de razonamiento lógico y su dominio de la programación, sin recurrir a trucos o conocimientos específicos que no se aplican en el día a día del desarrollo de software.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T02:03:13.825Z",
+  "links": [
+    {
+      "title": "Hilo original en Hacker News sobre la pregunta de entrevista",
+      "url": "https://news.ycombinator.com/item?id=39183458"
+    },
+    {
+      "title": "Documentación oficial de Python para cálculos estadísticos",
+      "url": "https://docs.python.org/3/library/statistics.html"
+    },
+    {
+      "title": "Guía de buenas prácticas para entrevistas técnicas de software",
+      "url": "https://www.techinterviewhandbook.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tipo de pregunta de entrevista",
+      "value": "Ejercicio práctico de algoritmos sin acertijos"
+    },
+    {
+      "label": "Lenguaje de implementación de referencia",
+      "value": "Python"
+    },
+    {
+      "label": "Concepto estadístico evaluado",
+      "value": "Cálculo de mediana"
+    },
+    {
+      "label": "Mercado objetivo de la metodología",
+      "value": "Empresas tecnológicas de España y Europa"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

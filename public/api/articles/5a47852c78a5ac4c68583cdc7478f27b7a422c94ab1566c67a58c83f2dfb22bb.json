@@ -1,0 +1,77 @@
+{
+  "id": "5a47852c78a5ac4c68583cdc7478f27b7a422c94ab1566c67a58c83f2dfb22bb",
+  "title": "Día 2 de mi reto de 90 días en la nube: dejé de ser estudiante para actuar como un ingeniero DevOps real",
+  "summary": "Segunda entrega del reto de 90 días para convertirse en ingeniero de nube, donde el autor abandona los tutoriales guiados para resolver un escenario laboral real de creación de entornos en Azure, aplicando etiquetado, automatización con scripts y filtrado de salidas de CLI, tal como lo hace un profesional DevOps en su día a día.",
+  "url": "https://dev.to/highpee1991/day-2-i-stopped-being-a-student-and-started-acting-like-a-devops-engineer-4kid",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T08:32:59.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgnpvm6pv43vd8e0nxbo.webp",
+  "imageAlt": "Día 2 de mi reto de 90 días en la nube: dejé de ser estudiante para actuar como un ingeniero DevOps real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Segunda entrega del reto de 90 días para convertirse en ingeniero de nube, donde el autor abandona los tutoriales guiados para resolver un escenario laboral real de creación de entornos en Azure, aplicando etiquetado, automatización con scripts y filtrado de salidas de CLI, tal como lo hace un profesional DevOps en su día a día.",
+  "keyPoints": [
+    "El autor simula un encargo laboral real para crear grupos de recursos y cuentas de almacenamiento en Azure sin instrucciones paso a paso.",
+    "Aprende a filtrar y dar formato a las salidas de la CLI para gestionar cientos de recursos de forma eficiente en entornos empresariales.",
+    "Implementa etiquetas de recursos para facilitar la auditoría, gestión y limpieza de infraestructura a gran escala.",
+    "Desarrolla scripts en Bash para automatizar el aprovisionamiento de entornos y optimizar su flujo de trabajo con Git."
+  ],
+  "whyMatters": "Esta práctica no es un ejercicio académico más, sino una réplica exacta de los retos diarios que enfrentan los ingenieros DevOps en empresas de cualquier tamaño. La automatización de tareas repetitivas y la gestión estructurada de recursos reducen errores humanos, aceleran los despliegues y permiten escalar infraestructura sin colapsar por la carga de trabajo manual. Para quienes se forman en tecnologías de nube, adoptar este enfoque basado en escenarios reales marca la diferencia entre dominar la teoría y estar preparado para los exigentes entornos laborales actuales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgnpvm6pv43vd8e0nxbo.webp",
+      "alt": "Imagen de portada del artículo sobre el día 2 del reto de ingeniería DevOps",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DevOps",
+    "#Azure",
+    "#IngenieriaEnLaNube",
+    "#Automatizacion",
+    "#CloudEngineering"
+  ],
+  "fullArticle": "El segundo día de su reto de 90 días para convertirse en ingeniero de nube, el autor abandonó por completo la dinámica de tutoriales guiados para adentrarse en un escenario que replica con fidelidad el trabajo diario de un ingeniero DevOps en una empresa real. Mientras que el primer día se limitó a instalar herramientas y familiarizarse con la interfaz de línea de comandos de Azure, esta jornada se centró en resolver una petición concreta y sin instrucciones paso a paso, tal como llegan a los equipos de ingeniería en entornos laborales. La consigna, simulada como un mensaje de un jefe de equipo, era clara: crear grupos de recursos para entornos de desarrollo y pruebas, etiquetarlos correctamente, aprovisionar una cuenta de almacenamiento en el entorno de desarrollo, listar todos los recursos con una salida limpia y documentar el proceso.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flgnpvm6pv43vd8e0nxbo.webp]\nUno de los primeros aprendizajes fue el manejo de formatos de salida de la CLI, un detalle que cobra una relevancia enorme cuando se trabaja con decenas o cientos de recursos en una suscripción empresarial. Las salidas en JSON sin procesar son prácticamente ilegibles a simple vista, por lo que el uso de formatos de tabla o TSV permite escanear la información rápidamente o integrarla en otros scripts y herramientas. El autor destaca además la utilidad del parámetro --query, que permite filtrar y reestructurar la salida JSON antes de que se muestre en pantalla, una funcionalidad que no es opcional cuando se gestionan infraestructuras de gran escala, sino una necesidad para mantener la productividad y evitar la saturación de información irrelevante.\nOtro pilar fundamental de la jornada fue la implementación de etiquetas en los recursos, un aspecto que suele pasarse por alto en los tutoriales básicos pero que es indispensable en entornos empresariales. Las etiquetas responden de forma inmediata a tres preguntas clave para cualquier recurso, sin importar su tamaño: quién es el responsable, cuál es su coste asociado y a qué proyecto pertenece. Sin una política de etiquetado consistente, una suscripción con cientos de recursos se convierte en un caos imposible de auditar, gestionar o depurar de forma segura, generando costes ocultos y riesgos de seguridad.\nPara evitar repetir comandos manualmente cada vez que necesite crear un entorno nuevo, el autor desarrolló un script en Bash que automatiza el aprovisionamiento completo de la infraestructura: grupos de recursos de desarrollo y pruebas, y la cuenta de almacenamiento correspondiente. El script solo requiere tres variables básicas (nombre del proyecto, responsable y ubicación) para generar un entorno consistente y reutilizable en cuestión de segundos, cambiando simplemente el valor de la variable PROJECT para adaptarlo a cualquier iniciativa. Además, creó un pequeño script para optimizar su flujo de trabajo con Git, que agrupa las acciones de agregar cambios, confirmar y enviar commits en un solo comando, con medidas de seguridad como la detención automática ante errores y la obligación de incluir un mensaje de confirmación, evitando envíos accidentales sin contexto.\nEsta jornada supuso un cambio de perspectiva radical sobre la interfaz de línea de comandos: ya no es vista como una alternativa más rápida a la interfaz gráfica, sino como una herramienta fundamental para la repetibilidad, el filtrado y la automatización a escala, donde el trabajo manual se vuelve inviable. En un entorno empresarial real, este enfoque basado en comandos, consultas, etiquetas y scripts es el que permite a los equipos de ingeniería gestionar infraestructura compleja sin depender de interfaces que no escalan. El autor concluye que este tipo de prácticas, alejadas de los tutoriales estructurados, son las que realmente preparan para los retos del mercado laboral en el ámbito de la nube y el DevOps.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T08:42:44.939Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Día 2 del reto de ingeniería DevOps",
+      "url": "https://dev.to/taiwo/day-2-i-stopped-being-a-student-and-started-acting-like-a-devops-engineer-2h5p"
+    },
+    {
+      "title": "Documentación oficial de Azure CLI",
+      "url": "https://learn.microsoft.com/es-es/cli/azure/"
+    },
+    {
+      "title": "Guía de buenas prácticas de etiquetado de recursos en Azure",
+      "url": "https://learn.microsoft.com/es-es/azure/azure-resource-manager/management/tag-resources"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración del reto de ingeniería",
+      "value": "90 días"
+    },
+    {
+      "label": "Cantidad de entornos creados en la práctica",
+      "value": "2 (desarrollo y pruebas)"
+    },
+    {
+      "label": "Herramienta de automatización utilizada",
+      "value": "Bash"
+    },
+    {
+      "label": "Plataforma de nube empleada",
+      "value": "Microsoft Azure"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

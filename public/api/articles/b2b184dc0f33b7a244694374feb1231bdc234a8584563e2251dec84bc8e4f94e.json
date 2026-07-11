@@ -1,0 +1,71 @@
+{
+  "id": "b2b184dc0f33b7a244694374feb1231bdc234a8584563e2251dec84bc8e4f94e",
+  "title": "Probé 10 convertidores de archivos en línea y ninguno era realmente privado",
+  "summary": "Un ingeniero de software descubre que las herramientas gratuitas de conversión de archivos que se usan a diario envían datos sensibles a servidores remotos, comprometiendo la privacidad. Se presenta una alternativa totalmente local basada en el navegador.",
+  "url": "https://dev.to/jamiepark-design/i-tested-10-online-file-converters-none-of-them-were-actually-private-2pdc",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T03:08:32.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv5klhx39uof89o5oit1b.png",
+  "imageAlt": "Probé 10 convertidores de archivos en línea y ninguno era realmente privado",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un ingeniero de software descubre que las herramientas gratuitas de conversión de archivos que se usan a diario envían datos sensibles a servidores remotos, comprometiendo la privacidad. Se presenta una alternativa totalmente local basada en el navegador.",
+  "keyPoints": [
+    "Se probaron diez convertidores populares y todos enviaron los archivos a servidores externos, aunque solo uno lo comunicó explícitamente.",
+    "El análisis de tráfico mostró que cada herramienta transmitía la información completa del PDF, contraviniendo la promesa de privacidad de los usuarios.",
+    "Para evitar la exposición de datos, se desarrolló formlyapp.org, que procesa PDFs, JPG, JSON, XML y HEIC directamente en el navegador usando Canvas, FileReader y Web Workers.",
+    "La tecnología necesaria ya existe desde hace años; la única barrera era la conveniencia de los proveedores de servicios en línea."
+  ],
+  "whyMatters": "El descubrimiento subraya una brecha crítica en la protección de datos personales en la era digital, donde la comodidad a menudo eclipsa la seguridad. Para profesionales que manejan información confidencial, confiar en convertidores en línea puede exponer datos sensibles a terceros sin su consentimiento. La solución propuesta demuestra que la privacidad no debe sacrificarse por la facilidad, y que las herramientas locales pueden ofrecer rendimiento y confidencialidad sin compromisos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv5klhx39uof89o5oit1b.png",
+      "alt": "Portada del artículo sobre convertidores de archivos en línea",
+      "caption": "Imagen que muestra la portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#FileConversion",
+    "#Privacidad",
+    "#TecnologiaWeb"
+  ],
+  "fullArticle": "Un cliente me envió un PDF con datos financieros sensibles y me pidió convertirlo a una hoja de cálculo. Al buscar un convertidor gratuito, me topé con la primera opción que aparecía en Google. Al leer su política de privacidad, la sección 4.3 me reveló que la empresa podía \"almacenar, procesar y analizar\" el contenido subido para \"mejorar el servicio\". En otras palabras, estaban leyendo mis archivos.\n\nPara comprobarlo, probé diez convertidores de archivos en línea, monitoreando las solicitudes de red durante la carga. Cada uno enviaba el PDF a un servidor remoto; solo uno lo comunicaba claramente en la interfaz de usuario, mientras que el resto lo escondía en políticas de privacidad de 15 páginas.\n\nCon el objetivo de proteger la confidencialidad, desarrollé formlyapp.org, un convertidor universal que funciona exclusivamente en el navegador. Utiliza la API Canvas, FileReader y Web Workers para transformar PDFs a JPG, JSON a CSV, XML a JSON y HEIC a PNG sin enviar datos fuera del equipo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv5klhx39uof89o5oit1b.png]\n\nLa tecnología necesaria ha existido durante años; la decisión de subir archivos se basaba en la facilidad de implementación. Hoy, con la creciente conciencia sobre la privacidad, la solución local no solo es viable, sino necesaria. Los usuarios que manejan información sensible pueden confiar en que cada byte permanece en la memoria del navegador, sin riesgo de filtración.\n\nAdemás, la plataforma permite crear plantillas y fragmentos reutilizables, lo que facilita responder preguntas frecuentes y mantener la coherencia en los procesos de conversión sin comprometer la seguridad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T03:25:15.179Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Sitio oficial de FormlyApp",
+      "url": "https://formlyapp.org/"
+    },
+    {
+      "title": "Wikipedia: Canvas API",
+      "url": "https://es.wikipedia.org/wiki/Canvas_(API)"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Convertidores probados",
+      "value": "10"
+    },
+    {
+      "label": "Porcentaje que suben archivos",
+      "value": "100%"
+    },
+    {
+      "label": "Tiempo de procesamiento local",
+      "value": "menos de 1 segundo"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

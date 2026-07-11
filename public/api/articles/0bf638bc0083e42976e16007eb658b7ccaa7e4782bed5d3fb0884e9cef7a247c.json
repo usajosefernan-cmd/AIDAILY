@@ -1,0 +1,76 @@
+{
+  "id": "0bf638bc0083e42976e16007eb658b7ccaa7e4782bed5d3fb0884e9cef7a247c",
+  "title": "NVIDIA da el primer paso para que su CPU Rigel sea compatible con el ecosistema Linux: ya está en el compilador GCC",
+  "summary": "NVIDIA ha fusionado el soporte inicial de su nuevo núcleo de CPU 'Rigel' en la base de código upstream del compilador GNU (GCC), lo que permitirá compilar software para esta arquitectura de forma nativa en el ecosistema de código abierto.",
+  "url": "https://www.phoronix.com/news/nvidia-rigel-upstream-gcc",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-07T15:45:00.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=nvidia_rigel_gcc",
+  "imageAlt": "NVIDIA da el primer paso para que su CPU Rigel sea compatible con el ecosistema Linux: ya está en el compilador GCC",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "NVIDIA ha fusionado el soporte inicial de su nuevo núcleo de CPU 'Rigel' en la base de código upstream del compilador GNU (GCC), lo que permitirá compilar software para esta arquitectura de forma nativa en el ecosistema de código abierto.",
+  "keyPoints": [
+    "El soporte inicial de Rigel se fusionó minutos después de que NVIDIA confirmara detalles básicos de su nueva CPU Rosa.",
+    "Rigel es el núcleo de CPU diseñado por NVIDIA para su línea de procesadores de propósito general orientados a centros de datos.",
+    "La integración en GCC permite a desarrolladores compilar software para esta arquitectura sin necesidad de parches personalizados.",
+    "Este movimiento acelera la adopción de las CPUs de NVIDIA en el ecosistema Linux y de código abierto."
+  ],
+  "whyMatters": "Esta integración supone un hito estratégico para NVIDIA, que busca competir en el mercado de procesadores de centros de datos frente a Intel y AMD. Al incluir el soporte de Rigel en GCC, la empresa elimina una barrera clave para que los desarrolladores adopten su arquitectura, ya que GCC es el compilador estándar en la mayoría de distribuciones Linux. A largo plazo, esto acelerará la llegada de servidores y equipos con CPUs NVIDIA al mercado, ampliando su ecosistema más allá de las GPUs que dominan actualmente en inteligencia artificial y computación de alto rendimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=nvidia_rigel_gcc",
+      "alt": "Logotipo de NVIDIA junto a una representación del núcleo de CPU Rigel y el compilador GCC",
+      "caption": "Imagen de portada de la noticia original de Phoronix sobre el soporte inicial del núcleo Rigel en GCC"
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#Nvidia",
+    "#RigelCPU",
+    "#GCC",
+    "#Linux"
+  ],
+  "fullArticle": "NVIDIA ha dado un paso decisivo en su apuesta por el mercado de procesadores de propósito general: minutos después de confirmar públicamente los primeros detalles de su nueva línea de CPUs 'Rosa' y su núcleo 'Rigel', la empresa ha fusionado el soporte inicial de este núcleo en la base de código upstream del compilador GNU (GCC), el herramienta de compilación estándar en la mayoría de distribuciones Linux y proyectos de código abierto.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=nvidia_rigel_gcc]\n\nRigel es el primer núcleo de CPU diseñado íntegramente por NVIDIA para su línea de procesadores orientados a centros de datos y computación de alto rendimiento, un segmento dominado históricamente por Intel y AMD. Hasta ahora, los desarrolladores que querían compilar software para esta arquitectura debían utilizar parches personalizados no oficiales, lo que suponía una barrera importante para su adopción. La integración en GCC elimina este obstáculo, permitiendo que cualquier usuario de una distribución Linux pueda compilar código para Rigel de forma nativa sin necesidad de modificaciones adicionales.\n\nEste movimiento no es casual: NVIDIA busca ampliar su ecosistema más allá de las GPUs, que actualmente dominan el mercado de inteligencia artificial y computación acelerada, y posicionarse como un proveedor integral de soluciones de hardware para centros de datos. La rápida integración en GCC demuestra el compromiso de la empresa con el ecosistema de código abierto, un aspecto clave para ganarse la confianza de los desarrolladores y acelerar la adopción de sus CPUs en el mercado empresarial.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T04:49:28.974Z",
+  "links": [
+    {
+      "title": "Noticia original en Phoronix",
+      "url": "https://www.phoronix.com/news/NVIDIA-Rigel-GCC-Upstream"
+    },
+    {
+      "title": "Documentación oficial de GCC sobre arquitecturas soportadas",
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Configurations.html"
+    },
+    {
+      "title": "Página oficial de NVIDIA sobre CPUs para centros de datos",
+      "url": "https://www.nvidia.com/en-us/data-center/cpus/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo entre anuncio y fusión en GCC",
+      "value": "Menos de 1 hora"
+    },
+    {
+      "label": "Arquitectura de CPU afectada",
+      "value": "NVIDIA Rigel (línea Rosa)"
+    },
+    {
+      "label": "Compilador modificado",
+      "value": "GNU Compiler Collection (GCC)"
+    },
+    {
+      "label": "Ecosistema objetivo",
+      "value": "Distribuciones Linux y proyectos de código abierto"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

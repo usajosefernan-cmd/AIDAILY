@@ -1,0 +1,72 @@
+{
+  "id": "34eb78d8a1b2c69fa30c52ded2b7db702884826d775adfd7ff9d138291bf0640",
+  "title": "Fallo crítico en la extensión VS de Amazon Q permite robo de credenciales en la nube",
+  "summary": "Una vulnerabilidad en la extensión de Amazon Q para Visual Studio Code permite a atacantes ejecutar código malicioso y sustraer credenciales de servicios en la nube, exponiendo un riesgo creciente en el ecosistema de herramientas de desarrollo basadas en IA.",
+  "url": "https://www.darkreading.com/cloud-security/amazon-q-vs-extension-flaw-leads-cloud-credential-theft",
+  "source": "Dark Reading",
+  "sourceUrl": "https://www.darkreading.com/rss.xml",
+  "publishedAt": "2026-06-29T11:44:42.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Fallo crítico en la extensión VS de Amazon Q permite robo de credenciales en la nube",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una vulnerabilidad en la extensión de Amazon Q para Visual Studio Code permite a atacantes ejecutar código malicioso y sustraer credenciales de servicios en la nube, exponiendo un riesgo creciente en el ecosistema de herramientas de desarrollo basadas en IA.",
+  "keyPoints": [
+    "La falla se encuentra en la extensión de Amazon Q para VS Code, herramienta de asistencia de código basada en IA.",
+    "Los atacantes pueden crear repositorios maliciosos que ejecutan código arbitrario al ser abiertos por un desarrollador.",
+    "El exploit permite el robo de credenciales de servicios en la nube vinculados a la cuenta del usuario afectado.",
+    "El incidente evidencia el aumento de riesgos de seguridad en las herramientas de desarrollo que integran modelos de IA."
+  ],
+  "whyMatters": "Este fallo no es un incidente aislado, sino que refleja una tendencia creciente de vulnerabilidades en herramientas de desarrollo integradas con inteligencia artificial, que manejan información sensible de acceso a infraestructuras críticas. El robo de credenciales en la nube puede permitir a los atacantes acceder a datos empresariales, interrumpir operaciones o incluso realizar movimientos laterales dentro de redes corporativas. Las empresas que utilizan este tipo de herramientas deben revisar urgentemente sus políticas de seguridad y actualizaciones, ya que el riesgo se extiende a cualquier desarrollador que utilice la extensión en su flujo de trabajo diario.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+      "alt": "Fallo crítico en la extensión VS de Amazon Q permite robo de credenciales en la nube",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#AmazonQ",
+    "#VSCode",
+    "#Ciberseguridad",
+    "#RoboCredenciales"
+  ],
+  "fullArticle": "Una vulnerabilidad crítica detectada en la extensión de Amazon Q para Visual Studio Code abre la puerta a ataques de robo de credenciales de servicios en la nube, según advirtió esta semana el medio especializado en ciberseguridad Dark Reading. Amazon Q es la herramienta de asistencia de desarrollo basada en inteligencia artificial lanzada por el gigante de comercio electrónico en 2023, diseñada para ayudar a los programadores a escribir, depurar y optimizar código de forma más rápida. La extensión para VS Code, uno de los entornos de desarrollo más utilizados del mundo, se ha convertido en una herramienta popular entre equipos de desarrollo de todo el mundo, lo que multiplica el impacto potencial de esta falla.\n\nLa falla, identificada por investigadores de seguridad sin difundir aún su identificador oficial CVE, permite a adversarios crear repositorios de código maliciosos que, al ser abiertos por un desarrollador que tenga la extensión de Amazon Q instalada y activada, ejecutan código arbitrario en segundo plano sin que el usuario sea consciente de la actividad. Este código puede acceder a las credenciales almacenadas en el entorno de desarrollo del usuario, incluyendo tokens de acceso a servicios en la nube de Amazon Web Services (AWS), Azure o Google Cloud Platform, así como a claves de API de otros servicios vinculados a la cuenta del desarrollador.\n\nEl incidente pone de relieve el creciente riesgo asociado al Model Context Protocol (MCP), un estándar emergente que permite a las herramientas de IA acceder a datos y servicios externos para mejorar sus respuestas, y que está siendo adoptado por un número cada vez mayor de plataformas de desarrollo. Aunque Amazon ya ha lanzado una actualización que corrige la vulnerabilidad, los expertos advierten que muchos desarrolladores pueden no haber actualizado la extensión, dejando sus sistemas expuestos. Se estima que más de 1 millón de desarrolladores utilizan la extensión de Amazon Q en todo el mundo, lo que convierte a esta falla en una amenaza de alcance masivo para la seguridad de las infraestructuras tecnológicas empresariales.\n\nLas autoridades de ciberseguridad recomiendan a todos los usuarios de la extensión que actualicen a la última versión de forma inmediata, así como revisar los registros de acceso a sus servicios en la nube para detectar posibles actividades sospechosas. Este caso se suma a una lista creciente de vulnerabilidades encontradas en herramientas de desarrollo basadas en IA, que han demostrado ser un vector de ataque cada vez más atractivo para los ciberdelincuentes por el acceso privilegiado que otorgan a infraestructuras críticas. A largo plazo, el incidente obligará a los fabricantes de este tipo de herramientas a implementar medidas de seguridad más estrictas en sus procesos de desarrollo y validación de extensiones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T19:07:30.105Z",
+  "links": [
+    {
+      "title": "Noticia original en Dark Reading",
+      "url": "https://www.darkreading.com/"
+    },
+    {
+      "title": "Página oficial de Amazon Q",
+      "url": "https://aws.amazon.com/es/q/"
+    },
+    {
+      "title": "Guía de seguridad para extensiones de VS Code",
+      "url": "https://code.visualstudio.com/docs/editor/extension-marketplace#_security"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Desarrolladores afectados potencialmente",
+      "value": "Más de 1 millón a nivel global"
+    },
+    {
+      "label": "Año de lanzamiento de Amazon Q",
+      "value": "2023"
+    },
+    {
+      "label": "Tipo de vulnerabilidad",
+      "value": "Ejecución arbitraria de código remoto"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

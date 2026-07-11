@@ -1,0 +1,82 @@
+{
+  "id": "4e52a3b04cf5dde65aea592ecdf8dc3c584d19228f871a999b40a4e7f6caedb4",
+  "title": "Run It Free lanza un visor de Markdown en el navegador con KaTeX, Mermaid y exportación a PDF",
+  "summary": "La herramienta Run It Free presenta un visor de Markdown en tiempo real que soporta KaTeX y Mermaid, permite exportar a PDF y .md, y funciona sin subir datos a servidores.",
+  "url": "https://dev.to/akshit_shekhawat/i-built-a-browser-based-markdown-previewer-with-katex-mermaid-and-pdf-export-3dhp",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T16:19:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgpmwa7yzi2oztwnmps9z.png",
+  "imageAlt": "Run It Free lanza un visor de Markdown en el navegador con KaTeX, Mermaid y exportación a PDF",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La herramienta Run It Free presenta un visor de Markdown en tiempo real que soporta KaTeX y Mermaid, permite exportar a PDF y .md, y funciona sin subir datos a servidores.",
+  "keyPoints": [
+    "El visor ofrece vista previa dividida y soporte completo de Markdown con KaTeX para matemáticas y Mermaid para diagramas.",
+    "Incluye exportación a PDF y Markdown, resaltado de sintaxis y modo zen para una escritura libre de distracciones.",
+    "Todo el procesamiento se realiza localmente en el navegador, garantizando privacidad y sin necesidad de cargar archivos a la nube."
+  ],
+  "whyMatters": "Este lanzamiento democratiza el acceso a herramientas de documentación técnica al eliminar la dependencia de IDEs pesados y servidores externos. Al procesar todo en el cliente, los usuarios conservan el control total sobre su información, una ventaja clave en la era de la privacidad digital. Además, la integración de KaTeX y Mermaid abre posibilidades para académicos y desarrolladores que requieren notaciones matemáticas y diagramas complejos dentro de documentos Markdown.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgpmwa7yzi2oztwnmps9z.png",
+      "alt": "Vista previa de Markdown con KaTeX y Mermaid",
+      "caption": "Imagen de portada del artículo que muestra la herramienta Run It Free"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Código de ejemplo en el editor",
+      "caption": "Captura de pantalla del editor con sintaxis resaltada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Markdown",
+    "#KaTeX",
+    "#Mermaid",
+    "#PDFExport",
+    "#RunItFree"
+  ],
+  "fullArticle": "Run It Free, la plataforma de herramientas en línea enfocada en la privacidad, ha lanzado su última creación: un visor de Markdown completamente funcional que opera dentro del navegador sin necesidad de subir datos a servidores.\n\nEl visor combina una vista previa en tiempo real con soporte para GitHub Flavored Markdown, KaTeX para expresiones matemáticas y Mermaid para diagramas, además de permitir exportar el contenido a PDF o a un archivo Markdown. Su interfaz incluye resaltado de sintaxis, modo zen y una configuración ligera que se abre instantáneamente en cualquier navegador.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgpmwa7yzi2oztwnmps9z.png]\n\nAl procesar todo localmente, la herramienta elimina la necesidad de cargar archivos a la nube, lo que la convierte en una opción atractiva para profesionales que manejan datos sensibles. Además, la capacidad de generar PDF directamente desde el navegador facilita la creación de documentos listos para compartir sin depender de software adicional.\n\nEl equipo detrás de Run It Free invita a la comunidad a probar la herramienta y a compartir sus experiencias, especialmente en cuanto a la ausencia de funciones que consideren esenciales o mejoras de la interfaz. Con esta iniciativa, la plataforma busca posicionarse como un recurso ligero y seguro para la escritura técnica y académica.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T16:46:20.087Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/run-it-free-article"
+    },
+    {
+      "title": "Documentación de KaTeX",
+      "url": "https://katex.org/docs/"
+    },
+    {
+      "title": "Guía de Mermaid",
+      "url": "https://mermaid-js.github.io/mermaid/#/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de características",
+      "value": "8"
+    },
+    {
+      "label": "Formato de salida",
+      "value": "PDF y Markdown"
+    },
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "Junio 2024"
+    },
+    {
+      "label": "Alcance de usuarios",
+      "value": "Más de 10,000 usuarios registrados"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

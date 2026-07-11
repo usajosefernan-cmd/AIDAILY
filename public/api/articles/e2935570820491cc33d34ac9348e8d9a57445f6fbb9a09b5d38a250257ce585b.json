@@ -1,0 +1,67 @@
+{
+  "id": "e2935570820491cc33d34ac9348e8d9a57445f6fbb9a09b5d38a250257ce585b",
+  "title": "El ingeniero rompe su propio servidor MCP y crea el escáner que detecta la vulnerabilidad",
+  "summary": "Un desarrollador descubrió una fuga de datos en su servidor MCP protegido por Warden, construyó el escáner Siege y reveló cómo las herramientas estáticas fallan en detectar errores de autorización en tiempo real.",
+  "url": "https://dev.to/alexlaguardia/i-broke-my-own-governed-mcp-server-by-hand-then-built-the-scanner-that-catches-the-class-1ip7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T23:18:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwhlyukpjq1o71ax4g1j3.png",
+  "imageAlt": "El ingeniero rompe su propio servidor MCP y crea el escáner que detecta la vulnerabilidad",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador descubrió una fuga de datos en su servidor MCP protegido por Warden, construyó el escáner Siege y reveló cómo las herramientas estáticas fallan en detectar errores de autorización en tiempo real.",
+  "keyPoints": [
+    "'Warden' impide que el rol de soporte vea el campo de nivel de facturación, pero el filtro de consulta sigue funcionando y expone la información.",
+    "Los escáneres tradicionales leen solo el manifiesto del producto y no detectan la fuga porque la vulnerabilidad aparece solo cuando el servidor está en ejecución.",
+    "Siege simula ataques reales conectándose con distintos roles y compara resultados, descubriendo cuatro detectores de errores de autorización.",
+    "El autor mantiene dos versiones de Warden (vulnerable y corregida) para demostrar reproducibilidad de los hallazgos con evidencia exacta."
+  ],
+  "whyMatters": "Esta historia subraya que la seguridad de los sistemas de gestión de datos no puede depender únicamente de análisis estáticos. Los atacantes pueden aprovechar fallos de autorización que solo se manifiestan en tiempo real, comprometiendo datos sensibles de clientes. Los equipos de desarrollo y de pruebas deben incorporar escáneres dinámicos como Siege para asegurar que las capas de gobernanza realmente bloqueen el acceso indebido.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwhlyukpjq1o71ax4g1j3.png",
+      "alt": "Imagen que muestra la portada del artículo sobre el escáner Siege y la fuga de datos en Warden",
+      "caption": "Portada del artículo que ilustra la creación de Siege y la fuga de datos en un servidor MCP protegido por Warden"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#MCP",
+    "#Warden",
+    "#Siege"
+  ],
+  "fullArticle": "Un ingeniero de software lanzó recientemente Warden, una capa de gobernanza que sitúa una capa de autorización sobre un servidor MCP y regula quién puede leer qué datos. El rol de soporte, por ejemplo, puede listar cuentas de clientes pero no su nivel de facturación, ya que ese campo se elimina de la respuesta.\n\nAl probar la herramienta, descubrió que, aunque el campo estaba oculto, el filtro de consulta aceptaba el nivel de facturación como parámetro. Al consultar todas las cuentas Enterprise, el resultado mostraba la existencia de las cuentas con ese nivel, revelando la información a través del filtrado. La fuga se producía en la entrada, no en la salida.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwhlyukpjq1o71ax4g1j3.png]\n\nLos escáneres habituales, que analizan el manifiesto de la herramienta, no detectaron el problema porque la vulnerabilidad solo se manifiesta cuando el servidor está en ejecución y un rol real hace una llamada real. Para superar esta limitación, el autor creó Siege, un escáner dinámico que actúa como un atacante real, conectándose con distintas identidades y comparando los resultados.\n\nSiege aprende el esquema y los valores reales desde la identidad más permisiva, luego difiere los resultados de cada rol restringido, identificando brechas de autorización. De esta manera, detectó cuatro fallos de seguridad, de los cuales tres no había encontrado manualmente.\n\nEl autor mantiene dos versiones de Warden—una vulnerable y otra corregida—y ejecuta Siege en ambas para demostrar la reproducibilidad. Cada hallazgo incluye un repro exacto: la herramienta, los argumentos y las filas devueltas, permitiendo a otros usuarios reproducir la fuga en sus propios entornos. Además, el repositorio incluye un servidor de prueba intencionalmente roto que permite a los usuarios observar los detectores en acción.\n\nEste caso destaca la necesidad de herramientas dinámicas que prueben la autorización en tiempo real, ya que las técnicas de “tool‑poisoning” y los escáneres estáticos pueden pasar por alto vulnerabilidades críticas. Siege representa una solución práctica para que los equipos de seguridad realicen pruebas de penetración de autorización sin depender de análisis de código estático.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T00:07:14.748Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación de MCP",
+      "url": "https://docs.mcp.io/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Filas devueltas en la prueba",
+      "value": "6"
+    },
+    {
+      "label": "Detectores de seguridad creados",
+      "value": "4"
+    },
+    {
+      "label": "Versiones de Warden probadas",
+      "value": "2"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

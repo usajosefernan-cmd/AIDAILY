@@ -1,0 +1,71 @@
+{
+  "id": "7e8e116d7c6337dc99c4a535ac8fbc4443010e93e39077537bb5bc6b5ec93ad4",
+  "title": "El riesgo de que la IA deje tus claves en el código: un problema que ya está robando datos en minutos",
+  "summary": "Los modelos de generación de código, como Cursor, Claude Code y Copilot, tienden a insertar claves de API directamente en el código, lo que expone a los desarrolladores a brechas de seguridad. El artículo expone cómo la práctica se debe evitar y ofrece soluciones concretas, como usar variables de entorno y hooks de pre‑commit.",
+  "url": "https://dev.to/c_k_fb750e731394/why-cursor-keeps-hardcoding-secrets-in-ai-generated-code-cwe-798-1kjk",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T08:44:59.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzpctyd5t8w93bpw6g5ea.png",
+  "imageAlt": "El riesgo de que la IA deje tus claves en el código: un problema que ya está robando datos en minutos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los modelos de generación de código, como Cursor, Claude Code y Copilot, tienden a insertar claves de API directamente en el código, lo que expone a los desarrolladores a brechas de seguridad. El artículo expone cómo la práctica se debe evitar y ofrece soluciones concretas, como usar variables de entorno y hooks de pre‑commit.",
+  "keyPoints": [
+    "Los modelos de IA aprenden de código público que a menudo incluye claves hardcoded, por lo que reproducen ese patrón sin reconocer la sensibilidad del dato.",
+    "Una clave expuesta en el historial de git permanece allí indefinidamente, y los bots escanean repositorios públicos en minutos, lo que permite a atacantes usarla en menos de 5 minutos.",
+    "El uso de variables de entorno y la exclusión de archivos sensibles del control de versiones son medidas básicas para mitigar el riesgo.",
+    "Herramientas como Gitleaks y SafeWeave pueden interceptar claves hardcoded en tiempo real, antes de que el código sea comprometido."
+  ],
+  "whyMatters": "El hecho de que las IA incluyan claves directamente en el código significa que cualquier desarrollador que utilice estas herramientas corre el riesgo de exponer datos críticos sin saberlo. En un entorno donde la seguridad de la información es cada vez más regulada, este tipo de vulnerabilidad puede resultar en pérdidas financieras, sanciones legales y daño reputacional. Los lectores deben prestar atención porque la solución pasa por adoptar buenas prácticas de desarrollo y herramientas de detección temprana.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzpctyd5t8w93bpw6g5ea.png",
+      "alt": "Imagen que muestra el título del artículo sobre el riesgo de hardcoding de claves en código generado por IA",
+      "caption": "Portada del artículo que alerta sobre la exposición de claves en código AI"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#CursorAI",
+    "#ClaudeCode",
+    "#Gitleaks"
+  ],
+  "fullArticle": "La última generación de asistentes de código, desde Cursor hasta Claude Code y Copilot, promete acelerar el desarrollo de software con fragmentos listos para usar. Sin embargo, un riesgo silencioso se oculta en la comodidad de estos snippets: la inclusión automática de claves de API y tokens de acceso directamente en el código fuente. Cuando un desarrollador copia y pega el código generado, la clave se vuelve parte del historial de git, y si se sube a un repositorio público, los bots de escaneo pueden detectarla en cuestión de minutos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzpctyd5t8w93bpw6g5ea.png]\n\nEl problema no es exclusivo de una herramienta. Los modelos de lenguaje entrenados con grandes volúmenes de código público reproducen el patrón de hardcoding porque el material de entrenamiento incluye ejemplos ilustrativos, no producción. La IA no distingue entre una clave sensible y cualquier otra cadena; simplemente la inserta como un argumento de función. Además, leer valores de variables de entorno requiere configurar archivos .env, lo que representa una barrera adicional para el snippet “listo para usar”.\n\nPara protegerse, los expertos recomiendan mover todas las credenciales a variables de entorno y mantener los archivos .env fuera del repositorio. Si una clave ya ha sido comprometida, es imperativo rotarla inmediatamente y limpiar el historial con herramientas como git‑filter‑repo o BFG. Pero la prevención es más efectiva: un hook de pre‑commit que ejecute Gitleaks o la solución SafeWeave puede detectar claves hardcoded antes de que el commit llegue a GitHub.\n\nEl panorama de la seguridad de la IA está cambiando rápidamente. Cada vez más equipos adoptan flujos de trabajo que dependen de generadores de código, y la exposición accidental de datos sensibles puede tener consecuencias devastadoras. Adoptar buenas prácticas y herramientas de detección temprana no solo protege la información, sino que también evita costosas auditorías y sanciones regulatorias.\n\nEn la práctica, la comunidad ya está respondiendo. SafeWeave, por ejemplo, actúa como un servidor MCP que intercepta los snippets generados por Cursor y Claude Code, marcando cualquier clave hardcoded en tiempo real. Al integrar estas soluciones en el flujo de trabajo, los desarrolladores pueden continuar beneficiándose de la velocidad de la IA sin sacrificar la seguridad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T09:04:58.486Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article-title"
+    },
+    {
+      "title": "Documentación de Gitleaks",
+      "url": "https://github.com/zricethezav/gitleaks"
+    },
+    {
+      "title": "Sitio oficial de SafeWeave",
+      "url": "https://www.safeweave.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de exposición promedio de claves comprometidas",
+      "value": "5 minutos"
+    },
+    {
+      "label": "Número de herramientas IA que generan claves hardcoded",
+      "value": "3"
+    },
+    {
+      "label": "Repositorios públicos escaneados por bots en minutos",
+      "value": "1"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

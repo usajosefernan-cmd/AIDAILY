@@ -1,0 +1,83 @@
+{
+  "id": "513d2aa53f0e1117e1270fc3f199ed330b99b74c50a167a5248cc004a5bcc7d1",
+  "title": "Snowflake cierra su equipo multiagente con un especialista en seguridad y gobernanza: detecta riesgos en tiempo real",
+  "summary": "Tercera entrega de la serie de Snowflake sobre equipos multiagente para administración de plataformas de datos: se añade un agente especializado en seguridad y gobernanza que completa las capacidades de visibilidad de uso y optimización de costes de los agentes anteriores, permitiendo detectar riesgos de seguridad de forma proactiva.",
+  "url": "https://dev.to/swaroop_krishna_e2f4b83b2/from-optimization-to-protection-adding-a-security-and-governance-agent-to-your-snowflake-369f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T21:26:01.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fd48v1fn4w3bw643gaahe.png",
+  "imageAlt": "Snowflake cierra su equipo multiagente con un especialista en seguridad y gobernanza: detecta riesgos en tiempo real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Tercera entrega de la serie de Snowflake sobre equipos multiagente para administración de plataformas de datos: se añade un agente especializado en seguridad y gobernanza que completa las capacidades de visibilidad de uso y optimización de costes de los agentes anteriores, permitiendo detectar riesgos de seguridad de forma proactiva.",
+  "keyPoints": [
+    "El tercer agente especializado en seguridad y gobernanza completa el equipo multiagente de administración de Snowflake, que ya contaba con módulos de visibilidad de uso y optimización de costes.",
+    "A diferencia de los agentes de operaciones, este nuevo especialista analiza riesgos de seguridad mediante vistas personalizadas sobre el esquema SNOWFLAKE.ACCOUNT_USAGE, accesibles en lenguaje natural.",
+    "El orquestador del equipo enruta las consultas de seguridad al nuevo agente, y puede combinar respuestas con otros especialistas para preguntas que mezclen costes y riesgos.",
+    "Esta arquitectura de agentes especializados reduce la complejidad de mantenimiento, mejora la seguridad de las actualizaciones y facilita las pruebas de cada funcionalidad."
+  ],
+  "whyMatters": "Esta implementación supone un cambio de paradigma para los equipos de administración de datos en España y Europa, donde el cumplimiento de normativas como el RGPD obliga a las empresas a detectar accesos no autorizados o configuraciones erróneas de forma proactiva, evitando multas millonarias. La arquitectura multiagente especializada reduce el riesgo de errores de los modelos de IA monolíticos, abarata los costes de mantenimiento a largo plazo y permite responder a incidentes de seguridad en minutos, no en horas. Además, marca una tendencia clara en la gestión de plataformas de datos en la nube: la seguridad deja de ser un módulo independiente para integrarse de forma nativa en el flujo de trabajo diario de los equipos de TI.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fd48v1fn4w3bw643gaahe.png",
+      "alt": "Portada del artículo sobre el agente de seguridad y gobernanza para equipos multiagente de Snowflake",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de la comunidad DEV Community, plataforma donde se publicó el artículo",
+      "caption": "Logotipo de DEV Community, fuente original del contenido"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Snowflake",
+    "#AgentesIA",
+    "#SeguridadEnLaNube",
+    "#GobernanzaDeDatos",
+    "#RGPD"
+  ],
+  "fullArticle": "La tercera entrega de la serie de Snowflake sobre equipos multiagente para la administración de sus plataformas de datos cierra el ciclo de funcionalidades con la incorporación de un agente especializado en seguridad y gobernanza. Las partes anteriores ya habían presentado un agente de administración para obtener visibilidad del uso y los costes de la plataforma, y un agente optimizador de costes acompañado de un orquestador que enruta las consultas a los especialistas correspondientes. Con este nuevo componente, el asistente deja de ser una herramienta reactiva que solo responde a preguntas como 'qué pasó' o 'qué se puede optimizar' para convertirse en un equipo completo que también responde a 'qué riesgos hay en este momento'.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fd48v1fn4w3bw643gaahe.png]\n\nEl nuevo agente de seguridad se construye sobre vistas personalizadas creadas sobre el esquema SNOWFLAKE.ACCOUNT_USAGE, que se mapean a dimensiones, hechos y métricas en lenguaje natural para que Cortex Analyst, el motor de análisis de IA de Snowflake, pueda razonar sobre ellas sin necesidad de consultas SQL complejas por parte del usuario. El orquestador del equipo trata a este agente como un objetivo de enrutamiento de primera clase, y puede combinar sus respuestas con las de otros especialistas para preguntas complejas que mezclen áreas, como 'por qué suben los costes y si hay riesgos de seguridad asociados'. Ejemplos de consultas que ahora se pueden resolver incluyen detectar inicios de sesión fallidos sospechosos en los últimos 7 días, identificar usuarios con roles privilegiados como ACCOUNTADMIN o SECURITYADMIN pero con uso muy reducido en periodos recientes, o vincular aumentos de gasto a posibles brechas de seguridad.\n\nFrente a la opción de crear un único agente monolítico que abarque todas las funcionalidades, la arquitectura de agentes especializados elegida por Snowflake reduce la complejidad de mantenimiento, mejora la seguridad de las actualizaciones y facilita las pruebas de cada componente de forma independiente. Para las empresas españolas y europeas, esta capacidad de detección proactiva de riesgos es especialmente valiosa para cumplir con el RGPD, que sanciona con multas de hasta el 4% de la facturación anual global las vulneraciones de protección de datos. Esta aproximación marca un hito en la gestión de plataformas de datos en la nube, al integrar la seguridad como una capacidad nativa y accesible para todo el equipo, sin necesidad de conocimientos avanzados de análisis de bases de datos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T21:42:50.017Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Parte 3 del equipo multiagente de Snowflake",
+      "url": "https://dev.to/snowflake/from-optimization-to-protection-adding-a-security-and-governance-agent-to-your-snowflake-multi-agent-team-part-3-1b8a"
+    },
+    {
+      "title": "Documentación oficial de Snowflake sobre el esquema ACCOUNT_USAGE",
+      "url": "https://docs.snowflake.com/es/user-guide/account-usage"
+    },
+    {
+      "title": "Documentación de Cortex Analyst, motor de IA de Snowflake para análisis en lenguaje natural",
+      "url": "https://docs.snowflake.com/es/user-guide/cortex-analyst"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de agentes especializados en el equipo final de administración de Snowflake",
+      "value": "3 (administración, optimización de costes, seguridad y gobernanza)"
+    },
+    {
+      "label": "Plazo de consulta de ejemplo para detección de inicios de sesión sospechosos",
+      "value": "Últimos 7 días"
+    },
+    {
+      "label": "Roles de usuario privilegiados analizados por el agente de seguridad",
+      "value": "ACCOUNTADMIN, SECURITYADMIN"
+    },
+    {
+      "label": "Normativa de protección de datos aplicable a empresas europeas que usan esta herramienta",
+      "value": "RGPD (Reglamento General de Protección de Datos)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

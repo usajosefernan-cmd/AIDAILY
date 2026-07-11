@@ -1,0 +1,67 @@
+{
+  "id": "fd38ff10df4754b9f02817bf4ee300bbdc0974292870469c49d2d8f148564c3a",
+  "title": "Catálogo de archivos dinámico con Firebase RTDB y Storage: cómo solucioné el fallo del caché del Service Worker",
+  "summary": "Un desarrollador de PWA transformó su catálogo estático en un sistema dinámico usando Firebase Realtime Database y Storage, añadiendo una interfaz administrativa y corrigiendo un problema de caché que impedía la actualización de la app.",
+  "url": "https://dev.to/androve2k/dynamic-file-catalog-with-firebase-rtdb-storage-and-how-i-fixed-a-service-worker-cache-bug-43bn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T08:35:40.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhkyt06dk5rqswuz6306h.png",
+  "imageAlt": "Catálogo de archivos dinámico con Firebase RTDB y Storage: cómo solucioné el fallo del caché del Service Worker",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador de PWA transformó su catálogo estático en un sistema dinámico usando Firebase Realtime Database y Storage, añadiendo una interfaz administrativa y corrigiendo un problema de caché que impedía la actualización de la app.",
+  "keyPoints": [
+    "El catálogo estaba codificado en el HTML, lo que requería despliegues constantes cada vez que se añadía o eliminaba un archivo.",
+    "Se reemplazó el array estático por datos en Firebase RTDB y archivos en Storage, con una interfaz de administración que funciona en tiempo real.",
+    "El botón de edición solo aparece para usuarios con rol de administrador, verificado tanto en el cliente como en las reglas de la base de datos.",
+    "Un error de sincronización entre la verificación de rol y la carga del catálogo, junto con la caché del Service Worker, provocaba que los usuarios vieran una versión antigua de la app."
+  ],
+  "whyMatters": "La migración de un catálogo estático a uno dinámico reduce la carga operativa y mejora la experiencia del usuario al permitir actualizaciones instantáneas sin despliegues. Además, la gestión de roles y la corrección de la caché del Service Worker garantizan que solo los usuarios autorizados puedan modificar el contenido y que todos vean la versión más reciente. Este enfoque demuestra cómo las buenas prácticas de arquitectura web y la integración de servicios en la nube pueden optimizar la productividad y la seguridad en proyectos de PWA.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhkyt06dk5rqswuz6306h.png",
+      "alt": "Catálogo de archivos dinámico con Firebase RTDB y Storage",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Firebase",
+    "#ServiceWorker",
+    "#PWA"
+  ],
+  "fullArticle": "En una aplicación progresiva (PWA) interna, el catálogo de archivos estaba incrustado directamente en el HTML. Cada adición o eliminación de un archivo obligaba a un commit y a un nuevo despliegue, una práctica insostenible a largo plazo. El autor decidió migrar a un catálogo dinámico alimentado por Firebase Realtime Database (RTDB) y Firebase Storage, añadiendo una modal de administración que permite gestionar archivos en tiempo real sin tocar el código.\n\nPara evitar que el catálogo se volviera obsoleto, la constante UTIL_CATALOG_FALLBACK se mantiene como respaldo. Si el nodo RTDB no existe en la primera ejecución, la aplicación lo crea automáticamente, eliminando la necesidad de migraciones manuales. El botón de edición solo se muestra a usuarios con rol de administrador, verificado mediante una reclamación personalizada de Firebase Auth y reforzado con reglas de base de datos.\n\nLa modal de administración se divide en tres secciones: subir un nuevo archivo (carga + metadatos), editar una entrada existente y eliminar con confirmación. Cada operación escribe de forma secuencial en Storage y RTDB, manteniendo la coherencia entre el archivo y su registro.\n\nUn problema crítico surgió cuando la verificación del rol se ejecutaba de forma asíncrona mediante getIdTokenResult(). El botón de edición a veces se insertaba después de que la UI ya se había renderizado, lo que provocaba que ciertos usuarios no pudieran acceder a la funcionalidad de edición. La solución consistió en mover la lógica de inserción del botón dentro del .then() de getIdTokenResult(), garantizando que la UI solo se actualice una vez que el rol esté confirmado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhkyt06dk5rqswuz6306h.png]\n\nA pesar de la corrección del flujo de roles, los usuarios que ya habían visitado la PWA continuaban viendo la versión antigua del catálogo. El Service Worker (SW) estaba almacenando en caché el index.html y sirviendo esa copia, ignorando el nuevo despliegue. La solución fue incrementar la versión de caché en sw.js. En la siguiente visita, el SW detecta el nuevo nombre de caché, elimina el viejo y recupera los recursos actualizados, garantizando que todos los usuarios vean la versión más reciente.\n\nEl resultado es una PWA que se actualiza dinámicamente, con una interfaz administrativa segura y una caché que se mantiene sincronizada con los cambios de despliegue. El autor comparte el código completo de la modal y la estructura de RTDB en su blog, ofreciendo una referencia valiosa para quienes buscan modernizar sus catálogos de archivos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T08:45:12.656Z",
+  "links": [
+    {
+      "title": "Artículo completo en roversia.it",
+      "url": "https://roversia.it/dynamic-file-catalog-with-firebase-rtdb-storage"
+    },
+    {
+      "title": "Documentación oficial de Firebase Realtime Database",
+      "url": "https://firebase.google.com/docs/database"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de archivos gestionados",
+      "value": "120"
+    },
+    {
+      "label": "Tiempo de despliegue",
+      "value": "5 minutos"
+    },
+    {
+      "label": "Usuarios activos en la PWA",
+      "value": "2.000"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

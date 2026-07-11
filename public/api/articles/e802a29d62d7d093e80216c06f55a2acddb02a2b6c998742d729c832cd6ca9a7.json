@@ -1,0 +1,47 @@
+{
+  "id": "e802a29d62d7d093e80216c06f55a2acddb02a2b6c998742d729c832cd6ca9a7",
+  "title": "Building a local-first network scanner in Go, Wails and Flutter",
+  "summary": "<p>Most network scanners I tried wanted a cloud account and a subscription just to tell me what was sitting on my own LAN. That bugged me enough to build the opposite: a scanner that runs on your machine, keeps the data there, and still tells you what every device is. It's called DeviceShelf, and this is a short tour of how it's put together.</p>\n\n<h2>\n  \n  \n  One core, three front-ends\n</h2>\n\n<p>The scanning and analysis live in a Go core: ARP/ping sweep, port checks, service probes, DHCP fingerprinting, SNMP, and the device-identification logic. On the desktop that core is wrapped with <a href=\"https://wails.io\" rel=\"noopener noreferrer\">Wails</a> — Go on the backend, a normal web UI on the front — so the same engine ships on macOS, Windows and Linux without three native rewrites. The mobile apps are Flutter, talking to the same concepts (a chunk of the identification logic is mirrored and unit-tested on both sides so behaviour matches). And there's a headless build of the core for a 24/7 server edition with no GUI at all.</p>\n\n<p>Keeping one engine and swapping the shell is the only reason a solo project can cover desktop, mobile and server without drowning.</p>\n\n<h2>\n  \n  \n  Local-first, and meaning it\n</h2>\n\n<p>\"Local-first\" is easy to put on a landing page and easy to quietly break. The rule here is simple: nothing about your network leaves the machine unless you switch something on. Device identification runs locally; the online fingerprint lookup is opt-in and off by default. If you want AI to help name a weird device, that's there too — but you bring your own key, so the calls are yours, not routed through a server I run.</p>\n\n<h2>\n  \n  \n  The parts that were actually hard\n</h2>\n\n<ul>\n<li>\n<strong>Identification.</strong> Turning a MAC prefix, open ports, a DHCP fingerprint and an SNMP sysName into \"this is a printer\" is a pile of heuristics with sharp edges — a Nintendo Switch that looks like a network switch, say. It's ordered rules, not one magic classifier.</li>\n<li>\n<strong>Live bandwidth.</strong> Per-device throughput means packet capture (Npcap on Windows, BPF on macOS), which is platform- and permission-dependent and needs care to stay light.</li>\n<li>\n<strong>The server edition.</strong> Running unattended on a LAN changes everything: alert routing over ntfy/Gotify/webhook, threshold and dependency checks, and taming alert floods so it doesn't page you at 3am because Wi-Fi hiccuped.</li>\n</ul>\n\n<h2>\n  \n  \n  Where it is now\n</h2>\n\n<p>Desktop and mobile are shipping; the server edition is an honest public beta. If you want to see what's on your own network without signing up for anything, that's the whole point.</p>\n\n<p>Full write-ups and release notes: <a href=\"https://deviceshelf.app/blog\" rel=\"noopener noreferrer\">https://deviceshelf.app/blog</a></p>\n\n",
+  "url": "https://dev.to/deviceshelf/building-a-local-first-network-scanner-in-go-wails-and-flutter-4f87",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T13:34:48.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmv5v9pkgtp9cci26xck2.png",
+  "imageAlt": "Building a local-first network scanner in Go, Wails and Flutter",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<p>Most network scanners I tried wanted a cloud account and a subscription just to tell me what was sitting on my own LAN. That bugged me enough to build the opposite: a scanner that runs on your machine, keeps the data there, and still tells you what every device is. It's called DeviceShelf, and this is a short tour of how it's put together.</p>\n\n<h2>\n  \n  \n  One core, three front-ends\n</h2>\n\n<p>The scanning and analysis live in a Go core: ARP/ping sweep, port checks, service probes, DHCP fingerprinting, SNMP, and the device-identification logic. On the desktop that core is wrapped with <a href=\"https://wails.io\" rel=\"noopener noreferrer\">Wails</a> — Go on the backend, a normal web UI on the front — so the same engine ships on macOS, Windows and Linux without three native rewrites. The mobile apps are Flutter, talking to the same concepts (a chunk of the identification logic is mirrored and unit-tested on both sides so behaviour matches). And there's a headless build of the core for a 24/7 server edition with no GUI at all.</p>\n\n<p>Keeping one engine and swapping the shell is the only reason a solo project can cover desktop, mobile and server without drowning.</p>\n\n<h2>\n  \n  \n  Local-first, and meaning it\n</h2>\n\n<p>\"Local-first\" is easy to put on a landing page and easy to quietly break. The rule here is simple: nothing about your network leaves the machine unless you switch something on. Device identification runs locally; the online fingerprint lookup is opt-in and off by default. If you want AI to help name a weird device, that's there too — but you bring your own key, so the calls are yours, not routed through a server I run.</p>\n\n<h2>\n  \n  \n  The parts that were actually hard\n</h2>\n\n<ul>\n<li>\n<strong>Identification.</strong> Turning a MAC prefix, open ports, a DHCP fingerprint and an SNMP sysName into \"this is a printer\" is a pile of heuristics with sharp edges — a Nintendo Switch that looks like a network switch, say. It's ordered rules, not one magic classifier.</li>\n<li>\n<strong>Live bandwidth.</strong> Per-device throughput means packet capture (Npcap on Windows, BPF on macOS), which is platform- and permission-dependent and needs care to stay light.</li>\n<li>\n<strong>The server edition.</strong> Running unattended on a LAN changes everything: alert routing over ntfy/Gotify/webhook, threshold and dependency checks, and taming alert floods so it doesn't page you at 3am because Wi-Fi hiccuped.</li>\n</ul>\n\n<h2>\n  \n  \n  Where it is now\n</h2>\n\n<p>Desktop and mobile are shipping; the server edition is an honest public beta. If you want to see what's on your own network without signing up for anything, that's the whole point.</p>\n\n<p>Full write-ups and release notes: <a href=\"https://deviceshelf.app/blog\" rel=\"noopener noreferrer\">https://deviceshelf.app/blog</a></p>\n\n",
+  "keyPoints": [
+    "Building a local-first network scanner in Go, Wails and Flutter"
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmv5v9pkgtp9cci26xck2.png",
+      "alt": "Building a local-first network scanner in Go, Wails and Flutter",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "pic",
+      "caption": "pic"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "Most network scanners I tried wanted a cloud account and a subscription just to tell me what was sitting on my own LAN. That bugged me enough to build the opposite: a scanner that runs on your machine, keeps the data there, and still tells you what every device is. It's called DeviceShelf, and this is a short tour of how it's put together.\n\nThe scanning and analysis live in a Go core: ARP/ping sweep, port checks, service probes, DHCP fingerprinting, SNMP, and the device-identification logic. On the desktop that core is wrapped with Wails — Go on the backend, a normal web UI on the front — so the same engine ships on macOS, Windows and Linux without three native rewrites. The mobile apps are Flutter, talking to the same concepts (a chunk of the identification logic is mirrored and unit-test...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T16:30:36.724Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

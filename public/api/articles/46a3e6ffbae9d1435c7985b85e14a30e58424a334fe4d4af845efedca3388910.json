@@ -1,0 +1,42 @@
+{
+  "aiSummary": "Un desarrollador explica los desafíos y decisiones clave al implementar autenticación JWT con rotación de refresh tokens en un portal HRMS, desde el diseño del flujo hasta la elección de algoritmos y almacenamiento.",
+  "category": "tecnologia",
+  "fullArticle": "Cuando mi líder técnico me encomendó la tarea de implementar autenticación JWT con rotación de refresh tokens para nuestro portal HRMS, asentí con seguridad y abrí una nueva pestaña en Google. Sabía que un JWT era simplemente 'un token que envías con cada petición y el servidor lo valida', pero la realidad resultó ser mucho más compleja. En cuanto comencé a escribir código, las preguntas surgieron una tras otra: ¿dónde debo guardar el refresh token? ¿Qué duración debo asignar al access token? ¿Qué pasa si el refresh token expira? ¿Cómo revoco un token de forma efectiva? Tras varios intentos fallidos y una depuración interminable, logré que el sistema funcionara en producción y ahora quiero guiarte a través de cada paso, archivo y decisión que tomé.\n\nEl flujo es sencillo: un access token de vida corta (minutos) para cada petición de API, y un refresh token de larga duración (días) que permite obtener un nuevo access token sin volver a pedir credenciales. La razón detrás de esta dualidad es clara: si un access token es robado, su corta vida útil limita el daño; el refresh token, almacenado en base de datos, puede ser revocado al instante si se detecta actividad sospechosa. Este diseño equilibra conveniencia y seguridad, un equilibrio crítico en cualquier aplicación empresarial.\n\nMi implementación comenzó con la definición de un esquema de base de datos para almacenar los refresh tokens. Cada registro incluye un identificador único, el ID del usuario, el token en sí (generado con Guid.NewGuid().ToString()), una fecha de expiración y un flag de revocación. El endpoint de login devuelve tanto el access token como el refresh token al cliente, mientras que el endpoint de refresh valida el refresh token existente, verifica su estado, genera un nuevo access token y, si es necesario, rota el refresh token para mantener la seguridad a largo plazo.\n\nPara la protección de contraseñas, opté por BCrypt, un algoritmo adaptativo que ralentiza los intentos de fuerza bruta. Utilicé BCrypt.HashPassword() durante el registro y BCrypt.Verify() en el login, asegurando que nunca se almacenen passwords en texto plano. Los access tokens tienen una vida útil de 15 minutos en producción (mantuve este valor para evitar ataques de replay), aunque durante el desarrollo los reduje a 25 segundos para probar rápidamente el ciclo de refresh. Esta elección práctica aceleró el proceso de depuración y me permitió validar el flujo sin largas esperas.\n\nLa revisión del refresh token incluye tres comprobaciones críticas: existencia en base de datos, validez frente a la fecha de expiración y que no haya sido marcado como revocado. Solo si todas estas condiciones se cumplen, se emite un nuevo access token y, opcionalmente, un nuevo refresh token. Este enfoque layered añade una capa extra de defensa, garantizando que incluso si un token es comprometido, su utilidad queda severamente limitada. La lección aprendida es clara: la autenticación JWT no es solo 'enviar y validar'; requiere un diseño cuidadoso, almacenamiento seguro y una gestión robusta de ciclos de vida.",
+  "hashtags": [
+    "#JWT",
+    "#Autenticacion",
+    "#SeguridadWeb",
+    "#Desarrollo",
+    "#TokenRotation"
+  ],
+  "id": "46a3e6ffbae9d1435c7985b85e14a30e58424a334fe4d4af845efedca3388910",
+  "imageAlt": "Cómo construí desde cero un sistema de autenticación JWT con rotación de refresh tokens",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi91lmpzl3vwo32mn9gkr.webp",
+  "keyPoints": [
+    "El autor enfrentó una curva de aprendizaje empinada al implementar la autenticación JWT con rotación de refresh tokens en un portal HRMS.",
+    "Se utilizaron tokens de acceso de corta duración (15 minutos) y refresh tokens almacenados en base de datos, revocables al instante para mitigar robos.",
+    "El flujo de autenticación incluye un endpoint de login que devuelve ambos tokens y un endpoint de refresh que valida el token antes de emitir uno nuevo.",
+    "Se empleó BCrypt para el hash de contraseñas y GUIDs aleatorios para los refresh tokens, garantizando seguridad y unicidad."
+  ],
+  "multimedia": [
+    {
+      "alt": "JWT Authentication Confused Me. Then I Built It From Scratch",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi91lmpzl3vwo32mn9gkr.webp"
+    }
+  ],
+  "publishedAt": "2026-06-24T09:21:26.000Z",
+  "scrapedAt": "2026-06-24T09:32:59.663Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ciberseguridad",
+  "summary": "Un desarrollador explica los desafíos y decisiones clave al implementar autenticación JWT con rotación de refresh tokens en un portal HRMS, desde el diseño del flujo hasta la elección de algoritmos y almacenamiento.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Cómo construí desde cero un sistema de autenticación JWT con rotación de refresh tokens",
+  "url": "https://dev.to/imran_tech/jwt-authentication-confused-me-then-i-built-it-from-scratch-21hg",
+  "whyMatters": "Este enfoque aborda una de las mayores preocupaciones de la seguridad web moderna: el robo de credenciales. Al combinar tokens de acceso efímeros con refresh tokens revocables al instante, se reduce drásticamente el ventana de exposición y se mejora la postura de cumplimiento normativo. Además, el sistema demuestra una arquitectura escalable que puede adaptarse a múltiples servicios, un patrón cada vez más necesario en entornos cloud-native y de microservicios."
+}

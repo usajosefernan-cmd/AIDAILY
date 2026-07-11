@@ -1,0 +1,82 @@
+{
+  "id": "3894c2564b8f71755c0a9de40465baef6cbbc2dcd374d9b094498c53302b0c9e",
+  "title": "Cuando una nación es hackeada: Entendiendo la gigantesca filtración de datos de Filipinas",
+  "summary": "El experto en ciberseguridad Troy Hunt analiza la enorme filtración de datos que afectó a millones de ciudadanos filipinos, exponiendo información sensible por fallos de seguridad en sistemas estatales.",
+  "url": "https://www.troyhunt.com/when-nation-is-hacked-understanding",
+  "source": "Troy Hunt Blog",
+  "sourceUrl": "https://www.troyhunt.com",
+  "publishedAt": "2026-07-07T19:40:46.865Z",
+  "imageUrl": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2016/02/76image2.png",
+  "imageAlt": "Cuando una nación es hackeada: Entendiendo la gigantesca filtración de datos de Filipinas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El experto en ciberseguridad Troy Hunt analiza la enorme filtración de datos que afectó a millones de ciudadanos filipinos, exponiendo información sensible por fallos de seguridad en sistemas estatales.",
+  "keyPoints": [
+    "La filtración expuso datos personales de más de 70 millones de ciudadanos filipinos, incluyendo información fiscal, médica y de identificación oficial.",
+    "Los sistemas afectados pertenecían a entidades gubernamentales filipinas que no implementaron medidas básicas de seguridad como cifrado HTTPS.",
+    "Troy Hunt, referente mundial en ciberseguridad, documentó la vulnerabilidad y advirtió sobre el riesgo de uso fraudulento de la información robada.",
+    "El incidente evidencia la falta de inversión en ciberseguridad por parte de gobiernos de países en desarrollo, poniendo en riesgo la privacidad de millones."
+  ],
+  "whyMatters": "Esta filtración no es un incidente aislado, sino un reflejo de la vulnerabilidad estructural de los sistemas públicos en países con recursos limitados para ciberseguridad. Afecta directamente a la privacidad de millones de personas, cuyos datos pueden ser usados para fraude, suplantación de identidad o extorsión. Además, envía una señal crítica a gobiernos de todo el mundo sobre la urgencia de priorizar la protección de datos sensibles de la ciudadanía, no solo como obligación legal, sino como garantía de confianza institucional.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2016/02/76image2.png",
+      "alt": "Falta de HTTPS en búsquedas con datos personales sensibles",
+      "caption": "Captura que muestra la ausencia de cifrado HTTPS en un buscador que maneja información personal confidencial de ciudadanos filipinos"
+    },
+    {
+      "type": "image",
+      "url": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2016/02/54image5.png",
+      "alt": "Certificado SSL emitido para localhost",
+      "caption": "Error en la configuración de certificados de seguridad, emitidos para dominios locales en lugar de los dominios públicos oficiales"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#FiltracionFilipinas",
+    "#Ciberseguridad",
+    "#TroyHunt",
+    "#DatosSensibles"
+  ],
+  "fullArticle": "La filtración de datos masiva que afectó a Filipinas en 2016 se ha convertido en uno de los incidentes de ciberseguridad más graves de la historia reciente, al exponer información sensible de más de 70 millones de ciudadanos, equivalentes a casi el 70% de la población del país. El experto en seguridad Troy Hunt, encargado de la plataforma Have I Been Pwned, analizó en profundidad las causas del breach, determinando que la vulnerabilidad se debió a fallos básicos en la configuración de los sistemas gubernamentales, entre ellos la ausencia de cifrado HTTPS en búsquedas que manejaban datos personales confidenciales.\n\n[MULTIMEDIA: https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2016/02/76image2.png]\n\nAdemás de la falta de cifrado, los sistemas afectados presentaban errores en la emisión de certificados SSL, con algunos emitidos para dominios locales como 'localhost', lo que facilitó el acceso de actores maliciosos a la información almacenada. Esta negligencia en medidas de seguridad elementales permitió el robo de datos fiscales, registros médicos, números de identificación nacional y hasta información de contacto de millones de personas, que ahora circula en foros clandestinos de la dark web.\n\n[MULTIMEDIA: https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2016/02/54image5.png]\n\nEl incidente no solo puso en riesgo la seguridad de los ciudadanos filipinos, sino que también evidenció la falta de priorización de la ciberseguridad por parte de gobiernos de economías emergentes, que suelen destinar recursos limitados a la protección de infraestructuras digitales públicas. Hunt advirtió en su análisis que este tipo de brechas se repetirán mientras no se establezcan estándares mínimos obligatorios de seguridad para todos los sistemas que manejen datos sensibles de la población, y mientras no se invierta en capacitación de equipos técnicos estatales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T20:16:33.155Z",
+  "links": [
+    {
+      "title": "Análisis original de Troy Hunt sobre la filtración de datos de Filipinas",
+      "url": "https://www.troyhunt.com/when-a-nation-is-hacked-understanding-the-ginormous-philippines-data-breach/"
+    },
+    {
+      "title": "Have I Been Pwned: Plataforma para verificar filtraciones de datos",
+      "url": "https://haveibeenpwned.com/"
+    },
+    {
+      "title": "Guía de la OCDE sobre ciberseguridad para entidades públicas",
+      "url": "https://www.oecd.org/es/temas/cibergestion-y-seguridad-digital"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Ciudadanos afectados",
+      "value": "Más de 70 millones, equivalente al 70% de la población filipina de 2016"
+    },
+    {
+      "label": "Tipos de datos filtrados",
+      "value": "Información fiscal, médica, números de identificación nacional y datos de contacto"
+    },
+    {
+      "label": "Año del incidente",
+      "value": "2016"
+    },
+    {
+      "label": "Causa principal de la brecha",
+      "value": "Falta de cifrado HTTPS y errores en configuración de certificados SSL"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

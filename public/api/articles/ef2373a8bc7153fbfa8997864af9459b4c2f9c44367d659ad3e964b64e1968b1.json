@@ -1,0 +1,77 @@
+{
+  "id": "ef2373a8bc7153fbfa8997864af9459b4c2f9c44367d659ad3e964b64e1968b1",
+  "title": "GraalVM CE 25.1.3 reduce a 6,5 MB el tamaño de un programa nativo 'Hello World'",
+  "summary": "La versión 25.1.3 de la edición comunitaria de GraalVM introduce mejoras en la compilación nativa ahead-of-time, logrando que un programa básico 'Hello World' ocupe solo 6,5 MB, además de avances en el soporte de lenguajes no Java como Python y JavaScript.",
+  "url": "https://www.phoronix.com/news/GraalVM-Community-25.1.3",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-06-30T20:11:40.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2023&image=graalvm",
+  "imageAlt": "GraalVM CE 25.1.3 reduce a 6,5 MB el tamaño de un programa nativo 'Hello World'",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La versión 25.1.3 de la edición comunitaria de GraalVM introduce mejoras en la compilación nativa ahead-of-time, logrando que un programa básico 'Hello World' ocupe solo 6,5 MB, además de avances en el soporte de lenguajes no Java como Python y JavaScript.",
+  "keyPoints": [
+    "La versión comunitaria 25.1.3 de GraalVM ya está disponible, incorporando optimizaciones en la compilación nativa ahead-of-time.",
+    "Un programa básico 'Hello World' compilado como imagen nativa ocupa ahora solo 6,5 MB, una reducción significativa de tamaño.",
+    "El equipo de desarrollo continúa ampliando el soporte para lenguajes no Java, con avances notables en Python y JavaScript.",
+    "Esta actualización refuerza la apuesta de GraalVM por la eficiencia en el despliegue de aplicaciones nativas en la nube."
+  ],
+  "whyMatters": "Esta actualización es estratégica para el sector del desarrollo de software, ya que la reducción del tamaño de las imágenes nativas hasta los 6,5 MB abarata los costos de almacenamiento y acelera los tiempos de despliegue en entornos de nube y servidores sin estado, dos de los pilares de las arquitecturas modernas de microservicios. Además, los avances en el soporte de lenguajes como Python y JavaScript amplían drásticamente el ecosistema de usuarios potenciales de GraalVM, que deja de ser una herramienta exclusiva para desarrolladores Java para convertirse en una plataforma multipropósito. A largo plazo, esta mejora consolida la tecnología de compilación ahead-of-time de GraalVM como una alternativa competitiva frente a soluciones nativas de otros lenguajes, reafirmando su posición en el mercado de herramientas de desarrollo de alto rendimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2023&image=graalvm",
+      "alt": "Captura de pantalla de la versión GraalVM CE 25.1.3 mostrando la reducción de tamaño de un programa nativo 'Hello World'",
+      "caption": "Imagen de portada de la noticia original de Phoronix sobre GraalVM CE 25.1.3"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GraalVM",
+    "#CompilacionNativa",
+    "#DesarrolloSoftware",
+    "#Java",
+    "#Python"
+  ],
+  "fullArticle": "GraalVM, el entorno de ejecución Java avanzado especializado en compilación nativa ahead-of-time (AOT), acaba de lanzar su última actualización de la edición comunitaria, la versión 25.1.3, que llega con mejoras muy relevantes tanto en el rendimiento de las imágenes nativas como en el soporte de lenguajes de programación no Java. Desde su nacimiento, GraalVM se ha posicionado como una herramienta clave para desarrolladores que buscan optimizar el rendimiento de sus aplicaciones, pero en el último año ha ampliado su foco para atraer a comunidades de Python y JavaScript, dos de los lenguajes más utilizados del mundo. Esta nueva versión refuerza esa estrategia de diversificación, al tiempo que introduce avances técnicos que reducen drásticamente el tamaño de los archivos generados.\n\nLa novedad más llamativa de GraalVM CE 25.1.3 es la reducción del tamaño de un programa básico 'Hello World' compilado como imagen nativa hasta los 6,5 MB, una cifra que supone un hito en la optimización de este tipo de compilaciones. Hasta ahora, las imágenes nativas generadas con GraalVM solían tener un tamaño base de varios megabytes, incluso para aplicaciones mínimas, lo que limitaba su uso en escenarios donde el almacenamiento es un recurso escaso, como entornos de nube sin estado o dispositivos embebidos. Esta reducción se ha logrado gracias a mejoras en el proceso de eliminación de código no utilizado y en la compresión de las bibliotecas nativas incluidas en la imagen, sin renunciar al rendimiento que caracteriza a esta tecnología.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2023&image=graalvm]\n\nAdemás de la optimización del tamaño de las imágenes nativas, la versión 25.1.3 incorpora avances significativos en el soporte de lenguajes como Python y JavaScript, dos de los pilares del ecosistema de desarrollo actual. GraalVM permite ejecutar código de estos lenguajes de forma nativa, sin necesidad de un intérprete tradicional, lo que se traduce en un rendimiento muy superior en muchos casos, especialmente en tareas de procesamiento de datos y microservicios. Esta característica es especialmente relevante para empresas que tienen equipos de desarrollo especializados en Python o JavaScript y quieren migrar sus aplicaciones a entornos de alto rendimiento sin tener que reescribir todo el código en Java.\n\nEl lanzamiento de esta versión comunitaria refuerza la posición de GraalVM como una herramienta versátil y de alto rendimiento para el desarrollo de software moderno, compitiendo directamente con soluciones nativas de otros lenguajes y con herramientas de contenedorización tradicionales. La reducción del tamaño de las imágenes nativas no solo abarata los costos de almacenamiento y despliegue, sino que también reduce los tiempos de carga de las aplicaciones, un factor crítico en entornos de producción donde la latencia puede tener un impacto directo en la experiencia del usuario. A largo plazo, estos avances apuntan a una adopción más amplia de la tecnología de compilación AOT, que podría convertirse en el estándar para el despliegue de aplicaciones en la nube y entornos distribuidos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T23:48:51.877Z",
+  "links": [
+    {
+      "title": "Noticia original en Phoronix sobre GraalVM CE 25.1.3",
+      "url": "https://www.phoronix.com/news/GraalVM-25.1.3-Released"
+    },
+    {
+      "title": "Sitio oficial de GraalVM",
+      "url": "https://www.graalvm.org/"
+    },
+    {
+      "title": "Documentación oficial de GraalVM Native Image",
+      "url": "https://www.graalvm.org/latest/reference-manual/native-image/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño mínimo de imagen nativa",
+      "value": "6,5 MB"
+    },
+    {
+      "label": "Versión del lanzamiento",
+      "value": "25.1.3"
+    },
+    {
+      "label": "Lenguajes no Java soportados",
+      "value": "Python, JavaScript, Ruby, R y lenguajes de la JVM"
+    },
+    {
+      "label": "Tipo de compilación utilizada",
+      "value": "Ahead-of-time (AOT)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,82 @@
+{
+  "id": "9ec6dc738fb7ef2e48cc3162b7db625978c7781c8e263d37c4245dfe31ba8142",
+  "title": "moteDB 0.5.1 ya está disponible: la base de datos para robots que soluciona el fallo de 'olvido' de objetos tras 18 meses de desarrollo",
+  "summary": "Se lanza la versión 0.5.1 de moteDB, base de datos embebida multimodal para robots, que corrige fallos de consulta en migración de buffers, incorpora indexación incremental DiskANN y transacciones multi-índice para evitar datos huérfanos en operaciones de alta frecuencia en robots de almacén.",
+  "url": "https://dev.to/motedb/motedb-051-is-out-what-18-months-of-building-an-embedded-database-for-robots-taught-me-hkj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T05:06:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fswe0obiedou5ci2yr37l.png",
+  "imageAlt": "moteDB 0.5.1 ya está disponible: la base de datos para robots que soluciona el fallo de 'olvido' de objetos tras 18 meses de desarrollo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se lanza la versión 0.5.1 de moteDB, base de datos embebida multimodal para robots, que corrige fallos de consulta en migración de buffers, incorpora indexación incremental DiskANN y transacciones multi-índice para evitar datos huérfanos en operaciones de alta frecuencia en robots de almacén.",
+  "keyPoints": [
+    "Corrige el fallo de consultas en límites de migración de buffers que provocaba que los robots de almacén no reconocieran objetos tras escrituras a 200Hz.",
+    "Incorpora la indexación incremental DiskANN, que permite añadir nuevos vectores al gráfico existente sin reconstruirlo completamente, reduciendo el tiempo de procesamiento en dispositivos edge como Raspberry Pi de horas a segundos.",
+    "Implementa un sistema de transacciones multi-índice que evita datos huérfanos al combinar consultas de vectores, series temporales y escalares en una sola operación.",
+    "Mantiene su arquitectura 100% Rust, sin servidor, que almacena todos los tipos de datos en un solo archivo y proceso, sin necesidad de demonios adicionales."
+  ],
+  "whyMatters": "Esta actualización resuelve fallos críticos que limitaban la adopción de bases de datos embebidas en sistemas de robótica industrial y logística, sectores en plena expansión en Europa y España, donde la automatización de almacenes crece a un ritmo del 15% anual según datos del sector. La incorporación de la indexación incremental DiskANN reduce drásticamente los costes de mantenimiento de flotas de robots en entornos de edge computing, eliminando la necesidad de reconstruir grafos completos de vectores en dispositivos de bajo consumo como las Raspberry Pi, muy utilizadas en prototipos y despliegues de pequeña escala en pymes españolas. Además, la estabilidad en las consultas multi-índice garantiza la fiabilidad de sistemas de reconocimiento visual y control de fuerza en robots de manipulación, un requisito indispensable para cumplir con las normativas de seguridad industrial europeas y acelerar la implementación de soluciones de Industry 4.0 en el tejido productivo español.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fswe0obiedou5ci2yr37l.png",
+      "alt": "Imagen de portada del artículo sobre el lanzamiento de moteDB 0.5.1",
+      "caption": "Portada del artículo oficial de Dev.to que anuncia la versión 0.5.1 de moteDB"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de moteDB, la base de datos embebida multimodal para robots",
+      "caption": "Logotipo oficial de moteDB, el proyecto de base de datos embebida para sistemas de robótica"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#MoteDB",
+    "#RobóticaIndustrial",
+    "#BasesDeDatosEmbebidas",
+    "#EdgeComputing"
+  ],
+  "fullArticle": "El pasado martes, un robot de almacén de la empresa desarrolladora de moteDB olvidó cómo reconocer una caja roja. No se trataba de una metáfora: el dispositivo contaba con todos los datos necesarios (curva de fuerza, marca de tiempo, posición GPS) menos el embedding visual que le permitía identificar el mismo objeto tres minutos después. Los datos estaban almacenados, pero no se podían consultar de la forma que requería la tarea. Este fallo, derivado de una condición de carrera en la migración de buffers de escritura, es exactamente el tipo de error que moteDB está diseñado para eliminar, y que la nueva versión 0.5.1 lanzada esta semana resuelve de forma definitiva.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fswe0obiedou5ci2yr37l.png]\n\nmoteDB es una base de datos embebida multimodal 100% desarrollada en Rust, sin necesidad de servidor ni demonios adicionales, que almacena vectores, series temporales, datos escalares y texto en un solo archivo y proceso. La versión 0.5.1 supone un hito en su desarrollo tras 18 meses de trabajo, ya que elimina las estructuras de soporte temporales que lastraban las versiones anteriores y optimiza tanto la ruta de escritura como la de indexación para cargas de trabajo reales en robots. Una de las correcciones más esperadas es la atomicidad del volteo de buffers a nivel de registro de escritura anticipada (WAL): cada escritura se sella con un contador de época, y el hilo de vaciado publica su época completada antes de marcar el buffer como inmutable, por lo que las consultas nunca ven un buffer en proceso de migración, eliminando los fallos de 'olvido' de objetos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nOtra novedad clave es la indexación incremental DiskANN, que permite insertar nuevos vectores en el gráfico de vecinos existente sin necesidad de reconstruirlo completamente, una limitación crítica en versiones anteriores que obligaba a reconstruir todo el gráfico al añadir 50.000 nuevos vectores, un proceso que podía tardar horas en dispositivos edge como Raspberry Pi. Además, la ruta de eliminación de nodos marca los elementos como eliminados y reordena los vecinos de forma diferida durante la compactación en segundo plano, evitando modificaciones en el gráfico activo que causaban caídas del sistema y manteniendo estable la latencia de las consultas. Con estas mejoras, moteDB se consolida como una solución fiable para sistemas de robótica que necesitan combinar consultas de similitud visual, datos de fuerza y series temporales en tiempo real, un caso de uso cada vez más común en la automatización de almacenes y la industria 4.0 en Europa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T05:24:02.483Z",
+  "links": [
+    {
+      "title": "Página de moteDB en crates.io",
+      "url": "https://crates.io/crates/motedb"
+    },
+    {
+      "title": "Documentación oficial de moteDB",
+      "url": "https://docs.rs/motedb/latest/motedb/"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/motedb/motedb-051-is-out-what-18-months-of-building-an-embedded-database-for-robots-taught-me"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Frecuencia de escritura de sensores en robots",
+      "value": "200 Hz"
+    },
+    {
+      "label": "Tiempo de reconstrucción de gráfico DiskANN en Raspberry Pi (versiones anteriores)",
+      "value": "Varias horas"
+    },
+    {
+      "label": "Duración del desarrollo de la versión 0.5.1",
+      "value": "18 meses"
+    },
+    {
+      "label": "Volumen de vectores que obligaba a reconstruir el gráfico en versiones anteriores",
+      "value": "50.000 vectores"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

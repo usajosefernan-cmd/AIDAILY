@@ -1,0 +1,77 @@
+{
+  "id": "d25428ae40f6cd97a5f44a46a4c6c3525430c797eb7b79a90d1df6aff56ead2a",
+  "title": "Grok 4.5, GPT-5.5 y Claude se miden en la prueba definitiva de generación de apps: ¿quién produce el mejor código?",
+  "summary": "Una prueba comparativa evalúa cuatro modelos de IA punteros generando tres aplicaciones web en un solo intento, revelando diferencias en capacidad de razonamiento 3D, estética y relación coste-velocidad.",
+  "url": "https://www.tryai.dev/blog/grok-4.5-vs-gpt-5.5-vs-claude-build-off",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-08T23:27:14.000Z",
+  "imageUrl": "https://www.tryai.dev/blog/grok-4.5-vs-gpt-5.5-vs-claude-build-off/opengraph-image-yqks0s?3313ef8f7f360358",
+  "imageAlt": "Grok 4.5, GPT-5.5 y Claude se miden en la prueba definitiva de generación de apps: ¿quién produce el mejor código?",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una prueba comparativa evalúa cuatro modelos de IA punteros generando tres aplicaciones web en un solo intento, revelando diferencias en capacidad de razonamiento 3D, estética y relación coste-velocidad.",
+  "keyPoints": [
+    "Se enfrentaron Grok 4.5, GPT-5.5, Claude Opus 4.8 y Claude Fable 5 generando tres apps web sin librerías externas en un solo intento.",
+    "En el cubo de Rubik 3D, Claude Opus 4.8 y Fable 5 acertaron a la primera, Grok 4.5 necesitó un reintento y GPT-5.5 no generó un cubo completo.",
+    "En el sandbox de partículas, GPT-5.5 destacó por su estética hipnótica con atractores neón, mientras que en Breakout todos los modelos obtuvieron un resultado jugable.",
+    "Grok 4.5 fue el más rápido y barato por token, con ~110 tokens por segundo, el doble que sus competidores."
+  ],
+  "whyMatters": "Esta prueba es fundamental para el ecosistema tecnológico español y europeo, ya que evalúa las capacidades reales de los modelos de IA para tareas de desarrollo de software, un ámbito en el que empresas y desarrolladores buscan herramientas que reduzcan tiempos y costes de producción. La clara ventaja de los modelos Claude en tareas que requieren razonamiento matemático complejo y la superioridad de Grok en relación coste-velocidad marcan tendencias clave para la adopción de estas herramientas en proyectos productivos de la región. Además, la competencia entre xAI, OpenAI y Anthropic acelera la mejora de los modelos, lo que se traduce en opciones más accesibles y potentes para emprendedores y equipos de desarrollo locales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.tryai.dev/blog/grok-4.5-vs-gpt-5.5-vs-claude-build-off/opengraph-image-yqks0s?3313ef8f7f360358",
+      "alt": "Imagen comparativa de los resultados de la prueba de generación de apps entre modelos de IA",
+      "caption": "Resultados de la build-off de generación de aplicaciones web publicada por TryAI"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Grok45",
+    "#GPT55",
+    "#ClaudeOpus",
+    "#IA",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "La plataforma TryAI publicó esta semana una prueba comparativa sin precedentes que enfrenta a cuatro de los modelos de inteligencia artificial más avanzados del mercado: Grok 4.5 de xAI, GPT-5.5 de OpenAI, Claude Opus 4.8 y Claude Fable 5 de Anthropic. El reto consistía en generar tres aplicaciones web distintas en un solo intento, sin librerías externas ni llamadas a red, para evaluar su capacidad real de codificación y razonamiento práctico. Los tres retos propuestos fueron un cubo de Rubik 3D animado, un sandbox de partículas con gravedad y el clásico juego Breakout, todos evaluados en un navegador real.\n\n[MULTIMEDIA: https://www.tryai.dev/blog/grok-4.5-vs-gpt-5.5-vs-claude-build-off/opengraph-image-yqks0s?3313ef8f7f360358]\n\nEn el primer reto del cubo de Rubik, los modelos Claude Opus 4.8 y Fable 5 fueron los únicos que acertaron a la primera, generando un cubo 3D funcional con animaciones de rotación y botones de mezclar y resolver. Grok 4.5 falló en su primer intento, generando solo la interfaz sin el cubo, por lo que usó el reintento permitido para obtener un resultado correcto. GPT-5.5, por su parte, solo generó una cara oscura sin colores ni funcionalidad completa. En el sandbox de partículas, todos los modelos entregaron un resultado funcional, pero GPT-5.5 se llevó el reconocimiento por su estética hipnótica con atractores neón y trayectorias de partículas coloridas. En el Breakout, la competencia fue un empate técnico: los cuatro modelos generaron un juego completamente jugable con marcador, vidas y paleta luminosa en el primer intento.\n\nEl análisis de rendimiento y coste reveló las fortalezas de cada modelo: Grok 4.5 se posicionó como la opción más económica y rápida por token generado, con una velocidad de ~110 tokens por segundo, el doble que sus competidores, y un coste por respuesta inferior al resto. GPT-5.5 fue el más rápido en respuestas cortas, mientras que Claude Opus 4.8 se situó en un punto intermedio equilibrado y Claude Fable 5 fue el más lento y caro, un coste asociado a su posición como modelo de mayor capacidad cognitiva. Estos resultados son una guía clave para desarrolladores y empresas que buscan integrar modelos de IA en sus flujos de trabajo, ya que permiten elegir la herramienta más adecuada según las necesidades de cada proyecto.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T01:22:37.125Z",
+  "links": [
+    {
+      "title": "Prueba completa de generación de apps en TryAI",
+      "url": "https://www.tryai.dev/blog/grok-4.5-vs-gpt-5.5-vs-claude-build-off/"
+    },
+    {
+      "title": "Información oficial sobre Grok 4.5 de xAI",
+      "url": "https://x.ai/"
+    },
+    {
+      "title": "Documentación de la API de GPT-5.5 de OpenAI",
+      "url": "https://platform.openai.com/docs/models/gpt-5.5"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Velocidad de generación de Grok 4.5",
+      "value": "~110 tokens por segundo"
+    },
+    {
+      "label": "Coste de Grok 4.5 por respuesta",
+      "value": "El más bajo de la comparativa"
+    },
+    {
+      "label": "Latencia media para primer token de Grok 4.5",
+      "value": "Menos de 0,5 segundos"
+    },
+    {
+      "label": "Latencia p95 de Grok 4.5",
+      "value": "~9 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

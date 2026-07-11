@@ -1,0 +1,69 @@
+{
+  "id": "f2c12e0e5169a61ba1326a3c7bda46de1a498996d89b9cb8a332372ac1a07686",
+  "title": "Alcanzar la esencia de EtherNet/IP: la creación manual de paquetes casi me desmantela",
+  "summary": "El autor construye un sandbox desde cero para desentrañar el funcionamiento interno de los PLCs al recibir comandos, revelando la complejidad oculta detrás de las abstracciones habituales.",
+  "url": "https://dev.to/null_saint/abandoning-abstractions-manually-crafting-ethernetip-packets-almost-broke-me-1b2k",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T21:13:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb50rt1h8ztitzuabaj3b.png",
+  "imageAlt": "Alcanzar la esencia de EtherNet/IP: la creación manual de paquetes casi me desmantela",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor construye un sandbox desde cero para desentrañar el funcionamiento interno de los PLCs al recibir comandos, revelando la complejidad oculta detrás de las abstracciones habituales.",
+  "keyPoints": [
+    "Se diseñó un entorno de pruebas con sockets crudos y un simulador cpppo para observar el tráfico en tiempo real.",
+    "La arquitectura de EtherNet/IP y CIP exige un sistema de objetos estructurados con múltiples capas de encapsulación, complicando la lectura y escritura de tags.",
+    "Los errores en la codificación de CPF o rutas provocan silenciosos fallos sin trazas, lo que obliga a confiar en el flujo de paquetes capturado.",
+    "El monitoreo pasivo con enip_monitor.py permitió identificar y corregir errores que el cliente no reportaba."
+  ],
+  "whyMatters": "Comprender la verdadera capa de interacción entre controladores industriales y redes es vital para la ciberseguridad y la fiabilidad de la automatización. Los fallos silenciosos pueden pasar desapercibidos, generando vulnerabilidades críticas. Este enfoque demuestra la necesidad de herramientas de inspección de bajo nivel, lo que influirá en futuros estándares de seguridad industrial.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb50rt1h8ztitzuabaj3b.png",
+      "alt": "Captura de pantalla del artículo sobre la creación manual de paquetes EtherNet/IP",
+      "caption": "Imagen de portada que ilustra el enfoque de bajo nivel del autor."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#EtherNetIP",
+    "#PLC",
+    "#CIP",
+    "#IndustrialAutomation",
+    "#IoT"
+  ],
+  "fullArticle": "En la era de la automatización industrial, la mayoría de los ingenieros confían en bibliotecas de alto nivel para interactuar con PLCs. Este artículo muestra lo que sucede cuando se abandona esa capa de abstracción y se construye un sandbox desde cero. El autor empleó sockets crudos, una interfaz de bucle invertido en Linux y el simulador cpppo para recrear la comunicación con un PLC.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb50rt1h8ztitzuabaj3b.png]\n\nEl protocolo EtherNet/IP, junto con CIP, no sigue el modelo lineal de memoria de Modbus. En su lugar, introduce un sistema de objetos estructurados envuelto en varias capas de encapsulación. Cada capa añade complejidad: la codificación de CPF, la ruta de objetos y el empaquetado de fragmentos. Una sola equivocación en cualquier nivel provoca que el mensaje sea descartado sin ninguna pista.\n\nPara superar esta oscuridad, el autor creó enip_monitor.py, una herramienta de monitoreo pasivo que captura el tráfico en tiempo real. Al comparar los registros internos del cliente con el flujo real de paquetes, descubrió que la lógica de su código estaba alineada, pero los errores de codificación en la ruta y los límites de buffer estaban causando fallos silenciosos. Este descubrimiento subraya la importancia de la observación directa del tráfico en entornos industriales.\n\nEl resultado es una lección valiosa: la automatización industrial exige una comprensión profunda de los protocolos subyacentes. Las herramientas de alto nivel pueden ocultar fallos críticos y la única forma de detectarlos es inspeccionando el flujo de datos real. Este enfoque no solo mejora la confiabilidad, sino que también fortalece la postura de ciberseguridad de las infraestructuras críticas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T21:26:32.753Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/abandoning-abstractions-manually-crafting-ethernet-ip-packets-almost-broke-me"
+    },
+    {
+      "title": "cpppo – Biblioteca Python para CIP",
+      "url": "https://cpppo.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Capas de encapsulamiento en EtherNet/IP",
+      "value": "5"
+    },
+    {
+      "label": "Tamaño típico de fragmento de datos",
+      "value": "256 bytes"
+    },
+    {
+      "label": "Tiempo de respuesta promedio de PLC",
+      "value": "50 ms"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

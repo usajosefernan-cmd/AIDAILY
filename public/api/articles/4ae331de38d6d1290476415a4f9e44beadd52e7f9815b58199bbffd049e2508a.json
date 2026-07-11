@@ -1,0 +1,41 @@
+{
+  "aiSummary": "Google lanzó la actualización 149 de Chrome, corrigiendo 18 fallos críticos y de alta severidad, reduciendo el número de nuevas vulnerabilidades a cifras de dos dígitos.",
+  "category": "tecnologia",
+  "fullArticle": "El 6 de junio, Google lanzó la actualización 149 de su navegador Chrome, corrigiendo 18 vulnerabilidades críticas, de las cuales cuatro se clasificaron como críticas y catorce como de alta severidad. La medida llega tras una ola de descubrimientos de fallos que alcanzó los 429 parches en junio, pero la cifra de nuevos defectos por lanzamiento ha descendido a dos dígitos, lo que indica una posible madurez en el proceso de desarrollo. \n\nMás de la mitad de los errores son fallos de uso posterior a la liberación, un tipo de corrupción de memoria que permite a los atacantes ejecutar código remoto. En Chrome, estos defectos pueden combinarse con brechas en el sistema operativo o en procesos con privilegios elevados para escapar de la sandbox y comprometer la integridad del navegador. \n\nGoogle atribuye el fallo más grave a un investigador anónimo, aunque aún no ha revelado la recompensa. Los demás 17 defectos fueron descubiertos internamente, reflejando la tendencia de la compañía a aprovechar la inteligencia artificial para identificar vulnerabilidades, un enfoque que ha ganado tracción en los últimos meses. \n\nAunque Google no ha reportado que alguna de las fallas haya sido explotada en el mundo real, la actualización ya está disponible en versiones 149.0.7827.196/197 para Windows y macOS y 149.0.7827.196 para Linux, reforzando la postura de seguridad del navegador frente a amenazas emergentes.",
+  "hashtags": [
+    "#ChromeUpdate",
+    "#GoogleSecurity",
+    "#Ciberseguridad",
+    "#Vulnerabilidades"
+  ],
+  "id": "4ae331de38d6d1290476415a4f9e44beadd52e7f9815b58199bbffd049e2508a",
+  "imageAlt": "Actualización de Chrome 149 soluciona 18 vulnerabilidades críticas",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2024/06/Chrome.jpeg",
+  "keyPoints": [
+    "Chrome 149 incorpora un parche que corrige 18 fallos críticos, incluidos cuatro críticos y catorce de alta severidad, reduciendo riesgos de ejecución remota.",
+    "Más de la mitad de los problemas son fallos de uso posterior a la liberación, vulnerabilidades que permiten ejecutar código malicioso mediante explotación de la sandbox.",
+    "Los ocho defectos restantes abarcan lecturas fuera de límites, implementación inadecuada, uso no inicializado y falta de validación de entradas no confiables, ampliando el espectro de riesgo.",
+    "Google continúa detectando vulnerabilidades con IA, pero el número de fallos nuevos por actualización ha caído a cifras de dos dígitos, indicando una posible madurez del proceso de pruebas."
+  ],
+  "multimedia": [
+    {
+      "alt": "Chrome 149 Update Resolves 18 Severe Vulnerabilities",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2024/06/Chrome.jpeg"
+    }
+  ],
+  "publishedAt": "2026-06-25T07:56:03.000Z",
+  "scrapedAt": "2026-06-25T08:20:17.273Z",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "subcategory": "ciberseguridad",
+  "summary": "Google lanzó la actualización 149 de Chrome, corrigiendo 18 fallos críticos y de alta severidad, reduciendo el número de nuevas vulnerabilidades a cifras de dos dígitos.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Actualización de Chrome 149 soluciona 18 vulnerabilidades críticas",
+  "url": "https://www.securityweek.com/chrome-149-update-resolves-18-severe-vulnerabilities/",
+  "whyMatters": "El parche de Chrome 149 demuestra la continua lucha de Google contra las vulnerabilidades de uso posterior a la liberación, un vector crítico que permite a atacantes ejecutar código remoto con privilegios elevados. La reducción a cifras de dos dígitos de nuevas fallas por actualización sugiere una madurez en los procesos de pruebas, pero también plantea la necesidad de vigilancia constante ante la rápida evolución de las técnicas de explotación. Los usuarios y organizaciones dependen de Chrome para la navegación diaria, por lo que cada parche impacta directamente en la seguridad global de la web y la protección de datos sensibles."
+}

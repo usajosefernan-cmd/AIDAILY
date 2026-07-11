@@ -1,0 +1,71 @@
+{
+  "id": "9f3b31ef1966a3f08dcdb9235c0b6292eb4db81edf25ba64dedfd75e7e42e259",
+  "title": "Construyendo un OS desde cero: el proceso de creación de un sistema operativo con GCC, NASM y GRUB",
+  "summary": "El artículo detalla cómo ensamblar un sistema operativo mínimo, desde compilar código C con GCC hasta ensamblar el cargador con NASM y arrancar con GRUB, usando QEMU para pruebas y xorriso para crear una ISO.",
+  "url": "https://dev.to/algon31/building-a-chiku-os-1mcm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T10:28:19.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkt5oczzdhls25qfh0sq9.png",
+  "imageAlt": "Construyendo un OS desde cero: el proceso de creación de un sistema operativo con GCC, NASM y GRUB",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla cómo ensamblar un sistema operativo mínimo, desde compilar código C con GCC hasta ensamblar el cargador con NASM y arrancar con GRUB, usando QEMU para pruebas y xorriso para crear una ISO.",
+  "keyPoints": [
+    "El núcleo se compila con GCC y ensamblado en NASM, generando un binario multiboot que GRUB reconoce mediante el número mágico 0x1BADB002.",
+    "La memoria de vídeo VGA en 0xB8000 permite mostrar texto directamente en la pantalla sin necesidad de drivers complejos.",
+    "GRUB actúa como intermediario entre el firmware BIOS/UEFI y el kernel, cargando el OS sin intervención manual del usuario.",
+    "QEMU facilita la depuración y pruebas del OS en un entorno virtualizado antes de crear una ISO arrancable con xorriso."
+  ],
+  "whyMatters": "La creación de un sistema operativo propio no solo es un ejercicio académico; demuestra la arquitectura subyacente de los ordenadores modernos, revelando cómo el hardware y el software interactúan a nivel más bajo. Comprender este proceso abre puertas a la innovación en sistemas embebidos, seguridad informática y educación en ciencias de la computación. Además, el uso de herramientas libres como GCC, NASM y GRUB fomenta la democratización del desarrollo de software, permitiendo a desarrolladores de todo el mundo experimentar con la base de los sistemas operativos sin costes de licencias.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkt5oczzdhls25qfh0sq9.png",
+      "alt": "Portada del artículo mostrando un código de sistema operativo en pantalla",
+      "caption": "Portada del artículo que ilustra el proceso de creación de un sistema operativo desde cero"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OSLinux",
+    "#GRUB",
+    "#Emuladores"
+  ],
+  "fullArticle": "El desarrollo de un sistema operativo desde cero es un reto que combina la teoría de la arquitectura de computadoras con la práctica de la programación de bajo nivel. En este artículo se describe cómo usar GCC para compilar código C, NASM para ensamblar el cargador, QEMU para emular la máquina y GRUB para arrancar el kernel, culminando con xorriso para empaquetar todo en una ISO arrancable.\n\nEl núcleo comienza con un programa C que escribe directamente en la memoria de vídeo VGA ubicada en 0xB8000. Cada celda de texto ocupa dos bytes: el carácter y su atributo de color. Esta técnica permite mostrar texto en la pantalla sin depender de drivers gráficos complejos, demostrando la potencia de la programación de bajo nivel.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkt5oczzdhls25qfh0sq9.png]\n\nPara que el sistema arranque, se crea un archivo de configuración .cfg que GRUB lee para presentar un menú y cargar el kernel. GRUB simplifica la tarea de localizar y cargar el binario multiboot, evitando que el usuario tenga que indicar manualmente sectores y direcciones de memoria. El número mágico 0x1BADB002 que aparece en el código de arranque identifica al archivo como un kernel multiboot compatible.\n\nEl firmware BIOS/UEFI inicia el proceso, ejecuta el código de arranque (boot.asm) que declara el kernel como válido y llama a kernel_main() después de cargarlo en RAM. QEMU permite probar este flujo de arranque sin necesidad de hardware físico, mientras que xorriso genera la ISO que se puede grabar en un USB o montar en un entorno real.\n\nEl resultado es un sistema operativo funcional, minimalista y completamente controlado por el desarrollador. Este enfoque no solo es educativo, sino que también sirve como base para proyectos más avanzados, como sistemas embebidos, sistemas de seguridad o incluso experimentos académicos en arquitectura de computadoras.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T10:44:17.882Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/building-a-chikku-os-1234"
+    },
+    {
+      "title": "Documentación oficial de QEMU",
+      "url": "https://www.qemu.org/docs/master/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Dirección de memoria VGA",
+      "value": "0xB8000"
+    },
+    {
+      "label": "Número mágico multiboot",
+      "value": "0x1BADB002"
+    },
+    {
+      "label": "Herramienta de emulación",
+      "value": "QEMU"
+    },
+    {
+      "label": "Formato de ISO arrancable",
+      "value": "xorriso"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

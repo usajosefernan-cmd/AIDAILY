@@ -1,0 +1,77 @@
+{
+  "id": "4b30fea6f4857c7f9710ed58d6140227545dacc08168ef16e55c0dcbfc954e50",
+  "title": "LedgerLock: el registro de auditoría que se autoprotege de la manipulación y prueba su integridad a escala offline",
+  "summary": "Desarrollador crea LedgerLock, una API de auditoría inmutable para DynamoDB que resuelve la vulnerabilidad de los logs modificables en empresas reguladas, usando políticas IAM restrictivas y encadenamiento de hashes SHA-256, garantizando integridad a escala y sin conexión.",
+  "url": "https://dev.to/hawaleshailesh/i-built-an-audit-log-that-catches-its-own-tampering-and-proves-it-at-scale-offline-2d5c",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T18:05:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fppgib1tfrws2b3ujyn2j.png",
+  "imageAlt": "LedgerLock: el registro de auditoría que se autoprotege de la manipulación y prueba su integridad a escala offline",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Desarrollador crea LedgerLock, una API de auditoría inmutable para DynamoDB que resuelve la vulnerabilidad de los logs modificables en empresas reguladas, usando políticas IAM restrictivas y encadenamiento de hashes SHA-256, garantizando integridad a escala y sin conexión.",
+  "keyPoints": [
+    "LedgerLock es una API drop-in que registra eventos de acceso en DynamoDB con inmutabilidad garantizada por políticas IAM que deniegan UpdateItem y DeleteItem.",
+    "El diseño estructural multi-inquilino usa claves de partición por tenant, aislando físicamente los eventos de cada cliente sin riesgo de cruce.",
+    "Cada evento incluye un hash SHA-256 del evento canónico y el hash anterior, de modo que cualquier alteración rompe toda la cadena posterior.",
+    "Se solucionó un bug crítico de concurrencia usando el número de secuencia como clave de ordenación única, evitando bifurcaciones en la cadena bajo carga."
+  ],
+  "whyMatters": "Esta solución aborda una falla crítica en el cumplimiento normativo de empresas reguladas, donde los logs de auditoría supuestamente inmutables son en realidad modificables, exponiendo a multas millonarias y pérdida de credibilidad. Al convertir la inmutabilidad en una restricción técnica irreversible, LedgerLock no solo satisface requisitos de HIPAA, SOC 2 y SEC Rule 17a-4, sino que reduce la dependencia de políticas frágiles y auditorías reactivas. Su arquitectura serverless y escalable en DynamoDB permite su adopción inmediata por hospitales, fintechs y aseguradoras, democratizando el acceso a una prueba de integridad verificable y offline, un estándar que pronto podría volverse obligatorio en sectores críticos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fppgib1tfrws2b3ujyn2j.png",
+      "alt": "Diagrama de la arquitectura de LedgerLock que muestra la cadena de hashes y la restricción de permisos en DynamoDB",
+      "caption": "Imagen de portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#LedgerLock",
+    "#AmazonDynamoDB",
+    "#Vercel",
+    "#CumplimientoNormativo",
+    "#AuditoríaInmutable"
+  ],
+  "fullArticle": "En el corazón del software de cumplimiento normativo yace una mentira silenciosa: empresas de SaaS reguladas aseguran mantener registros de auditoría inmutables, pero los almacenan en bases de datos convencionales que permiten modificaciones y eliminaciones. Esta práctica, común en sectores sanitario y financiero, expone a las organizaciones a riesgos legales enormes, ya que normativas como HIPAA, SOC 2 y la SEC Rule 17a-4 no exigen promesas de no manipulación, sino pruebas irrefutables de integridad. La retirada de Amazon QLDB, la única base de datos ledger nativa en la nube, dejó a muchos equipos sin una solución evidente para garantizar esa inmutabilidad. Fue esta coyuntura la que impulsó a un desarrollador a cuestionarse: ¿y si la inmutabilidad no fuera una regla a seguir, sino un permiso que simplemente no se tiene?\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fppgib1tfrws2b3ujyn2j.png]\n\nLa respuesta es LedgerLock, una API de auditoría drop-in construida para el #H0Hackathon con Amazon DynamoDB y Vercel. Su funcionamiento se basa en una política IAM que deniega explícitamente las operaciones UpdateItem y DeleteItem, de modo que cualquier intento de modificación o eliminación es rechazado por AWS con un AccessDeniedException. Así, la inmutabilidad no depende de la buena voluntad de los administradores, sino de una restricción técnica irreversible. Cada evento registrado incluye un hash SHA-256 del evento canónico concatenado con el hash del registro anterior, creando una cadena en la que cualquier alteración de un dato histórico rompe todos los hashes subsiguientes, haciendo que la manipulación sea detectable de forma automática.\n\nEl diseño también resuelve el aislamiento multi-inquilino de manera estructural: la clave de partición está asociada a cada tenant, de forma que una consulta nunca puede devolver eventos de otro cliente. Sin embargo, el proyecto estuvo a punto de fracasar por un bug de concurrencia en su versión inicial. Al usar identificadores aleatorios en la clave de ordenación, dos eventos generados en el mismo milisegundo podían ambos reclamar el mismo número de secuencia, bifurcando la cadena y haciendo que el verificador marcara el ledger como roto bajo carga normal. La solución fue simple pero crucial: emplear el propio número de secuencia como restricción de unicidad, eliminando la posibilidad de colisiones.\n\nLedgerLock no es solo una herramienta técnica; es una respuesta a una necesidad crítica en industrias donde la confianza y el cumplimiento son moneda corriente. Hospitales, fintechs y aseguradoras pueden integrarla con una sola llamada a ledger.append(event), obteniendo un registro de auditoría verificable offline y a escala, sin depender de políticas frágiles o auditorías costosas. Su arquitectura serverless sobre DynamoDB garantiza un rendimiento elevado y costos predecibles, mientras que la imposibilidad técnica de modificar registros reduce drásticamente la superficie de ataque y la exposición a sanciones regulatorias. En un momento en que la confianza en los datos es más valiosa que nunca, soluciones como LedgerLock marcan un camino hacia un cumplimiento probado, no prometido.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T18:32:07.840Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Amazon DynamoDB",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+    },
+    {
+      "title": "Vercel - Plataforma de despliegue serverless",
+      "url": "https://vercel.com/"
+    },
+    {
+      "title": "AWS IAM - Guía de políticas de acceso",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Algoritmo de hash utilizado",
+      "value": "SHA-256 (256 bits)"
+    },
+    {
+      "label": "Operaciones IAM denegadas",
+      "value": "2 (UpdateItem, DeleteItem)"
+    },
+    {
+      "label": "Límite de tamaño por evento en DynamoDB",
+      "value": "400 KB"
+    },
+    {
+      "label": "Modelo de despliegue",
+      "value": "Serverless (Vercel)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

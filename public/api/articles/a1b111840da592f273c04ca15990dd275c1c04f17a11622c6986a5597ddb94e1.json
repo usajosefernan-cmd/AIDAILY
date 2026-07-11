@@ -1,0 +1,77 @@
+{
+  "id": "a1b111840da592f273c04ca15990dd275c1c04f17a11622c6986a5597ddb94e1",
+  "title": "Architecting a background-controlled sound manager that actually survives Doze mode",
+  "summary": "El artículo relata el desarrollo de Muffle, una aplicación de automatización de perfiles de sonido para Android, creada tras una vergüenza pública por un tono de llamada inoportuno. La app supera las restricciones de ahorro de batería del sistema, como el modo Doze, mediante una arquitectura basada en Foreground Service y AlarmManager, además de solucionar problemas de consumo de GPS, reinicios de dispositivo y gestión de zonas horarias.",
+  "url": "https://dev.to/haseebthedev0/architecting-a-background-controlled-sound-manager-that-actually-survives-doze-mode-505m",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T23:24:19.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9q2ivekwbtat773tm9c3.png",
+  "imageAlt": "Architecting a background-controlled sound manager that actually survives Doze mode",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo relata el desarrollo de Muffle, una aplicación de automatización de perfiles de sonido para Android, creada tras una vergüenza pública por un tono de llamada inoportuno. La app supera las restricciones de ahorro de batería del sistema, como el modo Doze, mediante una arquitectura basada en Foreground Service y AlarmManager, además de solucionar problemas de consumo de GPS, reinicios de dispositivo y gestión de zonas horarias.",
+  "keyPoints": [
+    "El autor desarrolló Muffle después de que su teléfono sonara en medio de una clase universitaria, provocando una vergüenza pública que lo motivó a automatizar el silencio.",
+    "La arquitectura usa un Foreground Service combinado con AlarmManager para superar las restricciones de ahorro de batería que eliminan servicios en segundo plano.",
+    "Se implementó GeofencingClient de Google Play Services para evitar el consumo excesivo de GPS en modo de reposo, que hacía que el sistema revocara permisos de fondo.",
+    "Una base de datos Room almacena el estado de las rutinas para reconstruir la configuración correctamente tras reinicios del dispositivo o cambios de zona horaria."
+  ],
+  "whyMatters": "Este desarrollo es relevante para millones de usuarios de Android que sufren vergüenzas por tonos inoportunos en espacios que requieren silencio, ya que las soluciones actuales no son fiables. Para los desarrolladores españoles y europeos, supone un caso de estudio clave para superar las estrictas políticas de ahorro de batería que implementan los fabricantes, que limitan la ejecución de apps en segundo plano. Además, la arquitectura propuesta puede aplicarse a todo tipo de herramientas de automatización doméstica o productividad, mejorando la experiencia de usuario sin comprometer la duración de la batería del dispositivo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9q2ivekwbtat773tm9c3.png",
+      "alt": "Ilustración de portada del artículo sobre arquitectura de gestor de sonido para Android",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DesarrolloAndroid",
+    "#ModoDoze",
+    "#GestorDeSonido",
+    "#MuffleApp",
+    "#ArquitecturaSoftware"
+  ],
+  "fullArticle": "La anécdota que inspiró el proyecto ocurrió durante una conferencia universitaria: el autor, sentado en primera fila, vio cómo su teléfono vibraba sobre la mesa de madera con un ruido amplificado como un tambor, provocando que todos los asistentes se giraran a mirarlo. Este momento de vergüenza, sumado a la ansiedad constante que sufren muchos usuarios por los tonos de llamada inoportunos en reuniones, citas médicas o servicios religiosos, lo impulsó a crear Muffle, una app de automatización de perfiles de sonido que no dependa de la memoria humana ni de ajustes manuales poco fiables.\n\nLas soluciones de automatización existentes suelen fallar por las agresivas políticas de ahorro de batería de Android, que eliminan cualquier servicio en segundo plano en cuanto la pantalla se apaga. Para superar esta limitación, el autor optó por una arquitectura basada en un Foreground Service como controlador principal, combinado con AlarmManager y su método setExactAndAllowWhileIdle para programar activaciones precisas que despierten el dispositivo incluso después de horas en reposo profundo. Esta combinación garantiza que las rutinas de silencio se activen en el momento exacto, sin importar el estado de ahorro de energía del teléfono.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9q2ivekwbtat773tm9c3.png]\n\nOtro reto importante fue el consumo excesivo de batería al usar el GPS estándar para activaciones por ubicación, lo que hacía que el sistema revocara los permisos de fondo de la app. La solución fue migrar al GeofencingClient de Google Play Services, que delega el monitoreo de ubicación al proceso del sistema, evitando el consumo innecesario de recursos. Además, se implementó una base de datos Room para almacenar el estado de todas las rutinas, permitiendo que la app reconstruya su configuración correctamente tras un reinicio del dispositivo, incluso si está instalada en una tarjeta SD. El autor también destacó la importancia de usar la API java.time para gestionar zonas horarias, evitando desfases en las rutinas programadas cuando el usuario viaja a otras regiones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T23:57:51.891Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to (inglés)",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Android sobre el modo Doze",
+      "url": "https://developer.android.com/training/monitoring-device-state/doze-mode"
+    },
+    {
+      "title": "Guía de Google para implementar geovallado en Android",
+      "url": "https://developer.android.com/training/location/geofencing"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Restricción de sistema que elimina servicios en segundo plano",
+      "value": "Modo Doze y App Standby de Android"
+    },
+    {
+      "label": "Tiempo de inactividad de pantalla que activa el modo Doze (estimado)",
+      "value": "30 minutos en la mayoría de dispositivos"
+    },
+    {
+      "label": "Permiso necesario para modificar el sonido con No Molestar activado",
+      "value": "Acceso a la política de notificaciones (NotificationPolicyAccess)"
+    },
+    {
+      "label": "Tecnología de geovallado usada para evitar consumo excesivo de GPS",
+      "value": "GeofencingClient de Google Play Services"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

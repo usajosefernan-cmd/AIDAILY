@@ -1,0 +1,47 @@
+{
+  "id": "755ba0629d29031174f250bfa036875b8272dc41aa04776a76a90cbca285fd71",
+  "title": "WCAG 2.2 Accessibility for React Developers — Practical Guide",
+  "summary": "<p>I'm <a href=\"https://safdarali.in\" rel=\"noopener noreferrer\">Safdar Ali</a>, a frontend engineer in Bengaluru. Last quarter I audited a client dashboard that looked polished — clean Tailwind, smooth transitions, Lighthouse performance in the 90s — and failed basic keyboard navigation in under two minutes. Tab order jumped randomly, modals trapped nothing, and icon-only buttons had no labels. WCAG 2.2 is not a legal checkbox for enterprise contracts alone. It is how you ship React UI that works for everyone: screen reader users, keyboard-only users, people on slow 4G with zoom enabled, and your future self debugging at 11pm. This guide covers the wcag 2.2 react patterns I run before every merge.</p>\n\n<p>Why WCAG 2.2 matters for React in 2026<br>\nWCAG 2.2 added criteria that directly affect React apps: focus not obscured, dragging movements, target size minimums, and consistent help. React's component model makes accessibility both easier and easier to break — you can encapsulate good patterns in a shared Dialog component, but you can also copy-paste a div-with-onClick button across forty files.</p>\n\n<p>The legal landscape in India is catching up. Government portals and fintech products increasingly require accessibility audits before launch. Even when nobody asks, inclusive UI reduces support tickets — unclear error messages and broken focus management generate more \"the form is broken\" emails than actual backend failures.</p>\n\n<p>React does not ship accessible components by default. A  is focusable; a  is not, unless you wire it. Your job is to make the accessible path the default path in your design system.</p>\n\n\n<p>Focus traps — modals that actually work<br>\nA focus trap keeps keyboard focus inside a modal until the user dismisses it. Without one, Tab sends focus to elements behind the overlay — confusing for sighted keyboard users and disorienting for screen reader users who hear content from two layers at once.</p>\n\n<p><a href=\"https://safdarali.in/blog/wcag-22-react-accessibility-guide\" rel=\"noopener noreferrer\">Continue Reading...</a></p>\n\n\n",
+  "url": "https://dev.to/safdarali25/wcag-22-accessibility-for-react-developers-practical-guide-1b7o",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T18:30:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fetxo7r90p3q4azrq03n6.png",
+  "imageAlt": "WCAG 2.2 Accessibility for React Developers — Practical Guide",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<p>I'm <a href=\"https://safdarali.in\" rel=\"noopener noreferrer\">Safdar Ali</a>, a frontend engineer in Bengaluru. Last quarter I audited a client dashboard that looked polished — clean Tailwind, smooth transitions, Lighthouse performance in the 90s — and failed basic keyboard navigation in under two minutes. Tab order jumped randomly, modals trapped nothing, and icon-only buttons had no labels. WCAG 2.2 is not a legal checkbox for enterprise contracts alone. It is how you ship React UI that works for everyone: screen reader users, keyboard-only users, people on slow 4G with zoom enabled, and your future self debugging at 11pm. This guide covers the wcag 2.2 react patterns I run before every merge.</p>\n\n<p>Why WCAG 2.2 matters for React in 2026<br>\nWCAG 2.2 added criteria that directly affect React apps: focus not obscured, dragging movements, target size minimums, and consistent help. React's component model makes accessibility both easier and easier to break — you can encapsulate good patterns in a shared Dialog component, but you can also copy-paste a div-with-onClick button across forty files.</p>\n\n<p>The legal landscape in India is catching up. Government portals and fintech products increasingly require accessibility audits before launch. Even when nobody asks, inclusive UI reduces support tickets — unclear error messages and broken focus management generate more \"the form is broken\" emails than actual backend failures.</p>\n\n<p>React does not ship accessible components by default. A  is focusable; a  is not, unless you wire it. Your job is to make the accessible path the default path in your design system.</p>\n\n\n<p>Focus traps — modals that actually work<br>\nA focus trap keeps keyboard focus inside a modal until the user dismisses it. Without one, Tab sends focus to elements behind the overlay — confusing for sighted keyboard users and disorienting for screen reader users who hear content from two layers at once.</p>\n\n<p><a href=\"https://safdarali.in/blog/wcag-22-react-accessibility-guide\" rel=\"noopener noreferrer\">Continue Reading...</a></p>\n\n\n",
+  "keyPoints": [
+    "WCAG 2.2 Accessibility for React Developers — Practical Guide"
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fetxo7r90p3q4azrq03n6.png",
+      "alt": "WCAG 2.2 Accessibility for React Developers — Practical Guide",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fetxo7r90p3q4azrq03n6.png",
+      "alt": "Cover image for WCAG 2.2 Accessibility for React Developers — Practical Guide",
+      "caption": "Cover image for WCAG 2.2 Accessibility for React Developers — Practical Guide"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "I'm Safdar Ali, a frontend engineer in Bengaluru. Last quarter I audited a client dashboard that looked polished — clean Tailwind, smooth transitions, Lighthouse performance in the 90s — and failed basic keyboard navigation in under two minutes. Tab order jumped randomly, modals trapped nothing, and icon-only buttons had no labels. WCAG 2.2 is not a legal checkbox for enterprise contracts alone. It is how you ship React UI that works for everyone: screen reader users, keyboard-only users, people on slow 4G with zoom enabled, and your future self debugging at 11pm. This guide covers the wcag 2.2 react patterns I run before every merge.\n\nWhy WCAG 2.2 matters for React in 2026\nWCAG 2.2 added criteria that directly affect React apps: focus not obscured, dragging movements, target size minimums...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T18:45:02.830Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

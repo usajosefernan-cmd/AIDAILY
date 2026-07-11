@@ -1,0 +1,72 @@
+{
+  "id": "65e8be6f18f6fb7220f3c58f3c65bc5fc313ad1cb9aa08f3defd8bb30cf247c3",
+  "title": "Rachas de seguidores deportivos almacenadas en Solana: la app que impide que las empresas borren tu historial de fidelidad",
+  "summary": "Resumen: Un desarrollador ha creado Loyalty Ledger, una aplicación que almacena las rachas de check-in, insignias e historial de seguidores deportivos en la blockchain de Solana, para que los usuarios no pierdan sus datos si cambian de app, son baneados o la plataforma cierra. El flujo completamente funcional es para la Copa Mundial de la FIFA, con transacciones reales en la red de pruebas devnet, sin costos reales para el usuario, y las insignias se emiten como tokens SPL propiedad del seguidor.",
+  "url": "https://dev.to/harshyadav07/i-put-my-fan-streak-on-solana-so-nobody-could-reset-it-2ei6",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T06:28:58.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Rachas de seguidores deportivos almacenadas en Solana: la app que impide que las empresas borren tu historial de fidelidad",
+  "tags": [
+    "deportes",
+    "noticias"
+  ],
+  "aiSummary": "Resumen: Un desarrollador ha creado Loyalty Ledger, una aplicación que almacena las rachas de check-in, insignias e historial de seguidores deportivos en la blockchain de Solana, para que los usuarios no pierdan sus datos si cambian de app, son baneados o la plataforma cierra. El flujo completamente funcional es para la Copa Mundial de la FIFA, con transacciones reales en la red de pruebas devnet, sin costos reales para el usuario, y las insignias se emiten como tokens SPL propiedad del seguidor.",
+  "keyPoints": [
+    "Loyalty Ledger es una aplicación de seguimiento de fidelidad de fans que almacena rachas, insignias e historial en la blockchain de Solana, sin bases de datos centralizadas.",
+    "La app soluciona el problema común de que las plataformas deportivas borren el historial de seguidores al cambiar de app, ser baneado o cerrar el servicio.",
+    "El flujo principal funciona con la Copa Mundial de la FIFA: los check-ins generan transacciones reales en Solana que actualizan cuentas propiedad del programa, no del desarrollador.",
+    "Al superar los 3 check-ins, los usuarios pueden reclamar insignias como tokens SPL reales en su billetera Phantom, sin costos reales al usar la red de pruebas devnet."
+  ],
+  "whyMatters": "Esta iniciativa marca un punto de inflexión en la relación entre plataformas deportivas y sus usuarios, al devolver la propiedad total del historial de fidelidad a los propios seguidores, no a las empresas que gestionan las apps. A futuro, podría sentar un precedente para que ligas, clubes y organizaciones deportivas adopten modelos de fidelización descentralizados, eliminando el riesgo de que los usuarios pierdan sus logros por cambios de política, cierres de servicio o baneos arbitrarios. Para el ecosistema blockchain, supone un caso de uso práctico y cercano a los aficionados, que demuestra que la tecnología no se limita a finanzas o arte digital, sino que puede resolver problemas cotidianos de millones de seguidores deportivos en todo el mundo, incluido el mercado español donde la fidelidad a clubes como el Real Madrid o el Barcelona es un activo muy valorado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&auto=format&fit=crop&q=80",
+      "alt": "Rachas de seguidores deportivos almacenadas en Solana: la app que impide que las empresas borren tu historial de fidelidad",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "futbol/laliga",
+  "hashtags": [
+    "#SolanaDeportes",
+    "#FidelidadFan",
+    "#LoyaltyLedger",
+    "#TokensSPLFutbol"
+  ],
+  "fullArticle": "Un desarrollador independiente ha lanzado Loyalty Ledger, una aplicación que traslada el seguimiento de la fidelidad de los aficionados deportivos a la blockchain de Solana, eliminando la dependencia de bases de datos centralizadas de plataformas deportivas. El proyecto, presentado como parte del Weekend Challenge: Passion Edition de Dev.to, resuelve un problema muy extendido entre los seguidores: cuando una app deportiva cierra, el usuario es baneado o cambia de plataforma, todo su historial de rachas de check-in, insignias y logros se borra de forma permanente, ya que estos datos nunca pertenecieron al usuario, sino a la empresa que gestiona el servicio. Con esta solución, toda la información se almacena en cuentas propiedad del programa de Solana, por lo que ni el propio desarrollador puede modificarla, borrarla o resetearla.\n\nEl funcionamiento es sencillo: el usuario conecta su billetera Phantom (configurada en la red de pruebas devnet para no usar dinero real), selecciona un deporte y un equipo, y realiza check-ins que generan transacciones reales en la blockchain. De momento, el flujo completamente funcional es para la Copa Mundial de la FIFA, con check-ins que actualizan la racha, la puntuación de fan y el nivel del usuario (de Novato a Leyenda) de forma permanente en la cadena. Al superar los tres check-ins, el usuario puede reclamar una insignia en formato de token SPL, que queda almacenada en su billetera de forma indefinida, sin depender de la interfaz de la app. El desarrollador ha optado por la transparencia: las opciones de NBA y otros deportes internacionales están marcadas claramente como demostraciones con datos de prueba, sin transacciones reales en la blockchain, para no engañar a los usuarios.\n\nLa propuesta tiene un potencial de impacto enorme en el sector deportivo, especialmente en mercados como el español, donde la fidelidad a clubes y selecciones es un activo muy valorado por los aficionados. A futuro, este modelo podría ser adoptado por ligas, clubes y plataformas de contenido deportivo para ofrecer sistemas de recompensa verdaderamente propiedad del usuario, eliminando el riesgo de pérdida de datos y generando nuevas oportunidades de monetización para los propios seguidores, que podrían usar sus insignias y puntuaciones como activos digitales verificables en otros ecosistemas.",
+  "category": "deportes",
+  "scrapedAt": "2026-07-11T06:44:49.133Z",
+  "links": [
+    {
+      "title": "Fuente original del proyecto en Dev.to",
+      "url": "https://dev.to/challenges/weekend-2026-07-09"
+    },
+    {
+      "title": "Aplicación web de Loyalty Ledger",
+      "url": "https://loyalty-ledger-blond.vercel.app"
+    },
+    {
+      "title": "Faucet de Solana para obtener SOL de prueba en devnet",
+      "url": "https://faucet.solana.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo por transacción de check-in",
+      "value": "Fracción de céntimo en la red devnet de Solana"
+    },
+    {
+      "label": "Check-ins necesarios para el primer nivel de fidelidad",
+      "value": "3 check-ins"
+    },
+    {
+      "label": "Niveles de fidelidad disponibles",
+      "value": "Novato, Devoto, Veterano, Leyenda"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

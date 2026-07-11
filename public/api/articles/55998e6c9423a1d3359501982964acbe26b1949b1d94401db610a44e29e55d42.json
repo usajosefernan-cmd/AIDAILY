@@ -1,0 +1,77 @@
+{
+  "id": "55998e6c9423a1d3359501982964acbe26b1949b1d94401db610a44e29e55d42",
+  "title": "Revisión de Autorización Asistida por IA: Descubriendo los Límites de Permiso en Ory Kratos",
+  "summary": "El artículo detalla una revisión de autorización apoyada por IA en Ory Kratos, donde la IA genera hipótesis de vulnerabilidades que luego son validadas y descartadas por un analista humano. El enfoque demuestra cómo filtrar falsos positivos y asegurar la integridad de los controles de acceso.",
+  "url": "https://dev.to/fdjedkdlsspec/ai-assisted-authz-review-reading-permission-boundaries-in-ory-kratos-31cg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-04T00:12:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8rdspxkmvxsda3l1wjo2.png",
+  "imageAlt": "Revisión de Autorización Asistida por IA: Descubriendo los Límites de Permiso en Ory Kratos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla una revisión de autorización apoyada por IA en Ory Kratos, donde la IA genera hipótesis de vulnerabilidades que luego son validadas y descartadas por un analista humano. El enfoque demuestra cómo filtrar falsos positivos y asegurar la integridad de los controles de acceso.",
+  "keyPoints": [
+    "La IA produce cientos de hipótesis de vulnerabilidades, pero la mayoría son falsos positivos que se eliminan tras pruebas manuales",
+    "Kratos centraliza las comprobaciones de inquilino en la capa de acceso a datos, reduciendo drásticamente la exposición a lecturas cruzadas",
+    "El proceso de 'matar' hipótesis revela patrones de diseño robusto, como la ausencia de autorización en la API administrativa que se protege a nivel de red"
+  ],
+  "whyMatters": "Esta práctica muestra cómo la inteligencia artificial puede acelerar la auditoría de seguridad sin comprometer la calidad, reduciendo el tiempo de respuesta ante vulnerabilidades reales. En un entorno donde las brechas de autorización cuestan millones, un método que filtra eficientemente los falsos positivos es crucial para proteger datos sensibles y mantener la confianza de los usuarios. Además, el caso de Ory Kratos sirve como referencia para otras plataformas de identidad, subrayando la importancia de centralizar controles y documentar claramente los límites de seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8rdspxkmvxsda3l1wjo2.png",
+      "alt": "Captura de pantalla del artículo que muestra la portada de la revisión de autorización asistida por IA",
+      "caption": "Imagen de portada del artículo sobre la revisión de autorización en Ory Kratos"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8rdspxkmvxsda3l1wjo2.png",
+      "alt": "Imagen de la portada del artículo en Dev.to",
+      "caption": "Imagen de la portada del artículo en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OryKratos",
+    "#IAseguridad",
+    "#Autorizacion",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "El panorama de la ciberseguridad se ha vuelto cada vez más complejo, y las herramientas de inteligencia artificial están emergiendo como aliadas clave para detectar vulnerabilidades. En un reciente artículo publicado en Dev.to, un ingeniero de seguridad detalla cómo utilizó la IA para generar hipótesis de vulnerabilidades en Ory Kratos, una plataforma de gestión de identidad. La IA no busca errores per se; su función es producir un conjunto amplio de posibles fallos, que luego un analista revisa y elimina.\n\nEl proceso comienza con la generación de cientos de hipótesis basadas en el catálogo de olores de autorización (AuthZ Smell Catalog). La IA identifica cinco hipótesis con alta confianza: una supuesta falta de autorización en la API administrativa, una lectura cruzada de identidades entre inquilinos, el reuso de tokens, la confusión en el flujo de configuración y la introducción de un inquilino a través del payload. Cada una de estas hipótesis se somete a pruebas rigurosas. En el caso de la API administrativa, por ejemplo, se confirma que la falta de protección interna se debe a que la seguridad se aplica a nivel de red, no dentro de la propia API.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8rdspxkmvxsda3l1wjo2.png]\n\nEste enfoque de “matar hipótesis” revela un patrón de diseño sólido en Kratos: la capa de acceso a datos centraliza la verificación de inquilinos, evitando que los controladores expongan datos sensibles. La revisión también destaca la importancia de documentar claramente dónde se aplica la autorización, ya que la falta de controles internos puede ser una falsa alarma.\n\nEl resultado final no es un informe de vulnerabilidades, sino una tabla de eliminación que muestra claramente qué hipótesis fueron descartadas y por qué. Este método reduce la carga de trabajo del equipo de seguridad y evita que los programas de recompensas de bugs se saturen con falsos positivos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8rdspxkmvxsda3l1wjo2.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T00:19:39.134Z",
+  "links": [
+    {
+      "title": "Ory Kratos – Documentación oficial",
+      "url": "https://www.ory.sh/kratos/docs"
+    },
+    {
+      "title": "AuthZ Smell Catalog – Guía de olores de autorización",
+      "url": "https://github.com/ory/kratos/blob/main/docs/authz-smell-catalog.md"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de hipótesis generadas",
+      "value": "50"
+    },
+    {
+      "label": "Hipótesis confirmadas como falsas",
+      "value": "5"
+    },
+    {
+      "label": "Tiempo de revisión manual",
+      "value": "2 horas"
+    },
+    {
+      "label": "Nivel de confianza de la IA en las hipótesis",
+      "value": "Alto"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

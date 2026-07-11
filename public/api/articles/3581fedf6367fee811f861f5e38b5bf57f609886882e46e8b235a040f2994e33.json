@@ -1,0 +1,53 @@
+{
+  "aiSummary": "En la conferencia App.js 2026 de Kraków, Expo presentó una biblioteca de rendimiento, mejoras de SDK y capacidades de IA que aceleran la creación y despliegue de apps React Native.",
+  "category": "tecnologia",
+  "fullArticle": "Kraków fue el escenario de App.js 2026, el encuentro anual que congregó a más de quinientos desarrolladores de React Native durante dos intensos días. Allí, el equipo de Expo reveló una serie de actualizaciones que prometen transformar la forma en que se construyen y despliegan aplicaciones móviles. Entre los anuncios más destacados se encuentra una nueva biblioteca de rendimiento orientada a producción, diseñada para optimizar la velocidad y el consumo de recursos en entornos reales, y una agenda de mejoras que cubre todo un año de evolución del ecosistema.\n\nLa revolución no se limita al rendimiento. Expo ha ampliado su soporte para aplicaciones de TV, permitiendo reutilizar hasta un 85 % del código entre dispositivos móviles, Apple TV y Android TV. Esta estrategia de despliegue universal simplifica la vida de los desarrolladores y abre nuevas oportunidades de mercado, al llevar las mismas experiencias a salas de estar y dispositivos de entretenimiento. Además, el SDK 56 consolida Expo UI, una capa que traduce llamadas JavaScript en widgets nativos de SwiftUI y Jetpack Compose, eliminando la necesidad de escribir módulos nativos para interfaces avanzadas.\n\nUno de los ejes centrales del anuncio es la integración profunda de la inteligencia artificial. Gracias a años de decisiones estratégicas, el stack basado en JavaScript, TypeScript y React ofrece a los modelos de IA un vasto corpus de datos para entrenarse. Herramientas como Argent de Software Mansion y Agent Device de Callstack permiten que los agentes de IA interactúen directamente con aplicaciones en ejecución: capturan pantallas, simulan toques y extraen datos de React Native DevTools, facilitando la depuración automática y la iteración sin intervención humana. Este enfoque convierte a la IA en un colaborador activo dentro del ciclo de desarrollo.\n\nPor último, Expo lanza Expo Launch, un flujo web que automatiza la publicación en TestFlight, la App Store y la web, eliminando la tediosa gestión manual de archivos de configuración. El servidor MCP, gratuito para todas las cuentas, conecta a los agentes con la versión del SDK, la configuración y los servicios en la nube, mientras que los 'Expo skills' ofrecen habilidades predefinidas para construir, desplegar y actualizar apps con un solo comando. En conjunto, estas innovaciones buscan que la ruta por defecto produzca resultados de calidad sin necesidad de configuraciones complejas, consolidando a Expo como la plataforma preferida para el desarrollo móvil del futuro.",
+  "hashtags": [
+    "#Expo",
+    "#ReactNative",
+    "#AI",
+    "#DevTools"
+  ],
+  "id": "3581fedf6367fee811f861f5e38b5bf57f609886882e46e8b235a040f2994e33",
+  "imageAlt": "Expo 2026 revoluciona el desarrollo móvil con nuevas herramientas de rendimiento e integraciones de IA",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.sanity.io%2Fimages%2F9r24npb8%2Fproduction%2F21365b9963259942b72a43e3939ec9b0231ce87d-2400x1350.png",
+  "keyPoints": [
+    "Más de 500 desarrolladores de React Native asistieron a App.js 2026, donde se anunciaron una biblioteca de rendimiento y un año de mejoras de plataforma.",
+    "Expo ahora permite compartir hasta un 85 % del código entre móvil, Apple TV y Android TV, ampliando la estrategia de despliegue universal.",
+    "La integración de agentes de IA con herramientas como Argent y Agent Device permite depurar, interactuar y lanzar apps sin intervención humana.",
+    "El nuevo SDK 56 incluye Expo UI, que genera widgets SwiftUI y Jetpack Compose desde JavaScript, y Expo Launch, que simplifica la publicación en TestFlight y la web."
+  ],
+  "multimedia": [
+    {
+      "alt": "What Expo shipped in 2026: New performance tools and AI integrations",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.sanity.io%2Fimages%2F9r24npb8%2Fproduction%2F21365b9963259942b72a43e3939ec9b0231ce87d-2400x1350.png"
+    },
+    {
+      "alt": "Cover image for What Expo shipped in 2026: New performance tools and AI integrations",
+      "caption": "Cover image for What Expo shipped in 2026: New performance tools and AI integrations",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.sanity.io%2Fimages%2F9r24npb8%2Fproduction%2F21365b9963259942b72a43e3939ec9b0231ce87d-2400x1350.png"
+    },
+    {
+      "alt": "Expo is growing",
+      "caption": "Expo is growing",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Flclkkn5vlvoqktx0vgog.png"
+    }
+  ],
+  "publishedAt": "2026-06-23T13:50:50.000Z",
+  "scrapedAt": "2026-06-23T14:11:13.855Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "En la conferencia App.js 2026 de Kraków, Expo presentó una biblioteca de rendimiento, mejoras de SDK y capacidades de IA que aceleran la creación y despliegue de apps React Native.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Expo 2026 revoluciona el desarrollo móvil con nuevas herramientas de rendimiento e integraciones de IA",
+  "url": "https://dev.to/expo/what-expo-shipped-in-2026-new-performance-tools-and-ai-integrations-3i2m",
+  "whyMatters": "Estas novedades posicionan a Expo como la capa de abstracción definitiva para el desarrollo multiplataforma, reduciendo costos y tiempos de lanzamiento. La combinación de IA y documentación mejorada crea un círculo virtuoso donde los modelos generan código más preciso, acelerando la innovación. Para empresas y desarrolladores, la capacidad de desplegar una única base de código en dispositivos móviles y televisores representa una ventaja competitiva significativa en un mercado cada vez más fragmentado."
+}

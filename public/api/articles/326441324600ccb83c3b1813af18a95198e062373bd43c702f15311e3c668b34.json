@@ -1,0 +1,74 @@
+{
+  "id": "326441324600ccb83c3b1813af18a95198e062373bd43c702f15311e3c668b34",
+  "title": "Resucitando a Kepler: Cómo hacer funcionar modelos LLM modernos en una GTX 770 con Linux 7.x",
+  "summary": "Un ingeniero comparte un parche experimental que permite que la GPU GTX 770, obsoleta por NVIDIA, ejecute modelos de lenguaje modernos en el kernel Linux 7.x, reduciendo el e‑waste y demostrando la viabilidad de hardware antiguo.",
+  "url": "https://dev.to/skyne/resurrecting-kepler-getting-modern-llms-running-on-a-gtx-770-kernel-7x-4na",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T13:29:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0fsxd899lfhncteyzhdy.png",
+  "imageAlt": "Resucitando a Kepler: Cómo hacer funcionar modelos LLM modernos en una GTX 770 con Linux 7.x",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un ingeniero comparte un parche experimental que permite que la GPU GTX 770, obsoleta por NVIDIA, ejecute modelos de lenguaje modernos en el kernel Linux 7.x, reduciendo el e‑waste y demostrando la viabilidad de hardware antiguo.",
+  "keyPoints": [
+    "La GTX 770, con 1536 núcleos CUDA y 2 GB GDDR5, puede ejecutar LLM pequeños‑medianos tras un parche de cinco bytes y backports de kernel.",
+    "El fallo se origina en un error de firmware del Resource Manager que devuelve un código de error falso; el parche salta esa rama y devuelve éxito.",
+    "El proyecto combina CUDA 10.2 con clang++ para superar incompatibilidades de compilación en Ubuntu 26.04 y permite usar llama.cpp con gráficos CUDA desactivados."
+  ],
+  "whyMatters": "Esta iniciativa demuestra que el hardware de generación pasada puede seguir aportando valor en la era de la IA, ofreciendo una alternativa sostenible frente al constante lanzamiento de nuevos dispositivos. Además, abre la puerta a comunidades de código abierto que buscan maximizar recursos sin depender de soporte comercial. Para los desarrolladores, significa acceso a un entorno de prueba barato y ecológico que no exige la compra de GPUs de última generación.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0fsxd899lfhncteyzhdy.png",
+      "alt": "Imagen de portada del artículo mostrando la GPU GTX 770 con código de parche en pantalla",
+      "caption": "La GTX 770, la GPU Kepler que se reaviva con un parche experimental"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0fsxd899lfhncteyzhdy.png",
+      "alt": "Vista del código fuente del parche en un editor de texto",
+      "caption": "Código del parche de cinco bytes que corrige la respuesta del Resource Manager"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#KeplerGPU",
+    "#LLM",
+    "#LinuxKernel",
+    "#Nvidia",
+    "#OpenSource"
+  ],
+  "fullArticle": "En un mundo donde los avances tecnológicos parecen obligar a desechar hardware cada pocos años, un ingeniero de la comunidad Dev.to ha descubierto cómo revivir la GTX 770, una GPU Kepler de 2012, para ejecutar modelos de lenguaje de última generación. Con 1536 núcleos CUDA y 2 GB de GDDR5, la tarjeta es un relicto de la era de los videojuegos de gama media, pero su potencia subyacente sigue siendo suficiente para tareas de inferencia ligeras.\n\nEl núcleo del proyecto es un parche de cinco bytes que modifica la respuesta del Resource Manager en el driver NVIDIA 470.256.02. Cuando el firmware de Kepler devuelve un código de error interno (NV_ERR_BUFFER_TOO_SMALL), el driver interpreta erróneamente la llamada como fatal y devuelve 802 a la capa de usuario. Al saltar esa rama de error y devolver 0, la inicialización de CUDA se completa con éxito, permitiendo que la GPU participe en el ecosistema de modelos LLM.\n\nPara superar las incompatibilidades de compilación que surgen al usar CUDA 10.2 en Ubuntu 26.04, se empleó clang++ como puente entre las cabeceras legacy y las bibliotecas modernas. Además, se desactivaron los gráficos CUDA y se ajustó el parámetro -DGGML_CUDA_GRAPHS=OFF, ya que los gráficos requieren soporte sm_35+, incompatible con la arquitectura sm_30 de Kepler.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0fsxd899lfhncteyzhdy.png]\n\nCon el kernel Linux 7.x y Ubuntu 26.04, la GTX 770 funciona como un acelerador de inferencia, reduciendo la huella de carbono asociada al descarte masivo de dispositivos y ofreciendo una alternativa de bajo costo para investigadores y hobbyistas. El proyecto no solo es un testimonio de la ingeniería creativa, sino también un llamado a la comunidad a reconsiderar el valor del hardware legado en la era de la IA.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:10:48.486Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article-resurrecting-kepler"
+    },
+    {
+      "title": "Documentación oficial de NVIDIA CUDA 10.2",
+      "url": "https://docs.nvidia.com/cuda/archive/10.2/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Núcleos CUDA",
+      "value": "1536"
+    },
+    {
+      "label": "Memoria VRAM",
+      "value": "2 GB"
+    },
+    {
+      "label": "Versión del kernel",
+      "value": "7.0.0-27"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

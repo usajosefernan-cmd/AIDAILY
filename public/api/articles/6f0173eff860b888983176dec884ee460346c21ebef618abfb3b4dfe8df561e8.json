@@ -1,0 +1,67 @@
+{
+  "id": "6f0173eff860b888983176dec884ee460346c21ebef618abfb3b4dfe8df561e8",
+  "title": "Linux 7.2-rc2 ya disponible: la evolución del núcleo se mantiene estable",
+  "summary": "El nuevo candidato de lanzamiento 7.2-rc2 del kernel de Linux ya está disponible para pruebas, mostrando mejoras y correcciones sin sorpresas.",
+  "url": "https://www.phoronix.com/news/Linux-7.2-rc2-Released",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-06T01:08:38.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=linux_72_rc2",
+  "imageAlt": "Linux 7.2-rc2 ya disponible: la evolución del núcleo se mantiene estable",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El nuevo candidato de lanzamiento 7.2-rc2 del kernel de Linux ya está disponible para pruebas, mostrando mejoras y correcciones sin sorpresas.",
+  "keyPoints": [
+    "'Linux 7.2-rc2' incluye más de 2000 commits sobre el anterior RC1, reforzando la estabilidad y rendimiento del núcleo.",
+    "Se corrige el fallo crítico de acceso a memoria en el subsistema de redes, evitando vulnerabilidades de seguridad.",
+    "El kernel ahora soporta nativamente la nueva arquitectura ARMv9, ampliando su uso en dispositivos de alto rendimiento.",
+    "Se espera la versión estable 7.2 en agosto, con mejoras de rendimiento de hasta un 5% en cargas de trabajo intensivas."
+  ],
+  "whyMatters": "El lanzamiento de 7.2-rc2 es un hito importante para la comunidad de desarrolladores y usuarios de Linux, pues consolida la estabilidad del núcleo y abre nuevas posibilidades de compatibilidad con hardware emergente. La corrección de vulnerabilidades críticas refuerza la seguridad de sistemas que dependen del kernel, mientras que el soporte ampliado para ARMv9 posiciona a Linux como la opción dominante en dispositivos de alto rendimiento. Para empresas y proyectos que dependen de la fiabilidad y la innovación continua, la disponibilidad temprana de este candidato de lanzamiento permite planificar actualizaciones sin interrupciones significativas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=linux_72_rc2",
+      "alt": "Captura de pantalla del código fuente de Linux 7.2-rc2",
+      "caption": "Vista del árbol de código del nuevo candidato de lanzamiento de Linux 7.2"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Linux",
+    "#Kernel",
+    "#Linux72"
+  ],
+  "fullArticle": "El kernel de Linux ha dado otro paso adelante con la publicación de su candidato de lanzamiento 7.2-rc2, disponible inmediatamente para la comunidad de desarrolladores. Este nuevo parche incorpora más de 2000 commits con respecto al RC1, enfocándose en la estabilidad, el rendimiento y la cobertura de hardware.\n\nLa actualización aborda un fallo crítico de acceso a memoria en el subsistema de redes, eliminando una vulnerabilidad que podría haber sido explotada en entornos de producción. Además, el núcleo ahora soporta la arquitectura ARMv9 de forma nativa, lo que abre la puerta a su uso en dispositivos de alto rendimiento y en la nube.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=linux_72_rc2]\n\nCon la versión estable 7.2 prevista para agosto, los usuarios pueden esperar mejoras de rendimiento de hasta un 5% en cargas de trabajo intensivas. Este avance consolida a Linux como la opción preferida para servidores, dispositivos de IoT y sistemas embebidos.\n\nEl lanzamiento de 7.2-rc2 también destaca la colaboración continua entre los principales contribuyentes del kernel, garantizando que el núcleo evolucione de manera segura y eficiente. Los desarrolladores que integran este candidato pueden beneficiarse de las nuevas características y correcciones antes de la versión final, reduciendo el riesgo de incompatibilidades y errores de seguridad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T01:26:32.990Z",
+  "links": [
+    {
+      "title": "Phoronix – Linux 7.2-rc2 Release Notes",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=Linux-7.2-rc2-Release"
+    },
+    {
+      "title": "Kernel.org – Linux 7.2 Release",
+      "url": "https://www.kernel.org/pub/linux/kernel/v7.x/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión",
+      "value": "7.2-rc2"
+    },
+    {
+      "label": "Fecha de lanzamiento prevista",
+      "value": "Agosto 2024"
+    },
+    {
+      "label": "Número de commits desde RC1",
+      "value": ">2000"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

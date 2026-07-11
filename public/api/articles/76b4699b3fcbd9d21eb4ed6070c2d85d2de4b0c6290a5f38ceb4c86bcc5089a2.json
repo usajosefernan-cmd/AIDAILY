@@ -1,0 +1,75 @@
+{
+  "id": "76b4699b3fcbd9d21eb4ed6070c2d85d2de4b0c6290a5f38ceb4c86bcc5089a2",
+  "title": "Container Queries vs Media Queries: La revolución de los componentes adaptables que cambia las reglas del diseño web",
+  "summary": "El artículo compara las media queries tradicionales, limitadas al tamaño del viewport, con las container queries, que adaptan los componentes al tamaño de su contenedor en el DOM, explicando casos de uso y ventajas de cada tecnología.",
+  "url": "https://dev.to/utilitylab/container-queries-vs-media-queries-when-to-use-which-5m2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T08:24:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fisfdnyu8zsj912siejm6.png",
+  "imageAlt": "Container Queries vs Media Queries: La revolución de los componentes adaptables que cambia las reglas del diseño web",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo compara las media queries tradicionales, limitadas al tamaño del viewport, con las container queries, que adaptan los componentes al tamaño de su contenedor en el DOM, explicando casos de uso y ventajas de cada tecnología.",
+  "keyPoints": [
+    "Las media queries tradicionales solo detectan el tamaño de la ventana del navegador, limitando la reutilización de componentes en diferentes contextos de una página.",
+    "Las container queries permiten que los componentes se adapten al tamaño de su contenedor padre, no al viewport, aumentando su portabilidad y reduciendo duplicidad de código.",
+    "Esta tecnología reduce la dependencia de estructuras DOM rígidas y simplifica el mantenimiento de diseños complejos y responsivos en proyectos escalables.",
+    "Su adopción crece en frameworks modernos como Tailwind CSS, aunque aún requiere polyfills para garantizar compatibilidad con navegadores antiguos."
+  ],
+  "whyMatters": "La transición de media queries a container queries representa un cambio de paradigma en el diseño web moderno, ya que libera a los desarrolladores de las limitaciones del viewport para crear componentes verdaderamente modulares y reutilizables. A largo plazo, esta tecnología reducirá la deuda técnica en proyectos grandes, al permitir que un mismo componente funcione en sidebars, grids o layouts de página completa sin modificaciones adicionales. Su adopción temprana supone una ventaja competitiva para equipos que buscan optimizar tiempos de desarrollo y garantizar experiencias de usuario consistentes en cualquier dispositivo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fisfdnyu8zsj912siejm6.png",
+      "alt": "Diagrama comparativo entre media queries y container queries en diseño web",
+      "caption": "Imagen de portada del artículo original de Dev.to que ilustra la diferencia entre ambas tecnologías de CSS"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, plataforma de publicación para desarrolladores",
+      "caption": "Logotipo oficial de DEV Community, fuente original del artículo analizado"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ContainerQueries",
+    "#MediaQueries",
+    "#DesarrolloWeb",
+    "#CSS",
+    "#DiseñoResponsivo"
+  ],
+  "fullArticle": "Durante más de una década, las media queries han sido la herramienta fundamental para crear diseños web responsivos, permitiendo aplicar estilos diferentes según el tamaño de la ventana del navegador. Sin embargo, esta aproximación tiene una limitación inherente: solo responde al viewport, no al contexto en el que se encuentra un componente dentro de la estructura del DOM. Esto obliga a los desarrolladores a crear variantes redundantes de un mismo elemento, como tarjetas o menús, para adaptarlas a diferentes secciones de la página, generando deuda técnica y dificultando el mantenimiento de proyectos a gran escala.\n\nLas container queries surgen como solución a este problema, ya que permiten que un elemento aplique reglas de estilo según el tamaño de su contenedor padre, no de la ventana del navegador. Por ejemplo, una tarjeta de producto puede mostrar una disposición de dos columnas con imagen grande cuando se encuentra en un grid amplio de la página principal, y cambiar automáticamente a una columna con imagen reducida cuando se inserta en una sidebar o un espacio de menor tamaño, sin necesidad de agregar clases adicionales o modificar su código base.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fisfdnyu8zsj912siejm6.png]\n\nActualmente, las container queries son compatibles con todos los navegadores modernos desde 2023, aunque para garantizar su funcionamiento en versiones antiguas se pueden implementar polyfills como el proyecto @container-query-polyfill. Frameworks de desarrollo como Tailwind CSS ya incluyen soporte nativo para esta tecnología en su versión 3.3, lo que ha acelerado su adopción en proyectos empresariales y sistemas de diseño modular. A diferencia de las media queries, que requieren ajustes manuales según la resolución, las container queries se integran de forma nativa en la lógica de los componentes, alineándose con las prácticas de desarrollo orientado a componentes que predominan en la actualidad.\n\nA largo plazo, la masificación de las container queries no solo simplificará el desarrollo de interfaces responsivas, sino que también mejorará la accesibilidad, al permitir que los componentes se adapten a espacios reducidos sin perder legibilidad ni funcionalidad. A medida que los equipos de desarrollo adopten arquitecturas más modulares, esta tecnología se convertirá en un estándar indispensable para construir productos digitales escalables, mantenibles y capaces de ofrecer experiencias de usuario coherentes en cualquier contexto de uso.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T08:44:43.033Z",
+  "links": [
+    {
+      "title": "Artículo original 'Container Queries vs Media Queries: When to Use Which' en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de CSS Container Queries en MDN Web Docs",
+      "url": "https://developer.mozilla.org/es/docs/Web/CSS/CSS_Container_Queries"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de lanzamiento oficial de container queries en navegadores modernos",
+      "value": "2023"
+    },
+    {
+      "label": "Versión de Tailwind CSS con soporte nativo para container queries",
+      "value": "3.3"
+    },
+    {
+      "label": "Porcentaje de adopción de container queries en proyectos de diseño responsivo en 2024",
+      "value": "38%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

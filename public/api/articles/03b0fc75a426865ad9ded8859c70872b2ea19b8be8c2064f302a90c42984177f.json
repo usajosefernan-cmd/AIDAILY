@@ -1,0 +1,73 @@
+{
+  "id": "03b0fc75a426865ad9ded8859c70872b2ea19b8be8c2064f302a90c42984177f",
+  "title": "Descubre cómo un diamante puede tener miles de años gracias a un visualizador WebGL",
+  "summary": "Un equipo de Prodiam ha creado un visualizador interactivo de WebGL que permite a los usuarios explorar la edad de los diamantes naturales en un contexto de tiempo profundo, demostrando que pueden alcanzar billones de años. El proyecto combina Three.js, GSAP y desplazamiento suave para ofrecer una experiencia educativa y visualmente atractiva.",
+  "url": "https://dev.to/prodiamadmin/a-tiny-webgl-diamond-age-visualiser-for-explaining-deep-time-1hjl",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T08:50:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2onnda9nh5u7ncu4prz.png",
+  "imageAlt": "Descubre cómo un diamante puede tener miles de años gracias a un visualizador WebGL",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un equipo de Prodiam ha creado un visualizador interactivo de WebGL que permite a los usuarios explorar la edad de los diamantes naturales en un contexto de tiempo profundo, demostrando que pueden alcanzar billones de años. El proyecto combina Three.js, GSAP y desplazamiento suave para ofrecer una experiencia educativa y visualmente atractiva.",
+  "keyPoints": [
+    "El visualizador muestra que un diamante natural puede tener una edad de varios billones de años, ilustrando la escala de tiempo geológico.",
+    "Se emplea Three.js/WebGL para la renderización 3D, GSAP para el control de la línea de tiempo y un manejo de scroll fluido para la narrativa.",
+    "El proyecto está pensado como herramienta educativa de Prodiam Trading CC, que quiere resaltar que la edad, formación y certificación son factores críticos al comprar diamantes.",
+    "El código fuente y la demo están disponibles públicamente, lo que permite a desarrolladores y académicos replicar o extender la experiencia."
+  ],
+  "whyMatters": "Esta iniciativa demuestra cómo la tecnología de visualización 3D puede transformar la comprensión pública de conceptos científicos complejos, como la escala de tiempo geológico. Al hacer tangible la longevidad de los diamantes, Prodiam no solo educa a sus clientes, sino que también posiciona a la industria como innovadora y transparente. Además, la disponibilidad del código abre puertas a la colaboración académica y al desarrollo de nuevas aplicaciones educativas en campos como la mineralogía y la geología.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2onnda9nh5u7ncu4prz.png",
+      "alt": "Visualizador WebGL de la edad de los diamantes",
+      "caption": "Imagen de portada que muestra el visualizador interactivo creado por Prodiam."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Prodiam",
+    "#WebGL",
+    "#Diamante",
+    "#DeepTime",
+    "#Visualizacion"
+  ],
+  "fullArticle": "Prodiam Trading CC, empresa especializada en la comercialización de diamantes, ha lanzado una herramienta digital que convierte la complejidad de la edad de los diamantes en una experiencia visual envolvente. El visualizador, construido con Three.js y WebGL, permite a los usuarios explorar la evolución de un diamante a lo largo de miles de millones de años, con animaciones que se sincronizan con el desplazamiento de la página gracias a GSAP.\n\nEl objetivo principal es educativo: demostrar que un diamante natural puede alcanzar edades de varios billones de años, algo que resulta difícil de comprender sin una representación gráfica. Al hacerlo, Prodiam refuerza la idea de que la edad, la formación, el corte y la certificación son aspectos esenciales cuando un comprador evalúa un diamante.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2onnda9nh5u7ncu4prz.png]\n\nLa demo se encuentra en línea en https://www.prodiam.co.za/oldest/, donde cualquier visitante puede interactuar con el modelo 3D y ver cómo la edad se despliega en una línea de tiempo visual. El código fuente, alojado en GitHub, está disponible para que desarrolladores y educadores lo adapten o amplíen.\n\nAl abrir la puerta a la transparencia y la interacción, Prodiam no solo educa a sus clientes, sino que también establece un estándar para la industria, mostrando que la tecnología puede ser una aliada poderosa en la comunicación de valores intrínsecos de los diamantes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T09:04:10.499Z",
+  "links": [
+    {
+      "title": "Visualizador en vivo",
+      "url": "https://www.prodiam.co.za/oldest/"
+    },
+    {
+      "title": "Código fuente en GitHub",
+      "url": "https://github.com/prodiamadmin/deep-time-diamond"
+    },
+    {
+      "title": "Sitio oficial de Prodiam",
+      "url": "https://www.prodiam.co.za"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Edad del diamante",
+      "value": "Billones de años"
+    },
+    {
+      "label": "Tecnología de renderizado",
+      "value": "Three.js/WebGL"
+    },
+    {
+      "label": "Control de animación",
+      "value": "GSAP"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

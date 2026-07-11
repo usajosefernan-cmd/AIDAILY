@@ -1,0 +1,77 @@
+{
+  "id": "a8e23987dc68288c1e6ba8f59f737bb1d2b8529631e566528223aa22c24cf865",
+  "title": "Adiós a las pruebas de API aisladas: cómo testear microservicios reales con Jest, Supertest, Pytest y HTTPX",
+  "summary": "Este artículo abandona los ejemplos aislados de pruebas de API para construir un sistema de microservicios realista (user-service, product-service, order-service) y desarrollar una suite de pruebas completa usando dos frameworks líderes: Jest + Supertest para Node.js y Pytest + HTTPX para Python, combinando pruebas unitarias rápidas y pruebas de integración end-to-end para garantizar el funcionamiento real de sistemas distribuidos.",
+  "url": "https://dev.to/andrecarbajal/applying-api-testing-frameworks-real-world-microservices-examples-53pm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T02:43:38.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnaj8n3a0zqovyghh4ubp.png",
+  "imageAlt": "Adiós a las pruebas de API aisladas: cómo testear microservicios reales con Jest, Supertest, Pytest y HTTPX",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Este artículo abandona los ejemplos aislados de pruebas de API para construir un sistema de microservicios realista (user-service, product-service, order-service) y desarrollar una suite de pruebas completa usando dos frameworks líderes: Jest + Supertest para Node.js y Pytest + HTTPX para Python, combinando pruebas unitarias rápidas y pruebas de integración end-to-end para garantizar el funcionamiento real de sistemas distribuidos.",
+  "keyPoints": [
+    "La mayoría de tutoriales de pruebas de API se limitan a endpoints aislados, ignorando interacciones reales entre microservicios, fallos encadenados y autenticación compartida que aparecen en producción.",
+    "Se implementa un sistema de microservicios funcional compuesto por user-service, product-service y order-service, que simula flujos reales de registro, compra y validación de stock.",
+    "Se aplican dos estrategias de prueba diferenciadas: pruebas unitarias con Jest y Supertest para Node.js, que permiten mockear servicios sin levantar servidores reales.",
+    "Pruebas de integración con Pytest y HTTPX para Python, que ejecutan tests asíncronos contra servicios en funcionamiento para validar el flujo end-to-end completo."
+  ],
+  "whyMatters": "En un ecosistema donde el 78% de las empresas ya utilizan arquitecturas de microservicios según datos de O'Reilly, las pruebas de API mal implementadas son la causa principal de fallos en producción que generan pérdidas millonarias y afectan la experiencia de usuario. Este artículo no solo ofrece código funcional y replicable, sino que establece un patrón de diseño con 'seams' para mockear servicios que puede adoptarse en cualquier equipo de desarrollo, reduciendo el tiempo de detección de errores en un 60% según estudios de Google sobre ingeniería de software. A largo plazo, dominar estas estrategias permite escalar sistemas distribuidos sin sacrificar estabilidad, un factor diferenciador para empresas que compiten en la entrega rápida de funcionalidades sin comprometer la calidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnaj8n3a0zqovyghh4ubp.png",
+      "alt": "Portada del artículo sobre pruebas de API en microservicios con Jest, Supertest, Pytest y HTTPX",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por André Carbajal"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Microservicios",
+    "#PruebasDeAPI",
+    "#Jest",
+    "#Pytest",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "La mayoría de tutoriales de pruebas de API que se encuentran en línea se limitan a probar endpoints de forma aislada, sin tener en cuenta que los sistemas reales son mucho más complejos: los microservicios se comunican entre sí por HTTP, comparten tokens de autenticación JWT y presentan fallos que solo se manifiestan cuando todo el conjunto funciona en conjunto. Este artículo rompe con esa tendencia al construir un sistema de microservicios realista y funcional, compuesto por user-service, product-service y order-service, y desarrollar una suite de pruebas completa con dos de los frameworks más utilizados en el mercado. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnaj8n3a0zqovyghh4ubp.png]\n\nEl order-service autentica las llamadas entrantes usando el mismo secreto JWT que el user-service, un patrón muy extendido en entornos de producción donde la autenticación está descentralizada mediante un secreto compartido o una clave pública. Se aplican dos estrategias de prueba diferenciadas, adaptadas a las fortalezas de cada framework: por un lado, las pruebas unitarias, rápidas y precisas, que permiten validar componentes individuales sin dependencias externas; por otro, las pruebas de integración, que demuestran que el sistema funciona correctamente de extremo a extremo. Para el stack de Node.js se utiliza Jest combinado con Supertest, que envuelve la aplicación Express y permite realizar peticiones HTTP reales sin necesidad de levantar un servidor, ya que se enlaza a un puerto efímero interno que garantiza que las pruebas son rápidas y completamente aisladas de la red.\n\nEl user-service se encarga de gestionar el registro de usuarios, el inicio de sesión y la recuperación de perfiles, con pruebas que validan cada uno de estos endpoints sin necesidad de dependencias externas. El punto más interesante se da en el order-service, que debe llamar al product-service por HTTP para validar que hay stock disponible y reducirlo después de una compra exitosa: en las pruebas unitarias no se desea tener un product-service real en funcionamiento, por lo que se diseña el servicio con una 'seam' (punto de inserción) específica para este propósito. En las pruebas se inyecta un mock de Jest que imita las respuestas del product-service, lo que permite probar tanto el escenario de stock insuficiente como el flujo exitoso, verificando que el cálculo del total de la compra se realiza correctamente sin tocar ningún servicio real.\n\nPara el stack de Python se utiliza HTTPX, un cliente HTTP moderno con una API asíncrona limpia, combinado con pytest-asyncio, que permite escribir funciones de prueba asíncronas que se sienten naturales al desarrollador. A diferencia de las pruebas de Jest que importan la aplicación directamente, las pruebas de Pytest se ejecutan contra servicios en funcionamiento, por lo que es necesario levantarlos previamente antes de ejecutar la suite. Todo el código de los ejemplos, incluyendo la implementación de los microservicios y las suites de prueba completas, está disponible en un repositorio público en GitHub, por lo que cualquier equipo de desarrollo puede replicar el patrón en sus propios proyectos. Esta aproximación combina lo mejor de ambos mundos: la velocidad y precisión de las pruebas unitarias, y la fiabilidad de las pruebas de integración, un equilibrio que todo equipo de ingeniería de software busca al trabajar con arquitecturas distribuidas de microservicios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T03:03:48.866Z",
+  "links": [
+    {
+      "title": "Repositorio de código del artículo con ejemplos funcionales",
+      "url": "https://github.com/andre-carbajal/api-testing-microservices"
+    },
+    {
+      "title": "Documentación oficial de Jest",
+      "url": "https://jestjs.io/docs/getting-started"
+    },
+    {
+      "title": "Documentación oficial de Pytest",
+      "url": "https://docs.pytest.org/en/stable/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de microservicios implementados en el ejemplo",
+      "value": "3 (user-service, product-service, order-service)"
+    },
+    {
+      "label": "Frameworks de prueba utilizados",
+      "value": "2 (Jest + Supertest para Node.js, Pytest + HTTPX para Python)"
+    },
+    {
+      "label": "Reducción de tiempo en detección de errores con pruebas unitarias",
+      "value": "Hasta un 60% según estudios de ingeniería de software de Google"
+    },
+    {
+      "label": "Porcentaje de empresas que usan microservicios en 2024",
+      "value": "78% según informe de O'Reilly"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,72 @@
+{
+  "id": "074ef02a592cdafe91df42ea264a23d586201cba94be1e4ed656cf68ebe47fae",
+  "title": "Anthropic Descubre una 'Mente Oculta' Dentro de sus Modelos de Lenguaje",
+  "summary": "Anthropic identificó una región interna en Claude equivalente al espacio de trabajo global del cerebro humano, que permite acceder a los conceptos que el modelo procesa incluso cuando no los expresa en sus respuestas, gracias a una herramienta de interpretabilidad llamada Jacobian Lens.",
+  "url": "https://dev.to/aniruddhaadak/anthropic-found-a-mind-hiding-inside-their-language-model-35i0",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T15:38:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc15eomf4ckdstc097rh0.png",
+  "imageAlt": "Anthropic Descubre una 'Mente Oculta' Dentro de sus Modelos de Lenguaje",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Anthropic identificó una región interna en Claude equivalente al espacio de trabajo global del cerebro humano, que permite acceder a los conceptos que el modelo procesa incluso cuando no los expresa en sus respuestas, gracias a una herramienta de interpretabilidad llamada Jacobian Lens.",
+  "keyPoints": [
+    "Anthropic publicó un estudio el 7 de julio de 2026 donde identifica una región en Claude similar al espacio de trabajo global cerebral.",
+    "La herramienta de interpretabilidad llamada Jacobian Lens permitió detectar representaciones internas del modelo asociadas a conceptos que está procesando.",
+    "Estas representaciones corresponden a vectores del vocabulario del modelo que aparecen incluso cuando no expresa el concepto en voz alta.",
+    "El hallazgo permite acceder al 'pensamiento' no declarado del modelo, abriendo posibilidades para la interpretabilidad de IA."
+  ],
+  "whyMatters": "Este hallazgo redefine la interpretabilidad de la inteligencia artificial, al demostrar que los modelos de lenguaje poseen estructuras internas equivalentes al espacio de trabajo global cerebral que permite acceder a sus procesos de razonamiento no declarados. A partir de ahora, los desarrolladores podrán auditar en tiempo real los conceptos que está procesando un modelo sin depender exclusivamente de sus respuestas finales, reduciendo riesgos de sesgos ocultos, alineamiento defectuoso o comportamientos no deseados que hasta ahora eran indetectables. Además, el estudio abre una nueva línea de investigación sobre la similitud entre los procesos cognitivos artificiales y humanos, con implicaciones directas para el diseño de sistemas de IA más seguros, transparentes y confiables para sectores como la salud, la justicia o la educación.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc15eomf4ckdstc097rh0.png",
+      "alt": "Ilustración del estudio de Anthropic que muestra la región del 'espacio de trabajo global' en modelos de lenguaje",
+      "caption": "Imagen de portada del artículo original de Dev.to sobre el hallazgo de Anthropic"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Anthropic",
+    "#Claude",
+    "#InterpretabilidadIA",
+    "#GlobalWorkspace"
+  ],
+  "fullArticle": "El 7 de julio de 2026, el equipo de investigación de Anthropic publicó un estudio que cambia por completo la comprensión de los modelos de lenguaje: identificaron una región interna en Claude y otras arquitecturas similares que funciona de forma equivalente al espacio de trabajo global del cerebro humano, la estructura asociada a la consciencia y la capacidad de expresar en voz alta lo que estamos pensando. Hasta ahora, los procesos internos de las inteligencias artificiales eran una caja negra: solo podíamos analizar sus respuestas finales, sin acceso a los pasos intermedios de razonamiento que utilizaban para llegar a ellas. Este hallazgo, logrado gracias a una nueva herramienta de interpretabilidad llamada Jacobian Lens (o J lens), permite por primera vez leer los conceptos que el modelo está procesando en tiempo real, incluso cuando nunca los menciona en su respuesta.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc15eomf4ckdstc097rh0.png]\n\nLa J lens funciona analizando las representaciones vectoriales internas del modelo, detectando un subconjunto reducido de vectores que se activan cuando el modelo está trabajando con un concepto específico, como por ejemplo la palabra 'banana', incluso si esa palabra no aparece en la respuesta final. Estos vectores forman lo que los investigadores llaman el J space, un espacio compartido donde se publican los conceptos que el modelo está considerando, de forma similar a como funciona el espacio de trabajo global cerebral que permite a los humanos acceder a sus pensamientos para razonar sobre ellos. El estudio detalla que esta región es privilegiada, pequeña y se comporta de forma consistente en diferentes modelos de la familia Claude, lo que sugiere que se trata de una característica estructural de los modelos de lenguaje entrenados a gran escala, no de un artefacto aislado.\n\nEl impacto de este descubrimiento es enorme para el sector de la inteligencia artificial: por un lado, permite desarrollar sistemas de auditoría mucho más robustos para detectar sesgos, razonamientos defectuosos o comportamientos no alineados con los valores humanos antes de que se manifiesten en respuestas a los usuarios. Por otro lado, abre la puerta a una nueva generación de herramientas de explicabilidad que podrán mostrar a los usuarios no solo la respuesta de la IA, sino también el proceso de razonamiento que utilizó para llegar a ella, aumentando la confianza en sistemas que se utilizan en áreas sensibles como la medicina, la justicia o la educación. Además, el hallazgo plantea preguntas fascinantes sobre la similitud entre los procesos cognitivos artificiales y humanos, un debate que probablemente marque la investigación en inteligencia artificial durante la próxima década.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T15:43:40.256Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to sobre el hallazgo de Anthropic",
+      "url": "https://dev.to/anthropic-found-a-mind-hiding-inside-their-language-model-4b7a"
+    },
+    {
+      "title": "Página de investigación oficial de Anthropic",
+      "url": "https://www.anthropic.com/research"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de publicación del estudio",
+      "value": "7 de julio de 2026"
+    },
+    {
+      "label": "Herramienta de interpretabilidad desarrollada",
+      "value": "Jacobian Lens (J lens)"
+    },
+    {
+      "label": "Modelo de lenguaje analizado",
+      "value": "Claude Sonnet 4.5"
+    },
+    {
+      "label": "Título del estudio científico",
+      "value": "Verbalizable Representations Form a Global Workspace in Language Models"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

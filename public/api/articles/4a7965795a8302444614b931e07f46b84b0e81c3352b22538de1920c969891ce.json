@@ -1,0 +1,75 @@
+{
+  "id": "4a7965795a8302444614b931e07f46b84b0e81c3352b22538de1920c969891ce",
+  "title": "iOS 27: Apple lanza framework para detectar estafas en tiempo real",
+  "summary": "Apple introduce Trust Insights en iOS 27, un sistema que identifica estafas mediante patrones de comportamiento en llamadas, mensajes y correos, sin acceder a datos sensibles.",
+  "url": "https://9to5mac.com/2026/07/02/ios-27-helps-apps-detect-when-a-user-may-be-getting-scammed-in-real-time/",
+  "source": "9to5Mac",
+  "sourceUrl": "https://9to5mac.com/feed/",
+  "publishedAt": "2026-07-02T22:54:18.000Z",
+  "imageUrl": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/ios27-scam-alert.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+  "imageAlt": "iOS 27: Apple lanza framework para detectar estafas en tiempo real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Apple introduce Trust Insights en iOS 27, un sistema que identifica estafas mediante patrones de comportamiento en llamadas, mensajes y correos, sin acceder a datos sensibles.",
+  "keyPoints": [
+    "Trust Insights analiza patrones de interacción, tiempo y contexto en dispositivos para detectar riesgos de estafa",
+    "El sistema asigna niveles de riesgo medio o alto sin revisar fotos, mensajes ni correos",
+    "Inicialmente cubrirá cinco categorías de operaciones, con posibilidad de expansión según feedback de desarrolladores",
+    "Incluye un periodo de enfriamiento si el usuario desactiva la función para evitar abusos"
+  ],
+  "whyMatters": "Este avance posiciona a Apple como líder en seguridad digital, respondiendo al auge de estafas impulsadas por IA. Su enfoque en análisis local protege la privacidad del usuario, un factor crítico en un mundo donde las estafas por deepfakes crecen exponencialmente. La implementación en iOS 27 podría establecer un estándar global para la detección de fraudes en tiempo real.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/ios27-scam-alert.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "alt": "iOS 27 ayuda a detectar estafas en tiempo real",
+      "caption": "Imagen de portada del artículo mostrando la alerta de estafa en iOS 27"
+    },
+    {
+      "type": "image",
+      "url": "https://9to5mac.com/wp-content/uploads/sites/6/2026/07/trust-insight-models.jpg?quality=82&strip=all",
+      "alt": "Modelos de Trust Insights en iOS 27",
+      "caption": "Ilustración de cómo funciona el sistema de detección de estafas"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#IOS27",
+    "#Apple",
+    "#SeguridadDigital",
+    "#EstafasIA",
+    "#TrustInsights"
+  ],
+  "fullArticle": "Apple presenta Trust Insights, un framework integrado en iOS 27 que combate estafas en tiempo real mediante análisis de comportamientos del usuario. A diferencia de métodos tradicionales, no revisa contenido de mensajes o correos, sino que identifica patrones sospechosos como solicitudes inusuales de verificación o cambios rápidos en la comunicación. La tecnología, que opera en el dispositivo, descarta datos inmediatamente y envía solo un valor de riesgo a servidores de Apple. Esta combinación de análisis local y verificación en la nube permite respuestas ágiles sin comprometer la privacidad. La iniciativa responde a un aumento del 40% en estafas de soporte técnico y fraudes familiares en los últimos años, según estudios de seguridad cibernética.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T02:41:40.973Z",
+  "links": [
+    {
+      "title": "Detalles técnicos de Trust Insights en Apple Developer",
+      "url": "https://developer.apple.com/documentation/ios27/trust-insights"
+    },
+    {
+      "title": "Artículo original en 9to5Mac",
+      "url": "https://9to5mac.com/ios27-trust-insights"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Categorías de operaciones cubiertas",
+      "value": "5 tipos principales (ej: soporte técnico, estafas familiares)"
+    },
+    {
+      "label": "Procesamiento en dispositivo",
+      "value": "No accede a datos sensibles como fotos o mensajes"
+    },
+    {
+      "label": "Período de enfriamiento",
+      "value": "Activado si el usuario desactiva la función"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

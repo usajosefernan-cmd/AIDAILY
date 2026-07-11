@@ -1,0 +1,77 @@
+{
+  "id": "dd05758d6fb34b4b78fc3bc31a7d27defe599df52cfe82904a3386e6282b609b",
+  "title": "Los NFTs de Solana van más allá de los monos de perfil: son tokens programables que redefinen la propiedad digital",
+  "summary": "Un desarrollador con experiencia en Web2 comparte su descubrimiento al crear un NFT en Solana: estos activos no son solo imágenes coleccionables, sino tokens con reglas programables únicas, y las nuevas extensiones de token permiten integrar funcionalidades directamente en el token sin depender exclusivamente de protocolos externos como Metaplex.",
+  "url": "https://dev.to/akeempalmer/my-first-look-at-nfts-on-solana-dj9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T23:56:45.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbkgw55hwr80gy7d6nkrx.png",
+  "imageAlt": "Los NFTs de Solana van más allá de los monos de perfil: son tokens programables que redefinen la propiedad digital",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador con experiencia en Web2 comparte su descubrimiento al crear un NFT en Solana: estos activos no son solo imágenes coleccionables, sino tokens con reglas programables únicas, y las nuevas extensiones de token permiten integrar funcionalidades directamente en el token sin depender exclusivamente de protocolos externos como Metaplex.",
+  "keyPoints": [
+    "Los NFTs en Solana no son objetos especiales, sino tokens configurados con suministro de 1, 0 decimales y autoridad de acuñación eliminada para evitar copias.",
+    "Las extensiones de token de Solana permiten integrar funcionalidades como metadatos, grupos de colección y lógica de negocio directamente en el token, sin depender de frameworks externos.",
+    "Antes de las extensiones de token, el protocolo Metaplex era el estándar de facto para crear y gestionar NFTs en Solana, definiendo reglas de metadatos y colecciones.",
+    "El autor redefine los NFTs como propiedad digital programable, con aplicaciones más allá de los coleccionables: entradas, membresías, certificados, activos de juegos y más."
+  ],
+  "whyMatters": "Este cambio de paradigma en la concepción de los NFTs en Solana elimina la dependencia de protocolos terceros, reduciendo costos de desarrollo y aumentando la interoperabilidad entre proyectos. Al integrar funcionalidades directamente en el token, se abren posibilidades para casos de uso reales que trascienden los coleccionables digitales, como la emisión de entradas antifraude, certificados académicos verificables o activos dentro de ecosistemas de juego. Para desarrolladores y empresas, esto supone una oportunidad para construir soluciones de propiedad digital más seguras, escalables y accesibles, sin necesidad de dominar herramientas externas complejas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbkgw55hwr80gy7d6nkrx.png",
+      "alt": "Imagen de portada del artículo sobre NFTs en Solana, con un diseño abstracto de bloques de blockchain y tokens digitales",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Solana",
+    "#NFTs",
+    "#TokenExtensions",
+    "#Metaplex",
+    "#PropiedadDigital"
+  ],
+  "fullArticle": "Durante años, la percepción popular de los tokens no fungibles (NFTs) estuvo dominada por imágenes de monos generados aleatoriamente y perfiles de redes sociales que alcanzaban valor solo por efecto de la especulación. Sin embargo, esta visión se derrumbó para un desarrollador con experiencia en Web2 cuando decidió construir su propio NFT en la red Solana: lejos de ser simples archivos JPEG, estos activos son tokens con reglas programables únicas que definen su funcionamiento y escasez. Su experiencia, compartida en un artículo de Dev.to, desmitifica uno de los conceptos más malinterpretados del ecosistema blockchain y explica cómo la evolución de las herramientas de desarrollo en Solana está ampliando las posibilidades de los NFTs más allá de los coleccionables digitales.\n\nLa primera sorpresa del desarrollador fue descubrir que no existe un 'objeto NFT' especial en la arquitectura de Solana: un NFT no es más que un token configurado con parámetros específicos que le otorgan su carácter no fungible. Para crearlo, se establece un suministro total de 1 unidad, se desactivan los decimales para evitar que se divida en fracciones, y se elimina la autoridad de acuñación después de su creación, de forma que no se puedan generar copias adicionales. Los metadatos, por su parte, son los que le dan su identidad: almacenan información como el nombre, la descripción, la imagen y la colección a la que pertenece, sin necesidad de estructuras externas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbkgw55hwr80gy7d6nkrx.png]\n\nAntes de la llegada de las Extensiones de Token de Solana, la mayoría de los proyectos de NFTs dependían de Metaplex, un protocolo de código abierto que se convirtió en el estándar de facto para la creación y gestión de estos activos. Metaplex proporcionaba reglas estandarizadas para metadatos, colecciones y derechos de creadores, facilitando que incluso desarrolladores sin experiencia en blockchain pudieran lanzar sus propios proyectos. Sin embargo, esta dependencia de un framework externo suponía una capa adicional de complejidad y posibles puntos de fallo.\n\nLas nuevas Extensiones de Token de Solana cambian esta dinámica por completo: permiten incorporar funcionalidades como el almacenamiento de metadatos, la gestión de grupos de colección y la implementación de lógica de negocio personalizada directamente en el propio token, sin necesidad de recurrir a herramientas externas. Entre las extensiones que exploró el desarrollador se encuentran la Extensión de Metadatos, que guarda toda la información identificativa del NFT, y las extensiones de Grupo y Miembro de Grupo, que facilitan la organización de colecciones de forma nativa. Esta integración directa reduce la fricción para los desarrolladores y mejora la compatibilidad con todo el ecosistema de Solana.\n\nEl hallazgo más revelador para el autor fue entender que los NFTs no son un tipo de activo completamente distinto a los tokens tradicionales: son simplemente tokens con reglas específicas y metadatos asociados. Una vez que adoptó este modelo mental, todo el ecosistema de NFTs cobró sentido para él, pasando de verlo como un espacio dominado por especuladores a un campo de oportunidades para la propiedad digital programable. Ahora visualiza casos de uso que van mucho más allá de los coleccionables: entradas a eventos antifraude, membresías exclusivas, certificados académicos verificables, activos dentro de videojuegos y cualquier otra aplicación que requiera demostrar la propiedad de un activo digital de forma segura y transparente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T00:06:24.910Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Extensiones de Token de Solana",
+      "url": "https://docs.solana.com/developing/token-extensions"
+    },
+    {
+      "title": "Documentación oficial del protocolo Metaplex para NFTs en Solana",
+      "url": "https://docs.metaplex.com/"
+    },
+    {
+      "title": "Página oficial de la red Solana",
+      "url": "https://solana.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Suministro estándar de un NFT en Solana",
+      "value": "1 unidad"
+    },
+    {
+      "label": "Decimales configurados en un NFT de Solana",
+      "value": "0"
+    },
+    {
+      "label": "Cantidad de extensiones de token analizadas en el artículo",
+      "value": "3 (Metadatos, Grupo, Miembro de Grupo)"
+    },
+    {
+      "label": "Protocolo estándar previo a las Extensiones de Token",
+      "value": "Metaplex"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

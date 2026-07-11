@@ -1,0 +1,69 @@
+{
+  "id": "459b1d9c8cefc706c6929a2c44894e0bed6e8ae177267e5ce37a96560e2cdded",
+  "title": "Claude Code deja huellas invisibles: marca esteganográficamente cada solicitud a sus modelos",
+  "summary": "La herramienta de programación de Anthropic inserta marcas ocultas en las peticiones, permitiendo rastrear su origen y generando controversia sobre privacidad.",
+  "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-30T15:44:24.000Z",
+  "imageUrl": "https://thereallo.dev/og/images/claude-code-prompt-steganography.png",
+  "imageAlt": "Claude Code deja huellas invisibles: marca esteganográficamente cada solicitud a sus modelos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La herramienta de programación de Anthropic inserta marcas ocultas en las peticiones, permitiendo rastrear su origen y generando controversia sobre privacidad.",
+  "keyPoints": [
+    "Claude Code, la herramienta de Anthropic para desarrollo asistido, implementa marcas esteganográficas en todas las solicitudes enviadas a sus modelos de IA.",
+    "La esteganografía permite ocultar información dentro de los datos de la petición sin alterar su funcionalidad ni su contenido aparente.",
+    "Esta técnica facilita el rastreo de consultas para detectar abusos, plagio o uso no autorizado de la plataforma.",
+    "La medida ha generado debate sobre la privacidad de los desarrolladores y la transparencia en el uso de herramientas de IA."
+  ],
+  "whyMatters": "Esta práctica establece un precedente en la industria de la IA sobre cómo las plataformas pueden monitorear el uso de sus herramientas sin el conocimiento explícito de los usuarios. Aunque la intención puede ser prevenir abusos, también plantea interrogantes éticos sobre la transparencia y el consentimiento. Los desarrolladores deben estar al tanto de que sus consultas podrían ser rastreables, lo que podría influir en la confianza y adopción de estas herramientas en entornos sensibles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://thereallo.dev/og/images/claude-code-prompt-steganography.png",
+      "alt": "Imagen que ilustra la esteganografía en Claude Code",
+      "caption": "Claude Code implementa marcas esteganográficas en las solicitudes (Imagen: thereallo.dev)"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeCode",
+    "#Anthropic",
+    "#Esteganografia",
+    "#InteligenciaArtificial",
+    "#PrivacidadDigital"
+  ],
+  "fullArticle": "La herramienta de programación Claude Code, desarrollada por Anthropic, ha sido descubierta insertando marcas esteganográficas invisibles en cada solicitud enviada a sus modelos de inteligencia artificial. Esta técnica, tradicionalmente usada en seguridad informática para ocultar mensajes dentro de archivos, ahora se aplica al campo de la IA generativa, permitiendo a la plataforma rastrear el origen de las consultas sin que el usuario lo perciba. La esteganografía en este contexto consiste en modificar ligeramente los datos de entrada, como espacios o caracteres no visibles, para incrustar un identificador único que puede ser recuperado por Anthropic. Este método no afecta el resultado de la consulta ni la calidad del código generado, pero deja una 'huella digital' que permite a la empresa monitorear el uso de su servicio, detectar posibles abusos o filtrar contenido no autorizado.\n\n[MULTIMEDIA: https://thereallo.dev/og/images/claude-code-prompt-steganography.png]\n\nLa medida ha encendido las alarmas en la comunidad de desarrolladores, que advierten sobre la falta de transparencia y el posible riesgo para la privacidad. Si bien Anthropic argumenta que esta práctica es necesaria para combatir el uso malintencionado, muchos usuarios cuestionan que no se haya informado claramente, vulnerando así la confianza y el consentimiento informado. La situación recuerda a debates anteriores sobre la recopilación de datos en herramientas de IA, donde la línea entre la seguridad y la vigilancia se vuelve difusa. De cara al futuro, este caso podría sentar un precedente para otras plataformas de IA, que podrían adoptar medidas similares de marcado invisible. Los desarrolladores y empresas deberán evaluar cuidadosamente los términos de servicio de estas herramientas, considerando el riesgo de que sus consultas sensibles queden registradas. La industria necesita un debate ético y regulatorio que equilibre la innovación con la protección de la privacidad, evitando que la esteganografía se convierta en una herramienta de vigilancia encubierta.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T03:49:55.352Z",
+  "links": [
+    {
+      "title": "Hilo original de discusión en Hacker News",
+      "url": "https://news.ycombinator.com/item?id=48734373"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Técnica de marcado",
+      "value": "Esteganografía invisible en solicitudes"
+    },
+    {
+      "label": "Herramienta afectada",
+      "value": "Claude Code de Anthropic"
+    },
+    {
+      "label": "Riesgo principal",
+      "value": "Rastreo de consultas sin consentimiento explícito"
+    },
+    {
+      "label": "Ámbito de aplicación",
+      "value": "Todas las interacciones con modelos de IA de Anthropic"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

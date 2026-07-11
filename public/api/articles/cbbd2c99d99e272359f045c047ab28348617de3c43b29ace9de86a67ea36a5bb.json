@@ -1,0 +1,79 @@
+{
+  "id": "cbbd2c99d99e272359f045c047ab28348617de3c43b29ace9de86a67ea36a5bb",
+  "title": "El Classic ASP renace en 2026: ejecuta la tecnología de los 90 en Linux sin licencias de Windows",
+  "summary": "AxonASP, un servidor multiplataforma escrito en Go, permite ejecutar Classic ASP en Linux, macOS y Windows, eliminando el aprisionamiento tecnológico a IIS y reduciendo costos de infraestructura al funcionar en máquinas de solo 512 MB de RAM.",
+  "url": "https://dev.to/lucas_guimaraes/rodando-classic-asp-no-linux-em-2026-1dep",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T20:41:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa6ljq5qinjiqmpeeu3yh.png",
+  "imageAlt": "El Classic ASP renace en 2026: ejecuta la tecnología de los 90 en Linux sin licencias de Windows",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "AxonASP, un servidor multiplataforma escrito en Go, permite ejecutar Classic ASP en Linux, macOS y Windows, eliminando el aprisionamiento tecnológico a IIS y reduciendo costos de infraestructura al funcionar en máquinas de solo 512 MB de RAM.",
+  "keyPoints": [
+    "AxonASP es un servidor multiplataforma escrito en Go que permite ejecutar Classic ASP en Linux, macOS y Windows sin dependencias de IIS.",
+    "La solución elimina el aprisionamiento tecnológico histórico de Classic ASP, permitiendo contenerizar aplicaciones legadas con Docker en entornos Linux.",
+    "El servidor requiere solo 512 MB de RAM para funcionar, lo que reduce drásticamente los costos de infraestructura al eliminar licencias de Windows.",
+    "El proyecto es de código abierto, disponible en GitHub, e incluye utilidades para integración con systemd y proxy reverso con Nginx para producción."
+  ],
+  "whyMatters": "Miles de empresas en todo el mundo mantienen sistemas críticos desarrollados en Classic ASP que no se pueden migrar a tecnologías modernas por costos o complejidad operativa. AxonASP les permite modernizar su infraestructura sin reescribir una sola línea de código, eliminando gastos en licencias de Windows y reduciendo los requisitos de hardware a instancias de nube de gama baja. Esta solución no solo alarga la vida útil de activos digitales estables, sino que también abre la puerta a adoptar prácticas de despliegue cloud nativo como la contenerización, sin inversiones millonarias en proyectos de migración.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa6ljq5qinjiqmpeeu3yh.png",
+      "alt": "Portada del artículo sobre ejecución de Classic ASP en Linux en 2026",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de la plataforma DEV Community",
+      "caption": "Logotipo de DEV Community, la comunidad de desarrolladores donde se publicó el contenido original"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ClassicASP",
+    "#AxonASP",
+    "#DesarrolloWeb",
+    "#Linux",
+    "#InfraestructuraCloud"
+  ],
+  "fullArticle": "El Classic ASP, la tecnología de desarrollo web lanzada por Microsoft en 1996, sigue más vivo que nunca en 2026. Lejos de ser una reliquia obsoleta, miles de empresas en todo el mundo aún dependen de esta herramienta para mantener en funcionamiento sistemas internos, herramientas corporativas legadas e incluso páginas públicas, gracias a su estabilidad probada y su simplicidad de implementación. Durante décadas, el mayor obstáculo para su uso era el aprisionamiento tecnológico: para ejecutar aplicaciones en Classic ASP era imprescindible contar con servidores Windows y el servicio IIS, lo que generaba costos elevados en licencias y limitaba la flexibilidad de infraestructura.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa6ljq5qinjiqmpeeu3yh.png]\n\nEsa barrera se ha roto con el lanzamiento de AxonASP, un servidor multiplataforma escrito en GoLang que permite ejecutar aplicaciones de Classic ASP en entornos Linux, macOS y Windows sin necesidad de IIS. La solución, de código abierto, no solo elimina la dependencia de los productos de Microsoft, sino que también permite contenerizar las aplicaciones legadas con Docker e implementarlas en instancias de infraestructura ultra ligeras. De hecho, una máquina virtual de nivel básico como la T2.nano de AWS, con solo 512 MB de RAM, es más que suficiente para alojar sitios desarrollados en esta tecnología, lo que reduce drásticamente los costos operativos al eliminar el pago de licencias de Windows.\n\nEl proyecto, disponible de forma gratuita en GitHub, incluye paquetes de instalación para las principales distribuciones Linux (.rpm, .deb, .apk) y un proceso de configuración sencillo que se apoya en un archivo TOML para ajustar puertos, rutas y comportamiento del servidor. Para entornos de producción, se recomienda usar un proxy reverso con Nginx para gestionar el tráfico, el cifrado SSL y la seguridad de la aplicación, mientras que el propio AxonASP incluye una utilidad para registrarlo como servicio systemd, garantizando que se inicie automáticamente con el sistema sin intervención manual.\n\nLa llegada de AxonASP no es solo un truco técnico para nostálgicos del desarrollo web: es una solución estratégica para miles de empresas que no pueden permitirse reescribir sus aplicaciones legadas en tecnologías modernas como ASP.NET, que consume alrededor de 300 MB de RAM solo para mostrar una landing page básica. Esta herramienta permite alargar la vida útil de sistemas estables y funcionales, reducir costos de infraestructura en hasta un 70% y modernizar el despliegue de aplicaciones sin invertir meses en migraciones complejas. En un ecosistema donde la optimización de recursos y la reducción de gastos operativos son prioritarios, Classic ASP deja de ser una tecnología obsoleta para convertirse en una opción viable, rápida y sorprendentemente económica para 2026.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T21:05:00.839Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de AxonASP en GitHub",
+      "url": "https://github.com/guimaraeslucas/axonasp"
+    },
+    {
+      "title": "Artículo original publicado en Dev.to",
+      "url": "https://dev.to/guimaraeslucas/rodando-classic-asp-no-linux-em-2026"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Requisito mínimo de RAM",
+      "value": "512 MB"
+    },
+    {
+      "label": "Ahorro en licencias de sistema operativo",
+      "value": "Hasta el 100% al eliminar costos de Windows"
+    },
+    {
+      "label": "Instancia de AWS compatible",
+      "value": "T2.nano de AWS"
+    },
+    {
+      "label": "Consumo de RAM de una landing page en ASP.NET",
+      "value": "300 MB"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

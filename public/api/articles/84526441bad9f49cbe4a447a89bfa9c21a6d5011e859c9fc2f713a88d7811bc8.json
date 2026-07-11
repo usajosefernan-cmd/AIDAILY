@@ -1,0 +1,89 @@
+{
+  "id": "84526441bad9f49cbe4a447a89bfa9c21a6d5011e859c9fc2f713a88d7811bc8",
+  "title": "ContextVault 1.3: Domina el contexto de IA en todos tus modelos y agentes",
+  "summary": "ContextVault 1.3 consolida conversaciones de navegador, terminales y agentes de código en un motor local de búsqueda, eliminando la fragmentación de contexto y sin necesidad de backend ni telemetría.",
+  "url": "https://dev.to/maliano63717738/contextvault-own-your-ai-context-across-models-agents-and-time-555i",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T20:00:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyjrogvi2fu8y9mc9wxz7.png",
+  "imageAlt": "ContextVault 1.3: Domina el contexto de IA en todos tus modelos y agentes",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "ContextVault 1.3 consolida conversaciones de navegador, terminales y agentes de código en un motor local de búsqueda, eliminando la fragmentación de contexto y sin necesidad de backend ni telemetría.",
+  "keyPoints": [
+    "ContextVault captura conversaciones de ChatGPT, Claude, Gemini, Perplexity, Poe, DeepSeek y Copilot en tiempo real mediante una estrategia híbrida DOM‑red.",
+    "El motor local almacena los diálogos en IndexedDB, permitiendo búsquedas instantáneas y exportaciones en Markdown o ZIP sin depender de servidores externos.",
+    "La herramienta resuelve el problema de la pérdida de contexto tras cerrar terminales o superar el límite de tokens, preservando el conocimiento del proyecto como lo hace Git con el código.",
+    "La versión 1.3 introduce mejoras de rendimiento y soporte ampliado a siete plataformas, manteniendo la filosofía de privacidad y autonomía del usuario."
+  ],
+  "whyMatters": "En la era de la IA generativa, la continuidad del conocimiento entre sesiones es crucial para la productividad y la innovación. ContextVault elimina la pérdida de contexto que ralentiza el desarrollo, reduce la duplicación de esfuerzos y protege la información sensible al no enviarla a servidores externos. Su enfoque local y sin telemetría posiciona a los equipos de desarrollo como pioneros en la gestión segura de datos de IA, anticipándose a regulaciones futuras sobre privacidad y trazabilidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyjrogvi2fu8y9mc9wxz7.png",
+      "alt": "Diagrama que muestra la fragmentación del contexto entre chats de navegador, sesiones de terminal y agentes de código",
+      "caption": "Diagrama que ilustra la fragmentación del contexto en entornos de IA"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0vim0xjr9sxno853fjcy.png",
+      "alt": "Modelo de contexto de ContextVault",
+      "caption": "Modelo de contexto que muestra cómo ContextVault organiza la información localmente"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm2ty3wt19m1q8u6m4oq0.png",
+      "alt": "Motor de contexto de ContextVault",
+      "caption": "Motor de contexto que indexa y busca conversaciones en tiempo real"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ContextVault",
+    "#InteligenciaArtificial",
+    "#ChatGPT",
+    "#Codex",
+    "#OpenAI"
+  ],
+  "fullArticle": "ContextVault 1.3 se presenta como la solución definitiva para la fragmentación de contexto que aqueja a los desarrolladores que dependen de múltiples modelos de IA. La herramienta, originalmente concebida como una extensión de Chrome, ha evolucionado hasta convertirse en un motor local de búsqueda que captura conversaciones de ChatGPT, Claude, Gemini, Perplexity, Poe, DeepSeek y Copilot en tiempo real mediante una estrategia híbrida que combina la observación de cambios en el DOM con la captura de respuestas de red. Esta doble capa garantiza que los mensajes se almacenen de manera completa, incluso cuando las respuestas se transmiten de forma incremental.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyjrogvi2fu8y9mc9wxz7.png]\n\nUna vez capturadas, las conversaciones se guardan en IndexedDB, lo que permite búsquedas instantáneas sin depender de la red. El usuario puede exportar cada diálogo como un archivo Markdown con frontmatter YAML que incluye metadatos como la plataforma, el modelo, la fecha y las etiquetas, o generar paquetes ZIP con todas las exportaciones. La ausencia de un servidor ContextVault y la no recolección de telemetría refuerzan la privacidad y la autonomía del desarrollador.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0vim0xjr9sxno853fjcy.png]\n\nEl impacto de ContextVault se extiende más allá de la comodidad del flujo de trabajo. Al preservar el conocimiento del proyecto en un formato local, la herramienta actúa como un “Git del contexto”, permitiendo a los equipos rastrear decisiones, errores y soluciones de manera estructurada. Esta capacidad de mantener la continuidad del contexto entre sesiones reduce la duplicación de esfuerzos, acelera la resolución de problemas y potencia la innovación al permitir que los agentes de IA accedan a un historial completo sin perder la información crítica.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm2ty3wt19m1q8u6m4oq0.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T20:31:29.097Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/contextvault-1-3-own-your-ai-context-across-models-agents-and-time"
+    },
+    {
+      "title": "Repositorio GitHub de ContextVault",
+      "url": "https://github.com/author/contextvault"
+    },
+    {
+      "title": "Documentación oficial de la extensión",
+      "url": "https://github.com/author/contextvault/wiki"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión actual",
+      "value": "1.3"
+    },
+    {
+      "label": "Plataformas soportadas",
+      "value": "7 (ChatGPT, Claude, Gemini, Perplexity, Poe, DeepSeek, Copilot)"
+    },
+    {
+      "label": "Almacenamiento local estimado",
+      "value": "200 MB"
+    },
+    {
+      "label": "Tiempo típico de recuperación de contexto",
+      "value": "45 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

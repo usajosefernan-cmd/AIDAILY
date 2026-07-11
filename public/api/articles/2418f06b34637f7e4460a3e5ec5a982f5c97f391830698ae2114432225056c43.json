@@ -1,0 +1,79 @@
+{
+  "id": "2418f06b34637f7e4460a3e5ec5a982f5c97f391830698ae2114432225056c43",
+  "title": "Los agentes de IA aprenden a crear sus propios archivos SKILL.md",
+  "summary": "En 2025 se estableció un estándar abierto llamado Agent Skills que permite a los agentes de IA describir tareas mediante un sencillo archivo Markdown. Ahora, investigaciones de 2026 demuestran que estos agentes pueden generar automáticamente sus propias habilidades, reduciendo la carga de trabajo humano y optimizando el uso de tokens.",
+  "url": "https://dev.to/shridhar_shah2297/agents-are-learning-to-write-their-own-skillmd-files-3foo",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T21:53:22.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "Los agentes de IA aprenden a crear sus propios archivos SKILL.md",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En 2025 se estableció un estándar abierto llamado Agent Skills que permite a los agentes de IA describir tareas mediante un sencillo archivo Markdown. Ahora, investigaciones de 2026 demuestran que estos agentes pueden generar automáticamente sus propias habilidades, reduciendo la carga de trabajo humano y optimizando el uso de tokens.",
+  "keyPoints": [
+    "El estándar Agent Skills se lanzó en 2025 y es compatible con más de 30 herramientas de IA, incluyendo Claude Code y Copilot.",
+    "Los agentes pueden generar un archivo SKILL.md tras resolver una tarea, reduciendo el esfuerzo total en casi la mitad y sin necesidad de claves API.",
+    "El proceso de carga progresiva de habilidades ahorra hasta 560 tokens frente a 1500 tokens cuando se cargan 50 habilidades en el contexto.",
+    "Investigaciones como MUSE-Autoskill y Skill-Pro demuestran que los agentes mejoran continuamente su biblioteca de habilidades a medida que la utilizan."
+  ],
+  "whyMatters": "Esta evolución marca un hito en la autonomía de los agentes de IA, pues les permite aprender de sus propias experiencias y optimizar recursos computacionales. Al reducir la dependencia de humanos para crear manualmente cada habilidad, se acelera la adopción de IA en entornos empresariales y de desarrollo. Además, el ahorro de tokens implica costos operativos menores y mayor escalabilidad, lo que abre nuevas posibilidades para la integración de IA en flujos de trabajo complejos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ejemplo de archivo SKILL.md en un repositorio de agente de IA",
+      "caption": "El archivo SKILL.md contiene solo un nombre y una breve descripción, permitiendo que cualquier agente de IA lo reconozca y ejecute sin configuraciones adicionales."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo de Google AI, partner oficial de modelos AI",
+      "caption": "Google AI es uno de los socios oficiales que integra el estándar Agent Skills en sus plataformas, ampliando la adopción del formato."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentSkills",
+    "#IA",
+    "#OpenStandards",
+    "#ClaudeCode",
+    "#MUSEAutoskill"
+  ],
+  "fullArticle": "El 2025 marcó el nacimiento de un estándar abierto que simplificó la enseñanza de tareas a los agentes de IA: el archivo SKILL.md. Este documento, escrito en Markdown, contiene únicamente un nombre y una descripción breve, lo que permite a herramientas como Claude Code, Cursor o Copilot reconocer y ejecutar la habilidad sin necesidad de SDKs ni configuraciones complejas. La comunidad de desarrolladores adoptó rápidamente el formato, y la especificación oficial publicada en agentskills.io ahora soporta más de 30 plataformas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEn 2026, la investigación avanza hacia la generación automática de estas habilidades. Un agente que resuelve una tarea por primera vez crea un SKILL.md con la solución exacta, lo que le permite reutilizarla en futuras ocasiones. Este método no solo reduce la carga de trabajo humano, sino que también ahorra recursos computacionales: mientras que cargar 50 habilidades en el contexto de un agente consume alrededor de 1500 tokens, el enfoque progresivo de SKILL.md requiere solo 560 tokens. El ahorro se vuelve más pronunciado a medida que la biblioteca de habilidades crece.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nEl impacto de esta tecnología es profundo. Los agentes no solo aprenden a usar herramientas externas (MCP), sino que también descubren cómo emplearlas de manera eficiente, creando un ciclo de mejora continua. Proyectos como Voyager en 2023 demostraron que un agente podía aprender a jugar Minecraft y guardar su código funcional como habilidades reutilizables. Hoy, con MUSE-Autoskill y Skill-Pro, la tendencia se generaliza, permitiendo que cualquier agente construya una biblioteca de habilidades que crece y se perfecciona con el tiempo.\n\nEl estándar abierto garantiza que el mismo archivo funcione sin modificaciones en distintas plataformas, evitando la dependencia de un único proveedor. Esta interoperabilidad es clave para la adopción masiva de IA en flujos de trabajo corporativos y de desarrollo, pues los equipos pueden crear y compartir habilidades sin preocuparse por la compatibilidad de herramientas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:04:48.265Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Especificación oficial de Agent Skills",
+      "url": "https://agentskills.io/specification"
+    },
+    {
+      "title": "MUSE-Autoskill en arXiv",
+      "url": "https://arxiv.org/abs/2605.27366"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Herramientas compatibles",
+      "value": "30+"
+    },
+    {
+      "label": "Ahorro de tokens",
+      "value": "560 vs 1500"
+    },
+    {
+      "label": "Crecimiento de biblioteca",
+      "value": "Incremental con cada tarea resuelta"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

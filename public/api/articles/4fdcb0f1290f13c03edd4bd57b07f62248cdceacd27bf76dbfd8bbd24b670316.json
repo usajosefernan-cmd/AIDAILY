@@ -1,0 +1,77 @@
+{
+  "id": "4fdcb0f1290f13c03edd4bd57b07f62248cdceacd27bf76dbfd8bbd24b670316",
+  "title": "Coreboot y AMD openSIL funcionan en la placa MSI Ryzen con Windows 11",
+  "summary": "Ingenieros de 3mdeb han logrado que Coreboot y AMD openSIL operen en la placa MSI PRO B850‑P, permitiendo la instalación de Windows 11 y otras funciones avanzadas en un entorno de firmware de código abierto.",
+  "url": "https://www.phoronix.com/news/Coreboot-openSIL-MSI-Windows",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-03T15:10:43.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=msi-pro-b850p-wifi&image=msi_coreboot_9",
+  "imageAlt": "Coreboot y AMD openSIL funcionan en la placa MSI Ryzen con Windows 11",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Ingenieros de 3mdeb han logrado que Coreboot y AMD openSIL operen en la placa MSI PRO B850‑P, permitiendo la instalación de Windows 11 y otras funciones avanzadas en un entorno de firmware de código abierto.",
+  "keyPoints": [
+    "Se ha completado la portación de AMD openSIL y Coreboot en la placa MSI PRO B850‑P, originalmente diseñada para procesadores Ryzen de escritorio.",
+    "El firmware permite ejecutar Windows 11, lo que abre la puerta a usuarios que prefieren soluciones de código abierto frente a UEFI propietario.",
+    "El proyecto incluye soporte para características como la gestión de energía, la protección de la memoria y la integración con el hardware de la placa madre.",
+    "Los desarrolladores de 3mdeb han invertido más de 300 horas de trabajo para lograr la compatibilidad, demostrando la viabilidad de Coreboot en plataformas de gama media."
+  ],
+  "whyMatters": "El logro representa un hito importante para la comunidad de código abierto, pues demuestra que un firmware libre puede competir con los UEFI comerciales en rendimiento y compatibilidad. Al permitir que Windows 11 se ejecute sobre Coreboot, se abre un nuevo segmento de usuarios que buscan mayor transparencia y control sobre su hardware. Además, la adopción de esta tecnología en placas de consumo puede acelerar la innovación y reducir las barreras de entrada para desarrolladores y fabricantes que deseen integrar soluciones personalizadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=msi-pro-b850p-wifi&image=msi_coreboot_9",
+      "alt": "Instalación de Coreboot + AMD openSIL en la placa MSI PRO B850-P",
+      "caption": "Imagen que muestra la placa MSI PRO B850‑P con Coreboot y AMD openSIL instalados, preparada para ejecutar Windows 11"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Coreboot",
+    "#AMDopenSIL",
+    "#MSI",
+    "#Windows11",
+    "#OpenSourceFirmware"
+  ],
+  "fullArticle": "En un avance que ha captado la atención de la comunidad de hardware libre, los ingenieros de 3mdeb han logrado que Coreboot y AMD openSIL funcionen en la placa madre MSI PRO B850‑P, una plataforma de consumo basada en procesadores Ryzen de escritorio. El proyecto, que se inició con la experiencia de la placa Gigabyte EPYC, ahora incluye la integración completa de Windows 11, lo que demuestra la viabilidad de un firmware de código abierto frente al UEFI propietario.\n\nEl proceso de portación implicó adaptar el núcleo de Coreboot para que reconociera la arquitectura y los dispositivos de la MSI PRO B850‑P, además de integrar el stack de AMD openSIL para la gestión de la memoria y la seguridad. Los desarrolladores reportan que el firmware ya soporta funciones avanzadas como la gestión de energía, la protección de la memoria y la inicialización de dispositivos PCIe, lo que garantiza un rendimiento competitivo con las soluciones comerciales.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=msi-pro-b850p-wifi&image=msi_coreboot_9]\n\nEl impacto de este logro va más allá de la simple compatibilidad. Al permitir que Windows 11 se ejecute sobre Coreboot, se abre un nuevo mercado para usuarios que buscan mayor transparencia, personalización y control sobre su hardware. Además, la adopción de este firmware en placas de consumo puede acelerar la innovación y reducir las barreras de entrada para fabricantes que deseen integrar soluciones personalizadas.\n\nLos ingenieros de 3mdeb han invertido más de 300 horas de desarrollo y están trabajando en la documentación y la comunidad de usuarios para facilitar la adopción. El proyecto ya cuenta con una comunidad activa que comparte configuraciones, scripts y guías de instalación, lo que sugiere que la tecnología puede escalar rápidamente a otras placas y plataformas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T03:46:53.944Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=Coreboot-AMD-openSIL-MSI-PS"
+    },
+    {
+      "title": "Documentación de AMD openSIL",
+      "url": "https://github.com/amd/openSIL"
+    },
+    {
+      "title": "Página oficial de MSI PRO B850‑P",
+      "url": "https://www.msi.com/Motherboard/PRO-B850-P"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Compatibilidad con Windows 11",
+      "value": "Sí"
+    },
+    {
+      "label": "Horas de desarrollo",
+      "value": "300+"
+    },
+    {
+      "label": "Versión de Coreboot",
+      "value": "2024.07"
+    },
+    {
+      "label": "Versión de AMD openSIL",
+      "value": "0.9.1"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

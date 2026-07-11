@@ -1,0 +1,72 @@
+{
+  "id": "7b6a3a517001a939e4bc75daa4230813b00b1806d4fc159cf02a6cde451429af",
+  "title": "Intenté ofuscar mi código Java antes de enviarlo a una IA — esto es lo que se rompió",
+  "summary": "Un desarrollador intentó ofuscar todos los identificadores de un proyecto Java para enviarlo a un asistente de IA sin revelar su lógica de negocio, pero se encontró con fallos en Spring Data y JPQL que demostraron que la ofuscación para IA es un problema de frameworks, no de reemplazo de cadenas.",
+  "url": "https://dev.to/genevieve_breton_cb795f52/i-tried-to-obfuscate-my-java-code-before-sending-it-to-ai-heres-what-broke-5615",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T17:22:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhlgypxghbvq5a0k12st5.png",
+  "imageAlt": "Intenté ofuscar mi código Java antes de enviarlo a una IA — esto es lo que se rompió",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador intentó ofuscar todos los identificadores de un proyecto Java para enviarlo a un asistente de IA sin revelar su lógica de negocio, pero se encontró con fallos en Spring Data y JPQL que demostraron que la ofuscación para IA es un problema de frameworks, no de reemplazo de cadenas.",
+  "keyPoints": [
+    "Un cliente añadió una cláusula que prohibía el uso de asistentes de IA en el código, por lo que el desarrollador ideó un sistema de ofuscación de identificadores con expresiones regulares.",
+    "La ofuscación rompió Spring Data, ya que los nombres de métodos como findByActiveTrue son consultas generadas automáticamente, no etiquetas renombrables sin perder su significado.",
+    "Las consultas JPQL personalizadas también fallaron, porque referencian nombres de clases que cambiaron tras la ofuscación, generando errores en tiempo de ejecución.",
+    "La solución requirió listas de exclusión para preservar nombres de métodos de Spring Data y consultas, tardando semanas en lograr que el proyecto funcionara correctamente."
+  ],
+  "whyMatters": "Este caso demuestra que la ofuscación de código para proteger la propiedad intelectual ante asistentes de IA no es una tarea de reemplazo de cadenas, sino que requiere comprender los contratos semánticos de los frameworks utilizados. Tiene implicaciones directas para empresas que quieren usar herramientas de IA sin exponer su lógica de negocio, ya que los enfoques superficiales generan fallos costosos. Además, evidencia la necesidad de desarrollar herramientas de ofuscación específicas para entornos de desarrollo con IA, que respeten las convenciones de los frameworks y no rompan la funcionalidad del código.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhlgypxghbvq5a0k12st5.png",
+      "alt": "Portada del artículo sobre ofuscación de código Java para asistentes de IA",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OfuscacionJava",
+    "#SpringData",
+    "#InteligenciaArtificial",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "El año pasado, un cliente incluyó una cláusula en el contrato del desarrollador que prohibía expresamente el uso de asistentes de IA en su base de código. Ante esta restricción, el profesional pensó que podía resolverlo con un sistema de ofuscación de identificadores basado en expresiones regulares: renombrar clases, métodos y campos por códigos como Cls_a1b2c3d4 o fld_e5f6a7b8, enviar el código ofuscado a Claude, y volver a renombrar todo una vez recibida la respuesta, sin que la IA accediera a la lógica de negocio real. Confiado en que la tarea le tomaría dos días para 500 líneas de código, se embarcó en el proyecto sin imaginar los obstáculos que encontraría.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhlgypxghbvq5a0k12st5.png]\n\nEl primer gran obstáculo apareció con Spring Data: los nombres de métodos como findByActiveTrue no son simples etiquetas, sino que la framework los convierte automáticamente en consultas SQL en el momento de creación de los beans. Al renombrar el método a mtd_a3f9b2c1, Spring intentaba buscar una propiedad con ese nombre en la entidad Invoice, lo que generaba un error en tiempo de ejecución que tardó varios días en diagnosticar. La lección fue clara: en este framework, el nombre del método es la consulta en sí misma, por lo que no se puede renombrar sin destruir su contenido semántico.\n\nEl segundo problema llegó con las consultas JPQL personalizadas, que referencian nombres de clases que cambiaron tras la ofuscación, generando fallos en tiempo de ejecución incluso cuando el código compilaba correctamente. Para solucionarlo, el desarrollador tuvo que crear listas de exclusión que preservaran los nombres de los métodos de Spring Data y las consultas personalizadas, tardando dos semanas en lograr que el proyecto compilara y un mes adicional en que todas las pruebas pasaran. Este caso evidencia que la ofuscación de código para uso con IA es un problema de comprensión de los contratos de los frameworks, no una tarea sencilla de reemplazo de cadenas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T17:53:39.533Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Spring Data JPA",
+      "url": "https://spring.io/projects/spring-data-jpa"
+    },
+    {
+      "title": "Documentación de JavaParser",
+      "url": "https://javaparser.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo total de desarrollo del sistema",
+      "value": "2 semanas para compilar, 1 mes para pruebas exitosas"
+    },
+    {
+      "label": "Tamaño del proyecto de prueba",
+      "value": "500 líneas de código"
+    },
+    {
+      "label": "Número de obstáculos principales encontrados",
+      "value": "2 (Spring Data, JPQL personalizado)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

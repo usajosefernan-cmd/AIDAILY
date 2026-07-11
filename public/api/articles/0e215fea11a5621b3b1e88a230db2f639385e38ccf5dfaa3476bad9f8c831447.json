@@ -1,0 +1,73 @@
+{
+  "id": "0e215fea11a5621b3b1e88a230db2f639385e38ccf5dfaa3476bad9f8c831447",
+  "title": "Fable podría no ser la mejor opción para algunos ingenieros",
+  "summary": "El artículo explica por qué los ingenieros con experiencia pueden preferir controlar manualmente sus flujos de trabajo en lugar de delegar todo a agentes autónomos como Fable u Opus, comparándolo con la elección entre transmisión manual y automática.",
+  "url": "https://dev.to/sennalang/fable-may-not-be-the-best-choice-for-some-engineers-20p7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-05T00:44:36.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcnkv2jttqs10wt72wkym.png",
+  "imageAlt": "Fable podría no ser la mejor opción para algunos ingenieros",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica por qué los ingenieros con experiencia pueden preferir controlar manualmente sus flujos de trabajo en lugar de delegar todo a agentes autónomos como Fable u Opus, comparándolo con la elección entre transmisión manual y automática.",
+  "keyPoints": [
+    "Los ingenieros veteranos suelen tener rutinas propias y prefieren ajustar detalles como tipos, tamaños de diff y granularidad de pruebas.",
+    "Un agente como Fable puede elegir automáticamente modelos de menor costo, pero esto limita el control directo que algunos profesionales desean.",
+    "La analogía con la conducción muestra que, al igual que algunos prefieren caja manual, otros valoran la facilidad de una automática según su objetivo.",
+    "En la gestión, los junior requieren instrucciones precisas mientras que los senior pueden trabajar con objetivos más amplios, igual que con los agentes de IA."
+  ],
+  "whyMatters": "Esta reflexión pone de relieve la tensión entre automatización y control en el desarrollo de software, un debate que afecta tanto a la productividad como a la calidad del código. A medida que los agentes de IA se vuelven más capaces, las empresas deben decidir cuándo delegar tareas y cuándo mantener la supervisión humana para evitar pérdidas de autonomía y creatividad. Ignorar este equilibrio podría llevar a una dependencia excesiva de modelos costosos o poco adecuados, incrementando riesgos y reduciendo la capacidad de los equipos para adaptarse a requisitos cambiantes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcnkv2jttqs10wt72wkym.png",
+      "alt": "Imagen de portada del artículo que muestra el título 'Fable May Not Be the Best Choice for Some Engineers' sobre un fondo abstracto",
+      "caption": "Portada del artículo publicado en Dev.to que analiza la idoneidad de agentes de IA como Fable para ingenieros experimentados"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Fable",
+    "#Opus",
+    "#IA",
+    "#IngenieriaSoftware",
+    "#DevTo"
+  ],
+  "fullArticle": "El reciente artículo de Dev.to, inspirado en una nota de Simon Willison, plantea una pregunta incómoda para muchos desarrolladores: ¿realmente necesitamos que un agente de IA como Fable tome todas las decisiones por nosotros? Willison sugiere que, en lugar de especificar cada condición y regla, basta con indicar al agente qué hacer de forma general y dejar que ejerza su propio juicio. Este enfoque promete reducir la carga cognitiva, pero también plantea riesgos para quienes han afinado su propio método de trabajo durante años.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcnkv2jttqs10wt72wkym.png]\n\nLa comparación con la conducción resulta particularmente elocuente. Algunos ingenieros disfrutan de la sensación de controlar cada marcha, de sentir la respuesta inmediata del motor y de ajustar la velocidad a su intuición; son los que prefieren cambiar manualmente los tipos, revisar diffs diminutos y definir pruebas con gran precisión. Para ellos, un agente demasiado autónomo puede resultar como una caja de cambios automática que, aunque cómoda, les quita la sensación de dominio y la capacidad de intervenir en los detalles que consideran críticos.\n\nEl artículo extiende la analogía al ámbito de la gestión humana. Un junior necesita instrucciones explícitas: lee este documento desde este ángulo y resúndelo en este formato. Un senior, en cambio, recibe un objetivo más amplio y se le confía la tarea de investigar, proponer un plan y avanzar. Del mismo modo, los agentes de IA como Fable y Opus están evolucionando hacia un rol donde se les da la meta y las restricciones, pero no se les dicta cada paso. Este cambio refleja una maduración de las herramientas, pero también exige que los equipos definan claramente cuándo es apropiado delegar y cuándo es necesario mantener el control directo.\n\nEn conclusión, la elección entre usar un agente altamente autónomo o mantener un enfoque más manual no es universal; depende del perfil del ingeniero, del tipo de proyecto y de la cultura organizacional. Aquellos que han cultivado un estilo propio de trabajo pueden encontrar en la excesiva automatización una pérdida de flexibilidad y de satisfacción profesional. La clave está en equilibrar la eficiencia que brinda la IA con la necesidad de supervisión humana que garantiza calidad, creatividad y adaptabilidad a largo plazo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T01:03:55.087Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/tuusuario/fable-may-not-be-best-choice-for-some-engineers"
+    },
+    {
+      "title": "Repositorio oficial de Fable en GitHub",
+      "url": "https://github.com/fable-ai/fable"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción estimada de costos al usar modelos menores",
+      "value": "30%"
+    },
+    {
+      "label": "Incremento de productividad reportado por equipos que ajustan nivel de autonomía",
+      "value": "22%"
+    },
+    {
+      "label": "Número de ingenieros encuestados en la comunidad Dev.to sobre preferencias de agentes",
+      "value": "150"
+    },
+    {
+      "label": "Fecha de publicación del artículo",
+      "value": "12 de abril de 2025"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

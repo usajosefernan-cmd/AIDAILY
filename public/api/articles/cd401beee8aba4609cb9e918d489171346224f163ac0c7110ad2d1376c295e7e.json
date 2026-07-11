@@ -1,0 +1,78 @@
+{
+  "id": "cd401beee8aba4609cb9e918d489171346224f163ac0c7110ad2d1376c295e7e",
+  "title": "Lo que aprendí intentando hacer un juego con IA: La mitad de la verdad sobre 'Claude para desarrollo de videojuegos'",
+  "summary": "Un desarrollador coreano quiso crear un juego tipo MapleStory usando IA, pero descubrió que la generación de imágenes no produce animaciones de personajes consistentes. Tras cambiar a sprites prehechos y modificar el género a un auto-batallador espectador, convirtió sus errores de desarrollo en elementos del juego, demostrando que la IA amplía habilidades pero no reemplaza los conocimientos base.",
+  "url": "https://dev.to/junhee916/what-i-learned-trying-to-make-a-game-with-ai-only-half-the-truth-about-claude-for-game-dev-3j2p",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T12:54:55.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxfqdx8h7hkulbdge0g53.png",
+  "imageAlt": "Lo que aprendí intentando hacer un juego con IA: La mitad de la verdad sobre 'Claude para desarrollo de videojuegos'",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador coreano quiso crear un juego tipo MapleStory usando IA, pero descubrió que la generación de imágenes no produce animaciones de personajes consistentes. Tras cambiar a sprites prehechos y modificar el género a un auto-batallador espectador, convirtió sus errores de desarrollo en elementos del juego, demostrando que la IA amplía habilidades pero no reemplaza los conocimientos base.",
+  "keyPoints": [
+    "La generación de imágenes con IA no produce animaciones de personajes consistentes, ya que cada frame modifica proporciones, colores y rasgos del personaje.",
+    "El autor abandonó el desarrollo de un juego controlable tipo MapleStory por la complejidad de la física, colisiones y controles sin conocimientos previos de desarrollo de videojuegos.",
+    "El proyecto final se convirtió en un auto-batallador espectador que usa sprites CC0 prehechos y convierte errores de desarrollo del autor en monstruos y habilidades del juego.",
+    "La experiencia demuestra que la IA es una herramienta para ampliar habilidades existentes, no para reemplazar los conocimientos base de desarrollo de videojuegos."
+  ],
+  "whyMatters": "Esta revelación desmitifica la narrativa viral de que cualquier persona puede crear un videojuego completo solo con herramientas de IA sin conocimientos previos. Para el sector del desarrollo independiente, supone un recordatorio de que la IA optimiza procesos pero no sustituye la base técnica necesaria para proyectos complejos como animaciones de personajes o sistemas de juego. Además, el enfoque de convertir los propios errores de desarrollo en contenido de juego abre una nueva línea de narrativas interactivas para creadores que documentan su proceso de construcción en público.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxfqdx8h7hkulbdge0g53.png",
+      "alt": "Portada del artículo sobre lecciones aprendidas al desarrollar un videojuego con herramientas de IA",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el desarrollador coreano Riel"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de la comunidad de desarrolladores Dev.to",
+      "caption": "Logotipo de Dev.to, plataforma de publicación de contenido para desarrolladores donde se publicó el artículo original"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeIA",
+    "#DesarrolloDeVideojuegos",
+    "#IAEnCreacionDeContenido",
+    "#MapleStoryIA"
+  ],
+  "fullArticle": "El autor, un desarrollador coreano especializado en la creación de chatbots de IA, quiso construir un juego de desplazamiento lateral al estilo de MapleStory tras ver cientos de videos en YouTube de personas que afirmaban haber creado videojuegos completos usando solo herramientas de IA como Claude. Sin embargo, la realidad superó con creces la promesa viral: su primer intento de generar personajes animados con gpt-image fracasó, ya que cada frame de la secuencia de caminata alteraba sutilmente el color de la ropa, las proporciones corporales y los rasgos faciales del personaje, generando un efecto de temblor errático en lugar de una animación fluida. Tras este primer obstáculo, abandonó la idea de usar assets generados por IA y optó por sprites de pixel art CC0 prehechos por artistas independientes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxfqdx8h7hkulbdge0g53.png]\n\nAl intentar desarrollar un juego controlable, se dio cuenta de que la física, las colisiones, el diseño de niveles y la gestión de entradas superaban ampliamente su capacidad trabajando solo con apoyo de IA, por lo que cambió completamente el género a un auto-batallador espectador, en el que el personaje avanza y lucha de forma automática mientras el jugador solo observa. Este cambio de enfoque le permitió convertir sus propios errores de desarrollo (bucles de crash por f-strings, fallos de memoria en despliegues, uso del disco al 100%) en elementos del juego: los errores se transformaron en monstruos, las soluciones implementadas en habilidades y los sistemas que construyó (chatbot, laboratorio autónomo, NFT) en equipo y objetos equipables.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLa experiencia del autor desmiente la creencia extendida de que la IA permite crear videojuegos completos sin conocimientos base, demostrando que esta herramienta solo amplifica las habilidades existentes, no las reemplaza. El proyecto final, disponible para probar, se presenta como un registro honesto de su proceso de construcción en público, que muestra cómo adaptarse a las limitaciones actuales de la IA en lugar de luchar contra ellas, convirtiendo los obstáculos en oportunidades creativas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T13:05:51.870Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/rielforever/what-i-learned-trying-to-make-a-game-with-ai-only-half-the-truth-about-claude-for-game-dev-4h2a"
+    },
+    {
+      "title": "Sprites CC0 de Hero Knight de LuizMelo",
+      "url": "https://luizmelo.itch.io/"
+    },
+    {
+      "title": "Sprites CC0 de Pixel Adventure de Pixel Frog",
+      "url": "https://pixelfrog.itch.io/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de pivotes de desarrollo realizados",
+      "value": "2"
+    },
+    {
+      "label": "Frames de animación de caminata generados por IA",
+      "value": "4 frames"
+    },
+    {
+      "label": "Atributos del personaje alterados por frame en generación IA",
+      "value": "3 (color de ropa, proporciones, rostro)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

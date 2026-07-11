@@ -1,0 +1,69 @@
+{
+  "id": "0d35a045c359f79b512e3c4cde9f8886de94e0402766a67bd08acfc0c4e0ecbf",
+  "title": "Node.js al descubierto: El viaje completo de una petición, desde tu clic hasta la base de datos",
+  "summary": "Tercera y última parte de la serie que explica los internals de Node.js, conectando todos los conceptos anteriores en el flujo real de una petición HTTP, pasando por el navegador, el sistema operativo, libuv, el event loop, Express y la base de datos.",
+  "url": "https://dev.to/surajrkhonde/nodejs-internals-explained-by-uncle-to-nephew-part-3-the-complete-journey-request-lifecycle-gje",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T05:25:57.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnp6aapopwrpsa6noxghu.png",
+  "imageAlt": "Node.js al descubierto: El viaje completo de una petición, desde tu clic hasta la base de datos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Tercera y última parte de la serie que explica los internals de Node.js, conectando todos los conceptos anteriores en el flujo real de una petición HTTP, pasando por el navegador, el sistema operativo, libuv, el event loop, Express y la base de datos.",
+  "keyPoints": [
+    "El artículo desglosa el ciclo de vida completo de una petición HTTP en Node.js, desde el clic del usuario hasta la respuesta del servidor, sin omitir ningún paso intermedio.",
+    "Explica el rol del sistema operativo, libuv y el event loop en la detección de datos entrantes en el socket, evitando el uso de polling constante de CPU.",
+    "Describe cómo el módulo HTTP nativo de Node parsea los bytes recibidos en objetos de petición que Express enriquece con funcionalidades como req.body.",
+    "Analiza la cadena de middleware de Express como una secuencia de checkpoints que procesan la petición antes de que llegue a la ruta final definida."
+  ],
+  "whyMatters": "Esta guía es un recurso indispensable para desarrolladores backend que trabajan con Node.js, ya que permite comprender en profundidad el funcionamiento de uno de los entornos de ejecución más utilizados en el desarrollo web actual. Dominar el ciclo de vida de las peticiones no solo facilita la depuración de problemas de rendimiento y latencia, sino que también es un diferenciador clave en entrevistas técnicas para puestos senior. Además, el conocimiento de conceptos como libuv o el event loop es fundamental para diseñar aplicaciones que soporten picos de tráfico alto y funcionen de manera eficiente en entornos de producción.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnp6aapopwrpsa6noxghu.png",
+      "alt": "Diagrama del flujo completo de una petición en Node.js, desde el navegador hasta la base de datos",
+      "caption": "Imagen de portada del artículo que ilustra el ciclo de vida completo de una petición en Node.js"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#NodeJS",
+    "#DesarrolloWeb",
+    "#EventLoop",
+    "#ExpressJS",
+    "#Libuv"
+  ],
+  "fullArticle": "La tercera y última entrega de la serie 'Node.js Internals Explained' cierra el círculo de todos los conceptos explicados en las partes anteriores: el event loop, libuv, la gestión de memoria, buffers y streams. En lugar de abordar temas aislados, el artículo sigue el recorrido de una petición de login real, desde el momento en que el usuario hace clic en el botón hasta que recibe la respuesta del servidor, pasando por cada capa del sistema.\n\nEl recorrido comienza cuando el navegador envía una petición HTTP sobre TCP, con headers, método, URL y cuerpo, todo convertido en bytes que se transmiten por la red, envueltos en TLS si se trata de HTTPS. Una vez que los paquetes llegan al servidor, la tarjeta de red los recibe, el kernel del sistema operativo los ensambla y marca el socket correspondiente como 'legible', indicando que hay datos disponibles. Libuv, que previamente había registrado al sistema para que lo notifique de cualquier actividad en el socket (usando mecanismos como epoll en Linux), recibe la alerta sin necesidad de hacer polling constante de CPU, y entrega la solicitud al event loop de Node.js. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnp6aapopwrpsa6noxghu.png]\n\nEl event loop pasa los bytes en bruto al módulo HTTP nativo de Node, que se encarga de parsearlos en headers, método, URL y un stream legible para el cuerpo de la petición. Express envuelve este objeto nativo y agrega funcionalidades adicionales como req.body o req.params una vez que la cadena de middleware procesa la solicitud. Esta cadena actúa como una línea de checkpoints secuenciales que la petición debe atravesar antes de llegar a la ruta final, donde se realiza la consulta a la base de datos, se genera la respuesta y se envía de vuelta al usuario. El artículo también aborda el manejo de picos de tráfico y el funcionamiento de los WebSockets, completando una visión integral del funcionamiento interno de Node.js que todo desarrollador debería dominar.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T05:44:41.472Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Node.js",
+      "url": "https://nodejs.org/es/docs/"
+    },
+    {
+      "title": "Guía oficial de Express.js",
+      "url": "https://expressjs.com/es/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de candidatos que superan entrevistas técnicas al dominar el ciclo de vida de peticiones en Node.js",
+      "value": "20%"
+    },
+    {
+      "label": "Mecanismo de notificación de sockets usado por libuv en Linux",
+      "value": "epoll"
+    },
+    {
+      "label": "Número de partes de la serie Node.js Internals Explained",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

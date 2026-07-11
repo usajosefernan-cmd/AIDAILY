@@ -1,0 +1,65 @@
+{
+  "id": "436d52cdb7dcde56269219707689371786e8da8c61fbe11afab3b81a2b2499e6",
+  "title": "TitanixAI: cómo diseñar una empresa entera de testing de software con IA (y la arquitectura que lo hace posible)",
+  "summary": "El autor detalla la arquitectura de TitanixAI, una startup que busca automatizar completamente el testing de software mediante 30 agentes de IA especializados, pero advierte que el verdadero reto no está en los agentes, sino en construir un grafo de artefactos versionados que permita la trazabilidad y el análisis de impacto.",
+  "url": "https://dev.to/orbit_with_abhay/i-tried-to-design-an-entire-ai-software-testing-company-heres-the-architecture-id-actually-3plo",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T07:11:40.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0y9aybio2o42s9tcs356.png",
+  "imageAlt": "TitanixAI: cómo diseñar una empresa entera de testing de software con IA (y la arquitectura que lo hace posible)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor detalla la arquitectura de TitanixAI, una startup que busca automatizar completamente el testing de software mediante 30 agentes de IA especializados, pero advierte que el verdadero reto no está en los agentes, sino en construir un grafo de artefactos versionados que permita la trazabilidad y el análisis de impacto.",
+  "keyPoints": [
+    "La visión de TitanixAI incluye 30 agentes de IA que cubren roles como analista de negocio, scrum master, QA manager, testers manuales y automáticos, y agentes de ejecución y reporte de bugs.",
+    "El autor enfatiza que construir agentes fiables es el principal desafío técnico, no simplemente listarlos en un organigrama.",
+    "El núcleo durable del sistema es un grafo de artefactos versionados que conecta requisitos, épicas, historias de usuario, casos de prueba y código de automatización.",
+    "La regla fundamental es construir el grafo antes que cualquier agente, para habilitar el análisis de impacto y la trazabilidad desde el primer día."
+  ],
+  "whyMatters": "Este enfoque redefine cómo las empresas pueden abordar la calidad de software en un entorno de desarrollo ágil y continuo. Al priorizar el grafo de artefactos, se garantiza que cada cambio en un requisito se propague automáticamente a todos los elementos afectados, reduciendo drásticamente el riesgo de errores no detectados. Además, establece un precedente arquitectónico para futuros sistemas de IA autónoma en otros dominios, demostrando que la estructura de datos subyacente es más crítica que la inteligencia individual de cada agente.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0y9aybio2o42s9tcs356.png",
+      "alt": "Diagrama de arquitectura de TitanixAI que muestra la red de agentes y el grafo de artefactos.",
+      "caption": "Ilustración de la arquitectura propuesta para TitanixAI, destacando el grafo de artefactos como núcleo del sistema."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TitanixAI",
+    "#TestingDeSoftware",
+    "#ArquitecturaIA",
+    "#CalidadDeSoftware",
+    "#AgentesIA"
+  ],
+  "fullArticle": "La idea de TitanixAI surgió como una respuesta a la fragmentación del testing de software: un sistema que, al subir un documento de requisitos, active automáticamente una organización completa de calidad. Esta visión incluye 30 agentes especializados, desde un analista de negocio que interpreta el SRS hasta un agente de bugs que registra defectos, pasando por un scrum master, un QA manager y testers automáticos. Sin embargo, el autor advierte que esta descripción suena más a una hoja de ruta de cinco años para una empresa de 40 personas que a un producto listo para lanzar.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0y9aybio2o42s9tcs356.png]\n\nEl verdadero desafío no reside en enumerar agentes, sino en hacer que cada uno produzca artefactos correctos, ejecutables y confiables, y que sepa reconocer su propia incertidumbre. Un listado de 30 agentes es una lista de deseos, no una arquitectura. El riesgo mayor no es la dificultad técnica, sino intentar construir todo y no lanzar nada. Por ello, la primera decisión fue definir la versión mínima viable que ofrezca una experiencia sorprendente y gane el derecho a expandirse.\n\nEl corazón del sistema es el grafo de artefactos: una estructura de datos donde cada elemento (requisito, épica, historia de usuario, caso de prueba, código de automatización, ejecución, bug) es un nodo versionado y conectado. Este grafo permite un análisis de impacto inmediato: si un requisito cambia, se identifican automáticamente todos los elementos dependientes para actualizarlos. Esta funcionalidad, esencial para la trazabilidad, es casi gratuita si se diseña desde el inicio y muy difícil de añadir posteriormente. Además, cada nodo incluye un ciclo de aprobación, algo que muchas demostraciones de agentes de IA omiten.\n\nLa regla establecida es clara: construir el grafo antes que cualquier agente. Esta decisión coloca la infraestructura de datos por encima de la inteligencia individual, garantizando que el sistema sea mantenible, escalable y fiable. En un sector donde la velocidad de entrega y la calidad son críticas, este enfoque podría marcar la diferencia entre un proyecto ambicioso que se queda en papel y una solución que transforma la práctica del testing de software.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T07:25:45.146Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Agentes especializados propuestos",
+      "value": "30"
+    },
+    {
+      "label": "Duración del roadmap estimado",
+      "value": "5 años"
+    },
+    {
+      "label": "Tamaño del equipo de implementación",
+      "value": "40 personas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

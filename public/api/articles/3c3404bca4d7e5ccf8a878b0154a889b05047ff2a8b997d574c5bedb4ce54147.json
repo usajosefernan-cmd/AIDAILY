@@ -1,0 +1,90 @@
+{
+  "id": "3c3404bca4d7e5ccf8a878b0154a889b05047ff2a8b997d574c5bedb4ce54147",
+  "title": "Así creé DevTeam AI: Un equipo de ingeniería de software multiagente impulsado por QwenCloud que replica flujos de trabajo reales",
+  "summary": "DevTeam AI es una plataforma de ingeniería de software multiagente creada para el QwenCloud Global AI Hackathon que orquesta 11 agentes especializados para replicar el flujo de trabajo completo de un equipo de desarrollo real, con aprobaciones, revisiones y generación de código, evitando la limitación de las herramientas de IA que unifican todos los roles en una sola respuesta.",
+  "url": "https://dev.to/odunayo_dada/how-i-built-devteam-ai-a-multi-agent-software-engineering-team-powered-by-qwencloud-40i9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T20:45:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fie7pgi71n3l5coxzxnjj.png",
+  "imageAlt": "Así creé DevTeam AI: Un equipo de ingeniería de software multiagente impulsado por QwenCloud que replica flujos de trabajo reales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "DevTeam AI es una plataforma de ingeniería de software multiagente creada para el QwenCloud Global AI Hackathon que orquesta 11 agentes especializados para replicar el flujo de trabajo completo de un equipo de desarrollo real, con aprobaciones, revisiones y generación de código, evitando la limitación de las herramientas de IA que unifican todos los roles en una sola respuesta.",
+  "keyPoints": [
+    "DevTeam AI se creó para el QwenCloud Global AI Hackathon (categoría Agent Society) para solucionar que las IAs de código unifiquen todos los roles de desarrollo en una sola respuesta.",
+    "La plataforma orquesta 11 agentes de IA especializados que replican funciones de un equipo de ingeniería real: gestores de producto, arquitectos, desarrolladores back y front, QA y revisores.",
+    "A diferencia de las herramientas tradicionales, el sistema incluye flujos de aprobación humana, revisiones de diseño, negociaciones entre agentes y generación de paquetes de entrega completos.",
+    "El proyecto busca demostrar que los equipos de IA colaborativos pueden mejorar la calidad del software al replicar los procesos de revisión y debate de los equipos humanos."
+  ],
+  "whyMatters": "Este proyecto marca un hito en la automatización de la ingeniería de software, ya que demuestra que los sistemas multiagente pueden superar las limitaciones de los asistentes de IA convencionales que reducen la complejidad del desarrollo a un solo flujo de respuesta. Su impacto estratégico radica en la posibilidad de reducir errores, alinear los requisitos de múltiples stakeholders y agilizar la entrega de productos sin renunciar a la calidad y la mantenibilidad a largo plazo. Para el sector, supone un avance hacia la creación de equipos de desarrollo híbridos, donde la IA colabora con los humanos en cada etapa del proceso, en lugar de reemplazar roles de forma aislada.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fie7pgi71n3l5coxzxnjj.png",
+      "alt": "Portada del artículo que explica el desarrollo de DevTeam AI, plataforma multiagente de ingeniería de software impulsada por QwenCloud",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo de Google AI, socio oficial de modelos y plataformas de IA del QwenCloud Global AI Hackathon",
+      "caption": "Google AI, socio oficial del hackathon donde se presentó DevTeam AI"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logotipo de Neon, socio oficial de bases de datos del QwenCloud Global AI Hackathon",
+      "caption": "Neon, socio oficial de bases de datos del evento"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logotipo de Algolia, socio oficial de búsqueda del QwenCloud Global AI Hackathon",
+      "caption": "Algolia, socio oficial de soluciones de búsqueda del hackathon"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#DevTeamAI",
+    "#QwenCloud",
+    "#IAMultiagente",
+    "#IngenieriaDeSoftwareIA"
+  ],
+  "fullArticle": "La idea de DevTeam AI surgió de una limitación recurrente en las herramientas de generación de código con inteligencia artificial: si bien los modelos de lenguaje son capaces de escribir código, documentación y propuestas de producto de forma rápida, no replican la dinámica colaborativa de un equipo de ingeniería real, donde múltiples roles debaten, revisan y alinean sus visiones antes de escribir una sola línea de código en producción. Para el QwenCloud Global AI Hackathon, en la categoría Agent Society, se desarrolló esta plataforma que orquesta 11 agentes de IA especializados, cada uno con funciones equivalentes a las de un equipo humano: gestores de producto, arquitectos de soluciones, desarrolladores back y front, ingenieros de QA, líderes técnicos y revisores, que interactúan entre sí para generar un paquete completo de entrega de software.\n\nEl sistema no se limita a generar código: incluye flujos de aprobación humana, revisiones de diseño, negociaciones entre agentes para resolver conflictos de prioridades y procesos de revisión que garantizan la mantenibilidad a largo plazo del producto, algo que preocupa especialmente a los responsables técnicos. A diferencia de las herramientas de IA tradicionales que unifican todas las perspectivas en una sola respuesta, DevTeam AI produce un entregable completo que incluye especificaciones, arquitectura, código, pruebas y documentación, alineado con las necesidades de todos los stakeholders.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fie7pgi71n3l5coxzxnjj.png]\n\nEste proyecto no solo es una prueba de concepto para la aplicabilidad de los agentes de IA en la ingeniería de software, sino que abre la puerta a flujos de trabajo híbridos donde la IA no reemplaza a los profesionales, sino que les apoya en las etapas más repetitivas y les permite centrarse en la toma de decisiones estratégicas. Su éxito en el hackathon demuestra que la colaboración entre agentes especializados es un camino viable para reducir tiempos de entrega, minimizar errores y mejorar la calidad de los productos digitales, lo que lo convierte en un referente para el futuro de la automatización en el sector tecnológico.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T21:31:25.498Z",
+  "links": [
+    {
+      "title": "Artículo original de DevTeam AI en Dev.to",
+      "url": "https://dev.to/qwencloud/how-i-built-devteam-ai-a-multi-agent-software-engineering-team-powered-by-qwencloud-3h9"
+    },
+    {
+      "title": "Sitio oficial de QwenCloud",
+      "url": "https://qwencloud.com"
+    },
+    {
+      "title": "Página del QwenCloud Global AI Hackathon",
+      "url": "https://qwencloud.com/hackathon"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de agentes especializados",
+      "value": "11"
+    },
+    {
+      "label": "Categoría del hackathon de origen",
+      "value": "Agent Society"
+    },
+    {
+      "label": "Roles de ingeniería replicados",
+      "value": "7 (gestor de producto, arquitecto, desarrollador back, desarrollador front, QA, líder técnico, revisor)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,75 @@
+{
+  "id": "3509861ced217170b170f580b8be18dcd9668e437f45046c0fa32a07daea1f85",
+  "title": "GPT‑5.5 de OpenAI muestra un patrón de tokens que podría estar deteriorando su rendimiento",
+  "summary": "Un análisis de la métrica token_count de Codex revela que las respuestas de gpt‑5.5 se agrupan de forma anómala en 516, 1034 y 1552 tokens de razonamiento, lo que sugiere un límite de presupuesto interno que afecta su capacidad para resolver tareas complejas.",
+  "url": "https://github.com/openai/codex/issues/30364",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-04T21:51:09.000Z",
+  "imageUrl": "https://opengraph.githubassets.com/fa856cc3480a6026f471054590b4a256e572f7229e9ee1dd708e19473c631610/openai/codex/issues/30364",
+  "imageAlt": "GPT‑5.5 de OpenAI muestra un patrón de tokens que podría estar deteriorando su rendimiento",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un análisis de la métrica token_count de Codex revela que las respuestas de gpt‑5.5 se agrupan de forma anómala en 516, 1034 y 1552 tokens de razonamiento, lo que sugiere un límite de presupuesto interno que afecta su capacidad para resolver tareas complejas.",
+  "keyPoints": [
+    "El modelo gpt‑5.5 concentra el 82,0 % de los eventos de 516 tokens aunque representa solo el 19,3 % de las respuestas totales.",
+    "Los picos de 516, 1034 y 1552 tokens indican un posible umbral de corte de razonamiento, no una variación natural por complejidad de tarea.",
+    "Entre febrero y junio, la intensidad media de tokens de razonamiento cayó mientras la agrupación en 516 aumentó, señal de un comportamiento anómalo.",
+    "El 33,6 × de la razón exact‑516 / ≥516 comparado con la línea base sugiere un mecanismo interno exclusivo de gpt‑5.5."
+  ],
+  "whyMatters": "El descubrimiento de un patrón fijo de tokens de razonamiento en gpt‑5.5 plantea interrogantes críticos sobre la fiabilidad de los modelos de IA para tareas de alto riesgo. Si el modelo está truncando las respuestas antes de alcanzar una solución completa, las empresas y usuarios que dependen de Codex para generación de código seguro o análisis complejo podrían verse expuestos a errores costosos. Además, la evidencia sugiere que OpenAI podría estar aplicando límites de presupuesto de manera no documentada, lo que cuestiona la transparencia y la ética en el desarrollo de IA.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://opengraph.githubassets.com/fa856cc3480a6026f471054590b4a256e572f7229e9ee1dd708e19473c631610/openai/codex/issues/30364",
+      "alt": "Imagen que resume el patrón de tokens de razonamiento en gpt‑5.5, mostrando la concentración en 516 tokens y picos en 1034 y 1552",
+      "caption": "Resumen visual del patrón de tokens de razonamiento en gpt‑5.5, indicando la agrupación en 516 tokens y picos adicionales."
+    },
+    {
+      "type": "image",
+      "url": "https://github.githubassets.com/assets/github-copilot-app-light-7138e992c731a2bb.png",
+      "alt": "Captura de pantalla del logotipo de Copilot App de GitHub con la etiqueta 'GPT‑5.5 Codex reasoning-token clustering may be leading to degraded performance'",
+      "caption": "Imagen que muestra el logotipo de Copilot App y la etiqueta que indica el patrón de tokens de razonamiento en gpt‑5.5."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OpenAI",
+    "#GPT55",
+    "#Codex",
+    "#IA",
+    "#MachineLearning"
+  ],
+  "fullArticle": "El equipo de investigación de IA de OpenAI ha detectado un comportamiento inusual en su modelo Codex gpt‑5.5: las respuestas tienden a terminar exactamente en 516 tokens de razonamiento, con picos adicionales en 1034 y 1552. Este patrón no se observa en otros modelos, lo que sugiere un mecanismo interno de corte o presupuesto exclusivo de gpt‑5.5. [MULTIMEDIA: https://opengraph.githubassets.com/fa856cc3480a6026f471054590b4a256e572f7229e9ee1dd708e19473c631610/openai/codex/issues/30364] La anomalía se hizo evidente al analizar la métrica token_count de Codex durante un período de febrero a junio, donde la intensidad media de tokens de razonamiento cayó mientras la agrupación en 516 aumentó de forma pronunciada. Según los datos, gpt‑5.5 representa solo el 19,3 % de todas las respuestas, pero el 82,0 % de los eventos de 516 tokens, con una razón exact‑516 / ≥516 de 33,6 × mayor que la línea base. Este comportamiento plantea la hipótesis de que el modelo podría estar truncando las respuestas antes de completar el razonamiento necesario para tareas complejas. [MULTIMEDIA: https://github.githubassets.com/assets/github-copilot-app-light-7138e992c731a2bb.png] Los investigadores no concluyen que exista una truncación de cadena de pensamiento oculta, pero sí señalan que la agrupación fija de tokens es consistente con un presupuesto de razonamiento limitado o un mecanismo de corte interno. Si OpenAI confirma que 516 tokens es un punto de parada normal, los usuarios tendrían que replantear la forma en que emplean Codex en aplicaciones críticas. En caso contrario, la comunidad de IA deberá exigir una mayor transparencia sobre los límites de rendimiento de los modelos. La cuestión se vuelve aún más relevante cuando se considera la creciente adopción de Codex en entornos empresariales donde la exactitud y la completitud de las respuestas son esenciales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T02:06:46.020Z",
+  "links": [
+    {
+      "title": "Issue original en GitHub de OpenAI Codex",
+      "url": "https://github.com/openai/codex/issues/30364"
+    },
+    {
+      "title": "Página oficial de OpenAI Codex",
+      "url": "https://openai.com/codex/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de respuestas gpt‑5.5",
+      "value": "19,3 %"
+    },
+    {
+      "label": "Porcentaje de eventos de 516 tokens",
+      "value": "82,0 %"
+    },
+    {
+      "label": "Razón exact‑516 / ≥516 comparado con línea base",
+      "value": "33,6 ×"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

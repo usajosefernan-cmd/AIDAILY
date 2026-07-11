@@ -1,0 +1,72 @@
+{
+  "id": "3dfcaa7c15d41ccd37452ce4b208e92cff8fcb43d7771c998313246d6a52381d",
+  "title": "El 57% de las empresas sufren respuestas erróneas de agentes de IA con total seguridad: la capa de contexto es la solución, pero pocos la tienen",
+  "summary": "Una encuesta de VentureBeat de junio de 2026 revela que el 57% de las empresas de más de 100 empleados sufrió respuestas equivocadas de agentes de IA por falta de contexto empresarial gobernado, con solo un 25% de organizaciones que cuentan con una capa de contexto estandarizada para solucionar el problema.",
+  "url": "https://venturebeat.com/data/57-of-enterprises-have-watched-ai-agents-be-confidently-wrong-the-fix-is-an-agentic-context-layer-but-who-has-one",
+  "source": "VentureBeat",
+  "sourceUrl": "https://venturebeat.com/feed/",
+  "publishedAt": "2026-07-10T20:58:32.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "El 57% de las empresas sufren respuestas erróneas de agentes de IA con total seguridad: la capa de contexto es la solución, pero pocos la tienen",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una encuesta de VentureBeat de junio de 2026 revela que el 57% de las empresas de más de 100 empleados sufrió respuestas equivocadas de agentes de IA por falta de contexto empresarial gobernado, con solo un 25% de organizaciones que cuentan con una capa de contexto estandarizada para solucionar el problema.",
+  "keyPoints": [
+    "El 57% de las empresas con más de 100 empleados sufrió respuestas erróneas de agentes de IA por contexto empresarial faltante o inconsistente, según encuesta de VentureBeat de junio de 2026 a 101 compañías.",
+    "El 31% de las empresas afectadas experimentó este fallo más de una vez, generando errores en procesos empresariales por definiciones de métricas obsoletas o documentos no recuperados por el sistema.",
+    "Solo el 25% de las empresas cuenta con una capa de contexto agentico gobernada en producción, mientras el 34% está desarrollando una y el 41% no ha iniciado ningún proyecto al respecto.",
+    "Los principales proveedores de datos y IA (Microsoft, Snowflake, AWS, Google, entre otros) compiten por lanzar sus propias soluciones de capa de contexto, sin converger en una arquitectura estándar."
+  ],
+  "whyMatters": "Esta problemática representa un riesgo operativo y económico crítico para las empresas europeas y españolas que están adoptando agentes de IA en sus flujos de trabajo, ya que los errores por contexto deficiente pueden derivar en decisiones estratégicas erróneas, incumplimientos normativos o pérdidas económicas millonarias. La falta de una capa de contexto gobernada estandarizada supone además una barrera para la interoperabilidad de los agentes de IA entre diferentes plataformas, lo que ralentiza la digitalización del tejido empresarial europeo. A medida que la regulación de IA en la Unión Europea avanza, las empresas que no implementen estas soluciones de contexto gobernado se enfrentarán a mayores riesgos de cumplimiento y a una desventaja competitiva frente a organizaciones que apuesten por la fiabilidad de sus sistemas de inteligencia artificial.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "El 57% de las empresas sufren respuestas erróneas de agentes de IA con total seguridad: la capa de contexto es la solución, pero pocos la tienen",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IAEmpresarial",
+    "#AgentesDeIA",
+    "#CapaDeContexto",
+    "#VentureBeat"
+  ],
+  "fullArticle": "Los agentes de inteligencia artificial empresarial están ganando terreno en todo tipo de organizaciones, pero un fallo recurrente está generando desconfianza: respuestas emitidas con total seguridad que resultan ser completamente erróneas. Según una encuesta de VentureBeat realizada en junio de 2026 a 101 empresas de más de 100 empleados, el 57% de las organizaciones ha sufrido este tipo de errores, causados no por fallos en el modelo de IA, sino por un contexto empresarial deficiente: definiciones de métricas obsoletas o documentos que el sistema de recuperación no lograba acceder. El 31% de las empresas afectadas experimentó este problema más de una vez, lo que pone en riesgo procesos de toma de decisiones, cumplimiento normativo y eficiencia operativa.\n\nEl origen del problema radica en la forma en que las empresas implementan estos agentes: el 38% de las organizaciones utiliza la recuperación de documentos como método predeterminado para aportar contexto a los agentes, casi el doble que el siguiente enfoque más usado. Además, la mayoría de las empresas eligen sus sistemas de recuperación priorizando la facilidad de ingestión de datos y la simplicidad operativa, dejando la precisión de la recuperación en un segundo plano, un fallo que solo se detecta cuando el sistema ya está en producción.\n\nExiste una solución conocida para este problema: la capa de contexto gobernada, un modelo compartido del significado real de los datos empresariales, construido una sola vez y consultado de forma consistente por todos los agentes, en lugar de ser derivado de forma individual por cada uno. Actualmente, solo el 25% de las empresas cuenta con esta capa en funcionamiento, mientras el 34% está desarrollando una y el 41% no ha iniciado ningún proyecto al respecto. Los principales proveedores de datos y plataformas de IA, como Microsoft, Snowflake, AWS, Google o Couchbase, compiten por lanzar sus propias versiones de esta capa, aunque sin converger en una arquitectura estándar, lo que genera incertidumbre en el mercado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T21:42:25.301Z",
+  "links": [
+    {
+      "title": "Noticia original en VentureBeat sobre la capa de contexto para agentes de IA",
+      "url": "https://venturebeat.com/data/ai-agents-keep-giving-confident-wrong-answers-the-context-layer-is-enterprise-ais-next-production-problem"
+    },
+    {
+      "title": "Información oficial sobre la Ley de IA de la Unión Europea",
+      "url": "https://digital-strategy.ec.europa.eu/es/policies/artificial-intelligence-act"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de empresas con respuestas erróneas de agentes de IA",
+      "value": "57%"
+    },
+    {
+      "label": "Porcentaje de empresas con capa de contexto agentica en producción",
+      "value": "25%"
+    },
+    {
+      "label": "Porcentaje de empresas que no han iniciado proyectos de capa de contexto",
+      "value": "41%"
+    },
+    {
+      "label": "Porcentaje de empresas que eligen sistemas de recuperación por facilidad de uso antes que precisión",
+      "value": "38%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

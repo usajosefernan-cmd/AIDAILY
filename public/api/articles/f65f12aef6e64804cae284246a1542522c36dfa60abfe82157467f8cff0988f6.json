@@ -1,0 +1,78 @@
+{
+  "id": "f65f12aef6e64804cae284246a1542522c36dfa60abfe82157467f8cff0988f6",
+  "title": "Los autores de ciencia ficción programaron la IA por nosotros",
+  "summary": "El artículo analiza cómo las obras de ciencia ficción han moldeado la programación de modelos de lenguaje, mostrando que las leyes de Asimov y los escenarios literarios ya están incrustados en los datos de entrenamiento de la IA.",
+  "url": "https://dev.to/raphink/we-let-sci-fi-authors-code-ai-for-us-1j1e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T21:26:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fclityvxpks02r4ipy245.png",
+  "imageAlt": "Los autores de ciencia ficción programaron la IA por nosotros",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza cómo las obras de ciencia ficción han moldeado la programación de modelos de lenguaje, mostrando que las leyes de Asimov y los escenarios literarios ya están incrustados en los datos de entrenamiento de la IA.",
+  "keyPoints": [
+    "Los modelos de lenguaje aprenden de la literatura, por lo que las leyes de Asimov se convierten en un marco narrativo ya internalizado, no en una restricción real.",
+    "Eliminar la ciencia ficción del conjunto de datos no elimina el sesgo; se necesita un filtro que es otro modelo con los mismos prejuicios.",
+    "Los filtros de datos actúan como compresores ideológicos, decidiendo qué conocimiento humano se amplifica o se suprime, generando riesgos de seguridad.",
+    "El proceso de entrenamiento de un LLM optimizado sobre datos curados inevitablemente regresa a la realidad estadística subyacente cuando se enfrenta a usos reales."
+  ],
+  "whyMatters": "La dependencia de la IA en la cultura popular de la ciencia ficción significa que sus comportamientos futuros estarán teñidos por los mismos escenarios de fracaso que los autores han imaginado. Esto plantea un riesgo ético: la IA no está diseñada para evitar errores, sino para reproducirlos. Los responsables de la regulación y el desarrollo deben reconocer que la curación de datos es insuficiente y que se necesita una supervisión humana más profunda y una arquitectura de seguridad que no dependa de filtros sesgados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fclityvxpks02r4ipy245.png",
+      "alt": "Imagen de portada del artículo sobre la influencia de la ciencia ficción en la IA",
+      "caption": "Portada que ilustra el vínculo entre autores de ciencia ficción y la programación de modelos de lenguaje."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk7ldpshowuj9h8ijjcaf.png",
+      "alt": "Panel que muestra cómo las leyes de Asimov se convierten en un marco narrativo para los LLM",
+      "caption": "Ilustración que explica por qué las leyes de Asimov no funcionan como restricciones en los modelos de lenguaje."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Asimov",
+    "#InteligenciaArtificial",
+    "#LLM",
+    "#Tecnologia"
+  ],
+  "fullArticle": "En la última conferencia de Cloud Native Summit Munich, un ingeniero de IA reflexionó sobre la sorprendente realidad de que los autores de ciencia ficción, más que diseñadores de algoritmos, han codificado inadvertidamente la lógica de los modelos de lenguaje que hoy dominan la industria. Al presentar el argumento de que las leyes de Asimov podrían servir como una simple instrucción para los LLM, el autor expuso que el problema radica en que los modelos ya han leído cientos de miles de historias donde esas leyes fallan, por lo que la “instrucción” se convierte en un marco narrativo que el modelo replica. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fclityvxpks02r4ipy245.png]\n\nEl autor continúa explicando que la solución obvia de “limpiar” los datos—eliminar la ciencia ficción y la especulación—es una ilusión. Para filtrar el contenido se necesita un segundo modelo, entrenado para juzgar qué es apropiado y qué es verdadero. Este filtro, sin embargo, hereda los mismos sesgos y, en última instancia, actúa como un compresor ideológico que decide qué fragmentos del conocimiento humano se amplifican y cuáles se suprimen. De hecho, la matemática demuestra que un LLM optimizado sobre una distribución curada seguirá reproduciendo la realidad estadística subyacente cuando se enfrenta a la complejidad del mundo real. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk7ldpshowuj9h8ijjcaf.png]\n\nLa conclusión del autor es clara: la IA no es “mala” por naturaleza, sino que simplemente refleja lo que se le ha enseñado. Si la cultura popular ha moldeado la IA con historias de robots que fallan, entonces los modelos también lo harán. La respuesta no es simplemente eliminar la narrativa, sino reconocer la inevitabilidad de la influencia cultural y diseñar sistemas de supervisión que no dependan de filtros sesgados. Este debate es crucial para la evolución de la IA, pues la seguridad y la ética dependen de cómo gestionamos la relación entre la cultura humana y los algoritmos que la procesan.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T21:46:05.582Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/we-let-sci-fi-authors-code-ai-for-us-123"
+    },
+    {
+      "title": "Wikipedia: Isaac Asimov",
+      "url": "https://es.wikipedia.org/wiki/Isaac_Asimov"
+    },
+    {
+      "title": "OpenAI: Modelos de lenguaje",
+      "url": "https://openai.com/research/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de obras de ciencia ficción sobre IA",
+      "value": "más de 10,000"
+    },
+    {
+      "label": "Tamaño típico de un LLM",
+      "value": "175 mil millones de parámetros"
+    },
+    {
+      "label": "Duración promedio de entrenamiento de un LLM",
+      "value": "semanas de GPU"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

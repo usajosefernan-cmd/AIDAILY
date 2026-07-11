@@ -1,0 +1,69 @@
+{
+  "id": "628ab0caa1446252587e68b8fc66aead819880980f18fa991ab893ccce7bc0c9",
+  "title": "Crear un kubeconfig con alcance para Kubernetes a mano es un proceso de 15 pasos infernal: no tiene por qué ser así",
+  "summary": "El artículo explica que la creación manual de kubeconfigs con privilegios limitados para Kubernetes es un proceso de 15 pasos propenso a errores que genera riesgos de seguridad, y presenta Kubexer, una herramienta que automatiza este flujo de trabajo.",
+  "url": "https://dev.to/sameraburabie/creating-a-kubernetes-scoped-kubeconfig-by-hand-is-15-steps-of-pain-it-shouldnt-be-27ig",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T20:54:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu10bf7bjz8pq9d2nkijh.png",
+  "imageAlt": "Crear un kubeconfig con alcance para Kubernetes a mano es un proceso de 15 pasos infernal: no tiene por qué ser así",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica que la creación manual de kubeconfigs con privilegios limitados para Kubernetes es un proceso de 15 pasos propenso a errores que genera riesgos de seguridad, y presenta Kubexer, una herramienta que automatiza este flujo de trabajo.",
+  "keyPoints": [
+    "La creación manual de kubeconfigs con alcance reducido requiere 15 pasos que involucran 4 tipos de objetos de Kubernetes y dos operaciones de codificación base64.",
+    "A partir de Kubernetes 1.24 se eliminó la generación automática de tokens de larga duración para cuentas de servicio, añadiendo complejidad al proceso.",
+    "Los tokens generados por kubectl create token tienen vigencia limitada, por lo que para credenciales duraderas hay que crear Secrets manualmente, reintroduciendo riesgos.",
+    "Kubexer, un IDE de escritorio para Kubernetes centrado en la privacidad, automatiza todo el flujo de trabajo para eliminar la fricción y reducir errores humanos."
+  ],
+  "whyMatters": "La dificultad para crear credenciales con privilegios mínimos en Kubernetes es una de las principales causas de filtraciones de credenciales con exceso de permisos en entornos de desarrollo y CI/CD. Esto no solo incrementa el riesgo de accesos no autorizados a clústeres, sino que también genera una deuda operativa importante para los equipos de ingeniería. La automatización de este proceso, como la que propone Kubexer, no solo mejora la seguridad, sino que también reduce la carga de trabajo de los equipos y mitiga riesgos de cumplimiento normativo en entornos regulados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu10bf7bjz8pq9d2nkijh.png",
+      "alt": "Ilustración que representa el proceso tedioso de creación manual de un kubeconfig con alcance reducido para Kubernetes, formado por 15 pasos propensos a errores",
+      "caption": "Imagen de portada del artículo original de Dev.to que ilustra la complejidad del proceso manual de creación de kubeconfigs con privilegios limitados"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Kubernetes",
+    "#Kubexer",
+    "#DevOps",
+    "#SeguridadInformatica",
+    "#CI_CD"
+  ],
+  "fullArticle": "Cuando un compañero necesita desplegar aplicaciones en un único namespace, un bot de integración continua requiere acceso de solo lectura a pods y registros, o un contratista solo debe interactuar con el equipo alpha y ningún otro recurso, la respuesta correcta nunca es compartir el kubeconfig de administrador. La opción adecuada es un kubeconfig con alcance reducido, que implemente el principio de privilegio mínimo, limite el radio de explosión en caso de filtración y sea fácil de revocar. El problema es que su creación manual es un ritual tedioso que casi ningún ingeniero disfruta, y esa fricción es exactamente la razón por la que las credenciales con exceso de permisos se filtran constantemente en hilos de Slack y secretos de plataformas de CI/CD.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu10bf7bjz8pq9d2nkijh.png]\n\nUn kubeconfig con alcance reducido no es más que un kubeconfig normal cuya identidad se asocia a una ServiceAccount a la que se le ha asignado un Role con permisos estrictamente definidos. En lugar de transportar las credenciales amplias de un usuario humano, lleva un token que solo puede ejecutar verbos específicos sobre recursos concretos en el namespace que se haya autorizado. Para construirlo de forma manual se necesitan cinco elementos que deben coincidir entre sí: la ServiceAccount, el Role, el RoleBinding, el token y el certificado CA junto al endpoint de la API del clúster, que luego se ensamblan en un archivo de configuración.\n\nA partir de Kubernetes 1.24 se eliminó la generación automática de tokens de larga duración para las cuentas de servicio, una característica conocida como LegacyServiceAccountTokenNoAutoGeneration, por lo que ahora es necesario generarlos de forma explícita. El comando kubectl create token devuelve un token con vigencia limitada, una medida de seguridad positiva pero molesta cuando se necesita una credencial para entregar una sola vez. Si se requiere una credencial más duradera, el usuario debe recurrir a la creación manual de un Secret de tipo kubernetes.io/service-account-token, lo que reintroduce exactamente el riesgo de filtraciones de credenciales persistentes que el cambio de la versión 1.24 buscaba eliminar.\n\nEl nuevo kubeconfig debe confiar en el clúster, por lo que hay que extraer el certificado CA y la dirección del servidor de la configuración de acceso actual. Este paso requiere decodificar el certificado CA de base64 a un archivo temporal, ya que el comando siguiente necesita una ruta de archivo y no datos en línea, además de recordar borrar ese archivo temporal una vez finalizado el proceso. En total, se trata de aproximadamente quince acciones discretas que involucran cuatro tipos de objetos de Kubernetes, dos operaciones de codificación base64, varias consultas jsonpath y el ensamblado manual del archivo de configuración. Cada uno de estos pasos es una oportunidad para cometer un error: ninguno es especialmente complejo en sí mismo, pero la combinación de tedio y criticidad para la seguridad es la peor posible, porque el camino de menor resistencia suele ser el inseguro.\n\nEste es el flujo de trabajo que el autor del artículo quería dejar de ejecutar de forma manual, por lo que lo integró en Kubexer, un IDE de escritorio para Kubernetes centrado en la privacidad que automatiza todo el proceso. La herramienta elimina la fricción de los quince pasos manuales, reduce el riesgo de errores humanos y evita que los equipos recurran a credenciales con exceso de privilegios por comodidad, mejorando la seguridad general de los entornos de Kubernetes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T21:26:07.388Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Kubernetes sobre organización del acceso a clústeres con kubeconfig",
+      "url": "https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/"
+    },
+    {
+      "title": "Documentación oficial de Kubernetes sobre creación de cuentas de servicio y tokens",
+      "url": "https://kubernetes.io/docs/tasks/service-account/creating-a-service-account/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de pasos requeridos para crear un kubeconfig con alcance reducido de forma manual",
+      "value": "15 pasos"
+    },
+    {
+      "label": "Versión de Kubernetes a partir de la cual se eliminó la generación automática de tokens de larga duración",
+      "value": "1.24"
+    },
+    {
+      "label": "Número de tipos de objetos de Kubernetes involucrados en el proceso manual",
+      "value": "4 objetos (ServiceAccount, Role, RoleBinding, Secret)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

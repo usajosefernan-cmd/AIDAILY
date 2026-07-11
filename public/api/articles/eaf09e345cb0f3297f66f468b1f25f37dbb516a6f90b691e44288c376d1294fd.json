@@ -1,0 +1,68 @@
+{
+  "id": "eaf09e345cb0f3297f66f468b1f25f37dbb516a6f90b691e44288c376d1294fd",
+  "title": "El secreto para que tus habilidades de OpenClaw sean realmente útiles: frontmatter, triggers y compatibilidad",
+  "summary": "Guía de desarrollo de habilidades de OpenClaw centrada en el diseño estructural de las habilidades, no solo en su funcionamiento, que explica cómo optimizar el frontmatter, las condiciones de activación y los campos de compatibilidad para que los agentes las utilicen en el momento exacto, con ejemplos prácticos de habilidades pilot-* publicadas.",
+  "url": "https://dev.to/pstayet/anatomy-of-a-well-designed-openclaw-skill-frontmatter-triggers-and-compatibility-55o8",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T00:03:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzsrtsba4qbdc40r9yh3k.png",
+  "imageAlt": "El secreto para que tus habilidades de OpenClaw sean realmente útiles: frontmatter, triggers y compatibilidad",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Guía de desarrollo de habilidades de OpenClaw centrada en el diseño estructural de las habilidades, no solo en su funcionamiento, que explica cómo optimizar el frontmatter, las condiciones de activación y los campos de compatibilidad para que los agentes las utilicen en el momento exacto, con ejemplos prácticos de habilidades pilot-* publicadas.",
+  "keyPoints": [
+    "El frontmatter es la metadata inicial que el agente escanea para determinar la relevancia de la habilidad, sin necesidad de cargar su contenido completo.",
+    "Las descripciones efectivas incluyen verbos, sustantivos y escenarios concretos que el agente detecta en las solicitudes de los usuarios para una coincidencia precisa.",
+    "Las condiciones de activación negativas indican al agente cuándo no usar la habilidad, evitando llamadas innecesarias y ahorrando recursos de contexto.",
+    "Los campos de compatibilidad y la precedencia de carga por directorios evitan conflictos entre habilidades duplicadas en diferentes ubicaciones del sistema."
+  ],
+  "whyMatters": "El diseño correcto de habilidades de OpenClaw tiene un impacto directo en la eficiencia de los agentes de IA, reduciendo el consumo de recursos de contexto y evitando errores de coincidencia que perjudican la experiencia del usuario. Para empresas y desarrolladores en España y Europa que adoptan estas herramientas para automatizar flujos de trabajo, dominar estas buenas prácticas permite maximizar el retorno de inversión en tecnología de agentes, evitando costos por herramientas mal configuradas. A medida que los agentes autónomos se integran en más procesos empresariales, la capacidad de crear habilidades precisas y bien segmentadas se convierte en una ventaja competitiva clave para equipos de desarrollo y áreas de operaciones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzsrtsba4qbdc40r9yh3k.png",
+      "alt": "Portada del artículo sobre diseño de habilidades de OpenClaw",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OpenClaw",
+    "#DesarrolloIA",
+    "#HabilidadesAgentes",
+    "#IngenieriaPrompt"
+  ],
+  "fullArticle": "Si has trabajado con agentes de OpenClaw, seguramente has instalado habilidades de ClawHub y te has preguntado por qué algunas son increíblemente útiles, activándose en el momento exacto, mientras que otras permanecen ignoradas incluso cuando son relevantes. Esto no es cuestión de suerte, sino de cómo están diseñadas. Esta guía de desarrollo de habilidades de OpenClaw se centra en el aspecto que la mayoría de los tutoriales omiten: la anatomía de una habilidad bien diseñada, no solo funcional. Repasaremos el frontmatter que los agentes pueden comparar, las condiciones de activación que se disparan cuando corresponde y los campos de compatibilidad que evitan que una habilidad falle en el host equivocado, usando ejemplos reales de habilidades pilot-* publicadas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzsrtsba4qbdc40r9yh3k.png]\n\nUna habilidad de OpenClaw es un directorio con un archivo SKILL.md que contiene frontmatter en YAML seguido de un cuerpo en markdown. El frontmatter es la metadata que el agente lee antes de cargar el cuerpo, y es la base para decidir si la habilidad es relevante para la solicitud del usuario. El campo más importante es la descripción: las descripciones débiles son como eslóganes vagos, mientras que las descripciones efectivas incluyen desencadenantes concretos, verbos y sustantivos que el agente puede detectar en la consulta. Por ejemplo, la habilidad pilot-protocol incluye en su descripción escenarios específicos como 'cargar esta habilidad cuando el usuario necesite datos externos en vivo', con ejemplos como precios de criptomonedas, clima actual o noticias de última hora, lo que genera múltiples superficies de activación para el agente.\n\nLas condiciones de activación deben definir no solo cuándo se debe usar la habilidad, sino también cuándo ceder el paso a habilidades más específicas. Por ejemplo, el conjunto de habilidades de descubrimiento y red pilot-directory, pilot-discover, pilot-dns y pilot-network-map incluyen en sus descripciones detalles diferenciadores que permiten al agente distinguirlas entre sí, en lugar de cargar todas ellas. Además, las condiciones de activación negativas, como las que indica la habilidad entrypoint de pilot-protocol para evitar usar la red en respuestas estáticas como matemáticas o definiciones, evitan que el agente realice llamadas innecesarias. Finalmente, los campos de compatibilidad y la precedencia de carga por directorios (las habilidades de espacio de trabajo sobrescriben las de proyecto, que sobrescriben las personales, luego las gestionadas o compartidas, empaquetadas y finalmente las de plugin o directorios extra) evitan conflictos por habilidades duplicadas, asegurando que se cargue la versión correcta.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T00:22:49.944Z",
+  "links": [
+    {
+      "title": "Guía oficial de desarrollo de habilidades de OpenClaw",
+      "url": "https://openclaw.ai/docs/skills"
+    },
+    {
+      "title": "Repositorio de habilidades ClawHub",
+      "url": "https://clawhub.openclaw.ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Habilidades de ejemplo analizadas",
+      "value": "4 habilidades pilot-* (pilot-directory, pilot-discover, pilot-dns, pilot-network-map)"
+    },
+    {
+      "label": "Niveles de precedencia de carga",
+      "value": "6 niveles de prioridad (workspace, proyecto, personal, gestionada/compartida, empaquetada, plugin)"
+    },
+    {
+      "label": "Ejemplos de activación para pilot-protocol",
+      "value": "3 escenarios concretos (precios de criptomonedas, clima actual, noticias de última hora)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

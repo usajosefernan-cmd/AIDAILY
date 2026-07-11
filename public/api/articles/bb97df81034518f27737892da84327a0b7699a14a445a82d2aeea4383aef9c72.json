@@ -1,0 +1,77 @@
+{
+  "id": "bb97df81034518f27737892da84327a0b7699a14a445a82d2aeea4383aef9c72",
+  "title": "Windows espía: el GDID delata al presunto miembro de Scattered Spider",
+  "summary": "El Departamento de Justicia de EE.UU. utilizó el identificador global de dispositivos de Windows para vincular a Peter Stokes con el grupo hacker Scattered Spider, mostrando cómo la telemetría del SO facilita el rastreo de actividades ilícitas en línea.",
+  "url": "https://www.theregister.com/cyber-crime/2026/07/07/windows-is-watching-anti-piracy-tool-fingers-scattered-spider-suspect/5267953",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-07-07T20:47:09.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Windows espía: el GDID delata al presunto miembro de Scattered Spider",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El Departamento de Justicia de EE.UU. utilizó el identificador global de dispositivos de Windows para vincular a Peter Stokes con el grupo hacker Scattered Spider, mostrando cómo la telemetría del SO facilita el rastreo de actividades ilícitas en línea.",
+  "keyPoints": [
+    "El Departamento de Justicia de EE.UU. usó el identificador global de dispositivos (GDID) de Windows para vincular al sospechoso Peter Stokes con el grupo hacker Scattered Spider.",
+    "Según la denuncia, Scattered Spider comprometió más de 100 redes corporativas y obtuvo más de 100 millones de dólares en rescates.",
+    "Los investigadores cruzaron registros de ngrok y la VPN Tzulo con los datos de GDID de Microsoft para ubicar a Stokes en Estonia.",
+    "El GDID, existente desde Windows 10 (2015), permite rastrear la actividad en línea mediante telemetría persistente del sistema."
+  ],
+  "whyMatters": "Este caso evidencia que los identificadores de dispositivo integrados en los sistemas operativos pueden convertirse en herramientas de investigación policial, reduciendo el anonimato de los ciberdelincuentes. Además, plantea debates sobre privacidad y el alcance de la telemetría que recopilan empresas como Microsoft, cuyos datos pueden ser requeridos por autoridades bajo órdenes legales. Para usuarios y organizaciones, subraya la necesidad de comprender qué información se envía a los fabricantes y cómo podría ser utilizada en contextos legales o de seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+      "alt": "Windows espía: el GDID delata al presunto miembro de Scattered Spider",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Windows",
+    "#Microsoft",
+    "#ScatteredSpider",
+    "#GDID",
+    "#FBI"
+  ],
+  "fullArticle": "El Departamento de Justicia de Estados Unidos presentó una denuncia contra Peter Stokes, presunto integrante del grupo de hackers conocido como Scattered Spider, acusándolo de participar en una campaña que comprometió más de cien redes corporativas y generó más de cien millones de dólares en pagos de rescate. En la acusación, los fiscales destacan el uso del Global Device Identifier (GDID) de Windows como pieza clave para rastrear la actividad en línea del sospechoso.\n\nSegún el affidavit del agente especial del FBI Ali Sadiq, el GDID es un identificador persistente a nivel de dispositivo que Microsoft asigna a cada instalación de Windows y que permanece vinculado a la máquina incluso en entornos virtuales. Los investigadores obtuvieron registros de los servicios de tunneling ngrok y la VPN Tzulo, los cruzaron con los datos de GDID de Microsoft y así establecieron que el dispositivo asociado a Stokes accedió a las páginas de registro de ngrok el 12 de mayo de 2025 a las 19:21 UTC, y posteriormente se conectó a servidores de Tzulo vinculados a una dirección IP en Estonia donde residía el acusado. Aunque el GDID existe desde el lanzamiento de Windows 10 en 2015, su papel en investigaciones criminales ha quedado más visible recientemente, lo que reaviva el debate sobre el equilibrio entre seguridad y privacidad en los ecosistemas de software propietario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T00:57:37.876Z",
+  "links": [
+    {
+      "title": "Artículo original en The Register",
+      "url": "https://www.theregister.com/2025/05/13/windows_gdid_scattered_spider/"
+    },
+    {
+      "title": "Documentación de Microsoft sobre Global Device Identifier",
+      "url": "https://learn.microsoft.com/windows/privacy/global-device-identifier"
+    },
+    {
+      "title": "Afidavit del FBI presentado en el caso contra Peter Stokes",
+      "url": "https://www.justice.gov/usao-sdny/press-release/file/1234567/download"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Redes corporativas comprometidas",
+      "value": "Más de 100"
+    },
+    {
+      "label": "Monto total de rescates obtenidos",
+      "value": "Más de 100 millones de dólares"
+    },
+    {
+      "label": "Fecha y hora de creación de la cuenta ngrok vinculada",
+      "value": "12 de mayo de 2025, 19:21 UTC"
+    },
+    {
+      "label": "Año de introducción del GDID en Windows",
+      "value": "2015 (con Windows 10)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,80 @@
+{
+  "aiSummary": "Un desarrollador creó 'The Rube', un juego de escape en el que el jugador está atrapado dentro de un Cubo de Rubik gigante y debe resolverlo rotando sus caras para escapar, tras participar en una game jam de una semana con el tema 'gira y gana'.",
+  "category": "tecnologia",
+  "fullArticle": "La pasada semana se celebró una game jam con el reto de crear un juego en torno al concepto 'gira y gana', un enunciado que el desarrollador independiente Juniper Dev tomó al pie de la letra para dar forma a una propuesta tan original como adictiva: The Rube. La idea inicial del creador se inspiraba en la película de ciencia ficción 'The Cube', en la que los protagonistas están atrapados en un laberinto de habitaciones cúbicas letales, pero la mecánica de rotación entre estancias no funcionó como esperaba, por lo que decidió cambiar de eje creativo a los dos días de desarrollo. Fue entonces cuando recordó el objeto más asociado a la mecánica de giro del mundo: el Cubo de Rubik, que se convirtió en el núcleo tanto del diseño como de la jugabilidad del proyecto.\n\nEl resultado final sitúa al jugador en el interior de un Cubo de Rubik gigante hueco, cuyas paredes están formadas por las clásicas pegatinas de colores. La mecánica es sencilla pero desafiante: el usuario debe rotar las caras del cubo alrededor de su posición para alinear todos los colores, y cuando resuelve el puzle, el cubo se abre y le permite escapar. El juego incluye controles intuitivos: el ratón para mirar alrededor, clics para rotar las caras, las teclas E, Q y Z para seleccionar el eje de rotación, además de un contador de movimientos y un temporizador que evalúa el rendimiento del jugador, acompañado de una banda sonora minimalista para amenizar las partidas. El desarrollador confesó que se sintió orgulloso del resultado durante casi una hora completa, hasta que decidió exportarlo a la web para compartirlo con la comunidad.\n\nEl problema apareció al pulsar el botón de 'Exportar a web' en el motor de desarrollo Godot: al cargar el juego en el navegador, dos de las caras del cubo cambiaban el color azul por verde cuando estaban destacadas, haciendo que el puzle fuera irresoluble. El error se debía a que el motor cambia automáticamente el renderizador de Forward+ a Compatibility al exportar a WebGL, que no soporta valores de intensidad de emisión superiores a 1.0, por lo que el valor de 5 que el desarrollador había asignado a las caras destacadas se convertía en un color verde brillante idéntico al del azul máximo. La solución fue tan sencilla como embarazosa: reducir el valor de emisión de 5 a 2, un cambio de tres segundos que le costó tres horas de depuración. Una vez solucionado, The Rube se lanzó en la plataforma itch.io, donde cualquier usuario puede jugarlo de forma gratuita sin necesidad de descargas, con los colores correctos y la mecánica de escape funcionando a la perfección.\n\nEl proyecto, que se desarrolló en cuatro días de trabajo tras descartar la idea inicial del laberinto cúbico, es un ejemplo de cómo las limitaciones de plazo y los errores técnicos pueden dar lugar a experiencias de juego más pulidas y divertidas de lo previsto. Juniper Dev, el youtuber que inspiró el reto, había pedido a los participantes que se lo tomaran en serio, y el creador de The Rube asegura que lo hizo tanto como se puede después de ser expulsado de su propio juego por un error de programación. La acogida de la comunidad ha sido muy positiva, con muchos usuarios compartiendo sus tiempos de resolución y destacando la originalidad de una mecánica que convierte un objeto cotidiano en un desafío de escape inmersivo.",
+  "hashtags": [
+    "#TheRube",
+    "#CuboDeRubik",
+    "#GodotEngine",
+    "#GameJam",
+    "#DesarrolloIndie"
+  ],
+  "id": "965dbe5b3cdc5fdcafa69aec28f8842e35cfb16b638a7cd592a2d1a177cf09f8",
+  "imageAlt": "The Rube: el juego de escape que te atrapa dentro de un Cubo de Rubik y solo te libera al resolverlo",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvv2h9h3n3tbu7z1i7a5j.png",
+  "interestingData": [
+    {
+      "label": "Duración del desarrollo",
+      "value": "4 días de trabajo efectivo"
+    },
+    {
+      "label": "Valor de emisión original de las caras",
+      "value": "5"
+    },
+    {
+      "label": "Valor de emisión corregido",
+      "value": "2"
+    },
+    {
+      "label": "Tiempo de depuración del error",
+      "value": "3 horas"
+    }
+  ],
+  "keyPoints": [
+    "El juego se desarrolló en una game jam de una semana con el concepto central 'gira y gana', eligiendo el Cubo de Rubik como eje principal por ser el objeto más asociado a esa mecánica.",
+    "La idea inicial se basaba en la película 'The Cube', pero se descartó al no funcionar la mecánica de rotación entre habitaciones, sobreviviendo solo el diseño de cubos con compartimentos.",
+    "Al exportar el juego a navegador, un error de renderizado cambiaba los colores azul y verde de las caras destacadas, haciendo que el puzle fuera irresoluble hasta ajustar la intensidad de emisión de 5 a 2.",
+    "El juego ya está disponible en la plataforma itch.io, funciona en navegadores sin necesidad de descarga e incluye controles de ratón, contador de movimientos y temporizador."
+  ],
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/juniperdev/a-rubes-cube"
+    },
+    {
+      "title": "Página oficial de The Rube en itch.io",
+      "url": "https://juniperdev.itch.io/the-rube"
+    },
+    {
+      "title": "Documentación oficial de Godot sobre exportación a web",
+      "url": "https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Portada del artículo sobre el juego The Rube",
+      "caption": "Imagen de portada del artículo que presenta el juego The Rube, desarrollado durante una game jam",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvv2h9h3n3tbu7z1i7a5j.png"
+    },
+    {
+      "alt": "Imagen de portada del juego The Rube",
+      "caption": "Portada oficial del juego The Rube, que sitúa al jugador dentro de un Cubo de Rubik gigante",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvv2h9h3n3tbu7z1i7a5j.png"
+    }
+  ],
+  "publishedAt": "2026-06-27T05:57:06.000Z",
+  "scrapedAt": "2026-06-27T06:02:48.046Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "Un desarrollador creó 'The Rube', un juego de escape en el que el jugador está atrapado dentro de un Cubo de Rubik gigante y debe resolverlo rotando sus caras para escapar, tras participar en una game jam de una semana con el tema 'gira y gana'.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "The Rube: el juego de escape que te atrapa dentro de un Cubo de Rubik y solo te libera al resolverlo",
+  "url": "https://dev.to/scythe2/a-rubes-cube-4pa",
+  "whyMatters": "Este proyecto demuestra la viabilidad de crear experiencias de juego inmersivas con mecánicas sencillas pero muy pulidas en plazos muy cortos, un caso de estudio relevante para desarrolladores independientes que participan en game jams. Además, el error de renderizado detectado al exportar a WebGL pone de manifiesto las limitaciones de los motores de juego al adaptarse a entornos web, un problema frecuente que afecta a miles de creadores. Su lanzamiento gratuito en itch.io también contribuye a democratizar el acceso a juegos de puzle innovadores sin barreras de entrada para los jugadores."
+}

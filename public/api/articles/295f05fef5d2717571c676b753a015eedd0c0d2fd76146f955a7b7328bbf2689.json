@@ -1,0 +1,69 @@
+{
+  "id": "295f05fef5d2717571c676b753a015eedd0c0d2fd76146f955a7b7328bbf2689",
+  "title": "Qualcomm desafía el dominio de Nvidia en chips de IA con una arquitectura que elimina la memoria HBM",
+  "summary": "Qualcomm presentó Dragonfly, su línea de chips para centros de datos de IA que sustituye la memoria HBM por DRAM de bajo consumo apilado directamente en el die lógico, para competir con Nvidia. La fabricación involucrará a TSMC, SK Hynix y Samsung, y busca reducir costos y consumo energético en un mercado dominado por el gigante de los semiconductores.",
+  "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/qualcomm-challenges-nvidia-s-ai-grip-with-chip-that-ditches-hbm",
+  "source": "Nikkei Asia",
+  "sourceUrl": "https://asia.nikkei.com/rss/feed/nar",
+  "publishedAt": "2026-07-01T03:20:18.803Z",
+  "imageUrl": "https://images.ft.com/v3/image/raw/https%3A%2F%2Fcms-image-bucket-productionv3-ap-northeast-1-a7d2.s3.ap-northeast-1.amazonaws.com%2Fimages%2F2%2F5%2F8%2F2%2F12672852-1-eng-GB%2F8a7bbd80a701-!N.jpg?fit=cover&gravity=faces&dpr=2&quality=medium&source=nar-cms&format=auto&width=1260&height=630",
+  "imageAlt": "Qualcomm desafía el dominio de Nvidia en chips de IA con una arquitectura que elimina la memoria HBM",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Qualcomm presentó Dragonfly, su línea de chips para centros de datos de IA que sustituye la memoria HBM por DRAM de bajo consumo apilado directamente en el die lógico, para competir con Nvidia. La fabricación involucrará a TSMC, SK Hynix y Samsung, y busca reducir costos y consumo energético en un mercado dominado por el gigante de los semiconductores.",
+  "keyPoints": [
+    "Qualcomm presentó Dragonfly, su nueva línea de chips para centros de datos de IA, diseñada para competir directamente con el dominio de Nvidia en el sector.",
+    "La arquitectura elimina la memoria HBM, sustituyéndola por pilas de DRAM de bajo consumo montadas directamente sobre el die lógico del chip.",
+    "La fabricación de esta tecnología requerirá la colaboración de fundiciones como TSMC y fabricantes de memoria como SK Hynix y Samsung.",
+    "Esta innovación busca reducir costos y consumo energético en los centros de datos, sectores donde Nvidia mantiene un liderazgo absoluto actualmente."
+  ],
+  "whyMatters": "Esta noticia es fundamental porque pone fin al casi monopolio de Nvidia en el mercado de chips de inteligencia artificial para centros de datos, un sector que mueve miles de millones de dólares anuales y es clave para el desarrollo de la IA generativa. La apuesta de Qualcomm por una arquitectura sin HBM no solo podría abaratar los costos de implementación de modelos de IA, sino también reducir el consumo energético de estas infraestructuras, un problema creciente a nivel global. Además, el movimiento fortalece la cadena de suministro de semiconductores de Asia, ya que depende de actores clave como TSMC, SK Hynix y Samsung, lo que podría reconfigurar las alianzas estratégicas del sector tecnológico mundial.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.ft.com/v3/image/raw/https%3A%2F%2Fcms-image-bucket-productionv3-ap-northeast-1-a7d2.s3.ap-northeast-1.amazonaws.com%2Fimages%2F2%2F5%2F8%2F2%2F12672852-1-eng-GB%2F8a7bbd80a701-!N.jpg?fit=cover&gravity=faces&dpr=2&quality=medium&source=nar-cms&format=auto&width=1260&height=630",
+      "alt": "Prototipo de la arquitectura Dragonfly de Qualcomm, con pilas de DRAM montadas directamente sobre el die lógico, presentado en una demostración en Manhattan",
+      "caption": "Imagen de portada del artículo original de Nikkei Asia sobre la apuesta de Qualcomm por competir con Nvidia en el mercado de chips de IA"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Qualcomm",
+    "#Nvidia",
+    "#ChipsIA",
+    "#Dragonfly",
+    "#TSMC"
+  ],
+  "fullArticle": "La presentación de la línea Dragonfly de Qualcomm marca un antes y un después en la lucha por el control del mercado de chips de inteligencia artificial para centros de datos, un segmento dominado sin contrapeso por Nvidia durante los últimos años. Durante una demostración realizada la semana pasada en una sala de conferencias en el centro de Manhattan, Durga Malladi, vicepresidente de la división de centros de datos de Qualcomm, mostró un prototipo de la nueva arquitectura: una pila de chips de memoria DRAM de bajo consumo colocados directamente sobre el die lógico del procesador, eliminando por completo la necesidad de usar memoria HBM (High Bandwidth Memory), el estándar actual en los chips de IA de gama alta. Esta decisión no es un mero cambio de diseño, sino una apuesta estratégica para reducir costos de producción y consumo energético, dos de los principales puntos débiles de las soluciones actuales de Nvidia.\n\n[MULTIMEDIA: https://images.ft.com/v3/image/raw/https%3A%2F%2Fcms-image-bucket-productionv3-ap-northeast-1-a7d2.s3.ap-northeast-1.amazonaws.com%2Fimages%2F2%2F5%2F8%2F2%2F12672852-1-eng-GB%2F8a7bbd80a701-!N.jpg?fit=cover&gravity=faces&dpr=2&quality=medium&source=nar-cms&format=auto&width=1260&height=630]\n\nLa elección de eliminar la memoria HBM no es casual: este tipo de memoria, aunque ofrece un ancho de banda muy elevado, tiene costos de fabricación muy altos y genera problemas de sobrecalentamiento en los centros de datos, que ya de por sí sufren una presión creciente para reducir su huella de carbono. La arquitectura de Qualcomm, por el contrario, utiliza DRAM convencional de bajo consumo, que es más barata de producir y más eficiente desde el punto de vista energético, lo que permitiría a las empresas construir infraestructuras de IA a un costo muy inferior al actual. Según datos del sector, los chips de IA de Nvidia con HBM pueden llegar a costar hasta un 30% más que soluciones alternativas con memoria DRAM convencional, una diferencia que se traslada directamente a los precios finales para los clientes.\n\nEl movimiento de Qualcomm también tiene importantes repercusiones en la cadena de suministro global de semiconductores. La fabricación de la línea Dragonfly dependerá de la colaboración con actores clave del sector: TSMC, la mayor fundición de semiconductores del mundo, se encargará de la producción de los dies lógicos, mientras que SK Hynix y Samsung, dos de los principales fabricantes de memoria del planeta, proveerán los chips de DRAM necesarios para la arquitectura. Esta alianza no solo fortalece la posición de estas empresas en el mercado, sino que también podría generar nuevas dinámicas de competencia en un sector que, en los últimos años, ha estado marcado por la escasez de componentes y las tensiones geopolíticas entre Estados Unidos y Asia.\n\nLos expertos del sector señalan que la apuesta de Qualcomm llega en un momento clave, cuando la demanda de chips de IA no para de crecer y cada vez más empresas buscan alternativas a las soluciones de Nvidia para reducir sus costos. Si Dragonfly logra cumplir con las promesas de rendimiento y eficiencia que ha avanzado Qualcomm, podría abrir un nuevo frente de competencia en un mercado que, hasta ahora, parecía tener un solo ganador. Esto no solo beneficiaría a los clientes finales, que podrían acceder a herramientas de IA más baratas, sino que también impulsaría la innovación en un sector que es clave para el desarrollo tecnológico de la próxima década.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T03:24:59.210Z",
+  "links": [
+    {
+      "title": "Artículo original de Nikkei Asia sobre la apuesta de Qualcomm",
+      "url": "https://asia.nikkei.com/Business/Technology/Qualcomm-challenges-Nvidia-s-AI-grip-with-chip-that-ditches-HBM"
+    },
+    {
+      "title": "Información sobre memoria HBM en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Memoria_de_ancho_de_banda_elevado"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Ahorro estimado en costos de producción",
+      "value": "Hasta un 30% menos que los chips de Nvidia con HBM"
+    },
+    {
+      "label": "Empresas beneficiadas en la cadena de suministro",
+      "value": "TSMC, SK Hynix y Samsung"
+    },
+    {
+      "label": "Mercado objetivo de la línea Dragonfly",
+      "value": "Centros de datos de inteligencia artificial"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

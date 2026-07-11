@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Portal from '../../components/Portal.jsx';
+import { readFileSync, existsSync } from 'fs';
+import { join } from 'path';
+
+export async function getStaticPaths() {
+  const categories = [
+    'deportes', 'tecnologia', 'ciencia', 'medioambiente', 
+    'internacional', 'nacional', 'economia', 'opinion', 
+    'cultura', 'estilo', 'sociedad', 'gastronomia'
+  ];
+  return categories.map(cat => ({
+    params: { category: cat },
+    props: { categoryKey: cat }
+  }));
+}
+
+const { category } = Astro.params;
+const { categoryKey } = Astro.props;
+
+let categoryArticles = [];
+let totalArticlesCount = 0;
+
+const PORTAL_MAPPING = {
+  deportes: ['deportes', 'futbol', 'futbol/laliga', 'futbol/femenino', 'futbol/champions', 'futbol/2', 'futbol/general', 'ciclismo', 'ciclismo/tour-de-francia', 'motor', 'motor/formula 1', 'motor/motogp', 'motor/general', 'baloncesto', 'tenis', 'golf', 'polideportivo'],
+  tecnologia: ['tecnologia', 'ia', 'software', 'gadgets', 'inteligencia artificial', 'hardware', 'startups', 'ciberseguridad', 'videojuegos'],
+  ciencia: ['ciencia', 'espacio', 'salud', 'biologia', 'salud y medicina', 'biotecnologia', 'fisica', 'descubrimientos', 'astronomia'],
+  medioambiente: ['medioambiente', 'clima', 'sostenibilidad', 'ecologia', 'energias renovables', 'biodiversidad', 'economia circular'],
+  internacional: ['internacional', 'europa', 'america', 'asia', 'global', 'geopolitica'],
+  nacional: ['nacional', 'politica', 'sociedad', 'justicia', 'economia nacional', 'comunidades', 'corrupcion'],
+  economia: ['economia', 'mercados', 'finanzas', 'empresas', 'macroeconomia', 'empleo', 'negocios'],
+  opinion: ['opinion', 'editorial', 'columnas', 'analisis', 'debates'],
+  cultura: ['cultura', 'cine', 'musica', 'literatura', 'arte', 'teatro', 'series'],
+  estilo: ['estilo', 'bienestar', 'viajes', 'tendencias', 'moda', 'hogar'],
+  sociedad: ['sociedad', 'educacion', 'sanidad', 'derechos humanos', 'igualdad', 'redes sociales', 'meteorologia'],
+  gastronomia: ['gastronomia', 'recetas', 'restaurantes', 'nutricion', 'vinos', 'cocina']
+};
+
+function normalizeText(text) {
+  if (!text) return '';
+  return String(text).toLowerCase().trim();
+}
+
+try {
+  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
+  if (existsSync(cachePath)) {
+    const cacheContent = readFileSync(cachePath, 'utf-8');
+    const allArts = JSON.parse(cacheContent);
+    if (Array.isArray(allArts)) {
+      const allowedCats = PORTAL_MAPPING[categoryKey] || [categoryKey];
+      const allowedNormalized = allowedCats.map(normalizeText);
+
+      const filtered = allArts.filter(art => {
+        const artCat = normalizeText(art.category);
+        const artSub = normalizeText(art.subcategory);
+        return allowedNormalized.includes(artCat) || allowedNormalized.includes(artSub);
+      });
+
+      totalArticlesCount = filtered.length;
+      filtered.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
+      categoryArticles = filtered.slice(0, 200);
+    }
+  }
+} catch (e) {
+  console.error(`Error cargando categoría ${categoryKey} en Astro:`, e);
+}
+
+const categoryTitle = categoryKey.charAt(0).toUpperCase() + categoryKey.slice(1);
+---
+
+<Layout 
+  title={`${categoryTitle} — AIDAILY`} 
+  description={`Sección de noticias sobre ${categoryTitle} en AIDAILY, optimizada con inteligencia artificial.`}
+>
+  <Portal 
+    client:load 
+    recentArticles={categoryArticles} 
+    totalArticlesCount={totalArticlesCount}
+    initialCategory={categoryKey}
+  />
+</Layout>

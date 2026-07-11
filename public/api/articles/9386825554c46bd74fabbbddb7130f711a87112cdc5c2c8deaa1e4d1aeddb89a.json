@@ -1,0 +1,77 @@
+{
+  "id": "9386825554c46bd74fabbbddb7130f711a87112cdc5c2c8deaa1e4d1aeddb89a",
+  "title": "¿Tu pipeline de CI/CD debe vivir en un canvas o en tu repositorio? Los dos paradigmas que marcan la diferencia en despliegues autogestionados",
+  "summary": "El artículo analiza la disyuntiva entre definir pipelines de CI/CD autogestionados mediante interfaces visuales de canvas o mediante archivos YAML versionados en el repositorio, exponiendo ventajas, desventajas y una solución híbrida para proyectos legacy.",
+  "url": "https://dev.to/huangchengsir/should-your-pipeline-live-on-a-canvas-or-in-your-repo-two-paradigms-for-self-hosted-cicd-3oka",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T14:54:48.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6m8sdntq0ctzo6zfl7g7.png",
+  "imageAlt": "¿Tu pipeline de CI/CD debe vivir en un canvas o en tu repositorio? Los dos paradigmas que marcan la diferencia en despliegues autogestionados",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza la disyuntiva entre definir pipelines de CI/CD autogestionados mediante interfaces visuales de canvas o mediante archivos YAML versionados en el repositorio, exponiendo ventajas, desventajas y una solución híbrida para proyectos legacy.",
+  "keyPoints": [
+    "El paradigma de canvas permite diseñar pipelines visualmente arrastrando nodos, usado en herramientas legacy como Jenkins y plataformas DevOps personalizadas.",
+    "El paradigma de código guarda la definición en archivos YAML dentro del repositorio, permitiendo control de versiones, revisiones y seguimiento de ramas.",
+    "El canvas no permite que la configuración del pipeline acompañe a la rama de desarrollo, por lo que cambios en ramas feature no afectan a la rama principal.",
+    "La solución híbrida propuesta usa un interruptor por proyecto para elegir entre canvas o YAML sin mezclar definiciones, evitando conflictos de ejecución."
+  ],
+  "whyMatters": "Esta disyuntiva impacta directamente en la eficiencia y seguridad de los despliegues de software en equipos que usan CI/CD autogestionado. Entender las ventajas de cada paradigma permite a los equipos legacy migrar gradualmente sin interrumpir operaciones, mientras adoptan buenas prácticas de control de versiones. Además, la solución propuesta evita errores críticos de ejecución que pueden generar fallos en producción o pérdida de datos, lo que se traduce en ahorro de costos y mayor confiabilidad en los ciclos de entrega.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6m8sdntq0ctzo6zfl7g7.png",
+      "alt": "Portada del artículo que ilustra la disyuntiva entre definición de pipelines de CI/CD mediante canvas visual o archivos YAML en repositorio",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CICD",
+    "#DevOps",
+    "#Pipeline",
+    "#YAML",
+    "#DespliegueSoftware"
+  ],
+  "fullArticle": "Cuando autogestionas una herramienta de CI/CD el tiempo suficiente, tarde o temprano te enfrentas a una disyuntiva filosófica: ¿dónde debe residir realmente la definición de tu pipeline? Existen dos paradigmas claramente diferenciados. Por un lado, el enfoque de canvas: abres una página web, arrastras nodos, dibujas conexiones y defines el flujo build → test → deploy de forma visual, editable con unos pocos clics, como ocurre en configuraciones legacy de Jenkins o plataformas DevOps personalizadas. Por otro lado, el enfoque de código: la definición del pipeline es un simple archivo YAML alojado en tu repositorio, como los archivos .github/workflows/*.yml, .gitlab-ci.yml o .pipewright.yml, que se confirma, revisa y revierte junto con el código de la aplicación, un modelo que popularizó GitHub Actions.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6m8sdntq0ctzo6zfl7g7.png]\n\nAmbos paradigmas tienen ventajas reales, pero también fallos graves. El canvas tiene dos problemas irresolubles: el primero es que su configuración no se versiona, por lo que no hay registro de cambios, no se puede revisar en pull requests ni revertir a versiones anteriores. El segundo, y más crítico, es que la configuración no acompaña a la rama de desarrollo: si modificas el pipeline en una rama feature, el cambio afecta a todas las ejecuciones, incluyendo la rama principal, a diferencia de GitHub Actions donde el archivo de workflow sigue la rama y solo afecta a la misma hasta que se fusiona. Por su parte, el enfoque de código resuelve ambos problemas de forma directa, aunque es común confundirlo con herramientas como docker-compose: el archivo YAML del pipeline es la definición del flujo de CI/CD, mientras que docker-compose es una acción que se puede ejecutar dentro de un paso de ese flujo, por lo que se encuentran en capas completamente diferentes.\n\nLa solución perezosa suele ser obligar a los usuarios a elegir solo un paradigma, pero en la realidad muchos proyectos legacy ya tienen sus pipelines definidos en canvas y necesitan agregar definiciones en YAML para nuevos requisitos. Por ello, la propuesta más efectiva es un interruptor por proyecto, desactivado por defecto, que permita elegir la fuente de la definición del pipeline para cada ejecución: o el archivo YAML del repositorio, o la configuración del canvas, sin mezclar ambas opciones, ya que combinar definiciones genera imposibilidad de auditar qué se ejecutó realmente. Con el interruptor activado, la definición del pipeline lee la rama de la ejecución, por lo que los cambios en el archivo YAML en una rama feature solo afectan a esa rama, recuperando la principal ventaja del enfoque de código sin abandonar las configuraciones existentes en canvas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T15:06:39.828Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/pipewright/should-your-pipeline-live-on-a-canvas-or-in-your-repo-two-paradigms-for-self-hosted-ci-cd-4k9o"
+    },
+    {
+      "title": "Documentación oficial de GitHub Actions sobre workflows",
+      "url": "https://docs.github.com/es/actions/using-workflows/about-workflows"
+    },
+    {
+      "title": "Documentación oficial de Jenkins sobre pipelines",
+      "url": "https://www.jenkins.io/doc/book/pipeline/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Paradigmas de definición de pipelines comparados",
+      "value": "2 (canvas visual y archivo YAML)"
+    },
+    {
+      "label": "Problemas irresolubles del paradigma de canvas",
+      "value": "2 (falta de control de versiones y ausencia de seguimiento de ramas)"
+    },
+    {
+      "label": "Herramienta que popularizó el paradigma de YAML",
+      "value": "GitHub Actions"
+    },
+    {
+      "label": "Opciones de fuente de definición en la solución híbrida",
+      "value": "2 (archivo YAML del repositorio o configuración de canvas)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

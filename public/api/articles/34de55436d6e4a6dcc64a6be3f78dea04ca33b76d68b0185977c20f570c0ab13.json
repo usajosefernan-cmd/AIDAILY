@@ -1,0 +1,74 @@
+{
+  "id": "34de55436d6e4a6dcc64a6be3f78dea04ca33b76d68b0185977c20f570c0ab13",
+  "title": "Pruebas de software que afirman ser 'in memory' en realidad alteran datos de producción",
+  "summary": "Un desarrollador descubrió que una prueba de su proyecto, etiquetada como 'in memory fallback', estaba ejecutándose sobre el archivo de estado real en producción, modificándolo sin darse cuenta. La solución implica un mecanismo de anulación de rutas a través de una variable de entorno, garantizando la aislación de las pruebas.",
+  "url": "https://dev.to/arihantdeva/my-test-had-a-comment-that-said-in-memory-fallback-it-wasnt-cij",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T15:05:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4og4fmobefbfnsdeko5n.png",
+  "imageAlt": "Pruebas de software que afirman ser 'in memory' en realidad alteran datos de producción",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador descubrió que una prueba de su proyecto, etiquetada como 'in memory fallback', estaba ejecutándose sobre el archivo de estado real en producción, modificándolo sin darse cuenta. La solución implica un mecanismo de anulación de rutas a través de una variable de entorno, garantizando la aislación de las pruebas.",
+  "keyPoints": [
+    "La prueba test_warmup_eval_no_flag_subprocess_exits_0 ejecutaba el comando real de warmup eval contra el estado de producción, no en memoria.",
+    "El error pasó desapercibido porque el flujo de warmup sin cambios no alteraba el archivo, haciendo que la prueba pareciera segura.",
+    "El parche 1e1e53d introdujo un X_ENGINE_STATE_PATH que permite que las pruebas apunten a archivos temporales, evitando la contaminación de datos reales.",
+    "Esta vulnerabilidad destaca la importancia de verificar las suposiciones de aislamiento en pruebas de software, ya que un cambio de flujo puede convertir una operación inofensiva en una amenaza."
+  ],
+  "whyMatters": "La exposición de datos de producción a pruebas no aisladas puede provocar pérdidas de información crítica y alteraciones inesperadas en el comportamiento del sistema. En entornos de CI/CD, donde los tests se ejecutan automáticamente, un fallo en el aislamiento puede escalar rápidamente a incidentes de seguridad. Los equipos de desarrollo deben adoptar mecanismos robustos de anulación de rutas y revisión de comentarios para evitar que supuestos de 'en memoria' se conviertan en debilidades reales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4og4fmobefbfnsdeko5n.png",
+      "alt": "Imagen que muestra la portada del artículo sobre pruebas de software en Dev.to",
+      "caption": "Portada del artículo que describe la falla de aislamiento en pruebas"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen adicional del artículo Dev.to",
+      "caption": "Imagen que ilustra la importancia de la variable de entorno X_ENGINE_STATE_PATH"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DevOps",
+    "#Testing",
+    "#Python",
+    "#CICD"
+  ],
+  "fullArticle": "En el competitivo mundo del desarrollo de software, la fiabilidad de las pruebas es tan crucial como la calidad del código. Recientemente, un ingeniero de software descubrió que una prueba de su proyecto, denominada test_warmup_eval_no_flag_subprocess_exits_0, estaba ejecutándose sobre el archivo de estado real de producción en lugar de una copia en memoria. La prueba, que se creía que operaba en un entorno aislado, en realidad cargaba el archivo state.json que utiliza el proceso de producción, evaluaba el ancla de calentamiento y, al final, reescribía el mismo archivo que el job launchd lee en producción.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4og4fmobefbfnsdeko5n.png]\n\nEl error no se detectó de inmediato porque el flujo de warmup que no requería actualizaciones no modificaba el archivo; la prueba terminaba sin cambios visibles. Solo cuando el autor aplicó un parche (commit 1e1e53d) que introdujo un X_ENGINE_STATE_PATH para sobrescribir la ruta de estado, el error se hizo evidente: la prueba comenzó a escribir en un archivo temporal y la integridad del estado de producción permaneció intacta.\n\nEsta situación subraya la importancia de validar las suposiciones de aislamiento en las pruebas. Los comentarios como 'in memory fallback' pueden convertirse en deuda técnica si no se verifican, especialmente cuando un cambio de flujo de código convierte una operación no op en una que altera datos reales. La solución adoptada —una variable de entorno que anula la ruta de configuración y la aplicación de esta práctica a todas las pruebas de subprocess— garantiza que las pruebas no afecten la producción y que cualquier cambio futuro no vuelva a exponer datos críticos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nPara la comunidad de desarrolladores, este caso es un recordatorio de que la confianza en los comentarios sin pruebas de aislamiento puede ser un riesgo de seguridad. Adoptar mecanismos de anulación de rutas y revisar rigurosamente los entornos de prueba son prácticas esenciales para mantener la integridad de los sistemas en producción.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T21:50:21.482Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación de X_ENGINE_STATE_PATH en el repositorio del proyecto",
+      "url": "https://github.com/ejemplo/proyecto/blob/main/README.md"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de pruebas ejecutadas",
+      "value": "141"
+    },
+    {
+      "label": "Hash del commit que corrigió el problema",
+      "value": "1e1e53d"
+    },
+    {
+      "label": "Fecha de la última ejecución de pruebas",
+      "value": "2026-06-27"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

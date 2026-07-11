@@ -1,0 +1,38 @@
+{
+  "id": "5f570b28e19327c627c4fec2c7a7b2d90a75ceaa78fa26e03d7eb75e010961aa",
+  "title": "Scraping Booking.com Without Touching the Search Box (City Landings + the Apollo Cache)",
+  "summary": "Booking.com no quiere bots y se nota. Cada solicitud HTTP simple, cualquier cliente, cualquier proxy, es absorbida por AWS WAF con un 202 que nunca se resuelve en contenido. Aquí no hay forma de evitar un navegador real, lo que lo convierte en el raspado más caro de mi cartera. Lo que mantuvo vivo el proyecto...",
+  "url": "https://dev.to/jdpg23/scraping-bookingcom-without-touching-the-search-box-city-landings-the-apollo-cache-b7f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T08:00:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5kbbe2vla9jutc4n5kfu.png",
+  "imageAlt": "Scraping Booking.com Without Touching the Search Box (City Landings + the Apollo Cache)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Booking.com no quiere bots y se nota. Cada solicitud HTTP simple, cualquier cliente, cualquier proxy, es absorbida por AWS WAF con un 202 que nunca se resuelve en contenido. Aquí no hay forma de evitar un navegador real, lo que lo convierte en el raspado más caro de mi cartera. Lo que mantuvo vivo el proyecto...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5kbbe2vla9jutc4n5kfu.png",
+      "alt": "Scraping Booking.com Without Touching the Search Box (City Landings + the Apollo Cache)",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Booking.com no quiere bots y se nota. Cada solicitud HTTP simple, cualquier cliente, cualquier proxy, es absorbida por AWS WAF con un 202 que nunca se resuelve en contenido. Aquí no hay forma de evitar un navegador real, lo que lo convierte en el raspado más caro de mi cartera. Lo que mantuvo vivo el proyecto fue descubrir que las dos partes difíciles, la búsqueda y la extracción de datos, tienen puertas laterales silenciosas.\n\nMi primera versión manejaba la interfaz de usuario como un usuario: abría la página de inicio, escribía la ciudad, hacía clic en buscar. Fue un desastre. El autocompletado depende del tiempo, el panel de resultados se carga lentamente y aproximadamente un tercio de las ejecuciones terminaron con cero hoteles sin motivo visible. Depurar la automatización de la interfaz de usuario inestable es el peor tipo de depuración porque cada falla se ve diferente.\n\nLa puerta lateral: Booking mantiene páginas de destino SEO por ciudad con URL estables:\n\nNavegue directamente allí y aparecerá la página con una lista de hoteles. Sin escribir, sin hacer clic, sin carrera de autocompletar. Las carreras pasaron de ser raras a aburridas, que es el mayor cumplido que puede recibir un raspador.\n\nPara crear la URL a partir del nombre de una ciudad en texto libre, geocodifico con la API pública de Open-Meteo (sin clave): nombre de la ciudad, código de país y un nombre que se puede utilizar.\n\nSegunda sorpresa...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T08:25:51.780Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

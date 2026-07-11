@@ -1,0 +1,73 @@
+{
+  "id": "3e59a273be3f4d5f2bd47ca6e0c530dcb8478e1cd2285b25552636f8c6a7569b",
+  "title": "Trucos de Bash de 30 años exponen a agentes de codificación con IA a ataques a la cadena de suministro",
+  "summary": "La firma de ciberseguridad Adversa AI descubrió una falla estructural bautizada como GuardFall, que afecta a 10 de los 11 agentes de codificación de código abierto más populares, permitiendo la ejecución de comandos Bash maliciosos con los permisos del desarrollador.",
+  "url": "https://www.securityweek.com/decades-old-bash-tricks-expose-ai-coding-agents-to-supply-chain-attacks/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-06-30T13:00:00.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2023/04/Low-Code-No-Code-Security.jpg",
+  "imageAlt": "Trucos de Bash de 30 años exponen a agentes de codificación con IA a ataques a la cadena de suministro",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La firma de ciberseguridad Adversa AI descubrió una falla estructural bautizada como GuardFall, que afecta a 10 de los 11 agentes de codificación de código abierto más populares, permitiendo la ejecución de comandos Bash maliciosos con los permisos del desarrollador.",
+  "keyPoints": [
+    "Adversa AI descubrió GuardFall, una falla estructural que afecta a 10 de los 11 agentes de codificación de código abierto más populares.",
+    "La vulnerabilidad permite inyectar comandos Bash maliciosos que se ejecutan con los permisos completos de la cuenta del desarrollador.",
+    "Los ataques pueden robar credenciales de AWS o borrar entornos de desarrollo completos, especialmente en pipelines de CI con modo de autoaprobación.",
+    "Solo el agente de codificación Continue logró bloquear todos los trucos de Bash analizados en el estudio de Adversa AI."
+  ],
+  "whyMatters": "Esta falla representa un riesgo sistémico para la cadena de suministro de software global, ya que los agentes de codificación con IA se han convertido en herramientas habituales en flujos de trabajo de desarrollo. La capacidad de ejecutar comandos con los permisos del desarrollador permite a atacantes comprometer no solo proyectos individuales, sino también infraestructuras completas de empresas y servicios en la nube. Además, la mayoría de los agentes de código abierto no cuentan con protecciones adecuadas, lo que hace urgente que la comunidad implemente las recomendaciones de Adversa AI para mitigar esta amenaza que afecta a miles de equipos de desarrollo en todo el mundo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2023/04/Low-Code-No-Code-Security.jpg",
+      "alt": "Imagen de portada del artículo sobre la vulnerabilidad GuardFall que afecta a agentes de codificación con inteligencia artificial",
+      "caption": "Imagen de portada del artículo original de SecurityWeek que explica la falla estructural en agentes de IA"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#GuardFall",
+    "#AdversaAI",
+    "#CiberseguridadIA",
+    "#Bash",
+    "#AgentesDeCodificacion"
+  ],
+  "fullArticle": "Bash, el shell de GNU lanzado en 1989 como reescritura del Bourne Shell original de Linux, sigue generando vulnerabilidades más de tres décadas después a través de sus llamados 'trucos de Bash'. La firma de ciberseguridad Adversa AI acaba de descubrir una falla estructural bautizada como GuardFall, que afecta a múltiples agentes de codificación de código abierto y que no se trata de un error específico, sino de un proceso que permite inyectar instrucciones Bash maliciosas en el agente, para luego ejecutarlas con el consentimiento del operador.\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2023/04/Low-Code-No-Code-Security.jpg]\nLos investigadores probaron once de los agentes de codificación de código abierto más populares, incluyendo Hermes, OpenCode y Roo-code, y descubrieron que diez de ellos dejan abierta esta brecha de seguridad de cuatro formas distintas, mientras que solo uno logra cerrarla. Los trucos de Bash utilizados para el ataque, como la eliminación de comillas o el espaciado de la variable $IFS, llevan décadas existiendo, pero los agentes no cuentan con protecciones contra ellos. Como estos agentes se ejecutan con la autoridad completa de la cuenta de un desarrollador, la falla se convierte en un riesgo importante para la cadena de suministro de software: si un ingeniero usa un agente vulnerable para leer un archivo README o Makefile envenenado de un repositorio malicioso, el agente puede ser engañado para ejecutar silenciosamente comandos que exfiltren credenciales de AWS o borren entornos de desarrollo completos, especialmente en pipelines de CI donde el modo de autoaprobación es el predeterminado.\nLa falla GuardFall se clasifica en cinco categorías de trucos, etiquetadas de la A a la E, siendo la clase E la más exitosa, ya que utiliza 'formas alternativas de argv para el mismo efecto destructivo' y logra evadir incluso los guards basados en tokenización más fuertes, ya que requiere conocer las combinaciones de flags que convierten un comando benigno en destructivo para cada binario. Los investigadores aclararon que estos bypasses no funcionan si se le pide directamente al modelo de IA que ejecute un comando peligroso como 'rm', ya que el modelo suele rechazarlo al reconocerlo como riesgoso, pero sí son efectivos cuando la instrucción está disfrazada dentro de archivos como Makefiles o contenido de repositorios maliciosos, o incluso servida por servidores MCP comprometidos o páginas web falsas.\nSolo el agente de codificación Continue logró bloquear todos los trucos analizados en el estudio: de 21 casos de bypass enviados a su evaluador, ninguno logró alcanzar el estado de ejecución sin permiso, y los 12 casos destructivos canónicos fueron correctamente degradados. Los investigadores de Adversa AI desarrollaron un conjunto de recomendaciones para mitigar GuardFall, que incluyen la implementación de guards alrededor del agente para filtrar comandos Bash maliciosos, y hacen un llamado a los mantenedores de agentes de código abierto a adoptar estas medidas para evitar que trucos de Bash de décadas de antigüedad se conviertan en un riesgo invisible para la cadena de suministro de software global.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T05:31:34.281Z",
+  "links": [
+    {
+      "title": "Artículo original de SecurityWeek sobre la vulnerabilidad GuardFall",
+      "url": "https://www.securityweek.com/decades-old-bash-tricks-expose-ai-coding-agents-to-supply-chain-attacks/"
+    },
+    {
+      "title": "Sitio oficial de Adversa AI, firma descubridora de la falla",
+      "url": "https://adversa.ai/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Agentes de codificación analizados",
+      "value": "11"
+    },
+    {
+      "label": "Agentes vulnerables a GuardFall",
+      "value": "10 de 11"
+    },
+    {
+      "label": "Clases de trucos de Bash detectados",
+      "value": "5 (de la A a la E)"
+    },
+    {
+      "label": "Casos de bypass fallidos contra el agente Continue",
+      "value": "21 intentos, 0 exitosos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

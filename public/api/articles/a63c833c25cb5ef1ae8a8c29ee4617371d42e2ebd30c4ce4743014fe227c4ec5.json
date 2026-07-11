@@ -1,0 +1,79 @@
+{
+  "id": "a63c833c25cb5ef1ae8a8c29ee4617371d42e2ebd30c4ce4743014fe227c4ec5",
+  "title": "AlloyDB Revoluciona la IA en Bases de Datos: Modelos Proxy que Eliminan las Llamadas Externas a LLM",
+  "summary": "Google lanza la disponibilidad general de AlloyDB AI, funciones de inteligencia artificial integradas en SQL que incluyen modelos proxy para inferencia local, logrando mejoras de hasta 23.000 veces en rendimiento y 6.000 veces en reducción de costos.",
+  "url": "https://www.infoq.com/news/2026/07/alloydb-ai-proxy-models",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-09T08:00:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg",
+  "imageAlt": "AlloyDB Revoluciona la IA en Bases de Datos: Modelos Proxy que Eliminan las Llamadas Externas a LLM",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Google lanza la disponibilidad general de AlloyDB AI, funciones de inteligencia artificial integradas en SQL que incluyen modelos proxy para inferencia local, logrando mejoras de hasta 23.000 veces en rendimiento y 6.000 veces en reducción de costos.",
+  "keyPoints": [
+    "AlloyDB AI ya está disponible de forma general con funciones de generación de texto, filtrado semántico y predicción de series temporales integradas en consultas SQL.",
+    "El modelo proxy entrena un modelo ligero local a partir de una muestra de datos, eliminando las llamadas externas a LLM por cada fila de la tabla.",
+    "Las pruebas internas de Google muestran un aumento de 23.000 veces en el rendimiento y una reducción de 6.000 veces en costos con los proxy optimizados.",
+    "El agrupamiento inteligente de filas reduce los viajes de ida y vuelta al modelo externo, logrando 10.000 filas procesadas por segundo en pruebas."
+  ],
+  "whyMatters": "Este lanzamiento redefine la integración de inteligencia artificial en bases de datos empresariales, eliminando la dependencia de servicios externos de LLM por cada operación, lo que reduce drásticamente costos y latencia para cargas de trabajo a escala. Para empresas españolas y europeas, supone una oportunidad para implementar análisis semánticos y predicciones avanzadas sin inversiones adicionales en infraestructura externa, además de mejorar la privacidad al procesar datos sensibles localmente. El enfoque de modelos proxy podría convertirse en un estándar de la industria, impulsando a competidores como Aurora o Azure SQL a adoptar técnicas similares de destilación de modelos en tiempo de consulta.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg",
+      "alt": "Arquitectura de IA Agéntica: Guía para sistemas de IA autónomos",
+      "caption": "Mini libro sobre arquitectura de IA agéntica, enfoque clave en sistemas de IA modernos como los modelos proxy de AlloyDB"
+    },
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/multi-agent-ai-architecture/en/smallimage/itamar-friedman-thumbnail-1782818996066.jpeg",
+      "alt": "Enfoque Multi-Agente: Construcción de automatización de desarrollo de software fiable y controlable",
+      "caption": "Presentación sobre arquitectura multi-agente, tendencia relacionada con la optimización de flujos de IA en bases de datos"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AlloyDB",
+    "#GoogleCloudAI",
+    "#ModelosProxy",
+    "#IAEnSQL",
+    "#BasesDeDatosInteligentes"
+  ],
+  "fullArticle": "Google ha lanzado la disponibilidad general de AlloyDB AI, un conjunto de funciones de inteligencia artificial integradas directamente en su base de datos AlloyDB, que permiten a los desarrolladores ejecutar modelos de lenguaje grandes dentro de consultas SQL estándar, eliminando la necesidad de llamadas externas por cada fila de datos. Este lanzamiento incluye cinco funciones principales: generación de texto, filtrado semántico, reordenamiento semántico, predicción de series temporales y un nuevo modelo proxy que entrena un modelo ligero local para realizar inferencias sin depender de servicios externos.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg]\n\nEl problema de las llamadas individuales a LLM por fila se agrava a escala: una tabla con 100.000 productos requeriría 100.000 viajes de ida y vuelta a servicios como Vertex AI, cada uno con el mismo prompt, costos por token y latencia. Para solucionarlo, Google introduce dos capas de aceleración: el agrupamiento inteligente (smart batching), que combina múltiples filas en una sola llamada, logrando hasta 10.000 filas por segundo, 2.400 veces más rápido que el procesamiento fila por fila; y el modelo proxy, que en una fase de preparación entrena un modelo ligero local con una muestra de datos enviada a un modelo frontera, para luego ejecutar la consulta localmente sin llamadas externas, alcanzando 100.000 filas por segundo, una mejora de 23.000 veces en rendimiento y 6.000 veces en reducción de costos, según pruebas internas de Google.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/multi-agent-ai-architecture/en/smallimage/itamar-friedman-thumbnail-1782818996066.jpeg]\n\nEsta arquitectura invierte la relación tradicional entre bases de datos y LLM: en lugar de ser un cliente que depende de un modelo externo para cada decisión, la base de datos se convierte en un estudiante que aprende el juicio del modelo y lo aplica localmente a velocidad de base de datos. Aunque los números de rendimiento corresponden a pruebas internas y se aplican actualmente solo a la función de filtrado semántico (ai.if) en vista previa, el enfoque sienta un precedente para la industria. Competidores como Aurora, Azure SQL o CockroachDB podrían adoptar técnicas similares de destilación de modelos en tiempo de consulta, cambiando la forma en que las empresas integran IA en sus cargas de trabajo sin necesidad de lógica personalizada en el código de la aplicación.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T08:24:33.245Z",
+  "links": [
+    {
+      "title": "Noticia original en InfoQ",
+      "url": "https://www.infoq.com/news/2026/07/alloydb-ai-proxy-models/"
+    },
+    {
+      "title": "Documentación oficial de AlloyDB AI en Google Cloud",
+      "url": "https://cloud.google.com/alloydb/ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Mejora de rendimiento con modelos proxy",
+      "value": "23.000 veces"
+    },
+    {
+      "label": "Reducción de costos con modelos proxy",
+      "value": "6.000 veces"
+    },
+    {
+      "label": "Rendimiento de agrupamiento inteligente",
+      "value": "10.000 filas por segundo"
+    },
+    {
+      "label": "Rendimiento de modelo proxy local",
+      "value": "100.000 filas por segundo"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

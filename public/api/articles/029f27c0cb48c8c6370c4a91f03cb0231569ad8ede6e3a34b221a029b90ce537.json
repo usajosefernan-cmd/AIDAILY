@@ -1,0 +1,69 @@
+{
+  "id": "029f27c0cb48c8c6370c4a91f03cb0231569ad8ede6e3a34b221a029b90ce537",
+  "title": "Los LLM no bastan para predecir la intención humana: la IA conductual propone un nuevo camino",
+  "summary": "Entrevista en el podcast de Stack Overflow al CTO de Yobi, Frank Portman, quien explica por qué los grandes modelos de lenguaje (LLM) son insuficientes para tareas de predicción de intención conductual, y presenta los modelos fundacionales de su empresa para sectores como la publicidad y el marketing.",
+  "url": "https://stackoverflow.blog/2026/06/30/why-intent-prediction-needs-more-than-an-llm/",
+  "source": "Stack Overflow Blog",
+  "sourceUrl": "https://stackoverflow.blog/feed/",
+  "publishedAt": "2026-06-30T05:01:02.622Z",
+  "imageUrl": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/e35a0c5eb319e7928c9ac0a2c2c782d29e644876-3120x1640.png?rect=0,1,3120,1638&w=1200&h=630&auto=format",
+  "imageAlt": "Los LLM no bastan para predecir la intención humana: la IA conductual propone un nuevo camino",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Entrevista en el podcast de Stack Overflow al CTO de Yobi, Frank Portman, quien explica por qué los grandes modelos de lenguaje (LLM) son insuficientes para tareas de predicción de intención conductual, y presenta los modelos fundacionales de su empresa para sectores como la publicidad y el marketing.",
+  "keyPoints": [
+    "Frank Portman, CTO de Yobi, afirma que los LLM fallan en tareas que no son lingüísticas, como predecir el comportamiento futuro de los usuarios.",
+    "Yobi desarrolla modelos fundacionales de IA conductual especializados en predecir intenciones para sectores como ad tech y marketing.",
+    "Portman relata su trayectoria desde las matemáticas puras hasta la ingeniería de software y el machine learning, sin formación formal en la materia.",
+    "La empresa busca superar las limitaciones de los LLM al centrarse en datos conductuales en lugar de solo texto para sus predicciones."
+  ],
+  "whyMatters": "Esta discusión expone una limitación crítica de los LLM actuales: su incapacidad para modelar la conducta humana más allá del procesamiento de lenguaje, lo que restringe su aplicabilidad en sectores donde la predicción de intenciones es clave, como la publicidad personalizada o la estrategia de marketing. La propuesta de Yobi abre un camino hacia modelos de IA más especializados y precisos, que combinan datos conductuales con arquitecturas adaptadas, lo que podría reducir errores y aumentar el retorno de inversión en campañas digitales. A largo plazo, este enfoque podría redefinir cómo las empresas interactúan con sus usuarios, pasando de modelos genéricos a soluciones predictivas centradas en el comportamiento real de las personas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/e35a0c5eb319e7928c9ac0a2c2c782d29e644876-3120x1640.png?rect=0,1,3120,1638&w=1200&h=630&auto=format",
+      "alt": "Portada del artículo del podcast de Stack Overflow sobre las limitaciones de los LLM para la predicción de intención conductual",
+      "caption": "Imagen de portada del episodio del podcast de Stack Overflow en el que se analiza por qué los LLM no son suficientes para tareas de predicción de intención"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#LLM",
+    "#IACondicional",
+    "#YobiAI",
+    "#PrediccionDeIntencion",
+    "#AdTech"
+  ],
+  "fullArticle": "El último episodio del podcast de Stack Overflow, presentado por Ryan Donovan, aborda una de las limitaciones menos discutidas de los grandes modelos de lenguaje (LLM): su incapacidad para realizar tareas que no se centran en el procesamiento de texto, como la predicción de la intención conductual de los usuarios. El invitado, Frank Portman, CTO de la empresa de IA conductual Yobi, explica por qué estos modelos, aunque potentes para generar lenguaje natural, no son suficientes para anticipar comportamientos futuros en entornos como la publicidad digital o el marketing, donde lo que realmente importa es lo que los usuarios harán, no lo que dicen.\n\n[MULTIMEDIA: https://cdn.stackoverflow.co/images/jo7n4k8s/production/e35a0c5eb319e7928c9ac0a2c2c782d29e644876-3120x1640.png?rect=0,1,3120,1638&w=1200&h=630&auto=format]\n\nPortman relata durante la entrevista su trayectoria profesional, que comenzó con estudios de matemáticas puras antes de dar el salto a la ingeniería de software y el machine learning, sin contar con una formación formal en estas últimas áreas. Su experiencia le ha permitido constatar que, si bien los LLM son herramientas muy útiles para tareas de generación y comprensión de lenguaje, su diseño no está orientado a procesar los datos conductuales (clics, tiempos de permanencia, patrones de navegación, interacciones con productos) que son esenciales para predecir qué hará un usuario a continuación. Yobi, por el contrario, ha construido modelos fundacionales específicamente entrenados para este tipo de tareas, centrados en el comportamiento humano más que en el texto.\n\nLa apuesta de Yobi por la IA conductual no es un capricho: en sectores como el ad tech, donde las empresas invierten miles de millones de dólares anuales en campañas publicitarias, la capacidad de predecir la intención de un usuario puede marcar la diferencia entre un retorno de inversión positivo o un desperdicio total de presupuesto. Los LLM, al basarse casi exclusivamente en datos textuales, no captan las señales no lingüísticas que revelan las verdaderas intenciones de las personas, lo que genera errores de predicción que pueden resultar muy costosos para las marcas. Los modelos de Yobi, en cambio, integran estas señales para ofrecer estimaciones mucho más precisas.\n\nA largo plazo, este enfoque podría sentar las bases para una nueva generación de modelos de IA más especializados, que no traten de servir para todo sino que se diseñen para resolver problemas concretos con datos específicos. La entrevista no solo pone de relieve las limitaciones actuales de los LLM, sino que también abre el debate sobre hacia dónde debe dirigirse el desarrollo de la inteligencia artificial en los próximos años: ¿hacia modelos cada vez más grandes y genéricos, o hacia soluciones más pequeñas, especializadas y adaptadas a las necesidades de cada sector?",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T05:04:36.594Z",
+  "links": [
+    {
+      "title": "Sitio oficial de Yobi, empresa de IA conductual",
+      "url": "https://yobi.ai"
+    },
+    {
+      "title": "Podcast oficial de Stack Overflow",
+      "url": "https://stackoverflow.blog/podcast"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Formación académica de Frank Portman",
+      "value": "Licenciatura en matemáticas puras"
+    },
+    {
+      "label": "Enfoque principal de los modelos de Yobi",
+      "value": "Predicción de comportamiento futuro a partir de datos conductuales"
+    },
+    {
+      "label": "Sectores de aplicación de la tecnología de Yobi",
+      "value": "Ad tech, marketing digital y sectores relacionados con la predicción de conducta"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

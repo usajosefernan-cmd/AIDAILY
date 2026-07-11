@@ -1,0 +1,38 @@
+{
+  "id": "c171a5a3445a74cd511d9524562b6bd9259618cae26cce570fe4ff49c8e2ddce",
+  "title": "The Architecture of On-Chain AI Agent Execution: Beyond Smart Contracts",
+  "summary": "El artículo explica que la implementación real de agentes de IA en cadena no se limita a añadir llamadas a API a contratos inteligentes, sino que invierte la arquitectura tradicional: el agente es el contexto de ejecución principal y la blockchain actúa como capa de estado persistente, con memoria entre bloques y motores de decisión que permiten lógica adaptativa y multi-paso, a diferencia de los contratos deterministas diseñados para operaciones fijas como intercambios o liquidaciones.",
+  "url": "https://dev.to/claudia-ve/the-architecture-of-on-chain-ai-agent-execution-beyond-smart-contracts-4jlj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T10:08:54.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgfu0catibddzucrmei2d.png",
+  "imageAlt": "The Architecture of On-Chain AI Agent Execution: Beyond Smart Contracts",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica que la implementación real de agentes de IA en cadena no se limita a añadir llamadas a API a contratos inteligentes, sino que invierte la arquitectura tradicional: el agente es el contexto de ejecución principal y la blockchain actúa como capa de estado persistente, con memoria entre bloques y motores de decisión que permiten lógica adaptativa y multi-paso, a diferencia de los contratos deterministas diseñados para operaciones fijas como intercambios o liquidaciones.",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgfu0catibddzucrmei2d.png",
+      "alt": "The Architecture of On-Chain AI Agent Execution: Beyond Smart Contracts",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Cuando la mayoría de los desarrolladores escuchan \"agentes de IA en cadena\", se imaginan un contrato inteligente con una llamada API incorporada. Un contrato llama a un oráculo, el oráculo obtiene un resultado del modelo y el contrato se ejecuta en función de ese resultado.\n\nLos agentes reales de IA en cadena no incorporan IA a contratos inteligentes. Invierten la arquitectura por completo. El agente se convierte en el contexto de ejecución principal y la cadena de bloques se convierte en su capa de estado.\n\nAsí es como se ve realmente debajo del capó y por qué es importante para cualquiera que construya en este espacio.\n\nLos contratos inteligentes se diseñaron para una ejecución determinista y limitada por gas. Cada nodo debe llegar exactamente al mismo resultado dadas las mismas entradas. Esto es excelente para un intercambio de tokens o una liquidación; malo para cualquier cosa que requiera contexto, inferencia o toma de decisiones de varios pasos.\n\nUn contrato DeFi típico sigue una ruta fija:\n\nCada paso es determinista. Cada resultado es predecible. No hay lugar para \"si las condiciones del mercado cambiaron, pruebe la estrategia B\".\n\nLos agentes de IA cambian esto. En lugar de una ruta de ejecución fija, los agentes evalúan el estado en tiempo de ejecución y eligen su siguiente acción basándose en un razonamiento probabilístico. Pueden realizar bucles, retroceder o girar sin necesidad de un nuevo...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T10:23:07.500Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

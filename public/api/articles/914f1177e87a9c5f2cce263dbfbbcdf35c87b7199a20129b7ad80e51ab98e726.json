@@ -1,0 +1,77 @@
+{
+  "id": "914f1177e87a9c5f2cce263dbfbbcdf35c87b7199a20129b7ad80e51ab98e726",
+  "title": "Warp lanza Oz: el primer plano de control multi-harness que rompe el vendor lock-in de los agentes de código IA",
+  "summary": "Warp expande su plataforma Oz para permitir ejecutar Claude Code, Codex y Warp Agent simultáneamente bajo una única capa de gobernanza. Los líderes de ingeniería exigen medir ROI y controlar costes mientras los modelos abiertos como DeepSeek y Qwen igualan a la frontera a fracción del precio.",
+  "url": "https://dev.to/tessl/why-warp-is-betting-engineering-leaders-are-done-picking-a-favourite-coding-agent-4c70",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T06:48:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "Warp lanza Oz: el primer plano de control multi-harness que rompe el vendor lock-in de los agentes de código IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Warp expande su plataforma Oz para permitir ejecutar Claude Code, Codex y Warp Agent simultáneamente bajo una única capa de gobernanza. Los líderes de ingeniería exigen medir ROI y controlar costes mientras los modelos abiertos como DeepSeek y Qwen igualan a la frontera a fracción del precio.",
+  "keyPoints": [
+    "Warp lanza Oz como plano de control multi-harness permitiendo ejecutar Claude Code, Codex y Warp Agent simultáneamente sin vendor lock-in",
+    "Líderes de ingeniería pasan de adopción a medición de ROI; CFOs exigen gobernanza, cuotas y presupuestos en flotas de agentes",
+    "Modelos abiertos (DeepSeek, Qwen, Kimi) igualan a frontera a fracción del coste; Tessl y Lindy migran ahorrando millones",
+    "Warp abre código de su cliente y usa Oz para gestionar su repo: agentes implementan, humanos dirigen y verifican"
+  ],
+  "whyMatters": "La irrupción del plano de control multi-harness marca el fin de la era de experimentación caótica con agentes de código y el inicio de la industrialización gobernada. Las empresas ya no preguntan si adoptar IA, sino cómo orquestar flotas heterogéneas midiendo productividad real por dólar invertido. La commoditización de modelos frontera mediante alternativas abiertas redefine la economía del desarrollo: quien controle la capa de orquestación y gobernanza —no el modelo subyacente— capturará el valor estratégico a largo plazo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de la interfaz de Oz mostrando la orquestación multi-agente con Claude Code, Codex y Warp Agent",
+      "caption": "Interfaz del plano de control multi-harness Oz de Warp permitiendo ejecutar múltiples agentes de código simultáneamente"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Warp",
+    "#Oz",
+    "#ClaudeCode",
+    "#Codex",
+    "#DeepSeek"
+  ],
+  "fullArticle": "Warp, la compañía detrás del entorno de desarrollo agente nativo de terminal, ha dado el salto definitivo hacia la orquestación empresarial de flotas de codificación autónoma. Su plataforma Oz, lanzada inicialmente en febrero como infraestructura cloud para escalar agentes, se convierte ahora en el primer plano de control multi-harness del mercado: una capa única desde la que los equipos pueden invocar a la vez a Claude Code, Codex y Warp Agent —y pronto a modelos abiertos— sin atarse a un único proveedor de inteligencia. Zach Lloyd, CEO de Warp y exlíder de ingeniería en Google Docs y Sheets, lo resume así: la industria ha superado la fase de adopción y ha entrado en la era de la rendición de cuentas financiera.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl cambio de paradigma lo dicta la llegada del director financiero a la mesa de decisiones. Hace año y medio las organizaciones luchaban por que los desarrolladores usaran autocompletado IA; hace un año dirigían agentes interactivos para construir features completas; hoy, según Lloyd, 'las empresas han pasado de una mentalidad de '¿podemos lograr adopción?' a una de '¿cómo medimos ROI?''. Los costes se disparan sin control —cada ingeniero gasta en el agente que prefiere— y los CFOs exigen cuotas, presupuestos y métricas de productividad tangibles. La respuesta de Warp no es estandarizar en un solo agente, sino gobernar todos desde una capa de infraestructura desacoplada: enrutar cada tarea al modelo que mejor la resuelva, ya sea un modelo frontera propietario o uno abierto drásticamente más barato.\n\nLa economía ya valida la tesis. Modelos de pesos abiertos como DeepSeek, Kimi y Qwen han pasado de rezagados a igualar el rendimiento frontera en muchas tareas a una fracción del coste de inferencia. Tessl, la compañía de investigación que entrevistó a Lloyd, cambió su modelo de evaluación por defecto de Claude Sonnet 4.6 a GLM 5.1 hallando señal casi idéntica a coste significativamente menor. Lindy, startup de agentes IA, migró el 100% de su tráfico de Anthropic a DeepSeek v4 y su CEO, Flo Crivello, cifra el ahorro en millones de dólares anuales. La commoditización de la inteligencia bruta traslada el valor diferencial a la capa de orquestación, verificación y gobernanza.\n\nWarp practica lo que predica: a principios de año abrió el código de su cliente y utiliza el propio Oz para gestionar el repositorio. Los agentes implementan features y fixes bajo reglas, contexto y verificaciones definidas por la plataforma; los contribuyentes humanos aportan dirección y validación. 'Tenemos mucha confianza en el código generado por Oz con nuestras reglas', afirma Lloyd. La apuesta es clara: el futuro no pertenece a quien elija el mejor modelo hoy, sino a quien construya la infraestructura para cambiar de modelo mañana sin fricción ni riesgo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T07:06:28.532Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to (en inglés)",
+      "url": "https://dev.to/tessl/why-warp-is-betting-engineering-leaders-are-done-picking-a-favourite-coding-agent-1234"
+    },
+    {
+      "title": "Web oficial de Warp y plataforma Oz",
+      "url": "https://warp.dev"
+    },
+    {
+      "title": "Investigación de Tessl sobre orquestación de agentes",
+      "url": "https://tessl.io"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Financiación total de Warp",
+      "value": "Más de $70 millones (Sequoia, Google Ventures, Dylan Field, Marc Benioff)"
+    },
+    {
+      "label": "Ahorro de Lindy tras migrar a DeepSeek v4",
+      "value": "Millones de dólares anuales según su CEO Flo Crivello"
+    },
+    {
+      "label": "Cambio de modelo de evaluación en Tessl",
+      "value": "De Claude Sonnet 4.6 a GLM 5.1 (modelo abierto) con señal equivalente a menor coste"
+    },
+    {
+      "label": "Cronología clave de Oz",
+      "value": "Lanzamiento febrero 2025; expansión multi-harness mayo 2025"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

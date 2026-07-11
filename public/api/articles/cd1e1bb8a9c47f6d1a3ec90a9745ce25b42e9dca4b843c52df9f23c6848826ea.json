@@ -1,0 +1,47 @@
+{
+  "id": "cd1e1bb8a9c47f6d1a3ec90a9745ce25b42e9dca4b843c52df9f23c6848826ea",
+  "title": "Coming up for Air",
+  "summary": "<p>After the absolute gauntlet of the past few weeks, this week finally offered a little bit of breathing room. I'm not going to lie, I needed it. But \"lighter\" in the open-source world doesn't mean stopping; it just means you finally have the time to sit back and actually think before you code.</p>\n\n<h2>\n  \n  \n  Writing .pyi Stub Files\n</h2>\n\n<p>A good chunk of my time went into writing <code>.pyi</code> stub files. It sounds mundane on the surface, like just writing Python type hints, BUT it's actually this bizarre, highly precise exercise in translation. You are basically acting as a diplomat between the ruthless C-engine and Python's static type checkers. It's microscopic work. Every single argument has to align perfectly with how the C-level memory actually allocates it, otherwise the whole illusion shatters. It requires a sort of discipline.</p>\n\n<h2>\n  \n  \n  My Main Target\n</h2>\n\n<p>But my main focus, and what I'm gearing up to dive back into, is the <code>unit_list_proxy.c</code> file.</p>\n\n<p>There is a nasty runtime dependency lurking in there. Right now, the C-code aggressively tries to import a massive Python library the second it gets created, locking everything into this heavy, tangled cycle. For a minute, I was dreading having to do a complete, tear-it-down-to-the-studs refactor just to untangle it.</p>\n\n<p>Thankfully, I pitched an alternative to my mentor, Clément, and he gave me the green light to run with it. We'll see how that goes.</p>\n\n<h2>\n  \n  \n  The fix?\n</h2>\n\n<p>Instead of a massive rewrite, we are going to use <strong>structural sub-typing</strong> which is a more specific form of <strong>duck typing</strong> (I guess don't come at me if I'm wrong) right at the C-level. Rather than forcing the C-engine to check an object's exact, official DNA (which requires importing the whole Python library), we are just going to check its behavior. Does it have the method we need? If it walks like a duck and quacks like a duck, the C-engine will blindly trust that it's a duck and process it.</p>\n\n<p>It is such an elegant workaround. It completely severs the nasty dependency chain without us having to burn the house down to fix the plumbing (I was pretty proud of actually thinking about it).</p>\n\n<h2>\n  \n  \n  Thoughts..\n</h2>\n\n<p>It's a smarter, cleaner way forward. The C-layer is still intimidating, but for the first time in a while, I feel like I'm actually outsmarting the machine instead of just wrestling with it.</p>\n\n<p>Back into the dark I go.</p>\n\n",
+  "url": "https://dev.to/reemhamraz/coming-up-for-air-587f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T14:53:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2fpe04r8gjhftpjxv6g1.png",
+  "imageAlt": "Coming up for Air",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<p>After the absolute gauntlet of the past few weeks, this week finally offered a little bit of breathing room. I'm not going to lie, I needed it. But \"lighter\" in the open-source world doesn't mean stopping; it just means you finally have the time to sit back and actually think before you code.</p>\n\n<h2>\n  \n  \n  Writing .pyi Stub Files\n</h2>\n\n<p>A good chunk of my time went into writing <code>.pyi</code> stub files. It sounds mundane on the surface, like just writing Python type hints, BUT it's actually this bizarre, highly precise exercise in translation. You are basically acting as a diplomat between the ruthless C-engine and Python's static type checkers. It's microscopic work. Every single argument has to align perfectly with how the C-level memory actually allocates it, otherwise the whole illusion shatters. It requires a sort of discipline.</p>\n\n<h2>\n  \n  \n  My Main Target\n</h2>\n\n<p>But my main focus, and what I'm gearing up to dive back into, is the <code>unit_list_proxy.c</code> file.</p>\n\n<p>There is a nasty runtime dependency lurking in there. Right now, the C-code aggressively tries to import a massive Python library the second it gets created, locking everything into this heavy, tangled cycle. For a minute, I was dreading having to do a complete, tear-it-down-to-the-studs refactor just to untangle it.</p>\n\n<p>Thankfully, I pitched an alternative to my mentor, Clément, and he gave me the green light to run with it. We'll see how that goes.</p>\n\n<h2>\n  \n  \n  The fix?\n</h2>\n\n<p>Instead of a massive rewrite, we are going to use <strong>structural sub-typing</strong> which is a more specific form of <strong>duck typing</strong> (I guess don't come at me if I'm wrong) right at the C-level. Rather than forcing the C-engine to check an object's exact, official DNA (which requires importing the whole Python library), we are just going to check its behavior. Does it have the method we need? If it walks like a duck and quacks like a duck, the C-engine will blindly trust that it's a duck and process it.</p>\n\n<p>It is such an elegant workaround. It completely severs the nasty dependency chain without us having to burn the house down to fix the plumbing (I was pretty proud of actually thinking about it).</p>\n\n<h2>\n  \n  \n  Thoughts..\n</h2>\n\n<p>It's a smarter, cleaner way forward. The C-layer is still intimidating, but for the first time in a while, I feel like I'm actually outsmarting the machine instead of just wrestling with it.</p>\n\n<p>Back into the dark I go.</p>\n\n",
+  "keyPoints": [
+    "Coming up for Air"
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2fpe04r8gjhftpjxv6g1.png",
+      "alt": "Coming up for Air",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2fpe04r8gjhftpjxv6g1.png",
+      "alt": "Cover image for Coming up for Air",
+      "caption": "Cover image for Coming up for Air"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "After the absolute gauntlet of the past few weeks, this week finally offered a little bit of breathing room. I'm not going to lie, I needed it. But \"lighter\" in the open-source world doesn't mean stopping; it just means you finally have the time to sit back and actually think before you code.\n\nA good chunk of my time went into writing .pyi stub files. It sounds mundane on the surface, like just writing Python type hints, BUT it's actually this bizarre, highly precise exercise in translation. You are basically acting as a diplomat between the ruthless C-engine and Python's static type checkers. It's microscopic work. Every single argument has to align perfectly with how the C-level memory actually allocates it, otherwise the whole illusion shatters. It requires a sort of discipline.\n\nBut my...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T15:06:07.464Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

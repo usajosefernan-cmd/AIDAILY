@@ -1,0 +1,64 @@
+{
+  "id": "c6c4d227c167821cbcbf334af84b04954e439e0ec782b508630128bd06ba8f44",
+  "title": "HiLS Attention: rompiendo los límites de contexto en los grandes modelos de lenguaje",
+  "summary": "Investigadores presentan HiLS Attention, un mecanismo de atención dispersa jerárquica que aprende a seleccionar fragmentos de texto de forma end-to-end, logrando un rendimiento comparable a la atención completa en contextos largos y extrapolando hasta 64 veces la longitud de entrenamiento con un 90% de precisión en la recuperación de fragmentos. Además, permite adaptar modelos existentes con un preentrenamiento ligero.",
+  "url": "https://huggingface.co/papers/2607.02980",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "publishedAt": "2026-07-08T04:40:57.074Z",
+  "imageUrl": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.02980/gradient.png",
+  "imageAlt": "HiLS Attention: rompiendo los límites de contexto en los grandes modelos de lenguaje",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores presentan HiLS Attention, un mecanismo de atención dispersa jerárquica que aprende a seleccionar fragmentos de texto de forma end-to-end, logrando un rendimiento comparable a la atención completa en contextos largos y extrapolando hasta 64 veces la longitud de entrenamiento con un 90% de precisión en la recuperación de fragmentos. Además, permite adaptar modelos existentes con un preentrenamiento ligero.",
+  "keyPoints": [
+    "HiLS Attention es un mecanismo de atención dispersa jerárquica que aprende a seleccionar fragmentos de texto de forma end-to-end bajo la pérdida del modelo de lenguaje.",
+    "Alcanza un rendimiento comparable o superior a la atención completa en longitudes de contexto dentro del dominio de entrenamiento.",
+    "Extrapola más de 64 veces la longitud de contexto de entrenamiento manteniendo un 90% de precisión en la recuperación de fragmentos.",
+    "Los modelos de atención completa existentes se pueden convertir a HiLS con un preentrenamiento continuo ligero, preservando su rendimiento."
+  ],
+  "whyMatters": "Este avance resuelve uno de los principales obstáculos para escalar los grandes modelos de lenguaje a contextos extensos: el costo computacional cuadrático de la atención densa. Al lograr una eficiencia comparable a la atención completa sin sacrificar rendimiento, HiLS Attention reduce drásticamente los recursos necesarios para entrenar y ejecutar modelos con memoria a largo plazo, democratizando el acceso a tecnologías de vanguardia y disminuyendo su huella energética. Además, su capacidad de extrapolación a longitudes muy superiores a las de entrenamiento amplía drásticamente el espectro de aplicaciones prácticas, desde el análisis de documentos legales y científicos hasta la generación de código complejo, redefiniendo los límites de lo que la inteligencia artificial puede hacer en entornos reales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.02980/gradient.png",
+      "alt": "Atención dispersa jerárquica hecha correctamente: hacia el modelado de contexto infinito",
+      "caption": "Imagen de portada del artículo de investigación que introduce HiLS Attention"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#HiLSAttention",
+    "#HuggingFacePapers",
+    "#AtencionDispersa",
+    "#ModelosDeLenguaje"
+  ],
+  "fullArticle": "La expansión de los grandes modelos de lenguaje (LLM) hacia contextos extensos se enfrenta a una barrera fundamental: el costo computacional cuadrático de los mecanismos de atención densa, que limita tanto la eficiencia como la capacidad de generalizar a entradas más largas que las vistas durante el entrenamiento. Esta restricción ha impulsado la búsqueda de alternativas más escalables, como la atención dispersa por fragmentos, aunque los métodos existentes no logran igualar el rendimiento de la atención completa debido a una selección imprecisa de los fragmentos relevantes.\n\n[MULTIMEDIA: https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.02980/gradient.png]\n\nFrente a este desafío, un equipo de investigadores ha propuesto HiLS Attention (Hierarchical Landmark Sparse Attention), un mecanismo que aprende a seleccionar los fragmentos de texto de forma end-to-end bajo la pérdida del modelo de lenguaje. HiLS factoriza la atención de manera jerárquica: cada consulta atiende de forma independiente cada fragmento recuperado para extraer información específica, y los resultados se fusionan según puntuaciones de recuperación que se optimizan directamente con la pérdida del modelo. Los experimentos demuestran que HiLS iguala o supera a la atención completa en dominios de contexto de entrenamiento, y extrapola más de 64 veces dicha longitud con un 90% de precisión en la recuperación, un salto cualitativo frente a los límites actuales. Además, los modelos existentes pueden convertirse a HiLS con un preentrenamiento continuo ligero, manteniendo su rendimiento original mientras adquieren capacidad de extrapolación ultralarga.\n\nEste avance no es meramente técnico: al romper la compensación habitual entre eficiencia y rendimiento, HiLS Attention abre la puerta a LLM más accesibles, con menor huella energética y capaces de procesar documentos completos, bases de código o conversaciones extensas sin degradación. Su capacidad de generalización a contextos muy superiores a los de entrenamiento multiplica las aplicaciones prácticas, desde la asistencia legal y científica hasta la creación de contenido complejo, redefiniendo los límites de lo que la inteligencia artificial puede hacer en entornos reales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T06:11:06.800Z",
+  "links": [
+    {
+      "title": "Artículo original en Hugging Face Papers",
+      "url": "https://huggingface.co/papers/2607.02980"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Factor de extrapolación máximo",
+      "value": "64 veces la longitud de entrenamiento"
+    },
+    {
+      "label": "Precisión de recuperación de fragmentos",
+      "value": "90%"
+    },
+    {
+      "label": "Tipo de conversión de modelos existentes",
+      "value": "Preentrenamiento continuo ligero"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

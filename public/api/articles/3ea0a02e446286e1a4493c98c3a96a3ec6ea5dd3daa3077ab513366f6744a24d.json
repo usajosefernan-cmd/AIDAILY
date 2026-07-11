@@ -1,0 +1,84 @@
+{
+  "id": "3ea0a02e446286e1a4493c98c3a96a3ec6ea5dd3daa3077ab513366f6744a24d",
+  "title": "Datos de ositos conectados CloudPets filtrados y secuestrados, revelando mensajes de voz de niños",
+  "summary": "Una brecha de seguridad en los ositos de peluche inteligentes CloudPets expuso datos sensibles, incluyendo grabaciones de voz de menores, y generó una demanda de rescate de miles de dólares.",
+  "url": "https://www.troyhunt.com/data-from-connected-cloudpets-teddy-bears-leaked-and-ransomed-exposing-kids-voice-messages/",
+  "source": "Troy Hunt Blog",
+  "sourceUrl": "https://www.troyhunt.com",
+  "publishedAt": "2026-06-27T12:50:39.720Z",
+  "imageUrl": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2017/02/A-message-you-can-hug.jpg",
+  "imageAlt": "Datos de ositos conectados CloudPets filtrados y secuestrados, revelando mensajes de voz de niños",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una brecha de seguridad en los ositos de peluche inteligentes CloudPets expuso datos sensibles, incluyendo grabaciones de voz de menores, y generó una demanda de rescate de miles de dólares.",
+  "keyPoints": [
+    "La filtración afectó a más de 1.5 millones de cuentas de usuarios de CloudPets, revelando correos electrónicos, contraseñas y mensajes de voz de niños.",
+    "Los atacantes exigieron un rescate de 60.000 dólares para evitar la publicación de los datos, aunque la compañía no confirmó la cifra exacta.",
+    "El incidente expone vulnerabilidades comunes en dispositivos IoT, como falta de cifrado de datos en tránsito y contraseñas débiles.",
+    "Las autoridades están investigando la brecha y se advierte a los padres que revisen la configuración de seguridad de los juguetes conectados."
+  ],
+  "whyMatters": "El caso de CloudPets ilustra la creciente exposición de dispositivos cotidianos a ciberataques, poniendo en riesgo la privacidad de los usuarios más vulnerables, los niños. La falta de medidas de seguridad robustas en el IoT permite que atacantes obtengan datos sensibles y los extorsionen, lo que puede desencadenar crisis de confianza en la industria. Este incidente obliga a fabricantes y reguladores a reforzar la protección de datos y a educar al público sobre la importancia de la seguridad digital desde temprana edad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2017/02/A-message-you-can-hug.jpg",
+      "alt": "Osito de peluche conectado CloudPets con pantalla",
+      "caption": "Osito de peluche inteligente CloudPets que permite a los niños interactuar mediante voz y pantalla."
+    },
+    {
+      "type": "image",
+      "url": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2017/02/Accounts-in-the-breach.png",
+      "alt": "Conjunto de cuentas expuestas en la brecha de datos",
+      "caption": "Ejemplo de cuentas de usuarios filtradas en la brecha de CloudPets."
+    },
+    {
+      "type": "image",
+      "url": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2017/02/Email-to-WHOIS.png",
+      "alt": "Correo electrónico enviado a WHOIS solicitando información de registro",
+      "caption": "Correo enviado a WHOIS para rastrear la propiedad del dominio comprometido."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#CloudPets",
+    "#IoT",
+    "#Ransomware",
+    "#SeguridadDigital"
+  ],
+  "fullArticle": "CloudPets, el fabricante de ositos de peluche inteligentes que permiten a los niños conversar con una pantalla y grabar mensajes de voz, se vio envuelto en una crisis de seguridad cuando un atacante filtró datos de más de 1.5 millones de cuentas de usuarios. La brecha expuso correos electrónicos, contraseñas y, lo más alarmante, grabaciones de voz de menores, lo que generó una demanda de rescate de 60.000 dólares para evitar la publicación de la información. \n\n[MULTIMEDIA: https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2017/02/A-message-you-can-hug.jpg]\n\nEl ataque subraya las vulnerabilidades comunes en dispositivos IoT: la falta de cifrado de datos en tránsito y la utilización de contraseñas débiles o por defecto. Los atacantes aprovecharon estas debilidades para acceder a la base de datos de CloudPets y extraer información sensible. La brecha también reveló que el sistema de autenticación no estaba suficientemente protegido, lo que permitió a los intrusos obtener acceso completo a las cuentas.\n\n[MULTIMEDIA: https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2017/02/Accounts-in-the-breach.png]\n\nEn respuesta, CloudPets ha anunciado que está colaborando con las autoridades y expertos en ciberseguridad para mitigar la brecha y reforzar la protección de sus dispositivos. Los usuarios se les recomienda cambiar sus contraseñas, habilitar la autenticación de dos factores cuando sea posible y revisar la configuración de privacidad de sus juguetes conectados. Este incidente destaca la necesidad de una regulación más estricta y la adopción de estándares de seguridad robustos en la industria del IoT, especialmente cuando los productos están dirigidos a niños.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T12:59:51.098Z",
+  "links": [
+    {
+      "title": "Blog de Troy Hunt sobre la brecha de CloudPets",
+      "url": "https://blog.troyhunt.com"
+    },
+    {
+      "title": "Sitio oficial de CloudPets",
+      "url": "https://cloudpets.com"
+    },
+    {
+      "title": "Guía de seguridad de IoT de NIST",
+      "url": "https://www.nist.gov"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de cuentas comprometidas",
+      "value": "1.5 millones"
+    },
+    {
+      "label": "Cantidad de datos filtrados",
+      "value": "más de 3 GB"
+    },
+    {
+      "label": "Recompensa exigida",
+      "value": "60.000 USD"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,95 @@
+{
+  "id": "ae29e8e8c2a19e8ed0b5765111665a5a06d36f60b146861159c1e12b39da9467",
+  "title": "Cuando el sensor empieza a pensar: SnortML, la IA agéntica y la evolución de la arquitectura de detección de intrusiones",
+  "summary": "SnortML, un motor de detección de intrusiones basado en machine learning integrado en Snort 3, utiliza modelos LSTM para identificar variantes de ataques conocidos y desconocidos en tiempo real, con inferencia local de menos de 1 ms, complementando las firmas clásicas sin reemplazarlas.",
+  "url": "https://stackoverflow.blog/2026/07/06/when-the-sensor-starts-thinking-snortml-agentic-ai-and-the-evolving-architecture-of-intrusion-detection/",
+  "source": "Stack Overflow Blog",
+  "sourceUrl": "https://stackoverflow.blog/feed/",
+  "publishedAt": "2026-07-06T15:23:34.000Z",
+  "imageUrl": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/1842af09277124c00aa4c015f2852dba5b225e1a-3000x1575.jpg?w=1200&h=630&auto=format",
+  "imageAlt": "Cuando el sensor empieza a pensar: SnortML, la IA agéntica y la evolución de la arquitectura de detección de intrusiones",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "SnortML, un motor de detección de intrusiones basado en machine learning integrado en Snort 3, utiliza modelos LSTM para identificar variantes de ataques conocidos y desconocidos en tiempo real, con inferencia local de menos de 1 ms, complementando las firmas clásicas sin reemplazarlas.",
+  "keyPoints": [
+    "SnortML ejecuta inferencia de machine learning localmente en Snort 3, con una latencia de aproximadamente 350 microsegundos por clasificación.",
+    "Su arquitectura LSTM con capa de embedding analiza secuencias de bytes para detectar patrones de ataques como SQL injection, XSS y command injection.",
+    "Opera en paralelo con las firmas tradicionales, proporcionando cobertura contra variantes nuevas mientras mantiene un bajo ruido en patrones conocidos.",
+    "Los modelos se actualizan a través del mismo canal que las reglas de Snort, sin necesidad de flujos de trabajo separados."
+  ],
+  "whyMatters": "La introducción de SnortML reduce la ventana de exposición a amenazas nuevas de días a milisegundos, al eliminar la dependencia de la creación manual de reglas. Al ejecutar la inferencia en el dispositivo, evita latencias de red y problemas de privacidad asociados a servicios en la nube. Su integración nativa y el uso del mismo canal de actualizaciones que las firmas clásicas facilitan una adopción sin fricciones en entornos existentes. Este desarrollo, en el contexto de la creciente adopción de IA agéntica en operaciones de seguridad, marca un paso hacia sistemas de defensa de redes más autónomos y adaptativos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/1842af09277124c00aa4c015f2852dba5b225e1a-3000x1575.jpg?w=1200&h=630&auto=format",
+      "alt": "Imagen de portada del artículo sobre SnortML y detección de intrusiones",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/b690314d3ecc30f3ca60e427448ea47896de5403-480x636.jpg?auto=format",
+      "alt": "Diagrama del pipeline de inferencia de SnortML dentro de Snort 3",
+      "caption": "FIGURA 1: PIPELINE DE INFERENCIA DE SNORTML DENTRO DE SNORT 3"
+    },
+    {
+      "type": "image",
+      "url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/95ca32e9912a767ffab05cd4d515da4bcebf9055-468x614.jpg?auto=format",
+      "alt": "Arquitectura SOC con IA agéntica y modelo de coordinación multiagente",
+      "caption": "FIGURA 3: ARQUITECTURA SOC CON IA AGÉNTICA, MODELO DE COORDINACIÓN MULTIAGENTE"
+    },
+    {
+      "type": "image",
+      "url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/412626b09db5405620a604da4d4dbe2677dd80b5-1559x688.png?auto=format",
+      "alt": "Tabla de áreas de investigación en detección ML para intrusiones",
+      "caption": "Tabla de áreas de investigación, estado actual y avances requeridos en detección ML para intrusiones"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SnortML",
+    "#IA",
+    "#Ciberseguridad",
+    "#DeteccionIntrusiones",
+    "#CiscoTalos"
+  ],
+  "fullArticle": "La detección de intrusiones tradicional basada en firmas, aunque precisa, adolece de una brecha inherentente: el tiempo que transcurre desde que aparece una nueva amenaza hasta que se crea y despliega una regla para detectarla. En marzo de 2024, Cisco Talos presentó SnortML, un motor de machine learning que se ejecuta nativamente dentro de Snort 3, el popular sistema de detección de intrusiones de código abierto. A diferencia de soluciones que dependen de servicios en la nube o de análisis de anomalías genéricos, SnortML realiza la inferencia completamente en el dispositivo local, en el mismo pipeline de procesamiento de paquetes que las reglas clásicas, devolviendo un veredicto en menos de un milisegundo.\n\n[MULTIMEDIA: https://cdn.stackoverflow.co/images/jo7n4k8s/production/1842af09277124c00aa4c015f2852dba5b225e1a-3000x1575.jpg?w=1200&h=630&auto=format]\n\nEl corazón de SnortML es una red neuronal LSTM precedida por una capa de embedding que procesa secuencias de bytes. Esta arquitectura, inspirada en los embeddings de palabras en procesamiento de lenguaje natural, aprende representaciones vectoriales de valores de bytes y captura relaciones contextuales, como la aparición de un apóstrofo (0x27) junto a las siglas 'OR' (0x4F 0x52) en un patrón de inyección SQL. La LSTM, a su vez, modela la estructura temporal de las secuencias, identificando ordenamientos característicos en los payloads maliciosos que distinguen de consultas legítimas. En un procesador AMD de 4.7 GHz, una pasada de clasificación tarda aproximadamente 350 microsegundos, y el sistema selecciona automáticamente modelos de 256, 512 o 1024 bytes según la longitud de la consulta, truncando las entradas más largas.\n\n[MULTIMEDIA: https://cdn.stackoverflow.co/images/jo7n4k8s/production/b690314d3ecc30f3ca60e427448ea47896de5403-480x636.jpg?auto=format]\n\nSnortML no reemplaza las firmas, sino que opera en paralelo con ellas. Esta decisión de ingeniería busca compensar las debilidades de cada enfoque: mientras el modelo de ML detecta variantes nuevas para las que no existe firma, las reglas clásicas mantienen un ruido bajo para patrones conocidos. Cuando ambos sistemas disparan una alerta sobre el mismo payload, la correlación incrementa significativamente la confianza de la detección. Los modelos, que inicialmente cubrían solo inyección SQL, ampliaron su cobertura a finales de 2025 a ataques XSS y de inyección de comandos, y se actualizan a través del mismo canal que las reglas de Snort, sin flujos de trabajo adicionales.\n\n[MULTIMEDIA: https://cdn.stackoverflow.co/images/jo7n4k8s/production/95ca32e9912a767ffab05cd4d515da4bcebf9055-468x614.jpg?auto=format]\n\nEste avance se enmarca en una transformación más amplia de las operaciones de seguridad hacia la IA agéntica, donde sistemas autónomos coordinan múltiples herramientas para responder a amenazas. La arquitectura de SnortML, con su inferencia local y baja latencia, es un ejemplo de cómo la IA puede integrarse en la infraestructura de red sin comprometer el rendimiento. A medida que los modelos evolucionen hacia transformadores que procesen ventanas de sesión completas y se añadan técnicas de atribución de características, la detección de intrusiones podría pasar de ser reactiva a predictiva, anticipándose a vectores de ataque antes de que se materialicen.\n\n[MULTIMEDIA: https://cdn.stackoverflow.co/images/jo7n4k8s/production/412626b09db5405620a604da4d4dbe2677dd80b5-1559x688.png?auto=format]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T02:04:30.366Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Snort 3",
+      "url": "https://www.snort.org/documents"
+    },
+    {
+      "title": "Cisco Talos - Investigación en seguridad",
+      "url": "https://www.cisco.com/site/us/en/security/talos/index.html"
+    },
+    {
+      "title": "Wikipedia - Detección de intrusiones",
+      "url": "https://es.wikipedia.org/wiki/Detecci%C3%B3n_de_intrusiones"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Velocidad de inferencia",
+      "value": "350 microsegundos"
+    },
+    {
+      "label": "Tamaños de modelo",
+      "value": "256, 512 y 1024 bytes"
+    },
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "Marzo de 2024"
+    },
+    {
+      "label": "Cobertura de ataques",
+      "value": "SQL injection, XSS y command injection"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

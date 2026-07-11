@@ -1,0 +1,77 @@
+{
+  "id": "fc4a0e6352f0281a9931514b0a6fa936f5eb310cc1196e0b878ff1b568224b9f",
+  "title": "Adiós a la nube exclusiva: el cofundador de Heroku propone la arquitectura 'local-first' como futuro del software productivo",
+  "summary": "Adam Wiggins, cofundador de Heroku y creador del 12-Factor App, defiende en un podcast de InfoQ la arquitectura 'local-first', que combina colaboración en la nube con rendimiento y propiedad de datos locales. Explica el papel de los CRDTs para sincronización sin conflictos y propone un modelo híbrido de IA que priorice ejecución local para reducir la dependencia de la nube centralizada.",
+  "url": "https://www.infoq.com/podcasts/natural-evolution-cloud-native/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-06-29T11:00:00.000Z",
+  "imageUrl": "https://res.infoq.com/podcasts/empowers-developers-inside-linux-kernel/en/mediumimage/interviewee-dan-fineran-1781614035659.jpeg",
+  "imageAlt": "Adiós a la nube exclusiva: el cofundador de Heroku propone la arquitectura 'local-first' como futuro del software productivo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Adam Wiggins, cofundador de Heroku y creador del 12-Factor App, defiende en un podcast de InfoQ la arquitectura 'local-first', que combina colaboración en la nube con rendimiento y propiedad de datos locales. Explica el papel de los CRDTs para sincronización sin conflictos y propone un modelo híbrido de IA que priorice ejecución local para reducir la dependencia de la nube centralizada.",
+  "keyPoints": [
+    "Adam Wiggins, cofundador de Heroku y creador del 12-Factor App, lidera la investigación en arquitectura local-first desde el laboratorio Ink & Switch fundado en 2015.",
+    "La arquitectura local-first combina las ventajas de la colaboración en la nube con el rendimiento y la propiedad total de los datos por parte del usuario final.",
+    "Se destaca el papel de los CRDTs y primitivas de control de versiones para permitir la sincronización sin conflictos en herramientas de productividad no relacionadas con código.",
+    "Wiggins propone un futuro híbrido de IA que priorice modelos locales para tareas productivas, reduciendo la dependencia excesiva de la computación en la nube centralizada."
+  ],
+  "whyMatters": "Esta propuesta representa un cambio de paradigma en el desarrollo de software, al cuestionar la hegemonía de la arquitectura cloud-native que ha dominado la industria durante la última década. Su implementación podría resolver problemas críticos como la privacidad de los datos de los usuarios, la dependencia de conexiones a internet estables y los costes elevados de infraestructura en la nube para empresas de todos los tamaños. Además, la integración de modelos de IA locales abre la puerta a herramientas productivas más rápidas, seguras y personalizables, sin renunciar a las funcionalidades de colaboración que exigen los equipos de trabajo modernos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://res.infoq.com/podcasts/empowers-developers-inside-linux-kernel/en/mediumimage/interviewee-dan-fineran-1781614035659.jpeg",
+      "alt": "Portada del podcast de InfoQ con la entrevista a Adam Wiggins sobre arquitectura local-first",
+      "caption": "Imagen promocional del episodio del podcast de InfoQ donde Adam Wiggins explica los principios de la arquitectura local-first"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AdamWiggins",
+    "#LocalFirst",
+    "#Heroku",
+    "#CRDT",
+    "#InkAndSwitch"
+  ],
+  "fullArticle": "En un nuevo episodio del podcast de InfoQ, Adam Wiggins, cofundador de Heroku y creador del manifiesto 12-Factor App, plantea un cambio de rumbo en el diseño de aplicaciones productivas: abandonar la dependencia exclusiva de la nube para adoptar la arquitectura 'local-first', un modelo que reconcilia la colaboración en tiempo real con el rendimiento y la propiedad de los datos por parte del usuario. Wiggins, que actualmente dirige el laboratorio de investigación Ink & Switch, fundado en 2015 junto a otros excofundadores de Heroku, defiende que esta propuesta no supone renunciar a las ventajas de la computación en la nube, sino reorganizar la jerarquía de prioridades en el desarrollo de software para poner en primer lugar las necesidades de las personas que usan las herramientas, por delante de los intereses de las plataformas.\n\n[MULTIMEDIA: https://res.infoq.com/podcasts/empowers-developers-inside-linux-kernel/en/mediumimage/interviewee-dan-fineran-1781614035659.jpeg]\n\nLa arquitectura local-first se basa en dos pilares fundamentales: por un lado, el almacenamiento y procesamiento principal de los datos se realiza en el dispositivo del usuario, lo que garantiza un rendimiento óptimo incluso sin conexión a internet y elimina la dependencia de servicios externos; por otro, incorpora mecanismos de sincronización entre dispositivos y colaboración en tiempo real, para que los equipos puedan trabajar conjuntamente sin renunciar al control de su información. Wiggins explica que tecnologías como los CRDTs (Tipos de Datos Replicados sin Conflictos) y las primitivas de control de versiones, habituales en el desarrollo de software, son la base para implementar esta sincronización sin conflictos en herramientas de productividad cotidiana como procesadores de texto, hojas de cálculo o gestores de correo, ámbitos en los que hasta ahora no se habían aplicado de forma extendida.\n\nOtro de los puntos centrales de la conversación es el futuro de la inteligencia artificial en el entorno productivo: Wiggins advierte de la dependencia excesiva que existe actualmente de la computación en la nube para ejecutar modelos de IA, lo que genera problemas de latencia, costes elevados y riesgos de privacidad al enviar datos sensibles a servidores externos. Su propuesta es un modelo híbrido en el que los modelos de IA ligeros se ejecuten directamente en el dispositivo del usuario para tareas productivas habituales, como la redacción de textos, la organización de calendarios o el análisis de datos, reservando la nube para tareas que requieran una mayor capacidad de cómputo o la colaboración entre múltiples usuarios.\n\nDesde Ink & Switch, Wiggins y su equipo llevan años investigando las fronteras de la interacción entre humanos y computadoras, con un foco especial en herramientas de creación y productividad que suelen recibir menos atención que las redes sociales o las plataformas de streaming. 'Si podemos dar a los científicos herramientas mejores, podrán lograr más avances que beneficien a toda la sociedad; lo mismo ocurre con los artistas, que podrían crear obras más ambiciosas con herramientas adaptadas a sus necesidades', explica Wiggins en la entrevista. Aunque en los últimos años han surgido propuestas como Notion o Figma que han mejorado la experiencia de usuario de herramientas tradicionales, el investigador considera que aún queda mucho camino por recorrer para que el software productivo esté a la altura de las necesidades de los creadores y profesionales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T11:11:21.312Z",
+  "links": [
+    {
+      "title": "Episodio original del podcast en InfoQ",
+      "url": "https://www.infoq.com/podcasts/architectural-patterns-moving-beyond-cloud-native-to-local-first/"
+    },
+    {
+      "title": "Sitio oficial del laboratorio Ink & Switch",
+      "url": "https://inkandswitch.com/"
+    },
+    {
+      "title": "Manifiesto 12-Factor App",
+      "url": "https://12factor.net/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de fundación de Ink & Switch",
+      "value": "2015"
+    },
+    {
+      "label": "Tecnología base para sincronización local",
+      "value": "CRDTs (Tipos de Datos Replicados sin Conflictos)"
+    },
+    {
+      "label": "Enfoque arquitectónico propuesto",
+      "value": "Local-first"
+    },
+    {
+      "label": "Co-fundador de Heroku entrevistado",
+      "value": "Adam Wiggins"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

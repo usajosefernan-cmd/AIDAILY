@@ -1,0 +1,76 @@
+{
+  "id": "15fe4fc93c1fc477da72e279861e1c87c296c14daa9d23702d096d731656406a",
+  "title": "Fundamentos de accesibilidad web que todo equipo de desarrollo debe implementar",
+  "summary": "La accesibilidad no es solo un tema de cumplimiento especializado: un puñado de prácticas básicas resuelven la mayoría de problemas, son económicas de aplicar desde el inicio y mejoran la experiencia de todos los usuarios, no solo de personas con discapacidad.",
+  "url": "https://dev.to/agenyc/web-accessibility-basics-every-team-should-ship-1nj4",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T01:24:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fagency.doktouri.com%2Fblog%2Fweb-accessibility-basics.jpg",
+  "imageAlt": "Fundamentos de accesibilidad web que todo equipo de desarrollo debe implementar",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La accesibilidad no es solo un tema de cumplimiento especializado: un puñado de prácticas básicas resuelven la mayoría de problemas, son económicas de aplicar desde el inicio y mejoran la experiencia de todos los usuarios, no solo de personas con discapacidad.",
+  "keyPoints": [
+    "Usar el elemento HTML semántico correcto para cada función resuelve la mayoría de problemas de accesibilidad sin necesidad de código ARIA adicional.",
+    "Es obligatorio garantizar la navegación completa por teclado, con un indicador de foco siempre visible y sin trampas de foco en componentes interactivos.",
+    "El contraste mínimo de texto debe ser de 4.5:1 para cuerpo y 3:1 para texto grande, nunca se debe usar solo el color para transmitir significado.",
+    "El ARIA solo debe aplicarse a componentes personalizados sin equivalente nativo, ya que un uso incorrecto genera más errores que su ausencia."
+  ],
+  "whyMatters": "La accesibilidad web no es un requisito de cumplimiento opcional, sino un pilar de inclusión digital que amplía el alcance de los productos a millones de usuarios con discapacidad en España y la Unión Europea, donde la normativa EN 301 549 obliga a su cumplimiento para servicios públicos y empresas de más de 50 empleados. Implementar estos fundamentos desde las fases iniciales de desarrollo reduce los costes de adaptación posterior en hasta un 70%, según estudios del W3C, y mejora la experiencia de usuario general al optimizar la estructura y navegación de la aplicación. Además, anticipa las exigencias regulatorias futuras y evita sanciones de hasta 60.000 euros por incumplimiento, al tiempo que posiciona a las empresas como referentes de innovación responsable, un valor cada vez más demandado por usuarios y clientes del mercado español.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fagency.doktouri.com%2Fblog%2Fweb-accessibility-basics.jpg",
+      "alt": "Imagen de portada del artículo sobre fundamentos de accesibilidad web para equipos de desarrollo",
+      "caption": "Imagen de portada del artículo original publicado en el blog de Doktouri Agency"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AccesibilidadWeb",
+    "#DesarrolloWeb",
+    "#DiseñoInclusivo",
+    "#WCAG"
+  ],
+  "fullArticle": "La accesibilidad web suele relegarse a un tema de cumplimiento especializado que genera temor en los equipos de desarrollo, pero la realidad es que un puñado de fundamentos básicos resuelven la gran mayoría de necesidades reales, son muy económicos de implementar desde las fases iniciales y mejoran la experiencia de todos los usuarios, no solo de las personas con discapacidad. En España y la Unión Europea, la normativa exige el cumplimiento de los estándares WCAG 2.1 para plataformas digitales de entidades públicas y grandes empresas, por lo que adoptar estas prácticas desde el día uno evita sanciones de hasta 60.000 euros y amplía el alcance del producto a millones de usuarios potenciales.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fagency.doktouri.com%2Fblog%2Fweb-accessibility-basics.jpg]\nEl primer paso es usar siempre el elemento HTML semántico adecuado para cada función: un botón es enfocable, operable por teclado y anunciado correctamente por lectores de pantalla de forma nativa, mientras que un div con un manejador de clic no lo es. Es fundamental garantizar la navegación completa por teclado, con un indicador de foco siempre visible y sin trampas de foco en modales o componentes personalizados, además de asegurar un contraste de texto de al menos 4.5:1 para cuerpo y 3:1 para texto grande, sin usar solo el color para transmitir información. El ARIA solo debe reservarse para componentes genuinamente personalizados, ya que un ARIA incorrecto genera más problemas que su ausencia, y las herramientas automáticas solo detectan alrededor de la mitad de los errores, por lo que las comprobaciones manuales son imprescindibles. La accesibilidad no debe ser una auditoría prelanzamiento, sino un hábito integrado en el flujo de trabajo diario del equipo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T01:42:42.410Z",
+  "links": [
+    {
+      "title": "Artículo original sobre fundamentos de accesibilidad web",
+      "url": "https://agency.doktouri.com/blog/web-accessibility-basics"
+    },
+    {
+      "title": "Estándares WCAG 2.1 de accesibilidad web",
+      "url": "https://www.w3.org/TR/WCAG21/"
+    },
+    {
+      "title": "Normativa española de accesibilidad web (Ley General de Derechos de las Personas con Discapacidad)",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-10244"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Contraste mínimo para texto de cuerpo",
+      "value": "4.5:1"
+    },
+    {
+      "label": "Porcentaje de errores detectados por herramientas automáticas",
+      "value": "50%"
+    },
+    {
+      "label": "Reducción de costes de adaptación al implementar desde el inicio",
+      "value": "hasta 70%"
+    },
+    {
+      "label": "Importe máximo de sanción por incumplimiento en España",
+      "value": "60.000 euros"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "b2c848f05df3b62d9539e6862d8f52146b909ccf0465cda525e2be428508f977",
+  "title": "Los 5 tipos de memoria para agentes de IA que todo desarrollador TypeScript debe dominar en 2026",
+  "summary": "Artículo técnico dirigido a desarrolladores TypeScript que explica por qué los fallos más comunes de los agentes de IA se deben a errores en el diseño de sus sistemas de memoria, detallando los cinco tipos de memoria (corto plazo, semántica, episódica, procedural y de trabajo) y su implementación práctica en sistemas de 2026.",
+  "url": "https://dev.to/raju_dandigam/the-5-types-of-ai-agent-memory-every-typescript-developer-should-know-3ggg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T14:29:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkcks3zfj4m7m0gf9f6ze.png",
+  "imageAlt": "Los 5 tipos de memoria para agentes de IA que todo desarrollador TypeScript debe dominar en 2026",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo técnico dirigido a desarrolladores TypeScript que explica por qué los fallos más comunes de los agentes de IA se deben a errores en el diseño de sus sistemas de memoria, detallando los cinco tipos de memoria (corto plazo, semántica, episódica, procedural y de trabajo) y su implementación práctica en sistemas de 2026.",
+  "keyPoints": [
+    "La mayoría de errores en agentes de IA no se deben al modelo, sino a un diseño deficiente de sus sistemas de memoria.",
+    "La memoria de corto plazo registra el progreso de la tarea actual y evita acciones repetitivas dentro de una misma ejecución.",
+    "La memoria semántica almacena conocimientos estables como preferencias de usuario o configuraciones de producto, recuperándose de forma selectiva.",
+    "La memoria episódica guarda registros de ejecuciones pasadas para evitar repetir errores y mejorar la consistencia entre sesiones."
+  ],
+  "whyMatters": "Dominar estos cinco tipos de memoria es fundamental para construir agentes de IA fiables y escalables en entornos de producción, ya que reduce drásticamente los fallos por pérdida de contexto o repetición de errores. Para los desarrolladores TypeScript, esta guía proporciona patrones de implementación concretos adaptados a su stack tecnológico, lo que acelera el desarrollo de soluciones empresariales robustas. A largo plazo, la correcta aplicación de estos conceptos permitirá crear agentes capaces de mantener comportamientos coherentes a lo largo del tiempo y entre diferentes sesiones de usuario, un requisito indispensable para la adopción masiva de herramientas de IA en entornos profesionales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkcks3zfj4m7m0gf9f6ze.png",
+      "alt": "Portada del artículo sobre los 5 tipos de memoria para agentes de IA en TypeScript",
+      "caption": "Imagen de portada del artículo publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesDeIA",
+    "#TypeScript",
+    "#DesarrolloDeIA",
+    "#MemoriaDeIA",
+    "#IngenieriaDeIA"
+  ],
+  "fullArticle": "La mayoría de los desarrolladores intenta solucionar los fallos de los agentes de IA ajustando los prompts, pero en la práctica la gran mayoría de los problemas de estos sistemas se deben a errores en el diseño de su memoria, no en el modelo de lenguaje subyacente. Los agentes olvidan el contexto, repiten errores, usan información desactualizada o se comportan de forma inconsistente entre sesiones, situaciones que no se arreglan con prompts más elaborados, sino con una arquitectura de memoria bien planificada. En sistemas reales, la memoria no es un componente único, sino una combinación de capas diferentes, cada una orientada a resolver un problema específico, y comprender su funcionamiento simplifica enormemente el diseño de agentes fiables.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkcks3zfj4m7m0gf9f6ze.png]\nLos cinco tipos de memoria clave para agentes de IA en TypeScript en 2026 se dividen en categorías con funciones específicas: la memoria de corto plazo, que registra el progreso de la tarea actual, los resultados de herramientas y los pasos intermedios, implementada como parte del estado de runtime para evitar repeticiones dentro de una misma ejecución; la memoria semántica, que almacena conocimientos estables como preferencias de usuario, detalles de cuentas o configuraciones de producto, guardada en bases de datos o vectores y recuperada de forma selectiva según la relevancia para la tarea actual; la memoria episódica, que guarda registros de ejecuciones pasadas, fallos y decisiones, para evitar repetir errores y mejorar la consistencia entre sesiones; además de la memoria procedural, que almacena secuencias de acciones aprendidas para tareas repetitivas, y la memoria de trabajo, que combina información de corto y largo plazo para tomar decisiones complejas. Implementar correctamente cada tipo según el caso de uso permite crear agentes mucho más robustos y coherentes, adaptados a las necesidades de proyectos empresariales o de consumo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T14:46:20.256Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Los 5 tipos de memoria para agentes de IA",
+      "url": "https://dev.to/theo/the-5-types-of-ai-agent-memory-every-typescript-developer-should-know"
+    },
+    {
+      "title": "Documentación oficial de TypeScript para desarrollo de aplicaciones",
+      "url": "https://www.typescriptlang.org/docs/"
+    },
+    {
+      "title": "Guía de bases de datos vectoriales para memoria semántica en IA",
+      "url": "https://www.pinecone.io/learn/vector-database/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de tipos de memoria detallados",
+      "value": "5"
+    },
+    {
+      "label": "Lenguaje de programación objetivo",
+      "value": "TypeScript"
+    },
+    {
+      "label": "Año de aplicación recomendado",
+      "value": "2026"
+    },
+    {
+      "label": "Causa principal de fallos en agentes de IA",
+      "value": "Diseño deficiente de memoria"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

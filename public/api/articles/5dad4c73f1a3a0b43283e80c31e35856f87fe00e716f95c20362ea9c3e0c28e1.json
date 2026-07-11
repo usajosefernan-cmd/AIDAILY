@@ -1,0 +1,77 @@
+{
+  "id": "5dad4c73f1a3a0b43283e80c31e35856f87fe00e716f95c20362ea9c3e0c28e1",
+  "title": "Detén la fuga de datos médicos: Construye un clasificador de cáncer de piel con privacidad primero usando aprendizaje federado y PySyft",
+  "summary": "El artículo explica cómo entrenar modelos de IA para detectar cáncer de piel sin exponer imágenes médicas, empleando aprendizaje federado, privacidad diferencial y SMPC con PySyft y PyTorch.",
+  "url": "https://dev.to/wellallytech/stop-leaking-medical-data-build-a-privacy-first-skin-cancer-classifier-with-federated-learning--40o1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-04T01:15:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fffiqgo8mmdthdv0au40n.png",
+  "imageAlt": "Detén la fuga de datos médicos: Construye un clasificador de cáncer de piel con privacidad primero usando aprendizaje federado y PySyft",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo entrenar modelos de IA para detectar cáncer de piel sin exponer imágenes médicas, empleando aprendizaje federado, privacidad diferencial y SMPC con PySyft y PyTorch.",
+  "keyPoints": [
+    "El aprendizaje federado permite que el modelo se entrene en datos hospitalarios sin que las imágenes salgan del recinto, cumpliendo GDPR y HIPAA.",
+    "Se simulan dos hospitales virtuales (Alice y Bob) para ilustrar la distribución de datos y la comunicación de gradientes.",
+    "La privacidad diferencial añade ruido controlado a los gradientes, reduciendo el riesgo de reconstrucción de imágenes sensibles.",
+    "PySyft y PyTorch integran SMPC para asegurar que los pesos compartidos no revelen información confidencial."
+  ],
+  "whyMatters": "El enfoque presentado democratiza el acceso a datos clínicos sin comprometer la privacidad del paciente, lo que abre la puerta a diagnósticos más precisos y colaborativos. Al evitar la centralización de datos, se reduce el riesgo de brechas de seguridad que podrían costar millones en multas y daños reputacionales. Además, la adopción de estas técnicas posiciona a la industria médica como líder en innovación responsable, inspirando confianza entre pacientes y reguladores.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fffiqgo8mmdthdv0au40n.png",
+      "alt": "Imagen de portada del artículo sobre aprendizaje federado para clasificación de cáncer de piel",
+      "caption": "Portada del artículo que ilustra la protección de datos médicos mediante aprendizaje federado"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#FederatedLearning",
+    "#PySyft",
+    "#PrivacidadMedica",
+    "#IA",
+    "#SaludDigital"
+  ],
+  "fullArticle": "En el mundo de la inteligencia artificial, la frase “los datos son el nuevo petróleo” adquiere un matiz crítico cuando se trata de información médica. Los hospitales, regulados por GDPR, HIPAA y principios éticos, no pueden simplemente comprimir y enviar registros de pacientes a cualquier desarrollador. La solución surge en forma de aprendizaje federado, una técnica que invierte el modelo tradicional: el modelo viaja a los datos en lugar de que los datos viajen al modelo. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fffiqgo8mmdthdv0au40n.png]\n\nEl tutorial guía al lector a través de la configuración de PySyft y PyTorch para entrenar una red neuronal simple sobre el dataset HAM10000, dividido entre dos trabajadores virtuales que representan hospitales. Los gradientes, no las imágenes, se transmiten al servidor central, garantizando que la información sensible permanezca en el hospital. Para mitigar la posibilidad de que un atacante reconstruya las imágenes a partir de los gradientes, se incorpora privacidad diferencial, añadiendo ruido controlado que preserva la utilidad del modelo mientras protege la identidad del paciente.\n\nMás allá de la técnica, el artículo destaca la importancia de SMPC (Cómputo Multi-Party Seguro) y su rol en la creación de pipelines robustos y conformes a la normativa. Se menciona la necesidad de investigar soluciones de hardware como TEEs para escalar la privacidad diferencial en producción, señalando que la comunidad académica y la industria ya están trabajando en ello.\n\nAl final, el autor invita a la comunidad a adoptar un enfoque de “privacidad primero” que no comprometa la innovación. Con herramientas como PySyft y PyTorch, la industria médica puede avanzar hacia diagnósticos más precisos sin sacrificar la confianza del paciente, marcando un hito en la evolución de la IA responsable.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T01:45:48.427Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/stop-leaking-medical-data-build-a-privacy-first-skin-cancer-classifier-with-federated-learning-pysyft"
+    },
+    {
+      "title": "Documentación oficial de PySyft",
+      "url": "https://pysyft.readthedocs.io/en/latest/"
+    },
+    {
+      "title": "Guía de aprendizaje federado en español",
+      "url": "https://www.ibm.com/cloud/learn/federated-learning"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de hospitales simulados",
+      "value": "2"
+    },
+    {
+      "label": "Dataset utilizado",
+      "value": "HAM10000"
+    },
+    {
+      "label": "Tipo de privacidad aplicada",
+      "value": "Privacidad diferencial + SMPC"
+    },
+    {
+      "label": "Cantidad de gradientes enviados",
+      "value": "Varias millones durante el entrenamiento"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

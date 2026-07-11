@@ -1,0 +1,83 @@
+{
+  "id": "e6b727802b780572814496aefa10646ab48606951776a1b7252ac68ff12c50da",
+  "title": "Madame Minou: la astrología felina impulsada por IA en Hack the Kitty",
+  "summary": "Un hackathon parisino dio origen a Madame Minou, una app que combina astrología con datos de gatos, construida con Kiro y Claude de AWS Bedrock. El proyecto muestra cómo la IA puede generar contenido estructurado y personalizado sin perder control humano.",
+  "url": "https://dev.to/earlgreyhot1701d/ai-for-fun-electric-chats-at-hack-the-kitty-built-with-kiro-849",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-04T03:14:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4ve8cquz5dcw12a1qj7m.png",
+  "imageAlt": "Madame Minou: la astrología felina impulsada por IA en Hack the Kitty",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un hackathon parisino dio origen a Madame Minou, una app que combina astrología con datos de gatos, construida con Kiro y Claude de AWS Bedrock. El proyecto muestra cómo la IA puede generar contenido estructurado y personalizado sin perder control humano.",
+  "keyPoints": [
+    "Madame Minou utiliza Kiro para generar bloques de código de forma iterativa, con un proceso de revisión humana que garantiza calidad y seguridad.",
+    "La app calcula el signo solar de manera determinística y deja que la IA solo añada voz y estilo, evitando la generación de datos ficticios.",
+    "El proyecto se despliega en AWS con Lambda, API Gateway y DynamoDB, usando un modelo de acceso gratuito por IP para usuarios.",
+    "El hackathon incluyó retos de manejo de errores, CORS y empaquetado, demostrando la importancia de pruebas continuas en entornos serverless."
+  ],
+  "whyMatters": "Madame Minou ilustra la convergencia entre la inteligencia artificial y la personalización de experiencias de usuario, un trend que redefine la interacción con dispositivos inteligentes. Al demostrar cómo un marco de desarrollo como Kiro puede integrar IA sin comprometer la coherencia del producto, abre puertas a proyectos de nicho que requieren rapidez y precisión. Además, la adopción de modelos de acceso gratuito por IP en la nube resalta nuevas estrategias de monetización y escalabilidad para startups.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4ve8cquz5dcw12a1qj7m.png",
+      "alt": "Portada del artículo 'Madame Minou: la astrología felina impulsada por IA'",
+      "caption": "Imagen de portada que muestra la interfaz de la app con un gato y estrellas"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4ve8cquz5dcw12a1qj7m.png",
+      "alt": "Pantalla de Madame Minou mostrando el horóscopo de un gato",
+      "caption": "Captura de la pantalla donde el usuario ve el signo solar de su gato"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MadameMinou",
+    "#IA",
+    "#HackTheKitty",
+    "#Kiro",
+    "#CatAstrology"
+  ],
+  "fullArticle": "En medio de los charcos parisinos y la lluvia de junio, un programador decidió participar sin saberlo en un hackathon llamado Hack the Kitty. De la mezcla de cafés y caminatas surgió Madame Minou, una app que promete leer el horóscopo de tu gato con la precisión de la astrología tradicional y la rapidez de la IA.\n\nEl desarrollo se basó en Kiro, un framework que permite generar código con la ayuda de modelos de lenguaje. El autor escribió primero los requisitos en EARS, luego los guardó en .kiro/specs y .kiro/steering, donde se definieron reglas de producto, seguridad y UI. Cada bloque de código aprobado se sometía a un gate de QA interno antes de pasar al siguiente, garantizando que la IA nunca generara contenido fuera de los parámetros definidos.\n\n[ MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4ve8cquz5dcw12a1qj7m.png ]\n\nLa lógica de la app es simple pero elegante: el signo solar se calcula con una búsqueda de rangos de fechas, mientras que la IA solo añade la voz y la narrativa. Claude, ejecutado sobre Amazon Bedrock, alimenta la generación de texto sin exponer claves API, y Lambda, API Gateway y DynamoDB gestionan las lecturas y el control de acceso freemium por IP. El despliegue incluyó la configuración de CORS, la corrección de errores de empaquetado y la integración con S3 y CloudFront para servir la interfaz.\n\nEl proyecto no solo es una curiosidad tecnológica; es un estudio de caso sobre cómo la IA puede potenciar nichos de mercado, ofreciendo experiencias personalizadas sin sacrificar la calidad ni la seguridad. Además, el hecho de que el autor haya dedicado la app a su gato fallecido añade una capa emotiva que resuena con cualquier amante de los animales.\n\nMadame Minou está disponible en línea en https://dghcwayx8gb6b.cloudfront.net y su código abierto en GitHub, lo que permite a otros desarrolladores experimentar con Kiro y Claude en contextos similares.\n\n[ MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4ve8cquz5dcw12a1qj7m.png ]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T03:23:38.990Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/earlgreyhot1701d/madame-minou"
+    },
+    {
+      "title": "Repositorio GitHub de Madame Minou",
+      "url": "https://github.com/earlgreyhot1701D/madame-minou"
+    },
+    {
+      "title": "Documentación de Amazon Bedrock",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración del hackathon",
+      "value": "6 días"
+    },
+    {
+      "label": "Número de signos astrológicos en la app",
+      "value": "12"
+    },
+    {
+      "label": "Porcentaje de código generado por IA",
+      "value": "80%"
+    },
+    {
+      "label": "Modelo de IA utilizado",
+      "value": "Claude (Amazon Bedrock)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

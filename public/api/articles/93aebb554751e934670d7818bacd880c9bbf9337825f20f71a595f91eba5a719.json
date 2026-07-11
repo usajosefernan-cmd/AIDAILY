@@ -1,0 +1,82 @@
+{
+  "id": "93aebb554751e934670d7818bacd880c9bbf9337825f20f71a595f91eba5a719",
+  "title": "Nissan sufre violación de datos tras hackeo de Oracle PeopleSoft",
+  "summary": "El fabricante japonés Nissan confirmó una brecha de seguridad que expuso datos de empleados en América, Canadá, México y Brasil, tras un ataque de la campaña zero‑day CVE‑2026‑35273 que apunta a Oracle PeopleSoft.",
+  "url": "https://www.securityweek.com/nissan-employee-data-breached-in-oracle-peoplesoft-hack/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-06-30T09:25:50.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2023/12/Nissan-breach-scaled.jpeg",
+  "imageAlt": "Nissan sufre violación de datos tras hackeo de Oracle PeopleSoft",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El fabricante japonés Nissan confirmó una brecha de seguridad que expuso datos de empleados en América, Canadá, México y Brasil, tras un ataque de la campaña zero‑day CVE‑2026‑35273 que apunta a Oracle PeopleSoft.",
+  "keyPoints": [
+    "El ataque, atribuido a ShinyHunters, explotó la vulnerabilidad CVE‑2026‑35273 y afectó a más de 100 organizaciones, incluyendo a Nissan y a la Universidad de Nottingham.",
+    "Los datos comprometidos abarcan SSN, información bancaria y registros fiscales de empleados actuales y anteriores en EE. UU., Canadá, México y Brasil.",
+    "Nissan ya ha notificado al Fiscal de California y continúa investigando la extensión del daño y las posibles filtraciones públicas.",
+    "El incidente se produce en un contexto de ataques recurrentes contra Nissan, que recientemente reportó que el grupo ransomware Everest había robado datos de clientes."
+  ],
+  "whyMatters": "La brecha demuestra la creciente sofisticación de los ciberataques dirigidos a sistemas corporativos críticos, poniendo en riesgo la privacidad de miles de empleados y la reputación de una marca global. Las vulnerabilidades de Oracle PeopleSoft siguen siendo un objetivo prioritario para los ciberdelincuentes, y la exposición de datos sensibles puede desencadenar demandas legales y sanciones regulatorias. Los lectores deben estar alerta a la importancia de fortalecer la ciberseguridad interna y a los protocolos de respuesta ante incidentes para proteger la información crítica.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2023/12/Nissan-breach-scaled.jpeg",
+      "alt": "Imagen que muestra el logo de Nissan junto a un símbolo de alarma de seguridad",
+      "caption": "Foto de portada del artículo que ilustra la brecha de datos en Nissan"
+    },
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2022/04/SecurityWeek-Small-Dark.png",
+      "alt": "Logo de SecurityWeek",
+      "caption": "Logo de la publicación que cubre la noticia"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Nissan",
+    "#PeopleSoft",
+    "#ShinyHunters",
+    "#CVE202635273"
+  ],
+  "fullArticle": "Nissan anunció hoy que su sistema de gestión de empleados, basado en Oracle PeopleSoft, ha sido comprometido por una campaña zero‑day que explotó la vulnerabilidad CVE‑2026‑35273. La compañía, que utiliza PeopleSoft para administrar nóminas, impuestos y otros registros, recibió el aviso de que estaba entre los objetivos de la ofensiva, que ha afectado a más de 100 organizaciones.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2023/12/Nissan-breach-scaled.jpeg]\n\nLos datos robados incluyen números de Seguro Social, información bancaria y datos fiscales de empleados actuales y anteriores en Estados Unidos, Canadá, México y Brasil. Aunque Nissan no ha publicado cifras exactas del número de empleados afectados, la amplitud del ataque sugiere una exposición significativa.\n\nEl grupo de extorsión ShinyHunters, responsable de la campaña, no ha incluido a Nissan en su lista pública de víctimas, pero la firma ha apuntado a instituciones académicas como la Universidad de Nottingham y a la Asociación Nacional de Comisionados de Seguros (NAIC). Este patrón indica que el sector educativo y financiero son los más vulnerables.\n\nNissan no es la única víctima reciente; el grupo ransomware Everest afirmó en abril haber robado datos de clientes de la marca. La empresa está revisando sus defensas y colaborará con autoridades para mitigar los daños y prevenir futuros incidentes.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2022/04/SecurityWeek-Small-Dark.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T09:46:34.126Z",
+  "links": [
+    {
+      "title": "Artículo original en SecurityWeek",
+      "url": "https://www.securityweek.com/nissan-employee-data-breached-in-oracle-peoplesoft-hack"
+    },
+    {
+      "title": "Detalles de CVE‑2026‑35273 en NVD",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35273"
+    },
+    {
+      "title": "Página oficial de Oracle PeopleSoft",
+      "url": "https://www.oracle.com/applications/peoplesoft/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "CVE ID",
+      "value": "CVE‑2026‑35273"
+    },
+    {
+      "label": "Organizaciones afectadas",
+      "value": "Más de 100"
+    },
+    {
+      "label": "Países involucrados",
+      "value": "EE. UU., Canadá, México, Brasil"
+    },
+    {
+      "label": "Tipo de datos comprometidos",
+      "value": "SSN, banca, fiscales"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

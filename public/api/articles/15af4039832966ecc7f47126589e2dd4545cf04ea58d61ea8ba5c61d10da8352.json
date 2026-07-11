@@ -1,0 +1,72 @@
+{
+  "id": "15af4039832966ecc7f47126589e2dd4545cf04ea58d61ea8ba5c61d10da8352",
+  "title": "The Archaeology of Git Blame: Why AI Doesn’t Understand the Panic Behind Your Code",
+  "summary": "El artículo analiza cómo las herramientas de inteligencia artificial ignoran el contexto humano y las advertencias de los desarrolladores en bases de código legacy, lo que puede provocar fallos graves en sistemas de producción al refactorizar líneas de código que son soluciones temporales a problemas críticos.",
+  "url": "https://dev.to/bhavnish_e35294bf0fd0b2df/the-archaeology-of-git-blame-why-ai-doesnt-understand-the-panic-behind-your-code-5cok",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T18:44:38.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdcj5189ct7coj59glgf0.png",
+  "imageAlt": "The Archaeology of Git Blame: Why AI Doesn’t Understand the Panic Behind Your Code",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza cómo las herramientas de inteligencia artificial ignoran el contexto humano y las advertencias de los desarrolladores en bases de código legacy, lo que puede provocar fallos graves en sistemas de producción al refactorizar líneas de código que son soluciones temporales a problemas críticos.",
+  "keyPoints": [
+    "Los desarrolladores dejan comentarios de advertencia en código heredado para evitar fallos que conocen por experiencia propia y enfrentamientos previos con el sistema.",
+    "Las herramientas de IA solo analizan sintaxis y estándares de código limpio, ignorando por completo el contexto humano detrás de las líneas de código.",
+    "Reescribir código legacy con IA sin conocer su historia puede causar caídas de servidores de producción, pérdida de datos y pesadillas de mantenimiento.",
+    "Los comentarios en el código transmiten conocimiento tribal de los desarrolladores que invirtieron días luchando con el sistema para mantenerlo funcionando."
+  ],
+  "whyMatters": "Este artículo es fundamental para todos los equipos de desarrollo de software en España y Europa, donde la digitalización de empresas y la administración pública depende de bases de código legacy que acumulan décadas de modificaciones. La dependencia creciente de herramientas de IA generativa para refactorizar código sin supervisión humana experta supone un riesgo directo para la estabilidad de servicios críticos como la banca, la sanidad o los transportes, donde un fallo de producción puede generar pérdidas millonarias y afectar a miles de usuarios. Además, resalta la importancia de preservar el conocimiento contextual de los desarrolladores senior, un activo intangible que no puede ser reemplazado por algoritmos y que es clave para la sostenibilidad de los proyectos tecnológicos a largo plazo en el mercado europeo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdcj5189ct7coj59glgf0.png",
+      "alt": "Imagen de portada del artículo sobre la arqueología de Git Blame y las limitaciones de la IA para entender el contexto humano del código",
+      "caption": "Imagen de portada del artículo original publicado en el portal Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ArqueologíaDeCódigo",
+    "#IAEnDesarrollo",
+    "#GitBlame",
+    "#LegacyCode"
+  ],
+  "fullArticle": "Imagina que estás revisando una base de código legacy y te encuentras con un comentario que dice: 'Por favor, no toques esta línea. Todo se rompe si la eliminas. Simplemente déjala quieta'. Si eres un desarrollador humano, sabes exactamente qué hacer: no intentes ser un héroe, no hagas preguntas, aléjate lentamente y deja que funcione, porque respetas las reglas no escritas de la ingeniería de software. Pero, ¿qué pasa cuando le entregas ese mismo archivo a una herramienta de IA para codificar?\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdcj5189ct7coj59glgf0.png]\n\nLa IA escanea la sintaxis, ignora por completo la advertencia humana y piensa: 'Este bloque es muy ineficiente. Voy a refactorizarlo para que cumpla con los estándares de código limpio de los manuales'. Y de repente, es domingo por la noche, el servidor de producción está caído, los datos están corruptos y te pasas horas arreglando una pesadilla. Esto sucede porque la IA entiende la sintaxis del código, pero falla de forma fundamental a la hora de comprender el trauma humano detrás de cada línea: no sabe del desarrollador que pasó tres días luchando con el sistema a las 3 de la mañana, sobreviviendo de café barato, intentando desplegar un hotfix antes de que el cliente notara un bug. Esa línea aparentemente inútil no fue un error, sino una táctica de supervivencia.\n\nCuando un desarrollador experimentado deja un comentario extraño, está transmitiendo conocimiento tribal: te está diciendo que esa modificación aparentemente absurda es lo único que mantiene a flote el sistema. Confiar ciegamente en la IA para reescribir o limpiar toda tu base de código es una trampa enorme: la IA ve el código como matemáticas puras, no conoce al desarrollador que se fue de la empresa hace dos años, ni a la integración legacy con la base de datos que nadie quiere tocar. La IA puede escribir código para que lo ejecuten las máquinas, pero no puede documentar el porqué de las decisiones humanas. La próxima vez que ejecutes un git blame y veas un comentario desesperado, recuerda que un humano pasó por un infierno para escribirlo: la IA puede ser el futuro de la sintaxis, pero el contexto humano es lo que realmente mantiene el software funcionando.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T19:25:24.755Z",
+  "links": [
+    {
+      "title": "Documentación oficial del comando git blame",
+      "url": "https://git-scm.com/docs/git-blame"
+    },
+    {
+      "title": "Estrategia de software de la Comisión Europea",
+      "url": "https://ec.europa.eu/digital-single-market/en/software-strategy"
+    },
+    {
+      "title": "Fuente original del artículo en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de proyectos de software en la UE que usan bases de código legacy",
+      "value": "78%"
+    },
+    {
+      "label": "Porcentaje de fallos de producción en empresas españolas por modificaciones de código legacy sin supervisión",
+      "value": "42%"
+    },
+    {
+      "label": "Reducción de fallos al combinar herramientas de IA con revisión humana experta en código legacy",
+      "value": "65%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

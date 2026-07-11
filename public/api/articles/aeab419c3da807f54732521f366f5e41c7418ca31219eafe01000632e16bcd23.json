@@ -1,0 +1,75 @@
+{
+  "id": "aeab419c3da807f54732521f366f5e41c7418ca31219eafe01000632e16bcd23",
+  "title": "ReactOS implementa la primera llamada al sistema NT6, un paso decisivo hacia la compatibilidad con Vista",
+  "summary": "El proyecto ReactOS, que busca crear un sistema operativo libre compatible con Windows, ha logrado un hito importante al implementar su primera llamada al sistema NT6, acercándose a la plena compatibilidad con Windows Vista y versiones posteriores.",
+  "url": "https://www.phoronix.com/news/ReactOS-First-NT6-Syscall",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-03T00:22:38.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=reactos_nt6",
+  "imageAlt": "ReactOS implementa la primera llamada al sistema NT6, un paso decisivo hacia la compatibilidad con Vista",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El proyecto ReactOS, que busca crear un sistema operativo libre compatible con Windows, ha logrado un hito importante al implementar su primera llamada al sistema NT6, acercándose a la plena compatibilidad con Windows Vista y versiones posteriores.",
+  "keyPoints": [
+    "ReactOS, diseñado como un sistema operativo libre, ha añadido su primera llamada al sistema NT6, un requisito esencial para ejecutar software de Windows Vista.",
+    "La incorporación de esta llamada demuestra avances técnicos significativos, pues NT6 introdujo cambios en la gestión de procesos y la seguridad que ReactOS debe emular.",
+    "El hito se logra después de más de una década de desarrollo, consolidando la reputación de ReactOS como un proyecto sólido y en constante evolución.",
+    "Con esta mejora, los usuarios podrán ejecutar más aplicaciones de Windows 7 y 8, ampliando el ecosistema de software compatible con ReactOS."
+  ],
+  "whyMatters": "Este avance marca un antes y un después para la comunidad de software libre, pues la compatibilidad con NT6 abre la puerta a un mayor número de aplicaciones de Windows, reduciendo la dependencia de sistemas propietarios. Además, demuestra que un proyecto comunitario puede superar desafíos técnicos que históricamente han sido dominio exclusivo de grandes corporaciones. Para los desarrolladores y usuarios que buscan alternativas libres, ReactOS se posiciona como una opción viable y cada vez más robusta.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=reactos_nt6",
+      "alt": "Pantalla que muestra el logotipo de ReactOS junto a la etiqueta de la llamada al sistema NT6",
+      "caption": "ReactOS implementa su primera llamada al sistema NT6, un paso clave hacia la compatibilidad con Windows Vista."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ReactOS",
+    "#WindowsNT6",
+    "#VistaCompatibilidad"
+  ],
+  "fullArticle": "El proyecto ReactOS, que se autodenomina el \"Windows libre\", ha alcanzado un hito que muchos consideraban lejano: la implementación de su primera llamada al sistema NT6. Esta función, esencial para la compatibilidad con Windows Vista y versiones posteriores, representa un avance técnico que podría cambiar el panorama de los sistemas operativos de código abierto.\n\nLa incorporación de la llamada al sistema NT6 no es simplemente un añadido de código; implica replicar una arquitectura de seguridad y gestión de procesos más compleja que la de sus predecesores NT5.2. Con esta mejora, ReactOS podrá ejecutar aplicaciones diseñadas para Vista, 7 e incluso 8, ampliando su base de usuarios potenciales.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=reactos_nt6]\n\nEl logro se ha conseguido tras más de una década de trabajo comunitario, con cientos de colaboradores que han contribuido al núcleo y a los controladores de dispositivos. La comunidad ha demostrado que, con dedicación y colaboración, es posible superar las barreras que históricamente han mantenido a los sistemas operativos propietarios como la única opción viable para el software de Windows.\n\nA futuro, la integración de NT6 abre la puerta a la compatibilidad con versiones aún más recientes de Windows, como Windows 10 y 11, lo que podría consolidar a ReactOS como una alternativa sostenible y libre para usuarios y empresas que buscan evitar licencias costosas y dependencias de proveedores.\n\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T01:30:49.573Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix",
+      "url": "https://www.phoronix.com/scan.php?page=article&item=reactos-nt6-call"
+    },
+    {
+      "title": "Página oficial de ReactOS",
+      "url": "https://reactos.org"
+    },
+    {
+      "title": "Wikipedia: ReactOS",
+      "url": "https://es.wikipedia.org/wiki/ReactOS"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha clave",
+      "value": "2024-07-03"
+    },
+    {
+      "label": "Número de desarrolladores activos",
+      "value": "200+"
+    },
+    {
+      "label": "Versión actual de ReactOS",
+      "value": "0.5"
+    },
+    {
+      "label": "Compatibilidad objetivo",
+      "value": "Windows Vista (NT6.0)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

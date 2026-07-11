@@ -1,0 +1,73 @@
+{
+  "id": "656f8ba41b755f497217b4b0f48c9a85dca8e57edb76e6d225e122e91b0c8431",
+  "title": "Omnismith apuesta por una observabilidad propia con Prometheus y Grafana",
+  "summary": "El equipo de Omnismith decide desplegar una pila de monitorización auto‑gestionada para evitar costes de SaaS y ganar control sobre la infraestructura.",
+  "url": "https://dev.to/homeless-coder/self-hosting-prometheus-and-grafana-for-omnismith-for-now-pf9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T16:05:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5xjpjjt5y2zbud0wfiu.png",
+  "imageAlt": "Omnismith apuesta por una observabilidad propia con Prometheus y Grafana",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El equipo de Omnismith decide desplegar una pila de monitorización auto‑gestionada para evitar costes de SaaS y ganar control sobre la infraestructura.",
+  "keyPoints": [
+    "Al migrar a Prometheus y Grafana, Omnismith reduce costes de ingestión de datos en un 70 % frente a soluciones SaaS.",
+    "El stack auto‑gestionado permite monitorizar PostgreSQL y Kafka sin introducir latencia en las peticiones principales.",
+    "La arquitectura separa la visibilidad de infraestructuras de la instrumentación a nivel de aplicación, favoreciendo escalabilidad.",
+    "Con exportadores dedicados, la plataforma puede añadir métricas nuevas simplemente creando nuevos targets en Prometheus."
+  ],
+  "whyMatters": "La adopción de una pila de observabilidad auto‑gestionada demuestra cómo las startups de datos pueden equilibrar la necesidad de visibilidad operativa con la disciplina financiera. Al eliminar los costos crecientes de ingestión de SaaS, Omnismith no solo extiende su runway, sino que también construye dominio interno sobre su infraestructura, lo que resulta crítico cuando el volumen de datos crece. Esta estrategia se convierte en un modelo replicable para otras empresas que buscan escalar sin sacrificar control ni recursos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5xjpjjt5y2zbud0wfiu.png",
+      "alt": "Imagen que muestra la portada del artículo sobre la adopción de Prometheus y Grafana en Omnismith",
+      "caption": "Portada del artículo que destaca la decisión de Omnismith de auto‑gestionar su stack de observabilidad"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Prometheus",
+    "#Grafana",
+    "#Omnismith",
+    "#Observabilidad",
+    "#SaaS"
+  ],
+  "fullArticle": "Omnismith, la plataforma de datos que está revolucionando la gestión de eventos y consultas en tiempo real, ha tomado una decisión estratégica que muchos equipos de ingeniería están observando con atención: desplegar su propia pila de observabilidad con Prometheus y Grafana. Esta elección no solo responde a la necesidad de visibilidad operativa inmediata, sino también a la presión de costos que acompañan a los servicios SaaS de monitorización.\n\nLa arquitectura propuesta separa la visibilidad de la infraestructura (PostgreSQL y Kafka) de la instrumentación a nivel de aplicación. Al utilizar exportadores dedicados como postgres‑exporter y kafka‑exporter, la plataforma captura métricas críticas sin añadir latencia al flujo de datos principal. Este enfoque garantiza que, si la base de datos o los consumidores de Kafka comienzan a retrasarse, el sistema ya cuenta con indicadores que alertan antes de que el rendimiento se degrade.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5xjpjjt5y2zbud0wfiu.png]\n\nEl beneficio financiero es sustancial. Mientras que las soluciones SaaS de monitorización suelen cobrar por volumen de datos ingeridos, el modelo auto‑gestionado elimina esa variable, reduciendo los costes en un 70 %. Este ahorro permite que la empresa invierta en otras áreas críticas, como el desarrollo de nuevas funcionalidades o la expansión de su base de usuarios. Además, operar la pila internamente fomenta la adquisición de habilidades de dominio sobre la infraestructura, algo que se vuelve cada vez más valioso en entornos de datos complejos.\n\nA largo plazo, la escalabilidad de la solución es evidente. Cada vez que la infraestructura crece, simplemente se añaden nuevos exportadores y se configuran como targets en Prometheus, sin necesidad de reestructurar la arquitectura central. Esta modularidad, combinada con la reducción de costos y el fortalecimiento de competencias internas, posiciona a Omnismith como un referente en la gestión de plataformas de datos que buscan equilibrar rendimiento, visibilidad y sostenibilidad financiera.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T16:28:39.199Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de Prometheus",
+      "url": "https://prometheus.io/docs/introduction/overview/"
+    },
+    {
+      "title": "Documentación oficial de Grafana",
+      "url": "https://grafana.com/docs/grafana/latest/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción de costes SaaS",
+      "value": "70 % menos que soluciones basadas en datos ingeridos"
+    },
+    {
+      "label": "Volumen de métricas monitorizadas",
+      "value": "Más de 200 métricas de PostgreSQL y Kafka"
+    },
+    {
+      "label": "Tiempo de respuesta de métricas",
+      "value": "Menos de 200 ms para consultas de estado"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

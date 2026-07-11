@@ -1,0 +1,41 @@
+{
+  "id": "a61e97e772a6a4bfe51a7e1d2044f2ed9f7a2949cf251edc0402722ebec22cc7",
+  "title": "El problema de los 500 millones: por qué la mayoría de equipos pagan tres veces más por código AI",
+  "summary": "Los costes de los servicios de codificación AI han alcanzado cifras absurdas, con empresas como Uber gastando su presupuesto anual en pocos meses. La causa es la falta de ajuste de la potencia del modelo al nivel de complejidad de la tarea, lo que genera un desperdicio de recursos y dinero.",
+  "url": "https://dev.to/aplomb2/the-500m-claude-code-problem-why-most-teams-pay-3x-what-they-should-for-ai-coding-59cj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T19:54:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0ibphw726qx19whdb8ev.png",
+  "imageAlt": "El problema de los 500 millones: por qué la mayoría de equipos pagan tres veces más por código AI",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los costes de los servicios de codificación AI han alcanzado cifras absurdas, con empresas como Uber gastando su presupuesto anual en pocos meses. La causa es la falta de ajuste de la potencia del modelo al nivel de complejidad de la tarea, lo que genera un desperdicio de recursos y dinero.",
+  "keyPoints": [
+    "Un cliente gastó 500 millones de dólares en un solo mes en Claude Code, ilustrando el auge de los costes de AI.",
+    "El 70‑80 % de las tareas de codificación no requieren modelos de frontera, pero se siguen pagando precios de nivel premium.",
+    "Las empresas están recortando presupuestos a nivel de empleado (p.ej. Uber limita a 1 500 USD/mes), pero el problema persiste a nivel de proyecto.",
+    "La solución radica en clasificar la complejidad de cada tarea y enrutarla a un modelo de coste adecuado, reduciendo hasta un 70 % de gastos."
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0ibphw726qx19whdb8ev.png",
+      "alt": "The $500M Claude Code Problem: Why Most Teams Pay 3x What They Should for AI Coding",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Enterprise AI coding bills are hitting absurd numbers. One source told Axios that a client spent $500 million in a month on Claude Code. Gartner's latest data says 23% of tech leaders are spending $200-500 per developer per month on tokens alone. Uber reportedly burned through its entire 2026 Claude Code budget by April and had to cap spending at $1,500/month per employee.\n\nThese aren't edge cases anymore. This is the new normal. And the uncomfortable truth is that most of this spend is waste.\n\nHere's what typically happens: A team adopts Claude Code or Copilot. They default to the most powerful model available because that's the safest bet. Every task — from scaffolding a React component to planning a complex distributed system migration — runs through the same frontier model at the same ...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:32:17.820Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

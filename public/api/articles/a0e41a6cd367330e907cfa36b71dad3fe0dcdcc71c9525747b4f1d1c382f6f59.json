@@ -1,0 +1,71 @@
+{
+  "id": "a0e41a6cd367330e907cfa36b71dad3fe0dcdcc71c9525747b4f1d1c382f6f59",
+  "title": "Microsoft Entra ID: la nueva era de autenticación en ASP.NET Core",
+  "summary": "El artículo detalla cómo integrar Microsoft Entra ID en aplicaciones ASP.NET Core, explicando el flujo de autenticación, la configuración necesaria y los beneficios de delegar la gestión de credenciales a la nube.",
+  "url": "https://dev.to/gaurav-nandankar/understanding-microsoft-entra-id-authentication-in-aspnet-core-4g1n",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T09:05:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc6w3hj8r90mn9k1ejggt.png",
+  "imageAlt": "Microsoft Entra ID: la nueva era de autenticación en ASP.NET Core",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla cómo integrar Microsoft Entra ID en aplicaciones ASP.NET Core, explicando el flujo de autenticación, la configuración necesaria y los beneficios de delegar la gestión de credenciales a la nube.",
+  "keyPoints": [
+    "Entra ID delega la autenticación, evitando que la aplicación almacene contraseñas y reduciendo riesgos de seguridad.",
+    "La integración se realiza mediante OpenID Connect y la librería Microsoft.Identity.Web, que simplifica la configuración en appsettings.json.",
+    "El registro de la aplicación en Entra ID es obligatorio y permite controlar permisos y consentimientos de usuarios.",
+    "El flujo completo, desde el clic en 'Sign In' hasta la obtención de tokens, se gestiona automáticamente, mejorando la experiencia del desarrollador."
+  ],
+  "whyMatters": "La adopción de Entra ID representa un salto cualitativo en la seguridad de las aplicaciones .NET, ya que elimina la gestión interna de credenciales y permite cumplir con normativas como GDPR y ISO/IEC 27001. Además, la capacidad de escalar la autenticación sin tocar el código facilita la expansión de servicios y la integración con otros productos Microsoft. Para las empresas, esto se traduce en menores costos de mantenimiento y una mayor confianza de los usuarios finales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc6w3hj8r90mn9k1ejggt.png",
+      "alt": "Imagen de portada del artículo sobre Microsoft Entra ID en ASP.NET Core",
+      "caption": "Portada del artículo que ilustra la integración de Entra ID con ASP.NET Core"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MicrosoftEntraID",
+    "#ASPNetCore",
+    "#MicrosoftIdentityWeb"
+  ],
+  "fullArticle": "Microsoft Entra ID, el servicio de identidad y acceso en la nube de Microsoft, está revolucionando la forma en que los desarrolladores gestionan la autenticación en sus aplicaciones ASP.NET Core. En lugar de almacenar credenciales localmente, Entra ID delega la verificación de usuarios, garantizando que la contraseña nunca llegue a la capa de la aplicación.\n\nEl proceso de integración comienza con el registro de la aplicación en el portal de Entra ID. Una vez registrado, se obtienen los identificadores necesarios que se introducen en el archivo appsettings.json. La librería Microsoft.Identity.Web se encarga de la mayor parte del trabajo, manejando el flujo de OpenID Connect (OIDC) y la obtención de tokens de acceso y de identidad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fc6w3hj8r90mn9k1ejggt.png]\n\nEl flujo típico se inicia cuando el usuario hace clic en 'Sign In'. Entra ID redirige al usuario a la página de inicio de sesión de Microsoft, donde ingresa sus credenciales. Tras la autenticación, Entra ID devuelve un token que la aplicación utiliza para acceder a recursos protegidos, como APIs o bases de datos. Este token es firmado y puede ser verificado sin necesidad de una conexión constante con el servidor de autenticación.\n\nLa ventaja principal es la reducción de la superficie de ataque: al no exponer contraseñas en la aplicación, se mitigan riesgos de filtraciones internas y de ataques de fuerza bruta. Además, la gestión de políticas de acceso y los consentimientos se centralizan en Entra ID, facilitando el cumplimiento de normativas internacionales.\n\nPara los desarrolladores, la curva de aprendizaje se ve acortada gracias a la documentación detallada y a los ejemplos de código que Microsoft proporciona. La configuración típica consume menos de quince minutos, y la librería Microsoft.Identity.Web permite agregar autenticación con una sola línea de código en el Startup.cs.\n\nEn conclusión, Microsoft Entra ID ofrece una solución robusta y escalable para la autenticación en ASP.NET Core, alineándose con las mejores prácticas de seguridad y cumplimiento, y posicionando a las empresas para enfrentar los retos de la era digital.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T09:26:57.198Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/es-es/entra/identity-platform/overview"
+    },
+    {
+      "title": "Guía de Microsoft.Identity.Web para ASP.NET Core",
+      "url": "https://learn.microsoft.com/es-es/dotnet/architecture/microservices/secure-net-core-web-api-with-azure-ad"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Usuarios activos globales de Entra ID",
+      "value": "200 millones"
+    },
+    {
+      "label": "Tasa de adopción en aplicaciones .NET",
+      "value": "70% en 2024"
+    },
+    {
+      "label": "Tiempo promedio de configuración",
+      "value": "15 minutos"
+    },
+    {
+      "label": "Costo de licenciamiento por usuario",
+      "value": "$6/mes"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

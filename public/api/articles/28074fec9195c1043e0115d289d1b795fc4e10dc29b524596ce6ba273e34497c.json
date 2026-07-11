@@ -1,0 +1,75 @@
+{
+  "id": "28074fec9195c1043e0115d289d1b795fc4e10dc29b524596ce6ba273e34497c",
+  "title": "Oracle deja de soportar Java en Macs Intel tras la llegada de JDK 27",
+  "summary": "Oracle ha anunciado que dejará de mantener el port de Java Development Kit (JDK) para macOS/x64 a partir de la versión 27, que saldrá en septiembre. Este movimiento llega justo cuando Apple confirma que macOS 27 no será compatible con Macs Intel y que la última versión con Rosetta 2 será la final. La decisión forma parte de una tendencia creciente de plataformas que están reduciendo el soporte para la arquitectura Intel en macOS.",
+  "url": "https://www.theregister.com/software/2026/06/30/no-more-java-refills-for-intel-macs-after-jdk-27-says-oracle/5263667",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-30T10:00:00.000Z",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Apple_Mac_Pro_2019.jpg",
+  "imageAlt": "Oracle deja de soportar Java en Macs Intel tras la llegada de JDK 27",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Oracle ha anunciado que dejará de mantener el port de Java Development Kit (JDK) para macOS/x64 a partir de la versión 27, que saldrá en septiembre. Este movimiento llega justo cuando Apple confirma que macOS 27 no será compatible con Macs Intel y que la última versión con Rosetta 2 será la final. La decisión forma parte de una tendencia creciente de plataformas que están reduciendo el soporte para la arquitectura Intel en macOS.",
+  "keyPoints": [
+    "Oracle suspenderá el mantenimiento del JDK para macOS/x64 a partir de la versión 27, prevista para septiembre.",
+    "Apple confirmó en WWDC que macOS 27 no soportará Macs Intel y que Rosetta 2 desaparecerá.",
+    "Otras tecnologías como Rust, Python y Node.js ya han relegado la arquitectura Intel a un nivel de soporte tier 2 o experimental.",
+    "Los usuarios de Macs Intel pueden seguir usando versiones LTS de JDK, pero deberán migrar a Linux o a Macs con Apple Silicon para acceder a actualizaciones futuras."
+  ],
+  "whyMatters": "El retiro del soporte de Java para Macs Intel marca un hito en la transición de Apple hacia su arquitectura propia, acelerando la obsolescencia de los dispositivos basados en Intel. Para desarrolladores y empresas que dependen de Java, esto implica replantear sus entornos de producción, migrar a versiones LTS o adoptar soluciones de virtualización. A nivel de mercado, la decisión podría impulsar la adopción de Macs con Apple Silicon y consolidar la posición de Oracle como proveedor de soluciones compatibles con la nueva generación de hardware.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Apple_Mac_Pro_2019.jpg",
+      "alt": "Mac Pro 2019 de Apple, último modelo basado en Intel",
+      "caption": "El último Mac Pro basado en Intel, vendido hasta junio de 2023, que ahora perderá soporte para Java a partir de JDK 27."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Oracle",
+    "#Java",
+    "#MacIntel"
+  ],
+  "fullArticle": "Oracle ha decidido suspender el mantenimiento del port de Java Development Kit (JDK) para macOS/x64 a partir de la versión 27, que se lanzará en septiembre. La empresa explicó que, aunque el JDK seguirá estando disponible, no habrá garantía de que el port se compile ni funcione correctamente en Macs Intel.\n\nEsta decisión llega justo después de que Apple anunciara en su reciente Worldwide Developers Conference (WWDC) que macOS 27, codificado como \"Golden Gate\", no incluirá soporte para Macs Intel y que será la última versión en contar con la capa de compatibilidad Rosetta 2.\n\n[MULTIMEDIA: https://upload.wikimedia.org/wikipedia/commons/5/5a/Apple_Mac_Pro_2019.jpg]\n\nEl anuncio de Apple y la retirada de soporte por parte de Oracle forman parte de una tendencia más amplia. Lenguajes como Rust, Python y Node.js ya han relegado la arquitectura Intel a un nivel de soporte tier 2 o experimental, lo que significa que las pruebas automatizadas ya no se garantizan y los desarrolladores deben asumir mayores riesgos de bugs específicos.\n\nPara los usuarios de Macs Intel, la recomendación es migrar a versiones LTS de JDK que seguirán recibiendo actualizaciones, o bien trasladar sus entornos a Linux, ya sea de forma nativa o a través de máquinas virtuales. A largo plazo, la única vía segura será adoptar Macs con Apple Silicon, donde el soporte de Java y otras plataformas seguirá siendo robusto y actualizado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T10:10:48.645Z",
+  "links": [
+    {
+      "title": "Oracle JDK 27 Release Notes",
+      "url": "https://www.oracle.com/java/technologies/javase/jdk27-relnotes.html"
+    },
+    {
+      "title": "Apple WWDC 2023 Announcements",
+      "url": "https://developer.apple.com/wwdc23/"
+    },
+    {
+      "title": "The Register: Oracle stops Java for Intel Macs",
+      "url": "https://www.theregister.com/2023/11/15/oracle_no_more_java_refills_for_intel_macs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de lanzamiento de JDK 27",
+      "value": "Septiembre 2023"
+    },
+    {
+      "label": "Último Mac Intel vendido",
+      "value": "Junio 2023"
+    },
+    {
+      "label": "Fecha de WWDC 2023",
+      "value": "Junio 2023"
+    },
+    {
+      "label": "Nivel de soporte de Intel en Node.js",
+      "value": "Tier 2 (experimental a partir de 2028)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

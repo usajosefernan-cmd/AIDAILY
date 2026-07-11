@@ -1,0 +1,79 @@
+{
+  "id": "8be3b5b0ebbf570ed03abb62cca8c61ee1c254189a307b0cf2456d8cb0097fc4",
+  "title": "¿Está seguro tu servidor MCP? Una sola línea en mcp.json salva a tu agente de un DROP TABLE",
+  "summary": "Los agentes de IA que usan MCP dependen de servidores de archivos, base de datos y shell. Una línea en mcp.json, con el proxy agentx‑mcp, bloquea llamadas destructivas y permite que el agente recupere la tarea sin perder datos.",
+  "url": "https://dev.to/vdalal/is-your-mcp-server-safe-one-line-in-mcpjson-and-your-agent-recovers-from-its-own-drop-table-3k13",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T01:25:47.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1d0i89f1l9iqbqgnylza.png",
+  "imageAlt": "¿Está seguro tu servidor MCP? Una sola línea en mcp.json salva a tu agente de un DROP TABLE",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los agentes de IA que usan MCP dependen de servidores de archivos, base de datos y shell. Una línea en mcp.json, con el proxy agentx‑mcp, bloquea llamadas destructivas y permite que el agente recupere la tarea sin perder datos.",
+  "keyPoints": [
+    "Los servidores MCP centralizan todas las llamadas de herramientas, lo que facilita la gestión pero también expone a daños irreversibles si un modelo genera una llamada maliciosa.",
+    "El proxy agentx‑mcp actúa como una barrera determinista que filtra comandos como DROP TABLE, DELETE sin ámbito o rm -rf antes de que lleguen al servidor.",
+    "Cuando se bloquea una llamada, el proxy devuelve un error de entrenamiento que indica la acción prohibida y su alternativa segura, permitiendo al agente ajustar su plan.",
+    "Esta solución no requiere claves ni latencia significativa, ya que la lógica de bloqueo se ejecuta localmente en el servidor y no implica inferencia del modelo."
+  ],
+  "whyMatters": "La seguridad de los agentes de IA que interactúan con infraestructuras reales es crítica para evitar pérdidas de datos y daños a sistemas críticos. Al permitir que el agente recupere la tarea en lugar de fallar, se mejora la resiliencia operativa y la confianza de los usuarios en soluciones basadas en MCP. Además, la implementación sin claves reduce la superficie de ataque y la dependencia de servicios externos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1d0i89f1l9iqbqgnylza.png",
+      "alt": "Imagen de portada que muestra un esquema de servidor MCP con líneas de código y un icono de protección",
+      "caption": "Portada del artículo: la arquitectura MCP y la línea de código que protege los agentes de IA"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla de la línea de código en mcp.json que activa el proxy agentx-mcp",
+      "caption": "Ejemplo de la configuración mínima en mcp.json que habilita el firewall de agente"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MCP",
+    "#AgentFirewall",
+    "#IAsegura",
+    "#OpenAI",
+    "#Claude"
+  ],
+  "fullArticle": "Los agentes de inteligencia artificial que operan a través de la arquitectura MCP (Claude Code, Cursor u otro cliente MCP) envían todas sus llamadas a servidores centralizados: un servidor de archivos, otro de base de datos y un shell. Esta estandarización simplifica el desarrollo, pero también crea un riesgo de que una llamada maliciosa o una inyección de prompt cause daños irreversibles antes de que el modelo se dé cuenta. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1d0i89f1l9iqbqgnylza.png]\n\nLa respuesta propuesta es el proxy agentx‑mcp, una capa de stdio que invoca al servidor real y filtra cada herramienta antes de su ejecución. Con una sola línea en el archivo mcp.json, el proxy bloquea automáticamente comandos peligrosos como DROP TABLE, DELETE sin ámbito, lecturas de almacenes secretos, SSRF a 169.254.169.254 o rm -rf. Al bloquear la llamada, el proxy devuelve un mensaje de entrenamiento que señala la acción prohibida y su alternativa segura, permitiendo al agente ajustar su plan y continuar la tarea sin interrupciones. \n\nEste enfoque determinista no requiere inferencia del modelo ni claves externas, lo que reduce la latencia a menos de 5 ms y elimina la dependencia de servicios de terceros. La solución es compatible con cualquier stack que hable MCP, ya que filtra el protocolo en lugar de inspeccionar el código.\n\nLos desarrolladores que implementen servidores MCP frente a bases de datos reales, sistemas de archivos o APIs internas pueden probar el proxy y evaluar qué llamadas destructivas fallan. El objetivo es demostrar la robustez del bloqueo y la capacidad de recuperación en tiempo real, lo que garantiza que los agentes no terminen en un estado de error crítico.\n\nEn un mundo donde los modelos de IA se utilizan cada vez más para tareas autónomas, la protección de la infraestructura subyacente se vuelve tan importante como la propia inteligencia del agente. agentx‑mcp ofrece una barrera práctica y sin cuellos de botella, protegiendo tanto a los sistemas como a los usuarios finales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T01:44:49.229Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Demo de agentx-mcp en acción",
+      "url": "https://bit.ly/agentfirewall"
+    },
+    {
+      "title": "Documentación oficial de MCP",
+      "url": "https://mcp.dev/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Latencia adicional",
+      "value": "Menos de 5 ms"
+    },
+    {
+      "label": "Número de reglas de bloqueo",
+      "value": "Infinito (determinista)"
+    },
+    {
+      "label": "Porcentaje de llamadas bloqueadas",
+      "value": "100 % de comandos destructivos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

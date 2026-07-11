@@ -1,0 +1,72 @@
+{
+  "id": "6456e37690fe3ecd930e13c51f86c947b2ebc795b5da284c7d68c688fcbf6529",
+  "title": "Adiós a la regla de oro: la guía de ClickHouse 2026 cambia para siempre el debate entre denormalizar y hacer joins en bases de datos analíticas",
+  "summary": "Durante años, la denormalización fue el enfoque obligatorio en modelado de datos analíticos por las limitaciones de rendimiento de los joins en motores antiguos. Una nueva guía de ClickHouse para 2026 explica cómo los avances en algoritmos de unión han cambiado la ecuación, ofreciendo un marco de decisión para elegir entre denormalizar, hacer joins o combinar ambos enfoques según las necesidades de cada carga de trabajo, sin renunciar a la eficiencia.",
+  "url": "https://dev.to/manveerchawla/clickhouse-denormalization-join-guide-2026-59lg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T06:17:28.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffrn1ytyqqql29dmg7jgl.png",
+  "imageAlt": "Adiós a la regla de oro: la guía de ClickHouse 2026 cambia para siempre el debate entre denormalizar y hacer joins en bases de datos analíticas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Durante años, la denormalización fue el enfoque obligatorio en modelado de datos analíticos por las limitaciones de rendimiento de los joins en motores antiguos. Una nueva guía de ClickHouse para 2026 explica cómo los avances en algoritmos de unión han cambiado la ecuación, ofreciendo un marco de decisión para elegir entre denormalizar, hacer joins o combinar ambos enfoques según las necesidades de cada carga de trabajo, sin renunciar a la eficiencia.",
+  "keyPoints": [
+    "Durante la última década, la denormalización fue el estándar en modelado analítico por las altas latencias y costes de los joins en motores columnares antiguos.",
+    "ClickHouse ha implementado algoritmos avanzados de joins que reducen hasta 1.450 veces la latencia y 25 veces el uso de memoria en consultas complejas.",
+    "La guía ofrece un marco de decisión para elegir entre denormalizar, hacer joins o usar primitivas nativas de ClickHouse según cada carga de trabajo.",
+    "La elección ya no depende de limitaciones del motor, sino de las características específicas de la carga de trabajo y los requisitos operativos."
+  ],
+  "whyMatters": "Este cambio de paradigma en el modelado de datos analíticos tiene un impacto directo en la eficiencia de los equipos de ingeniería de datos y en los costes operativos de las empresas que dependen de análisis en tiempo real. Al eliminar la obligatoriedad de la denormalización, las organizaciones pueden reducir la complejidad de sus pipelines de ingesta, adaptar sus esquemas con mayor flexibilidad y mejorar la gobernanza de los datos sin renunciar a un rendimiento de consulta óptimo. Para los profesionales del sector, esta guía supone una herramienta clave para dejar de tomar decisiones basadas en limitaciones técnicas obsoletas y empezar a optimizar sus arquitecturas en función de necesidades reales de negocio.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffrn1ytyqqql29dmg7jgl.png",
+      "alt": "Portada de la guía de ClickHouse 2026 sobre cuándo denormalizar o hacer joins en bases de datos analíticas",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClickHouse",
+    "#IngenieríaDeDatos",
+    "#BasesDeDatosAnalíticas",
+    "#OLAP"
+  ],
+  "fullArticle": "Durante años, la regla de oro en el modelado de datos analíticos fue clara: denormalizar para las lecturas, normalizar para las escrituras transaccionales. Esta práctica se impuso no por una preferencia arbitraria, sino por limitaciones técnicas reales de los motores de bases de datos columnares y procesadores de consultas distribuidas de la década pasada. Los joins en tiempo de consulta suponían latencias impredecibles, costes de computación elevados, derrames a disco o sobrecarga de coordinación entre nodos, lo que hacía que la denormalización —es decir, aplanar los datos en el momento de ingesta para evitar uniones posteriores— fuera la única opción fiable para cargas de trabajo sensibles a la latencia.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffrn1ytyqqql29dmg7jgl.png]\n\nEsa realidad ha cambiado de forma drástica con la llegada de motores OLAP en tiempo real como ClickHouse, que han invertido recursos considerables en optimizar la ejecución de joins. Hoy en día, algoritmos avanzados como los hash joins paralelos, los grace hash joins que evitan fallos por desbordamiento de memoria, los merge joins para tablas preordenadas y los dictionary joins para búsquedas de dimensiones ultra rápidas —hasta 25 veces más veloces que los hash joins en pruebas publicadas— han reducido la brecha de rendimiento de forma casi abismal. Incluso en consultas complejas de seis tablas del benchmark TPC-H, la reordenación global de joins basada en estadísticas de cardinalidad redujo el tiempo de ejecución de 3.903 segundos a 2,7 segundos, con una reducción del 25% en el uso de memoria, sin cambiar el hardware ni los datos.\n\nLa nueva guía de ClickHouse para 2026 no pretende imponer un enfoque único, sino ofrecer un marco de decisión pragmático para que los ingenieros elijan entre denormalizar, hacer joins o combinar ambos enfoques con primitivas nativas de la plataforma según las características de su carga de trabajo. La guía recuerda que la denormalización sigue siendo la opción más rápida para rutas de consulta dominantes, esquemas estables y requisitos de latencia muy ajustados, pero que la normalización aporta beneficios operativos muy valiosos: pipelines de ingesta más simples, esquemas flexibles y una gobernanza de datos más limpia. La elección, por tanto, ya no depende de las limitaciones del motor, sino de un análisis riguroso de las necesidades concretas de cada proyecto.\n\nEsta evolución sitúa a ClickHouse en una posición diferenciada frente a otras alternativas del mercado: los almacenes de eventos por adición como Druid o Pinot siguen favoreciendo tablas anchas por su arquitectura basada en segmentos inmutables, mientras que los almacenes de datos en la nube como Snowflake o BigQuery pueden ejecutar joins complejos, pero con perfiles de latencia y coste menos optimizados para cargas de trabajo de alta concurrencia en tiempo real. El mensaje final de la guía es claro: los joins ya no son una restricción que obliga a tomar decisiones de modelado, sino un coste más que se puede evaluar de forma objetiva frente a los trade-offs de la denormalización, devolviendo el control a los ingenieros para que diseñen arquitecturas de datos realmente adaptadas a sus necesidades.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T06:23:34.601Z",
+  "links": [
+    {
+      "title": "Guía original: Cuándo denormalizar o unir tablas en ClickHouse 2026",
+      "url": "https://dev.to/clickhouse/when-to-denormalize-when-to-join-a-clickhouse-guide-2026"
+    },
+    {
+      "title": "Guía de ClickHouse para elegir una base de datos para análisis en tiempo real 2026",
+      "url": "https://clickhouse.com/blog/choosing-a-database-for-real-time-analytics-2026"
+    },
+    {
+      "title": "Guía de esquemas en estrella y joins rápidos en ClickHouse",
+      "url": "https://clickhouse.com/blog/star-schema-and-fast-joins"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción de latencia en consulta TPC-H de 6 tablas",
+      "value": "1.450 veces (de 3.903 a 2,7 segundos)"
+    },
+    {
+      "label": "Reducción de uso de memoria en misma consulta TPC-H",
+      "value": "25 veces (de ~100 GiB a menos de 4 GiB)"
+    },
+    {
+      "label": "Aceleración de búsquedas de dimensiones con dictionary joins",
+      "value": "Hasta 25 veces más que los hash joins tradicionales"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

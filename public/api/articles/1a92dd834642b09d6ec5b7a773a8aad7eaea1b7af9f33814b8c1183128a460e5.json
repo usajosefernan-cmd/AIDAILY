@@ -1,0 +1,38 @@
+{
+  "id": "1a92dd834642b09d6ec5b7a773a8aad7eaea1b7af9f33814b8c1183128a460e5",
+  "title": "Implementing Google Sheets Integration for Device Management in tvview",
+  "summary": "TL;DR: integré Google Sheets con la aplicación tvview, lo que permitió volver a escribir las ediciones en una hoja para MAC, modelo y alineación. Esto implicó configurar las credenciales de la API de Google, modificar el servicio del dispositivo y agregar un proveedor de SheetsWriter.\n\nEl problema inicial era mejorar la gestión del dispositivo...",
+  "url": "https://dev.to/zaerohell/implementing-google-sheets-integration-for-device-management-in-tvview-1d0p",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T16:51:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4b1shyfopisvrz8ufty.png",
+  "imageAlt": "Implementing Google Sheets Integration for Device Management in tvview",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "TL;DR: integré Google Sheets con la aplicación tvview, lo que permitió volver a escribir las ediciones en una hoja para MAC, modelo y alineación. Esto implicó configurar las credenciales de la API de Google, modificar el servicio del dispositivo y agregar un proveedor de SheetsWriter.\n\nEl problema inicial era mejorar la gestión del dispositivo...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4b1shyfopisvrz8ufty.png",
+      "alt": "Implementing Google Sheets Integration for Device Management in tvview",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "TL;DR: integré Google Sheets con la aplicación tvview, lo que permitió volver a escribir las ediciones en una hoja para MAC, modelo y alineación. Esto implicó configurar las credenciales de la API de Google, modificar el servicio del dispositivo y agregar un proveedor de SheetsWriter.\n\nEl problema inicial fue mejorar las capacidades de administración de dispositivos en la aplicación tvview integrando Google Sheets. Esto permitiría editar y sincronizar sin problemas la información del dispositivo, específicamente MAC, modelo y alineación, directamente en una hoja de cálculo de Google.\n\nInicialmente, me concentré en configurar las credenciales de la API de Google e instalar el paquete googleapis necesario. Agregué el paquete googleapis al proyecto ejecutando:\n\nPrimero, actualicé .env.example para incluir las credenciales de la API de Google:\n\nTambién actualicé package-lock.json y package.json para incluir la dependencia de googleapis:\n\nA continuación, creé un proveedor SheetsWriter.ts para manejar la escritura en Google Sheets:\n\nLuego actualicé device.service.ts para integrarlo con el nuevo SheetsWriter:\n\nTambién se modificó la ruta API para actualizaciones de dispositivos:\n\nLa conclusión clave de esta implementación es la importancia de manejar adecuadamente la autenticación y autorización al integrarse con servicios externos...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T17:49:30.640Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

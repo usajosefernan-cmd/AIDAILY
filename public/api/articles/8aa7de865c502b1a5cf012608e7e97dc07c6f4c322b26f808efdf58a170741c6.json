@@ -1,0 +1,78 @@
+{
+  "id": "8aa7de865c502b1a5cf012608e7e97dc07c6f4c322b26f808efdf58a170741c6",
+  "title": "La gestión de riesgos se alinea con el negocio: de los datos técnicos a la estrategia empresarial",
+  "summary": "El artículo propone transformar la gestión de riesgos de ciberseguridad conectando métricas técnicas como CVSS con impacto financiero y operativo. Presenta el marco IRAM3, que combina análisis cualitativo y cuantitativo, y aboga por procesos continuos alineados con las funciones empresariales.",
+  "url": "https://www.securityweek.com/the-shift-toward-business-aligned-risk-management/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-06T15:20:42.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2023/01/Cybersecurity_News-SecurityWeek.jpg",
+  "imageAlt": "La gestión de riesgos se alinea con el negocio: de los datos técnicos a la estrategia empresarial",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo propone transformar la gestión de riesgos de ciberseguridad conectando métricas técnicas como CVSS con impacto financiero y operativo. Presenta el marco IRAM3, que combina análisis cualitativo y cuantitativo, y aboga por procesos continuos alineados con las funciones empresariales.",
+  "keyPoints": [
+    "Las métricas de riesgo, como la puntuación CVSS, deben traducirse a impacto financiero y operativo para ser accionables para los directivos.",
+    "La gestión de riesgos debe ser un proceso continuo, no periódico, adaptándose a amenazas emergentes como la IA y la computación cuántica.",
+    "El marco IRAM3 integra análisis cualitativo para decisiones rápidas y cuantitativo para inversiones, de forma modular y personalizable.",
+    "Los controles de seguridad deben evaluarse tanto por su capacidad de prevenir amenazas como de limitar su impacto, evitando soluciones parciales."
+  ],
+  "whyMatters": "En un entorno de amenazas cada vez más complejo y regulatorio, las organizaciones necesitan tomar decisiones de inversión en ciberseguridad basadas en el riesgo real y su impacto en el negocio. Este enfoque permite optimizar recursos, proteger los resultados empresariales y convertir la seguridad en un habilitador estratégico. Además, al alinear la gestión de riesgos con las funciones empresariales, se define un apetito de riesgo claro y se priorizan esfuerzos donde realmente importa. Las empresas que dominen esta alineación estarán mejor posicionadas para navegar la incertidumbre y mantener la confianza de clientes y reguladores.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2023/01/Cybersecurity_News-SecurityWeek.jpg",
+      "alt": "Portada del artículo sobre gestión de riesgos alineada al negocio",
+      "caption": "Imagen de portada del artículo original en SecurityWeek"
+    },
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2025/10/Steve_Durbin-ISF.jpg",
+      "alt": "Steve Durbin, CEO del Information Security Forum",
+      "caption": "Steve Durbin, autor del artículo y CEO del ISF"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#GestionDeRiesgos",
+    "#Ciberseguridad",
+    "#IRAM3",
+    "#SeguridadEmpresarial"
+  ],
+  "fullArticle": "En la película 'Moneyball', los Oakland A's comprendieron que no necesitaban más datos, sino saber cuáles eran realmente relevantes para ganar. Lo mismo ocurre con la gestión de riesgos de ciberseguridad: una puntuación CVSS de 9.1 puede ser irrelevante para un CFO si no se contextualiza. El hecho de que represente una vulnerabilidad en un sistema de pagos que procesa 2 millones de dólares diarios cambia completamente la perspectiva. Por tanto, los datos de riesgo deben vincularse a interrupciones operativas, pérdidas financieras o repercusiones regulatorias para convertirse en información accionable.\n\nLas evaluaciones periódicas de riesgo no pueden seguir el ritmo de un panorama de amenazas dinámico, impulsado por un entorno geopolítico volátil y tecnologías emergentes como la inteligencia artificial y la computación cuántica. En su lugar, la gestión de riesgos de información debe convertirse en un proceso continuo que conecte los riesgos, la eficacia de los controles y las consecuencias potenciales para el negocio si dichos controles fallan. Aquí es donde entra en juego la metodología IRAM3, que unifica dos vías de análisis: la cualitativa, para decisiones rápidas con datos limitados, y la cuantitativa, para respaldar inversiones con proyecciones financieras.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2023/01/Cybersecurity_News-SecurityWeek.jpg]\n\nLa diversidad de riesgos en impacto, datos disponibles y necesidades de los stakeholders exige un enfoque flexible. IRAM3 permite a las organizaciones ingresar en la fase que mejor se adapte a sus necesidades inmediatas, manteniendo un flujo de proceso coherente de extremo a extremo. Además, agrupar los activos por la función de negocio que soportan —como la sala de trading, el entorno de datos de clientes o una pasarela de pagos— permite realizar evaluaciones de riesgo alineadas con la operativa real. Esto ayuda a definir el apetito de riesgo: por ejemplo, la caída de ciertas funcionalidades de una plataforma de trading en horas pico representa un riesgo de alto impacto con pérdidas financieras y daño reputacional significativos.\n\nConocer el entorno de activos es solo la mitad del camino. El siguiente paso es identificar las amenazas, mapearlas a los activos críticos y estimar su probabilidad de materialización. Desde la perspectiva cuantitativa, se asigna una estimación de frecuencia en tres puntos: mínimo, más probable y máximo, que representa el número de eventos de pérdida esperados en un año. Asimismo, los controles de seguridad deben evaluarse no solo por si reducen la probabilidad de una amenaza, sino también por si limitan el daño en caso de que ocurra. Un control que solo contiene el incidente pero no lo prevé es solo half effective, y las decisiones de inversión deben reflejar esa dualidad.\n\nEl tratamiento del riesgo comienza por comparar la exposición actual con el apetito de riesgo, para luego decidir cómo responder. Un retailer, por ejemplo, puede elegir entre controles antifraude más robustos, añadir controles al proceso de pagos o contratar más seguros. El modelado de riesgo ayuda a determinar cómo cada opción afecta a la pérdida esperada y a la fricción del cliente, permitiendo a los líderes empresariales comparar alternativas antes de comprometerse. Una vez implementado el plan de remediación, se debe verificar su eficacia y reevaluar el riesgo residual. En un panorama volátil, las organizaciones ganadoras no serán las que eviten el riesgo por completo, sino las que dominen los datos para navegarlo con información.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2025/10/Steve_Durbin-ISF.jpg]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T00:59:48.790Z",
+  "links": [
+    {
+      "title": "Artículo original en SecurityWeek",
+      "url": "https://www.securityweek.com"
+    },
+    {
+      "title": "Information Security Forum (ISF)",
+      "url": "https://www.securityforum.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Puntuación CVSS de ejemplo",
+      "value": "9.1"
+    },
+    {
+      "label": "Volumen diario de transacciones del sistema de pagos",
+      "value": "$2 millones"
+    },
+    {
+      "label": "Rango de pérdidas en riesgos de alto impacto",
+      "value": "De $1 millón a $10 millones"
+    },
+    {
+      "label": "Puntos de estimación de frecuencia",
+      "value": "3 (mínimo, más probable, máximo)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

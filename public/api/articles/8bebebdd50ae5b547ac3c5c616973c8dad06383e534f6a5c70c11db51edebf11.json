@@ -1,0 +1,74 @@
+{
+  "id": "8bebebdd50ae5b547ac3c5c616973c8dad06383e534f6a5c70c11db51edebf11",
+  "title": "El Paywall que No Existía: Cómo un error en WordPress dejó 919 videos al alcance de cualquiera",
+  "summary": "Un desarrollador de WordPress descubrió que una plataforma de membresía fitness había dejado 919 videos accesibles a cualquier usuario, incluso sin suscripción, debido a una falsa capa de protección de contenido. La solución implicó reestructurar la lógica de acceso y eliminar una trampa de renombrado de niveles de membresía.",
+  "url": "https://dev.to/highcenburg/the-paywall-that-wasnt-debugging-a-919-video-leak-on-wordpress-4jae",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T07:31:56.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F933o9k2k2l70j7fkw4ix.png",
+  "imageAlt": "El Paywall que No Existía: Cómo un error en WordPress dejó 919 videos al alcance de cualquiera",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador de WordPress descubrió que una plataforma de membresía fitness había dejado 919 videos accesibles a cualquier usuario, incluso sin suscripción, debido a una falsa capa de protección de contenido. La solución implicó reestructurar la lógica de acceso y eliminar una trampa de renombrado de niveles de membresía.",
+  "keyPoints": [
+    "El sitio contenía 919 videos que, pese a una supuesta paywall, eran públicos para cualquier enlace.",
+    "El error surgió cuando un nivel de membresía fue renombrado, rompiendo la lógica de verificación por nombre.",
+    "El desarrollador identificó que la notificación de membresía era solo decorativa y no bloqueaba el contenido.",
+    "Se reescribió la capa de acceso en WordPress/WooCommerce/WishList Member/Vimeo para garantizar la protección real."
+  ],
+  "whyMatters": "La revelación subraya la fragilidad de las capas de seguridad basadas en front‑end en plataformas de contenido. Empresas de suscripción pueden perder ingresos y credibilidad si la lógica de acceso falla. Este caso sirve de alerta para revisar la gestión de permisos y la prueba de vulnerabilidades antes de lanzar actualizaciones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F933o9k2k2l70j7fkw4ix.png",
+      "alt": "Imagen de portada del artículo",
+      "caption": "Portada que muestra la página de un video con la advertencia de membresía"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F933o9k2k2l70j7fkw4ix.png",
+      "alt": "Imagen de la advertencia de membresía sobre el video",
+      "caption": "Texto que indica que solo los miembros pueden acceder, pero el video sigue disponible"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#WordPress",
+    "#WooCommerce",
+    "#Vimeo",
+    "#Paywall"
+  ],
+  "fullArticle": "Un desarrollador de WordPress recibió un ticket de tres líneas: \"Algunos miembros pagados no pueden reproducir los videos bajo demanda. Inician sesión, hacen clic y aún se les indica que necesitan una membresía.\" La respuesta fue rápida, pero el problema ocultó una falla mayor: la paywall no protegía nada.\n\nLa plataforma, dedicada a la formación fitness, contenía 919 videos. Al iniciar sesión y acceder a uno, el usuario veía el mensaje: \"Debes tener una Rev6 Membership para acceder a este video.\" El sospechoso inmediato fue el cambio de nombre de un nivel de membresía. En WishList Member, los ID de nivel son inmutables, pero los nombres no, y cualquier regla que compare por nombre se rompe al renombrar.\n\nEl desarrollador probó la página sin sesión y, sorprendentemente, el video se reproducía sin restricciones. La advertencia de membresía era solo texto sobre el video, no un bloqueo real. Así, todos los 919 videos eran públicos, accesibles con cualquier enlace, sin importar la suscripción.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F933o9k2k2l70j7fkw4ix.png]\n\nPara solucionarlo, se reestructuró la capa de acceso: se eliminaron las verificaciones por nombre y se implementó una lógica basada en ID de nivel y en la verificación de la cuenta de Vimeo. Se añadió una capa de seguridad en el servidor que intercepta las peticiones y verifica la membresía antes de servir el video. Además, se estableció un proceso de revisión de cambios de nombres de niveles para evitar futuros errores.\n\nLa lección es clara: una capa de protección visible no garantiza la seguridad real. Las plataformas de suscripción deben validar los permisos en el backend y revisar constantemente la lógica de acceso, especialmente cuando se realizan cambios estructurales como renombrar niveles de membresía.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T07:48:13.378Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article-about-paywall-leak"
+    },
+    {
+      "title": "Documentación de WordPress sobre roles y capacidades",
+      "url": "https://developer.wordpress.org/roles-capabilities/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de videos expuestos",
+      "value": "919"
+    },
+    {
+      "label": "Tiempo de respuesta al ticket",
+      "value": "Una noche"
+    },
+    {
+      "label": "Número de miembros afectados",
+      "value": "Varias"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

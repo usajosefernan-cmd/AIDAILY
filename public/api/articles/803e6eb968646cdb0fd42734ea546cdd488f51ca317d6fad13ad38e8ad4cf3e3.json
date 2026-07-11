@@ -1,0 +1,38 @@
+{
+  "id": "803e6eb968646cdb0fd42734ea546cdd488f51ca317d6fad13ad38e8ad4cf3e3",
+  "title": "The regression your eval set is too small to catch",
+  "summary": "TL;DR. Para captar una caída de una tasa de aprobación de 0,90 a 0,85 al 80% de potencia (unilateral, alfa 0,05), necesita alrededor de 253 ejemplos. Un conjunto de 50 ejemplos tiene aproximadamente un 35% de potencia, por lo que omite esa regresión aproximadamente dos de cada tres veces. La medida que importa no es \"recopilar más datos\" como eslogan. Dimensiona el conjunto al efecto...",
+  "url": "https://dev.to/maya_andersson_dev/the-regression-your-eval-set-is-too-small-to-catch-2nlg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T16:53:27.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa0jt4f7o9ee3qlza70yx.jpg",
+  "imageAlt": "The regression your eval set is too small to catch",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "TL;DR. Para captar una caída de una tasa de aprobación de 0,90 a 0,85 al 80% de potencia (unilateral, alfa 0,05), necesita alrededor de 253 ejemplos. Un conjunto de 50 ejemplos tiene aproximadamente un 35% de potencia, por lo que omite esa regresión aproximadamente dos de cada tres veces. La medida que importa no es \"recopilar más datos\" como eslogan. Dimensiona el conjunto al efecto...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa0jt4f7o9ee3qlza70yx.jpg",
+      "alt": "The regression your eval set is too small to catch",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "TL;DR. Para captar una caída de una tasa de aprobación de 0,90 a 0,85 al 80% de potencia (unilateral, alfa 0,05), necesita alrededor de 253 ejemplos. Un conjunto de 50 ejemplos tiene aproximadamente un 35% de potencia, por lo que omite esa regresión aproximadamente dos de cada tres veces. La medida que importa no es \"recopilar más datos\" como eslogan. Dimensione el conjunto según el efecto que realmente le interesa, informe un intervalo de confianza en cada ejecución en lugar de un delta de puntos simple y prefiera etiquetas binarias por criterio a puntuaciones calificadas vagas.\n\nHace unos meses asistí a una revisión en la que un equipo estaba satisfecho consigo mismo. Un nuevo mensaje había movido su tasa de aprobación de la evaluación del 87,5 por ciento al 90 por ciento, y alguien ya había escrito \"mensaje v3: +2pp\" en el registro de cambios. El conjunto de evaluación tenía cuarenta ejemplos.\n\nEsto es de qué se hicieron esos puntos. En cuarenta ejemplos, cada resultado es un múltiplo de 2,5 puntos, por lo que la tasa de aprobación sólo puede ser 35 de 40, 36 o 37, sin nada intermedio. El paso de 87,5 a 90 fue de 35 correctos, convirtiéndose en 36 correctos. Un ejemplo. Un único caso de prueba que solía fallar ahora pasó, y podría retroceder la próxima semana cuando la decodificación aterrice de manera diferente.\n\nHice la pregunta obvia. Si volviéramos a ejecutar el mensaje anterior tres veces más, ¿siempre obtendría una puntuación de 35...?",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T18:11:13.796Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

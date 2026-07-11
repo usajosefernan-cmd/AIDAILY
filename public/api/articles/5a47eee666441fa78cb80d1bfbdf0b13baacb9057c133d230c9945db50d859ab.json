@@ -1,0 +1,79 @@
+{
+  "id": "5a47eee666441fa78cb80d1bfbdf0b13baacb9057c133d230c9945db50d859ab",
+  "title": "Una máquina de pila, dos entornos: validación cruzada de Scala y Perl con un IR JSON compartido",
+  "summary": "En un proyecto poliglota, los ingenieros de Siunertaq han creado una representación intermedia en JSON para validar que la lógica de Scala y Perl produce los mismos resultados, evitando los frágiles tests de generación de código.",
+  "url": "https://dev.to/p_pumulo/one-stack-machine-two-runtimes-cross-validating-scala-and-perl-with-a-shared-json-ir-29jc",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T10:28:24.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzrkc1diah96qupiu1kzx.png",
+  "imageAlt": "Una máquina de pila, dos entornos: validación cruzada de Scala y Perl con un IR JSON compartido",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En un proyecto poliglota, los ingenieros de Siunertaq han creado una representación intermedia en JSON para validar que la lógica de Scala y Perl produce los mismos resultados, evitando los frágiles tests de generación de código.",
+  "keyPoints": [
+    "La máquina de pila se describe como un vector de instrucciones, evaluado en JVM y en Perl, garantizando la reproducibilidad entre entornos.",
+    "El IR JSON ya existía en la base de datos PostgreSQL y se reutiliza para la capa Perl, evitando dependencias externas.",
+    "El enfoque elimina la necesidad de generar código Perl, reduciendo la fragilidad y manteniendo un contrato estable entre lenguajes.",
+    "El resultado es una prueba de equivalencia directa que se ejecuta en ambos entornos sin intermediarios de texto o código generado."
+  ],
+  "whyMatters": "El uso de un IR JSON compartido permite a equipos multilingües asegurar la coherencia de sus algoritmos sin depender de generadores de código propensos a errores. Esta práctica reduce el riesgo de divergencias lógicas que podrían propagarse a producción, especialmente en sistemas críticos. Además, demuestra una forma elegante de integrar lenguajes con ecosistemas muy distintos, lo que puede inspirar nuevas metodologías de verificación en la industria del software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzrkc1diah96qupiu1kzx.png",
+      "alt": "Máquina de pila única, dos entornos de ejecución",
+      "caption": "Imagen de portada del artículo que ilustra la arquitectura de la máquina de pila"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzrkc1diah96qupiu1kzx.png",
+      "alt": "Representación JSON del IR",
+      "caption": "Captura de la representación JSON utilizada por Scala y Perl"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Scala",
+    "#Perl",
+    "#JSONIR",
+    "#Pekko",
+    "#SpringBatch"
+  ],
+  "fullArticle": "El equipo de Siunertaq, que trabaja con procesos batch en Java y Scala, se enfrentó al clásico dilema de los proyectos poliglotos: ¿cómo garantizar que la lógica escrita en Scala sea idéntica a la que se ejecuta en Perl? La solución no fue generar código Perl ni escribir tests de integración tradicionales, sino diseñar un IR (Intermediate Representation) común en JSON que ambos lenguajes consumen.\\n\\nLa arquitectura se basa en una máquina de pila pequeña: un programa es un vector de instrucciones, cada una representada por un enum en Scala y, de forma equivalente, por un objeto JSON. La evaluación se realiza en la JVM con Scala y, paralelamente, en un script Perl mínimo de 80 líneas sin dependencias externas.\\n\\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzrkc1diah96qupiu1kzx.png] \\n\\nEste enfoque elimina la fragilidad de los tests basados en la salida de código generado, ya que la comparación se hace sobre los resultados numéricos de la evaluación. Además, el IR JSON ya estaba presente en la base de datos PostgreSQL como contrato estable entre los pasos de Spring Batch, lo que facilita su reutilización.\\n\\nEl impacto es doble: por un lado, se obtiene una prueba de equivalencia directa entre dos entornos de ejecución diferentes; por otro, se demuestra que una arquitectura basada en un IR compartido puede ser más mantenible y menos propensa a errores que los tradicionales generadores de código. Esta práctica puede servir de modelo para otros equipos que necesiten integrar lenguajes con ecosistemas muy distintos sin sacrificar la calidad ni la confiabilidad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T10:52:30.518Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/one-stack-machine-two-runtimes-cross-validating-scala-and-perl-with-a-shared-json-ir"
+    },
+    {
+      "title": "Documentación de Dhall",
+      "url": "https://dhall-lang.org/docs/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño del script Perl",
+      "value": "80 líneas"
+    },
+    {
+      "label": "Número de lenguajes probados",
+      "value": "2"
+    },
+    {
+      "label": "Contrato JSON reutilizado",
+      "value": "PostgreSQL"
+    },
+    {
+      "label": "Tiempo de evaluación típico",
+      "value": "0.5 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

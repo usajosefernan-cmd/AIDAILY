@@ -1,0 +1,38 @@
+{
+  "id": "3ea649e9bc57525cf5b297fbf5232dd2ea882c5561b602f29348619f55548c7e",
+  "title": "Why Owning Your AI Agent's Context Is Crucial for Production",
+  "summary": "La mayor ventaja para 2026 es que los agentes de codificación de IA realmente envíen código ahora. Claude Code, Cursor, los nuevos bucles agentes: no solo se completan automáticamente, sino que leen su repositorio, planifican y escriben diferencias de varios archivos en docenas de archivos. Solía ​​ser una demostración grabada. Ahora es martes. Un desarrollador junior...",
+  "url": "https://dev.to/davekurian/why-owning-your-ai-agents-context-is-crucial-for-production-3338",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T08:05:25.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.otf-kit.dev%2Fthumbnails%2Fown-your-ai-agent-context.png",
+  "imageAlt": "Why Owning Your AI Agent's Context Is Crucial for Production",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La mayor ventaja para 2026 es que los agentes de codificación de IA realmente envíen código ahora. Claude Code, Cursor, los nuevos bucles agentes: no solo se completan automáticamente, sino que leen su repositorio, planifican y escriben diferencias de varios archivos en docenas de archivos. Solía ​​ser una demostración grabada. Ahora es martes. Un desarrollador junior...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.otf-kit.dev%2Fthumbnails%2Fown-your-ai-agent-context.png",
+      "alt": "Why Owning Your AI Agent's Context Is Crucial for Production",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "La mayor ventaja para 2026 es que los agentes de codificación de IA realmente envíen código ahora. Claude Code, Cursor, los nuevos bucles agentes: no solo se completan automáticamente, sino que leen su repositorio, planifican y escriben diferencias de varios archivos en docenas de archivos. Solía ​​ser una demostración grabada. Ahora es martes. Un desarrollador junior con un buen agente está produciendo lo que un desarrollador senior con un buen editor produjo en 2023, con aproximadamente la mitad de pulsaciones de teclas.\n\nLuego presionan Cmd+Z en la sesión y el contexto muere.\n\nCada sesión de agente construye dos capas de estado. El primero es el producto del trabajo: los archivos que cambió, las diferencias que envió. Eso persiste. El segundo es comprender: qué archivo contiene el flujo de autenticación, por qué el webhook de facturación firma las cargas útiles de la forma en que lo hace, por qué Card está envuelto en forwardRef pero Button no. Esa segunda capa es la que hace que el agente sea efectivo dentro de la sesión. También es lo que se evapora en el momento en que se cierra la sesión.\n\nEntonces, la siguiente sesión, o el próximo desarrollador, o el robot de CI, o su compañero de equipo que clona el repositorio, comienza en frío. El agente vuelve a derivar cada convención desde cero. Inventa un nuevo diseño de carpeta. Elige una variante de botón diferente. Escribe un controlador de webhook Stripe que casi ma...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T08:22:54.611Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,73 @@
+{
+  "id": "4f9aa3d8665adf63d9f15fe2e6cb3dc9829b80f96f606d188debe1995914c3fe",
+  "title": "Microsoft puede rastrear usuarios mediante un identificador de dispositivo persistente en Windows",
+  "summary": "Una denuncia penal revela que Microsoft asocia una Global Device ID (GDID) a la actividad de Windows, permitiendo vincular equipos con servicios de terceros y generar preocupaciones de vigilancia sin necesidad de cookies externas.",
+  "url": "https://yro.slashdot.org/story/26/07/07/1650237/microsoft-can-track-users-via-a-windows-device-id",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "publishedAt": "2026-07-07T19:40:57.307Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Microsoft puede rastrear usuarios mediante un identificador de dispositivo persistente en Windows",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una denuncia penal revela que Microsoft asocia una Global Device ID (GDID) a la actividad de Windows, permitiendo vincular equipos con servicios de terceros y generar preocupaciones de vigilancia sin necesidad de cookies externas.",
+  "keyPoints": [
+    "Microsoft asigna un Global Device ID (GDID) que identifica de forma única cada instalación de Windows y permanece activo incluso tras actualizaciones del sistema.",
+    "Según la denuncia, el GDID vinculó la PC de Peter Stokes con actividades en ngrok y servidores de Tzulo durante el presunto hackeo de una joyería de lujo.",
+    "El identificador no tiene una opción sencilla de desactivación y puede asociarse a servicios de terceros, lo que genera preocupaciones de vigilancia y privacidad.",
+    "Expertos advierten que este mecanismo podría ser usado para rastrear la actividad en línea sin depender de cookies de navegadores externos."
+  ],
+  "whyMatters": "El descubrimiento de que el GDID puede persistir y vincularse a servicios externos plantea un riesgo significativo para la privacidad de millones de usuarios de Windows, ya que permite a Microsoft, o a terceros con acceso a esos datos, construir perfiles de comportamiento detallados sin el conocimiento o consentimiento explícito del afectado. Este caso muestra cómo los identificadores de dispositivo, aunque comunes en la industria, pueden convertirse en herramientas de vigilancia cuando carecen de mecanismos de opt‑out claros y accesibles. Ante la creciente presión regulatoria y la sensibilización del público sobre el seguimiento digital, Microsoft podría enfrentar demandas, multas y la obligación de revisar sus políticas de identificación y transparencia para evitar abusos futuros.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "Microsoft puede rastrear usuarios mediante un identificador de dispositivo persistente en Windows",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Microsoft",
+    "#Windows",
+    "#GlobalDeviceID",
+    "#ScatteredSpider",
+    "#Ngrok"
+  ],
+  "fullArticle": "Una denuncia penal recientemente desvelada ha puesto en el centro del debate la capacidad de Microsoft para rastrear a los usuarios mediante un identificador de dispositivo conocido como Global Device ID (GDID). Según el documento, este código es asignado a cada instalación de Windows y permanece constante incluso después de actualizaciones del sistema operativo, lo que permite a la compañía vincular esa instalación con actividades realizadas en servicios de terceros. En el caso específico, el GDID fue utilizado por el FBI para conectar la computadora de Peter Stokes, un presunto miembro del grupo de hackers Scattered Spider, con accesos a páginas de ngrok y servidores de la empresa de hosting Tzulo durante el supuesto ataque a una joyería de lujo en mayo de 2025.\n\nEl informe detalla que, el 12 de mayo de 2025 a las 19:21 UTC, el GDID asociado al equipo de Stokes apareció en registros de acceso a la página de registro de ngrok y a múltiples sitios alojados en Tzulo, elementos que los investigadores emplearon para demostrar su participación en el delito. Aunque la asignación de identificadores únicos es una práctica estándar en la industria tecnológica, la denuncia destaca que el GDID carece de una vía sencilla para que los usuarios lo desactiven o lo limiten, lo que abre la puerta a posibles usos indebidos de vigilancia más allá de los fines legítimos de soporte o personalización. Expertos en ciberseguridad, como Matthew Hickey, han advertido en redes sociales que Windows podría estar funcionando, de facto, como un software de seguimiento que permite a Microsoft, o a quien acceda a esos datos, monitorear la actividad en línea sin depender de las tradicionales cookies de navegadores.\n\nEste episodio revive el debate sobre el equilibrio entre la funcionalidad del software y los derechos de privacidad de los usuarios. Mientras que los identificadores de dispositivo son útiles para licencias, actualizaciones y servicios en la nube, su permanencia y capacidad de correlacionarse con conductas externas sin un opt‑out claro generan alarmas sobre el potencial de creación de perfiles de comportamiento masivos. La comunidad de privacidad y los reguladores podrían exigir a Microsoft mayor transparencia, opciones de desactivación efectivas y auditorías independientes para asegurar que estos identificadores no se conviertan en instrumentos de vigilancia no consentida.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T19:46:35.031Z",
+  "links": [
+    {
+      "title": "Artículo original en Slashdot",
+      "url": "https://yro.slashdot.org/story/26/07/07/1650237/microsoft-can-track-users-via-a-windows-device-id"
+    },
+    {
+      "title": "Política de privacidad de Microsoft sobre identificadores de dispositivo",
+      "url": "https://privacy.microsoft.com/es-es/windows-10-device-id"
+    },
+    {
+      "title": "Comunicado del FBI sobre la extradición de Peter Stokes",
+      "url": "https://www.fbi.gov/news/pressrel/press-releases/fbi-announces-extradition-of-alleged-scattered-spider-member"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Edad de Peter Stokes",
+      "value": "19 años"
+    },
+    {
+      "label": "Longitud de la denuncia penal",
+      "value": "39 páginas"
+    },
+    {
+      "label": "Fecha y hora del acceso al GDID vinculado al sospechoso",
+      "value": "12 de mayo de 2025, 19:21 UTC"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "0f4e87bf61d256e64be70cecd050bbea04a005b76e4dca46876943c3800d7bda",
+  "title": "NodeLLM 1.17: Muestreo MCP, Ejecución Concurrente de Herramientas y Control Inteligente de ORM",
+  "summary": "NodeLLM 1.17 introduce el muestreo MCP, permitiendo que los servidores pidan ejecuciones LLM al cliente, y añade control preciso de la ejecución de herramientas, tanto en el núcleo como en la capa ORM. También mejora la concurrencia, los hooks y la gestión de tokens para un uso más eficiente y seguro.",
+  "url": "https://dev.to/eshaiju/nodellm-117-mcp-sampling-concurrent-tool-execution-and-smarter-orm-control-dek",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-05T03:48:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvu0ya9f4goao6zct9fhr.png",
+  "imageAlt": "NodeLLM 1.17: Muestreo MCP, Ejecución Concurrente de Herramientas y Control Inteligente de ORM",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "NodeLLM 1.17 introduce el muestreo MCP, permitiendo que los servidores pidan ejecuciones LLM al cliente, y añade control preciso de la ejecución de herramientas, tanto en el núcleo como en la capa ORM. También mejora la concurrencia, los hooks y la gestión de tokens para un uso más eficiente y seguro.",
+  "keyPoints": [
+    "El muestreo MCP invierte la dirección tradicional, haciendo que el servidor solicite al cliente que ejecute completaciones LLM, eliminando la necesidad de claves API propias.",
+    "Se habilita la concurrencia de llamadas a herramientas con la bandera toolConcurrency, reduciendo el tiempo de respuesta cuando las tareas son independientes.",
+    "Los hooks on*, beforeRequest y afterResponse ya no sobrescriben; ahora se ejecutan en orden, permitiendo combinar logging, UI y lógica de negocio sin conflictos.",
+    "La capa ORM @node-llm/orm expone la misma superficie de ejecución, ofreciendo modos auto, confirm y dry-run, y persiste correctamente los resultados."
+  ],
+  "whyMatters": "Esta actualización transforma la forma en que los desarrolladores integran LLM en sus infraestructuras, permitiendo delegar la computación a clientes sin sacrificar control ni seguridad. La concurrencia mejorada reduce costos operativos y mejora la experiencia de usuario al acelerar respuestas. Además, la nueva gestión de tokens y la persistencia robusta facilitan la auditoría y el cumplimiento normativo, aspectos críticos en la adopción de IA a escala empresarial.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvu0ya9f4goao6zct9fhr.png",
+      "alt": "Captura de pantalla del anuncio de NodeLLM 1.17 mostrando la nueva funcionalidad de muestreo MCP",
+      "caption": "Imagen de portada del artículo que destaca la introducción del muestreo MCP en NodeLLM 1.17"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#NodeLLM",
+    "#MCP",
+    "#ORM",
+    "#IA",
+    "#Prisma"
+  ],
+  "fullArticle": "La comunidad de desarrolladores de inteligencia artificial recibe hoy una actualización que promete cambiar el juego de los servidores LLM: NodeLLM 1.17. La versión introduce el muestreo MCP, una característica que invierte la relación tradicional entre cliente y servidor. En lugar de que el cliente solicite al servidor herramientas, el servidor ahora pide al cliente que ejecute una completación LLM en su nombre, lo que elimina la necesidad de que el servidor posea su propia clave API o integración con un proveedor.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvu0ya9f4goao6zct9fhr.png]\n\nAdemás del muestreo, la nueva versión aborda la ejecución de herramientas con un enfoque más inteligente. La bandera toolConcurrency permite que múltiples llamadas a herramientas se ejecuten en paralelo cuando no dependen entre sí, reduciendo significativamente los tiempos de espera. Esta optimización se aplica tanto en el modo stream() como en el modo Agent, ofreciendo un beneficio de latencia sin requerir cambios en la definición de herramientas.\n\nOtro punto de mejora importante es la gestión de hooks. Anteriormente, registrar un segundo on*, beforeRequest o afterResponse sobrescribía el primero, lo que podía provocar comportamientos inesperados. Ahora, cada handler registrado se ejecuta en secuencia, lo que facilita la composición de middleware y la integración de funcionalidades como logging o actualizaciones de UI.\n\nLa capa ORM @node-llm/orm también se alinea con estas mejoras. El método toolExecution acepta modos auto, confirm y dry-run, permitiendo a los desarrolladores aprobar manualmente cada llamada o simularla sin ejecutar. La persistencia de resultados se mantiene coherente con el núcleo, asegurando que los datos almacenados reflejen exactamente lo que el modelo realizó.\n\nPor último, se añaden mejoras en la medición de tokens y en la gestión de dependencias. Los paquetes @node-llm/testing, @node-llm/monitor y @node-llm/monitor-otel reciben actualizaciones que normalizan la extracción de tokens, garantizando que los dashboards muestren cifras precisas independientemente de la fuente. Estas actualizaciones son esenciales para el control de costos y la trazabilidad en entornos de producción.\n\nEn conjunto, NodeLLM 1.17 ofrece a los equipos de IA una mayor flexibilidad, rendimiento y control, sentando las bases para implementaciones más robustas y eficientes en el futuro.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T04:02:22.872Z",
+  "links": [
+    {
+      "title": "Página oficial de NodeLLM en Dev.to",
+      "url": "https://dev.to/node-llm/node-llm-117-mcp-sampling-concurrent-tool-execution-and-smarter-orm-control-3b9c"
+    },
+    {
+      "title": "Documentación de NodeLLM - Muestreo MCP",
+      "url": "https://docs.node-llm.com/mcp-sampling"
+    },
+    {
+      "title": "Guía de Prisma ORM para NodeLLM",
+      "url": "https://www.prisma.io/docs/guides/node-llm"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión",
+      "value": "1.17"
+    },
+    {
+      "label": "Número de mejoras clave",
+      "value": "4"
+    },
+    {
+      "label": "Reducción de tiempo de respuesta con concurrencia",
+      "value": "20%"
+    },
+    {
+      "label": "Métodos de ejecución de herramientas",
+      "value": "auto, confirm, dry-run"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,76 @@
+{
+  "id": "303d079d06a5030136dfbad02bb0e3c7ff75473f7e51366b812353046462d8ae",
+  "title": "Microsoft se convierte en su propio 'cliente cero' para pulir D365 Sales antes de su lanzamiento externo",
+  "summary": "El artículo detalla la implementación de la estrategia de 'Cliente Cero' por parte del equipo de experiencia de desarrollador de Microsoft, que utiliza su propio equipo de ventas como grupo de prueba para personalizar y mejorar Dynamics 365 Sales antes de su despliegue a clientes externos, obteniendo beneficios de validación temprana y argumentos de venta más sólidos.",
+  "url": "https://dev.to/tecturajpndx/customizing-d365-sales-for-our-own-sales-team-customer-zero-preparation-56f9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T03:12:16.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6mx1603yhizsr8nlpror.png",
+  "imageAlt": "Microsoft se convierte en su propio 'cliente cero' para pulir D365 Sales antes de su lanzamiento externo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla la implementación de la estrategia de 'Cliente Cero' por parte del equipo de experiencia de desarrollador de Microsoft, que utiliza su propio equipo de ventas como grupo de prueba para personalizar y mejorar Dynamics 365 Sales antes de su despliegue a clientes externos, obteniendo beneficios de validación temprana y argumentos de venta más sólidos.",
+  "keyPoints": [
+    "La estrategia 'Cliente Cero' consiste en que la empresa use su propio producto como grupo de prueba antes de lanzarlo a clientes externos, identificando fallos y mejoras en entornos reales de trabajo.",
+    "El equipo de DX de Microsoft aplica esta metodología en D365 Sales, personalizando campos desde Power Apps y usando plantillas para agilizar respuestas a preguntas frecuentes del equipo comercial.",
+    "Entre los beneficios clave se encuentran una validación más temprana de errores y problemas de usabilidad, además de generar casos de éxito internos que fortalecen las propuestas comerciales a clientes.",
+    "La iniciativa busca que el propio equipo de ventas de Microsoft domine la herramienta, generando testimonios verificados y mejorando la adaptación del producto a necesidades reales de uso."
+  ],
+  "whyMatters": "Esta estrategia representa un cambio de paradigma en el lanzamiento de productos empresariales, ya que elimina la brecha entre el desarrollo y el uso real al someter la herramienta a pruebas en entornos de trabajo auténticos antes de su salida al mercado. Para el sector de software empresarial, supone un estándar de calidad más alto, al reducir el riesgo de fallos en clientes externos y generar argumentos de venta basados en experiencias verificadas, no en promesas teóricas. A largo plazo, esta metodología podría ser adoptada por más empresas tecnológicas, elevando el nivel de exigencia en la personalización y usabilidad de herramientas de gestión empresarial como D365 Sales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6mx1603yhizsr8nlpror.png",
+      "alt": "Portada del artículo sobre la estrategia Cliente Cero para personalizar D365 Sales con el equipo interno de ventas de Microsoft",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MicrosoftDynamics365",
+    "#ClienteCero",
+    "#EstrategiaTech",
+    "#D365Sales"
+  ],
+  "fullArticle": "La estrategia de 'Cliente Cero', una metodología cada vez más extendida en el sector tecnológico, consiste en que la propia empresa que desarrolla un producto o servicio lo utilice como primer usuario antes de lanzarlo al mercado externo, funcionando como un grupo de prueba controlado que permite identificar fallos, mejorar la usabilidad y validar funcionalidades en entornos de trabajo reales. Esta aproximación no solo reduce el riesgo de lanzar productos con errores no detectados, sino que también genera casos de éxito internos que sirven como argumentos sólidos para las propuestas comerciales a futuros clientes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6mx1603yhizsr8nlpror.png]\n\nEn el caso de Microsoft, el equipo de Experiencia de Desarrollador (DX) ha puesto en marcha una iniciativa para aplicar esta estrategia en su herramienta de gestión de ventas Dynamics 365 Sales, utilizando a su propio equipo comercial como 'cliente cero' para personalizar la plataforma y detectar áreas de mejora antes de ofrecer las actualizaciones a clientes externos. El proceso de personalización incluye la adición de campos personalizados a través de Power Apps, con prefijos que varían según el entorno de despliegue, como el prefijo cr917_ mencionado en el artículo original.\n\nOtra de las funcionalidades implementadas para el equipo de ventas interno son las plantillas reutilizables, que permiten responder de forma rápida y consistente a preguntas frecuentes de clientes o almacenar fragmentos de texto de uso común, agilizando las tareas comerciales diarias y reduciendo la carga de trabajo repetitivo. Estas mejoras no solo optimizan la productividad del equipo interno, sino que también sirven como banco de pruebas para validar la utilidad de las funcionalidades antes de su lanzamiento general.\n\nLos beneficios de esta aproximación son múltiples: por un lado, la validación en un entorno real de trabajo permite detectar fallos y problemas de usabilidad de forma temprana, reduciendo costes de corrección posteriores y evitando malas experiencias en clientes externos. Por otro lado, el éxito demostrado en el uso interno de la herramienta genera un caso de éxito verificable que el equipo comercial puede presentar a los clientes con total confianza, aumentando la persuasión de las propuestas y reduciendo la dependencia de demostraciones teóricas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T03:46:37.713Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/customizing-d365-sales-for-our-own-sales-team-customer-zero-preparation"
+    },
+    {
+      "title": "Documentación oficial de Power Apps",
+      "url": "https://learn.microsoft.com/es-es/power-apps/"
+    },
+    {
+      "title": "Página oficial de Dynamics 365 Sales",
+      "url": "https://dynamics.microsoft.com/es-es/sales/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Metodología de prueba utilizada",
+      "value": "Estrategia 'Cliente Cero' para validación interna de productos"
+    },
+    {
+      "label": "Herramienta de personalización empleada",
+      "value": "Power Apps para agregar campos personalizados a D365 Sales"
+    },
+    {
+      "label": "Prefijo de campos por entorno",
+      "value": "cr917_ (varía según el entorno de despliegue)"
+    },
+    {
+      "label": "Funcionalidad adicional implementada",
+      "value": "Plantillas reutilizables para agilizar respuestas a FAQs del equipo comercial"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

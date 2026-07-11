@@ -1,0 +1,72 @@
+{
+  "id": "a09a7e46cabc1e0432ed4850d2daa633b0d67dff7a9f62c11edbe9dc09d01d87",
+  "title": "AWS lanza el Proveedor de Credenciales de Carga para la Gestión Automática de Certificados y Secretos",
+  "summary": "Amazon Web Services ha presentado el AWS Workload Credentials Provider, una herramienta de código abierto que entrega y renueva automáticamente certificados y secretos, reduciendo la complejidad operativa y previniendo interrupciones por expiración.",
+  "url": "https://www.infoq.com/news/2026/06/aws-credentials-provider/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-06-27T11:04:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/eyJidWNrZXQiOiAiYXNzZXRzLmluZm9xLmNvbSIsImtleSI6ICJ3ZWIvZm9vdGVyL2luZm9xLXBvZGNhc3QuanBnIiwiZWRpdHMiOiB7ImpwZWciOiB7ICJxdWFsaXR5Ijo4MH19fQ==",
+  "imageAlt": "AWS lanza el Proveedor de Credenciales de Carga para la Gestión Automática de Certificados y Secretos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Amazon Web Services ha presentado el AWS Workload Credentials Provider, una herramienta de código abierto que entrega y renueva automáticamente certificados y secretos, reduciendo la complejidad operativa y previniendo interrupciones por expiración.",
+  "keyPoints": [
+    "El nuevo proveedor entrega certificados ACM públicos y privados, cachea secretos de Secrets Manager y se ejecuta como servicio bajo un usuario de baja privilegio.",
+    "Verifica los certificados cada 24 horas, actualiza archivos locales solo cuando cambian y puede disparar comandos de recarga para NGINX o Apache.",
+    "Es una alternativa nativa de AWS a HashiCorp Vault Agent, con licencia Apache‑2.0 y disponible en GitHub.",
+    "El soporte de hasta 50 certificados permite gestionar entornos complejos sin reinstalar el servicio, y la configuración se realiza mediante un archivo TOML."
+  ],
+  "whyMatters": "El lanzamiento del Workload Credentials Provider representa un avance significativo en la automatización de la seguridad en la nube. Al eliminar la necesidad de scripts personalizados, las organizaciones reducen la posibilidad de errores humanos que pueden provocar caídas de servicio cuando los certificados expiran. Además, la integración nativa con AWS Secrets Manager y ACM simplifica la gestión de credenciales, lo que se traduce en menores costos operativos y mayor agilidad en el despliegue de aplicaciones. Para los equipos de DevOps y de seguridad, esto significa un ahorro de tiempo y recursos, y una mayor fiabilidad en entornos híbridos y multicloud.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/eyJidWNrZXQiOiAiYXNzZXRzLmluZm9xLmNvbSIsImtleSI6ICJ3ZWIvZm9vdGVyL2luZm9xLXBvZGNhc3QuanBnIiwiZWRpdHMiOiB7ImpwZWciOiB7ICJxdWFsaXR5Ijo4MH19fQ==",
+      "alt": "Logo oficial del podcast InfoQ",
+      "caption": "Logo oficial de InfoQ, la plataforma de noticias y recursos para profesionales de la tecnología."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AWS",
+    "#ACM",
+    "#SecretsManager",
+    "#HashiCorpVault"
+  ],
+  "fullArticle": "Amazon Web Services (AWS) ha anunciado el lanzamiento de su nuevo producto, el AWS Workload Credentials Provider, una solución de código abierto diseñada para entregar y renovar automáticamente certificados y secretos para aplicaciones. Con este proveedor, las empresas pueden delegar la gestión de credenciales en un servicio que se ejecuta bajo un usuario de baja privilegio, escribiendo archivos de certificado con permisos restringidos y evitando la exposición de datos sensibles.\n\nEl Workload Credentials Provider soporta la exportación y renovación automática de certificados ACM, tanto públicos como privados, y cachea secretos de AWS Secrets Manager. Se ejecuta de forma nativa como servicio en Linux (requiere systemd) y Windows (PowerShell 5.1 o superior), y permite la configuración de hasta 50 certificados, cada uno gestionado en un proceso aislado. La herramienta verifica los certificados cada 24 horas, actualizando los archivos locales solo cuando el contenido cambia, y puede disparar comandos de recarga para servicios dependientes como NGINX o Apache.\n\n[MULTIMEDIA: https://imgopt.infoq.com/eyJidWNrZXQiOiAiYXNzZXRzLmluZm9xLmNvbSIsImtleSI6ICJ3ZWIvZm9vdGVyL2luZm9xLXBvZGNhc3QuanBnIiwiZWRpdHMiOiB7ImpwZWciOiB7ICJxdWFsaXR5Ijo4MH19fQ==]\n\nEl servicio se presenta como una alternativa nativa de AWS al agente de HashiCorp Vault, ofreciendo una solución sin coste adicional para la entrega de credenciales locales. Según Ashish Kasaudhan, arquitecto senior de PwC Acceleration Centers, la complejidad operativa de la gestión de secretos es mayor que el coste de las llamadas API; el Workload Credentials Provider elimina esa complejidad al manejar la autenticación, el caché y la renovación de forma automática.\n\nAunque el proveedor es gratuito, el uso de AWS Secrets Manager y ACM implicará costes asociados. La configuración se realiza mediante un archivo TOML que define los certificados, rutas de salida, comandos de recarga y otras opciones de tiempo de ejecución. La herramienta está licenciada bajo Apache‑2.0 y se encuentra disponible en GitHub, lo que facilita su adopción y personalización por parte de la comunidad de desarrolladores.\n\nEl lanzamiento ha sido bien recibido por la comunidad, con comentarios que destacan la eliminación de tareas tediosas y la reducción de riesgos de expiración de certificados. Con la creciente adopción de infraestructuras híbridas y multicloud, el Workload Credentials Provider se posiciona como una pieza clave para garantizar la continuidad operativa y la seguridad de las aplicaciones en entornos complejos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T11:36:30.707Z",
+  "links": [
+    {
+      "title": "Documentación oficial de AWS Workload Credentials Provider",
+      "url": "https://docs.aws.amazon.com/workload-credentials-provider/latest/"
+    },
+    {
+      "title": "Publicación original en InfoQ",
+      "url": "https://www.infoq.com/articles/aws-workload-credentials-provider/"
+    },
+    {
+      "title": "Guía de AWS Secrets Manager",
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número máximo de certificados soportados",
+      "value": "50"
+    },
+    {
+      "label": "Frecuencia de verificación de certificados",
+      "value": "24 horas"
+    },
+    {
+      "label": "Licencia de código abierto",
+      "value": "Apache‑2.0"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,83 @@
+{
+  "aiSummary": "Omen AI, startup fundada por Zach Laberge, desarrolló un espectrómetro diminuto que monitorea el líquido de refrigeración de centros de datos en tiempo real, detectando crecimiento bacteriano antes de que cause obstrucciones y paros costosos. La empresa acaba de recaudar 31 millones de dólares en una ronda Serie A.",
+  "category": "tecnologia",
+  "fullArticle": "La explosión de la demanda de potencia de cómputo para entrenar y ejecutar modelos de inteligencia artificial ha puesto a los centros de datos en una carrera por maximizar la eficiencia de cada rack de GPUs. Una de las soluciones más extendidas para disipar el calor generado por estos chips es la refrigeración líquida, un sistema que utiliza una mezcla de agua y sustancias inhibidoras de crecimiento bacteriano. Sin embargo, cuando los operadores modifican la proporción de la mezcla para aumentar la cantidad de agua y mejorar la absorción de calor, se generan brotes de contaminación que obstruyen los conductos y pueden derivar en paros de entre cinco y seis horas, con costos que alcanzan los millones de dólares.\n\nFrente a este problema, la startup Omen AI ha desarrollado un espectrómetro diminuto capaz de monitorear la salud del líquido de refrigeración en tiempo real, detectando brotes bacterianos antes de que se conviertan en fallos masivos. 'No te arriesgas a tiempos de inactividad enormes porque no tienes visibilidad de lo que está pasando químicamente en el sistema', explica Zach Laberge, CEO y fundador de la empresa. Laberge, que ya había fundado su primera compañía a los 14 años, levantó 3 millones de dólares para instalar sensores en maquinaria de construcción antes de abandonar la escuela secundaria, con el apoyo de sus padres, entre ellos una exministra de Educación de Ontario.\n\n[MULTIMEDIA: https://techcrunch.com/wp-content/uploads/2026/06/OmenAI-CEO.Founder_Zach-Laberge.jpg?resize=1200,800]\n\nLa startup acaba de anunciar una ronda de financiación Serie A de 31 millones de dólares, liderada por Nava Ventures y con participación de CRV, la Universidad de Vanderbilt, Mann+Hummel, Starhill Holdings, Hard Launch Capital, así como inversiones personales de ejecutivos de Bridgestone, GM, Johnson Controls y Tensorwave. Aunque Omen AI se fundó en 2024 con un enfoque inicial en sistemas de fluidos para maquinaria de construcción, el vínculo de Caterpillar (cliente early de la startup) con el mercado de turbinas de gas y generadores para centros de datos hizo que Laberge y su equipo detectaran una oportunidad mucho más lucrativa. 'Hace unos seis meses, muchos concesionarios nos decían que estaban instalando sensores en sus turbinas y nos preguntaban si podíamos hacer algo para la parte de los edificios', cuenta Laberge.\n\nActualmente, Omen AI trabaja con una docena de clientes del sector de centros de datos, entre ellos TensorWave, la empresa que está construyendo una nube de cómputo de IA basada en chips AMD. 'El fluido que circula por estos sistemas masivos es una variable crítica de la que la mayoría de la industria no tiene visibilidad', declaró Piotr Tomasik, presidente de TensorWave. Aunque no es la única empresa que desarrolla soluciones de monitoreo de refrigeración para centros de datos —la firma de monitoreo de agua Pyxis lanzó su propio producto para refrigerantes a principios de este mes—, Omen AI se diferencia por su pequeño espectrómetro de bajo costo, posible gracias a los avances recientes en tecnologías ópticas y procesamiento de señales.",
+  "hashtags": [
+    "#OmenAI",
+    "#CentrosDeDatosIA",
+    "#RefrigeracionLiquida",
+    "#StartupJoven",
+    "#IA"
+  ],
+  "id": "b1cc8f230329467af9c4aa5a25d86ded5af925fcc9a5ece8dbb3f17ec40a258d",
+  "imageAlt": "Omen AI, la startup del fundador que creó su primera empresa a los 14 años, elimina los paros millonarios por bacterias en centros de datos",
+  "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/06/OmenAI-CEO.Founder_Zach-Laberge.jpg?resize=1200,800",
+  "interestingData": [
+    {
+      "label": "Inversión recaudada en Serie A",
+      "value": "31 millones de dólares"
+    },
+    {
+      "label": "Tiempo de paro por contaminación bacteriana",
+      "value": "Entre 5 y 6 horas por rack"
+    },
+    {
+      "label": "Inversión total recaudada desde la fundación",
+      "value": "40 millones de dólares"
+    },
+    {
+      "label": "Número de clientes de centros de datos",
+      "value": "12 clientes"
+    }
+  ],
+  "keyPoints": [
+    "La demanda de potencia de cómputo para IA impulsa la refrigeración líquida en centros de datos, mezcla de agua y sustancias que inhiben bacterias.",
+    "Para mejorar la absorción de calor, los operadores aumentan la proporción de agua, generando brotes bacterianos que obstruyen tuberías y causan paros de hasta 6 horas.",
+    "El espectrómetro de Omen AI monitorea el líquido de refrigeración en tiempo real, detectando bacterias antes de que generen daños millonarios.",
+    "La startup, fundada por Zach Laberge a los 14 años, recaudó 31 millones de dólares en Serie A para expandir su solución en el sector de centros de datos."
+  ],
+  "links": [
+    {
+      "title": "Artículo original de la noticia en TechCrunch",
+      "url": "https://techcrunch.com/2026/06/omen-ai-data-center-cooling-bacteria/"
+    },
+    {
+      "title": "Sitio oficial de Omen AI",
+      "url": "https://omen.ai"
+    },
+    {
+      "title": "Sitio oficial de TensorWave, cliente de Omen AI",
+      "url": "https://tensorwave.com"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Zach Laberge, fundador y CEO de Omen AI, en las instalaciones de la startup",
+      "caption": "Imagen de portada del artículo de TechCrunch sobre la solución de Omen AI para centros de datos. Créditos: Omen AI",
+      "type": "image",
+      "url": "https://techcrunch.com/wp-content/uploads/2026/06/OmenAI-CEO.Founder_Zach-Laberge.jpg?resize=1200,800"
+    },
+    {
+      "alt": "Retrato de Zach Laberge, fundador y CEO de Omen AI",
+      "caption": "Créditos de la imagen: Omen AI",
+      "type": "image",
+      "url": "https://techcrunch.com/wp-content/uploads/2026/06/OmenAI-CEO.Founder_Zach-Laberge.jpg?w=1024"
+    }
+  ],
+  "publishedAt": "2026-06-29T13:00:00.000Z",
+  "scrapedAt": "2026-06-29T13:04:05.487Z",
+  "source": "TechCrunch",
+  "sourceUrl": "https://techcrunch.com/feed/",
+  "subcategory": "ia/general",
+  "summary": "Omen AI, startup fundada por Zach Laberge, desarrolló un espectrómetro diminuto que monitorea el líquido de refrigeración de centros de datos en tiempo real, detectando crecimiento bacteriano antes de que cause obstrucciones y paros costosos. La empresa acaba de recaudar 31 millones de dólares en una ronda Serie A.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Omen AI, la startup del fundador que creó su primera empresa a los 14 años, elimina los paros millonarios por bacterias en centros de datos",
+  "url": "https://techcrunch.com/2026/06/29/omen-ais-plan-to-optimize-data-centers-is-all-wet/",
+  "whyMatters": "Esta solución resuelve un dolor crítico para la industria de los centros de datos, que enfrenta costos millonarios por paros no planificados derivados de la contaminación de sus sistemas de refrigeración líquida. A medida que la demanda de potencia de cómputo para entrenar modelos de IA crece de forma exponencial, la capacidad de mantener la operatividad de las granjas de servidores se convierte en una ventaja competitiva clave. Además, el enfoque de monitoreo en tiempo real elimina la necesidad de enviar muestras a laboratorios, reduciendo tiempos de respuesta y optimizando los costos de mantenimiento para operadores de infraestructura de todo el mundo.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

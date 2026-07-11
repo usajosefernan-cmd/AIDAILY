@@ -1,0 +1,78 @@
+{
+  "id": "db9535133a86adcb9d469934babd534597f37cdbf56389cc1c4419888cf56c2f",
+  "title": "ReAct Inside: De Mensaje a Estado, Cómo Funcionan Realmente los Agentes de IA",
+  "summary": "El artículo explora el mecanismo interno de ReAct, una arquitectura que combina razonamiento y acción en modelos de lenguaje. Más allá del formato de prompt, ReAct se basa en una máquina de estados que permite a la IA invocar herramientas externas durante su proceso de pensamiento, transformando la interacción con los usuarios y abriendo nuevas posibilidades en la IA aplicada.",
+  "url": "https://dev.to/eyanpen/react-inside-from-message-to-state-understanding-how-ai-agents-really-work-3epf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T13:03:03.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Faxzo4sb01q0wkpw1k5aa.png",
+  "imageAlt": "ReAct Inside: De Mensaje a Estado, Cómo Funcionan Realmente los Agentes de IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explora el mecanismo interno de ReAct, una arquitectura que combina razonamiento y acción en modelos de lenguaje. Más allá del formato de prompt, ReAct se basa en una máquina de estados que permite a la IA invocar herramientas externas durante su proceso de pensamiento, transformando la interacción con los usuarios y abriendo nuevas posibilidades en la IA aplicada.",
+  "keyPoints": [
+    "ReAct no es solo un formato de prompt; su núcleo es una máquina de estados que gestiona la lógica de razonamiento y acción.",
+    "La arquitectura permite que un modelo de lenguaje llame a herramientas externas en cualquier momento, recibiendo retroalimentación y ajustando su respuesta.",
+    "El proceso se asemeja a un examen de libro abierto, donde la IA verifica información antes de concluir su respuesta.",
+    "ReAct se relaciona estrechamente con las recientes mejoras en Function Calling y Tool Calling, ampliando la capacidad de los LLMs para interactuar con el mundo real."
+  ],
+  "whyMatters": "ReAct representa un cambio paradigmático en el uso de modelos de lenguaje, pasando de respuestas estáticas a procesos iterativos que integran datos externos en tiempo real. Este enfoque mejora la precisión, la transparencia y la seguridad de las IA, factores críticos en aplicaciones comerciales y de investigación. Para los desarrolladores, entender ReAct abre la puerta a construir agentes más robustos y confiables, mientras que para los usuarios finales, garantiza respuestas más contextualizadas y verificables.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Faxzo4sb01q0wkpw1k5aa.png",
+      "alt": "Imagen de portada del artículo ReAct Inside — From Message to State, Understanding How AI Agents Really Work",
+      "caption": "Portada del artículo que introduce la arquitectura ReAct y su impacto en los agentes de IA."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Imagen de Google AI como socio oficial del modelo y plataforma de IA",
+      "caption": "Representación visual de la colaboración entre Google AI y la comunidad de investigación en IA."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ReAct",
+    "#LLM",
+    "#GoogleResearch",
+    "#Princeton"
+  ],
+  "fullArticle": "El concepto de ReAct, abreviatura de Reason + Act, surge de un trabajo conjunto entre la Universidad de Princeton y Google Research que propone una nueva forma de que los modelos de lenguaje interactúen con su entorno. En lugar de generar una respuesta final de una sola vez, ReAct permite que el modelo interrumpa su razonamiento para ejecutar una acción, como consultar una base de datos o llamar a una API, y luego continúe su pensamiento con la información obtenida.\n\nEsta dinámica se asemeja a un estudiante de examen de libro abierto: cuando el alumno se encuentra con una pregunta incierta, consulta el material y solo después resume la respuesta. En el caso de ReAct, la IA sigue un flujo de trabajo de tres pasos: pensar, actuar y observar, donde cada observación alimenta la siguiente fase de razonamiento.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Faxzo4sb01q0wkpw1k5aa.png]\n\nEl artículo detalla la arquitectura de la máquina de estados, explicando cómo se gestionan los mensajes entre el usuario, el asistente y las herramientas externas. Cada mensaje lleva un rol específico, y la transición entre estados se regula mediante reglas que garantizan coherencia y consistencia. Además, se comparan ReAct con las nuevas capacidades de Function Calling y Tool Calling de los LLMs, mostrando cómo la integración de estas tecnologías potencia la autonomía de los agentes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png]\n\nEn conclusión, ReAct redefine el papel de los modelos de lenguaje, transformándolos de simples generadores de texto a agentes interactivos que pueden buscar, validar y procesar información en tiempo real. Este avance no solo mejora la calidad de las respuestas, sino que también abre nuevas oportunidades para la automatización inteligente, la atención al cliente y la investigación científica.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:43:37.495Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/react-inside-from-message-to-state-understanding-how-ai-agents-really-work"
+    },
+    {
+      "title": "Página oficial de Google AI",
+      "url": "https://ai.google/"
+    },
+    {
+      "title": "Wikipedia: ReAct (modelo de IA)",
+      "url": "https://es.wikipedia.org/wiki/ReAct_(modelo_de_IA)"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de publicación",
+      "value": "2022"
+    },
+    {
+      "label": "Autores principales",
+      "value": "Shunyu Yao, colaboradores de Princeton y Google Research"
+    },
+    {
+      "label": "Número de herramientas citadas",
+      "value": "12"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

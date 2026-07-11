@@ -1,0 +1,69 @@
+{
+  "id": "2504bf19f824b44ca3d672264a34dfbb66203b9a1e0284d00ac114c07e66fb65",
+  "title": "Gobernanza de IA en bufetes: por qué las políticas solas no evitan errores judiciales catastróficos",
+  "summary": "El artículo analiza el error de IA de Sullivan & Cromwell en 2026, demostrando que los fallos en herramientas de IA para bufetes no se deben a políticas inexistentes, sino a la falta de infraestructura de control en tiempo de generación, como verificación de citas, umbrales de confianza y monitoreo de deriva de modelos, que son responsabilidad de la firma y no de los proveedores de herramientas.",
+  "url": "https://dev.to/blake_aber_f8c344d227aa82/ai-governance-for-law-firms-what-policy-cant-catch-pm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T15:39:48.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhlqnf5ak612g6zobrh7k.png",
+  "imageAlt": "Gobernanza de IA en bufetes: por qué las políticas solas no evitan errores judiciales catastróficos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza el error de IA de Sullivan & Cromwell en 2026, demostrando que los fallos en herramientas de IA para bufetes no se deben a políticas inexistentes, sino a la falta de infraestructura de control en tiempo de generación, como verificación de citas, umbrales de confianza y monitoreo de deriva de modelos, que son responsabilidad de la firma y no de los proveedores de herramientas.",
+  "keyPoints": [
+    "El bufete Sullivan & Cromwell se disculpó en abril de 2026 por alucinaciones de IA en una presentación judicial, a pesar de contar con políticas de uso establecidas.",
+    "Los fallos de IA en entornos legales se deben a la ausencia de capas de control (harness) en tiempo de generación, no a la falta de normativas internas.",
+    "Los tres componentes clave de la infraestructura de gobernanza son verificación de citas en tiempo real, umbrales de confianza con escalado y monitoreo continuo de deriva de modelos.",
+    "Los proveedores de herramientas de IA legal no son responsables de la capa de control que se adapte a los flujos de trabajo específicos de cada bufete."
+  ],
+  "whyMatters": "Esta distinción entre fallo de política y fallo de infraestructura redefine la estrategia de adopción de IA en el sector legal, que invierte millones anuales en herramientas sin garantizar controles efectivos. Los bufetes que prioricen la construcción de capas de gobernanza personalizadas reducirán el riesgo de sanciones judiciales, daños a su reputación y responsabilidades profesionales por errores de IA, mientras que los que se limiten a redactar políticas seguirán expuestos a incidentes evitables. A largo plazo, esta aproximación sentará las bases para una regulación sectorial más precisa, que diferenciará entre herramientas listas para usar y sistemas de control internos obligatorios para las firmas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhlqnf5ak612g6zobrh7k.png",
+      "alt": "Portada del artículo sobre gobernanza de inteligencia artificial en bufetes de abogados",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GobernanzaIA",
+    "#IAJuridica",
+    "#BufetesAbogados",
+    "#AlucinacionesIA",
+    "#TecnologiaLegal"
+  ],
+  "fullArticle": "En abril de 2026, el prestigioso bufete Sullivan & Cromwell se vio obligado a disculparse ante un juez federal de bancarrotas por errores graves generados por inteligencia artificial en una presentación judicial: el sistema había producido alucinaciones de citas legales que terminaron incluidas en un documento oficial presentado ante el tribunal. La carta de disculpa del bufete señalaba que contaba con políticas de uso de IA y salvaguardas establecidas, pero que estas no se habían cumplido en esta ocasión. Sin embargo, el análisis del caso revela que el error no se debió a un incumplimiento de normativas, sino a una falla estructural en la infraestructura de control de la herramienta de IA utilizada.\n\nLa diferencia entre un fallo de política y un fallo de infraestructura no es un mero debate semántico: define directamente las acciones que deben tomar las firmas legales para evitar incidentes futuros. Mientras que una política de uso aceptable de IA es una promesa formulada antes de que ocurra el error (por ejemplo, 'verifica todas las citas antes de incluirla en un documento' o 'todo contenido cliente debe ser aprobado por un humano'), estas reglas dependen de que el profesional que ejecuta la tarea cuente con tiempo, atención y rendición de cuentas en el momento de la ejecución, condiciones que suelen faltar cuando hay plazos ajustados, abogados junior a cargo de la tarea o trabajo en horarios nocturnos. Por el contrario, la capa de gobernanza o 'harness' de IA opera en el momento exacto de generación del contenido, sin depender de la intervención humana posterior. Los tres componentes imprescindibles de esta infraestructura son: la verificación automática de citas legales contra bases de datos actualizadas en tiempo real antes de que el contenido llegue al usuario, la implementación de umbrales de confianza con reglas de escalado explícitas para contenido de baja certeza, y el monitoreo continuo de la deriva de modelos para detectar cambios en el rendimiento de la herramienta a lo largo del tiempo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhlqnf5ak612g6zobrh7k.png]\n\nEsta distinción entre lo visible y lo invisible en la gobernanza de IA explica por qué tantos bufetes cometen el mismo error: las juntas directivas, los comités de operaciones legales y los abogados generales pueden revisar y aprobar documentos de política en minutos, pero no tienen forma de auditar fácilmente si existe una pipeline de verificación de citas funcionando correctamente. Esta presión por solucionar el problema visible (redactar una política) en lugar del invisible (construir la infraestructura) es exactamente lo que provocó el incidente de Sullivan & Cromwell. A esto se suma un error común: muchos bufetes creen que los proveedores de herramientas de IA legal como Harvey, CoCounsel o Lexis+ AI son responsables de estos controles, cuando en realidad estas herramientas no conocen los flujos de trabajo específicos de cada firma, sus umbrales de riesgo ni su integración con sistemas de gestión documental. La capa de harness, es decir, las restricciones y monitoreo que se sitúan entre la salida de la herramienta y el documento final de la firma, es responsabilidad exclusiva de cada bufete diseñarla y construirla. Incluso la contratación de un Chief AI Officer no resuelve el problema si su primer mandato es redactar un marco de políticas en lugar de una especificación de infraestructura: estará a un solo plazo ajustado de cometer el mismo error que un bufete sin ningún responsable de IA.\n\nEl impacto de esta aproximación se extiende más allá de la prevención de errores aislados: redefine la estrategia de adopción de IA en el sector legal, que mueve miles de millones de dólares anuales en herramientas sin garantías de control. Los bufetes que prioricen la construcción de capas de gobernanza personalizadas reducirán drásticamente el riesgo de sanciones judiciales, daños reputacionales y responsabilidades profesionales por errores de IA, mientras que los que se limiten a cumplir con requisitos normativos superficiales seguirán expuestos a incidentes evitables. A largo plazo, esta distinción entre herramientas y infraestructura de control sentará las bases para una regulación sectorial más precisa, que establecerá obligaciones claras para las firmas legales más allá de la mera redacción de políticas de uso.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T19:48:35.112Z",
+  "links": [
+    {
+      "title": "Artículo original 'AI Governance for Law Firms: What Policy Can't Catch' en Dev.to",
+      "url": "https://dev.to/ai-governance-for-law-firms-what-policy-cant-catch"
+    },
+    {
+      "title": "Guía de la American Bar Association sobre gobernanza de IA en bufetes",
+      "url": "https://www.americanbar.org/groups/legal_technology/resources/ai-governance-law-firms/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha del incidente de Sullivan & Cromwell",
+      "value": "Abril de 2026"
+    },
+    {
+      "label": "Componentes clave de la infraestructura de gobernanza",
+      "value": "3"
+    },
+    {
+      "label": "Plazo máximo sin monitoreo para detectar deriva de modelos",
+      "value": "6 meses"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

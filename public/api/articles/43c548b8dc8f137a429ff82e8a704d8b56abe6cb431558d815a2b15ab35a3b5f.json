@@ -1,0 +1,77 @@
+{
+  "id": "43c548b8dc8f137a429ff82e8a704d8b56abe6cb431558d815a2b15ab35a3b5f",
+  "title": "La crisis de chips de 2020 a 2023 demostró que la resiliencia en la cadena de suministro de componentes electrónicos no se improvisa",
+  "summary": "El artículo analiza estrategias de sourcing para componentes electrónicos en producciones de 500 a 50.000 unidades anuales, con lecciones aprendidas de la escasez de ICs entre 2020 y 2023, riesgos de falsificación y la importancia de alianzas con distribuidores mayoristas.",
+  "url": "https://dev.to/hknova/memory-chips-4am",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T03:10:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiz3qoyvm06cgdrh8qp02.png",
+  "imageAlt": "La crisis de chips de 2020 a 2023 demostró que la resiliencia en la cadena de suministro de componentes electrónicos no se improvisa",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza estrategias de sourcing para componentes electrónicos en producciones de 500 a 50.000 unidades anuales, con lecciones aprendidas de la escasez de ICs entre 2020 y 2023, riesgos de falsificación y la importancia de alianzas con distribuidores mayoristas.",
+  "keyPoints": [
+    "La escasez de circuitos integrados entre 2020 y 2023 demostró que la resiliencia en la cadena de suministro debe diseñarse de antemano, no improvisarse ante plazos de entrega de hasta 52 semanas.",
+    "El uso del mercado spot para ICs sin inspección de entrada conlleva alto riesgo de componentes falsificados, como STM32 o ESP32, un problema bien documentado en la industria.",
+    "Establecer relaciones con distribuidores como Arrow o Avnet genera ahorros materiales a partir de 1.000 unidades y amortiza el costo administrativo en dos ciclos de producción.",
+    "Para productos con ciclos de vida de más de 5 años, es crucial calificar fuentes alternativas antes de necesitarlas, manteniendo un buffer de 4 semanas y una fuente secundaria en periodos normales."
+  ],
+  "whyMatters": "Esta guía es fundamental para equipos de ingeniería y producción de electrónica que buscan escalar sus proyectos sin sufrir interrupciones costosas. La experiencia de la escasez de chips entre 2020 y 2023 demostró que las fallas en la cadena de suministro pueden paralizar líneas de producción y generar pérdidas millonarias. Implementar estas estrategias no solo reduce riesgos de falsificación y retrasos, sino que optimiza costos a mediano plazo, permitiendo a las empresas competir en un mercado cada vez más globalizado y volátil.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiz3qoyvm06cgdrh8qp02.png",
+      "alt": "Imagen de portada del artículo sobre estrategia de cadena de suministro de chips de memoria",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#CrisisDeChips",
+    "#SourcingElectronico",
+    "#ArrowElectronics",
+    "#Avnet",
+    "#ComponentesFalsificados"
+  ],
+  "fullArticle": "La crisis de chips de memoria y circuitos integrados que azotó a la industria electrónica entre 2020 y 2023 dejó una lección clara: la resiliencia en la cadena de suministro no se improvisa cuando los plazos de entrega se extienden hasta las 52 semanas. Aquel periodo de escasez demostró que las estrategias de sourcing basadas en pedidos puntuales a proveedores como Digi-Key, válidas para prototipos, son insuficientes para volúmenes de producción medianos y altos. Diseñar una cadena de suministro robusta desde el día uno es una decisión estratégica que marca la diferencia entre la continuidad operativa y paradas costosas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiz3qoyvm06cgdrh8qp02.png]\n\nUno de los riesgos más subestimados por los equipos de ingeniería es el uso del mercado spot para adquirir circuitos integrados sin una inspección de entrada rigurosa. Los componentes falsificados de marcas como STM32 o ESP32, así como de analógicos comunes, están ampliamente documentados en la industria, y su incorporación a la producción puede generar fallos masivos en los dispositivos finales. Por el contrario, establecer relaciones directas con distribuidores mayoristas como Arrow o Avnet genera ahorros materiales significativos a partir de los 1.000 unidades producidas, y el costo administrativo de estas alianzas se amortiza en tan solo dos ciclos de producción.\n\nPara productos con ciclos de vida superiores a los 5 años, la planificación debe ir un paso más allá: calificar fuentes alternativas antes de necesitarlas, mantener un buffer de stock de 4 semanas en periodos normales y contar siempre con una fuente secundaria y un alternativo cualificado. Plataformas como IC-Online resultan especialmente útiles para cubrir brechas en listas de materiales con cantidades mixtas por debajo del mínimo de pedido de los mayoristas, o para ejecutar prototipos de ensamblaje de placas mientras se califica a un fabricante contratado. Transicionar demasiado pronto a un fabricante dedicado puede ser costoso, pero mantenerse demasiado tiempo en producción a escala de prototipo deja ingresos sobre la mesa.\n\nEstas prácticas no son recomendaciones abstractas: son el resultado de la experiencia acumulada por equipos de ingeniería que sufrieron los estragos de la escasez de componentes y aprendieron a construir cadenas de suministro más resilientes. La pregunta que queda sobre la mesa es qué estrategias de sourcing han funcionado mejor a otros equipos en volúmenes de 1.000 a 10.000 unidades anuales, especialmente en lo que respecta a programas directos con fabricantes por debajo de los 10.000 unidades al año. Compartir estos conocimientos es clave para que el sector electrónico global esté mejor preparado para futuras crisis.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T03:27:21.992Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "IC-Online, plataforma de sourcing de componentes electrónicos",
+      "url": "https://ic-online.com"
+    },
+    {
+      "title": "Arrow Electronics, distribuidor oficial de componentes",
+      "url": "https://www.arrow.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Plazo máximo de entrega durante la escasez de ICs (2020-2023)",
+      "value": "52 semanas"
+    },
+    {
+      "label": "Umbral de unidades para ahorros materiales con distribuidores mayoristas",
+      "value": "1.000 unidades"
+    },
+    {
+      "label": "Buffer de stock recomendado en periodos normales",
+      "value": "4 semanas"
+    },
+    {
+      "label": "Ciclo de vida mínimo del producto para calificar fuentes alternativas",
+      "value": "5 años"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

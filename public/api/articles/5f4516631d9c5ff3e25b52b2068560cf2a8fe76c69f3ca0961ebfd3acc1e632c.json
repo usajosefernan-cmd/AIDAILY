@@ -1,0 +1,79 @@
+{
+  "id": "5f4516631d9c5ff3e25b52b2068560cf2a8fe76c69f3ca0961ebfd3acc1e632c",
+  "title": "Pruebas de captura de pantalla y benchmarks de flujo: la arquitectura que elimina la incertidumbre en KMP",
+  "summary": "En el desarrollo multiplataforma con Kotlin, la flakiness de las pruebas de captura de pantalla y los benchmarks en dispositivos suele generar fracasos inesperados. Un enfoque arquitectónico que separa la lógica de negocio de la UI permite pasar entradas deterministas a los tests, reduciendo la variabilidad a menos del 5% y haciendo que los flujos de usuario sean verificables con golden images y benchmarks reproducibles.",
+  "url": "https://dev.to/theaxcode/stable-screenshot-tests-and-flow-benchmarks-in-kmp-20pb",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T11:22:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwhn0zl6402nunfeppxp7.png",
+  "imageAlt": "Pruebas de captura de pantalla y benchmarks de flujo: la arquitectura que elimina la incertidumbre en KMP",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En el desarrollo multiplataforma con Kotlin, la flakiness de las pruebas de captura de pantalla y los benchmarks en dispositivos suele generar fracasos inesperados. Un enfoque arquitectónico que separa la lógica de negocio de la UI permite pasar entradas deterministas a los tests, reduciendo la variabilidad a menos del 5% y haciendo que los flujos de usuario sean verificables con golden images y benchmarks reproducibles.",
+  "keyPoints": [
+    "La flakiness de las pruebas de captura de pantalla y benchmarks en KMP proviene de entradas no deterministas, no de las herramientas Paparazzi o Macrobenchmark.",
+    "Separar la UI del negocio mediante puertos y dependencias inyectables convierte a cada pantalla en una función pura de estado, lo que permite congelar el estado para pruebas estables.",
+    "Enumerar los estados de un flujo de usuario (p. ej., score → rank) permite generar golden images para cada estado, haciendo que las regresiones indiquen exactamente qué paso falló.",
+    "Al sustituir las llamadas de red por fixtures estáticos, el benchmark de rendimiento se centra en el cálculo y el renderizado, reduciendo la variación de 40% a menos del 5%."
+  ],
+  "whyMatters": "La estabilidad de las pruebas y los benchmarks es crucial para la entrega continua de aplicaciones móviles que funcionan en Android e iOS. Cuando las pruebas son confiables, los equipos pueden automatizar la validación de cada cambio y detectar regresiones reales antes de que lleguen al usuario. Además, una arquitectura que garantiza determinismo reduce el tiempo de depuración y aumenta la confianza del cliente en la calidad del producto.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwhn0zl6402nunfeppxp7.png",
+      "alt": "Captura de pantalla de la portada del artículo sobre pruebas en KMP",
+      "caption": "Imagen de portada que ilustra la estabilidad de pruebas en aplicaciones multiplataforma"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwhn0zl6402nunfeppxp7.png",
+      "alt": "Vista previa de la capa de puertos en la arquitectura KMP",
+      "caption": "Diagrama que muestra cómo los puertos separan la lógica de negocio de la UI"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#KotlinMultiplatform",
+    "#Testing",
+    "#Android",
+    "#IOS",
+    "#DevOps"
+  ],
+  "fullArticle": "El desarrollo multiplataforma con Kotlin (KMP) ha ganado terreno por su promesa de escribir una vez y ejecutar en Android, iOS y más. Sin embargo, la práctica revela un problema recurrente: las pruebas de captura de pantalla y los benchmarks en dispositivos suelen fallar de forma aleatoria, lo que obliga a los equipos a desconfianzar de las herramientas y a detener los controles de calidad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwhn0zl6402nunfeppxp7.png]\n\nEl origen de esta ‘flakiness’ no es la herramienta Paparazzi ni Macrobenchmark, sino la entrada no determinista que llega a la pantalla o al benchmark. Si cualquier dependencia fluctuante—red, reloj del sistema o estado de la ubicación—se inyecta directamente en la UI, los resultados varían. La solución propuesta es mantener la UI libre de dependencias externas: cada pantalla debe ser una función pura que recibe un `UiState` y renderiza sin leer el reloj ni hacer llamadas de red. El presentador, que sí necesita esos servicios, se coloca una capa arriba.\n\nCon esta separación, las pruebas de captura de pantalla se convierten en simples llamadas que inyectan un estado congelado. Además, se puede enumerar cada estado de un flujo de usuario—por ejemplo, los cuatro estados de la transición de puntuación a rango—y generar una golden image para cada uno. Así, una regresión revela exactamente qué estado falló, sin depender de un emulador ni de la red.\n\nEl impacto es cuantificable: la variación de los benchmarks de rendimiento se redujo de un 40 % a menos del 5 %, y la confianza en las pruebas aumentó lo suficiente como para permitir su uso como gate en los pull requests. En definitiva, la arquitectura que separa la lógica de negocio de la UI no solo mejora la calidad del código, sino que también acelera el ciclo de entrega y reduce los costos de depuración.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T11:48:12.557Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/stable-screenshot-tests-and-flow-benchmarks-in-kmp"
+    },
+    {
+      "title": "Documentación oficial de Kotlin Multiplatform",
+      "url": "https://kotlinlang.org/docs/mpp-overview.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción de variación en benchmarks",
+      "value": "de 40% a 5%"
+    },
+    {
+      "label": "Número de estados de flujo enumerados",
+      "value": "4"
+    },
+    {
+      "label": "Número de golden images generadas",
+      "value": "10"
+    },
+    {
+      "label": "Porcentaje de pruebas estables",
+      "value": "al 95%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

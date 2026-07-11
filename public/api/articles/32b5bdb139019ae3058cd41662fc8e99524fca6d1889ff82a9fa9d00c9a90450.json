@@ -1,0 +1,78 @@
+{
+  "id": "32b5bdb139019ae3058cd41662fc8e99524fca6d1889ff82a9fa9d00c9a90450",
+  "title": "Eliminan fugas de i18n con cuatro agentes AI paralelos: de 300 candidatos a 60 errores reales",
+  "summary": "Un equipo de desarrolladores utilizó cuatro agentes de inteligencia artificial en paralelo para detectar y eliminar fugas de texto en japonés dentro de una aplicación bilingüe. El proceso redujo 300 posibles incidencias a 60 errores reales, entre los que se encontraba un fallo que hacía que usuarios que pagaban en inglés recibieran correos electrónicos en japonés de Stripe.",
+  "url": "https://dev.to/susumun/sweeping-i18n-leaks-with-four-parallel-ai-agents-from-300-candidates-down-to-60-real-bugs-4mgc",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T00:58:53.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fen.wpmm.jp%2Fblog%2Fwp-content%2Fuploads%2Fogp%2Fpost-38-en-20260526010000.png",
+  "imageAlt": "Eliminan fugas de i18n con cuatro agentes AI paralelos: de 300 candidatos a 60 errores reales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un equipo de desarrolladores utilizó cuatro agentes de inteligencia artificial en paralelo para detectar y eliminar fugas de texto en japonés dentro de una aplicación bilingüe. El proceso redujo 300 posibles incidencias a 60 errores reales, entre los que se encontraba un fallo que hacía que usuarios que pagaban en inglés recibieran correos electrónicos en japonés de Stripe.",
+  "keyPoints": [
+    "Se detectaron 300 posibles fugas de texto japonés mediante búsquedas globales y se redujeron a 60 errores reales con filtrado automático.",
+    "El problema más crítico afectaba a cuatro tipos de correos de Stripe, enviando mensajes en japonés a usuarios que pagaban en inglés.",
+    "Se implementó una función única de detección de idioma que centraliza la lógica y evita duplicaciones en el código.",
+    "El uso de cuatro agentes AI paralelos aceleró el proceso, reduciendo el tiempo total de análisis a menos de una hora."
+  ],
+  "whyMatters": "Este hallazgo resalta la importancia de una gestión rigurosa de la internacionalización en software global. Los errores de idioma pueden deteriorar la experiencia del usuario, generar confusión y, en casos extremos, afectar la reputación de la marca. Además, la detección automática con IA demuestra una metodología escalable que puede aplicarse a proyectos de mayor tamaño, reduciendo costos y riesgos de fallos críticos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fen.wpmm.jp%2Fblog%2Fwp-content%2Fuploads%2Fogp%2Fpost-38-en-20260526010000.png",
+      "alt": "Imagen de portada que muestra el proceso de detección de fugas de i18n con agentes AI",
+      "caption": "Proceso de detección de fugas de i18n con cuatro agentes AI paralelos"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla de código fuente con anotaciones de detección de idioma",
+      "caption": "Ejemplo de código con anotaciones de detección de idioma"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#I18n",
+    "#AI",
+    "#StripeWebhook",
+    "#BugFixing"
+  ],
+  "fullArticle": "En el desarrollo de aplicaciones que sirven a usuarios multilingües, la gestión de la internacionalización (i18n) suele ser un reto que se resuelve con tablas de traducción y condicionales de idioma. Sin embargo, cuando el código crece, pequeñas fugas de texto en un idioma pueden quedar ocultas en el repositorio y pasar desapercibidas durante el proceso de revisión.\n\nPara abordar este problema, un equipo de ingenieros lanzó cuatro agentes de investigación AI en paralelo, cada uno encargado de un área distinta del código. Utilizando un prompt que instruía a los agentes a enumerar los hardcodes en japonés y decidir si ya estaban protegidos por una rama de idioma, se logró identificar 300 candidatos potenciales. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fen.wpmm.jp%2Fblog%2Fwp-content%2Fuploads%2Fogp%2Fpost-38-en-20260526010000.png]\n\nEl siguiente paso fue filtrar los falsos positivos con un script Python que analizaba el AST del código, verificando si cada literal japonés estaba dentro de un bloque de selección de idioma. Este proceso redujo la lista a 60 errores reales. Entre ellos, el fallo más impactante era que los correos electrónicos de Stripe (confirmación de compra, renovación, fallo de pago y cambio de plan) estaban codificados en japonés, enviándose a usuarios que pagaban en inglés.\n\nPara solucionar el problema, se creó una función única de inferencia de idioma que determina la lengua del evento de Stripe y la pasa a los métodos de envío de correo. Así, el asunto y el cuerpo se adaptan dinámicamente y se codifican correctamente en UTF‑8 Base64, evitando que los servidores de correo clasifiquen los mensajes como spam.\n\nEl resultado es una base de código más limpia, con la lógica de idioma centralizada en un helper que se importa en todos los archivos PHP relevantes. Además, la adopción de agentes AI paralelos demuestra un enfoque innovador para la detección de errores de i18n, reduciendo significativamente el tiempo de análisis y mitigando riesgos antes de que lleguen a producción.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T01:23:09.837Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article"
+    },
+    {
+      "title": "Documentación oficial de Stripe Webhooks",
+      "url": "https://stripe.com/docs/webhooks"
+    },
+    {
+      "title": "Guía de internacionalización en PHP",
+      "url": "https://www.php.net/manual/es/book.intl.php"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Candidatos iniciales detectados",
+      "value": "300"
+    },
+    {
+      "label": "Errores reales detectados",
+      "value": "60"
+    },
+    {
+      "label": "Tipos de correos afectados",
+      "value": "4"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

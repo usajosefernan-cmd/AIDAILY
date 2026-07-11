@@ -1,0 +1,79 @@
+{
+  "id": "a6b5ce1b41b46034bd8434a7dc6e123bbd8c78db072a83859bbb550ea17bdd06",
+  "title": "Vigila a los que te espían: cómo escribir código para lograr soberanía digital sin depender de VPN comerciales",
+  "summary": "El artículo explica que el internet moderno es gestionado por administradores sobrecargados, suites empresariales obsoletas y rastreadores automáticos que registran cada movimiento de los usuarios. Propone una defensa digital activa mediante scripts ligeros que no solo ocultan al usuario, sino que recopilan datos de quienes intentan acceder a sus sistemas, presentando un framework sin dependencias para implementar esta metodología.",
+  "url": "https://dev.to/numbpill3d/writing-code-to-watch-the-watchers-log-aggression-and-digital-self-defense-2fli",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T17:57:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fex9hinhm5vo378veubtl.jpg",
+  "imageAlt": "Vigila a los que te espían: cómo escribir código para lograr soberanía digital sin depender de VPN comerciales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica que el internet moderno es gestionado por administradores sobrecargados, suites empresariales obsoletas y rastreadores automáticos que registran cada movimiento de los usuarios. Propone una defensa digital activa mediante scripts ligeros que no solo ocultan al usuario, sino que recopilan datos de quienes intentan acceder a sus sistemas, presentando un framework sin dependencias para implementar esta metodología.",
+  "keyPoints": [
+    "El internet actual es gestionado por administradores sobrecargados, suites empresariales obsoletas y rastreadores automáticos creados por desarrolladores junior que copian código de Stack Overflow.",
+    "Cada interacción con servidores o entornos de desarrollo genera registros automáticos de tu IP, huella digital de navegador, hábitos y tiempos de acceso por parte de demonios de sistema invisibles.",
+    "La defensa digital propuesta no se basa en ocultarse, sino en crear redes de trampas que recopilen datos de atacantes como su ASN, geolocalización y tiempo de sondeo de puertos.",
+    "El artículo presenta un framework de script sin dependencias que imita servicios abiertos en puertos comunes para capturar datos de rastreadores y analizarlos con herramientas OSINT públicas."
+  ],
+  "whyMatters": "En un contexto donde el perfilado masivo de usuarios y las filtraciones de datos son moneda corriente para empresas y actores maliciosos, este enfoque de defensa digital activa supone un cambio de paradigma para desarrolladores y operadores de infraestructuras independientes en España y toda la Unión Europea. A diferencia de las herramientas comerciales reactivas que solo protegen a grandes corporaciones de demandas judiciales, esta metodología permite a usuarios individuales y pymes tomar el control de su seguridad sin depender de servicios de pago hinchados y con fallos de privacidad. Su relevancia es especialmente alta en el marco normativo europeo, donde el RGPD obliga a justificar el tratamiento de datos, y este enfoque invierte la lógica al permitir a los usuarios recopilar información de quienes acceden a sus sistemas de forma ilegítima, generando un efecto disuasorio real y pruebas válidas para acciones legales ante la Agencia Española de Protección de Datos en caso de necesidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fex9hinhm5vo378veubtl.jpg",
+      "alt": "Imagen de portada del artículo sobre defensa digital activa y vigilancia de rastreadores",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla del script analyze_watcher.sh para análisis de rastreadores",
+      "caption": "Fragmento del código del framework de defensa digital sin dependencias presentado en el artículo"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#DefensaDigital",
+    "#Ciberseguridad",
+    "#DesarrolloWeb",
+    "#SoberaniaDigital",
+    "#OSINT"
+  ],
+  "fullArticle": "El internet moderno no está gestionado por entidades omniscientes, sino por administradores de sistemas sobrecargados, suites empresariales hinchadas y rastreadores automáticos escritos por desarrolladores junior que copian código de Stack Overflow. Cada vez que interactúas con un servidor, cruzas un perímetro digital o levantas un entorno de desarrollo local, un ejército invisible de demonios de sistema registra cada uno de tus movimientos: tu dirección IP, la huella digital de tu navegador, tus hábitos de acceso y los intervalos de tiempo de tus sesiones. La mayoría de los usuarios acepta esta vigilancia como un coste inevitable de usar internet, recurriendo a soluciones superficiales como VPN comerciales hinchadas o proveedores de DNS que prometen no guardar registros, sin abordar el problema de fondo.\n\nLa propuesta de este artículo supone un giro radical en la defensa digital: en lugar de ocultarte de los vigilantes, construyes sistemas que los vigilan a ellos. La defensa mediante scripting no se basa en levantar muros más altos, sino en convertir tu entorno en una red de trampas: si alguien sondea tu perímetro, no solo descartas el paquete de conexión, sino que recopilas datos clave de su origen, como su número de sistema autónomo (ASN), su geolocalización y el tiempo exacto que pasó buscando puertos abiertos. A diferencia de las herramientas de seguridad comerciales, que son reactivas y se limitan a alertar sobre firmas de ataques conocidas para renovar suscripciones, esta metodología se basa en la observación agresiva en lugar de la mitigación pasiva, guiada por tres principios clave: asumir que cualquier punto de acceso público será escaneado por actores maliciosos, indexadores corporativos y script kiddies en cualquier momento; minimizar la huella de tus herramientas de monitoreo para no dar nuevos vectores de ataque a los vigilantes; y automatizar el análisis de registros para construir perfiles de quienes intentan acceder a tus sistemas.\n\nEl framework presentado es un script sin dependencias que imita servicios abiertos en puertos comunes como el 22 (SSH), 80 y 443 (HTTP/HTTPS) o instancias de bases de datos, para tentar a rastreadores automáticos y crawlers de OSINT. Cuando un actor se conecta a estos puertos, el script captura los datos que envía durante el handshake, cierra la conexión antes de que pueda realizar cualquier acción maliciosa y almacena la información en un registro restringido.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fex9hinhm5vo378veubtl.jpg]\nDespués, un segundo script llamado analyze_watcher.sh analiza los datos de conexión, extrae metadatos de origen y los contrasta con fuentes OSINT públicas para identificar quién es el propietario real de la infraestructura que te está sondeando, sin necesidad de pipelines de telemetría complejos ni dependencias de terceros que aumenten tu superficie de ataque. Esta metodología es especialmente útil para desarrolladores y pequeñas empresas en España, que deben cumplir con el RGPD y pueden usar los datos recopilados como prueba en caso de reclamaciones por acceso no autorizado a sus sistemas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T18:14:30.870Z",
+  "links": [
+    {
+      "title": "Artículo original completo en Dev.to",
+      "url": "https://dev.to/ajzaur/writing-code-to-watch-the-watchers-log-aggression-and-digital-self-defense-2a8e"
+    },
+    {
+      "title": "Guía de ciberseguridad para desarrolladores del INCIBE",
+      "url": "https://www.incibe.es/ciudadania/protege-tu-equipo/guia-ciberseguridad-desarrolladores"
+    },
+    {
+      "title": "Información oficial del RGPD de la Unión Europea",
+      "url": "https://www.aepd.es/gdpr"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Dependencias del framework de defensa digital",
+      "value": "0, funciona con utilidades nativas del sistema sin necesidad de módulos adicionales ni Docker"
+    },
+    {
+      "label": "Tiempo de análisis por conexión con fuentes OSINT",
+      "value": "Menos de 10 segundos por dirección IP registrada"
+    },
+    {
+      "label": "Porcentaje de ataques a infraestructuras pequeñas por rastreadores automatizados",
+      "value": "Más del 70% según el informe de ciberseguridad de INCIBE 2024"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

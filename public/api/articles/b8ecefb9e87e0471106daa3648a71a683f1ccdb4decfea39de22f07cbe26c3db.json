@@ -1,0 +1,77 @@
+{
+  "id": "b8ecefb9e87e0471106daa3648a71a683f1ccdb4decfea39de22f07cbe26c3db",
+  "title": "Xperience Community: Admin Styles, la extensión que mejora la experiencia de administración de Kentico sin tocar el código",
+  "summary": "Extensión de código abierto para navegadores Chromium que optimiza la usabilidad del panel de administración de Xperience by Kentico mediante modificaciones visuales con CSS, sin recopilar datos ni alterar funcionalidades internas. Se instala en 30 segundos sin configuración y soluciona problemas visuales frecuentes como scrollbars pesados, pestañas inaccesibles y columnas vacías.",
+  "url": "https://dev.to/vhugogarcia/xperience-community-admin-styles-2inl",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T16:52:19.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbe9lewkmv2sqinh94c0k.png",
+  "imageAlt": "Xperience Community: Admin Styles, la extensión que mejora la experiencia de administración de Kentico sin tocar el código",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Extensión de código abierto para navegadores Chromium que optimiza la usabilidad del panel de administración de Xperience by Kentico mediante modificaciones visuales con CSS, sin recopilar datos ni alterar funcionalidades internas. Se instala en 30 segundos sin configuración y soluciona problemas visuales frecuentes como scrollbars pesados, pestañas inaccesibles y columnas vacías.",
+  "keyPoints": [
+    "Extensión de código abierto para navegadores Chromium que optimiza la interfaz de administración de Xperience by Kentico mediante inyección de CSS, sin modificar el funcionamiento interno.",
+    "Corrige problemas visuales frecuentes: scrollbars poco estéticos, pestañas inaccesibles en paneles de edición y columnas vacías que desperdician espacio en la interfaz.",
+    "No recopila, lee ni transmite datos de usuario, su instalación desde Chrome Web Store tarda 30 segundos y no requiere configuración ni reinicio del navegador.",
+    "Compatible con cualquier versión de Xperience by Kentico cuya URL de administración incluya /admin/, y se actualizará con nuevas mejoras de usabilidad de forma periódica."
+  ],
+  "whyMatters": "Esta herramienta resuelve problemas de usabilidad que afectan la productividad de los equipos que trabajan a diario con el panel de administración de Xperience by Kentico, eliminando fricciones visuales que generan frustración y pérdida de tiempo. Al ser de código abierto y no recopilar datos, garantiza transparencia y seguridad para los usuarios, a diferencia de otras extensiones que pueden comprometer información sensible. Su enfoque de solo modificar la capa de presentación sin alterar el funcionamiento interno de la plataforma asegura compatibilidad con cualquier versión y reduce el riesgo de errores en los flujos de trabajo de los equipos de desarrollo y editores de contenido.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbe9lewkmv2sqinh94c0k.png",
+      "alt": "Captura de pantalla de la interfaz de administración de Xperience by Kentico con la extensión Admin Styles aplicada",
+      "caption": "Imagen de portada del artículo original sobre la extensión Xperience Community: Admin Styles"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#XperienceKentico",
+    "#AdminStyles",
+    "#ExtensionChrome",
+    "#DesarrolloWeb",
+    "#UXAdmin"
+  ],
+  "fullArticle": "La extensión Xperience Community: Admin Styles nace de la necesidad de solucionar pequeños pero constantes problemas de usabilidad que afectan a quienes trabajan a diario en el panel de administración de Xperience by Kentico, la plataforma de gestión de contenidos empresarial. Desarrollada por un miembro de la comunidad, esta herramienta se limita a inyectar hojas de estilo CSS personalizadas para modificar la apariencia de la interfaz, sin alterar ninguna funcionalidad subyacente ni acceder a datos de usuario, garantizando así total seguridad y compatibilidad. Su código es completamente abierto, por lo que cualquier usuario puede revisar su funcionamiento para confirmar que no existe riesgo de filtración de información o modificaciones no deseadas en la plataforma.\n\nEntre las mejoras que incluye se encuentra la sustitución de los scrollbars nativos de Windows por versiones delgadas y modernas, similares a las de macOS, que se ocultan al no estar en uso y solo aparecen al pasar el cursor sobre áreas desplazables, aplicándose a toda la interfaz incluyendo barras laterales, áreas de contenido y menús desplegables. También soluciona el problema de las pestañas del panel de edición de páginas (Vista previa, Contenido, Page Builder, Usado en, URLs, Propiedades, Documentos) que se cortan cuando la ventana del navegador no tiene la altura suficiente, habilitando el desplazamiento vertical en ese panel para acceder a todas las opciones sin modificar el resto del diseño. Adicionalmente, elimina automáticamente las columnas vacías que a veces renderiza la plataforma junto al área de contenido, que ocupan espacio innecesario y descentran la distribución de la interfaz.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbe9lewkmv2sqinh94c0k.png]\n\nLa instalación de la extensión es extremadamente sencilla: basta con buscarla en la Chrome Web Store o acceder a su página oficial para agregarla al navegador con un solo clic, sin necesidad de configuración adicional ni reinicio. Es compatible con Chrome, Edge, Brave y cualquier otro navegador basado en Chromium, y funciona con cualquier versión de Xperience by Kentico cuya URL de administración incluya la ruta /admin/. Se trata de un proyecto en evolución, por lo que se irán agregando nuevas mejoras de usabilidad de forma periódica, y la comunidad de usuarios puede contribuir reportando problemas o enviando propuestas de ajustes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T17:05:31.570Z",
+  "links": [
+    {
+      "title": "Página oficial de la extensión en Chrome Web Store",
+      "url": "https://chrome.google.com/webstore/detail/xperience-community-admin-styles"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/xperience-community-admin-styles"
+    },
+    {
+      "title": "Sitio oficial de Xperience by Kentico",
+      "url": "https://xperiencebykentico.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de instalación",
+      "value": "30 segundos"
+    },
+    {
+      "label": "Navegadores compatibles",
+      "value": "Chrome, Edge, Brave y cualquier navegador basado en Chromium"
+    },
+    {
+      "label": "Tipo de modificación",
+      "value": "Solo inyección de CSS, sin acceso a datos ni modificación de funcionalidades internas"
+    },
+    {
+      "label": "Requisito de versión de Xperience",
+      "value": "Cualquier versión con ruta de admin que incluya /admin/"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

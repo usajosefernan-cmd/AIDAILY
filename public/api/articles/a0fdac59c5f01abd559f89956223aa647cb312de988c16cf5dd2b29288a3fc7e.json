@@ -1,0 +1,78 @@
+{
+  "id": "a0fdac59c5f01abd559f89956223aa647cb312de988c16cf5dd2b29288a3fc7e",
+  "title": "Un agente de IA expone la clave de Stripe y pierde 12.000 dólares en minutos",
+  "summary": "Un desarrollador perdió 12.000 dólares en cargos fraudulentos cuando un agente de IA, programado para añadir una función rápida, codificó una clave de Stripe en un archivo de configuración. El error quedó registrado en el historial de Git y los bots de scraping lo descubrieron antes de que el equipo pudiera reaccionar.",
+  "url": "https://dev.to/renato_marinho/your-ai-agent-just-leaked-your-stripe-key-heres-how-to-stop-it-before-the-commit-5fb7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T01:17:39.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqfrp7h2ju91djsglrkgm.png",
+  "imageAlt": "Un agente de IA expone la clave de Stripe y pierde 12.000 dólares en minutos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador perdió 12.000 dólares en cargos fraudulentos cuando un agente de IA, programado para añadir una función rápida, codificó una clave de Stripe en un archivo de configuración. El error quedó registrado en el historial de Git y los bots de scraping lo descubrieron antes de que el equipo pudiera reaccionar.",
+  "keyPoints": [
+    "Un agente de IA codificó una clave secreta de Stripe en un archivo de configuración, exponiendo 12.000 dólares en cargos fraudulentos en menos de cuatro horas.",
+    "El problema se originó porque el historial de Git quedó comprometido y los bots de scraping de GitHub detectaron la clave antes de que el equipo pudiera eliminarla.",
+    "El artículo critica la dependencia de los grandes modelos de lenguaje sin controles de seguridad pre-codificación, proponiendo un 'Security Audit Prover' que obliga a los agentes a demostrar seguridad antes de escribir código.",
+    "Se destaca la necesidad de mover la defensa de la fase de escaneo post-construcción a una verificación de razonamiento de seguridad antes de que el código sea escrito."
+  ],
+  "whyMatters": "La noticia subraya una vulnerabilidad crítica en la era de la ingeniería asistida por IA: los agentes pueden generar código funcional, pero sin una validación de seguridad previa, pueden introducir brechas graves. La exposición de claves en el historial de Git no solo implica pérdidas financieras inmediatas, sino que también compromete la confianza de los clientes y la reputación de la empresa. A medida que la adopción de LLMs en el desarrollo crece, las organizaciones deben adoptar mecanismos de auditoría de intención para evitar catástrofes similares.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqfrp7h2ju91djsglrkgm.png",
+      "alt": "Imagen de portada que muestra el título del artículo y un fondo de código.",
+      "caption": "Portada del artículo que destaca la fuga de una clave de Stripe por un agente de IA."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla de un commit con la clave de Stripe expuesta.",
+      "caption": "Ejemplo de un commit que contiene la clave secreta, evidenciando el riesgo de exposición en el historial."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Stripe",
+    "#IA",
+    "#SeguridadInformática"
+  ],
+  "fullArticle": "En una madrugada de marzo, un desarrollador de una startup de fintech perdió 12.000 dólares en cargos fraudulentos cuando un agente de IA, encargado de añadir una función de pago, codificó una clave de Stripe directamente en un archivo de configuración. El error quedó inmortalizado en el historial de Git, y los bots automatizados que rastrean commits públicos de GitHub descubrieron la clave antes de que el equipo pudiera eliminarla.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqfrp7h2ju91djsglrkgm.png]\n\nEl autor del artículo, crítico con la actual cultura de seguridad reactiva, señala que la industria se centra en herramientas de escaneo post-construcción como SonarQube y GitHub Advanced Security. Estas soluciones detectan vulnerabilidades después de que el código ya está fusionado, lo que deja un margen de riesgo enorme cuando los agentes de IA pueden generar código en segundos. Propone el 'Security Audit Prover', una herramienta que exige a los agentes demostrar la seguridad de su código antes de que se escriba, evaluando cinco ejes de decisión: validación de entrada, gestión de secretos, autenticación y autorización, prevención de inyección SQL y gestión de dependencias.\n\nEl caso de Stripe ilustra la gravedad de la exposición de secretos en el historial de Git: una vez comprometido, eliminar el commit es prácticamente imposible sin reconfigurar todas las credenciales. El Prover obliga a los agentes a usar variables de entorno o gestores de secretos como AWS Secrets Manager, evitando que la clave quede en el código fuente.\n\nEl futuro de la ingeniería asistida por IA dependerá de la adopción de mecanismos de auditoría de intención. Sin ellos, la velocidad y la productividad que prometen los LLMs podrían convertirse en una fuente de catástrofes financieras y de reputación.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:47:37.290Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/your-article-link"
+    },
+    {
+      "title": "Documentación de Stripe sobre manejo seguro de claves",
+      "url": "https://stripe.com/docs/security"
+    },
+    {
+      "title": "OWASP Top 10 – Inyección SQL",
+      "url": "https://owasp.org/www-project-top-ten/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Pérdida económica",
+      "value": "$12.000"
+    },
+    {
+      "label": "Tiempo de exposición",
+      "value": "menos de 4 horas"
+    },
+    {
+      "label": "Número de bots que detectaron la clave",
+      "value": "miles de bots automatizados"
+    },
+    {
+      "label": "Número de commits comprometidos",
+      "value": "1 commit"
+    }
+  ]
+}

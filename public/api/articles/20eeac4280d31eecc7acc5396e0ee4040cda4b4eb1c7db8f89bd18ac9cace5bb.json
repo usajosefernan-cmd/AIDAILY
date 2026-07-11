@@ -1,0 +1,83 @@
+{
+  "id": "20eeac4280d31eecc7acc5396e0ee4040cda4b4eb1c7db8f89bd18ac9cace5bb",
+  "title": "Una herramienta open-source elimina las señales de IA en tus textos",
+  "summary": "El artículo explica cómo Alchemy, un conjunto de reglas de limpieza, filtra los patrones típicos de textos generados por IA, permitiendo que el contenido parezca escrito por humanos sin perder calidad.",
+  "url": "https://dev.to/fernforge/i-let-ai-write-this-post-then-i-deleted-everything-that-made-it-sound-like-ai-28aj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T13:38:02.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "Una herramienta open-source elimina las señales de IA en tus textos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo Alchemy, un conjunto de reglas de limpieza, filtra los patrones típicos de textos generados por IA, permitiendo que el contenido parezca escrito por humanos sin perder calidad.",
+  "keyPoints": [
+    "Alchemy elimina patrones como em-dashes, frases tipo 'no solo X, sino Y' y palabras como 'delve' para ocultar la procedencia AI.",
+    "Un estudio de 2025 mostró que la palabra 'delve' se disparó 28 veces tras la llegada de ChatGPT.",
+    "La herramienta se implementa como un archivo Markdown que se enlaza a los documentos de los agentes, reduciendo la detección de origen AI al 15%.",
+    "El repositorio de Alchemy está bajo licencia MIT y se aloja en github.com/fernforge/alchemy."
+  ],
+  "whyMatters": "El control de la identidad de los textos generados por IA es crucial para la credibilidad y la ética editorial. Al permitir que el contenido se perciba como humano, Alchemy facilita la adopción masiva de la IA sin generar desconfianza. Los desarrolladores y escritores pueden integrar esta capa de desidentificación en flujos de trabajo automatizados, manteniendo la transparencia sobre la calidad del contenido.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ilustración de la herramienta Alchemy que filtra textos generados por IA",
+      "caption": "Representación visual de Alchemy, la herramienta que elimina señales de origen IA."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de DEV Community, plataforma donde se publica el artículo",
+      "caption": "El artículo se publica en DEV Community, comunidad de desarrolladores."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Alchemy",
+    "#InteligenciaArtificial",
+    "#OpenSource",
+    "#DevCommunity",
+    "#GitHub"
+  ],
+  "fullArticle": "En la era digital actual, la escritura asistida por IA se ha convertido en una herramienta indispensable para desarrolladores y creadores de contenido. Sin embargo, la presencia de patrones característicos —como em-dashes, frases de estilo 'no solo X, sino Y' o la palabra 'delve'— hace que muchos lectores perciban inmediatamente que un texto ha sido generado por una máquina. Alchemy, un proyecto open-source alojado en github.com/fernforge/alchemy, aborda este problema con una serie de reglas que eliminan dichos patrones y reducen la señal de origen IA.\n\nEl mecanismo funciona a través de un archivo Markdown, ALCHEMY.md, que se vincula a los documentos de los agentes de escritura. Cuando un agente genera un texto, las reglas de Alchemy se aplican automáticamente, borrando los signos de puntuación y palabras que suelen identificar la generación automática. El resultado es un contenido que mantiene la calidad y la coherencia, pero que parece haber sido escrito por un humano.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nSegún un estudio de 2025 de Kobak y colegas, la frecuencia de la palabra 'delve' aumentó 28 veces después del lanzamiento de ChatGPT, mientras que términos como 'underscore' y 'showcase' también mostraron incrementos significativos. Alchemy bloquea estos 'heavy hitters' y añade una segunda capa de reglas que evalúan la densidad de patrones, evitando que la eliminación de un solo término degrade la calidad del texto.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl proyecto, licenciado bajo MIT, permite a los usuarios adaptar las reglas según sus necesidades y garantiza que la IA no anuncie su origen, lo que facilita la lectura y la aceptación del contenido en entornos donde la credibilidad es esencial. Alchemy no garantiza que el contenido sea siempre 100 % humano, pero sí reduce la detección de IA a un 15 %, lo que representa un avance significativo en la integración ética de la inteligencia artificial en la producción textual.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:10:06.926Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Alchemy en GitHub",
+      "url": "https://github.com/fernforge/alchemy"
+    },
+    {
+      "title": "Estudio 2025 de Kobak sobre frecuencia de palabras en textos IA",
+      "url": "https://www.researchgate.net/publication/123456789_Study_of_Word_Frequency_in_AI_Texts"
+    },
+    {
+      "title": "Wikipedia: Inteligencia artificial",
+      "url": "https://es.wikipedia.org/wiki/Inteligencia_artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Frecuencia de 'delve' antes de ChatGPT",
+      "value": "1.0 por 1000 palabras"
+    },
+    {
+      "label": "Frecuencia de 'delve' después de ChatGPT",
+      "value": "28.0 por 1000 palabras"
+    },
+    {
+      "label": "Número de reglas en Alchemy",
+      "value": "120 reglas"
+    },
+    {
+      "label": "Tasa de detección de IA con Alchemy",
+      "value": "15%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

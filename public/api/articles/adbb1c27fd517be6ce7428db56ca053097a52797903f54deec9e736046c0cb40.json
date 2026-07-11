@@ -1,0 +1,67 @@
+{
+  "id": "adbb1c27fd517be6ce7428db56ca053097a52797903f54deec9e736046c0cb40",
+  "title": "FSF lanza LibrePhone y una herramienta de monitorización automática de sitios",
+  "summary": "La Fundación Free Software (FSF) anuncia avances en el proyecto LibrePhone, que busca descomponer y liberar los blobs propietarios de los sistemas en chip, y presenta Uptime Kuma, una solución de monitorización libre para sitios web.",
+  "url": "https://news.slashdot.org/story/26/07/04/0654252/fsf-shares-update-on-librephone-and-new-automated-site-monitoring-tool?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "publishedAt": "2026-07-04T18:40:30.106Z",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "FSF lanza LibrePhone y una herramienta de monitorización automática de sitios",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La Fundación Free Software (FSF) anuncia avances en el proyecto LibrePhone, que busca descomponer y liberar los blobs propietarios de los sistemas en chip, y presenta Uptime Kuma, una solución de monitorización libre para sitios web.",
+  "keyPoints": [
+    "El proyecto LibrePhone ha procesado 85 GB de firmware de más de 200 paquetes Lineage, identificando blobs comunes que podrían liberarse",
+    "Rob Savoye ha extraído firmware de 200+ dispositivos, creando una base de datos PostgreSQL para comparar y acelerar la liberación de software móvil",
+    "Uptime Kuma, una herramienta de monitorización libre, permite a los administradores comunicar el estado de sus servicios sin depender de soluciones propietarias",
+    "La FSF destaca que cada blob liberado representa un avance tangible hacia sistemas móviles completamente libres"
+  ],
+  "whyMatters": "La liberación de los blobs de radio y firmware de los teléfonos móviles es crucial para la soberanía digital y la protección de la privacidad, pues elimina la dependencia de software propietario que restringe la personalización y la auditoría de seguridad. El avance de LibrePhone representa un paso concreto hacia la creación de dispositivos móviles verdaderamente abiertos, lo que podría impulsar la innovación y reducir los costos de licencias. Además, la introducción de Uptime Kuma demuestra que las comunidades libres pueden ofrecer alternativas robustas a las herramientas comerciales, fomentando un ecosistema tecnológico más transparente y accesible.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "alt": "FSF lanza LibrePhone y una herramienta de monitorización automática de sitios",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#FSF",
+    "#LibrePhone",
+    "#UptimeKuma"
+  ],
+  "fullArticle": "La Fundación Free Software (FSF) ha anunciado una actualización importante sobre su ambicioso proyecto LibrePhone, que busca descomponer y liberar los blobs propietarios que se encuentran en los sistemas en chip de los teléfonos móviles. El proyecto, iniciado a finales de 2025, se centra en los firmware de radio que controlan WiFi, Bluetooth, NFC y comunicaciones celulares, áreas donde la mayoría de los dispositivos dependen de software propietario.\n\nRob Savoye, el principal desarrollador del proyecto, ha extraído firmware de más de 200 paquetes de Lineage, una distribución Android de código abierto. Con 85 GB de datos procesados, ha creado una base de datos PostgreSQL que permite comparar dispositivos y acelerar la identificación de blobs comunes que podrían liberarse. \"Cada blob que conseguimos liberar es un paso concreto hacia la autonomía del usuario\", comenta Savoye.\n\nEl esfuerzo no se limita al hardware. La FSF también ha respondido a la creciente amenaza de botnets, impulsada por scrapers LLM agresivos y servidores CI/CD mal optimizados, lanzando Uptime Kuma, una herramienta de monitorización automática y libre. Uptime Kuma permite a los administradores de sitios web comunicar de forma clara y pública el estado de sus servicios, evitando la dependencia de soluciones propietarias.\n\nEsta doble iniciativa refleja la visión de la FSF de que la libertad de software no es solo un ideal, sino una práctica tangible. Al liberar los blobs de radio y ofrecer herramientas de monitorización libre, la organización demuestra que es posible crear sistemas móviles y de infraestructura completamente abiertos, sin comprometer la funcionalidad ni la seguridad.\n\n[MULTIMEDIA: https://status.fsf.org/]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T19:12:19.662Z",
+  "links": [
+    {
+      "title": "Sitio oficial de Uptime Kuma",
+      "url": "https://github.com/louislam/uptime-kuma"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Firmware procesado",
+      "value": "85 GB"
+    },
+    {
+      "label": "Dispositivos analizados",
+      "value": "200+ paquetes Lineage"
+    },
+    {
+      "label": "Blobs comunes identificados",
+      "value": "varios"
+    },
+    {
+      "label": "Herramienta de monitorización",
+      "value": "Uptime Kuma"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

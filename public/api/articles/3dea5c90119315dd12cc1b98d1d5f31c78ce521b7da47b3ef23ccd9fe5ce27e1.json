@@ -1,0 +1,78 @@
+{
+  "id": "3dea5c90119315dd12cc1b98d1d5f31c78ce521b7da47b3ef23ccd9fe5ce27e1",
+  "title": "Fallan controladores de Daktronics y ponen en riesgo señalización vial y vallas publicitarias",
+  "summary": "Tres vulnerabilidades críticas en controladores de Daktronics permiten a atacantes remotos obtener control total sobre pantallas LED en carreteras y aeropuertos, con potencial de difundir mensajes falsos o maliciosos.",
+  "url": "https://www.securityweek.com/new-controller-flaws-expose-highway-signs-and-billboards-to-remote-hacking/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-06-30T05:04:15.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2026/06/hacked-billboard.jpeg",
+  "imageAlt": "Fallan controladores de Daktronics y ponen en riesgo señalización vial y vallas publicitarias",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Tres vulnerabilidades críticas en controladores de Daktronics permiten a atacantes remotos obtener control total sobre pantallas LED en carreteras y aeropuertos, con potencial de difundir mensajes falsos o maliciosos.",
+  "keyPoints": [
+    "Vulnerabilidad de traversing de ruta permite enumerar archivos sin autenticación, facilitando reconocimiento y búsqueda de credenciales en dispositivos expuestos.",
+    "El defecto de carga de archivos permitirá a atacantes subir contenido controlado, pudiendo insertar mensajes o scripts maliciosos en vallas y señales.",
+    "Credenciales de administrador por defecto no obligaban su cambio; la mayoría de unidades expuestas a Internet seguían usando el acceso predeterminado.",
+    "Daktronics lanzó parches y recomendó cambiar contraseñas, pero la responsabilidad de asegurar la exposición recae en los clientes, no en el fabricante."
+  ],
+  "whyMatters": "El acceso remoto a sistemas de señalización pública abre una ventana para la manipulación de información crítica en tiempo real, afectando la seguridad vial y la confianza del público en la infraestructura digital. Si un atacante logra controlar una valla publicitaria, puede difundir mensajes falsos que desvíen tráfico o generen pánico, con consecuencias potencialmente mortales. Además, este incidente subraya la necesidad de una gestión proactiva de la seguridad en dispositivos IoT industriales, donde la exposición a Internet y las credenciales por defecto siguen siendo un riesgo persistente.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2026/06/hacked-billboard.jpeg",
+      "alt": "Pantalla LED de una valla publicitaria con mensaje alterado",
+      "caption": "Imagen de portada del artículo: una valla publicitaria con contenido potencialmente malicioso"
+    },
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2022/04/SecurityWeek-Small-Dark.png",
+      "alt": "Logo de SecurityWeek",
+      "caption": "Logo de la publicación que cubre la noticia"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Daktronics",
+    "#CISA",
+    "#SecurityWeek",
+    "#LEDDisplays"
+  ],
+  "fullArticle": "Daktronics, el fabricante estadounidense de pantallas LED y vallas publicitarias, ha descubierto tres vulnerabilidades críticas en sus controladores VFC‑DMP‑5000, DMP‑5000 y DMP‑8000, que gestionan dispositivos de gran escala en carreteras, aeropuertos y centros deportivos. Estas fallas permiten a atacantes remotos enumerar rutas de archivos sin autenticación, subir archivos arbitrarios y, en la mayoría de los casos, acceder con credenciales de administrador por defecto.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2026/06/hacked-billboard.jpeg]\n\nSegún la alerta emitida por CISA, la explotación exitosa de estas vulnerabilidades puede otorgar a un usuario no autenticado acceso de nivel root y control total del sistema. Thomas Jou, investigador de seguridad que reportó los defectos, identificó múltiples controladores expuestos a Internet, lo que facilita la manipulación remota de los contenidos que se muestran en las pantallas. Entre las posibles consecuencias, un atacante podría cargar mensajes falsos o códigos maliciosos, generando alertas erróneas o incluso desactivando la señalización.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2022/04/SecurityWeek-Small-Dark.png]\n\nDaktronics ha publicado parches y aconseja a los usuarios cambiar las contraseñas predeterminadas, pero subraya que la responsabilidad de proteger las instalaciones recae en los clientes. La investigación demuestra que la mayoría de las unidades expuestas a Internet seguían usando credenciales por defecto, lo que amplía el vector de ataque. La empresa ha respondido de forma rápida, colaborando con CISA a través de la plataforma VINCE para acelerar la corrección.\n\nEl caso destaca la urgencia de revisar la seguridad de dispositivos IoT industriales, donde la exposición a Internet y la falta de requisitos de cambio de credenciales siguen siendo vulnerabilidades críticas. La manipulación de señalización pública no solo representa un riesgo de seguridad vial, sino también una amenaza a la confianza del público en la infraestructura digital.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T07:09:13.114Z",
+  "links": [
+    {
+      "title": "Alerta de CISA sobre vulnerabilidades en controladores Daktronics",
+      "url": "https://www.cisa.gov/news-events/alerts/2026-01-15-daktronics-controller-vulnerabilities"
+    },
+    {
+      "title": "Sitio oficial de Daktronics",
+      "url": "https://www.daktronics.com"
+    },
+    {
+      "title": "Artículo original en SecurityWeek",
+      "url": "https://www.securityweek.com/new-controller-flaws-expose-highway-signs-and-billboards-to-remote-hacking"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Modelos afectados",
+      "value": "3"
+    },
+    {
+      "label": "Tiempo de parcheo",
+      "value": "2 meses"
+    },
+    {
+      "label": "Acceso de nivel root",
+      "value": "Posible"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

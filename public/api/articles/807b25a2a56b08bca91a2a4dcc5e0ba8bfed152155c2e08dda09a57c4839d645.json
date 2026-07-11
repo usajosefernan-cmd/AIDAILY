@@ -1,0 +1,47 @@
+{
+  "id": "807b25a2a56b08bca91a2a4dcc5e0ba8bfed152155c2e08dda09a57c4839d645",
+  "title": "Rosemary",
+  "summary": "<p><strong>Rosemary: Transparent Network Tunneling Over QUIC (Kernel-Level)</strong>  </p>\n\n<p>Ever SSH into a box and wish you could just <em>use</em> its network without setting up proxy chains or VPNs? Rosemary makes that happen. The server intercepts traffic at the kernel level (no proxy settings, no TUN devices) and tunnels it over encrypted QUIC through a lightweight agent on the remote host. From your laptop, <code>curl</code>, <code>ping</code>, or your browser reach private subnets as if you were there.</p>\n\n<p><strong>What you get</strong>  </p>\n\n<ul>\n<li>Kernel-level packet interception, transparent to all your apps\n</li>\n<li>TCP, UDP, ICMP, and DNS just work without configuration\n</li>\n<li>Route all internet traffic through a chosen agent (egress)\n</li>\n<li>SOCKS5 proxies, port forwards, and reverse forwards per agent\n</li>\n<li>Multi-hop pivoting through several agents\n</li>\n<li>Web dashboard with real-time agent graph\n</li>\n<li>Full REST API for automation\n</li>\n<li>Works on Linux, Windows, macOS, FreeBSD, and OpenBSD\n</li>\n<li>Agents run without root; traffic is AES-256-GCM encrypted over QUIC\n</li>\n</ul>\n\n<p><strong>Quick start</strong><br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight shell\"><code><span class=\"c\"># install (requires Go)</span>\ngo <span class=\"nb\">install </span>github.com/blue0x1/rosemary/rosemary@latest\ngo <span class=\"nb\">install </span>github.com/blue0x1/rosemary/agent@latest\n\n<span class=\"c\"># start server (needs sudo for kernel interception)</span>\n<span class=\"nb\">sudo </span>rosemary\n\n<span class=\"c\"># deploy agent on remote box</span>\n./agent-linux-amd64 <span class=\"nt\">-s</span> <server-ip>:2048 <span class=\"nt\">-k</span> <your-key>\n</code></pre>\n\n</div>\n\n\n\n<p>That's it. Open <code>http://server-ip:1024</code> and you'll see the agent's subnets automatically routed. Set a default egress agent to route all traffic through a jump host:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>egress agent-1\n</code></pre>\n\n</div>\n\n\n\n<p>Now your laptop behaves like it's on the remote network. No proxychains, no <code>ssh -D</code>, no friction.</p>\n\n<p>Check the repo <a href=\"https://github.com/blue0x1/rosemary\" rel=\"noopener noreferrer\">blue0x1/rosemary</a> for pre-built binaries, PowerShell agents, and the full API. Use only on systems you own or have permission to test.</p>\n\n",
+  "url": "https://dev.to/blue0x1/rosemary-2p86",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T06:42:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1nftsc00by5hai2adbb1.png",
+  "imageAlt": "Rosemary",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<p><strong>Rosemary: Transparent Network Tunneling Over QUIC (Kernel-Level)</strong>  </p>\n\n<p>Ever SSH into a box and wish you could just <em>use</em> its network without setting up proxy chains or VPNs? Rosemary makes that happen. The server intercepts traffic at the kernel level (no proxy settings, no TUN devices) and tunnels it over encrypted QUIC through a lightweight agent on the remote host. From your laptop, <code>curl</code>, <code>ping</code>, or your browser reach private subnets as if you were there.</p>\n\n<p><strong>What you get</strong>  </p>\n\n<ul>\n<li>Kernel-level packet interception, transparent to all your apps\n</li>\n<li>TCP, UDP, ICMP, and DNS just work without configuration\n</li>\n<li>Route all internet traffic through a chosen agent (egress)\n</li>\n<li>SOCKS5 proxies, port forwards, and reverse forwards per agent\n</li>\n<li>Multi-hop pivoting through several agents\n</li>\n<li>Web dashboard with real-time agent graph\n</li>\n<li>Full REST API for automation\n</li>\n<li>Works on Linux, Windows, macOS, FreeBSD, and OpenBSD\n</li>\n<li>Agents run without root; traffic is AES-256-GCM encrypted over QUIC\n</li>\n</ul>\n\n<p><strong>Quick start</strong><br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight shell\"><code><span class=\"c\"># install (requires Go)</span>\ngo <span class=\"nb\">install </span>github.com/blue0x1/rosemary/rosemary@latest\ngo <span class=\"nb\">install </span>github.com/blue0x1/rosemary/agent@latest\n\n<span class=\"c\"># start server (needs sudo for kernel interception)</span>\n<span class=\"nb\">sudo </span>rosemary\n\n<span class=\"c\"># deploy agent on remote box</span>\n./agent-linux-amd64 <span class=\"nt\">-s</span> <server-ip>:2048 <span class=\"nt\">-k</span> <your-key>\n</code></pre>\n\n</div>\n\n\n\n<p>That's it. Open <code>http://server-ip:1024</code> and you'll see the agent's subnets automatically routed. Set a default egress agent to route all traffic through a jump host:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>egress agent-1\n</code></pre>\n\n</div>\n\n\n\n<p>Now your laptop behaves like it's on the remote network. No proxychains, no <code>ssh -D</code>, no friction.</p>\n\n<p>Check the repo <a href=\"https://github.com/blue0x1/rosemary\" rel=\"noopener noreferrer\">blue0x1/rosemary</a> for pre-built binaries, PowerShell agents, and the full API. Use only on systems you own or have permission to test.</p>\n\n",
+  "keyPoints": [
+    "Rosemary"
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1nftsc00by5hai2adbb1.png",
+      "alt": "Rosemary",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1nftsc00by5hai2adbb1.png",
+      "alt": "Cover image for Rosemary: Transparent Network Tunneling Over QUIC (Kernel-Level)",
+      "caption": "Cover image for Rosemary: Transparent Network Tunneling Over QUIC (Kernel-Level)"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "Rosemary: Transparent Network Tunneling Over QUIC (Kernel-Level)\n\nEver SSH into a box and wish you could just use its network without setting up proxy chains or VPNs? Rosemary makes that happen. The server intercepts traffic at the kernel level (no proxy settings, no TUN devices) and tunnels it over encrypted QUIC through a lightweight agent on the remote host. From your laptop, curl, ping, or your browser reach private subnets as if you were there.\n\nThat's it. Open http://server-ip:1024 and you'll see the agent's subnets automatically routed. Set a default egress agent to route all traffic through a jump host:\n\nNow your laptop behaves like it's on the remote network. No proxychains, no ssh -D, no friction.\n\nCheck the repo blue0x1/rosemary for pre-built binaries, PowerShell agents, and the...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T08:46:54.948Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

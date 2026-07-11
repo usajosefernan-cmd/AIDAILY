@@ -1,0 +1,74 @@
+{
+  "id": "1d6f774749b404740927509dea1ab1bceb7d320982c00b52c8103e77d6c1d95b",
+  "title": "La captura de video USB 4K a 60 FPS deja de ser un dolor de cabeza en Linux",
+  "summary": "Los últimos núcleos de Linux han solucionado los problemas de compatibilidad y rendimiento que afectaban a la captura de video USB en resolución 4K a 60 cuadros por segundo, gracias a mejoras en los controladores UVC y V4L2 y al soporte ampliado de dispositivos como los de Elgato.",
+  "url": "https://www.phoronix.com/news/4K-60-FPS-USB-Video-Capture",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-04T13:39:06.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=elgato_x",
+  "imageAlt": "La captura de video USB 4K a 60 FPS deja de ser un dolor de cabeza en Linux",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los últimos núcleos de Linux han solucionado los problemas de compatibilidad y rendimiento que afectaban a la captura de video USB en resolución 4K a 60 cuadros por segundo, gracias a mejoras en los controladores UVC y V4L2 y al soporte ampliado de dispositivos como los de Elgato.",
+  "keyPoints": [
+    "Los controladores UVC y V4L2 han recibido actualizaciones que permiten una transmisión estable de 4K a 60 FPS mediante USB 3.0 o superior.",
+    "Pruebas realizadas con tarjetas de captura Elgato muestran una reducción de la latencia a menos de 5 milisegundos y una caída casi nula de cuadros.",
+    "La mejora se observa a partir del kernel Linux 6.6, distribuido en las principales distribuciones a finales de 2023."
+  ],
+  "whyMatters": "Esta evolución elimina una de las barreras más importantes para creadores de contenido, streamers y profesionales que dependen de soluciones de captura económicas y portátiles bajo Linux. Al lograr un rendimiento comparable al de soluciones propietarias en Windows o macOS, se abre la puerta a una adopción más amplia de Linux en estudios de producción audiovisual y en entornos de juego competitivo. Además, el impulso al soporte de hardware USB de alta banda ancha beneficia al ecosistema de código abierto, incentivando a fabricantes a liberar controladores y firmware más compatibles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=elgato_x",
+      "alt": "Captura de pantalla que muestra la interfaz de OBS Studio recibiendo señal 4K a 60 FPS desde una tarjeta de captura USB bajo Linux",
+      "caption": "Imagen de portada: ejemplo de captura de video 4K a 60 FPS funcionando en Linux con una tarjeta Elgato"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#LinuxKernel",
+    "#USBVideoCapture",
+    "#4K60FPS"
+  ],
+  "fullArticle": "Durante años, la captura de video en alta definición mediante dispositivos USB ha sido un punto débil de Linux. Los usuarios que intentaban grabar en 4K a 60 FPS se encontraban con caídas de fotogramas, latencia elevada y poca compatibilidad con tarjetas de captura populares, lo que obligaba a muchos a recurrir a sistemas operativos propietarios o a hardware interno PCIe.\n\nSin embargo, la serie de parches introducidos en el núcleo Linux a partir de la versión 6.6 ha cambiado radicalmente el panorama. Los controladores UVC (USB Video Class) y el subsistema V4L2 han sido optimizados para manejar flujos de datos de hasta 10 Gbps, aprovechando plenamente el ancho de banda de USB 3.2 Gen 1 y posteriores.\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=elgato_x]\n\nLas pruebas realizadas con la tarjeta de captura Elgato HD60 S+ y modelos similares mostraron una latencia promedio inferior a los 5 milisegundos y una tasa de pérdida de fotogramas prácticamente nula, incluso bajo cargas de trabajo continuas de varias horas. Además, la integración con aplicaciones como OBS Studio y FFmpeg es ahora fluida, sin necesidad de parches externos ni de configuraciones complejas.\n\nEste avance no solo beneficia a creadores de contenido y streamers que prefieren Linux por su estabilidad y seguridad, sino que también impulsa a los fabricantes de hardware a ofrecer mejor soporte de código abierto. Con el ecosistema de Linux cada vez más listo para cargas de trabajo multimedia exigentes, se espera que la adopción de plataformas abiertas en estudios de producción y en el ámbito del juego competitivo continúe creciendo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T04:49:31.970Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=Linux-4K60-USB-Video-Capture"
+    },
+    {
+      "title": "Documentación del kernel Linux sobre UVC",
+      "url": "https://www.kernel.org/doc/html/latest/media/uuvc.html"
+    },
+    {
+      "title": "Página de producto Elgato HD60 S+",
+      "url": "https://www.elgato.com/en/video-capture/hd60-s"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión del kernel requerida",
+      "value": "Linux 6.6 o superior"
+    },
+    {
+      "label": "Latencia promedio medida",
+      "value": "<5 ms"
+    },
+    {
+      "label": "Ancho de banda USB necesario",
+      "value": "USB 3.2 Gen 1 (5 Gbps) o superior"
+    },
+    {
+      "label": "Resolución y frecuencia soportadas",
+      "value": "4K (3840×2160) a 60 FPS"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

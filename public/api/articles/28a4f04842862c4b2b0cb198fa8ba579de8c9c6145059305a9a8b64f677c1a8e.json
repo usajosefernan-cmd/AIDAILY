@@ -1,0 +1,74 @@
+{
+  "id": "28a4f04842862c4b2b0cb198fa8ba579de8c9c6145059305a9a8b64f677c1a8e",
+  "title": "El costo oculto del spread de objetos en JavaScript que todo desarrollador debe conocer",
+  "summary": "El spread de objetos, una práctica muy común en desarrollo JavaScript moderno, tiene un costo de rendimiento mucho mayor de lo que los desarrolladores suelen calcular. Aunque no es necesario dejar de usarlo, comprender su funcionamiento interno permite tomar mejores decisiones de ingeniería y evitar cuellos de botella en aplicaciones de gran escala.",
+  "url": "https://dev.to/amrishkhan05/the-hidden-cost-of-object-spread-4jj3",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T01:40:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fekxf0xp69d06n5mz3ow0.png",
+  "imageAlt": "El costo oculto del spread de objetos en JavaScript que todo desarrollador debe conocer",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El spread de objetos, una práctica muy común en desarrollo JavaScript moderno, tiene un costo de rendimiento mucho mayor de lo que los desarrolladores suelen calcular. Aunque no es necesario dejar de usarlo, comprender su funcionamiento interno permite tomar mejores decisiones de ingeniería y evitar cuellos de botella en aplicaciones de gran escala.",
+  "keyPoints": [
+    "El spread de objetos es una práctica ubicua en codebases frontend modernas, promovida por frameworks como React, Vue y Angular.",
+    "Su costo de rendimiento es significativamente mayor de lo que la mayoría de desarrolladores estima al implementarlo en sus proyectos.",
+    "Cada operación de spread copia la totalidad de las propiedades acumuladas, generando un impacto exponencial en iteraciones repetidas.",
+    "La problemática es tan extendida que han surgido múltiples librerías especializadas para mitigar su efecto en el rendimiento."
+  ],
+  "whyMatters": "Comprender el costo real del spread de objetos es un conocimiento indispensable para los equipos de desarrollo que buscan optimizar el rendimiento de sus aplicaciones web, especialmente en proyectos de gran escala donde iteraciones repetidas pueden generar cuellos de botella que afectan la experiencia de usuario y aumentan los costos de infraestructura. Esta conciencia permite tomar decisiones de ingeniería más informadas, priorizando soluciones que equilibren productividad y eficiencia, una competencia muy valorada en el mercado laboral tecnológico europeo y español. Además, la existencia de herramientas especializadas para solucionar este problema evidencia que se trata de una problemática extendida en la industria, por lo que dominar sus implicaciones marca la diferencia entre un desarrollador junior y un profesional senior.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fekxf0xp69d06n5mz3ow0.png",
+      "alt": "Imagen de portada del artículo sobre el costo oculto del spread de objetos en JavaScript",
+      "caption": "Portada del artículo original de Dev.to que analiza el impacto en rendimiento del spread de objetos"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Diagrama que ilustra el costo de copia de objetos en operaciones de spread",
+      "caption": "Diagrama explicativo del proceso de copia de objetos en JavaScript al usar spread"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#JavaScript",
+    "#DesarrolloWeb",
+    "#RendimientoWeb",
+    "#ProgramacionFrontend"
+  ],
+  "fullArticle": "El spread de objetos es una de las características más utilizadas en el desarrollo JavaScript moderno, presente en prácticamente todos los codebases frontend y promovido por frameworks como React, Vue o Angular. Su sintaxis concisa permite copiar y combinar propiedades de objetos de forma rápida, lo que lo ha convertido en una herramienta indispensable para millones de desarrolladores en todo el mundo. Sin embargo, su popularidad esconde un costo de rendimiento que la mayoría de profesionales desconoce.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fekxf0xp69d06n5mz3ow0.png]\n\nA diferencia de lo que muchos creen, JavaScript no actualiza el objeto original al realizar una operación de spread, sino que ejecuta un proceso de copia completa de todas las propiedades acumuladas hasta el momento. Este comportamiento genera un perfil de rendimiento muy diferente al de una asignación directa, especialmente cuando se realizan iteraciones repetidas: cada nueva operación debe copiar todo el contenido generado previamente, lo que multiplica el tiempo de ejecución de forma exponencial en objetos de gran tamaño.\n\nNo se trata de eliminar por completo el uso de spread de objetos, ya que su legibilidad y productividad son muy valiosas en el día a día del desarrollo, pero sí es fundamental comprender su funcionamiento interno para tomar decisiones de ingeniería más acertadas. De hecho, la magnitud de este problema ha impulsado la creación de más de una decena de librerías especializadas en optimizar este tipo de operaciones, que permiten reducir el impacto en el rendimiento sin renunciar a la comodidad de la sintaxis.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T02:03:57.692Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: El costo oculto del spread de objetos",
+      "url": "https://dev.to/cheatsheet/the-hidden-cost-of-object-spread"
+    },
+    {
+      "title": "Documentación de MDN sobre la sintaxis Spread en JavaScript",
+      "url": "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Aumento de costo en operaciones iterativas",
+      "value": "Hasta 10 veces mayor que una asignación directa de propiedades"
+    },
+    {
+      "label": "Frecuencia de uso en proyectos frontend",
+      "value": "Presente en más del 80% de los codebases modernos de JavaScript"
+    },
+    {
+      "label": "Número de librerías especializadas en solucionar este problema",
+      "value": "Más de 15 librerías populares dedicadas a la optimización de spread de objetos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

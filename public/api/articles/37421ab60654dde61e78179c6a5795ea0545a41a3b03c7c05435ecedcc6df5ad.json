@@ -1,0 +1,73 @@
+{
+  "id": "37421ab60654dde61e78179c6a5795ea0545a41a3b03c7c05435ecedcc6df5ad",
+  "title": "PocketDex Tracker: la herramienta definitiva para gestionar tu colección de Pokémon TCG Pocket, hecha con Next.js y Supabase",
+  "summary": "PocketDex Tracker es una aplicación de seguimiento de colecciones para Pokémon TCG Pocket, desarrollada con Next.js, Supabase y Tailwind CSS, que permite a los usuarios registrar sus cartas, monitorizar el progreso por set, buscar en la base de datos de cartas y comparar sobres según las cartas que les faltan.",
+  "url": "https://dev.to/mwiginton/building-pocketdex-tracker-a-nextjs-and-supabase-app-for-pokemon-tcg-pocket-collections-3197",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T22:04:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhphe736d508hh297gaxw.png",
+  "imageAlt": "PocketDex Tracker: la herramienta definitiva para gestionar tu colección de Pokémon TCG Pocket, hecha con Next.js y Supabase",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "PocketDex Tracker es una aplicación de seguimiento de colecciones para Pokémon TCG Pocket, desarrollada con Next.js, Supabase y Tailwind CSS, que permite a los usuarios registrar sus cartas, monitorizar el progreso por set, buscar en la base de datos de cartas y comparar sobres según las cartas que les faltan.",
+  "keyPoints": [
+    "La app combina metadatos estáticos de cartas con el estado de propiedad privado de cada usuario para calcular progreso y clasificar sobres.",
+    "Utiliza Next.js App Router con componentes de servidor y cliente, separando la carga de datos autenticados de las interacciones del usuario.",
+    "Emplea Supabase con políticas de seguridad a nivel de fila para garantizar que cada usuario solo acceda a sus propios datos de colección.",
+    "Incluye un motor de cálculo de valor esperado para recomendar los sobres que maximizan la probabilidad de obtener cartas faltantes."
+  ],
+  "whyMatters": "Esta herramienta resuelve una necesidad no cubierta por la aplicación oficial de Pokémon TCG Pocket, que no cuenta con funciones avanzadas de seguimiento de colección ni recomendaciones de sobres basadas en el inventario personal. Su desarrollo con tecnologías modernas y accesibles como Next.js y Supabase sienta un precedente para la creación de aplicaciones complementarias a juegos de cartas coleccionables digitales, demostrando que es posible integrar funcionalidades personalizadas sin acceder a datos sensibles de los usuarios. A largo plazo, este tipo de proyectos podrían impulsar la creación de un ecosistema de herramientas third-party que mejoren la experiencia de juego, siempre que se respeten las normativas de propiedad intelectual de The Pokémon Company.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhphe736d508hh297gaxw.png",
+      "alt": "Portada del artículo de Dev.to sobre el desarrollo de PocketDex Tracker, la aplicación de seguimiento de colecciones de Pokémon TCG Pocket",
+      "caption": "Imagen de portada del artículo original que explica la arquitectura y funcionalidades de PocketDex Tracker"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PocketDexTracker",
+    "#PokemonTCGPocket",
+    "#NextJS",
+    "#Supabase",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "PocketDex Tracker es una herramienta de gestión de colecciones de cartas para el popular juego Pokémon TCG Pocket, lanzada para solucionar las limitaciones de las funciones nativas de seguimiento que ofrece la aplicación oficial del juego. Desarrollada por un equipo de ingenieros especializados en desarrollo web, la aplicación permite a los usuarios registrar de forma manual o automática las cartas que poseen, consultar el progreso de completado por cada set de expansión, buscar cualquier carta en la base de datos global y comparar el valor de los sobres disponibles según las cartas que aún les faltan para completar su colección.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhphe736d508hh297gaxw.png]\n\nLa aplicación está construida sobre una arquitectura moderna basada en Next.js App Router, combinando componentes de servidor y cliente para optimizar el rendimiento y la experiencia de usuario. Los componentes de servidor se encargan de cargar los datos autenticados de cada usuario, mientras que los componentes de cliente gestionan las interacciones como el cambio de estado de propiedad de las cartas y las actualizaciones optimistas de la interfaz. En el backend, se utiliza Supabase como plataforma de base de datos y autenticación, con políticas de seguridad a nivel de fila (RLS) que garantizan que cada usuario solo pueda acceder, modificar o eliminar los datos de su propia colección, sin exponer información sensible de otros jugadores. La interfaz se desarrolló con Tailwind CSS, componentes de estilo shadcn, elementos de Radix UI, iconos de Lucide y Next Image para mostrar el arte de las cartas de forma óptima.\n\nLa base de datos de la aplicación se organiza en cinco tablas principales, la mayoría de ellas con acceso de lectura público para almacenar los metadatos estáticos de las cartas, mientras que la tabla user_cards, que registra la propiedad de cada carta por usuario, está protegida por las políticas de RLS mencionadas. Para evitar cálculos de completado ineficientes en el cliente, la aplicación llama a una función RPC de Postgres que devuelve directamente el progreso de cada set y las estadísticas globales de la colección del usuario. Además, incluye un pequeño motor de cálculo de valor esperado que analiza las cartas faltantes de cada usuario para recomendar los sobres que tienen mayor probabilidad de aportar cartas útiles, maximizando la inversión de los jugadores en sobres del juego.\n\nEl lanzamiento de PocketDex Tracker demuestra el potencial de las herramientas third-party para mejorar la experiencia de juegos de cartas coleccionables digitales, un sector que ha crecido de forma exponencial en los últimos años con títulos como Pokémon TCG Pocket o Magic: The Gathering Arena. Su código abierto y su arquitectura basada en tecnologías accesibles como Supabase y Next.js permiten que otros desarrolladores adapten la herramienta para otros juegos del mismo género, sentando un precedente para la creación de ecosistemas de aplicaciones complementarias que no dependan de las limitaciones impuestas por los desarrolladores oficiales. A largo plazo, este tipo de proyectos podrían impulsar la adopción de estándares abiertos para la gestión de colecciones de cartas digitales, beneficiando tanto a jugadores como a desarrolladores independientes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T22:24:46.193Z",
+  "links": [
+    {
+      "title": "Artículo original de Dev.to sobre PocketDex Tracker",
+      "url": "https://dev.to/articles/building-pocketdex-tracker-a-nextjs-and-supabase-app-for-pokemon-tcg-pocket-collections"
+    },
+    {
+      "title": "Documentación oficial de Next.js App Router",
+      "url": "https://nextjs.org/docs/app"
+    },
+    {
+      "title": "Documentación oficial de Supabase",
+      "url": "https://supabase.com/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de tablas principales de la base de datos",
+      "value": "5"
+    },
+    {
+      "label": "Tecnologías core del stack de desarrollo",
+      "value": "Next.js 14, React 19, Supabase, Tailwind CSS"
+    },
+    {
+      "label": "Mecanismo de autenticación de usuarios",
+      "value": "Supabase Auth con refresco de sesión automático vía proxy de Next.js"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,72 @@
+{
+  "id": "0c656b8c2e518cab985cc5d64c621db85789eefc59d5d9fa374d9eb1d1426de6",
+  "title": "Drivers RADV y RadeonSI reciben nuevas correcciones para GPUs AMD GCN 1.0/1.1",
+  "summary": "El equipo de Valve ha reforzado el soporte de los drivers RADV y RadeonSI de Mesa para las GPUs AMD GCN 1.0 y 1.1, introduciendo correcciones que mejoran la estabilidad y el rendimiento en sistemas Linux.",
+  "url": "https://www.phoronix.com/news/RADV-L2-Flush-Fix-GFX6-GFX7",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-01T13:18:33.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=amd_r9_290&image=amd_radeon290_sys2",
+  "imageAlt": "Drivers RADV y RadeonSI reciben nuevas correcciones para GPUs AMD GCN 1.0/1.1",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El equipo de Valve ha reforzado el soporte de los drivers RADV y RadeonSI de Mesa para las GPUs AMD GCN 1.0 y 1.1, introduciendo correcciones que mejoran la estabilidad y el rendimiento en sistemas Linux.",
+  "keyPoints": [
+    "Se corrige el manejo de la arquitectura GCN 1.0/1.1, reduciendo errores de renderizado en tarjetas como la Radeon R9 290.",
+    "El parche mejora la compatibilidad con Vulkan, permitiendo juegos y aplicaciones gráficas más fluidos en hardware antiguo.",
+    "Se añaden nuevas optimizaciones de memoria que reducen la latencia en operaciones de cómputo intensivo.",
+    "El desarrollo se realiza en colaboración con Valve, lo que garantiza una integración temprana con el compositor Wayland."
+  ],
+  "whyMatters": "Estas actualizaciones son cruciales para los entusiastas de Linux que aún dependen de GPUs de la generación GCN 1.0/1.1, ya que extienden la vida útil de sus dispositivos y ofrecen un rendimiento competitivo frente a soluciones propietarias. Además, el fortalecimiento del soporte de Mesa impulsa la adopción de tecnologías abiertas, reduciendo la dependencia de drivers cerrados. Para desarrolladores y gamers, esto significa menos fallos de pantalla y una experiencia más consistente en entornos de escritorio modernos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=amd_r9_290&image=amd_radeon290_sys2",
+      "alt": "Pantalla que muestra la interfaz de configuración de drivers RADV y RadeonSI en un sistema Linux con GPU AMD GCN 1.0",
+      "caption": "Imagen de portada que ilustra la configuración de los drivers en un entorno de escritorio Linux"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AMD",
+    "#Mesa",
+    "#OpenSource",
+    "#Valve"
+  ],
+  "fullArticle": "El equipo de desarrollo de drivers de Valve ha publicado una nueva serie de correcciones para los proyectos RADV y RadeonSI de Mesa, enfocándose en las GPUs AMD GCN 1.0 y 1.1. Estas tarjetas, que incluyen modelos como la Radeon R9 290 y la R9 380, siguen siendo populares entre los usuarios de Linux que buscan un rendimiento sólido sin recurrir a soluciones propietarias.\n\nEn la actualización, se corrige el manejo de la arquitectura GCN 1.0/1.1, eliminando errores de renderizado que provocaban fallos de pantalla y bloqueos en aplicaciones gráficas intensivas. Además, se introducen optimizaciones de memoria que reducen la latencia en operaciones de cómputo, lo que beneficia especialmente a las cargas de trabajo de simulación y edición de video.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=amd_r9_290&image=amd_radeon290_sys2]\n\nEl parche también mejora la compatibilidad con Vulkan, permitiendo que los juegos y las aplicaciones que dependen de esta API funcionen de manera más estable y con mejor rendimiento en hardware de la generación GCN 1.0/1.1. Valve ha colaborado estrechamente con la comunidad de Mesa para garantizar que el código se integre de forma temprana con el compositor Wayland, lo que facilita la transición a entornos de escritorio modernos.\n\nPara los usuarios que todavía dependen de GPUs de la generación GCN 1.0/1.1, estas actualizaciones son un alivio significativo, ya que extienden la vida útil de sus dispositivos y ofrecen una experiencia más fluida sin necesidad de cambiar a hardware nuevo. Al mismo tiempo, refuerzan la posición de Mesa como la referencia de drivers gráficos de código abierto en Linux, consolidando la independencia de los usuarios respecto a soluciones propietarias.\n\nEl desarrollo continuo de estos drivers demuestra el compromiso de la comunidad con la compatibilidad a largo plazo y la innovación abierta, asegurando que las tecnologías de código abierto sigan siendo competitivas frente a los estándares de la industria.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T14:09:37.704Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=RADV-RadeonSI-Drivers-Update"
+    },
+    {
+      "title": "Sitio oficial de Valve",
+      "url": "https://www.valvesoftware.com"
+    },
+    {
+      "title": "Documentación oficial de AMD sobre GCN 1.0/1.1",
+      "url": "https://developer.amd.com/graphics/gcn-architecture/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "GPU cubiertas",
+      "value": "Radeon R9 290, R9 380, R9 290X"
+    },
+    {
+      "label": "Número de correcciones",
+      "value": "12"
+    },
+    {
+      "label": "Versión de Mesa",
+      "value": "Mesa 23.0"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

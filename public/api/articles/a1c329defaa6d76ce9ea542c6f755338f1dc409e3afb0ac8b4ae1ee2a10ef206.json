@@ -1,0 +1,83 @@
+{
+  "id": "a1c329defaa6d76ce9ea542c6f755338f1dc409e3afb0ac8b4ae1ee2a10ef206",
+  "title": "Encontrado rápido, reparado lento: la brecha crítica que el centro de ciberseguridad de IA debe cerrar",
+  "summary": "La orden ejecutiva de Donald Trump estableció un plazo de 30 días para crear un centro de ciberseguridad de IA, que venció la semana pasada. El artículo advierte que el mayor riesgo no es la detección de vulnerabilidades con IA, sino la falta de capacidad para repararlas y desplegar parches, y propone medidas para que el centro no se convierta en un mero comité burocrático.",
+  "url": "https://cyberscoop.com/ai-executive-order-cybersecurity-clearinghouse-vulnerability-patching-gap",
+  "source": "CyberScoop",
+  "sourceUrl": "https://cyberscoop.com/feed/",
+  "publishedAt": "2026-07-08T09:00:00.000Z",
+  "imageUrl": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/GettyImages-2163653393.jpg",
+  "imageAlt": "Encontrado rápido, reparado lento: la brecha crítica que el centro de ciberseguridad de IA debe cerrar",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La orden ejecutiva de Donald Trump estableció un plazo de 30 días para crear un centro de ciberseguridad de IA, que venció la semana pasada. El artículo advierte que el mayor riesgo no es la detección de vulnerabilidades con IA, sino la falta de capacidad para repararlas y desplegar parches, y propone medidas para que el centro no se convierta en un mero comité burocrático.",
+  "keyPoints": [
+    "La orden ejecutiva de Trump dio 30 días al Tesoro, NSA y CISA para crear el centro de ciberseguridad de IA, plazo que venció la semana pasada sin detalles públicos de su estructura.",
+    "Las herramientas de IA detectan vulnerabilidades en infraestructura crítica a velocidad sin precedentes, pero el cuello de botella está en la validación, reparación y despliegue de parches.",
+    "El centro debe priorizar la clasificación de hallazgos y colaborar con NIST para crear guías para mantenedores de código abierto, que sostienen gran parte de la infraestructura digital.",
+    "El éxito del centro se medirá por el tiempo de reparación de vulnerabilidades, no por la cantidad de fallos detectados, para evitar generar backlogs sin resolver."
+  ],
+  "whyMatters": "Este centro definirá la capacidad de Estados Unidos para proteger su infraestructura crítica frente a amenazas cibernéticas potenciadas por inteligencia artificial. Si su diseño se limita a coordinar la detección sin agilizar los procesos de reparación, generará un acumulado de vulnerabilidades sin resolver que aumentará exponencialmente el riesgo de ataques masivos contra servicios esenciales. Además, su modelo de operación sentará un precedente global para la gestión de vulnerabilidades en la era de la IA, por lo que su implementación correcta es estratégica para la seguridad digital mundial.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/GettyImages-2163653393.jpg",
+      "alt": "Imagen de portada del artículo sobre el centro de ciberseguridad de inteligencia artificial",
+      "caption": "Imagen de portada del artículo de CyberScoop"
+    },
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/1664549439877.jpeg?w=150&h=150&crop=1",
+      "alt": "Retrato de Ilona Cohen, autora del artículo y analista de ciberseguridad",
+      "caption": "Ilona Cohen, autora del artículo"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#CentroCiberseguridadIA",
+    "#VulnerabilidadesSoftware",
+    "#CISA",
+    "#EEUU",
+    "#ParchesSoftware"
+  ],
+  "fullArticle": "La orden ejecutiva firmada por el expresidente Donald Trump el mes pasado estableció un plazo de 30 días para que el Departamento del Tesoro, la Agencia de Seguridad Nacional (NSA) y la Agencia de Ciberseguridad y Seguridad de Infraestructura (CISA) pusieran en marcha un nuevo centro de intercambio de ciberseguridad de IA, encargado de coordinar la detección, validación y priorización de vulnerabilidades en software de infraestructura crítica. El plazo venció la semana pasada sin que se conozcan detalles públicos sobre la estructura final del organismo, que busca acelerar la reparación y distribución de parches para fallos detectados en sistemas esenciales.\n\n[MULTIMEDIA: https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/GettyImages-2163653393.jpg]\n\nEl problema no radica en la detección de vulnerabilidades, que la IA ya realiza a una velocidad sin precedentes, sino en la incapacidad de los equipos de seguridad para procesar, validar y reparar el volumen de alertas generadas. Los mantenedores de código abierto, que sostienen gran parte de la infraestructura digital global, se enfrentan a colas interminables de solicitudes que no pueden atender con sus recursos limitados, ampliando la brecha entre el hallazgo de fallos y su resolución. HackerOne, como socio de lanzamiento de la iniciativa Patch the Planet de OpenAI, ha constatado esta problemática en primera persona tras más de una década gestionando programas de divulgación de vulnerabilidades.\n\nSi el centro se limita a coordinar escaneos sin funciones de triaje y apoyo a los mantenedores, se convertirá en un generador de backlogs en lugar de una solución efectiva. Se recomienda que colabore con el Instituto Nacional de Estándares y Tecnología (NIST) para desarrollar guías de gestión de parches, utilice los inventarios de componentes de software (SBOMs) como infraestructura base y mida su éxito por el tiempo de reparación de vulnerabilidades, no por la cantidad de fallos detectados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T09:12:16.886Z",
+  "links": [
+    {
+      "title": "Artículo original en CyberScoop",
+      "url": "https://cyberscoop.com"
+    },
+    {
+      "title": "Iniciativa Patch the Planet de OpenAI",
+      "url": "https://openai.com/index/patch-the-planet/"
+    },
+    {
+      "title": "Recursos de ciberseguridad de IA de CISA",
+      "url": "https://www.cisa.gov/ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Plazo para crear el centro de ciberseguridad de IA",
+      "value": "30 días"
+    },
+    {
+      "label": "Plazo vencido para la creación del centro",
+      "value": "Semana pasada"
+    },
+    {
+      "label": "Años de experiencia en gestión de vulnerabilidades de HackerOne",
+      "value": "Más de 10 años"
+    },
+    {
+      "label": "Iniciativa de OpenAI para reparar vulnerabilidades en código abierto",
+      "value": "Patch the Planet"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

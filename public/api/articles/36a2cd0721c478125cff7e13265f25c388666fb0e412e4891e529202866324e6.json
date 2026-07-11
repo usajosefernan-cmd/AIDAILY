@@ -1,0 +1,72 @@
+{
+  "id": "36a2cd0721c478125cff7e13265f25c388666fb0e412e4891e529202866324e6",
+  "title": "Qwen 3.6 27B: el modelo de IA local que por fin está a la altura de los grandes sin salir de tu ordenador",
+  "summary": "El modelo de inteligencia artificial de código abierto Qwen 3.6 27B destaca como la opción ideal para desarrollo local, con un rendimiento comparable a modelos de frontera de pago en tareas de generación de código, contenido creativo y razonamiento general, sin necesidad de conexión a servicios en la nube.",
+  "url": "https://quesma.com/blog/qwen-36-is-awesome/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-29T17:05:16.000Z",
+  "imageUrl": "https://quesma.com/_astro/thermal_master_p3_macbook.DJG2GL38.jpg",
+  "imageAlt": "Qwen 3.6 27B: el modelo de IA local que por fin está a la altura de los grandes sin salir de tu ordenador",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El modelo de inteligencia artificial de código abierto Qwen 3.6 27B destaca como la opción ideal para desarrollo local, con un rendimiento comparable a modelos de frontera de pago en tareas de generación de código, contenido creativo y razonamiento general, sin necesidad de conexión a servicios en la nube.",
+  "keyPoints": [
+    "Qwen 3.6 27B es un modelo de IA de código abierto que funciona de forma local, sin costes de suscripción ni dependencia de conexión a internet.",
+    "Supera las expectativas de rendimiento para su tamaño, logrando resultados similares a modelos de frontera caros en generación de código y contenido creativo.",
+    "Su variante densa de 27.000 millones de parámetros es más lenta que la versión MoE de 35B, pero ofrece mayor precisión y cumple mejor con las instrucciones del usuario.",
+    "Permite ejecutar tareas prácticas como creación de páginas web, minijuegos o poemas sobre temas complejos desde un solo prompt, sin necesidad de conocimientos avanzados de programación."
+  ],
+  "whyMatters": "Este modelo supone un punto de inflexión en la democratización del acceso a la inteligencia artificial avanzada, al permitir ejecutar capacidades comparables a las de modelos de pago como GPT-4 de forma local, sin costes de suscripción ni dependencia de conexiones a internet. Su rendimiento en tareas prácticas, desde generación de código hasta creación de contenido creativo, lo convierte en una herramienta viable para desarrolladores independientes, pequeñas empresas y usuarios que priorizan la privacidad de sus datos. Además, su eficiencia reduce la barrera de entrada para quienes no cuentan con hardware de gama alta, abriendo la puerta a un ecosistema de aplicaciones locales de IA más accesible y seguro.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://quesma.com/_astro/thermal_master_p3_macbook.DJG2GL38.jpg",
+      "alt": "Imagen térmica de un portátil MacBook ejecutando el modelo Qwen 3.6 27B, que muestra el sobrecalentamiento generado por el procesamiento del modelo",
+      "caption": "Imagen térmica que evidencia el sobrecalentamiento de un equipo al ejecutar el modelo de IA local Qwen 3.6 27B, un efecto común al trabajar con modelos de gran tamaño de forma local"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Qwen36",
+    "#IALocal",
+    "#InteligenciaArtificial",
+    "#DesarrolloDeIA"
+  ],
+  "fullArticle": "El modelo de inteligencia artificial de código abierto Qwen 3.6 ha sorprendido a la comunidad tecnológica por su rendimiento excepcional en entornos de desarrollo local, hasta el punto de que su versión de 27.000 millones de parámetros se presenta como la opción ideal para usuarios que buscan potencia sin depender de servicios en la nube de pago. Según su autor, es el primer modelo local que funciona como una inteligencia general válida para todo tipo de tareas, superando las decepciones que había generado en el pasado este tipo de herramientas de ejecución local. El modelo cuenta con dos variantes: una de mezcla de expertos (MoE) de 35.000 millones de parámetros totales, con solo 3.000 millones activos por inferencia, más rápida pero menos precisa, y una versión densa de 27.000 millones de parámetros, más lenta pero más potente, que es la que recomienda el autor para la mayoría de usos.\n\nEl rendimiento del modelo es tan elevado que genera un sobrecalentamiento notable en el equipo: el autor tuvo que recurrir a una cámara térmica conectada a su teléfono para capturar la imagen del calor generado por el procesamiento de las inferencias.\n[MULTIMEDIA: https://quesma.com/_astro/thermal_master_p3_macbook.DJG2GL38.jpg]\n\nQwen 3.6 27B ha generado una gran expectación en plataformas como Hacker News, donde los usuarios destacan de forma unánime que 'supera su categoría' en rendimiento, una afirmación que el autor valida con pruebas propias. Entre ellas, la escritura de un poema de 8 versos sobre baile Zouk y física cuántica, en el que el modelo demostró un razonamiento coherente tanto en términos científicos como en la creación de rimas, y la generación de un buscaminas hexagonal funcional en Node.js desde un solo prompt, que funcionó a la primera sin necesidad de ajustes. En esta última prueba, la versión MoE de 35B ignoró la instrucción de crear un paquete Node independiente y generó un solo archivo index.html, mientras que la versión densa de 27B cumplió exactamente con lo solicitado.\n\nHace solo un año, este tipo de resultados solo eran posibles con modelos de frontera de pago extremadamente caros, como GPT-4, que requerían acceso a servicios en la nube y generaban costes elevados por uso. La capacidad de Qwen 3.6 27B para ejecutarse de forma local elimina estas barreras, permitiendo a cualquier usuario con un equipo adecuado acceder a herramientas de inteligencia artificial avanzadas sin restricciones. El autor también compartió el caso de una página de aterrizaje creada por el modelo a partir de un prompt corto de su amigo Maciej Cielecki, miembro de AI Tinkerers Warsaw, que resultó funcional, reactiva y con valores predeterminados adecuados, demostrando que el modelo ya es viable para tareas laborales reales.\n\nAunque su rendimiento no está a la altura de los modelos de frontera actuales más avanzados, Qwen 3.6 27B supone un avance significativo en la accesibilidad de la inteligencia artificial, al combinar un rendimiento más que suficiente para la mayoría de usos cotidianos con la ventaja de la ejecución local, que garantiza la privacidad de los datos y elimina los costes recurrentes de suscripción. Su llegada abre la puerta a un ecosistema de aplicaciones de IA más descentralizado y accesible para todo tipo de usuarios, desde desarrolladores independientes hasta pequeñas empresas que buscan integrar capacidades de inteligencia artificial en sus flujos de trabajo sin grandes inversiones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T07:09:55.527Z",
+  "links": [
+    {
+      "title": "Página oficial de Qwen 3.6 27B en Hugging Face",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-27B"
+    },
+    {
+      "title": "Documentación oficial del modelo Qwen 3.6",
+      "url": "https://qwen.readthedocs.io/en/latest/"
+    },
+    {
+      "title": "Perfil de Simon Willison, referente en pruebas de modelos de inteligencia artificial",
+      "url": "https://simonwillison.net/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Parámetros del modelo denso recomendado",
+      "value": "27.000 millones de parámetros"
+    },
+    {
+      "label": "Parámetros activos de la variante MoE",
+      "value": "3.000 millones de parámetros activos por inferencia"
+    },
+    {
+      "label": "Ahorro en costes de uso",
+      "value": "Sin costes de suscripción, ejecución local sin límites de uso"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

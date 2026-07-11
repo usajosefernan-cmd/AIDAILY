@@ -1,0 +1,77 @@
+{
+  "id": "48afb755def324d5f09dc423fb90b43aa34b465eee8204b0bbc8ebb4a6a7efd2",
+  "title": "Por qué open sourceamos la Gestión del Ciclo de Vida de Identidad (ILM)",
+  "summary": "OmniTrust ha liberado como código abierto su herramienta ILM para unificar la gestión de la infraestructura de confianza, que abarca desde certificados hasta identidades de máquina y sistemas de IA, buscando fomentar la colaboración en el ecosistema de seguridad.",
+  "url": "https://dev.to/carolineilm/why-we-open-sourced-identity-lifecycle-management-ilm-5f6g",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T20:34:10.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvvryby1kpkhdkmarffa6.png",
+  "imageAlt": "Por qué open sourceamos la Gestión del Ciclo de Vida de Identidad (ILM)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "OmniTrust ha liberado como código abierto su herramienta ILM para unificar la gestión de la infraestructura de confianza, que abarca desde certificados hasta identidades de máquina y sistemas de IA, buscando fomentar la colaboración en el ecosistema de seguridad.",
+  "keyPoints": [
+    "La infraestructura de confianza moderna abarca certificados, claves criptográficas, identidades de máquina, cadenas de suministro de software y sistemas de IA, superando su función tradicional de back-office de seguridad.",
+    "ILM unifica la gestión de todo el ciclo de vida de los activos criptográficos, sustituyendo herramientas desconectadas por un modelo centralizado que mejora la visibilidad y la gobernanza.",
+    "La liberación como open source busca fomentar la innovación colaborativa, ya que ninguna organización puede anticipar todas las integraciones y requisitos operativos de un ecosistema en constante evolución.",
+    "La combinación de open source y soluciones empresariales permite a las organizaciones adoptar la automatización de confianza con la escalabilidad, gobernanza y soporte necesarios para entornos de producción."
+  ],
+  "whyMatters": "La infraestructura de confianza se ha convertido en un pilar operativo crítico para todas las organizaciones, especialmente con la llegada de la criptografía post-cuántica, el crecimiento exponencial de las identidades de máquina y la integración de sistemas de inteligencia artificial en los procesos empresariales. Liberar ILM como código abierto acelera la estandarización y la innovación en un sector donde la fragmentación de herramientas genera riesgos de seguridad y dificulta la gobernanza centralizada. Esta decisión permite a empresas de todos los tamaños acceder a herramientas de automatización de confianza sin dependencias de proveedores, fortaleciendo la resiliencia de todo el ecosistema digital frente a amenazas emergentes y facilitando la adopción de estándares comunes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvvryby1kpkhdkmarffa6.png",
+      "alt": "Portada del artículo 'Por qué open sourceamos la Gestión del Ciclo de Vida de Identidad (ILM)' de OmniTrust",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#OmniTrust",
+    "#OpenSource",
+    "#Ciberseguridad",
+    "#InfraestructuraDeConfianza",
+    "#ILM"
+  ],
+  "fullArticle": "OmniTrust ha anunciado la liberación como código abierto de su herramienta de Gestión del Ciclo de Vida de Identidad (ILM), una medida que busca transformar la gestión de la infraestructura de confianza en las organizaciones. Durante años, esta infraestructura se limitaba a funciones de back-office relacionadas con la emisión y gestión de certificados, pero en la actualidad abarca un ecosistema mucho más amplio: incluye claves criptográficas, secretos, firmas digitales, identidades de máquina, cadenas de suministro de software, contenedores, APIs y sistemas impulsados por inteligencia artificial. Cada nuevo servicio, dispositivo o carga de trabajo añade una capa de complejidad, y las organizaciones deben prepararse para la transición a la criptografía post-cuántica, adaptarse a ciclos de vida de certificados más cortos y automatizar operaciones de confianza a una escala impensable hace solo unos años.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvvryby1kpkhdkmarffa6.png]\n\nLa fragmentación de herramientas y procesos desconectados para gestionar estos activos criptográficos genera riesgos de seguridad, dificulta la gobernanza y ralentiza la adopción de nuevas tecnologías. ILM resuelve este problema al unificar en una sola plataforma la gestión de todo el ciclo de vida de los activos de confianza, ofreciendo mayor visibilidad, políticas de gobernanza centralizadas y automatización de flujos de trabajo criptográficos en toda la empresa. La decisión de desarrollar ILM en abierto responde a la convicción de que la infraestructura de confianza del futuro debe construirse de forma colaborativa: ninguna organización puede anticipar todas las integraciones, modelos de despliegue o requisitos operativos que surgirán en un ecosistema en constante evolución.\n\nLa combinación del modelo open source con soluciones empresariales complementarias permite a las organizaciones adoptar la automatización de confianza con la seguridad, escalabilidad y soporte necesarios para entornos de producción. Con el crecimiento continuo de las identidades de máquina, la transformación de las operaciones criptográficas por la computación post-cuántica y la integración de la IA en los sistemas de confianza, la apertura de ILM como código abierto acelera la innovación y fortalece la resiliencia de todo el ecosistema digital. Ahora, las organizaciones que modernicen su PKI, se preparen para la criptografía post-cuántica o busquen extender su automatización de confianza pueden descargar, desplegar y contribuir a ILM para construir juntos el futuro de la seguridad digital.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T21:06:19.068Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/omnitrust/why-we-open-sourced-identity-lifecycle-management-ilm"
+    },
+    {
+      "title": "Sitio oficial de OmniTrust",
+      "url": "https://www.omnitrust.io"
+    },
+    {
+      "title": "Repositorio oficial de ILM en GitHub",
+      "url": "https://github.com/omnitrust/ilm"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Componentes gestionados por ILM",
+      "value": "Certificados, claves criptográficas, secretos, firmas digitales, identidades de máquina y sistemas de IA"
+    },
+    {
+      "label": "Tendencia de crecimiento del sector",
+      "value": "Aumento exponencial de identidades de máquina y operaciones criptográficas en entornos empresariales"
+    },
+    {
+      "label": "Enfoque de desarrollo de ILM",
+      "value": "Modelo open source combinado con soluciones empresariales de soporte y gobernanza"
+    },
+    {
+      "label": "Preparación para el futuro",
+      "value": "Adaptación a la criptografía post-cuántica y automatización de operaciones de confianza a escala empresarial"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

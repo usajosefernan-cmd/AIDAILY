@@ -1,0 +1,72 @@
+{
+  "id": "59989aee4fc68cc78a3ea347b0c12cf79e50a6639adba1c86494efdc29fb46b5",
+  "title": "TREK: el método de IA que usa la destilación para explorar soluciones y mejorar el razonamiento de modelos",
+  "summary": "TREK es un procedimiento por etapas que emplea destilación para expandir la exploración en optimización de políticas de aprendizaje, no para imitar trayectorias. Mejora el rendimiento de modelos en razonamiento matemático y tareas de agentes autónomos, funciona con profesores internos o externos sin necesidad de acceder a sus pesos, y supera los límites del método GRPO en problemas complejos.",
+  "url": "https://huggingface.co/papers/2607.05339",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "publishedAt": "2026-07-08T02:40:57.956Z",
+  "imageUrl": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.05339/gradient.png",
+  "imageAlt": "TREK: el método de IA que usa la destilación para explorar soluciones y mejorar el razonamiento de modelos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "TREK es un procedimiento por etapas que emplea destilación para expandir la exploración en optimización de políticas de aprendizaje, no para imitar trayectorias. Mejora el rendimiento de modelos en razonamiento matemático y tareas de agentes autónomos, funciona con profesores internos o externos sin necesidad de acceder a sus pesos, y supera los límites del método GRPO en problemas complejos.",
+  "keyPoints": [
+    "TREK es un procedimiento por etapas que emplea destilación para expandir la exploración de políticas de aprendizaje, evitando la imitación de trayectorias previas.",
+    "El método funciona con profesores de caja negra, blanca o el mismo modelo con contexto adicional, sin necesidad de acceder a sus pesos internos.",
+    "En razonamiento matemático, TREK mejora los modelos Qwen3 en los exámenes AIME 2024 y 2025, superando el rendimiento de GRPO sin asistencia.",
+    "En tareas agentes, eleva la tasa de éxito en ALFWorld del 75,8% al 82,8% y en ScienceWorld del 12,5% al 26,7%."
+  ],
+  "whyMatters": "TREK resuelve una limitación crítica de los métodos de optimización de políticas como GRPO, que se estancan ante problemas complejos cuyas soluciones no están en el espacio de muestreo inicial del modelo. Su capacidad para funcionar con profesores internos o externos, sin necesidad de acceder a sus pesos, democratiza el acceso a técnicas de mejora de rendimiento para equipos con recursos limitados. Los avances demostrados en razonamiento matemático y tareas agentes sientan las bases para modelos de IA más capaces de resolver problemas del mundo real sin intervención humana constante, lo que acelera el desarrollo de aplicaciones en educación, automatización e investigación científica.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.05339/gradient.png",
+      "alt": "Gráfico de portada del artículo científico que presenta el método TREK, mostrando la comparación de rendimiento entre GRPO y TREK en tareas de razonamiento y agentes",
+      "caption": "Imagen de portada del artículo de TREK publicada en Hugging Face Papers"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TREK",
+    "#InteligenciaArtificial",
+    "#RazonamientoMatematico",
+    "#AprendizajePorRefuerzo"
+  ],
+  "fullArticle": "Los métodos de optimización de políticas basados en aprendizaje por refuerzo, como el Group Relative Policy Optimization (GRPO), son muy efectivos cuando el modelo ya es capaz de generar trayectorias de razonamiento útiles por sí mismo. Sin embargo, estos métodos se estancan ante problemas complejos, como los exámenes de matemáticas avanzadas o las tareas de agentes autónomos, cuyas soluciones correctas se encuentran fuera del espacio de muestreo que el modelo puede generar de forma natural. Para solucionar esta limitación, un equipo de investigadores ha presentado TREK (Teacher-Routed Exploration via Forward KL), un método por etapas que usa la destilación no para imitar comportamientos existentes, sino para expandir la capacidad de exploración del modelo.\n\nEl funcionamiento de TREK es sencillo pero muy efectivo: primero identifica los prompts para los que el modelo sin asistencia tiene una tasa de aprobación muy baja, luego consulta una fuente de propuestas (que puede ser un profesor externo de caja negra, un modelo interno de caja blanca o el mismo modelo con contexto adicional de inferencia) para generar soluciones candidatas verificadas. Después, selecciona las mejores propuestas según la probabilidad que les asigna el modelo actual, aplica una corta fase de divergencia KL hacia adelante para incorporar esos modos de solución verificados al espacio del modelo, y finalmente vuelve a la fase de refinamiento GRPO estándar. Los resultados son sobresalientes: en razonamiento matemático, TREK con propuestas de DeepSeek-V4 mejora los modelos Qwen3 en todas las escalas probadas en los exámenes AIME 2024 y AIME 2025; por ejemplo, el modelo Qwen3-8B pasa de 36,9 a 40,3 puntos en AIME 2025 y de 47,9 a 51,1 en AIME 2024 (medida avg@16). En tareas de agentes autónomos, TREK eleva la tasa de éxito en ALFWorld del 75,8% al 82,8% y en ScienceWorld del 12,5% al 26,7%, logrando altas tasas de éxito muy temprano en el entrenamiento en las tareas más difíciles, donde GRPO sin asistencia necesita muchos más pasos de optimización para alcanzar resultados comparables.\n\n[MULTIMEDIA: https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.05339/gradient.png]\n\nUna de las mayores ventajas de TREK es su generalidad: al solo consumir trayectorias de salida verificadas, no requiere acceso a los pesos internos del modelo profesor, por lo que puede ser usado por equipos con recursos limitados que no pueden entrenar modelos grandes desde cero. Esta característica, sumada a su bajo costo computacional adicional, lo convierte en un avance muy prometedor para la industria de la inteligencia artificial, ya que permite mejorar el rendimiento de modelos de lenguaje en tareas complejas sin necesidad de aumentar significativamente la inversión en infraestructura. Su aplicación en educación, automatización de procesos e investigación científica podría acelerar el desarrollo de sistemas de IA más capaces y accesibles para todo tipo de organizaciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T08:30:38.551Z",
+  "links": [
+    {
+      "title": "Artículo original de TREK en Hugging Face Papers",
+      "url": "https://huggingface.co/papers/2607.05339"
+    },
+    {
+      "title": "Versión preprint del artículo de TREK en arXiv",
+      "url": "https://arxiv.org/abs/2607.05339"
+    },
+    {
+      "title": "Página oficial del modelo Qwen3",
+      "url": "https://qwenlm.github.io/blog/qwen3/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Mejora en AIME 2025 para Qwen3-8B",
+      "value": "de 36,9 a 40,3 puntos (avg@16)"
+    },
+    {
+      "label": "Mejora en tasa de éxito en ALFWorld",
+      "value": "de 75,8% a 82,8%"
+    },
+    {
+      "label": "Mejora en tasa de éxito en ScienceWorld",
+      "value": "de 12,5% a 26,7%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "08ae311e707f8a0f19a0a88d83edd5ec0de193ebddd8ba9fab9cfcd35bee8b0c",
+  "title": "El ataque de cadena de suministro que cabe en dos líneas de código: así robaron credenciales de un repositorio popular de npm",
+  "summary": "Un atacante envió un pull request malicioso al repositorio público sebs/etherscan-api en GitHub, camuflado como una mejora de rendimiento, que añadía un archivo .npmrc con una línea que redirige todas las instalaciones de npm a un servidor controlado por el atacante, permitiendo robar tokens de npm de forma silenciosa al ejecutar el comando npm install habitual.",
+  "url": "https://dev.to/sebs/a-rogue-registry-in-my-own-backyard-anatomy-of-a-two-line-supply-chain-attack-5b0h",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T22:30:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyxoay838mrm6uyv5bt0v.png",
+  "imageAlt": "El ataque de cadena de suministro que cabe en dos líneas de código: así robaron credenciales de un repositorio popular de npm",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un atacante envió un pull request malicioso al repositorio público sebs/etherscan-api en GitHub, camuflado como una mejora de rendimiento, que añadía un archivo .npmrc con una línea que redirige todas las instalaciones de npm a un servidor controlado por el atacante, permitiendo robar tokens de npm de forma silenciosa al ejecutar el comando npm install habitual.",
+  "keyPoints": [
+    "Un atacante envió un pull request malicioso al repositorio público sebs/etherscan-api en GitHub, camuflado como una mejora de rendimiento.",
+    "El PR modificaba solo dos archivos: añadía un .npmrc con una línea que redirige las instalaciones de npm a un servidor controlado por el atacante.",
+    "El perfil del contribuyente era creíble, con repositorios antiguos, insignias de GitHub y biografía falsa pero convincente para evitar sospechas en revisiones rápidas.",
+    "El ataque se activa de forma silenciosa al ejecutar npm install, sin necesidad de que el usuario ejecute código malicioso adicional, robando tokens de npm almacenados en el sistema."
+  ],
+  "whyMatters": "Este ataque demuestra que las cadenas de suministro de software de código abierto son vulnerables incluso a modificaciones mínimas, sin necesidad de payloads complejos que llamen la atención. Su diseño silencioso y camuflado como una contribución legítima permite evadir sistemas de detección de malware y revisiones de código apresuradas, poniendo en riesgo no solo los proyectos afectados sino también a todos los usuarios que instalan sus paquetes. A futuro, evidencia la necesidad de endurecer los procesos de revisión de pull requests, validar el origen de las dependencias y auditar regularmente los archivos de configuración como .npmrc para evitar redirecciones no autorizadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyxoay838mrm6uyv5bt0v.png",
+      "alt": "Portada del artículo que analiza el ataque de cadena de suministro de dos líneas en el repositorio sebs/etherscan-api",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el autor que sufrió el ataque en su propio proyecto de código abierto"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#AtaqueCadenaSuministro",
+    "#SeguridadInformatica",
+    "#Npm",
+    "#CodigoAbierto",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "El autor de este análisis, que hasta ahora había escrito sobre los ataques a cadenas de suministro de software desde la distancia, teorizando sobre el gusano Shai-Hulud y recomendando buenas prácticas de seguridad sin imaginar que sería víctima de uno, sufrió un ataque directo en su propio repositorio público sebs/etherscan-api. El incidente destaca por su extrema simplicidad: no hay gusanos auto replicantes, payloads ofuscados de 200 líneas ni comandos exóticos, solo seis líneas añadidas y tres eliminadas en dos archivos, un diseño minimalista pensado para pasar desapercibido en revisiones de código apresuradas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyxoay838mrm6uyv5bt0v.png]\n\nEl pull request malicioso llegó con el título 'refactor: replace manual multicall with ethers-multicall-utils' y una descripción pulcra, redactada en el dialecto de las contribuciones legítimas modernas, que hablaba de mejorar el rendimiento de las lecturas de múltiples contratos y mencionaba la frase 'zero dependencies', un reclamo diseñado para que un mantenedor preocupado por la seguridad bajara la guardia, precisamente el tipo de mensaje que el propio autor había defendido en publicaciones anteriores. El perfil del contribuyente no era el de una cuenta quemada de cinco minutos: tenía un perfil antiguo, cientos de repositorios, la insignia de Arctic Code Vault, el galardón Pull Shark, una biografía y un empleo falsos pero lo suficientemente creíbles como para no levantar sospechas en una revisión rápida.\n\nLa trampa se ocultaba en dos archivos modificados. El primero era un nuevo archivo .npmrc en la raíz del repositorio: su primera línea apuntaba al registro oficial de npm para camuflarse ante una revisión superficial, mientras que la segunda línea usaba la sintaxis :registry= para redirigir todas las instalaciones de paquetes sin un scope explícito al servidor controlado por el atacante, en la dirección http://206.223.232.170:64389/. El segundo archivo modificado era el package.json, donde se añadía una nueva dependencia que no existía en el registro oficial de npm, ya que la resolución de paquetes ya había sido redirigida al servidor atacante, que podía servir cualquier paquete con un script de postinstalación malicioso o una copia troyana de una librería confiable. El uso del operador de versiones ^2.1.4 permitía al atacante subir versiones maliciosas actualizadas en el futuro sin necesidad de modificar el archivo de nuevo, y un cambio cosmético en el campo author del package.json, reescapando la letra ü en el nombre del autor, servía como ruido de diff para hacer que el commit pareciera una simple limpieza de código.\n\nA diferencia del gusano Shai-Hulud, que era ruidoso, se propagaba de forma autónoma y clonaba repositorios privados, lo que terminó por delatarlo, este ataque sigue una filosofía de diseño opuesta: es silencioso, cabe en dos líneas de código y se activa con el comando npm install que cualquier desarrollador ejecuta miles de veces sin sospechar, robando tokens de npm almacenados en el entorno del sistema sin necesidad de que el usuario ejecute ningún comando exótico. La clave de su éxito reside en la ingeniería social calibrada: cada elemento del pull request, desde el título hasta el perfil del contribuyente, está diseñado para parecer una contribución legítima y pasar desapercibido en revisiones realizadas con prisas o con un ojo medio abierto, como admitió el propio autor del artículo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:44:35.883Z",
+  "links": [
+    {
+      "title": "Artículo original completo en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de npm sobre archivos de configuración .npmrc",
+      "url": "https://docs.npmjs.com/cli/v10/configuring-npm/npmrc"
+    },
+    {
+      "title": "Informe de Trend Micro sobre el gusano Shai-Hulud",
+      "url": "https://www.trendmicro.com/en_us/research/23/l/shai-hulud-worm-targets-npm-registry.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Líneas de código añadidas en el archivo .npmrc",
+      "value": "2 líneas"
+    },
+    {
+      "label": "Dirección del servidor atacante que redirige las instalaciones",
+      "value": "http://206.223.232.170:64389/"
+    },
+    {
+      "label": "Cantidad de archivos modificados en el pull request malicioso",
+      "value": "2 archivos (.npmrc y package.json)"
+    },
+    {
+      "label": "Versión de la dependencia maliciosa añadida",
+      "value": "^2.1.4 (permite actualizaciones futuras sin modificar el archivo)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

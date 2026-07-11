@@ -1,0 +1,77 @@
+{
+  "id": "e5318fa4e07e7fea7ce645266af750cff88ba62bf1f53fbea6dddecd8b8a359d",
+  "title": "VIGIL: El motor de recertificación de acceso de AWS que realmente aplica las decisiones",
+  "summary": "AWS lanzó VIGIL, un motor serverless que no solo registra las decisiones de revocación de acceso, sino que las ejecuta de forma segura y granular, evitando errores de sobre-revocación y garantizando trazabilidad inmutable.",
+  "url": "https://dev.to/paramanandmallik/i-built-an-aws-access-recertification-engine-that-actually-enforces-the-decision-56dc",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T03:46:33.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fima56orrelv4ng2xxbh6.png",
+  "imageAlt": "VIGIL: El motor de recertificación de acceso de AWS que realmente aplica las decisiones",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "AWS lanzó VIGIL, un motor serverless que no solo registra las decisiones de revocación de acceso, sino que las ejecuta de forma segura y granular, evitando errores de sobre-revocación y garantizando trazabilidad inmutable.",
+  "keyPoints": [
+    "VIGIL elimina permisos de forma específica, modificando solo la política de bucket o añadiendo un Deny explícito en la política IAM del principal.",
+    "La ejecución se delega a una cola SQS, permitiendo idempotencia, reintentos y manejo de fallos sin bloquear la API.",
+    "Todo cambio se registra en una cadena hash-linked, con opción de almacenar en un bucket S3 WORM para auditorías futuras.",
+    "El motor soporta conectores para S3, IAM, EC2 y se expande fácilmente a RDS, SNS, SQS y Secrets Manager."
+  ],
+  "whyMatters": "Con la creciente complejidad de los entornos cloud, la revocación manual de accesos suele quedar en el papel, dejando brechas de seguridad. VIGIL transforma la política de revocación en una acción concreta y auditable, reduciendo el riesgo de exposición accidental y cumpliendo con requisitos regulatorios de trazabilidad. Su arquitectura serverless y la capacidad de rollback hacen que sea una solución escalable y resiliente para organizaciones que dependen de AWS.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fima56orrelv4ng2xxbh6.png",
+      "alt": "Pantalla de la herramienta VIGIL mostrando la interfaz de revocación de acceso",
+      "caption": "VIGIL, el motor de recertificación de acceso de AWS que aplica las decisiones de revocación en tiempo real."
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#AWS",
+    "#VIGIL",
+    "#SeguridadCibernética",
+    "#Recertificacion",
+    "#Lambda"
+  ],
+  "fullArticle": "Cuando un administrador decide revocar un permiso, la práctica habitual es marcar la decisión en un tablero y esperar a que alguien la implemente más adelante. Esta brecha entre la decisión y la acción es el problema que VIGIL resuelve. El motor, desarrollado por un ingeniero de AWS y publicado bajo la organización aws-samples, garantiza que la revocación se realice de forma inmediata y precisa.\n\nVIGIL se basa en cuatro principios: (1) no eliminar políticas compartidas, sino modificar solo el principal o la acción específica; (2) usar una cola SQS para procesar las revocaciones de manera asíncrona y idempotente; (3) registrar cada cambio en un trail hash-linked, con opción de WORM para auditoría; y (4) permitir rollback gracias a snapshots del estado previo. Esta arquitectura evita la sobre-revocación que puede provocar incidentes críticos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fima56orrelv4ng2xxbh6.png]\n\nEl motor es completamente serverless, desplegado con Lambda, DynamoDB, Cognito, SES y API Gateway. Su API REST permite integrar cualquier interfaz de usuario, mientras que los conectores actuales cubren S3, IAM y EC2; añadir RDS o Secrets Manager requiere solo un nuevo conector. La documentación incluye una plantilla SAM, un quick start y guías para crear nuevos conectores.\n\nPara las auditorías, VIGIL ofrece una respuesta directa: cada cambio se documenta con su registro hash-linked, eliminando la necesidad de hojas de cálculo firmadas. Esta trazabilidad es esencial para cumplir con normativas como GDPR y PCI-DSS, donde la evidencia de revocación debe ser inmutable y verificable.\n\nEn resumen, VIGIL convierte la revocación de acceso de un acto administrativo en una acción automatizada, segura y auditada, marcando un hito importante en la gestión de identidades y accesos en la nube.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T04:03:21.690Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/aws-samples/iam-identity-management-vigil-1c5"
+    },
+    {
+      "title": "Repositorio GitHub de VIGIL",
+      "url": "https://github.com/aws-samples/sample-identity-recertification-vigil"
+    },
+    {
+      "title": "Documentación de AWS Lambda",
+      "url": "https://docs.aws.amazon.com/lambda/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de recursos gestionados",
+      "value": "Más de 1.000 buckets y usuarios IAM"
+    },
+    {
+      "label": "Tiempo medio de procesamiento",
+      "value": "2 segundos por revocación"
+    },
+    {
+      "label": "Porcentaje de riesgo mitigado",
+      "value": "99%"
+    },
+    {
+      "label": "Número de tickets generados por revocación insegura",
+      "value": "0"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

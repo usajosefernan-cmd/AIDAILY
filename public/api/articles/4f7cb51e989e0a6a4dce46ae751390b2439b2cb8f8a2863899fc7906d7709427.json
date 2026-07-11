@@ -1,0 +1,77 @@
+{
+  "id": "4f7cb51e989e0a6a4dce46ae751390b2439b2cb8f8a2863899fc7906d7709427",
+  "title": "Principia vuelve a Windows XP: un desarrollador rescata la compatibilidad del juego de simulación con el sistema operativo legendario",
+  "summary": "Un desarrollador del proyecto de código abierto del juego Principia está trabajando para recuperar la compatibilidad nativa con Windows XP, eliminando las barreras de las toolchains modernas y dependencias que impedían su ejecución en el sistema operativo de Microsoft lanzado en 2001.",
+  "url": "https://voxelmanip.se/2026/06/28/building-principia-for-windows-xp/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-29T13:23:19.000Z",
+  "imageUrl": "https://voxelmanip.se/media/building-principia-for-windows-xp/cover.webp",
+  "imageAlt": "Principia vuelve a Windows XP: un desarrollador rescata la compatibilidad del juego de simulación con el sistema operativo legendario",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador del proyecto de código abierto del juego Principia está trabajando para recuperar la compatibilidad nativa con Windows XP, eliminando las barreras de las toolchains modernas y dependencias que impedían su ejecución en el sistema operativo de Microsoft lanzado en 2001.",
+  "keyPoints": [
+    "Principia se lanzó originalmente en 2014 con compatibilidad nativa para Windows XP, que aún contaba con soporte oficial por parte de Microsoft en ese momento.",
+    "El proyecto ahora es de código abierto, pero las toolchains modernas como LLVM y dependencias como UCRT rompieron la compatibilidad con sistemas anteriores a Windows 7.",
+    "El desarrollador está creando una toolchain personalizada basada en GCC y MinGW-w64 para compilar el juego sin dependencias incompatibles con XP.",
+    "El único obstáculo restante es una dependencia de la librería estándar de C++ de GCC 16 con una API de Windows Vista, que se solucionará con parches o ajustes."
+  ],
+  "whyMatters": "Esta iniciativa no es solo un ejercicio de nostalgia, sino que demuestra la viabilidad de mantener software funcional en sistemas operativos antiguos, un segmento aún utilizado en entornos industriales, de preservación digital o con hardware limitado que no puede actualizarse. Además, el trabajo de creación de toolchains personalizadas para sistemas obsoletos aporta conocimiento valioso para la comunidad de desarrollo de software libre, que a menudo necesita adaptar herramientas a escenarios muy específicos ignorados por las soluciones comerciales. Por último, el caso de Principia sirve como ejemplo de cómo los proyectos de código abierto pueden priorizar la accesibilidad y la compatibilidad por encima de la presión por adoptar las tecnologías más recientes, un criterio cada vez más valorado por usuarios y organizaciones que rechazan la obsolescencia programada.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://voxelmanip.se/media/building-principia-for-windows-xp/cover.webp",
+      "alt": "Portada del artículo sobre la recuperación de la compatibilidad de Principia con Windows XP",
+      "caption": "Imagen de portada del artículo que explica el proceso de adaptación del juego Principia para funcionar en Windows XP"
+    }
+  ],
+  "subcategory": "Videojuegos",
+  "hashtags": [
+    "#Principia",
+    "#WindowsXP",
+    "#CodigoAbierto",
+    "#MinGW",
+    "#DesarrolloDeSoftware"
+  ],
+  "fullArticle": "Cuando el juego de simulación física Principia se lanzó oficialmente para Windows en 2014, su compatibilidad con Windows XP no era una excepción, sino una norma: el sistema operativo de Microsoft aún contaba con soporte oficial por parte de la compañía, y las herramientas de desarrollo de la época permitían compilar binarios que se ejecutaran sin problemas en equipos con hasta 15 años de antigüedad. Aquella decisión de soporte amplio respondía a la realidad del mercado de la época, donde una parte importante de los usuarios aún no había actualizado a versiones más recientes de Windows, y no suponía un esfuerzo adicional para el equipo de desarrollo, ya que las dependencias y toolchains utilizadas en aquel momento eran plenamente compatibles con el sistema. Con el paso del tiempo, sin embargo, la evolución de las herramientas de desarrollo y las librerías del sistema ha ido eliminando progresivamente esa compatibilidad, hasta el punto de que las versiones actuales de Principia solo garantizan su funcionamiento en Windows 7 o superior.\n\n[MULTIMEDIA: https://voxelmanip.se/media/building-principia-for-windows-xp/cover.webp]\n\nAhora que Principia es un proyecto de código abierto, un desarrollador ha asumido el reto de recuperar la compatibilidad nativa con Windows XP, un sistema operativo que dejó de recibir soporte oficial por parte de Microsoft en 2014, pero que aún cuenta con una base de usuarios fiel, especialmente en entornos de hardware limitado, proyectos de preservación digital y ámbitos industriales que no pueden actualizar sus equipos por normativa o coste. El principal obstáculo no radica en el propio juego, que está diseñado para ejecutarse en hardware de teléfonos de 2012 y solo requiere soporte para OpenGL 2.0, sino en las toolchains de compilación modernas, que han eliminado el soporte para sistemas anteriores a Windows 7. El desarrollador explica que la versión oficial de Principia para Windows se compila actualmente con una toolchain MinGW-w64 basada en LLVM, que enlaza contra la UCRT (C Runtime Universal) y utiliza librerías que dependen de APIs introducidas en Windows Vista, por lo que no es viable para generar binarios compatibles con XP.\n\nPara solucionar este problema, el desarrollador ha optado por crear su propia toolchain de compilación cruzada, basada en GCC y MinGW-w64, que puede ejecutarse en un sistema Linux anfitrión y generar binarios para Windows XP de 32 bits, utilizando la librería MSVCRT como runtime del sistema y estableciendo la versión mínima de Windows en 0x0501, correspondiente a Windows XP. El proceso de construcción de la toolchain ha requerido superar varios obstáculos, como un error de compilación de la librería GMP 6.3.0 con GCC 16, derivado del cambio de estándar de C por defecto a C23, que se solucionó forzando la compilación con el estándar gnu99. Una vez superados estos problemas iniciales, la construcción de las librerías MPFR, MPC, binutils, GCC y las librerías de MinGW-w64 se completó sin incidentes, aunque el desarrollador detectó un nuevo problema: la librería estándar de C++ de GCC 16 incluye una dependencia dura con la API GetDynamicTimeZoneInformation, introducida en Windows Vista, que deberá solucionarse con parches o ajustes en la configuración de compilación para garantizar la compatibilidad total con XP.\n\nEl trabajo de este desarrollador no solo permitirá que los usuarios de Windows XP puedan seguir ejecutando Principia, sino que también genera un precedente para otros proyectos de software abierto que quieran mantener la compatibilidad con sistemas operativos antiguos, demostrando que es posible construir toolchains funcionales para escenarios de uso muy específicos sin depender de las soluciones preconfiguradas que ofrecen los distribuidores de herramientas de desarrollo. Además, la iniciativa pone de manifiesto el valor de la comunidad de código abierto para resolver problemas que las empresas comerciales suelen ignorar, al priorizar la adopción de tecnologías nuevas por encima del soporte a usuarios con necesidades especiales. Cuando se complete el trabajo, se publicará una versión completamente de código abierto de Principia compilada específicamente para Windows XP, que podrá ser utilizada por cualquier usuario sin restricciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T14:32:57.577Z",
+  "links": [
+    {
+      "title": "Artículo original: Building Principia for Windows XP",
+      "url": "https://voxelmanip.se/articles/building-principia-for-windows-xp.html"
+    },
+    {
+      "title": "Sitio oficial del proyecto Principia",
+      "url": "https://principia-web.se/"
+    },
+    {
+      "title": "Documentación oficial de MinGW-w64",
+      "url": "https://www.mingw-w64.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de lanzamiento original de Principia para Windows",
+      "value": "2014"
+    },
+    {
+      "label": "Versión mínima de Windows admitida por la toolchain actual de Principia",
+      "value": "Windows 7"
+    },
+    {
+      "label": "Versión de GCC utilizada para construir la nueva toolchain compatible con XP",
+      "value": "GCC 16"
+    },
+    {
+      "label": "Año en que Microsoft dejó de dar soporte oficial a Windows XP",
+      "value": "2014"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

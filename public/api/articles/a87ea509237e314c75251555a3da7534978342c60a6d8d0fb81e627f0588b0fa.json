@@ -1,0 +1,38 @@
+{
+  "id": "a87ea509237e314c75251555a3da7534978342c60a6d8d0fb81e627f0588b0fa",
+  "title": "String - JS",
+  "summary": "Cadena: una cadena es una secuencia de caracteres entre comillas simples ('), comillas dobles (\") o comillas invertidas (`).\n\njavascript\n\nconst nombre = \"Siyamala\";\nconst apellido = 'Manikandan';\nmensaje constante = Bienvenido a JavaScript;\n\nconsole.log(nombre);\nconsole.log(apellido);\nconsola.log(mensaje);\n\ntexto plano\n\n...",
+  "url": "https://dev.to/siyamala_g/string-js-441g",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T08:37:39.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3unx2yrsz17exxug5mxo.png",
+  "imageAlt": "String - JS",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Cadena: una cadena es una secuencia de caracteres entre comillas simples ('), comillas dobles (\") o comillas invertidas (`).\n\njavascript\n\nconst nombre = \"Siyamala\";\nconst apellido = 'Manikandan';\nmensaje constante = Bienvenido a JavaScript;\n\nconsole.log(nombre);\nconsole.log(apellido);\nconsola.log(mensaje);\n\ntexto plano\n\n...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3unx2yrsz17exxug5mxo.png",
+      "alt": "String - JS",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Cadena: una cadena es una secuencia de caracteres entre comillas simples ('), comillas dobles (\") o comillas invertidas (`).\n\njavascript\n\nconst nombre = \"Siyamala\";\nconst apellido = 'Manikandan';\nmensaje constante = Bienvenido a JavaScript;\n\nconsole.log(nombre);\nconsole.log(apellido);\nconsola.log(mensaje);\n\ntexto plano\n\nSalida\ntexto plano\nSiyamala\nManikandan\nBienvenido a JavaScript\n\n1.Longitud\ndevuelve el número total de caracteres en una cadena.\njavascript\nidioma constante = \"JavaScript\";\nconsole.log(idioma.longitud);\n\nSalida\ntexto plano\n10\n\n2.Mayúsculas\nconvierte todos los caracteres a mayúsculas.\njavascript\ntexto constante = \"javascript\";\nconsole.log(text.toUpperCase());\n\nSalida\ntexto plano\nJAVASCRIPT\n\n3.minúsculas\nconvierte todos los caracteres a minúsculas.\n\njavascript\ntexto constante = \"JAVASCRIPT\";\nconsole.log(text.toLowerCase());\n\nSalida\ntexto plano\njavascript\n\n4.Acceder a los personajes\nUtilice la posición del índice para acceder a caracteres individuales.\njavascript\npalabra constante = \"Codificación\";\nconsole.log(palabra[0]);\nconsole.log(palabra[3]);\n\nSalida\ntexto plano\nc\nyo\n\n5.índice de()\ndevuelve la posición del personaje\njavascript\ntexto constante = \"JavaScript\";\nconsole.log(text.indexOf(\"S\"));\n\nSalida\ntexto plano\n4\n\n6.incluye()\nSe utiliza para comprobar si existe un valor específico en una matriz.\nja...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T09:04:49.277Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

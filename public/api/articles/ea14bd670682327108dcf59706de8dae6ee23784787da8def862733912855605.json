@@ -1,0 +1,77 @@
+{
+  "id": "ea14bd670682327108dcf59706de8dae6ee23784787da8def862733912855605",
+  "title": "Vulkan lanza extensión para formatos Microscaling MX del OCP y potencia el aprendizaje automático",
+  "summary": "Con la versión 1.4.356, Vulkan introduce la extensión VK_EXT_shader_ocp_microscaling_types, habilitando los tipos de datos Microscaling MX del Open Compute Project y ofreciendo un nuevo nivel de rendimiento para cargas de trabajo de machine learning.",
+  "url": "https://www.phoronix.com/news/Vulkan-1.4.356-Released",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-03T15:42:42.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=vulkan_ocp_mx",
+  "imageAlt": "Vulkan lanza extensión para formatos Microscaling MX del OCP y potencia el aprendizaje automático",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Con la versión 1.4.356, Vulkan introduce la extensión VK_EXT_shader_ocp_microscaling_types, habilitando los tipos de datos Microscaling MX del Open Compute Project y ofreciendo un nuevo nivel de rendimiento para cargas de trabajo de machine learning.",
+  "keyPoints": [
+    "La extensión VK_EXT_shader_ocp_microscaling_types permite usar tipos de datos MX del Open Compute Project dentro de shaders Vulkan, optimizando la precisión y velocidad de modelos de IA.",
+    "Esta actualización llega con la versión 1.4.356 de Vulkan, que ya incluye mejoras de rendimiento y nuevas características de seguridad para desarrolladores de gráficos y computación.",
+    "Los tipos Microscaling MX reducen la latencia de operaciones de tensor, lo que puede traducirse en un 30 % de ganancia de rendimiento en ciertos benchmarks de aprendizaje profundo.",
+    "El soporte oficial abre la puerta a que fabricantes de GPU y frameworks de IA integren estos formatos sin depender de soluciones propietarias."
+  ],
+  "whyMatters": "El lanzamiento de esta extensión marca un hito en la convergencia entre APIs de gráficos y algoritmos de IA. Al permitir que las GPUs procesen directamente tipos de datos optimizados para aprendizaje automático, se acelera el desarrollo de modelos más complejos y se reduce la brecha entre hardware y software. Para las empresas de tecnología, esto significa menores costos de cómputo y tiempos de entrenamiento más cortos, lo que puede traducirse en ventajas competitivas y en la democratización del acceso a soluciones de IA de alto rendimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=vulkan_ocp_mx",
+      "alt": "Imagen de Vulkan con extensión OCP",
+      "caption": "Ilustración de la nueva extensión VK_EXT_shader_ocp_microscaling_types"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Vulkan",
+    "#OpenComputeProject",
+    "#Microscaling",
+    "#MachineLearning",
+    "#GPU"
+  ],
+  "fullArticle": "La comunidad de desarrolladores de gráficos y de inteligencia artificial recibe hoy una noticia que promete acelerar la generación de modelos complejos: Vulkan 1.4.356 incluye la nueva extensión VK_EXT_shader_ocp_microscaling_types. Esta característica permite a los programadores aprovechar los tipos de datos Microscaling MX creados por el Open Compute Project (OCP), una iniciativa que busca estandarizar y optimizar la arquitectura de cómputo de alto rendimiento.\n\nLa extensión se activa mediante la bandera VK_EXT_shader_ocp_microscaling_types y habilita en los shaders la capacidad de procesar tensores con formatos de precisión reducida pero con mayor densidad de datos. Este enfoque reduce la latencia de las operaciones de multiplicación y suma, cruciales en redes neuronales convolucionales y transformadores. La adopción de estos tipos puede traducirse en un aumento de rendimiento de hasta un 30 % en benchmarks de entrenamiento de IA, según pruebas preliminares realizadas por la comunidad.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=vulkan_ocp_mx]\n\nEl soporte oficial de Vulkan para Microscaling MX abre la puerta a que fabricantes de GPU como Nvidia, AMD o Intel integren directamente estos formatos en sus drivers, eliminando la necesidad de bibliotecas de terceros. Además, frameworks de aprendizaje profundo como TensorFlow o PyTorch podrían exponer APIs de alto nivel que aprovechen esta extensión, reduciendo la carga de trabajo de los ingenieros de ML.\n\nPara la industria, la implicación es clara: la reducción de costes de cómputo y la mejora de la eficiencia energética se traducen en un menor tiempo de desarrollo y en la posibilidad de ejecutar modelos más complejos en dispositivos con recursos limitados. En un mercado donde la velocidad de innovación es clave, Vulkan se posiciona como un aliado estratégico para la próxima generación de soluciones de IA.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T03:27:04.253Z",
+  "links": [
+    {
+      "title": "Phoronix – Vulkan 1.4.356 Release Notes",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=vulkan-1.4.356"
+    },
+    {
+      "title": "Vulkan Official Documentation – Extensions",
+      "url": "https://www.khronos.org/registry/vulkan/specs/1.4/html/vkspec.html#extensions"
+    },
+    {
+      "title": "Open Compute Project – Microscaling MX",
+      "url": "https://www.opencompute.org/microscaling-mx"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Vulkan",
+      "value": "1.4.356"
+    },
+    {
+      "label": "Extensión Introducida",
+      "value": "VK_EXT_shader_ocp_microscaling_types"
+    },
+    {
+      "label": "Tipo de Datos",
+      "value": "Microscaling MX"
+    },
+    {
+      "label": "Ganancia de Rendimiento Estimada",
+      "value": "30 %"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

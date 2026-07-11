@@ -1,0 +1,78 @@
+{
+  "id": "5d874eca8e8cdf911f4b769460b35cb81771d1dc7069a2895fe315904709ba49",
+  "title": "Roomful: el SDK sin backend que revoluciona la colaboración en tiempo real para frontends",
+  "summary": "Roomful es un SDK de código abierto que permite a los desarrolladores de front‑end añadir funcionalidades colaborativas en tiempo real sin necesidad de crear infraestructura backend propia. Su enfoque modular ofrece componentes como presencia, cursores y estado compartido, simplificando la integración y reduciendo el tiempo de desarrollo.",
+  "url": "https://dev.to/erayates/how-i-built-roomful-zero-backend-collaboration-primitives-for-frontend-apps-3gia",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T00:53:04.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgxbvcpwfvaq623vjdzhq.png",
+  "imageAlt": "Roomful: el SDK sin backend que revoluciona la colaboración en tiempo real para frontends",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Roomful es un SDK de código abierto que permite a los desarrolladores de front‑end añadir funcionalidades colaborativas en tiempo real sin necesidad de crear infraestructura backend propia. Su enfoque modular ofrece componentes como presencia, cursores y estado compartido, simplificando la integración y reduciendo el tiempo de desarrollo.",
+  "keyPoints": [
+    "Roomful ofrece una librería ligera que elimina la necesidad de servidores de tiempo real, reduciendo la complejidad de la infraestructura.",
+    "El SDK se integra directamente en el código del producto, permitiendo prototipos rápidos y pruebas de concepto con mínima configuración.",
+    "Con componentes modulares, los equipos pueden elegir solo las funcionalidades que necesiten, como presencia, cursores o estado compartido.",
+    "La comunidad de código abierto y la documentación completa facilitan la adopción y la contribución de mejoras y nuevas características."
+  ],
+  "whyMatters": "La adopción de Roomful puede acelerar la entrega de experiencias colaborativas en aplicaciones web, un mercado que se espera que crezca a más del 20 % anual. Al eliminar la dependencia de soluciones backend costosas, las empresas pueden reducir gastos operativos y enfocarse en la innovación del producto. Además, la modularidad del SDK fomenta la experimentación y la validación de nuevas ideas con menor riesgo técnico.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgxbvcpwfvaq623vjdzhq.png",
+      "alt": "Captura de la portada del artículo sobre Roomful",
+      "caption": "Imagen que muestra el título y la temática del artículo sobre el SDK Roomful."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgxbvcpwfvaq623vjdzhq.png",
+      "alt": "Imagen de la portada del artículo sobre Roomful",
+      "caption": "Versión reducida de la imagen de portada que destaca el nombre del SDK."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Roomful",
+    "#ColaboraciónEnTiempoReal",
+    "#SDK",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "El mundo del desarrollo web está cada vez más orientado a experiencias colaborativas en tiempo real, desde editores de código compartidos hasta plataformas de diseño colaborativo. Sin embargo, la implementación de estas funcionalidades suele requerir una infraestructura backend compleja, con manejo de transporte, ciclo de vida de pares, presencia, sincronización de cursores y reglas de estado compartido. \n\nRoomful nace para simplificar este proceso. Se trata de un SDK de código abierto, sin backend, que ofrece un conjunto de primitivas de colaboración modular. Los desarrolladores pueden integrar directamente en su aplicación front‑end componentes como presencia, cursores o estado compartido, sin necesidad de escribir código de servidor ni configurar bases de datos en tiempo real. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgxbvcpwfvaq623vjdzhq.png]\n\nLa propuesta de Roomful se centra en la simplicidad y la flexibilidad. En lugar de imponer un modelo único de colaboración, el SDK ofrece bloques de construcción que los equipos pueden combinar según sus necesidades. Por ejemplo, un proyecto puede requerir solo la presencia de usuarios, mientras que otro puede necesitar cursores y estado compartido simultáneamente. \n\nAdemás, la documentación completa y la comunidad activa facilitan la adopción. El repositorio en GitHub cuenta con más de 120 estrellas, y la documentación oficial en docs.roomful.dev guía paso a paso la integración de cada componente. La demo en demo.roomful.dev permite a los usuarios experimentar con las funcionalidades antes de implementarlas en producción. \n\nEn conclusión, Roomful representa un avance significativo para el desarrollo de interfaces colaborativas. Al eliminar la barrera de la infraestructura backend, permite a los equipos lanzar prototipos y validaciones de producto más rápidamente, reduciendo costos y acelerando la innovación en el ecosistema web.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T01:23:17.603Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/erayates/how-i-built-roomful-zero-backend-collaboration-primitives-for-frontend-apps-4o2p"
+    },
+    {
+      "title": "Repositorio oficial en GitHub",
+      "url": "https://github.com/erayates/roomful"
+    },
+    {
+      "title": "Documentación oficial",
+      "url": "https://docs.roomful.dev/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Estrellas en GitHub",
+      "value": "120"
+    },
+    {
+      "label": "Número de componentes básicos",
+      "value": "4"
+    },
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "2024-03-15"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

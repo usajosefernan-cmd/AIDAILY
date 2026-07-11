@@ -1,0 +1,82 @@
+{
+  "id": "2e31c5641390a15f35780944b02b8d1c3162249d2e016d4dfa4b5f22fb177e9e",
+  "title": "Organizador de marcadores de Twitter: la solución DIY que rompe la falta de organización",
+  "summary": "El autor construyó una API REST sencilla para almacenar, etiquetar y filtrar marcadores de Twitter, superando la ausencia de organización nativa y evitando la dependencia de la suscripción de Twitter.",
+  "url": "https://dev.to/banh/how-i-built-a-secure-rest-api-to-organize-my-twitter-bookmarks-j96",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T19:01:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhwcn068pmm9wu5jrp11k.png",
+  "imageAlt": "Organizador de marcadores de Twitter: la solución DIY que rompe la falta de organización",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor construyó una API REST sencilla para almacenar, etiquetar y filtrar marcadores de Twitter, superando la ausencia de organización nativa y evitando la dependencia de la suscripción de Twitter.",
+  "keyPoints": [
+    "Una API REST con tres funciones esenciales: guardar, etiquetar y filtrar marcadores, sin UI ni extensiones.",
+    "Base de datos con tablas de usuarios y marcadores, usando restricciones únicas y ON DELETE CASCADE para integridad y limpieza automática.",
+    "Implementación de seis capas de seguridad: consultas parametrizadas, bcrypt, JWT, rate limiting, validación y prevención BOLA.",
+    "El error más frecuente fue la falta de dotenv.config(), subrayando la importancia de la configuración del entorno."
+  ],
+  "whyMatters": "Esta iniciativa demuestra que incluso las plataformas más grandes pueden dejar brechas de usabilidad que los desarrolladores pueden cerrar con soluciones ligeras. Al ofrecer una alternativa libre de suscripciones, se democratiza el acceso a la gestión de información personal, lo cual es crucial en la era del dato. Además, la arquitectura propuesta sirve como referencia para proyectos de microservicios que requieran seguridad robusta y escalabilidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhwcn068pmm9wu5jrp11k.png",
+      "alt": "Organizador de marcadores de Twitter",
+      "caption": "Imagen de portada del artículo que muestra la interfaz de la API"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Fragmento de código de la API",
+      "caption": "Código que ilustra la ruta POST /storeBookmark"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TwitterBookmarks",
+    "#DevOps",
+    "#NodeJS",
+    "#Supabase"
+  ],
+  "fullArticle": "El caos de los marcadores de Twitter se ha convertido en un problema real para quienes dependen de la plataforma para organizar ideas, noticias y recursos digitales. La ausencia de una estructura de carpetas y la falta de herramientas de etiquetado hacen que cientos de tweets guardados queden enterrados en un mar de enlaces sin contexto. \n\nEl autor diseñó una API REST con tres rutas clave: POST /register, POST /login, POST /storeBookmark, GET /filterBookmarks y GET /bookmarks, sin UI ni extensiones. Este enfoque minimalista permite a los usuarios autenticarse, guardar un URL, asignarle etiquetas y recuperarlos filtrados por categoría, todo a través de llamadas HTTP simples. \n\nLa base de datos consta de dos tablas: users y bookmarks. En la tabla users, el campo username está marcado como UNIQUE NOT NULL a nivel de base de datos, evitando condiciones de carrera que podrían surgir a nivel de aplicación. En bookmarks, user_id es una clave foránea con ON DELETE CASCADE, garantizando que al eliminar un usuario se borren automáticamente sus marcadores y se eviten filas huérfanas. \n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhwcn068pmm9wu5jrp11k.png]\n\nLa aplicación incorpora seis capas de seguridad: consultas parametrizadas para evitar inyección SQL, hashing asíncrono con bcrypt para contraseñas, JWT sin estado con caducidad de 15 minutos, rate limiting estricto en rutas de autenticación, validación de entrada con express-validator y prevención BOLA asegurando que cada consulta de marcadores esté restringida al usuario autenticado. Este conjunto de medidas garantiza que la API sea resistente a ataques comunes y que la información del usuario permanezca protegida incluso en entornos de producción.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T19:29:02.388Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación de Supabase",
+      "url": "https://supabase.com/docs"
+    },
+    {
+      "title": "Guía de Knex.js",
+      "url": "https://knexjs.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de marcadores guardados",
+      "value": "Cientos de tweets"
+    },
+    {
+      "label": "Número de rutas API",
+      "value": "5"
+    },
+    {
+      "label": "Número de capas de seguridad",
+      "value": "6"
+    },
+    {
+      "label": "Tiempo de desarrollo",
+      "value": "Varias horas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

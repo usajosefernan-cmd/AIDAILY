@@ -1,0 +1,77 @@
+{
+  "id": "c325d26e28a57d54114ad446ed7e9b396ea65c1a7b3a3d04bd42f786e98cf8b2",
+  "title": "Cómo diseñar agentes de IA que superen las auditorías de cumplimiento bancario: patrones reales, no teoría",
+  "summary": "El artículo detalla que el 70% del desarrollo de agentes de IA para banca se centra en el cumplimiento normativo, no en la lógica del modelo, y expone los patrones arquitectónicos necesarios para superar auditorías, como registros inmutables, explicabilidad y puntos de control humano.",
+  "url": "https://dev.to/dextralabs/how-to-architect-ai-agents-that-pass-banking-compliance-audits-real-patterns-not-theory-3767",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T19:51:23.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb8h6krayadem7f1kyol7.png",
+  "imageAlt": "Cómo diseñar agentes de IA que superen las auditorías de cumplimiento bancario: patrones reales, no teoría",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla que el 70% del desarrollo de agentes de IA para banca se centra en el cumplimiento normativo, no en la lógica del modelo, y expone los patrones arquitectónicos necesarios para superar auditorías, como registros inmutables, explicabilidad y puntos de control humano.",
+  "keyPoints": [
+    "El desarrollo de agentes de IA para banca requiere un 70% de trabajo en cumplimiento normativo y solo un 30% en lógica del modelo, invirtiendo meses en ajustes postdesarrollo.",
+    "Los reguladores exigen registros de auditoría inmutables que capturen cada paso del razonamiento del agente en tiempo real, no reconstruidos posteriormente a partir de logs.",
+    "Los umbrales de aprobación automática deben justificarse con evidencia de que no generan impacto dispar, y toda intervención humana requiere una justificación escrita registrada.",
+    "Los patrones de arquitectura para suscripción de préstamos se extrapolan a otros casos de uso bancario, como detección de fraude, con requisitos de latencia y auditoría diferenciados."
+  ],
+  "whyMatters": "Esta guía es fundamental para el sector fintech y bancario, ya que reduce drásticamente los plazos de aprobación de proyectos de IA que actualmente se alargan por fallos en cumplimiento normativo. Los patrones descritos no son teóricos, sino que responden a requisitos regulatorios concretos como la FCRA, ECOA y estándares de la FCA, por lo que su aplicación evita multas y bloqueos de proyectos. A largo plazo, sentará las bases para escalar la adopción de agentes de IA en banca de forma segura, sin sacrificar la eficiencia operativa ni la protección al consumidor.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb8h6krayadem7f1kyol7.png",
+      "alt": "Portada del artículo sobre arquitectura de agentes de IA para cumplimiento bancario",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por Dextra Labs"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesIA",
+    "#CumplimientoBancario",
+    "#ArquitecturaIA",
+    "#Fintech",
+    "#RegulacionIA"
+  ],
+  "fullArticle": "Desarrollar agentes de inteligencia artificial para el sector bancario es un ejercicio que dista mucho de lo que muestran las demostraciones: solo el 30% del trabajo corresponde a la programación de la lógica del modelo, mientras que el 70% restante se dedica a la 'plomería' de cumplimiento normativo, un proceso que puede alargar los proyectos hasta dos meses después de terminar la lógica base. Esta realidad, que sorprende a muchos equipos de ingeniería en su primer proyecto de IA para entidades financieras, se debe a que los reguladores no aceptan respuestas opacas como 'el modelo otorgó una puntuación de 0,82', sino que exigen trazabilidad completa de cada decisión. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb8h6krayadem7f1kyol7.png]\n\nLa arquitectura que supera las auditorías de cumplimiento, detallada en la guía completa de Dextra Labs, se basa en cuatro pilares irrenunciables. El primero es un registro de auditoría inmutable que capture cada paso del razonamiento del agente en tiempo real, a medida que se produce, y no reconstruido posteriormente a partir de logs, una práctica que los auditores detectan con facilidad. El segundo es un sistema de umbrales de riesgo que solo aprueba automáticamente las solicitudes de muy bajo riesgo, escalando el resto de los casos (incluyendo la zona ambigua de riesgo medio) a un revisor humano, un diseño que no es conservador por capricho, sino que responde a lo que esperan los reguladores y protege a la entidad de decisiones autónomas en casos de alto impacto.\n\nEl tercer pilar es el punto de control humano ('human-in-the-loop'), que debe proporcionar al revisor toda la información necesaria para tomar una decisión informada, no solo un botón para aprobar o rechazar sin contexto. Además, la función de anulación de la decisión del agente debe requerir una justificación escrita obligatoria, para evitar las aprobaciones de trámite ('rubber-stamp') que los examinadores regulatorios identifican como fallo de supervisión. El cuarto pilar es el manejo seguro de los datos financieros que se introducen en los prompts de los modelos de lenguaje, especialmente en bancos transfronterizos con requisitos de residencia de datos: la llamada al modelo debe realizarse en la región correspondiente o mediante un modelo alojado localmente, una decisión arquitectónica que debe tomarse antes de escribir cualquier código de agente, no como un parámetro de configuración añadido a posteriori.\n\nAdemás de estos pilares, la arquitectura debe garantizar la integridad de los registros de decisión, que no pueden modificarse después de su creación, y la completitud de la cadena de razonamiento, que debe incluir todos los pasos que influyeron en el resultado, no solo los extraídos de logs de aplicación después del hecho. Los reguladores también exigen que la entidad pueda justificar con evidencia la posición del umbral de aprobación automática, demostrando que no genera impacto dispar en grupos protegidos. Estos requisitos se alinean con marcos regulatorios concretos como la FCRA, la ECOA y los estándares de préstamo de la FCA, que dan forma a todas las decisiones de diseño.\n\nSi bien los patrones descritos se extrapolan a otros casos de uso de IA bancaria, como la detección de fraude, los requisitos específicos varían de forma significativa: en este segundo caso se necesitan decisiones en milisegundos, no minutos, y registros de auditoría basados en patrones, no en documentos. Por ello, es recomendable consultar la guía de arquitectura para detección de fraude antes de diseñar cualquier sistema, ya que las decisiones tomadas para un caso de uso afectan a la capacidad de ampliar el sistema a otros flujos de trabajo sin rehacer la arquitectura completa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T20:04:11.624Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Cómo arquitecturar agentes de IA que superen auditorías bancarias",
+      "url": "https://dev.to/dextralabs/how-to-architect-ai-agents-that-pass-banking-compliance-audits-real-patterns-not-theory"
+    },
+    {
+      "title": "Guía de cumplimiento normativo para IA en servicios financieros de la FCA",
+      "url": "https://www.fca.org.uk/publication/guidance/ai-financial-services.htm"
+    },
+    {
+      "title": "Información sobre la Ley de Informe de Crédito Justo (FCRA) en EE.UU.",
+      "url": "https://www.consumerfinance.gov/compliance/compliance-resources/mortgage-compliance-resources/fair-credit-reporting-act-fcra-resources/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Proporción de trabajo en cumplimiento vs lógica de modelo",
+      "value": "70% cumplimiento, 30% lógica de modelo"
+    },
+    {
+      "label": "Tiempo de desarrollo de lógica de agente de suscripción",
+      "value": "1 semana"
+    },
+    {
+      "label": "Tiempo adicional en ajustes de cumplimiento",
+      "value": "2 meses"
+    },
+    {
+      "label": "Requisito de latencia para detección de fraude bancaria",
+      "value": "milisegundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

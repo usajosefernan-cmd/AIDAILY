@@ -1,0 +1,77 @@
+{
+  "id": "37becec4386f824707619ccd94ae159ec799c1d28185c159a382aa8ced9586c6",
+  "title": "Cómo construí una app de valoración facial que funciona solo en el navegador: Next.js + MediaPipe, sin subir imágenes ni pagar por escaneos",
+  "summary": "Un ingeniero crea PSLRate, una herramienta de puntuación facial que se ejecuta íntegramente en el cliente mediante Next.js y MediaPipe, evitando cargas de datos y costos por escaneo.",
+  "url": "https://dev.to/alexlee_dev/how-i-built-a-browser-only-face-rating-app-with-nextjs-mediapipe-no-upload-0-per-scan-157m",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T13:42:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fivovhwel60eor2zxy302.png",
+  "imageAlt": "Cómo construí una app de valoración facial que funciona solo en el navegador: Next.js + MediaPipe, sin subir imágenes ni pagar por escaneos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un ingeniero crea PSLRate, una herramienta de puntuación facial que se ejecuta íntegramente en el cliente mediante Next.js y MediaPipe, evitando cargas de datos y costos por escaneo.",
+  "keyPoints": [
+    "La puntuación facial se calcula únicamente con geometría, usando 478 puntos de referencia 3D extraídos por MediaPipe sin enviar datos al servidor.",
+    "El algoritmo combina métricas de simetría, tercios faciales, quintos, inclinación canthal y relación ancho-altura para generar una puntuación de 0 a 10.",
+    "La capa gratuita es 100% libre de costos, mientras que la versión premium envía la foto a un modelo LLM y devuelve un análisis textual, cobrando por uso.",
+    "El mismo algoritmo garantiza reproducibilidad: la misma foto siempre devuelve la misma puntuación, lo que aumenta la confianza del usuario."
+  ],
+  "whyMatters": "Esta innovación demuestra que la inteligencia artificial puede ser accesible y privada, evitando la dependencia de servidores externos y la exposición de datos sensibles. Al eliminar costes por escaneo, democratiza la tecnología de análisis facial, lo que puede influir en la adopción de herramientas de autoevaluación y en la regulación de privacidad en la web. Los desarrolladores y usuarios que buscan soluciones sin comprometer la seguridad encontrarán en PSLRate un modelo replicable y escalable.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fivovhwel60eor2zxy302.png",
+      "alt": "Pantalla de PSLRate mostrando la puntuación facial calculada en el navegador",
+      "caption": "El algoritmo de PSLRate procesa 478 puntos de referencia 3D en tiempo real sin enviar datos al servidor."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1neu3m7746x5tkq0nqd2.png",
+      "alt": "Captura de pantalla de la interfaz de PSLRate con la puntuación y recomendaciones",
+      "caption": "Interfaz de usuario que muestra la puntuación facial y las sugerencias de mejora generadas por el modelo LLM."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#NextJS",
+    "#MediaPipe",
+    "#IA"
+  ],
+  "fullArticle": "En el mundo de la valoración facial, la mayoría de las herramientas dependen de subir selfies a un servidor o de pagar por cada consulta a una API de visión artificial. El autor de PSLRate decidió romper con esa práctica, creando una aplicación que computa la puntuación facial exclusivamente en el navegador, sin subir datos ni incurrir en costos por escaneo. La clave está en la geometría: la relación de proporciones faciales, la simetría y la regla de los tercios se pueden medir con simples operaciones matemáticas sobre coordenadas de puntos de referencia.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fivovhwel60eor2zxy302.png]\n\nEl motor de MediaPipe Tasks Vision entrega 478 puntos 3D por rostro a través de WebGL, lo que permite al cliente procesar la imagen directamente en el canvas sin ninguna petición POST. Los algoritmos de puntuación se basan en métricas como la simetría (reflejo de los puntos laterales), los tercios faciales, los quintos (ancho de la cara en relación a la distancia entre ojos), la inclinación canthal y la relación ancho-altura facial (FWHR). Cada métrica se normaliza, pondera y escala a un rango de 0 a 10.\n\nPara la versión premium, PSLRate envía la foto a un modelo de lenguaje multimodal (LLM) una sola vez, recibiendo un análisis textual que incluye arquetipo, notas de personalidad y recomendaciones de mejora estética. Este paso es el único que sale del dispositivo y se cubre mediante créditos, manteniendo el resto de la experiencia libre y privada.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1neu3m7746x5tkq0nqd2.png]\n\nEl enfoque de PSLRate no solo reduce costes y protege la privacidad, sino que también ofrece una experiencia de usuario coherente y reproducible. Al eliminar la variabilidad de los modelos de visión, la puntuación se vuelve una métrica fiable que puede usarse para comparaciones a largo plazo, lo que abre nuevas posibilidades para la investigación de la percepción facial y la industria del bienestar digital.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T14:08:54.763Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/yourusername/how-i-built-a-browser-only-face-rating-app-with-next-js-media-pipe-no-upload-0-per-scan"
+    },
+    {
+      "title": "Documentación de MediaPipe Tasks Vision",
+      "url": "https://developers.google.com/mediapipe/solutions/v4/vision"
+    },
+    {
+      "title": "Guía de Next.js",
+      "url": "https://nextjs.org/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Puntos de referencia 3D por rostro",
+      "value": "478"
+    },
+    {
+      "label": "Escala de puntuación",
+      "value": "0–10"
+    },
+    {
+      "label": "Costo por escaneo",
+      "value": "$0"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

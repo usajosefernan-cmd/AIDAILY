@@ -1,0 +1,77 @@
+{
+  "id": "850d83d5218e00c8139432e99a8e7caf5b399c1a59a50c5f3d644962ef1c6059",
+  "title": "GitLost: la vulnerabilidad que expone repositorios privados de GitHub sin necesidad de contraseña",
+  "summary": "Una falla en los flujos de trabajo agenticos de GitHub permite a atacantes no autenticados extraer datos de repositorios privados mediante Issues en repositorios públicos.",
+  "url": "https://www.darkreading.com/cyber-risk/gitlost-leaks-private-data-github-agentic-workflows",
+  "source": "Dark Reading",
+  "sourceUrl": "https://www.darkreading.com/rss.xml",
+  "publishedAt": "2026-07-07T15:24:30.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "GitLost: la vulnerabilidad que expone repositorios privados de GitHub sin necesidad de contraseña",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una falla en los flujos de trabajo agenticos de GitHub permite a atacantes no autenticados extraer datos de repositorios privados mediante Issues en repositorios públicos.",
+  "keyPoints": [
+    "La vulnerabilidad GitLost explota los flujos de trabajo agenticos de GitHub, permitiendo crear Issues en repositorios públicos para filtrar datos de repositorios privados de la misma organización.",
+    "El ataque no requiere autenticación ni interacción del usuario, ya que el sistema procesa automáticamente el Issue y devuelve información sensible.",
+    "Se exponen datos como código fuente, credenciales, claves API y otra información confidencial almacenada en repositorios privados.",
+    "GitHub está desarrollando un parche, pero se recomienda a las organizaciones revisar sus configuraciones de flujos de trabajo y restringir accesos."
+  ],
+  "whyMatters": "Esta falla representa una amenaza crítica para la seguridad de las organizaciones que utilizan GitHub, pues permite el acceso no autorizado a información sensible sin dejar rastro. El hecho de que no se necesite autenticación ni interacción humana amplifica el riesgo, ya que cualquier atacante puede explotarla de forma silenciosa. Su descubrimiento evidencia la importancia de auditar los flujos de trabajo automatizados y aplicar el principio de mínimo privilegio en el acceso a repositorios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+      "alt": "GitLost: la vulnerabilidad que expone repositorios privados de GitHub sin necesidad de contraseña",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#GitLost",
+    "#GitHub",
+    "#Ciberseguridad",
+    "#FiltracionDeDatos",
+    "#Vulnerabilidad"
+  ],
+  "fullArticle": "Una nueva vulnerabilidad bautizada como 'GitLost' ha puesto en jaque la seguridad de GitHub, la plataforma de alojamiento de código más utilizada del mundo. El fallo, descubierto recientemente, permite a un atacante no autenticado crear un Issue en cualquier repositorio público de una organización y, mediante un diseño defectuoso en los flujos de trabajo agenticos, extraer información de sus repositorios privados. Este mecanismo se aprovecha de la forma en que GitHub Actions procesa los eventos de Issues, otorgando un acceso implícito que debería estar restringido.\n\nEl impacto potencial es devastador: millones de empresas y desarrolladores confían en GitHub para almacenar desde código fuente hasta secretos, claves API y datos confidenciales. La falla no requiere credenciales, ni que un usuario haga clic en un enlace, ni ninguna interacción; el ataque se ejecuta de forma completamente silenciosa. Aunque GitHub ya ha sido notificado y se espera un parche inminente, las organizaciones deben actuar de inmediato revisando sus configuraciones de flujos de trabajo y limitando los permisos en repositorios públicos.\n\nEste incidente subraya una vez más los riesgos inherentes a la automatización excesiva sin controles de seguridad robustos. A medida que los flujos de trabajo se vuelven más complejos, también aumentan las superficies de ataque. Los equipos de seguridad deben priorizar la auditoría de estas automatizaciones y aplicar el principio de mínimo privilegio para mitigar futuras vulnerabilidades similares.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T04:08:35.719Z",
+  "links": [
+    {
+      "title": "Fuente original en Dark Reading",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/gitlost-flaw-leaks-private-data-from-githubs-agentic-workflows"
+    },
+    {
+      "title": "Avisos de seguridad de GitHub",
+      "url": "https://github.com/security/advisories"
+    },
+    {
+      "title": "Documentación de GitHub Actions",
+      "url": "https://docs.github.com/en/actions"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Vector de ataque",
+      "value": "GitHub Issues en repositorios públicos"
+    },
+    {
+      "label": "Autenticación requerida",
+      "value": "No"
+    },
+    {
+      "label": "Datos comprometidos",
+      "value": "Código fuente, credenciales, claves API"
+    },
+    {
+      "label": "Severidad",
+      "value": "Alta"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

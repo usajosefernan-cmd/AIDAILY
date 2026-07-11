@@ -1,0 +1,84 @@
+{
+  "id": "1128f2cee42ef249e60442d1e02505e0b9c463bac44203a2c1ec100807f22217",
+  "title": "El exportador de un clic de Google AI Studio a Antigravity, probado a fondo: esto es lo que realmente funciona",
+  "summary": "Análisis práctico de la función Exportar a Antigravity de Google AI Studio, presentada en I/O 2026, que permite trasladar prototipos de aplicaciones multiagente a un entorno de desarrollo local con un solo clic. La prueba con un proyecto real de dos agentes para generar resúmenes de investigación reveló que la exportación de archivos, secretos y acceso a Firestore funciona correctamente, pero no se transfiere el historial de conversaciones como promete la interfaz. Además, el código generado presentaba un bug preexistente por una restricción de la API de Gemini, que fue solucionado en minutos por el agente integrado de Antigravity, sin necesidad de codificación manual. El proceso completo de exportación y troubleshooting tomó aproximadamente 15 minutos.",
+  "url": "https://dev.to/gde/the-one-click-exporter-ai-studio-antigravity-probed-to-its-limits-171e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T03:33:28.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu0fyszelzmo58hb753y1.png",
+  "imageAlt": "El exportador de un clic de Google AI Studio a Antigravity, probado a fondo: esto es lo que realmente funciona",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Análisis práctico de la función Exportar a Antigravity de Google AI Studio, presentada en I/O 2026, que permite trasladar prototipos de aplicaciones multiagente a un entorno de desarrollo local con un solo clic. La prueba con un proyecto real de dos agentes para generar resúmenes de investigación reveló que la exportación de archivos, secretos y acceso a Firestore funciona correctamente, pero no se transfiere el historial de conversaciones como promete la interfaz. Además, el código generado presentaba un bug preexistente por una restricción de la API de Gemini, que fue solucionado en minutos por el agente integrado de Antigravity, sin necesidad de codificación manual. El proceso completo de exportación y troubleshooting tomó aproximadamente 15 minutos.",
+  "keyPoints": [
+    "La función Exportar a Antigravity de Google AI Studio, presentada en I/O 2026, permite transferir prototipos de aplicaciones multiagente a un espacio de trabajo local con un solo clic.",
+    "La exportación transfiere correctamente archivos, secretos y acceso a Firestore, pero no incluye el historial de conversaciones como promete el cuadro de diálogo inicial.",
+    "El prototipo probado, una aplicación de dos agentes para generar resúmenes de investigación, presentaba un bug preexistente por la combinación de búsqueda web y modo JSON forzado en Gemini.",
+    "El agente integrado de Antigravity solucionó el error en minutos, sin necesidad de codificación manual, y la aplicación funcionó correctamente tras la corrección."
+  ],
+  "whyMatters": "Esta funcionalidad supone un hito para la productividad de los equipos de desarrollo de aplicaciones de inteligencia artificial, al eliminar la barrera que suponía trasladar prototipos funcionales creados en entornos de navegador a espacios de trabajo locales listos para producción. A pesar de los fallos iniciales detectados, como la no transferencia del historial de conversaciones o la ubicación oculta de los archivos exportados, el proceso ahorra horas de trabajo manual de reescritura de código, un ahorro especialmente relevante para startups y equipos pequeños del ecosistema tecnológico español y europeo. Además, la capacidad del agente integrado de Antigravity para detectar y solucionar bugs preexistentes en el código generado marca un precedente en la automatización de tareas de depuración, un avance que redefine los flujos de trabajo de desarrollo de software basado en IA.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu0fyszelzmo58hb753y1.png",
+      "alt": "Portada del artículo que analiza la función de exportación de Google AI Studio a Antigravity",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftlo9z890n0co9lfwr9ue.png",
+      "alt": "Captura de pantalla del proceso de exportación de un proyecto desde Google AI Studio a Antigravity",
+      "caption": "Proceso de exportación de un proyecto multiagente desde la interfaz de Google AI Studio"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fj5w9njukqri6xnc92ivw.png",
+      "alt": "Captura de pantalla de la importación del proyecto exportado en el entorno de Antigravity",
+      "caption": "Vista del proyecto importado en el entorno de desarrollo de Antigravity"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GoogleAIStudio",
+    "#Antigravity",
+    "#DesarrolloIA",
+    "#HerramientasDev"
+  ],
+  "fullArticle": "En el marco de Google I/O 2026, la empresa presentó la función Exportar a Antigravity, una herramienta diseñada para solucionar una de las principales limitaciones de Google AI Studio: la imposibilidad de trasladar prototipos de aplicaciones multiagente creados en el entorno de navegador a espacios de trabajo locales listos para producción, con un solo clic y conservando todo el contexto del proyecto. El periodista especializado en herramientas de desarrollo de IA puso a prueba esta funcionalidad con un prototipo real de dos agentes, bautizado como Research Digest, diseñado para generar resúmenes de investigación a partir de búsquedas web fundamentadas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu0fyszelzmo58hb753y1.png]\n\nEl proceso de exportación, accesible desde la pestaña de código de AI Studio, prometía transferir todos los archivos del proyecto, el historial de conversaciones y los secretos configurados, como las claves de API. Sin embargo, la prueba reveló varias discrepancias entre lo prometido y la realidad: el historial de conversaciones no se transfirió al entorno de Antigravity, y la ruta de acceso a los archivos exportados no se mostró en ningún momento, obligando al usuario a buscar manualmente la carpeta oculta ~/antigravity/ en su sistema para acceder al código.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftlo9z890n0co9lfwr9ue.png]\n\nUna vez localizado el proyecto y ejecutado el proceso de instalación y arranque local (npm install, npm run dev), la aplicación se conectó correctamente a Cloud Firestore, pero falló al intentar generar un resumen. El error, preexistente en el código generado por AI Studio, se debía a una restricción de la API de Gemini que impide combinar el uso de herramientas de búsqueda web con la salida en modo JSON forzado en una misma llamada. Afortunadamente, el agente integrado en el entorno de Antigravity analizó los archivos del proyecto, identificó el error y propuso una solución en forma de diff de dos archivos, que el usuario solo tuvo que aprobar para que la aplicación funcionara correctamente: el primer agente devolvía texto plano en lugar de JSON, y el segundo agente se encargaba de parsearlo para generar el resumen estructurado con citas, que se guardaba correctamente en Firestore.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fj5w9njukqri6xnc92ivw.png]\n\nEl veredicto final es que la función de exportación cumple su promesa en los aspectos más críticos: la transferencia de archivos, secretos y la configuración de servicios en la nube como Firestore funcionan sin necesidad de configuración adicional. El tiempo total de troubleshooting tras la exportación fue de aproximadamente 15 minutos, dedicados principalmente a localizar los archivos y solucionar el bug preexistente, sin tener que luchar contra errores en el propio proceso de migración. Para los equipos de desarrollo de aplicaciones de IA en España y el resto de Europa, esta herramienta supone una reducción muy significativa de la fricción para pasar de prototipos funcionales a productos listos para su despliegue, acelerando los ciclos de innovación en un sector en crecimiento exponencial.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T03:45:33.551Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Google AI Studio",
+      "url": "https://ai.google.dev/studio"
+    },
+    {
+      "title": "Sitio oficial de Antigravity, entorno de desarrollo para proyectos de IA",
+      "url": "https://antigravity.dev"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de lanzamiento de la función Exportar a Antigravity",
+      "value": "2026"
+    },
+    {
+      "label": "Tiempo total de troubleshooting tras la exportación",
+      "value": "15 minutos aproximadamente"
+    },
+    {
+      "label": "Número de archivos modificados para solucionar el bug",
+      "value": "2 archivos"
+    },
+    {
+      "label": "Líneas de código cambiadas en la corrección del bug",
+      "value": "+59 añadidas, -53 eliminadas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

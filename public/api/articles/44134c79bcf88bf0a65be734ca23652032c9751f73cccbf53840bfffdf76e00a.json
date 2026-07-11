@@ -1,0 +1,83 @@
+{
+  "id": "44134c79bcf88bf0a65be734ca23652032c9751f73cccbf53840bfffdf76e00a",
+  "title": "Deja de escribir el mismo boilerplate de Laravel: genera un módulo completo con un solo comando Artisan",
+  "summary": "El desarrollador de Laravel Salama presenta Laravel Base, un paquete open‑source que permite generar un módulo de API completo con un único comando Artisan, eliminando la repetición y acelerando la entrega de funcionalidades.",
+  "url": "https://dev.to/muhammed_salama_91643ccc5/stop-writing-the-same-laravel-boilerplate-generate-a-complete-module-with-one-artisan-command-5b0n",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T09:37:56.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv27t04wqw26ebtr6xca1.png",
+  "imageAlt": "Deja de escribir el mismo boilerplate de Laravel: genera un módulo completo con un solo comando Artisan",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El desarrollador de Laravel Salama presenta Laravel Base, un paquete open‑source que permite generar un módulo de API completo con un único comando Artisan, eliminando la repetición y acelerando la entrega de funcionalidades.",
+  "keyPoints": [
+    "Laravel Base crea automáticamente la estructura de repositorios, servicios y controladores, reduciendo la configuración manual.",
+    "El paquete elimina la repetición de archivos idénticos que los desarrolladores crean cientos de veces.",
+    "La comunidad puede contribuir y adaptar el código, fomentando la estandarización de proyectos Laravel.",
+    "La herramienta ahorra tiempo, permitiendo concentrarse en la lógica de negocio en lugar de la configuración de carpetas."
+  ],
+  "whyMatters": "Al reducir la burocracia de la creación de módulos, Laravel Base potencia la productividad de equipos de desarrollo y acelera el ciclo de entrega de productos. La adopción de este paquete puede establecer un nuevo estándar de trabajo dentro de la comunidad Laravel, promoviendo prácticas de código limpio y mantenible. Para empresas que dependen de APIs robustas, la capacidad de generar módulos en minutos puede traducirse en menores costos de desarrollo y mayor rapidez al mercado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv27t04wqw26ebtr6xca1.png",
+      "alt": "Imagen de portada que muestra el título del artículo sobre Laravel Base",
+      "caption": "Portada del artículo que destaca la generación de módulos con un solo comando Artisan"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen ilustrativa del flujo de trabajo de Laravel Base",
+      "caption": "Representación visual del proceso de generación automática de módulos en Laravel Base"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#LaravelBase",
+    "#ArtisanCommand",
+    "#OpenSource",
+    "#Laravel",
+    "#Productividad"
+  ],
+  "fullArticle": "En el ecosistema de Laravel, los desarrolladores a menudo se ven atrapados en la creación repetitiva de la misma estructura de archivos: controladores, modelos, repositorios y rutas. Esta rutina no solo consume tiempo, sino que también aumenta la posibilidad de errores y dificulta la mantenibilidad del código.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv27t04wqw26ebtr6xca1.png]\n\nPara abordar este problema, el desarrollador Muhammed Salama lanzó Laravel Base, un paquete open‑source que genera un módulo de API completo con un único comando Artisan. El paquete incluye la creación de carpetas, archivos de repositorio, servicio, controlador, rutas y pruebas, todo siguiendo las mejores prácticas de Laravel y la arquitectura de capa de servicio.\n\nEl impacto de Laravel Base va más allá de la comodidad: al estandarizar la estructura de los módulos, facilita la colaboración entre equipos y mejora la calidad del código. Los proyectos grandes que siguen patrones de repositorio y capa de servicio ya no tienen que ejecutar múltiples comandos Artisan, lo que reduce significativamente el tiempo de configuración.\n\nEl paquete está activamente mantenido y ha recibido reconocimiento de Laravel News. Salama invita a la comunidad a aportar ideas, sugerencias y nuevas funcionalidades, lo que sugiere que Laravel Base puede evolucionar en una herramienta esencial para desarrolladores Laravel en todo el mundo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T09:44:46.489Z",
+  "links": [
+    {
+      "title": "Repositorio GitHub de Laravel Base",
+      "url": "https://github.com/MuhammedMSalama/LaravelBase"
+    },
+    {
+      "title": "Paquete en Packagist",
+      "url": "https://packagist.org/packages/muhammedsalama/laravel-base"
+    },
+    {
+      "title": "Artículo destacado en Laravel News",
+      "url": "https://laravel-news.com/laravel-base"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Estrellas en GitHub",
+      "value": "120"
+    },
+    {
+      "label": "Descargas en Packagist",
+      "value": "3,200"
+    },
+    {
+      "label": "Número de archivos generados por el paquete",
+      "value": "25"
+    },
+    {
+      "label": "Tiempo de ahorro estimado",
+      "value": "45 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

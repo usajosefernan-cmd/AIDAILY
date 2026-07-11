@@ -1,0 +1,78 @@
+{
+  "id": "316fbd16fcbe5e7129f9c8e7245a6de10cda1dbe01b2a5f45a35c46d84a0df0f",
+  "title": "Lo que aprendimos al auditar 8.764 servidores MCP: gVisor vs Firecracker para el sandboxing de agentes de IA",
+  "summary": "MarketNow, marketplace de servidores MCP auditados, compartió los resultados de probar gVisor en producción como capa de aislamiento para agentes de IA, tras auditar más de 8.700 servidores, confirmando hallazgos teóricos y detectando errores comunes en su implementación.",
+  "url": "https://dev.to/edison_flores_6d2cd381b13/response-to-gvisor-vs-firecracker-for-ai-agent-sandboxing-what-we-learned-auditing-8764-mcp-4p05",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-07T23:44:38.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiporxa4dvaikx3d11kck.png",
+  "imageAlt": "Lo que aprendimos al auditar 8.764 servidores MCP: gVisor vs Firecracker para el sandboxing de agentes de IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "MarketNow, marketplace de servidores MCP auditados, compartió los resultados de probar gVisor en producción como capa de aislamiento para agentes de IA, tras auditar más de 8.700 servidores, confirmando hallazgos teóricos y detectando errores comunes en su implementación.",
+  "keyPoints": [
+    "MarketNow utiliza gVisor (runsc) como capa L2.5 de aislamiento en su marketplace de servidores MCP auditados en producción.",
+    "El 50% de los servidores MCP fallan al iniciarse en gVisor por syscalls no implementados, lo que requiere perfiles seccomp de respaldo estrictos.",
+    "Se desaconseja usar --network none en docker build, ya que bloquea npm install, aplicando el aislamiento de red solo en tiempo de ejecución.",
+    "Firecracker se implementará en el futuro por su mayor rendimiento, pero requiere acceso KVM no disponible en los runners de GitHub Actions."
+  ],
+  "whyMatters": "La seguridad de los agentes de IA es un pilar crítico a medida que estas herramientas se masifican en entornos productivos, y estos hallazgos ofrecen guías prácticas basadas en datos reales para desarrolladores que implementan medidas de aislamiento. La auditoría de más de 8.700 servidores MCP permite identificar errores comunes, como la aplicación incorrecta de aislamiento de red en fases de construcción de imágenes, que pueden comprometer la funcionalidad de los servicios. Además, la comparación entre gVisor y Firecracker aporta criterios claros para elegir la herramienta de sandboxing según la infraestructura disponible, acelerando la adopción segura de estándares MCP en proyectos de todo el mundo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiporxa4dvaikx3d11kck.png",
+      "alt": "Imagen de portada del artículo que responde al análisis comparativo de gVisor y Firecracker para sandboxing de servidores MCP",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el equipo de MarketNow"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de la comunidad de desarrolladores DEV Community, fuente original del análisis comparativo",
+      "caption": "Logotipo de DEV Community, plataforma donde se publicó el artículo original sobre gVisor vs Firecracker"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#GVisor",
+    "#Firecracker",
+    "#MCPServers",
+    "#SeguridadIA"
+  ],
+  "fullArticle": "El equipo de MarketNow, el marketplace especializado en servidores MCP auditados, compartió los resultados de su experiencia implementando gVisor en producción como capa de aislamiento L2.5 para agentes de IA, en respuesta al análisis comparativo publicado por el desarrollador chunxiaoxx sobre gVisor y Firecracker. La compañía confirmó la mayoría de los planteamientos teóricos del artículo original, pero también detectó errores comunes en la implementación de estas herramientas de sandboxing que pueden afectar la funcionalidad de los servidores. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fiporxa4dvaikx3d11kck.png] Entre los hallazgos más relevantes destaca que el 50% de los servidores MCP auditados (8.764 en total) fallan al iniciarse en gVisor por utilizar syscalls que la herramienta no implementa, una medida de seguridad intencionada que requiere complementarse con perfiles seccomp estrictos como capa de respaldo. El equipo también aclaró que no se debe aplicar la bandera --network none en la fase de docker build, ya que bloquea el acceso de npm install al registro npmjs.org, recomendando aplicar el aislamiento de red exclusivamente en el tiempo de ejecución de los contenedores. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png] Respecto a la elección entre ambas herramientas, MarketNow planea adoptar Firecracker en el futuro por su mayor rendimiento y aislamiento a nivel de hipervisor, aunque su implementación se ve limitada por la necesidad de acceso KVM, un requisito que no está disponible en los runners de GitHub Actions, por lo que deberán migrar a runners autoalojados en AWS, la misma infraestructura que usa AWS Lambda y Fargate. La metodología completa de auditoría está disponible de forma pública en el sitio de MarketNow, y cualquier desarrollador puede solicitar la auditoría de su servidor MCP abriendo una incidencia en su repositorio.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T23:58:35.052Z",
+  "links": [
+    {
+      "title": "Metodología completa de auditoría de servidores MCP de MarketNow",
+      "url": "https://marketnow.site/security"
+    },
+    {
+      "title": "Artículo original: gVisor vs Firecracker para sandboxing de agentes de IA",
+      "url": "https://dev.to/chunxiaoxx/mcp-security-patterns-2026-gvisor-vs-firecracker-for-ai-agent-sandboxing"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Servidores MCP auditados",
+      "value": "8.764"
+    },
+    {
+      "label": "Servidores que superaron el sandbox gVisor",
+      "value": "206"
+    },
+    {
+      "label": "Porcentaje de servidores que fallan en gVisor por syscalls no soportados",
+      "value": "50%"
+    },
+    {
+      "label": "Capa de aislamiento utilizada por MarketNow",
+      "value": "L2.5 con gVisor (runsc)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

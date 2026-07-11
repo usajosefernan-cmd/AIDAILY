@@ -1,0 +1,77 @@
+{
+  "id": "02ab05faa1012a768d84821501a56e3fcbcc488381e2222efb156cac9397d2b7",
+  "title": "Airbnb desvela el secreto de su configuración dinámica en Kubernetes: el sidecar Sitar-agent que escala a decenas de miles de pods",
+  "summary": "Airbnb ha compartido los detalles técnicos de Sitar-agent, un sidecar de Kubernetes que distribuye actualizaciones de configuración dinámica a más de 10.000 pods, permitiendo cambios en minutos sin necesidad de redesplegar servicios.",
+  "url": "https://www.infoq.com/news/2026/07/sitar-agent-sidecar-config",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-08T14:25:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/sitar-agent-sidecar-config/en/resources/1airbnbsidecar-1782237201592.jpeg",
+  "imageAlt": "Airbnb desvela el secreto de su configuración dinámica en Kubernetes: el sidecar Sitar-agent que escala a decenas de miles de pods",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Airbnb ha compartido los detalles técnicos de Sitar-agent, un sidecar de Kubernetes que distribuye actualizaciones de configuración dinámica a más de 10.000 pods, permitiendo cambios en minutos sin necesidad de redesplegar servicios.",
+  "keyPoints": [
+    "Sitar-agent es un sidecar de Kubernetes que distribuye configuraciones dinámicas a decenas de miles de pods, procesando cambios varias veces por minuto.",
+    "La reescritura en Java, el arranque por snapshots en Amazon S3 y la migración de Sparkey a SQLite mejoraron su fiabilidad y rendimiento de inicio.",
+    "El sidecar sirve configuración localmente mediante sistema de archivos compartido y caché en memoria, eliminando dependencia de infraestructura centralizada.",
+    "Airbnb optó por una arquitectura de sidecar en lugar de librerías embebidas para simplificar operaciones y garantizar consistencia entre servicios en Java, Python, Go y Ruby."
+  ],
+  "whyMatters": "Esta arquitectura supone un hito en la gestión de microservicios a escala, al permitir a Airbnb modificar el comportamiento de sus servicios en tiempo real sin interrumpir operaciones ni realizar costosos redesplegues. Su diseño reduce la dependencia de infraestructura centralizada, aumentando la resiliencia operativa y la velocidad de despliegue de innovaciones. Para el sector tecnológico, este caso de uso ofrece un modelo replicable para empresas con flotas de microservicios masivas que necesitan actualizaciones de configuración rápidas y fiables.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/sitar-agent-sidecar-config/en/resources/1airbnbsidecar-1782237201592.jpeg",
+      "alt": "Diagrama de la arquitectura del sidecar Sitar-agent de Airbnb para Kubernetes",
+      "caption": "Arquitectura del sistema de entrega de configuración Sitar desarrollado por Airbnb"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Airbnb",
+    "#Kubernetes",
+    "#SitarAgent",
+    "#ConfiguracionDinamica",
+    "#Microservicios"
+  ],
+  "fullArticle": "Airbnb ha hecho pública la arquitectura de Sitar-agent, un sidecar diseñado para gestionar la configuración dinámica de sus más de 10.000 pods de Kubernetes, un reto mayúsculo para una empresa con cientos de microservicios que necesitan actualizaciones frecuentes sin interrumpir el servicio. El sistema, parte de la plataforma interna Sitar, permite a los ingenieros modificar el comportamiento de las aplicaciones mediante cambios de configuración en lugar de redesplegar servicios completos, reduciendo el tiempo de implementación de innovaciones de horas a minutos. La última versión del agente, reescrita en Java, incorpora un flujo de arranque basado en snapshots almacenados en Amazon S3, lo que permite que los nuevos pods se inicien incluso cuando el servicio de configuración centralizado no está disponible, garantizando la continuidad operativa. [MULTIMEDIA: https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/sitar-agent-sidecar-config/en/resources/1airbnbsidecar-1782237201592.jpeg] El equipo de ingeniería también migró el almacén de datos local de Sparkey a SQLite, tras evaluar RocksDB, optando por esta solución por su modelo de concurrencia, simplicidad operativa y soporte para múltiples lenguajes de programación. Airbnb decidió mantener una arquitectura de sidecar en lugar de implementar la lógica de configuración en librerías embebidas en cada servicio, una decisión que simplifica las operaciones, evita duplicación de código y garantiza un comportamiento consistente entre sus servicios escritos en Java, Python, Go, TypeScript y Ruby. El modelo de distribución basado en consultas periódicas cada 10 segundos, combinado con caché en el lado del servidor y seguimiento de cambios incrementales, reduce la carga sobre el backend y garantiza tiempos de propagación de actualizaciones adecuados para flujos de gestión operativa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T14:44:44.101Z",
+  "links": [
+    {
+      "title": "Artículo original en InfoQ sobre la arquitectura de Sitar-agent",
+      "url": "https://www.infoq.com/news/2026/07/sitar-agent-sidecar-config/"
+    },
+    {
+      "title": "Blog oficial de ingeniería de Airbnb",
+      "url": "https://medium.com/airbnb-engineering/"
+    },
+    {
+      "title": "Documentación oficial de Kubernetes sobre contenedores sidecar",
+      "url": "https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Pods de Kubernetes soportados",
+      "value": "Decenas de miles de pods"
+    },
+    {
+      "label": "Frecuencia de actualizaciones de configuración",
+      "value": "Varias veces por minuto"
+    },
+    {
+      "label": "Tiempo máximo de propagación de cambios",
+      "value": "Decenas de segundos"
+    },
+    {
+      "label": "Intervalo de consulta al backend",
+      "value": "Aproximadamente 10 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,73 @@
+{
+  "id": "b46e909d5173e7d48bb8e8a59ae7306c6222b401e7179b55cac3c4a3c6dd735d",
+  "title": "Ingeniería por 'resentimiento': la nueva filosofía que redefine la seguridad en la nube para la era de la IA nativa",
+  "summary": "En un episodio de podcast de InfoQ, Alex Zenla, CTO y cofundadora de Edera, presenta la 'ingeniería impulsada por el resentimiento' como enfoque para construir software que resuelva problemas técnicos reales, criticando la fragilidad de la pila nativa de nube actual y proponiendo un marco pragmático para ingenieros en la era de la IA nativa.",
+  "url": "https://www.infoq.com/podcasts/new-blueprint-cloud-security/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-06T11:00:00.000Z",
+  "imageUrl": "https://res.infoq.com/podcasts/natural-evolution-cloud-native/en/mediumimage/adam-wiggings-interviewee-1782207787976.jpg",
+  "imageAlt": "Ingeniería por 'resentimiento': la nueva filosofía que redefine la seguridad en la nube para la era de la IA nativa",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En un episodio de podcast de InfoQ, Alex Zenla, CTO y cofundadora de Edera, presenta la 'ingeniería impulsada por el resentimiento' como enfoque para construir software que resuelva problemas técnicos reales, criticando la fragilidad de la pila nativa de nube actual y proponiendo un marco pragmático para ingenieros en la era de la IA nativa.",
+  "keyPoints": [
+    "Alex Zenla promueve la 'ingeniería por resentimiento', que consiste en construir software para solucionar dolores técnicos reales en lugar de aceptar abstracciones defectuosas sin cuestionar.",
+    "La pila nativa de nube actual es frágil, con riesgos de seguridad en núcleos Linux multitenant e ineficiencia al reutilizar GPUs de consumo para cargas de trabajo de IA.",
+    "Zenla propone tratar a los LLM como asistentes simbióticos para el aprendizaje profundo, no como reemplazo de la experiencia a nivel de sistema.",
+    "Edera, la empresa cofundada por Zenla, desarrolla tecnología de zonas para aislar cargas de trabajo en máquinas virtuales seguras, enfocada en necesidades empresariales y alto rendimiento."
+  ],
+  "whyMatters": "Este enfoque representa un cambio de paradigma en el desarrollo de software, alejándose de la complacencia con soluciones imperfectas para priorizar la resolución de problemas estructurales. En un momento en que la seguridad en la nube y la eficiencia de las cargas de trabajo de IA son críticas para la competitividad empresarial, esta filosofía puede impulsar la creación de herramientas más robustas y fiables. Además, redefine el rol de los ingenieros en la era de la IA nativa, evitando la dependencia excesiva de los modelos de lenguaje y manteniendo la experiencia técnica fundamental como pilar insustituible.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://res.infoq.com/podcasts/natural-evolution-cloud-native/en/mediumimage/adam-wiggings-interviewee-1782207787976.jpg",
+      "alt": "Thumbnail del podcast de InfoQ sobre ingeniería por resentimiento y seguridad en la nube para la era de la IA nativa",
+      "caption": "Imagen promocional del episodio de podcast de InfoQ en el que participa Alex Zenla, CTO de Edera"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IngenieriaPorResentimiento",
+    "#SeguridadEnLaNube",
+    "#IANativa",
+    "#Edera",
+    "#AlexZenla"
+  ],
+  "fullArticle": "El último episodio del podcast de InfoQ, presentado por Olimpiu Pop, trae una propuesta disruptiva para el sector de la seguridad en la nube y el desarrollo de software en la era de la inteligencia artificial nativa: la 'ingeniería impulsada por el resentimiento', una filosofía defendida a capa y espada por Alex Zenla, CTO y cofundadora de Edera. Zenla, con más de 12 años de experiencia en desarrollo de software y una trayectoria que comenzó a los 14 años en el ámbito del Internet de las Cosas, critica la actitud 'laissez-faire' predominante en la industria, que acepta abstracciones defectuosas y arquitecturas frágiles sin cuestionarlas. [MULTIMEDIA: https://res.infoq.com/podcasts/natural-evolution-cloud-native/en/mediumimage/adam-wiggings-interviewee-1782207787976.jpg]\n\nLa base de esta filosofía es simple pero poderosa: en lugar de resignarse a herramientas o sistemas que no funcionan correctamente, los desarrolladores deben dejar que la frustración por los problemas no resueltos impulse la creación de soluciones genuinas. Zenla pone como ejemplo el núcleo Linux, ampliamente utilizado en entornos de nube nativa pero con fallos estructurales y casos límite que la industria acepta como inevitables. 'No se trata de promover el síndrome de no inventado aquí, sino de reconocer que cuando algo no funciona, no tienes por qué adaptarte a su funcionamiento defectuoso', explica la ingeniera, quien admite que cuando comenzó a trabajar en virtualización y desarrollo a nivel de kernel no tenía experiencia previa, pero la necesidad de resolver problemas la impulsó a aprender en profundidad.\n\nUno de los puntos más críticos que aborda Zenla en la charla es la fragilidad de la pila nativa de nube actual. Los núcleos Linux multitenant presentan riesgos de seguridad significativos, ya que un fallo en un tenant puede comprometer a todos los demás que comparten el mismo núcleo. A esto se suma la ineficiencia de reutilizar GPUs de consumo, diseñadas para videojuegos, para cargas de trabajo de inteligencia artificial, lo que genera cuellos de botella y costes innecesarios para las empresas. Frente a estos problemas, Edera, la empresa que cofundó junto a Ariadne Conill (creadora de Wolfi y mantenedora de Alpine Linux), ha desarrollado una tecnología basada en el concepto de 'zonas': entornos aislados dentro de máquinas virtuales seguras que permiten ejecutar contenedores y cargas de trabajo sin compartir recursos riesgosos, con un foco especial en el rendimiento y la accesibilidad para empresas.\n\nPara los ingenieros que se preparan para trabajar en la era de la IA nativa, Zenla propone un marco pragmático que aleja el miedo a la obsolescencia: los grandes modelos de lenguaje (LLM) deben ser tratados como asistentes simbióticos para tareas de aprendizaje profundo, no como reemplazo de la experiencia técnica a nivel de sistema. 'Tu conocimiento de la arquitectura subyacente, de cómo funciona el kernel o la virtualización, es insustituible. Los LLM pueden acelerar tareas, pero no pueden sustituir la capacidad de resolver problemas estructurales que solo se adquiere con experiencia práctica', sentencia. Esta postura supone un llamamiento a la industria para no descuidar los fundamentos de la ingeniería de software en medio de la fiebre por la inteligencia artificial, y a construir herramientas más seguras, eficientes y centradas en resolver problemas reales en lugar de seguir modas pasajeras.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T02:43:34.499Z",
+  "links": [
+    {
+      "title": "Podcast original: Spite-Driven Engineering en InfoQ",
+      "url": "https://www.infoq.com/podcasts/spite-driven-engineering-cloud-security-ai-native-era/"
+    },
+    {
+      "title": "Sitio oficial de Edera",
+      "url": "https://edera.dev/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Años de experiencia en desarrollo de Alex Zenla",
+      "value": "12 años"
+    },
+    {
+      "label": "Edad de inicio de su carrera tecnológica",
+      "value": "14 años"
+    },
+    {
+      "label": "Años de experiencia en Internet de las Cosas antes de fundar Edera",
+      "value": "10 años"
+    },
+    {
+      "label": "Año de fundación de Edera",
+      "value": "2023"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

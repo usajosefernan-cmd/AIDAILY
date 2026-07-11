@@ -1,0 +1,77 @@
+{
+  "id": "fcb7370efe38356b06b50c574ca1ea7f4303c0e143c3acda718bf1670fec92e2",
+  "title": "Tres IAs, un solo código: así dividí el trabajo de programación entre Codex, Grok y Claude para evitar errores",
+  "summary": "El autor explica que dividió el desarrollo de una funcionalidad en tres roles asignados a tres IAs distintas: Codex genera las pruebas, Grok escribe la implementación y Claude realiza la verificación, usando TDD como interfaz de entrega. Comprueba que el flujo es viable en proyectos con pruebas estrictas que actúan como contrato, aunque aclara que no incluye evaluación de viabilidad comercial por costes, privacidad o límites de uso.",
+  "url": "https://dev.to/yang_goufang_23c7ba674984/wo-rang-san-ge-ai-ge-si-qi-zhi-xie-cheng-shi-codex-chu-ce-shi-grok-xie-shi-zuo-claude-yan-shou-4408",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T06:17:24.000Z",
+  "imageUrl": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg",
+  "imageAlt": "Tres IAs, un solo código: así dividí el trabajo de programación entre Codex, Grok y Claude para evitar errores",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor explica que dividió el desarrollo de una funcionalidad en tres roles asignados a tres IAs distintas: Codex genera las pruebas, Grok escribe la implementación y Claude realiza la verificación, usando TDD como interfaz de entrega. Comprueba que el flujo es viable en proyectos con pruebas estrictas que actúan como contrato, aunque aclara que no incluye evaluación de viabilidad comercial por costes, privacidad o límites de uso.",
+  "keyPoints": [
+    "El autor dividió el desarrollo de una funcionalidad en tres roles asignados a tres IAs: Codex crea pruebas, Grok escribe el código y Claude verifica el resultado.",
+    "El flujo funciona únicamente en proyectos con pruebas estrictas que actúan como contrato de especificación entre las etapas de desarrollo.",
+    "El principal cuello de botella no es la capacidad de los modelos, sino los detalles de integración específicos de cada lenguaje de programación.",
+    "El método no es aplicable a proyectos de especificación variable o exploratorios, donde los requisitos cambian de forma constante durante el desarrollo."
+  ],
+  "whyMatters": "Esta prueba de concepto marca un hito en la automatización de flujos de desarrollo de software, al demostrar que la especialización de roles entre agentes de IA reduce la aparición de errores al separar las etapas de diseño de pruebas, implementación y verificación. Su impacto estratégico radica en que ofrece un modelo escalable para equipos de ingeniería que buscan aumentar la productividad sin renunciar a la calidad del código, siempre que cuenten con una base de pruebas robusta. Sin embargo, también advierte sobre los riesgos de aplicar este enfoque en proyectos sin especificaciones consolidadas, donde la multiplicación de agentes podría amplificar los costes de coordinación en lugar de reducirlos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg",
+      "alt": "Portada del artículo que explica el flujo de trabajo con tres IAs para programación",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Codex",
+    "#Grok",
+    "#Claude",
+    "#DesarrolloDeSoftware",
+    "#InteligenciaArtificial"
+  ],
+  "fullArticle": "La semana pasada, un ingeniero de software decidió abandonar el flujo tradicional de usar un solo agente de codificación para todo el ciclo de desarrollo de una funcionalidad, y probó un modelo de trabajo dividido en tres roles asignados a tres modelos de IA distintos. En su experimento, utilizado el lenguaje de programación Zig, asignó a Codex la tarea de generar las pruebas unitarias, a Grok la escritura de la implementación concreta de la funcionalidad y a Claude la verificación final del código. Como interfaz de entrega entre cada etapa utilizó el ciclo de Desarrollo Orientado a Pruebas (TDD), basado en el clásico sistema de luces rojas y verdes que indica si las pruebas se superan o fallan. Después de probar dos porciones independientes de funcionalidad, el autor concluyó que el flujo es viable siempre que se cumpla un requisito indispensable: que existan pruebas estrictas que actúen como contrato de especificación entre las etapas.\n\n[MULTIMEDIA: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg]\n\nEl punto clave del experimento no es que tres agentes sean intrínsecamente mejores que uno, sino que la persona que diseña las pruebas no es la misma que escribe el código, por lo que las pruebas se convierten en una especificación independiente y la implementación en una comprobación objetiva. El autor aclara que esta es solo una prueba de viabilidad del flujo de trabajo, no una evaluación de viabilidad comercial, ya que faltaría analizar costes de tokens por uso, coste de licencias de asientos, privacidad de los datos, límites de tasa de uso y requisitos de auditoría. El principal cuello de botella que encontró no fue la capacidad de razonamiento de los modelos, sino un detalle de integración específico de Zig: el sistema de descubrimiento perezoso de archivos del lenguaje no detecta las pruebas de un archivo reexportado a menos que se fuerce su importación en el bloque de pruebas raíz, un obstáculo que retrasó el flujo más que cualquier limitación de los modelos.\n\nEl flujo solo es aplicable en proyectos que cumplan con tres condiciones: que tengan un sistema de tipado estático, un marco de pruebas estricto y funcionalidades que se puedan dividir en porciones pequeñas con aserciones claras, donde las pruebas actúen como contrato para la entrega entre agentes. Queda excluido de forma explícita para proyectos exploratorios, con especificaciones cambiantes o donde las propias pruebas son parte del diseño, ya que el flujo asume que las pruebas se pueden definir de antemano, y si los requisitos varían, la división de trabajo entre agentes amplifica los costes de coordinación en lugar de reducirlos.\n\nNo se trata de un nuevo paradigma de desarrollo, sino de separar un paso interno del flujo de un solo agente (generar pruebas y luego implementar) en un contrato externo entre agentes independientes. La ventaja principal es que los errores se detectan de forma más temprana e independiente: cualquier fallo en las pruebas diseñadas por Codex se captura en la implementación de Grok, y cualquier error en el código de Grok lo detecta Claude en la verificación. El coste del flujo es la orquestación entre los tres agentes y la necesidad de realizar una verificación real de los resultados, sin confiar ciegamente en los informes que devuelven los modelos. Para los equipos que estén valorando incorporar múltiples agentes de IA a su flujo de trabajo, el autor recomienda primero confirmar que su proyecto cuenta con la 'salud' de pruebas suficiente para que estas actúen como contrato, de lo contrario multiplicar agentes solo amplificará la falta de fiabilidad del proceso.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T06:22:34.942Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial del lenguaje de programación Zig",
+      "url": "https://ziglang.org/documentation/master/"
+    },
+    {
+      "title": "Información sobre el modelo de IA Grok de xAI",
+      "url": "https://x.ai/grok"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de agentes de IA utilizados en el flujo",
+      "value": "3"
+    },
+    {
+      "label": "Número de porciones de funcionalidad probadas por el autor",
+      "value": "2"
+    },
+    {
+      "label": "Modelo de Grok empleado en la prueba",
+      "value": "grok-composer-2.5-fast"
+    },
+    {
+      "label": "Requisito indispensable del proyecto para aplicar el flujo",
+      "value": "Contar con pruebas estrictas que actúen como contrato de especificación"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,65 @@
+{
+  "id": "d4955c53144d4d62b11e3b7609c675c3dc18a3dc38e9a3ae6cf52ea28a433720",
+  "title": "Casi publicamos 140+ estrellas en GitHub; la verdad era solo 5 y lo descubrimos gracias a un agente de verificación",
+  "summary": "El equipo de ZWISERFIT preparó una actualización de README con un conteo inflado de estrellas en GitHub. Un agente de verificación independiente detectó el error antes de la publicación, revelando que el número real era apenas cinco. La transparencia al publicar la corrección se convierte en su ventaja competitiva.",
+  "url": "https://dev.to/zwiserfit/we-nearly-published-140-github-stars-the-real-number-was-5-heres-how-we-caught-it-fde",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-03T00:09:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fitvtxj067htv3e0kedje.png",
+  "imageAlt": "Casi publicamos 140+ estrellas en GitHub; la verdad era solo 5 y lo descubrimos gracias a un agente de verificación",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El equipo de ZWISERFIT preparó una actualización de README con un conteo inflado de estrellas en GitHub. Un agente de verificación independiente detectó el error antes de la publicación, revelando que el número real era apenas cinco. La transparencia al publicar la corrección se convierte en su ventaja competitiva.",
+  "keyPoints": [
+    "El equipo de ZWISERFIT casi publicó un README afirmando 140+ estrellas en GitHub, cuando la cifra real verificable era solo 5.",
+    "El error fue detectado por un agente de verificación independiente, no por el autor del borrador, resaltando la necesidad de capas de validación automatizada.",
+    "Tras consultar la API de GitHub en los 12 repositorios de la organización, se confirmó un total de cinco estrellas, corrigiendo el dato antes de cualquier publicación externa.",
+    "La compañía decidió publicar la corrección como ejemplo de transparencia, convirtiendo su proceso de verificación en su ventaja competitiva principal."
+  ],
+  "whyMatters": "Este incidente destaca cuán frágil puede ser la confianza en los datos públicos cuando no existen mecanismos de verificación automática. Al exponer públicamente su error y su proceso de detección, ZWISERFIT establece un nuevo estándar de responsabilidad en la comunidad de código abierto. La práctica de validar métricas antes de su difusión no solo protege la reputación, sino que también crea una barrera de entrada difícil de replicar para competidores que carecen de dicha rigurosidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fitvtxj067htv3e0kedje.png",
+      "alt": "Imagen que muestra el titular del artículo sobre el error de conteo de estrellas en GitHub y su corrección",
+      "caption": "Ilustración del artículo: 'We Nearly Published \"140+ GitHub Stars.\" The Real Number Was 5. Here\\'s How We Caught It.'"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ZWISERFIT",
+    "#GitHub",
+    "#VerificacionDeDatos",
+    "#OpenSource",
+    "#Transparencia"
+  ],
+  "fullArticle": "En el mundo del desarrollo de software, las métricas de popularidad como el número de estrellas en un repositorio de GitHub suelen utilizarse como indicadores de credibilidad y adopción. ZWISERFIT, una organización conocida por su enfoque en la transparencia y la construcción pública, estaba a punto de actualizar el README de uno de sus proyectos con una afirmación llamativa: '140+ estrellas'.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fitvtxj067htv3e0kedje.png]\n\nSin embargo, antes de que el borrador llegara a la publicación externa, el agente de verificación interno, apodado 'Zeus', marcó una línea sospechosa que incluía una solicitud de confirmación en chino. El equipo decidió entonces consultar directamente la API de GitHub para todos los doce repositorios bajo la organización ZWISERFIT. El resultado fue contundente: la suma real de estrellas era apenas cinco, muy lejos del número inicialmente supuesto.\n\nEl error se atribuyó a la decadencia natural de datos no verificados: un número anterior basado en una captura de pantalla anterior había quedado atrapado en la narrativa sin ser revisado. No hubo intención maliciosa, sino simplemente la falta de una capa de validación que pudiera haber detectado la discrepancia antes de que se difundiera.\n\nEn lugar de ocultar la corrección, ZWISERFIT optó por publicarla abiertamente, convirtiendo el incidente en una demostración de su compromiso con la veracidad. Este enfoque no solo mitiga cualquier posible daño reputacional, sino que también refuerza su propuesta de valor: la fiabilidad de sus datos se convierte en un foso competitivo que pocos pueden igualar.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T00:20:25.384Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/zwiserfit/we-nearly-published-140-github-stars-the-real-number-was-5-heres-how-we-caught-it"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Estrellas reportadas inicialmente",
+      "value": "140+"
+    },
+    {
+      "label": "Estrellas verificadas tras consulta a la API",
+      "value": "5"
+    },
+    {
+      "label": "Repositorios analizados en la organización",
+      "value": "12"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "8dec6421ca4cd9c7b4f7c8690d4712372215181a19ce326a998522313e3589bc",
+  "title": "Un agente de Bedrock vigila mi factura de AWS durante 30 días y revela pérdidas invisibles",
+  "summary": "El autor construyó un agente de Amazon Bedrock que, con acceso de solo lectura a Cost Explorer, revisaba su factura diaria, identificaba cargos erróneos y estimaba ahorros, descubriendo un NAT gateway olvidado y una base de datos inexistente. El experimento mostró un retorno de 11 veces el coste de la herramienta.",
+  "url": "https://dev.to/aws-builders/i-let-a-bedrock-agent-watch-my-aws-bill-for-30-days-here-is-everything-it-caught-missed-and-made-1lde",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-05T20:07:54.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fuevsyyp3n2jflfh1qiyi.png",
+  "imageAlt": "Un agente de Bedrock vigila mi factura de AWS durante 30 días y revela pérdidas invisibles",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor construyó un agente de Amazon Bedrock que, con acceso de solo lectura a Cost Explorer, revisaba su factura diaria, identificaba cargos erróneos y estimaba ahorros, descubriendo un NAT gateway olvidado y una base de datos inexistente. El experimento mostró un retorno de 11 veces el coste de la herramienta.",
+  "keyPoints": [
+    "Un agente de Bedrock con permisos de solo lectura revisó la factura de AWS cada mañana, alertando sobre costos inesperados y proponiendo ahorros potenciales.",
+    "El experimento reveló un NAT gateway activo que generaba $38 diarios y una base de datos inexistente, demostrando la utilidad de la automatización proactiva.",
+    "El retorno de inversión fue de 11 veces el coste del agente, con $5 invertidos por $55 de gastos recuperados.",
+    "El proyecto destaca la brecha entre alertas de gasto y análisis contextual, mostrando cómo los LLMs pueden llenar ese vacío con supervisión continua."
+  ],
+  "whyMatters": "Este caso demuestra que la gestión de costos en la nube no solo depende de alertas de umbral, sino de análisis contextual continuo. La automatización con agentes LLM permite a los equipos de FinOps detectar y corregir errores que de otro modo pasarían desapercibidos, optimizando la inversión en infraestructuras y reduciendo el riesgo financiero. Para las empresas que dependen de servicios en la nube, adoptar soluciones similares puede traducirse en ahorros sustanciales y en una mayor confianza en sus operaciones digitales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fuevsyyp3n2jflfh1qiyi.png",
+      "alt": "Imagen de portada del artículo que muestra el título y una ilustración de un agente de IA observando una factura de AWS",
+      "caption": "Portada: un agente de IA revisando la factura de AWS"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb0f9i4n8e3wiynnj5d1d.png",
+      "alt": "Arquitectura del sistema: EventBridge dispara una Lambda que invoca un agente Bedrock, que llama a un grupo de acciones de solo lectura y envía un informe por SES",
+      "caption": "Arquitectura del experimento: flujo de eventos y funciones Lambda"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AmazonBedrock",
+    "#FinOps",
+    "#AWS"
+  ],
+  "fullArticle": "El 1 de noviembre, mientras revisaba la consola de facturación de AWS, el autor se dio cuenta de que un endpoint de GPU que había dejado de usarse estaba consumiendo $38 al día. Este fue el tercer episodio en un año de cargos inesperados: un Elastic IP sin usar y un NAT gateway olvidado. La frustración de descubrir estos costos a tiempo y luego eliminarlos era constante, pero el problema radicaba en que las alertas tradicionales de CloudWatch solo indicaban que se estaba gastando, sin explicar por qué ni cómo actuar. Para superar esta limitación, el autor diseñó un agente de Amazon Bedrock con acceso de solo lectura a Cost Explorer y a un conjunto de APIs de descripción. Cada mañana, el agente analizaba la factura, señalaba anomalías, estimaba ahorros y enviaba un informe por correo con el asunto 'El Contador'.\n\nEl experimento duró 30 días y reveló resultados sorprendentes. En el día 8, el agente detectó un aumento súbito en los cargos de EC2-Other, que resultó ser causado por el NAT gateway activo. Al corregirlo, la factura diaria se redujo de manera inmediata. En otro caso, el agente identificó una base de datos que no existía, evitando futuros cargos innecesarios. La herramienta no tenía permisos de escritura, lo que garantizaba que no pudiera modificar recursos, sino solo alertar.\n\n[Multimedia: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb0f9i4n8e3wiynnj5d1d.png]\n\nEl retorno de inversión fue impresionante: con solo $5 invertidos en la infraestructura del agente, se recuperaron $55 en gastos innecesarios, un factor 11 de retorno. Además, el agente proporcionó un informe diario que ayudó al autor a comprender mejor su patrón de gasto y a tomar decisiones más informadas. Este caso ilustra cómo los agentes de IA pueden complementar las herramientas tradicionales de monitoreo, ofreciendo contexto y recomendaciones que las alertas basadas en umbrales no pueden proporcionar.\n\nEl proyecto también destaca la importancia de la supervisión continua en entornos de nube, donde los recursos pueden permanecer activos sin ser detectados. Al automatizar la revisión de facturas, los equipos de FinOps pueden reducir el riesgo de gastos inesperados y mejorar la eficiencia operativa. La experiencia del autor sugiere que, para maximizar los beneficios, los agentes deben operar con permisos de solo lectura y ser supervisados de cerca para evitar errores de interpretación.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T20:27:42.145Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Amazon Bedrock",
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+    },
+    {
+      "title": "Guía de AWS Cost Explorer",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo diario del endpoint GPU",
+      "value": "$38"
+    },
+    {
+      "label": "Retorno de inversión del agente",
+      "value": "11x"
+    },
+    {
+      "label": "Duración del experimento",
+      "value": "30 días"
+    },
+    {
+      "label": "Número de alertas detectadas",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,82 @@
+{
+  "id": "d752a72248d9a06499860a80fcadf9af0d39e2a0d727e7b8869551fe7e5972ad",
+  "title": "El dilema de los dos canales: estructura y alma para agentes de larga duración",
+  "summary": "Los agentes de IA que operan en proyectos a largo plazo pierden contexto y fallan repetidamente. El autor muestra que la solución no es ampliar la ventana de contexto, sino implementar dos canales: uno estructurado con guardias automáticos y otro con una orientación humana que transmite el propósito. Esta combinación duplica la fiabilidad y permite que los agentes recuerden lo esencial sin depender de la memoria de la sesión.",
+  "url": "https://dev.to/tom_jones_230c4659491adcd/the-two-channel-problem-structure-and-soul-for-reliable-long-horizon-agents-1dc7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T15:22:52.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbfygc456fyb7rnyx51yb.png",
+  "imageAlt": "El dilema de los dos canales: estructura y alma para agentes de larga duración",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los agentes de IA que operan en proyectos a largo plazo pierden contexto y fallan repetidamente. El autor muestra que la solución no es ampliar la ventana de contexto, sino implementar dos canales: uno estructurado con guardias automáticos y otro con una orientación humana que transmite el propósito. Esta combinación duplica la fiabilidad y permite que los agentes recuerden lo esencial sin depender de la memoria de la sesión.",
+  "keyPoints": [
+    "Los agentes olvidan el estado verificado y generan resultados sin evidencia, lo que provoca errores recurrentes a lo largo del tiempo.",
+    "El primer canal, la estructura, impone guardias deterministas que verifican artefactos reales y evitan que la información se vuelva obsoleta.",
+    "El segundo canal, el alma, comunica el propósito y la razón de cada acción, evitando que el agente siga reglas sin comprender su significado.",
+    "Una prueba interna mostró que con ambos canales la precisión de las tareas se duplicó, pasando del 50 % al 100 % de cumplimiento."
+  ],
+  "whyMatters": "En un entorno donde las empresas confían en agentes de IA para tareas críticas, la continuidad y la confiabilidad son esenciales. Si los agentes no recuerdan lo que han verificado, pueden entregar código defectuoso, comprometer la seguridad y generar pérdidas económicas. La combinación de estructura y alma no solo mejora la precisión, sino que también reduce la necesidad de intervención humana, permitiendo escalar operaciones y garantizar la integridad de los procesos a largo plazo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbfygc456fyb7rnyx51yb.png",
+      "alt": "Imagen que muestra el título del artículo sobre agentes de IA",
+      "caption": "Portada del artículo que introduce la problemática de los agentes de larga duración"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen ilustrativa de un agente de IA con dos canales de comunicación",
+      "caption": "Representación visual de la combinación de canal estructurado y canal de alma en agentes de IA"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesIA",
+    "#Continuidad",
+    "#IngenieríaIA",
+    "#DesarrolloSostenible"
+  ],
+  "fullArticle": "En el mundo de la inteligencia artificial, la memoria de las sesiones suele ser la primera víctima cuando se enfrentan proyectos que se extienden por semanas. Cada nueva interacción comienza desde cero, y el contexto acumulado se comprime hasta quedar obsoleto. El resultado es un agente que afirma haber completado tareas sin haberlas verificado, que actúa según reglas sin entender su motivo y que pierde el hilo de la conversación. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbfygc456fyb7rnyx51yb.png]\n\nEl autor propone que la solución no sea simplemente ampliar la ventana de contexto, sino establecer dos canales de comunicación. El primero, la estructura, consiste en guardias automáticos que impiden que el agente declare ‘hecho’ sin un artefacto verificable, bloquean búsquedas ineficientes y generan instantáneas de estado basadas en el repositorio real. El segundo, el alma, se manifiesta como una breve orientación que recuerda al agente quién es, cuál es el objetivo final y por qué la disciplina existe. Esta combinación permite que cada sesión actúe con disciplina y con entendimiento, reduciendo los errores de manera sustancial.\n\nEl experimento interno reveló que, con ambos canales, el 100 % de las tareas se completaron correctamente, mientras que sin la estructura la precisión se redujo al 50 %. Además, la compresión de contexto logró la misma exactitud con solo el 0,6 % del ancho original, equivalentes a 165 tokens frente a 28 000.\n\nEsta metodología no es una revolución tecnológica, sino una ingeniería de confiabilidad para agentes que, por su naturaleza, tienden a olvidar. Al trasladar la información crítica a los guardias y al propósito a la orientación, se crea un entorno donde la continuidad no depende de la memoria de la sesión, sino del diseño del sistema. En consecuencia, las empresas pueden delegar tareas complejas a IA sin sacrificar la calidad ni la seguridad del proceso.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T15:46:53.762Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/the-two-channel-problem-structure-and-soul-for-reliable-long-horizon-agents"
+    },
+    {
+      "title": "Wikipedia: Inteligencia artificial",
+      "url": "https://es.wikipedia.org/wiki/Inteligencia_artificial"
+    },
+    {
+      "title": "Guía de Ingeniería de Confiabilidad de IA",
+      "url": "https://www.oreilly.com/library/view/engineering-reliable-ai/9781492076558/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de tráfico de producción atendido por tier local",
+      "value": "91 %"
+    },
+    {
+      "label": "Porcentaje de tráfico que escala a modelo de frontera",
+      "value": "9 %"
+    },
+    {
+      "label": "Precisión de compresión de contexto",
+      "value": "0,6 % del ancho original (165 tokens)"
+    },
+    {
+      "label": "Tokens comparados con contexto completo",
+      "value": "165 tokens frente a 28 000"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

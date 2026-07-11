@@ -1,0 +1,68 @@
+{
+  "id": "95f6e39d9a27f06c4962081d0326eb13257114a50676d20efc4e04610290f80c",
+  "title": "Enseñando a los LLMs un lenguaje de pocos recursos: Mejorando la finalización de código en Pharo",
+  "summary": "Investigadores desarrollan un pipeline para adaptar modelos de lenguaje grandes a lenguajes de programación con escasez de datos, como Pharo, logrando una finalización de código superior a modelos generalistas.",
+  "url": "https://huggingface.co/papers/2607.04939",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "publishedAt": "2026-07-09T06:20:22.617Z",
+  "imageUrl": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.04939/gradient.png",
+  "imageAlt": "Enseñando a los LLMs un lenguaje de pocos recursos: Mejorando la finalización de código en Pharo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores desarrollan un pipeline para adaptar modelos de lenguaje grandes a lenguajes de programación con escasez de datos, como Pharo, logrando una finalización de código superior a modelos generalistas.",
+  "keyPoints": [
+    "Los LLMs destacan en lenguajes populares, pero carecen de soporte en lenguajes de pocos recursos donde escasean datos de entrenamiento.",
+    "Pharo, lenguaje inspirado en Smalltalk, solo ofrecía completado de un solo token en su IDE, limitando a sus desarrolladores.",
+    "Se creó un pipeline integral con curación de datos específicos de Pharo, preentrenamiento continuo y fine-tuning de LLMs abiertos.",
+    "Los modelos especializados superan a sus versiones base y a LLMs de código más grandes en precisión de finalización en Pharo."
+  ],
+  "whyMatters": "Este avance es crucial para comunidades de lenguajes de programación con pocos recursos, que históricamente han sufrido de herramientas de finalización de código deficientes. Al demostrar que modelos pequeños y especializados pueden igualar o superar a modelos grandes, se abre la puerta a implementaciones en tiempo real dentro de entornos de desarrollo sin necesidad de infraestructura costosa. Además, el enfoque puede replicarse en otros lenguajes minoritarios, democratizando el acceso a la inteligencia artificial en el desarrollo de software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.04939/gradient.png",
+      "alt": "Imagen de portada del artículo sobre mejora de finalización de código en Pharo",
+      "caption": "Imagen de portada del artículo científico"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InteligenciaArtificial",
+    "#Pharo",
+    "#CodeCompletion",
+    "#LowResourceLanguages"
+  ],
+  "fullArticle": "Los grandes modelos de lenguaje (LLMs) han revolucionado la escritura automática de código, pero su rendimiento depende en gran medida de la cantidad de datos de entrenamiento disponibles. En lenguajes de programación de pocos recursos, como Pharo, la falta de datos ha dejado a sus comunidades con herramientas de finalización muy básicas, limitando la productividad. Pharo, inspirado en Smalltalk, solo contaba con un completado de un solo token en su entorno de desarrollo.\n\nPara abordar este problema, un equipo de investigadores ha desarrollado un pipeline integral que combina curación de datos específicos de Pharo, preentrenamiento continuo y fine-tuning de LLMs de código abierto. Además, crearon un conjunto de benchmarks para evaluar si los modelos aprenden la sintaxis de Pharo y completan código enmascarado de repositorios reales de GitHub.\n[MULTIMEDIA: https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.04939/gradient.png]\n\nLos resultados muestran que los modelos especializados superan sustancialmente a sus versiones base y también a LLMs de código mucho más grandes en la tarea de finalización para Pharo. Este caso de estudio demuestra que es factible llevar asistentes de código potentes a lenguajes con pocos recursos, utilizando modelos lo suficientemente pequeños para ofrecer soporte en tiempo real dentro del IDE.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T06:22:38.157Z",
+  "links": [
+    {
+      "title": "Paper original en Hugging Face",
+      "url": "https://huggingface.co/papers/2607.04939"
+    },
+    {
+      "title": "Sitio oficial de Pharo",
+      "url": "https://pharo.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Etapas del pipeline",
+      "value": "3"
+    },
+    {
+      "label": "Capacidades evaluadas en benchmarks",
+      "value": "2"
+    },
+    {
+      "label": "Tipo de completado anterior en Pharo",
+      "value": "Un solo token"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

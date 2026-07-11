@@ -1,0 +1,72 @@
+{
+  "id": "06a03841316978db5615af439d55c9fb4c61eeb0788d24d85cd4cdb3a4c41772",
+  "title": "mcporter: The MCP Tax Collector (Use This Before Plugging Anything In)",
+  "summary": "mcporter es una CLI desarrollada por Nico Bailey que permite ejecutar herramientas de servidores MCP sin cargar sus esquemas completos en la ventana de contexto de los agentes de IA, eliminando el consumo excesivo de tokens y la 'pérdida de contexto' asociada a la integración directa de servidores MCP.",
+  "url": "https://dev.to/stevengonsalvez/mcporter-the-mcp-tax-collector-use-this-before-plugging-anything-in-4236",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T15:33:45.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmpwzen39zwlsq9avycin.png",
+  "imageAlt": "mcporter: The MCP Tax Collector (Use This Before Plugging Anything In)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "mcporter es una CLI desarrollada por Nico Bailey que permite ejecutar herramientas de servidores MCP sin cargar sus esquemas completos en la ventana de contexto de los agentes de IA, eliminando el consumo excesivo de tokens y la 'pérdida de contexto' asociada a la integración directa de servidores MCP.",
+  "keyPoints": [
+    "Cada servidor MCP conectado inyecta todo su esquema de herramientas en la ventana de contexto del agente, consumiendo miles de tokens innecesarios: el servidor Playwright MCP usa 15.000 tokens solo en definiciones antes de realizar cualquier acción.",
+    "mcporter es una herramienta de línea de comandos que ejecuta herramientas MCP de forma directa, sin cargar esquemas en el contexto, por lo que el agente solo recibe el resultado final de la operación.",
+    "El uso de mcporter reduce drásticamente el consumo de tokens en cada sesión de agente, evitando la 'pérdida de contexto' que limitaba la capacidad de procesamiento de los modelos de IA.",
+    "Aunque MCP sigue siendo útil para casos que requieren comunicación bidireccional o estado persistente, se recomienda usar mcporter para todas las integraciones que se puedan llamar desde la línea de comandos."
+  ],
+  "whyMatters": "Esta herramienta supone un avance clave para el ecosistema de desarrollo de agentes de IA en España y Europa, donde cada vez más empresas y equipos de ingeniería implementan soluciones basadas en MCP para automatizar tareas. Al reducir drásticamente el consumo de tokens, mcporter permite abaratar los costes de ejecución de agentes de IA y ampliar sus capacidades sin necesidad de invertir en modelos con ventanas de contexto más grandes, lo que acelera la adopción de estas tecnologías en pymes y startups del Viejo Continente. Además, su enfoque de integración por línea de comandos se alinea con la tendencia global de priorizar herramientas ligeras y modulares, por lo que se espera que se convierta en un estándar de facto para las integraciones con servidores MCP en los próximos años.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmpwzen39zwlsq9avycin.png",
+      "alt": "Captura de pantalla de la portada del artículo original sobre mcporter publicado en Dev.to, que explica su función para reducir el consumo de tokens en servidores MCP",
+      "caption": "Imagen de portada del artículo original sobre mcporter en Dev.to, que detalla su funcionamiento como solución al 'impuesto de contexto' de los servidores MCP"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Mcporter",
+    "#MCP",
+    "#AgentesIA",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "Cada vez que un agente de IA se conecta a un servidor MCP, este inyecta todo su esquema de herramientas en la ventana de contexto del modelo, consumiendo miles de tokens que no se utilizan en la mayoría de las operaciones. Por ejemplo, el servidor Playwright MCP, usado para automatizar navegadores, ocupa 15.000 tokens solo en definiciones de herramientas antes de que el agente realice cualquier acción. Si se conectan tres o cuatro servidores, se consume más de la mitad de la ventana de contexto en descripciones de herramientas que el agente nunca llegará a usar, limitando su capacidad para procesar información relevante.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmpwzen39zwlsq9avycin.png]\n\nPara solucionar este problema, el desarrollador Nico Bailey creó mcporter, una herramienta de línea de comandos (CLI) que ejecuta herramientas de servidores MCP sin cargar sus esquemas completos en la ventana de contexto del agente. El funcionamiento es sencillo: el agente escribe un comando bash, mcporter lo enruta al servidor MCP correspondiente y devuelve el resultado como salida estándar, sin que los 15.000 tokens de definiciones de herramientas del servidor Playwright lleguen a tocarse la ventana de contexto. Esta solución elimina por completo el 'impuesto de contexto' que suponía la integración directa de servidores MCP, y ya es utilizada de forma diaria por el autor de la publicación como una de sus herramientas imprescindibles después de git y su editor de código.\n\nAunque el protocolo MCP no está obsoleto, ya que sigue siendo la opción adecuada para casos que requieren comunicación bidireccional, gestión de estado persistente o actualizaciones push por parte del servidor, la tendencia del ecosistema es clara: siempre que se pueda llamar a una herramienta desde la línea de comandos, es más eficiente hacerlo a través de mcporter que conectando el servidor directamente al cliente MCP del agente. Esta aproximación no solo ahorra tokens en cada sesión, sino que también simplifica la configuración de los agentes, al evitar tener que agregar servidores MCP a su configuración base. Además, mcporter incluye funcionalidades de plantillas que permiten almacenar fragmentos de código reutilizables para responder preguntas frecuentes o ejecutar operaciones repetitivas de forma rápida.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T16:11:36.348Z",
+  "links": [
+    {
+      "title": "Artículo original sobre mcporter en Dev.to",
+      "url": "https://dev.to/nico-bailey/mcporter-the-mcp-tax-collector-use-this-before-plugging-anything-in"
+    },
+    {
+      "title": "Repositorio oficial de mcporter en GitHub",
+      "url": "https://github.com/nico-bailey/mcporter"
+    },
+    {
+      "title": "Documentación oficial del protocolo MCP",
+      "url": "https://modelcontextprotocol.io/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Consumo de tokens del servidor Playwright MCP",
+      "value": "15.000 tokens solo en definiciones de herramientas"
+    },
+    {
+      "label": "Consumo de contexto al conectar 3-4 servidores MCP",
+      "value": "Más del 50% de la ventana de contexto del agente"
+    },
+    {
+      "label": "Posición de mcporter entre las herramientas más usadas por el autor",
+      "value": "Tercera herramienta más utilizada después de git y el editor de código"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

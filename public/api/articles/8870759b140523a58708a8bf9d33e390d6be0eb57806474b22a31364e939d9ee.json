@@ -1,0 +1,83 @@
+{
+  "aiSummary": "Keep es una solución de recaudación en cadena sobre Solana que permite a equipos pequeños y creadores solitarios financiar sus proyectos sin la presión de los VCs ni la pérdida total de los backers. Si el proyecto no alcanza el objetivo, el protocolo devuelve automáticamente el capital a los inversores, sin custodio ni intervención humana.",
+  "category": "tecnologia",
+  "fullArticle": "En el ecosistema cripto, la recaudación de fondos suele reducirse a dos opciones poco atractivas para los equipos pequeños: buscar capital de riesgo con asientos en el consejo o lanzar una venta de tokens donde los inversores asumen todo el riesgo de fracaso. Keep, la nueva plataforma de Solana, ofrece una tercera vía: la financiación directa de los usuarios con reembolso automático si el proyecto no logra su objetivo. \n\nEl proceso comienza cuando un creador abre una campaña con un objetivo fijo en USDC. Los backers aportan a un precio constante durante la ventana de recaudación, y el suministro de tokens se divide de inmediato: la mitad del USDC recaudado y el 30 % de los tokens se usan para crear un pool de liquidez Raydium CPMM, mientras que la otra mitad se reserva como fondo de reembolso. Dos juicios, al día 7 y al día 30, comparan el TWAP de 1 hora con un umbral de 0,85× el precio de lanzamiento para decidir el éxito del proyecto.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbl3d4fsgl3wf6jx2yyb3.png]\n\nSi el proyecto supera el umbral, el pool paga la comisión de la plataforma y el financiamiento, y la liquidez se bloquea permanentemente. En caso contrario, el protocolo devuelve el USDC a los backers que aún poseen tokens, excluyendo aquellos que vendieron durante el período de retención. Este mecanismo convierte la venta temprana en una pérdida estratégica, premiando la paciencia sin intervención humana. \n\nEl SDK de Keep, bajo licencia MIT y totalmente no custodial, devuelve transacciones sin firmar que el usuario debe autorizar, garantizando la transparencia y la autonomía del creador. Además, la plataforma incluye ejemplos de integración con agentes de IA y herramientas de desarrollo, lo que la posiciona como una solución integral para la próxima generación de proyectos cripto.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "hashtags": [
+    "#KeepCoffee",
+    "#Solana",
+    "#FinanciaciónDescentralizada",
+    "#DesarrolladoresIndependientes",
+    "#TokenRefundable"
+  ],
+  "id": "8870759b140523a58708a8bf9d33e390d6be0eb57806474b22a31364e939d9ee",
+  "imageAlt": "Una plataforma de financiación para desarrolladores independientes que devuelve el dinero si fracasa",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbl3d4fsgl3wf6jx2yyb3.png",
+  "interestingData": [
+    {
+      "label": "Objetivo de financiación típico",
+      "value": "1 000 USDC"
+    },
+    {
+      "label": "Porcentaje de tokens asignado al pool",
+      "value": "30 %"
+    },
+    {
+      "label": "Días de juicio de éxito",
+      "value": "7 y 30 días"
+    },
+    {
+      "label": "Umbral de éxito (TWAP)",
+      "value": "0,85× precio de lanzamiento"
+    }
+  ],
+  "keyPoints": [
+    "Keep permite recaudar fondos en USDC con un objetivo fijo, creando un pool de liquidez que protege a los backers con reembolso automático en caso de fracaso.",
+    "El protocolo evalúa el éxito con dos juicios de 1‑hora TWAP a los días 7 y 30, comparando el precio con un umbral de 0,85× el precio de lanzamiento.",
+    "En caso de fallo, solo los tokens que permanecen en el pool participan en el reembolso, incentivando la retención y penalizando las ventas precipitadas.",
+    "El SDK MIT de Keep es no custodial, entregando transacciones firmadas por el usuario, y está pensado para integraciones con agentes de IA y herramientas de desarrollo."
+  ],
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/keep-coffee/keep-a-platform-for-indie-devs-where-backers-get-their-money-back-if-it-flops-4h7p"
+    },
+    {
+      "title": "SDK de Keep en GitHub",
+      "url": "https://github.com/keep-coffee/keep-sdk"
+    },
+    {
+      "title": "Documentación de Solana",
+      "url": "https://docs.solana.com/"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Portada del artículo sobre Keep, plataforma de financiación con reembolso automático",
+      "caption": "Imagen de portada que muestra el logotipo de Keep y la frase 'Financiación con reembolso automático si fracasa'",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbl3d4fsgl3wf6jx2yyb3.png"
+    },
+    {
+      "alt": "Captura de pantalla de la interfaz de Keep",
+      "caption": "Pantalla de la plataforma Keep mostrando la ventana de recaudación y los parámetros de la campaña",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png"
+    }
+  ],
+  "publishedAt": "2026-06-30T07:54:41.000Z",
+  "scrapedAt": "2026-06-30T08:10:26.999Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "Keep es una solución de recaudación en cadena sobre Solana que permite a equipos pequeños y creadores solitarios financiar sus proyectos sin la presión de los VCs ni la pérdida total de los backers. Si el proyecto no alcanza el objetivo, el protocolo devuelve automáticamente el capital a los inversores, sin custodio ni intervención humana.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Una plataforma de financiación para desarrolladores independientes que devuelve el dinero si fracasa",
+  "url": "https://dev.to/keepdotcoffee/i-built-a-fundraising-platform-for-indie-devs-where-backers-get-their-money-back-if-it-flops-4of1",
+  "whyMatters": "El modelo de Keep rompe con los esquemas tradicionales de financiación de proyectos cripto, ofreciendo una alternativa de riesgo compartido que protege a los backers sin depender de intermediarios. Esta propuesta puede democratizar el acceso a capital para desarrolladores independientes, reduciendo la barrera de entrada y fomentando la innovación en la red Solana. Además, la transparencia y la ausencia de custodia aumentan la confianza en la cadena de bloques, lo que podría impulsar la adopción de plataformas similares en otras blockchains.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

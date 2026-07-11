@@ -1,0 +1,78 @@
+{
+  "id": "9f10bb1609f4cd30f28d62cef73f0294f4d1dbe7bdb9ee777eb68dcb4f94c989",
+  "title": "¿Tu contraseña es realmente segura? Así puedes calcular su entropía de Shannon sin salir del navegador",
+  "summary": "Este artículo explica por qué los medidores tradicionales de seguridad de contraseñas son imprecisos, introduce la entropía de Shannon como medida matemática fiable de su seguridad, y muestra cómo calcularla directamente en el navegador con total privacidad.",
+  "url": "https://dev.to/kandz/how-secure-is-your-password-calculating-shannon-entropy-in-the-browser-3073",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T15:30:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4hsrb5mj9w7uvooax8pg.jpeg",
+  "imageAlt": "¿Tu contraseña es realmente segura? Así puedes calcular su entropía de Shannon sin salir del navegador",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Este artículo explica por qué los medidores tradicionales de seguridad de contraseñas son imprecisos, introduce la entropía de Shannon como medida matemática fiable de su seguridad, y muestra cómo calcularla directamente en el navegador con total privacidad.",
+  "keyPoints": [
+    "Los medidores tradicionales de seguridad de contraseñas usan reglas estáticas insuficientes, como exigir caracteres especiales, que no garantizan una protección real ante ataques.",
+    "La entropía de Shannon mide la imprevisibilidad de una contraseña en bits, indicando el número total de combinaciones que un atacante debe probar en un ataque de fuerza bruta.",
+    "Una contraseña generada aleatoriamente con varias palabras, como correct-horse-battery-staple, tiene mucha más entropía que una que cumple reglas tradicionales como Tr0ub4dor&3.",
+    "Existe una función JavaScript simple y ligera que permite calcular la entropía de cualquier contraseña directamente en el navegador, sin enviar datos a servidores externos."
+  ],
+  "whyMatters": "La seguridad de las contraseñas es un pilar fundamental de la ciberseguridad personal y empresarial, y las medidas tradicionales de evaluación son profundamente defectuosas, lo que expone a millones de usuarios a filtraciones de datos. Comprender y aplicar el cálculo de entropía de Shannon permite a desarrolladores y usuarios crear y evaluar contraseñas realmente seguras, reduciendo el riesgo de accesos no autorizados a cuentas y sistemas sensibles. Esta herramienta, al funcionar completamente en el navegador, elimina el riesgo de que la contraseña sea interceptada durante el cálculo, lo que la convierte en una solución práctica y segura para el uso diario.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4hsrb5mj9w7uvooax8pg.jpeg",
+      "alt": "Imagen de portada del artículo sobre cálculo de entropía de Shannon para evaluar la seguridad de contraseñas",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de la comunidad DEV Community, plataforma de publicación para desarrolladores",
+      "caption": "Logo de DEV Community, fuente original del contenido del artículo"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#SeguridadDeContraseñas",
+    "#EntropiaShannon",
+    "#CiberseguridadWeb",
+    "#JavaScript"
+  ],
+  "fullArticle": "Todos hemos visto medidores de seguridad de contraseñas en formularios de registro, que casi siempre se basan en reglas estáticas y simplistas: 'debe tener al menos 8 caracteres, un número y un carácter especial'. Sin embargo, desde el punto de vista matemático, estas reglas son un proxy muy pobre de la seguridad real de una contraseña. Una clave como Tr0ub4dor&3 cumple con todas estas exigencias, pero es mucho más fácil de comprometer que una frase de paso generada aleatoriamente con cuatro palabras, como correct-horse-battery-staple.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4hsrb5mj9w7uvooax8pg.jpeg]\n\nPara medir la seguridad de una contraseña de forma fiable, es necesario recurrir a la teoría de la información y calcular su entropía de Shannon. Esta métrica, expresada en bits, representa la imprevisibilidad o aleatoriedad de la clave: una entropía de N bits significa que existen 2^N combinaciones posibles que un atacante debe probar en el peor de los casos en un ataque de fuerza bruta. Para calcularla, se determina el tamaño del conjunto de caracteres usados (R), sumando los tamaños de los grupos de caracteres presentes: 26 letras minúsculas, 26 mayúsculas, 10 dígitos y 33 caracteres especiales, hasta un máximo de 95. Con una función JavaScript sencilla y sin dependencias, es posible calcular esta entropía directamente en el navegador, sin enviar la contraseña a ningún servidor, garantizando una privacidad total.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nConocida la entropía, se puede estimar el tiempo que tardaría un atacante en descifrar la contraseña, en función de la velocidad de su hardware para realizar pruebas por segundo. Por ejemplo, una contraseña con 40 bits de entropía tiene 2^40 combinaciones posibles, que un atacante con un hardware capaz de probar 10.000 millones de claves por segundo podría descifrar en menos de un día. Adoptar esta medida para evaluar la seguridad de las contraseñas, en lugar de las reglas tradicionales, permite a usuarios y desarrolladores crear claves realmente robustas, reduciendo el riesgo de filtraciones de datos y accesos no autorizados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T15:46:06.223Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/t/how-secure-is-your-password-calculating-shannon-entropy-in-the-browser"
+    },
+    {
+      "title": "Entropía de Shannon en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Entrop%C3%ADa_(informaci%C3%B3n)"
+    },
+    {
+      "title": "Guía de seguridad de contraseñas del INCIBE",
+      "url": "https://www.incibe.es/ciudadania/guias/guia-seguridad-contrasenas"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño máximo de conjunto de caracteres para cálculo",
+      "value": "95 caracteres (26 minúsculas, 26 mayúsculas, 10 dígitos, 33 especiales)"
+    },
+    {
+      "label": "Entropía mínima recomendada para contraseñas robustas",
+      "value": "80 bits"
+    },
+    {
+      "label": "Velocidad de prueba de hardware para ataques de fuerza bruta",
+      "value": "10.000 millones de claves por segundo"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

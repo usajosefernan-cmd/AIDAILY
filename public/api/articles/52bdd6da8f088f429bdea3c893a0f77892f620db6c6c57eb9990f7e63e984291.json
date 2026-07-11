@@ -1,0 +1,76 @@
+{
+  "id": "52bdd6da8f088f429bdea3c893a0f77892f620db6c6c57eb9990f7e63e984291",
+  "title": "Tu asistente de IA en Neovim ya no es pasivo: llegan las tareas programadas a chat.nvim",
+  "summary": "El plugin chat.nvim para Neovim incorpora una funcionalidad de tareas programadas que permite a los asistentes de IA iniciar acciones de forma proactiva en momentos futuros, eliminando su limitación de pasividad y falta de noción de tiempo.",
+  "url": "https://dev.to/wsdjeg/giving-your-neovim-ai-assistant-a-sense-of-time-scheduled-tasks-in-chatnvim-3da9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T13:27:59.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmk12ccgar8y8hp1j3xic.png",
+  "imageAlt": "Tu asistente de IA en Neovim ya no es pasivo: llegan las tareas programadas a chat.nvim",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El plugin chat.nvim para Neovim incorpora una funcionalidad de tareas programadas que permite a los asistentes de IA iniciar acciones de forma proactiva en momentos futuros, eliminando su limitación de pasividad y falta de noción de tiempo.",
+  "keyPoints": [
+    "La mayoría de asistentes de IA mainstream, como Doubao y DeepSeek, carecen de capacidad para ejecutar tareas programadas de forma autónoma.",
+    "chat.nvim implementa tareas programadas usando temporizadores de libuv, con precisión de milisegundos y sin consumo de CPU en espera.",
+    "El sistema convierte todas las solicitudes de tiempo a marcas de tiempo Unix para unificar la lógica de programación sin ramificaciones innecesarias.",
+    "Para tareas recurrentes, el cálculo del siguiente disparador se basa en el tiempo de creación y el conteo de ejecuciones, evitando desviaciones por reinicios de Neovim."
+  ],
+  "whyMatters": "Esta actualización supone un salto cualitativo en la integración de asistentes de IA en flujos de trabajo de desarrollo, al eliminar la necesidad de que el usuario solicite acciones de forma manual en momentos específicos. A diferencia de los asistentes pasivos actuales, la capacidad de programar tareas permite automatizar recordatorios, revisiones de código o ejecuciones de comandos en horarios definidos, lo que aumenta la productividad de los desarrolladores. Además, la solución implementada en chat.nvim establece un estándar de eficiencia para este tipo de funcionalidades en entornos de edición de código, al evitar sobrecargas de CPU y errores de desviación en tareas recurrentes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmk12ccgar8y8hp1j3xic.png",
+      "alt": "Portada del artículo sobre la implementación de tareas programadas en el asistente de IA de chat.nvim para Neovim",
+      "caption": "Imagen de portada del artículo original de Dev.to que anuncia la nueva funcionalidad de tareas programadas en chat.nvim"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Neovim",
+    "#ChatNvim",
+    "#IAAutonoma",
+    "#PluginsNeovim"
+  ],
+  "fullArticle": "El plugin chat.nvim, diseñado para integrar asistentes de inteligencia artificial en el editor de código Neovim, acaba de incorporar una funcionalidad que resuelve una de las limitaciones más importantes de los asistentes de IA actuales: su pasividad y falta de noción de tiempo. Hasta ahora, herramientas como Doubao o DeepSeek solo responden a solicitudes directas de los usuarios, sin capacidad para iniciar acciones de forma proactiva en momentos futuros, como recordar una reunión o ejecutar una tarea de revisión de código en un horario específico. Esta nueva funcionalidad permite a los desarrolladores programar tareas para que el asistente de IA se comunique con ellos o ejecute acciones de forma automática en el momento que definan.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmk12ccgar8y8hp1j3xic.png]\n\nEl diseño de la funcionalidad se basa en decisiones técnicas que priorizan la eficiencia y la fiabilidad. Todas las solicitudes de tiempo, independientemente de cómo las exprese el usuario (por ejemplo, 'en una hora' o 'todos los días a las 10 AM'), se convierten internamente a marcas de tiempo Unix para unificar la lógica de programación y evitar ramificaciones de código innecesarias. En lugar de usar un sistema de sondeo que escanearía la lista de tareas de forma periódica (lo que supondría un consumo innecesario de recursos), chat.nvim utiliza temporizadores independientes por tarea basados en libuv, la biblioteca de eventos integrada en Neovim, que se activan solo cuando la tarea está pendiente, sin consumo de CPU mientras esperan.\n\nPara solucionar el problema de desviación de horario en tareas recurrentes tras reinicios de Neovim, los desarrolladores implementaron un sistema que calcula el siguiente disparador basándose en el tiempo de creación de la tarea y el número de ejecuciones previas, en lugar de sumar el intervalo al momento actual. Esto evita que una tarea programada para ejecutarse todos los días a las 10 AM se retrase progresivamente si el editor se reinicia en varias ocasiones. Esta actualización no solo mejora la productividad de los desarrolladores que usan Neovim, sino que también establece un referente de implementación eficiente de tareas programadas para asistentes de IA en entornos de edición de código.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T13:46:03.994Z",
+  "links": [
+    {
+      "title": "Artículo original sobre tareas programadas en chat.nvim",
+      "url": "https://dev.to/chat-nvim/scheduled-tasks-in-chat-nvim"
+    },
+    {
+      "title": "Repositorio oficial de chat.nvim en GitHub",
+      "url": "https://github.com/stevearc/chat.nvim"
+    },
+    {
+      "title": "Documentación de libuv para Neovim",
+      "url": "https://neovim.io/doc/user/luvref.html#uv.new_timer()"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Intervalo de tiempo para tareas de 1 hora",
+      "value": "3600 segundos"
+    },
+    {
+      "label": "Intervalo de tiempo para tareas diarias",
+      "value": "86400 segundos"
+    },
+    {
+      "label": "Precisión de los temporizadores implementados",
+      "value": "milisegundos"
+    },
+    {
+      "label": "Porcentaje de tareas en espera en sistemas de sondeo",
+      "value": "99%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,32 @@
+{
+  "aiSummary": "Qwen-AgentWorld presenta dos modelos de lenguaje de 35 B y 397 B parámetros capaces de simular entornos agenticos en siete dominios, superando a los modelos de referencia en la nueva batería de pruebas AgentWorldBench.",
+  "category": "tecnologia",
+  "fullArticle": "Los investigadores de QwenLM han presentado Qwen‑AgentWorld, una serie de modelos de lenguaje diseñados para actuar como \"mundos\" simulados donde los agentes pueden interactuar y aprender. Con 35 mil millones y 397 mil millones de parámetros, estos modelos son los primeros en ofrecer simulación agentica en siete dominios diferentes mediante razonamiento de cadena de pensamiento prolongada. El proyecto se apoya en más de diez millones de trayectorias de interacción recogidas en entornos reales, lo que permite capturar dinámicas complejas y transiciones de estado con gran detalle.\n\nEl proceso de entrenamiento se estructura en tres etapas. En la fase CPT (Cross‑Prompt Transfer) se inyectan capacidades generales de modelado del mundo a partir de datos de transición y corpora profesionales ampliados. La segunda fase, SFT (Supervised Fine‑Tuning), activa la predicción del siguiente estado, afinando la capacidad del modelo para anticipar consecuencias de acciones. Finalmente, la fase de RL (Reinforcement Learning) emplea un marco de recompensas híbridas, combinando rúbricas y reglas, para maximizar la fidelidad de la simulación y alinear el comportamiento con objetivos específicos.\n\nPara validar su propuesta, los autores han creado AgentWorldBench, un benchmark integral que reúne interacciones reales de cinco modelos de frontera en nueve pruebas establecidas. Los resultados indican que Qwen‑AgentWorld supera consistentemente a sus competidores, tanto en precisión de predicción como en capacidad de planificación a largo plazo. Este desempeño se traduce en mejoras sustanciales cuando el modelo se utiliza como simulador desacoplado para entrenar agentes de refuerzo, superando los resultados obtenidos con entrenamiento en entornos físicos.\n\nMás allá de su papel como entorno de simulación, Qwen‑AgentWorld funciona como un modelo base unificado que acelera el entrenamiento de agentes en múltiples tareas. Al servir como una fase de \"warm‑up\" altamente eficaz, el modelo eleva el rendimiento en siete benchmarks agenticos, demostrando su versatilidad y potencial para impulsar la próxima generación de agentes autónomos. El código fuente está disponible públicamente en GitHub, lo que invita a la comunidad a explorar y ampliar sus capacidades.\n\nEn resumen, Qwen‑AgentWorld representa un avance significativo en la convergencia entre modelos de lenguaje y simulación de entornos, ofreciendo una herramienta poderosa para investigadores y desarrolladores que buscan crear agentes más inteligentes y adaptables en escenarios cada vez más complejos.",
+  "hashtags": [
+    "#QwenAgentWorld",
+    "#HuggingFace",
+    "#WorldModel",
+    "#ReinforcementLearning"
+  ],
+  "id": "218c65367aa2ca656f3d809ca08480baad01fe8075a6f973008e4250c15ee003",
+  "imageAlt": "Qwen-AgentWorld revoluciona la simulación de entornos con modelos de lenguaje a gran escala",
+  "keyPoints": [
+    "Los modelos Qwen-AgentWorld‑35B‑A3B y Qwen‑AgentWorld‑397B‑A17B entrenan con más de 10 millones de trayectorias reales en siete dominios diferentes, logrando razonamiento de cadena larga.",
+    "La arquitectura de entrenamiento se divide en tres fases: CPT para capturar dinámicas, SFT para predicción de siguiente estado y RL para afinar la fidelidad mediante recompensas híbridas.",
+    "AgentWorldBench, el benchmark creado por los autores, evalúa cinco modelos de frontera en nueve pruebas establecidas y muestra que Qwen‑AgentWorld los supera notablemente.",
+    "El modelo se usa tanto como simulador desacoplado para entrenar agentes de refuerzo a gran escala, como base única que acelera el rendimiento en siete benchmarks agenticos."
+  ],
+  "publishedAt": "2026-06-24T11:00:10.990Z",
+  "scrapedAt": "2026-06-24T11:05:08.746Z",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "subcategory": "ia/general",
+  "summary": "Qwen-AgentWorld presenta dos modelos de lenguaje de 35 B y 397 B parámetros capaces de simular entornos agenticos en siete dominios, superando a los modelos de referencia en la nueva batería de pruebas AgentWorldBench.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Qwen-AgentWorld revoluciona la simulación de entornos con modelos de lenguaje a gran escala",
+  "url": "https://huggingface.co/papers/2606.24597",
+  "whyMatters": "Esta innovación marca un hito en la IA al combinar modelado de mundo y razonamiento lingüístico, lo que permite entrenar agentes en entornos virtuales con una precisión antes reservada a simulaciones costosas. La capacidad de escalar a miles de escenarios reales abre la puerta a aplicaciones en robótica, videojuegos y sistemas autónomos, reduciendo la dependencia de datos físicos. Además, el enfoque de entrenamiento multimodal y de refuerzo establece un nuevo estándar para futuros modelos de inteligencia artificial general."
+}

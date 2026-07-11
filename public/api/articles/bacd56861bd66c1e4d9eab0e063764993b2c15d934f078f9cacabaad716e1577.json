@@ -1,0 +1,70 @@
+{
+  "id": "bacd56861bd66c1e4d9eab0e063764993b2c15d934f078f9cacabaad716e1577",
+  "title": "PAGI se divide en tres distribuciones, facilitando la adopción de su framework asíncrono en Perl",
+  "summary": "El proyecto PAGI ha reorganizado su distribución en tres módulos independientes: el servidor, la herramienta de desarrollo y la especificación, simplificando la instalación y fomentando la innovación en la comunidad Perl.",
+  "url": "https://dev.to/jjn1056/pagi-distribution-split-1kdo",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T01:26:47.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx53m3nhkamcxv0cc3s3f.png",
+  "imageAlt": "PAGI se divide en tres distribuciones, facilitando la adopción de su framework asíncrono en Perl",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El proyecto PAGI ha reorganizado su distribución en tres módulos independientes: el servidor, la herramienta de desarrollo y la especificación, simplificando la instalación y fomentando la innovación en la comunidad Perl.",
+  "keyPoints": [
+    "PAGI ahora se compone de tres distribuciones: PAGI::Server, PAGI::Tools y la especificación pura, permitiendo a los desarrolladores instalar solo lo que necesitan.",
+    "El servidor de referencia, basado en IO::Async, soporta HTTP/1.1, HTTP/2, WebSocket, SSE y TLS, y se valida con una suite de cumplimiento.",
+    "El toolkit incluye un router, un framework de endpoints orientado a clases, middleware y helpers de Request/Response, mejorando la ergonomía de la construcción de apps.",
+    "La especificación, ahora documentación pura, garantiza estabilidad y compatibilidad futura, con cambios solo por problemas de seguridad críticos."
+  ],
+  "whyMatters": "Esta reorganización reduce la complejidad de adoptar PAGI, permitiendo a los equipos de desarrollo modularizar sus dependencias y acelerar la entrega de servicios web asíncronos. Al separar el núcleo de la especificación del código de ejecución, se abre la puerta a servidores alternativos y a la creación de frameworks que se construyan directamente sobre el protocolo, lo que puede impulsar la innovación en la comunidad Perl. Además, la estabilidad garantizada de la especificación asegura que las aplicaciones existentes continúen funcionando sin interrupciones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx53m3nhkamcxv0cc3s3f.png",
+      "alt": "Imagen de portada del artículo que muestra el título 'PAGI Distribution Split'",
+      "caption": "Portada original del artículo sobre la división de la distribución de PAGI"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PAGI",
+    "#Perl",
+    "#WebFramework",
+    "#AsyncProgramming",
+    "#CPAN"
+  ],
+  "fullArticle": "El ecosistema de Perl ha dado un paso importante con la reestructuración de PAGI, una iniciativa que busca modernizar el desarrollo web asíncrono en el lenguaje. Tradicionalmente, los desarrolladores instalaban un único paquete que contenía el servidor, las herramientas y la especificación, lo que a menudo resultaba en una dependencia monolítica y difícil de mantener. Con la nueva división, los usuarios pueden instalar solo el servidor con cpanm PAGI::Server o la herramienta de desarrollo con cpanm PAGI::Tools, mientras que la especificación permanece como una distribución independiente. Esta modularidad no solo simplifica la gestión de dependencias, sino que también fomenta la experimentación con servidores alternativos y la construcción de nuevos frameworks sobre el protocolo estable.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx53m3nhkamcxv0cc3s3f.png]\n\nEl servidor de referencia, conocido como PAGI::Server, aprovecha IO::Async para ofrecer soporte completo a HTTP/1.1, HTTP/2, WebSocket, SSE y TLS, además de un modelo de multiproceso pre-forking. Se valida mediante una suite de cumplimiento que garantiza que cualquier implementación que siga el contrato de la especificación sea un sustituto directo. El toolkit, PAGI::Tools, proporciona un router y un framework de endpoints basado en clases, una colección de middleware, y helpers para Request, Response y Context, lo que facilita la construcción de aplicaciones sin sacrificar la flexibilidad.\n\nLa especificación, ahora puramente documentada, define el contrato entre el servidor y el toolkit, incluyendo el formato de $scope, $receive, $send y los tipos de eventos. Se han añadido observables de estado de conexión, como response_started y response_complete, y se han establecido normas de seguridad de cabeceras, obligando a los servidores a rechazar caracteres no válidos. Esta estabilidad asegura que las aplicaciones escritas hoy seguirán funcionando, mientras que el servidor y el toolkit permanecen en fase beta, recomendándose su uso detrás de proxies como nginx o Apache.\n\nEl proyecto PAGI es un homenaje al legado de Matt S. Trout, quien inspiró la primera contribución al CPAN hace dos décadas. La comunidad está invitada a participar, a través de retroalimentación, reportes de bugs y contribuciones, y a comenzar con el tutorial y la guía de migración para usuarios de PSGI. Con esta reorganización, PAGI se posiciona como una pieza clave para el futuro de la programación web asíncrona en Perl.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:46:58.936Z",
+  "links": [
+    {
+      "title": "Artículo original en dev.to",
+      "url": "https://dev.to/pagi-distribution-split"
+    },
+    {
+      "title": "Repositorio oficial de PAGI en GitHub",
+      "url": "https://github.com/pagi/pagi"
+    },
+    {
+      "title": "CPAN: PAGI",
+      "url": "https://metacpan.org/pod/PAGI"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de distribuciones",
+      "value": "3"
+    },
+    {
+      "label": "Soporte HTTP/2",
+      "value": "Sí"
+    },
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "2024"
+    }
+  ]
+}

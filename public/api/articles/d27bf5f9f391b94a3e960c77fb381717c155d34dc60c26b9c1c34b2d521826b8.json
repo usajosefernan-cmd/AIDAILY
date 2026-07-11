@@ -1,0 +1,41 @@
+{
+  "aiSummary": "Microsoft ha detectado un nuevo malware que se propaga a través de USB y roba credenciales de criptomonedas, enviándolas a servidores controlados por atacantes",
+  "category": "tecnologia",
+  "fullArticle": "Microsoft ha detectado un nuevo malware que se propaga a través de USB y roba credenciales de criptomonedas, enviándolas a servidores controlados por atacantes. El malware, llamado Crypto Clipper, monitorea el contenido del portapapeles del dispositivo en busca de patrones consistentes con direcciones de wallet o frases de semilla. Cuando encuentra una, el malware también toma cinco capturas de pantalla en un período de 10 segundos. El malware se propaga a través de archivos .lnk en USB, que almacenan código ejecutable. Cuando un USB infectado se conecta a un dispositivo, el código verifica si ya está instalado en la máquina. Si no lo está, el malware se descarga a través de un proxy Tor. El malware también reemplaza las direcciones que encuentra con las de wallets controlados por atacantes, lo que permite a los atacantes divertir pagos a sus propias wallets. Microsoft cree que el propósito de las capturas de pantalla es proporcionar contexto que pueda ser útil para los atacantes. Este malware muestra cómo los atacantes pueden utilizar métodos innovadores para robar criptomonedas y otros activos digitales, y destaca la importancia de la seguridad informática y la protección de los dispositivos contra este tipo de amenazas.",
+  "hashtags": [
+    "#Microsoft",
+    "#Malware",
+    "#Criptomonedas",
+    "#Tor"
+  ],
+  "id": "d27bf5f9f391b94a3e960c77fb381717c155d34dc60c26b9c1c34b2d521826b8",
+  "imageAlt": "Microsoft descubre malware que roba criptomonedas a través de USB y utiliza Tor",
+  "imageUrl": "https://a.fsdn.com/sd/topics/security_64.png",
+  "keyPoints": [
+    "El malware se propaga a través de archivos .lnk en USB",
+    "Roba credenciales de criptomonedas y envía capturas de pantalla a atacantes",
+    "Utiliza Tor para comunicarse con servidores controlados por atacantes",
+    "Puede divertir pagos a wallets controlados por atacantes"
+  ],
+  "multimedia": [
+    {
+      "alt": "Microsoft Discovers Cryptocurrency Stealer That Spreads Through USB Drives and Uses Tor",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://a.fsdn.com/sd/topics/security_64.png"
+    }
+  ],
+  "publishedAt": "2026-06-20T16:00:22.978Z",
+  "scrapedAt": "2026-06-20T16:44:17.797Z",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "subcategory": "software",
+  "summary": "Microsoft ha detectado un nuevo malware que se propaga a través de USB y roba credenciales de criptomonedas, enviándolas a servidores controlados por atacantes",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Microsoft descubre malware que roba criptomonedas a través de USB y utiliza Tor",
+  "url": "https://it.slashdot.org/story/26/06/20/0347206/microsoft-discovers-cryptocurrency-stealer-that-spreads-through-usb-drives-and-uses-tor?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+  "whyMatters": "Este malware es importante porque muestra cómo los atacantes pueden utilizar métodos innovadores para robar criptomonedas y otros activos digitales. La utilización de Tor y la propagación a través de USB hacen que sea difícil de detectar y eliminar. Además, el hecho de que el malware pueda divertir pagos a wallets controlados por atacantes puede tener consecuencias financieras graves para las víctimas. Es importante que los usuarios sean conscientes de este tipo de amenazas y tomen medidas para protegerse, como utilizar software de seguridad actualizado y ser cautelosos al conectar dispositivos USB a sus computadoras."
+}

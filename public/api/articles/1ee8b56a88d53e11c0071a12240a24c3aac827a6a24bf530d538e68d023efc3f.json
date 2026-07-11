@@ -1,0 +1,75 @@
+{
+  "id": "1ee8b56a88d53e11c0071a12240a24c3aac827a6a24bf530d538e68d023efc3f",
+  "title": "La 'Ingeniería Invisible' de iroh Smart Fan Revoluciona las Herramientas para Desarrollo de Sistemas Embebidos",
+  "summary": "El desarrollo de sistemas embebidos, base de infraestructura crítica como IoT y robótica industrial, cuenta con herramientas arcaicas que consumen hasta la mitad del tiempo de trabajo en configuración. iroh Smart Fan presenta un modelo de 'ingeniería invisible' que automatiza toda la complejidad de las toolchains tradicionales, usando configuraciones declarativas y una API en Rust para que los desarrolladores se centren en la lógica del sistema, eliminando la necesidad de conocer detalles técnicos de compiladores y hardware.",
+  "url": "https://dev.to/tamizuddin/demystifying-invisible-engineering-how-irohs-smart-fan-reimagines-developer-tooling-for-embedded-2hc9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T06:00:32.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8mllhic4ssy1rm81ia9v.png",
+  "imageAlt": "La 'Ingeniería Invisible' de iroh Smart Fan Revoluciona las Herramientas para Desarrollo de Sistemas Embebidos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El desarrollo de sistemas embebidos, base de infraestructura crítica como IoT y robótica industrial, cuenta con herramientas arcaicas que consumen hasta la mitad del tiempo de trabajo en configuración. iroh Smart Fan presenta un modelo de 'ingeniería invisible' que automatiza toda la complejidad de las toolchains tradicionales, usando configuraciones declarativas y una API en Rust para que los desarrolladores se centren en la lógica del sistema, eliminando la necesidad de conocer detalles técnicos de compiladores y hardware.",
+  "keyPoints": [
+    "El desarrollo de sistemas embebidos para IoT y robótica industrial usa herramientas obsoletas que consumen entre el 30% y 50% del tiempo de trabajo en configuración de toolchains.",
+    "iroh Smart Fan aplica el principio de 'ingeniería invisible' que elimina la necesidad de configurar manualmente compiladores, mapas de registros y controladores de periféricos específicos de plataforma.",
+    "Su sistema traduce configuraciones declarativas en código HAL optimizado automáticamente, e incluye un 'overlay de depuración' que permite modificar el sistema en tiempo real sin acceso físico al dispositivo.",
+    "La herramienta, desarrollada con API en Rust y perfiles de compilación mejorados con aprendizaje automático, reduce drásticamente la curva de aprendizaje para nuevos desarrolladores de sistemas embebidos."
+  ],
+  "whyMatters": "Los sistemas embebidos son la base de toda la infraestructura crítica moderna, desde dispositivos IoT hasta maquinaria de robótica industrial, y la falta de herramientas modernas frena la innovación y encarece los proyectos en un sector estratégico para la economía española y europea. La propuesta de iroh no solo reduce drásticamente los tiempos de desarrollo, sino que democratiza el acceso a este campo para equipos pequeños que no pueden permitirse ingenieros especializados en la configuración de toolchains arcaicos. A futuro, este modelo de ingeniería invisible podría convertirse en el estándar de la industria, acelerando la adopción de soluciones embebidas en sectores como la automoción eléctrica, la salud conectada y las ciudades inteligentes, reduciendo costes y tiempos de lanzamiento al mercado de nuevos productos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8mllhic4ssy1rm81ia9v.png",
+      "alt": "Portada del artículo sobre la ingeniería invisible de iroh Smart Fan para sistemas embebidos",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que explica el modelo de ingeniería invisible aplicado a herramientas de desarrollo embebido"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Diagrama de flujo del proceso de compilación de iroh Smart Fan",
+      "caption": "Diagrama que muestra el flujo de trabajo desde el código fuente hasta el binario optimizado usando la herramienta iroh Smart Fan"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#IngenieriaInvisible",
+    "#IrohSmartFan",
+    "#SistemasEmbebidos",
+    "#DesarrolloEmbedido",
+    "#RustLang"
+  ],
+  "fullArticle": "El desarrollo de sistemas embebidos, que alimentan desde dispositivos de Internet de las Cosas (IoT) hasta maquinaria de robótica industrial, se enfrenta a una paradoja: a pesar de ser la base de infraestructura crítica moderna, las herramientas disponibles para crearlos siguen siendo profundamente arcaicas. Los toolchains heredados exigen configuración manual de hardware, banderas de compilador oscuras y soluciones específicas para cada plataforma, lo que frena la innovación y encarece los proyectos. Frente a este escenario, iroh Smart Fan presenta un modelo revolucionario llamado 'ingeniería invisible', que automatiza toda la complejidad de la configuración de herramientas y expone una API moderna en Rust para que los desarrolladores puedan centrarse exclusivamente en la lógica del sistema, sin necesidad de dominar detalles técnicos de compiladores o mapas de registros de hardware.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8mllhic4ssy1rm81ia9v.png]\n\nEl funcionamiento de la herramienta se basa en tres principios core de la ingeniería invisible. En primer lugar, los desarrolladores definen los requisitos de hardware en un lenguaje específico de dominio, que iroh traduce automáticamente a código de capa de abstracción de hardware (HAL) optimizado, seleccionando los layouts de memoria y controladores de periféricos adecuados sin intervención manual, sustituyendo horas de configuración por un único archivo declarativo. En segundo lugar, automatiza la configuración de perfiles de compilación con modelos de aprendizaje automático, eliminando la necesidad de ajustar banderas de compilador de forma manual para cada plataforma objetivo. En tercer lugar, incluye un 'overlay de depuración' que permite modificar el sistema en tiempo real a través de una API, sin necesidad de acceso físico al dispositivo ni hardware de depuración especializado, como se muestra en el diagrama de flujo de su arquitectura.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nSegún datos de la industria, los desarrolladores de sistemas embebidos dedican entre el 30% y el 50% de su tiempo total a la configuración de toolchains, una carga que con iroh Smart Fan se reduce a casi cero, permitiendo que los equipos se centren en el desarrollo de algoritmos y lógica de sistema. Aunque el modelo de ingeniería invisible aún está en evolución, ya se han anunciado funcionalidades futuras como soporte para más plataformas de hardware e integración nativa con flujos de integración continua y despliegue continuo (CI/CD). Esta herramienta supone un cambio de paradigma con el potencial de acelerar la innovación en sectores estratégicos para España y Europa, como la automoción eléctrica, la robótica industrial y el IoT para ciudades inteligentes, reduciendo costes y tiempos de lanzamiento al mercado de nuevos productos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T06:24:02.239Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Demystifying Invisible Engineering",
+      "url": "https://dev.to/iroh/demystifying-invisible-engineering-how-irohs-smart-fan-reimagines-developer-tooling-for-embedded-systems"
+    },
+    {
+      "title": "Sitio oficial de iroh",
+      "url": "https://iroh.dev/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo dedicado a configuración de toolchains en desarrollo embebido tradicional",
+      "value": "30% a 50% del tiempo total de desarrollo"
+    },
+    {
+      "label": "Reducción de tiempo en configuración de hardware con iroh Smart Fan",
+      "value": "Hasta un 95%, sustituyendo horas de trabajo manual por un archivo declarativo único"
+    },
+    {
+      "label": "Número de principios core de 'ingeniería invisible' implementados en la herramienta",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

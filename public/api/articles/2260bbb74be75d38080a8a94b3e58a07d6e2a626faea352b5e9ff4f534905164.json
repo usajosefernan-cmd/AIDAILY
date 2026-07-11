@@ -1,0 +1,94 @@
+{
+  "id": "2260bbb74be75d38080a8a94b3e58a07d6e2a626faea352b5e9ff4f534905164",
+  "title": "La excepción de Python que filtró en texto plano los secretos de miles de inquilinos",
+  "summary": "Un error de manejo de excepciones en Python provocó que credenciales y secretos de configuración de inquilinos se registraran en texto plano en los logs de producción durante dos días, exponiendo datos sensibles sin detección previa.",
+  "url": "https://dev.to/drjoanneskiles/how-production-secrets-end-up-in-your-logs-and-how-to-actually-stop-it-3lgh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T11:30:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fx272lxaj84jnmwi299t1.png",
+  "imageAlt": "La excepción de Python que filtró en texto plano los secretos de miles de inquilinos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un error de manejo de excepciones en Python provocó que credenciales y secretos de configuración de inquilinos se registraran en texto plano en los logs de producción durante dos días, exponiendo datos sensibles sin detección previa.",
+  "keyPoints": [
+    "Un mensaje de Slack alertó a medianoche sobre el registro de secretos de configuración de inquilinos en texto plano en el entorno de producción.",
+    "El error se originó al interpolar el objeto TenantConfig en el mensaje de excepción antes de lanzarla, usando la sentencia raise e como síntoma.",
+    "Frameworks como dataclasses, attrs o Pydantic generan reprs que serializan todos los campos por defecto, incluyendo credenciales y tokens sensibles.",
+    "La combinación de cuatro factores hizo que el fallo pasara desapercibido en revisiones de código y en producción durante dos días completos."
+  ],
+  "whyMatters": "Este incidente evidencia una falla estructural común en el desarrollo de software: la ausencia de políticas de saneamiento de datos sensibles en flujos de logging y manejo de excepciones. Afecta directamente a la seguridad de plataformas multitenencia, donde una filtración de este tipo puede comprometer la privacidad de miles de usuarios y acarrear sanciones normativas bajo leyes como el RGPD. Además, resalta la necesidad de incorporar pruebas de seguridad específicas para flujos de errores en las etapas de revisión de código y despliegue, un área tradicionalmente descuidada en los equipos de desarrollo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fx272lxaj84jnmwi299t1.png",
+      "alt": "Portada del artículo sobre la filtración de secretos por excepción de Python",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fx272lxaj84jnmwi299t1.png",
+      "alt": "Captura de portada alternativa del artículo que explica la filtración de datos sensibles en Python",
+      "caption": "Portada alternativa del artículo de Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla del código de la excepción que causó la filtración",
+      "caption": "Imagen que muestra el fragmento de código relacionado con el error de manejo de excepciones"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, plataforma donde se publicó el artículo original",
+      "caption": "Créditos de la plataforma DEV Community, fuente original de la noticia"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Python",
+    "#Ciberseguridad",
+    "#FiltracionDeDatos",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "Lo que comenzó como una notificación de Slack a las 8:30 de la noche, mientras el autor del artículo cuidaba a su hijo de cuatro años, se convirtió en una pesadilla de seguridad para la plataforma: todos los secretos de configuración de los inquilinos se estaban registrando en texto plano en el entorno de producción, sin pasar por etapas de desarrollo o preproducción. El mensaje, escueto pero demoledor, revelaba que una falla en el manejo de excepciones de Python había estado exponiendo credenciales, tokens de API y claves de acceso de clientes durante al menos dos días, sin que ningún sistema de monitoreo lo detectara.\n\nEl punto de partida del error fue la sentencia raise e, utilizada para relanzar una excepción capturada previamente. Aunque esta construcción es válida en Python y suele considerarse una práctica correcta en el manejo de errores, en este caso era solo el síntoma de un problema mucho más profundo: el objeto TenantConfig, que contenía todos los datos sensibles de la configuración de cada inquilino, ya había sido interpolado en el mensaje de la excepción antes de que se ejecutara el raise. Esta interpolación se produce de forma automática cuando se utilizan estructuras como dataclasses, attrs o Pydantic, que generan métodos de representación de cadena (__repr__) que serializan todos los campos del objeto por defecto para facilitar la depuración, sin distinguir entre datos públicos y secretos.\n\nEl método __repr__ generado automáticamente por estas librerías incluye todos los campos del objeto, desde nombres de configuración pública hasta credenciales de acceso a bases de datos o tokens de servicios externos. Cuando este objeto se incluye en un mensaje de excepción, ya sea de forma directa o extrayendo campos individuales, la cadena resultante se registra de forma íntegra en los logs mediante funciones como logger.exception(), que capturan el rastro completo de la excepción incluyendo su mensaje. Para cuando se ejecuta el raise e, el daño ya está hecho: los secretos ya están grabados en los archivos de registro.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fx272lxaj84jnmwi299t1.png]\n\nEl incidente no se produjo por un solo error, sino por la confluencia de cuatro factores que, de forma aislada, son inofensivos: el registro de excepciones en logs, la presencia de objetos con datos sensibles en el códigobase, los cambios en la ruta de código que hicieron que el objeto TenantConfig llegara al manejador de errores y la falta de políticas que definieran qué datos puede contener un objeto de configuración en un log. Ninguno de estos elementos activaba alertas por sí solo, por lo que pasó desapercibido durante revisiones de código y pruebas, hasta que la combinación de circunstancias lo hizo emerger. La solución definitiva no reside en modificar la sentencia raise, sino en implementar controles en la propia serialización de los objetos sensibles, para que nunca puedan filtrar sus datos secretos independientemente de cómo se utilicen en excepciones o logs.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T11:49:25.065Z",
+  "links": [
+    {
+      "title": "Artículo original sobre la filtración de secretos por excepción de Python",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Python sobre manejo de excepciones",
+      "url": "https://docs.python.org/3/tutorial/errors.html"
+    },
+    {
+      "title": "Guía de OWASP para logging seguro en aplicaciones",
+      "url": "https://owasp.org/www-project-secure-logging/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Días que los secretos estuvieron expuestos en logs",
+      "value": "2 días"
+    },
+    {
+      "label": "Hora de detección del incidente",
+      "value": "8:30 PM"
+    },
+    {
+      "label": "Entorno afectado por la filtración",
+      "value": "Producción"
+    },
+    {
+      "label": "Tipo de datos filtrados",
+      "value": "Secretos de configuración de inquilinos (credenciales, tokens, claves API)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

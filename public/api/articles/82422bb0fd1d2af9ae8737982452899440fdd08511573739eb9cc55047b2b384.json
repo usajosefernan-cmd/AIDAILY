@@ -1,0 +1,75 @@
+{
+  "id": "82422bb0fd1d2af9ae8737982452899440fdd08511573739eb9cc55047b2b384",
+  "title": "Las 3 Arquitecturas de Agentes de Voz que Definirán el Futuro de la IA Conversacional",
+  "summary": "El artículo explica los tres patrones de arquitectura para agentes de voz (cascada, voz a voz y API unificada), analizando sus ventajas, desventajas y casos de uso recomendados, destacando que la precisión de la capa de transcripción (STT) es el factor limitante clave para el rendimiento del sistema.",
+  "url": "https://dev.to/martschweiger/voice-agent-architectures-explained-35e0",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T16:14:28.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6b1qjpqxngm6seh4ilxx.png",
+  "imageAlt": "Las 3 Arquitecturas de Agentes de Voz que Definirán el Futuro de la IA Conversacional",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica los tres patrones de arquitectura para agentes de voz (cascada, voz a voz y API unificada), analizando sus ventajas, desventajas y casos de uso recomendados, destacando que la precisión de la capa de transcripción (STT) es el factor limitante clave para el rendimiento del sistema.",
+  "keyPoints": [
+    "Los agentes de voz funcionan en un ciclo de escucha, procesamiento y respuesta, con tres arquitecturas distintas que definen su rendimiento, costo y precisión.",
+    "La arquitectura en cascada ofrece máximo control y precisión por capas, pero requiere integrar múltiples proveedores y gestionar latencias acumuladas.",
+    "Los modelos de voz a voz simplifican el desarrollo con una sola API, aunque limitan la capacidad de corregir errores de transcripción y personalizar etapas.",
+    "Las APIs unificadas de agente de voz combinan control y simplicidad, con facturación plana y latencia reducida para proyectos productivos."
+  ],
+  "whyMatters": "Comprender estas arquitecturas es clave para equipos de desarrollo que buscan implementar agentes de voz fiables en productos comerciales, ya que la elección del patrón define directamente la precisión, el costo y la experiencia del usuario final. Un error en la capa de transcripción (STT) se propaga a todo el flujo, generando fallos costosos en casos de uso sensibles como atención al cliente o procesamiento de pagos. Además, la tendencia hacia APIs unificadas reduce la barrera de entrada para pymes, democratizando el acceso a tecnología de voz de grado productivo sin necesidad de equipos de ingeniería especializados en integraciones multicapa.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6b1qjpqxngm6seh4ilxx.png",
+      "alt": "Diagrama de las tres arquitecturas de agentes de voz explicadas en el artículo",
+      "caption": "Imagen de portada del artículo original publicado en DEV Community"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, plataforma de publicación de contenido técnico",
+      "caption": "Crédito de la fuente original: DEV Community"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesDeVoz",
+    "#ArquitecturaIA",
+    "#STT",
+    "#InteligenciaArtificial",
+    "#SpeechToSpeech"
+  ],
+  "fullArticle": "Los agentes de voz operan mediante un ciclo repetitivo de escucha, procesamiento y respuesta, que se resume en tres pasos clave: conversión de audio a texto (STT), razonamiento del modelo de lenguaje (LLM) y generación de audio de respuesta (TTS). La precisión de la capa de transcripción es el factor limitante más crítico: un error al escuchar un número de cuenta o un identificador se propaga a todo el flujo, generando respuestas erróneas por parte del LLM. Existen tres arquitecturas principales para implementar este ciclo, cada una con trade-offs distintos en control, costo y latencia.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6b1qjpqxngm6seh4ilxx.png]\n\nLa arquitectura en cascada es el enfoque tradicional, que combina modelos especializados de terceros para cada etapa: un API de STT, un LLM y un motor de TTS. Su ventaja principal es el control total sobre cada capa, permitiendo ajustar la precisión de la transcripción, personalizar el modelo de lenguaje o cambiar la voz de respuesta de forma independiente. Sin embargo, requiere integrar múltiples proveedores, reconciliar latencias de cada servicio y depurar errores en tres superficies distintas, lo que incrementa la complejidad y el costo de mantenimiento. Por otro lado, los modelos de voz a voz (speech-to-speech) simplifican el desarrollo al procesar el audio de entrada y generar la respuesta en un solo paso, con una sola API y una sola latencia acumulada. Su principal limitación es la falta de control: no es posible inspeccionar la transcripción intermedia ni corregir errores de comprensión de números o identificadores, por lo que son ideales solo para conversaciones casuales de bajo riesgo. La tercera opción, las APIs unificadas de agente de voz, combinan lo mejor de ambos mundos: ofrecen una conexión única que ejecuta el flujo completo de STT, LLM y TTS bajo el mismo servicio, con facturación plana, logs centralizados y latencia reducida, sin renunciar al control sobre el diseño de la conversación y las herramientas de integración.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T16:27:30.764Z",
+  "links": [
+    {
+      "title": "Artículo original en DEV Community",
+      "url": "https://dev.to/assemblyai/voice-agent-architectures-explained-2h8a"
+    },
+    {
+      "title": "Documentación oficial de AssemblyAI Voice Agent API",
+      "url": "https://www.assemblyai.com/docs/voice-agent"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Latencia ideal por ciclo de agente de voz",
+      "value": "1 segundo"
+    },
+    {
+      "label": "Costo de API unificada de AssemblyAI",
+      "value": "4,50 USD por hora"
+    },
+    {
+      "label": "Número de arquitecturas de agentes de voz analizadas",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

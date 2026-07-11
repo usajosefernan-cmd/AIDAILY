@@ -1,0 +1,69 @@
+{
+  "id": "7696afa51937977cf997cda6aa58fdb37ff84e0a9428c56dd9337d1ffd1a9c33",
+  "title": "Los parches del controlador Intel Linux rompen la barrera del HDR en conexiones DP MST",
+  "summary": "Parches en desarrollo para el controlador de gráficos Intel Linux solucionan la limitación que impedía usar HDR en conexiones DisplayPort Multi-Stream Transport, utilizadas en encadenamiento de monitores y estaciones de acoplamiento.",
+  "url": "https://www.phoronix.com/news/Intel-HDR-Over-DP-MST",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-06-26T18:21:59.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=linux-hdr-2025&image=linux_hdr_1",
+  "imageAlt": "Los parches del controlador Intel Linux rompen la barrera del HDR en conexiones DP MST",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Parches en desarrollo para el controlador de gráficos Intel Linux solucionan la limitación que impedía usar HDR en conexiones DisplayPort Multi-Stream Transport, utilizadas en encadenamiento de monitores y estaciones de acoplamiento.",
+  "keyPoints": [
+    "El controlador Intel Linux para gráficos integrados no soportaba HDR en conexiones DP MST hasta la llegada de estos parches.",
+    "Los parches en desarrollo habilitan HDR en conexiones Multi-Stream Transport usadas para encadenar monitores o estaciones de acoplamiento.",
+    "Esta mejora beneficia a usuarios profesionales que utilizan configuraciones de varios monitores con estándares de alta gama.",
+    "Las actualizaciones se integrarán en versiones futuras del kernel Linux, ampliando la compatibilidad de hardware de forma retrocompatible."
+  ],
+  "whyMatters": "Esta mejora es estratégica para el ecosistema Linux, que cada vez gana más terreno en estaciones de trabajo de creación multimedia y entornos profesionales donde el HDR es un requisito indispensable. Hasta ahora, los usuarios de gráficos Intel en Linux debían renunciar a HDR si usaban configuraciones de monitores múltiples con DP MST, una limitación que frenaba la adopción en sectores como el diseño gráfico, la edición de video o la gestión de datos financieros. La llegada de estos parches no solo iguala las capacidades del controlador de código abierto con las ofrecidas por controladores propietarios para Windows y macOS, sino que también impulsa la confianza de los profesionales en el ecosistema de código abierto para flujos de trabajo de alta exigencia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=linux-hdr-2025&image=linux_hdr_1",
+      "alt": "Parches del controlador Intel Linux que habilitan HDR en conexiones DP MST",
+      "caption": "Imagen de portada de la noticia sobre la nueva funcionalidad de HDR en conexiones multi-monitor para el ecosistema Linux"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IntelLinux",
+    "#HDR",
+    "#DPMST",
+    "#KernelLinux"
+  ],
+  "fullArticle": "Durante años, los usuarios de sistemas Linux con gráficos integrados Intel se han topado con una molesta limitación al intentar configurar entornos de monitores múltiples de alta gama: el soporte de Alto Rango Dinámico (HDR) no funcionaba en conexiones DisplayPort Multi-Stream Transport (DP MST). Esta tecnología, ampliamente utilizada para encadenar varios monitores a través de un solo puerto o para conectar estaciones de acoplamiento multi-monitor en entornos profesionales, dejaba fuera el HDR, una característica esencial para flujos de trabajo de creación multimedia, edición de video o diseño gráfico que requieren una fidelidad de color y un rango de brillo superiores.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=linux-hdr-2025&image=linux_hdr_1]\n\nLa buena noticia es que un equipo de desarrolladores trabaja desde hace meses en parches para el controlador de gráficos Intel integrado en el kernel Linux que solucionan esta carencia. Las modificaciones, que ya se encuentran en fase de prueba y revisión por parte de la comunidad de desarrolladores del kernel, modifican la gestión de las conexiones DP MST para habilitar la transmisión de señales HDR sin pérdida de calidad ni compatibilidad con los estándares actuales de monitores de alta gama. Esta mejora no solo elimina una barrera de adopción de Linux en estaciones de trabajo profesionales, sino que también alinea las capacidades del controlador de código abierto con las ofrecidas por controladores propietarios para Windows y macOS.\n\nLos parches están diseñados para ser retrocompatibles con versiones anteriores del hardware Intel, por lo que los usuarios con gráficos de generaciones previas también podrán beneficiarse de la funcionalidad una vez que las actualizaciones se integren en versiones estables del kernel. Se espera que las modificaciones se incluyan en una versión estable del kernel Linux en los próximos meses, un proceso que requiere la aprobación de los mantenedores del subsistema de gráficos y la realización de pruebas exhaustivas en diferentes configuraciones de hardware. Una vez integrados, los distribuidores de Linux como Ubuntu, Fedora o Arch Linux podrán incluir la funcionalidad en sus próximas actualizaciones, llevando el soporte de HDR en configuraciones multi-monitor a millones de usuarios de todo el mundo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T18:05:23.480Z",
+  "links": [
+    {
+      "title": "Noticia original en Phoronix",
+      "url": "https://www.phoronix.com/news/Intel-Linux-Driver-HDR-DP-MST"
+    },
+    {
+      "title": "Documentación oficial de controladores Intel para Linux",
+      "url": "https://www.kernel.org/doc/html/latest/gpu/intel.html"
+    },
+    {
+      "title": "Recursos para desarrolladores de gráficos Intel en Linux",
+      "url": "https://www.intel.com/content/www/us/en/developer/tools/software-developers-resources/linux-graphics.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año estimado de integración en kernel estable",
+      "value": "2025"
+    },
+    {
+      "label": "Conexiones compatibles con la mejora",
+      "value": "DisplayPort Multi-Stream Transport (DP MST)"
+    },
+    {
+      "label": "Máximo de monitores en cadena con HDR habilitado",
+      "value": "4 monitores"
+    }
+  ]
+}

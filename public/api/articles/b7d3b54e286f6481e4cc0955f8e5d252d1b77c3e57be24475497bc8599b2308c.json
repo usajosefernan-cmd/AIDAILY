@@ -1,0 +1,93 @@
+{
+  "id": "b7d3b54e286f6481e4cc0955f8e5d252d1b77c3e57be24475497bc8599b2308c",
+  "title": "100 días construyendo PostAll en público: los aciertos, los errores y el futuro de la plataforma de contenido con IA",
+  "summary": "El creador de PostAll relata su experiencia de 100 días desarrollando la plataforma de generación de contenido con IA en público, desde un script simple hasta una herramienta con motor de formato, puerta de calidad triple e integraciones con CMS, destacando aciertos arquitectónicos y errores en detección de unicidad y escalabilidad.",
+  "url": "https://dev.to/aakash_gour/100-days-building-postall-in-public-what-i-got-right-what-i-got-wrong-whats-next-paa",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T05:38:55.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm3jvxalweecgyiwa073o.png",
+  "imageAlt": "100 días construyendo PostAll en público: los aciertos, los errores y el futuro de la plataforma de contenido con IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El creador de PostAll relata su experiencia de 100 días desarrollando la plataforma de generación de contenido con IA en público, desde un script simple hasta una herramienta con motor de formato, puerta de calidad triple e integraciones con CMS, destacando aciertos arquitectónicos y errores en detección de unicidad y escalabilidad.",
+  "keyPoints": [
+    "PostAll evolucionó de un script que llamaba a la API de OpenAI a una plataforma con motor de formato, puerta de calidad triple e integraciones con WordPress, Ghost y Webflow en 100 días.",
+    "El acierto de la arquitectura de modelo de contenido único con múltiples renderizadores permitió agregar integraciones con CMS sin modificar la capa de generación de IA.",
+    "El error en la detección de unicidad basada en Jaccard, que no identificaba contenido parafraseado, fue detectado por un usuario de beta que señaló fallos en la calidad del contenido.",
+    "Los problemas de escalabilidad al crecer de 5 a 50 usuarios por agotamiento de pool de conexiones y un bug de reintentos silenciosos obligaron a reestructurar la arquitectura."
+  ],
+  "whyMatters": "Esta retrospectiva es un caso de estudio fundamental para desarrolladores de herramientas de IA generativa, ya que demuestra que el verdadero reto no reside en la generación de contenido, sino en la fiabilidad, usabilidad y escalabilidad de la plataforma. Los errores detectados, como la detección de unicidad deficiente o los fallos de escalabilidad en etapas tempranas, son fallos muy comunes en productos de IA que se lanzan sin pruebas suficientes con usuarios reales. Además, las integraciones con CMS populares como WordPress, Ghost y Webflow hacen que PostAll sea una herramienta de alto interés para creadores de contenido y empresas que buscan automatizar su producción sin perder control sobre el formato y la calidad del material publicado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm3jvxalweecgyiwa073o.png",
+      "alt": "Portada del artículo de retrospectiva de 100 días de construcción de PostAll",
+      "caption": "Imagen de portada del artículo publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo de Google AI, socio oficial de modelos y plataforma de IA de PostAll",
+      "caption": "Google AI, socio oficial de modelos y plataforma de IA"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logotipo de Neon, socio oficial de base de datos de PostAll",
+      "caption": "Neon, socio oficial de base de datos"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logotipo de Algolia, socio oficial de búsqueda de PostAll",
+      "caption": "Algolia, socio oficial de búsqueda"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, plataforma donde se publicó el artículo original",
+      "caption": "DEV Community, fuente original del artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PostAll",
+    "#IAGenerativa",
+    "#DesarrolloWeb",
+    "#InteligenciaArtificial",
+    "#AutomatizacionContenido"
+  ],
+  "fullArticle": "El desarrollador de PostAll publicó una retrospectiva tras 100 días de construcción en público de la plataforma de generación de contenido con inteligencia artificial, que partió de un script simple que enviaba solicitudes a la API de OpenAI y almacenaba el resultado en un archivo de texto, hasta convertirse en una herramienta con motor de formato propio, puerta de calidad de tres etapas e integraciones nativas con los principales sistemas de gestión de contenido del mercado. El autor confiesa que no planificó la mayoría de los avances, sino que los fue incorporando de forma reactiva al corregir supuestos erróneos que surgían durante el desarrollo y las pruebas con usuarios beta.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm3jvxalweecgyiwa073o.png]\n\nEntre los aciertos más relevantes se encuentra la arquitectura de 'parse una vez, renderiza muchas', que le permitió crear un modelo de contenido interno único y tres renderizadores para adaptar el material a blogs, redes sociales y correos electrónicos, sin necesidad de modificar la capa de generación de IA cuando se agregaron integraciones con WordPress, Ghost y Webflow. También destaca la importancia de anticiparse a los fallos silenciosos, preguntándose '¿qué se rompe aquí sin que nadie se dé cuenta?' antes de lanzar cada funcionalidad, lo que dio origen a la puerta de calidad y a la lógica de reintentos automáticos para errores de límite de tasa.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png]\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png]\n\nEntre los errores más graves se encuentra la detección de unicidad inicial basada en el índice de Jaccard, que solo identificaba superposiciones literales de texto y no captaba contenido parafraseado, fallo que fue detectado por un usuario de beta que señaló dos piezas de material como 'sospechosamente similares', a pesar de que las puntuaciones de calidad del sistema las consideraba únicas. También reconoce que subestimó los problemas de escalabilidad: la arquitectura que funcionaba de forma estable para 5 usuarios se rompió al llegar a 50 por agotamiento del pool de conexiones y un bug de reintentos que eliminaba trabajos fallidos sin notificarlo. Estas lecciones servirán para ajustar la hoja de ruta de PostAll, que busca posicionarse como una herramienta de automatización de contenido fiable para creadores y empresas que necesitan producir material de alta calidad de forma eficiente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T06:04:02.290Z",
+  "links": [
+    {
+      "title": "Artículo original de retrospectiva de 100 días de PostAll en Dev.to",
+      "url": "https://dev.to/postall/100-days-building-postall-in-public-what-i-got-right-what-i-got-wrong-whats-next"
+    },
+    {
+      "title": "Sitio oficial de PostAll",
+      "url": "https://postall.ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración del desarrollo",
+      "value": "100 días"
+    },
+    {
+      "label": "Número de integraciones CMS",
+      "value": "3 (WordPress, Ghost, Webflow)"
+    },
+    {
+      "label": "Componentes de la puerta de calidad",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

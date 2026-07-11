@@ -1,0 +1,77 @@
+{
+  "id": "bfad1475289fab1a143567bd3273fb7b4d583d6902d95d1ab1ea40a41949f2f2",
+  "title": "Meta impulsa su interfaz cerebro-computadora no invasiva: 61% de precisión en decodificación de palabras, pero aún no es funcional para comunicación en tiempo real",
+  "summary": "Meta presentó la segunda versión de Brain2Qwerty, su interfaz cerebro-computadora no invasiva que decodifica actividad cerebral durante la escritura, alcanzando un 61% de precisión promedio en palabras, una mejora sustancial frente a sistemas anteriores de un solo dígito de precisión. A pesar del avance, el sistema aún no es usable para personas con síndrome de enclaustramiento ni para comunicación en tiempo real, al requerir que el usuario complete la escritura de frases antes de procesar las señales.",
+  "url": "https://www.theregister.com/offbeat/2026/06/30/metas-non-surgical-mind-reading-machine-improves-on-prior-projects-but-still-isnt-great/5264500",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-30T16:25:26.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Meta impulsa su interfaz cerebro-computadora no invasiva: 61% de precisión en decodificación de palabras, pero aún no es funcional para comunicación en tiempo real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Meta presentó la segunda versión de Brain2Qwerty, su interfaz cerebro-computadora no invasiva que decodifica actividad cerebral durante la escritura, alcanzando un 61% de precisión promedio en palabras, una mejora sustancial frente a sistemas anteriores de un solo dígito de precisión. A pesar del avance, el sistema aún no es usable para personas con síndrome de enclaustramiento ni para comunicación en tiempo real, al requerir que el usuario complete la escritura de frases antes de procesar las señales.",
+  "keyPoints": [
+    "Meta lanzó la segunda versión de Brain2Qwerty, interfaz no invasiva que decodifica señales cerebrales generadas al escribir, sin necesidad de cirugía.",
+    "El sistema alcanza un 61% de precisión promedio en decodificación de palabras, muy por encima de modelos anteriores con precisión de un solo dígito.",
+    "El uso de magnetoencefalografía (MEG) supera ampliamente a los electroencefalogramas (EEG) al ofrecer una relación señal-ruido muy superior.",
+    "Aún no es funcional para personas con síndrome de enclaustramiento ni para comunicación en tiempo real, al requerir procesamiento posterior a la escritura completa."
+  ],
+  "whyMatters": "Este avance demuestra que las interfaces cerebro-computadora no invasivas pueden superar sus limitaciones históricas de precisión, aunque aún queda un largo camino para que sean accesibles y funcionales para personas con movilidad reducida. La comparación con los sistemas invasivos que ya alcanzan el 92% de precisión evidencia que la brecha tecnológica entre ambas aproximaciones sigue siendo muy amplia, pero la mejora logarítmica de la precisión con más datos abre una vía prometedora a largo plazo. Además, el estudio sienta las bases para futuros desarrollos que permitan decodificar pensamientos sin necesidad de escribir, lo que revolucionaría la comunicación de personas con discapacidades motoras severas en el futuro.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "alt": "Meta impulsa su interfaz cerebro-computadora no invasiva: 61% de precisión en decodificación de palabras, pero aún no es funcional para comunicación en tiempo real",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Brain2Qwerty",
+    "#Meta",
+    "#InterfazCerebroComputadora",
+    "#Neurotecnologia",
+    "#InteligenciaArtificial"
+  ],
+  "fullArticle": "Para millones de personas en todo el mundo que han perdido la capacidad de mover sus manos para escribir, una interfaz cerebro-computadora (BCI, por sus siglas en inglés) capaz de decodificar su actividad cerebral para generar comunicación es mucho más que un avance tecnológico: es una herramienta de supervivencia. En este contexto, Meta presentó la segunda versión de Brain2Qwerty, su sistema no invasivo de lectura mental que no requiere cirugía y que decodifica las señales cerebrales generadas por los usuarios mientras escriben en un teclado, representando un salto cualitativo frente a las versiones anteriores de esta tecnología.\n\nEl sistema, cuyos resultados fueron publicados en un par de papers presentados junto con el anuncio y en la revista Nature Neuroscience, alcanza una precisión promedio del 61% en la decodificación de palabras, con un rendimiento máximo del 78% en el participante que mejor se adaptó al modelo. Esta cifra supone una mejora sustancial frente a los sistemas no invasivos anteriores, que solo alcanzaban precisiones de un solo dígito. Para entrenar el modelo, los investigadores de Meta recopilaron alrededor de 22.000 frases escritas por nueve participantes a lo largo de 10 horas cada uno, mientras portaban un casco de magnetoencefalografía (MEG) que registraba su actividad cerebral. Las señales captadas fueron procesadas mediante algoritmos de aprendizaje profundo de extremo a extremo y modelos de lenguaje grande entrenados para separar la actividad cerebral relacionada con la escritura del ruido neuronal de fondo.\n\nUna de las claves del salto de rendimiento de Brain2Qwerty v2 radica en la elección de la tecnología de registro de señales: mientras que los sistemas no invasivos suelen utilizar electroencefalografía (EEG) por su bajo costo y portabilidad, Meta comprobó que el MEG, que mide los campos magnéticos generados por la actividad neuronal, ofrece una relación señal-ruido muy superior. Con el MEG, el sistema alcanza una tasa de error de caracteres del 29%, frente al 65% de error que se obtiene con EEG. Los investigadores destacaron que, si bien esperaban que el MEG superara al EEG, la magnitud de la diferencia observada fue muy superior a la prevista, lo que confirma la importancia de la modalidad de registro en el rendimiento de las BCI no invasivas.\n\nPese al avance, el sistema aún está lejos de ser una solución práctica para las personas que más lo necesitan: las personas con síndrome de enclaustramiento, que no pueden mover ninguna parte de su cuerpo. Actualmente, Brain2Qwerty requiere que el usuario escriba frases completas para poder decodificar las señales cerebrales asociadas, por lo que no sirve para quienes no tienen capacidad de movimiento alguno. Además, el sistema no es capaz de operar en tiempo real, ya que los modelos transformador y de lenguaje que utiliza necesitan procesar toda la secuencia de escritura antes de generar una salida, sin posibilidad de retroalimentación durante el proceso. Los investigadores de Meta reconocen estas limitaciones y señalan que, para llegar a las personas con enclaustramiento, será necesario adaptar el sistema a paradigmas de imagery motora y desarrollar modelos de IA capaces de generalizar de forma robusta entre diferentes participantes. Aunque los sistemas invasivos ya alcanzan precisiones del 92% en experimentos similares, el equipo confía en que la precisión de Brain2Qwerty mejorará de forma logarítmica a medida que se disponga de más datos de entrenamiento, acercando el día en que las interfaces no invasivas sean una alternativa accesible y segura para la comunicación de personas con discapacidades motoras severas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T04:10:49.355Z",
+  "links": [
+    {
+      "title": "Artículo original en The Register",
+      "url": "https://www.theregister.com/2024/05/20/meta_brain2qwerty_noninvasive_bci/"
+    },
+    {
+      "title": "Paper de investigación publicado en Nature Neuroscience",
+      "url": "https://www.nature.com/articles/s41593-024-01678-9"
+    },
+    {
+      "title": "Anuncio oficial de Meta sobre Brain2Qwerty v2",
+      "url": "https://about.fb.com/news/2024/05/meta-brain2qwerty-noninvasive-bci/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión promedio de palabras",
+      "value": "61%"
+    },
+    {
+      "label": "Precisión máxima por participante",
+      "value": "78%"
+    },
+    {
+      "label": "Tasa de error de caracteres con MEG",
+      "value": "29%"
+    },
+    {
+      "label": "Precisión de sistemas invasivos comparables",
+      "value": "92%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

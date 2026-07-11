@@ -1,0 +1,31 @@
+{
+  "aiSummary": "MobileForge presenta un método de adaptación de agentes GUI móviles sin necesidad de anotaciones humanas, combinando interacción real con optimización jerárquica de retroalimentación, logrando resultados competitivos frente a modelos especializados.",
+  "category": "tecnologia",
+  "fullArticle": "El campo de la inteligencia artificial aplicada a interfaces gráficas de usuario (GUI) se enfrenta a un reto persistente: cómo transferir modelos que comprenden y ejecutan acciones en una app a nuevas aplicaciones sin incurrir en costes de anotación masiva. MobileForge, presentado recientemente por un equipo de investigación, ofrece una solución elegante y práctica. El sistema combina MobileGym, un entorno que genera tareas y evalúa rollouts mediante interacción directa con la app, con HiFPO, una técnica de optimización jerárquica que transforma la retroalimentación de cada paso y las pistas de corrección en actualizaciones de política contextualizadas.\n\nEn pruebas con el modelo Qwen3‑VL‑8B, MobileForge logró un 67,2 % de Pass@3 en el benchmark AndroidWorld, apenas un 1,8 puntos por debajo del modelo especializado GUI‑Owl‑1.5‑8B que se entrenó con datos cerrados. Más impresionante, la variante ForgeOwl‑8B, adaptada con MobileForge, alcanzó un 77,6 % de Pass@3 en el mismo benchmark y un 41 % de éxito en la división solo de GUI de MobileWorld, demostrando la robustez del enfoque frente a dominios fuera de la distribución. Estos resultados ponen a MobileForge como el agente móvil de código abierto con mayor rendimiento en pruebas de adaptación.\n\nLa innovación clave radica en la eliminación de anotaciones manuales. Tradicionalmente, los agentes de GUI requieren tareas, demostraciones o recompensas etiquetadas, lo que resulta costoso y poco escalable dado el número y la frecuencia de actualización de las apps móviles. MobileForge sustituye estos requisitos con datos generados automáticamente a partir de interacciones reales, lo que reduce el tiempo de desarrollo y permite una adaptación continua. Además, HiFPO aprovecha la retroalimentación jerárquica, combinando resultados de trayectorias completas con comentarios de pasos individuales, lo que conduce a señales de mejora más fiables y precisas.\n\nEl impacto de esta tecnología es amplio: desde asistentes personales que pueden aprender a usar nuevas apps sin intervención humana, hasta sistemas de prueba automática de software que se actualizan con cada cambio de interfaz. Al liberar a los desarrolladores de la carga de anotaciones, MobileForge acelera la innovación y abre nuevas posibilidades para la personalización de experiencias móviles. Con la disponibilidad de código, datos y modelos en https://mobile-forge.github.io/, la comunidad de investigación y la industria pueden experimentar y ampliar este enfoque, marcando un hito importante en la evolución de la IA aplicada a la interacción móvil.",
+  "hashtags": [
+    "#MobileForge",
+    "#Qwen3VL",
+    "#ForgeOwl"
+  ],
+  "id": "d7405498ad41a326b60ada551ee011435c13a6e55c80ab416f702c0786e9c05b",
+  "imageAlt": "MobileForge revoluciona la adaptación de agentes móviles sin anotaciones",
+  "keyPoints": [
+    "MobileForge permite adaptar agentes Qwen3-VL-8B a 67,2 % Pass@3 en AndroidWorld sin datos anotados",
+    "La arquitectura HiFPO convierte retroalimentación de pasos y pistas en actualizaciones GRPO contextualizadas",
+    "ForgeOwl‑8B alcanza 77,6 % Pass@3 en AndroidWorld y 41 % de éxito en MobileWorld, liderando evaluaciones de datos abiertos",
+    "El sistema integra MobileGym para la generación de tareas y evaluación de rollouts en interacción real con apps"
+  ],
+  "publishedAt": "2026-06-24T22:36:01.832Z",
+  "scrapedAt": "2026-06-25T00:27:22.046Z",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "subcategory": "ia/general",
+  "summary": "MobileForge presenta un método de adaptación de agentes GUI móviles sin necesidad de anotaciones humanas, combinando interacción real con optimización jerárquica de retroalimentación, logrando resultados competitivos frente a modelos especializados.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "MobileForge revoluciona la adaptación de agentes móviles sin anotaciones",
+  "url": "https://huggingface.co/papers/2606.19930",
+  "whyMatters": "La eliminación de la dependencia de anotaciones humanas reduce drásticamente el coste y la fricción para adaptar agentes a la vasta y cambiante ecosfera de aplicaciones móviles. Con MobileForge, las empresas pueden desplegar asistentes digitales que entienden y operan en apps nuevas sin entrenamiento manual, acelerando la innovación y reduciendo ciclos de desarrollo. Este avance también abre la puerta a modelos más inclusivos y actualizados, pues la adaptación se basa en interacciones reales que capturan la complejidad del entorno móvil."
+}

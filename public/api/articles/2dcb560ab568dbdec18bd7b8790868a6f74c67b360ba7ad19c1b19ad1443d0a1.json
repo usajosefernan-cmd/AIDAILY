@@ -1,0 +1,77 @@
+{
+  "id": "2dcb560ab568dbdec18bd7b8790868a6f74c67b360ba7ad19c1b19ad1443d0a1",
+  "title": "Los expertos en ciberseguridad huyen del pentesting automatizado: su apoyo se desploma del 29% al 9% en un año",
+  "summary": "Un informe de la firma de seguridad ofensiva Cobalt revela que el apoyo de los profesionales de la ciberseguridad al pentesting totalmente autónomo cayó del 29% al 9% en un año, debido a la alta tasa de falsos negativos críticos de estas herramientas, que no logran detectar vulnerabilidades específicas de entornos de inteligencia artificial. La industria se inclina por modelos híbridos que combinan escaneo automático con supervisión humana en sistemas críticos.",
+  "url": "https://www.theregister.com/security/2026/06/30/infosec-professionals-sour-on-automated-pentesting-tools/5264571",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-30T19:38:07.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Los expertos en ciberseguridad huyen del pentesting automatizado: su apoyo se desploma del 29% al 9% en un año",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un informe de la firma de seguridad ofensiva Cobalt revela que el apoyo de los profesionales de la ciberseguridad al pentesting totalmente autónomo cayó del 29% al 9% en un año, debido a la alta tasa de falsos negativos críticos de estas herramientas, que no logran detectar vulnerabilidades específicas de entornos de inteligencia artificial. La industria se inclina por modelos híbridos que combinan escaneo automático con supervisión humana en sistemas críticos.",
+  "keyPoints": [
+    "El apoyo al pentesting totalmente autónomo se desplomó del 29% al 9% en el último año, según el informe 2026 State of Pentesting de Cobalt.",
+    "El 78% de los profesionales encuestados sufrió falsos negativos críticos con herramientas automatizadas de escaneo de vulnerabilidades.",
+    "Las herramientas automatizadas no detectan fallos específicos de entornos de IA, como inyección de prompts o fallos de agencia excesiva.",
+    "Cobalt propone un modelo híbrido de seguridad, con escaneo automático para sistemas no críticos y supervisión humana para los más sensibles."
+  ],
+  "whyMatters": "Este desplome en la confianza hacia el pentesting automatizado evidencia que la inteligencia artificial aún no está preparada para reemplazar a los profesionales humanos en tareas de seguridad crítica, especialmente en entornos donde proliferan vulnerabilidades específicas de sistemas de IA. El aumento de fallos graves no detectados por herramientas automáticas, sumado al crecimiento de vulnerabilidades de alta severidad en entornos de IA y LLM (que alcanzan el 32% del total, frente al 12% en entornos tradicionales), obliga a las organizaciones a replantearse sus estrategias de protección de activos digitales. La tendencia hacia modelos híbridos de seguridad redefine no solo la operativa de los equipos de ciberseguridad, sino también la demanda de talento especializado en el sector a nivel global.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+      "alt": "Los expertos en ciberseguridad huyen del pentesting automatizado: su apoyo se desploma del 29% al 9% en un año",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Pentesting",
+    "#Ciberseguridad",
+    "#Cobalt",
+    "#InteligenciaArtificial",
+    "#Vulnerabilidades"
+  ],
+  "fullArticle": "La confianza de los profesionales de la ciberseguridad en las herramientas de pentesting totalmente automatizado se ha derrumbado en el último año, según datos del informe 2026 State of Pentesting publicado por la firma de seguridad ofensiva Cobalt. Mientras que en 2024 el 29% de los expertos estaba abierto a adoptar sistemas de pruebas de penetración completamente autónomos, en 2025 esa cifra se ha reducido a solo el 9%, un descenso que refleja la frustración generalizada con el rendimiento de estas herramientas. La principal razón de este rechazo es la alta tasa de falsos negativos críticos que presentan los escáneres automatizados, que no logran identificar vulnerabilidades específicas de entornos donde se implementan sistemas de inteligencia artificial.\n\n'Los escáneres automatizados son brillantes para encontrar vulnerabilidades conocidas basadas en firmas, pero fallan miserablemente en la seguridad de la IA', señaló Cobalt en un comunicado adjunto al informe. La firma explicó que fallos como la inyección de prompts o los fallos de agencia excesiva requieren cadenas de interacción multi-turno y comprensión de psicología adversarial, elementos que son completamente invisibles para las herramientas que realizan consultas automatizadas de un solo disparo. El 78% de los 450 profesionales encuestados por Cobalt reportó haber experimentado este tipo de falsos negativos críticos en el último año, un dato que evidencia las limitaciones técnicas de las soluciones automatizadas actuales para detectar amenazas emergentes en entornos de IA.\n\nA pesar de que el tamaño de la muestra de la encuesta es reducido, Cobalt considera que los resultados son una mala noticia para los proveedores de herramientas de pentesting automatizado, pero una señal positiva para la industria de la ciberseguridad en general. 'La caída en la dependencia del pentesting totalmente automatizado es en realidad una señal saludable', afirmó la firma en el resumen del informe. 'Demuestra que los profesionales ven a través de la publicidad exagerada de los proveedores y exigen garantías reales, no solo cobertura de escaneo'. Esta tendencia se ve acelerada por el aumento de vulnerabilidades introducidas por herramientas de IA: mientras que en entornos tradicionales solo el 12% de las vulnerabilidades detectadas se clasifican como de alta o crítica severidad, en entornos de IA y modelos de lenguaje grande esa proporción alcanza el 32%, una cifra que se mantiene estable desde hace dos años y que evidencia el mayor riesgo asociado a estas tecnologías.\n\nLa solución que propone Cobalt para hacer frente a este escenario es un modelo de seguridad híbrido, en el que la mayoría de los sistemas se escanean de forma automática con asistencia de IA, mientras que los sistemas más críticos quedan a cargo de profesionales humanos. Aunque la firma comercializa precisamente este tipo de soluciones híbridas, sus hallazgos sobre el aumento de vulnerabilidades generadas por IA coinciden con datos de otras empresas del sector: la firma de seguridad de aplicaciones Veracode publicó a principios de año que el desarrollo de software asistido por IA está generando más vulnerabilidades de las que los equipos de seguridad pueden resolver, con un 82% de las empresas que dejan vulnerabilidades conocidas sin corregir durante más de un año. Incluso actores partidarios de la automatización, como el jefe de seguridad de Amazon CJ Moses, reconocen que las herramientas de pentesting con IA han aumentado la eficiencia de sus equipos en un 40%, pero insisten en que aún es necesaria la supervisión humana: 'La IA es muy buena para realizar tareas, especialmente cuando se manejan grandes volúmenes de datos y se necesita una visión general, pero desde el punto de vista de la capacidad de toma de decisiones, aún no estamos preparados para depender de ella', declaró Moses en una entrevista en la RSA Conference de abril.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T01:00:07.556Z",
+  "links": [
+    {
+      "title": "Noticia original en The Register",
+      "url": "https://www.theregister.com/2025/07/15/infosec-professionals-sour-on-automated-pentesting-tools/"
+    },
+    {
+      "title": "Informe 2026 State of Pentesting de Cobalt",
+      "url": "https://www.cobalt.io/reports/2026-state-of-pentesting"
+    },
+    {
+      "title": "Informe de Veracode sobre vulnerabilidades en desarrollo asistido por IA",
+      "url": "https://www.veracode.com/state-of-software-security"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Descenso en apoyo a pentesting autónomo",
+      "value": "del 29% en 2024 al 9% en 2025"
+    },
+    {
+      "label": "Porcentaje de falsos negativos críticos en herramientas automatizadas",
+      "value": "78% de los encuestados"
+    },
+    {
+      "label": "Vulnerabilidades de alta o crítica severidad en entornos de IA/LLM",
+      "value": "32% del total, frente al 12% en entornos tradicionales"
+    },
+    {
+      "label": "Mejora de eficiencia en equipos de seguridad de Amazon con IA de pentesting",
+      "value": "40%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

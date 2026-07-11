@@ -1,0 +1,41 @@
+{
+  "id": "78786d769ca34693f161b24327ce28a7f1f93fc10f385679b2ea2c9261a32634",
+  "title": "Raspberry Pi OS incorpora kernel 6.18 sin cambiar su número de versión",
+  "summary": "El sistema operativo Raspberry Pi OS ha actualizado su núcleo a la versión 6.18, pero conserva el mismo identificador de versión en pantalla. A la vez, se introducen mejoras en el entorno Wayland y cambios en el Raspberry Pi Imager para macOS.",
+  "url": "https://www.theregister.com/os-platforms/2026/06/30/raspberry-pi-os-gets-a-new-kernel-but-apparently-not-a-new-version-number/5263609",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-30T10:45:00.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Raspberry Pi OS incorpora kernel 6.18 sin cambiar su número de versión",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El sistema operativo Raspberry Pi OS ha actualizado su núcleo a la versión 6.18, pero conserva el mismo identificador de versión en pantalla. A la vez, se introducen mejoras en el entorno Wayland y cambios en el Raspberry Pi Imager para macOS.",
+  "keyPoints": [
+    "El kernel se actualiza de 6.12.75 a 6.18.34, convirtiéndose en LTS, aunque el número de versión en pantalla sigue siendo 6.2",
+    "El escritorio predeterminado pasa a labwc Wayland, sustituyendo al compositor LXDE personalizado PIXEL, y permite volver a Openbox si se desea",
+    "El nuevo Imager 2.0.10 exige macOS 13, dejando obsoletos los sistemas macOS 12 que podían ejecutar versiones anteriores",
+    "El entorno sigue siendo ligero: bajo X11 consume solo 560 MB de RAM, lo que lo hace viable en PCs de 15 años con 3 GB de DDR2"
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "Raspberry Pi OS incorpora kernel 6.18 sin cambiar su número de versión",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Linux 6.18 arrives with a few desktop tweaks, while the neglected x86 edition remains stuck on Debian 11\n\nThe distro formerly known as Raspbian has received some modest tweaks – and a whole new kernel version.\n\nRaspberry Pi Ltd is a little capricious when it comes to version numbering for Raspberry Pi OS, and although this release contains a fairly significant change, it doesn't seem to have a different version number. While PiOS is based on Debian 13 \"Trixie,\" the company significantly customizes upstream Debian, including newer kernels.\n\nFor 13 years now, Raspberry Pi has been adding new sections to the top of a single release notes file, which tells us that this build is dated 2026-06-18 and updates the kernel from version 6.12.75 to version 6.18.34. Even so, the version number on the s...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T06:25:44.277Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,68 @@
+{
+  "id": "a7e1f5f092a8344d854f223dec2e42b1fbd1d275ff57c1fe3c935e79e392626d",
+  "title": "Godot prohíbe contribuciones de código generadas por IA",
+  "summary": "El motor de juegos Godot, conocido por su comunidad activa y proyectos como Slay the Spire 2, ha decidido prohibir las contribuciones de código creadas o enviadas por agentes de IA, citando la creciente carga de revisiones de pull requests y la necesidad de mantener la calidad y la responsabilidad humana en el desarrollo.",
+  "url": "https://www.pcgamer.com/gaming-industry/open-source-game-engine-godot-will-no-longer-accept-ai-authored-code-contributions-we-cant-trust-heavy-users-of-ai-to-understand-their-code-enough-to-fix-it/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-01T07:43:22.000Z",
+  "imageUrl": "https://cdn.mos.cms.futurecdn.net/flexiimages/fzlg0fzmx11773302065.jpeg",
+  "imageAlt": "Godot prohíbe contribuciones de código generadas por IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El motor de juegos Godot, conocido por su comunidad activa y proyectos como Slay the Spire 2, ha decidido prohibir las contribuciones de código creadas o enviadas por agentes de IA, citando la creciente carga de revisiones de pull requests y la necesidad de mantener la calidad y la responsabilidad humana en el desarrollo.",
+  "keyPoints": [
+    "Godot enfrenta un aumento del 20 % en pull requests generados por IA, sobrepasando 500 PRs pendientes de revisión.",
+    "La fundación declara que el código IA no puede asumir responsabilidad, lo que dificulta la mentoría de nuevos mantenedores.",
+    "La nueva política exige que todas las contribuciones provengan de humanos y que el uso de IA sea transparente y limitado a tareas 'menores'.",
+    "La medida busca equilibrar el interés creciente en el motor con la sostenibilidad de su proceso de revisión y la integridad del código."
+  ],
+  "whyMatters": "Esta decisión marca un hito en la gestión de proyectos de código abierto frente a la proliferación de herramientas de IA. Al exigir responsabilidad humana, Godot protege la calidad del software y la confianza de su comunidad, evitando la degradación del código por contribuciones superficiales. Además, establece un precedente para otros proyectos de código abierto que deben equilibrar la innovación con la gobernanza y la sostenibilidad a largo plazo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn.mos.cms.futurecdn.net/flexiimages/fzlg0fzmx11773302065.jpeg",
+      "alt": "Pantalla de Godot anunciando la prohibición de código generado por IA",
+      "caption": "Godot anuncia la prohibición de contribuciones de código generadas por IA, según su blog oficial"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GodotEngine",
+    "#IA",
+    "#OpenSource",
+    "#DesarrolloDeSoftware"
+  ],
+  "fullArticle": "El motor de juegos Godot, que alimenta títulos como Slay the Spire 2 y The Case of the Golden Idol, ha sido objeto de una creciente ola de pull requests generados por IA que han sobrecargado a sus revisores y amenazado la calidad del código. En febrero, los mantenedores expresaron que estos \"slop\" se volvían cada vez más agotadores y desmoralizantes.\n\nPara abordar el problema, la Godot Foundation anunció hoy una nueva política que prohíbe las contribuciones de código creadas o enviadas por agentes de IA, así como la generación de texto automático en la comunicación entre humanos. La decisión se basa en la premisa de que la IA no puede asumir responsabilidad y que los mantenedores necesitan tiempo para mentorear a los futuros líderes del proyecto.\n\n[MULTIMEDIA: https://cdn.mos.cms.futurecdn.net/flexiimages/fzlg0fzmx11773302065.jpeg]\n\nLa política no elimina la ayuda de la IA; los colaboradores pueden usarla para tareas menores siempre que lo divulguen. Además, se rechazarán textos generados por IA en la interacción humana, aunque las traducciones automáticas se considerarán aceptables si el texto original fue escrito por un humano. La fundación subraya que la medida busca añadir barreras contra contribuciones de bajo esfuerzo y garantizar que cada línea de código tenga un autor humano responsable.\n\nEsta postura tiene implicaciones significativas para la comunidad de desarrollo de software. Al exigir la trazabilidad y la responsabilidad, Godot refuerza la confianza en su ecosistema y establece un estándar que otros proyectos de código abierto podrían seguir. La medida también señala una evolución en la relación entre la IA y el desarrollo colaborativo, subrayando la necesidad de equilibrar la eficiencia de las herramientas generativas con la integridad y la sostenibilidad del código.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T15:10:32.539Z",
+  "links": [
+    {
+      "title": "Blog oficial de Godot sobre la nueva política de contribución",
+      "url": "https://godotengine.org/blog/2026-04-15/no-ai-contributions"
+    },
+    {
+      "title": "Página de Wikipedia sobre Godot Engine",
+      "url": "https://es.wikipedia.org/wiki/Godot_Engine"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "PRs pendientes de revisión",
+      "value": ">500"
+    },
+    {
+      "label": "Porcentaje de contribuciones de IA",
+      "value": "20%"
+    },
+    {
+      "label": "Tiempo medio de revisión de PRs",
+      "value": "2 horas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

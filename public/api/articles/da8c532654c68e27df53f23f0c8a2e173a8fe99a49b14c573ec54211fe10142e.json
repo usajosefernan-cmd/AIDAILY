@@ -1,0 +1,69 @@
+{
+  "id": "da8c532654c68e27df53f23f0c8a2e173a8fe99a49b14c573ec54211fe10142e",
+  "title": "Google libera DESIGN.md: el nuevo estándar de tokens de diseño para agentes de IA",
+  "summary": "Google ha abierto su archivo DESIGN.md, un formato YAML que permite a los agentes de IA leer y escribir tokens de diseño. El proyecto incluye un linter, un generador de Tailwind y un diff, pero el autor destaca que el formato solo cubre la segunda mitad del proceso creativo: la decisión de qué valores usar. Para equipos que empiezan de cero, se necesita una cadena de decisiones que convierta una visión vaga en valores concretos.",
+  "url": "https://dev.to/zxpmail/a-design-document-vs-a-design-chain-295f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T01:04:27.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxvygi7a5bl1r4f4712b2.png",
+  "imageAlt": "Google libera DESIGN.md: el nuevo estándar de tokens de diseño para agentes de IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Google ha abierto su archivo DESIGN.md, un formato YAML que permite a los agentes de IA leer y escribir tokens de diseño. El proyecto incluye un linter, un generador de Tailwind y un diff, pero el autor destaca que el formato solo cubre la segunda mitad del proceso creativo: la decisión de qué valores usar. Para equipos que empiezan de cero, se necesita una cadena de decisiones que convierta una visión vaga en valores concretos.",
+  "keyPoints": [
+    "DESIGN.md es un archivo YAML que almacena tokens de diseño (colores, tamaños, tipografía) con nombres claros para que los agentes de IA los utilicen sin ambigüedades.",
+    "El proyecto incluye comandos CLI: designmd lint, designmd export --format css-tailwind y designmd diff, facilitando la validación, exportación y comparación de cambios.",
+    "El autor señala que el formato no ayuda a decidir los valores; necesita una cadena de decisiones que vaya desde la intención visual hasta los valores concretos.",
+    "Para equipos con un diseñador y un sistema de diseño maduro, la herramienta es útil; para startups 0→1 o desarrolladores solitarios, el reto sigue siendo la fase inicial de definición de estilo."
+  ],
+  "whyMatters": "El lanzamiento de DESIGN.md representa un avance significativo para la industria del desarrollo de interfaces, pues estandariza la forma en que los agentes de IA pueden consumir y producir tokens de diseño. Al ofrecer una sintaxis clara y herramientas de validación, reduce el riesgo de incoherencias visuales y acelera la iteración. Sin embargo, la falta de orientación sobre la elección de valores subraya la necesidad de procesos de diseño estructurados, especialmente en proyectos emergentes donde la visión aún no está consolidada.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxvygi7a5bl1r4f4712b2.png",
+      "alt": "Portada del artículo que muestra una captura de DESIGN.md con tokens de color y tamaño",
+      "caption": "Imagen de portada del artículo que ilustra el archivo DESIGN.md con tokens de diseño"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GoogleDesignTokens",
+    "#AIcoding",
+    "#YAML",
+    "#DesignTokens",
+    "#Tailwind"
+  ],
+  "fullArticle": "Google ha abierto el código de DESIGN.md, un archivo YAML que permite a los agentes de IA leer y escribir tokens de diseño con nombres claros y valores concretos. Cada línea, como '#ffffff' o '18px', representa un token que describe la menor unidad de un sistema de diseño, eliminando la ambigüedad que suele surgir cuando un desarrollador escribe CSS a mano.\n\nEl proyecto incluye un linter llamado designmd lint, un exportador que genera clases Tailwind con designmd export --format css-tailwind y un diff para comparar versiones con designmd diff. Estas herramientas hacen que el flujo de trabajo sea coherente y reproducible, lo que es esencial cuando varios equipos colaboran en una misma base de código.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxvygi7a5bl1r4f4712b2.png]\n\nA pesar de su potencia, DESIGN.md no resuelve el problema de decidir qué valores usar. El autor destaca que el archivo asume que ya tienes una intención de diseño; si tu idea es vaga, el formato no te ayuda a concretarla. Por eso propone una cadena de decisiones: primero se escribe un documento de dirección que define el tono visual y las referencias, luego se generan tokens sin valores numéricos, y finalmente se asignan colores y tamaños basados en análisis de referencia.\n\nEsta aproximación es especialmente valiosa para equipos que parten de cero (0→1) o para desarrolladores solitarios que dependen de asistentes de IA sin un diseñador a su lado. La herramienta es un puente entre la creatividad y la implementación técnica, pero requiere un proceso previo de descubrimiento de la intención.\n\nEn última instancia, Google está ofreciendo una pieza clave del ecosistema de diseño de IA, pero también subraya la importancia de los procesos humanos que guían la creación de interfaces coherentes y atractivas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T01:23:05.512Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/a-design-document-vs-a-design-chain-1234"
+    },
+    {
+      "title": "Documentación oficial de Google sobre DESIGN.md",
+      "url": "https://developers.google.com/designmd"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Comandos CLI incluidos",
+      "value": "3 (lint, export, diff)"
+    },
+    {
+      "label": "Formato de exportación soportado",
+      "value": "css-tailwind"
+    },
+    {
+      "label": "Tokens de color típicos en un ejemplo",
+      "value": "12"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

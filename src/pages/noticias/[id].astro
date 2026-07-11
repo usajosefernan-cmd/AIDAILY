@@ -1,0 +1,47 @@
+---
+import { readFileSync, existsSync } from 'fs';
+import { join } from 'path';
+
+function getSlug(title) {
+  if (!title) return '';
+  let slug = title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Quitar acentos
+    .replace(/[^a-z0-9]+/g, '-') // Cambiar no alfanuméricos por guiones
+    .replace(/(^-|-$)+/g, ''); // Limpiar guiones iniciales y finales
+  
+  if (slug.length > 100) {
+    slug = slug.substring(0, 100).replace(/-+$/, '');
+  }
+  return slug;
+}
+
+export async function getStaticPaths() {
+  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
+  if (!existsSync(cachePath)) return [];
+  
+  try {
+    const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
+    if (Array.isArray(cacheData)) {
+      return cacheData.map(art => ({
+        params: { id: art.id },
+        props: { article: art }
+      }));
+    }
+  } catch (e) {
+    console.error("Error al generar rutas en noticias/[id].astro:", e);
+  }
+  return [];
+}
+
+const { article } = Astro.props;
+
+if (!article) {
+  return Astro.redirect('/pro/aidaily/');
+}
+
+const slug = getSlug(article.title) || article.id;
+const redirectUrl = `/pro/aidaily/noticias/${slug}/`;
+return Astro.redirect(redirectUrl, 301);
+---

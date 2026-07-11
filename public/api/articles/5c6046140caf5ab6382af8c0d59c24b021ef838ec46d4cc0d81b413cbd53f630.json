@@ -1,0 +1,72 @@
+{
+  "id": "5c6046140caf5ab6382af8c0d59c24b021ef838ec46d4cc0d81b413cbd53f630",
+  "title": "Microsoft parchea vulnerabilidad 'RoguePlanet' en Windows Defender",
+  "summary": "Microsoft ha lanzado una actualización del Motor de Protección contra Malware para solucionar una vulnerabilidad de escalada de privilegios en Defender, identificada como CVE-2026-50656, que permitía a atacantes obtener acceso elevado en sistemas Windows.",
+  "url": "https://www.securityweek.com/microsoft-patches-defender-rogueplanet-vulnerability",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-09T10:28:35.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Microsoft parchea vulnerabilidad 'RoguePlanet' en Windows Defender",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Microsoft ha lanzado una actualización del Motor de Protección contra Malware para solucionar una vulnerabilidad de escalada de privilegios en Defender, identificada como CVE-2026-50656, que permitía a atacantes obtener acceso elevado en sistemas Windows.",
+  "keyPoints": [
+    "La vulnerabilidad, denominada 'RoguePlanet', afecta al Motor de Protección contra Malware de Microsoft Defender.",
+    "Permite la escalada de privilegios, otorgando a atacantes control total sobre sistemas vulnerables.",
+    "Microsoft ha publicado un parche oficial que debe instalarse de inmediato para mitigar el riesgo.",
+    "Se recomienda a usuarios y organizaciones actualizar sus sistemas lo antes posible."
+  ],
+  "whyMatters": "Esta vulnerabilidad representa un riesgo crítico para la seguridad de millones de dispositivos en todo el mundo, ya que permite a actores maliciosos obtener privilegios de administrador y ejecutar código arbitrario. Su explotación podría derivar en robos de datos, instalación de ransomware o espionaje corporativo, especialmente en entornos empresariales que dependen de Defender como solución principal de protección. La rapidez en la aplicación del parche es esencial para evitar campañas de ataque masivas que aprovechen esta falla.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+      "alt": "Microsoft parchea vulnerabilidad 'RoguePlanet' en Windows Defender",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#MicrosoftDefender",
+    "#Ciberseguridad",
+    "#RoguePlanet",
+    "#Vulnerabilidad"
+  ],
+  "fullArticle": "Microsoft ha solucionado una grave vulnerabilidad en su solución de seguridad Windows Defender, bautizada como 'RoguePlanet' y registrada bajo el identificador CVE-2026-50656. La falla, de tipo escalada de privilegios, residía en el Motor de Protección contra Malware y permitía a atacantes locales elevar sus permisos para tomar control total del sistema afectado. El parche, distribuido a través de una actualización automática del motor, ya está disponible para todos los usuarios de Windows.\n\nLa explotación de esta vulnerabilidad no requiere interacción del usuario y puede ser aprovechada por malware ya presente en el equipo para obtener derechos de administrador. Esto la convierte en una amenaza particularmente peligrosa en entornos corporativos, donde un atacante podría moverse lateralmente por la red y comprometer información sensible. Expertos en ciberseguridad advierten que, históricamente, este tipo de fallas en soluciones de seguridad son objetivo prioritario de grupos de ransomware y actores patrocinados por estados.\n\nSe recomienda encarecidamente a administradores de sistemas y usuarios particulares verificar que sus equipos estén actualizados, ya que la vulnerabilidad afecta a múltiples versiones de Windows. La ausencia del parche podría exponer a organizaciones a filtraciones de datos, interrupción de servicios y pérdidas económicas millonarias. Mantener el software de seguridad siempre actualizado es una medida básica pero fundamental en la estrategia de ciberseguridad actual.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T10:44:09.431Z",
+  "links": [
+    {
+      "title": "Artículo original en SecurityWeek",
+      "url": "https://www.securityweek.com/microsoft-patches-defender-rogueplanet-vulnerability/"
+    },
+    {
+      "title": "Boletín de seguridad de Microsoft",
+      "url": "https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2026-50656"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Identificador CVE",
+      "value": "CVE-2026-50656"
+    },
+    {
+      "label": "Tipo de vulnerabilidad",
+      "value": "Escalada de privilegios"
+    },
+    {
+      "label": "Producto afectado",
+      "value": "Microsoft Defender"
+    },
+    {
+      "label": "Vector de ataque",
+      "value": "Local, sin interacción del usuario"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

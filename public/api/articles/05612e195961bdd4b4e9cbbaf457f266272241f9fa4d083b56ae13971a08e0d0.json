@@ -1,0 +1,69 @@
+{
+  "id": "05612e195961bdd4b4e9cbbaf457f266272241f9fa4d083b56ae13971a08e0d0",
+  "title": "Glaze: la toolkit de Go que crea apps de escritorio con WebView sin necesidad de CGo",
+  "summary": "Glaze es una toolkit de desarrollo para Go que permite crear aplicaciones de escritorio ligeras usando el WebView nativo del sistema operativo, sin necesidad de CGo, compiladores de C o frameworks pesados. Está diseñada para herramientas que requieren interfaces gráficas básicas como formularios, dashboards o previsualizaciones, manteniendo la simplicidad del flujo de trabajo de Go.",
+  "url": "https://dev.to/crgimenes/building-desktop-webview-apps-in-go-without-cgo-47bj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T03:54:59.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "Glaze: la toolkit de Go que crea apps de escritorio con WebView sin necesidad de CGo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Glaze es una toolkit de desarrollo para Go que permite crear aplicaciones de escritorio ligeras usando el WebView nativo del sistema operativo, sin necesidad de CGo, compiladores de C o frameworks pesados. Está diseñada para herramientas que requieren interfaces gráficas básicas como formularios, dashboards o previsualizaciones, manteniendo la simplicidad del flujo de trabajo de Go.",
+  "keyPoints": [
+    "Glaze es una toolkit de Go para aplicaciones de escritorio que aprovecha el WebView nativo del sistema operativo sin dependencias de CGo.",
+    "Elimina la necesidad de incluir compiladores de C, librerías nativas auxiliares o grandes frameworks de escritorio en el flujo de trabajo de Go.",
+    "Está diseñada para herramientas pequeñas que requieren interfaces básicas como formularios, dashboards locales o editores visuales sin servidores web integrados.",
+    "Utiliza la librería purego para comunicarse directamente con las APIs nativas de la plataforma, manteniendo el código completamente en Go."
+  ],
+  "whyMatters": "Glaze representa un avance significativo para los desarrolladores de Go que buscan crear herramientas de escritorio ligeras sin renunciar a la simplicidad del ecosistema nativo de Go. Al eliminar la dependencia de CGo, reduce la complejidad de las compilaciones, evita problemas de compatibilidad entre arquitecturas y acorta los tiempos de desarrollo para aplicaciones que no requieren funcionalidades avanzadas de GUI. Su enfoque minimalista abre la puerta a una nueva categoría de herramientas de productividad para desarrolladores que hasta ahora tenían que elegir entre CLI puras o frameworks de escritorio pesados, democratizando el acceso a interfaces gráficas nativas en el ecosistema Go.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo oficial de Glaze, la toolkit de Go para aplicaciones de escritorio sin CGo",
+      "caption": "Logo del proyecto Glaze, presentado en la plataforma Dev.to por su creador"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GlazeToolkit",
+    "#GoLang",
+    "#WebView",
+    "#DesarrolloDeSoftware",
+    "#CGoFree"
+  ],
+  "fullArticle": "El ecosistema de Go, reconocido por su simplicidad y rendimiento en el desarrollo de herramientas de línea de comandos y servicios backend, cuenta desde ahora con una nueva propuesta para ampliar sus capacidades hacia el desarrollo de aplicaciones de escritorio ligeras: Glaze, una toolkit que permite crear ventanas nativas respaldadas por el WebView integrado en cada sistema operativo, sin necesidad de recurrir a CGo, la interfaz que permite llamar a código C desde Go y que históricamente ha generado dolores de cabeza en la compilación y despliegue de aplicaciones. La propuesta, presentada por su creador en la plataforma Dev.to, responde a una necesidad no cubierta por las soluciones existentes: muchas herramientas de productividad para desarrolladores no requieren una interfaz gráfica compleja, pero sí necesitan una ventana nativa para mostrar formularios, previsualizaciones, dashboards locales o editores visuales sin tener que recurrir a servidores web integrados o frameworks de escritorio pesados como Electron o Qt.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl funcionamiento de Glaze se apoya en la librería purego, que permite realizar llamadas directas a las APIs nativas de cada plataforma (Windows, macOS y Linux) desde código Go, sin necesidad de compilar código C intermedio ni incluir librerías auxiliares en el paquete final. Esto elimina uno de los principales obstáculos para adoptar Go en el desarrollo de aplicaciones de escritorio: la necesidad de contar con un compilador de C instalado en el entorno de compilación, que genera incompatibilidades entre arquitecturas y alarga los tiempos de despliegue. A diferencia de otras soluciones de WebView para Go, Glaze no incluye una librería nativa auxiliar ni asume la estructura de un framework de aplicación grande, por lo que se integra de forma casi transparente en el flujo de trabajo habitual de los desarrolladores de Go, sin modificar sus procesos de compilación ni empaquetado.\n\nEl proyecto, aún en etapas iniciales, ya cuenta con la funcionalidad básica necesaria para abrir ventanas nativas y cargar contenido HTML local o remoto, aprovechando todas las capacidades de renderizado del navegador integrado en el sistema: layout responsive, renderizado de texto y formularios, manejo de eventos de teclado y un modelo de depuración familiar para cualquier desarrollador web. Su creador aclara que Glaze no busca convertirse en un toolkit de GUI completo, sino en una solución minimalista para un caso de uso muy concreto: herramientas pequeñas de escritorio que se benefician de una interfaz gráfica básica sin renunciar a la simplicidad del ecosistema Go.\n\nLa llegada de Glaze al ecosistema de herramientas para desarrolladores tiene el potencial de cambiar la forma en que se construyen pequeñas aplicaciones de productividad en Go, que hasta ahora se limitaban en su mayoría a interfaces de línea de comandos. Al reducir la fricción para añadir una interfaz gráfica nativa, se abre la puerta a una nueva generación de herramientas de manipulación de datos, editores ligeros y dashboards locales que no requieren la complejidad de soluciones como Electron, que generan paquetes de instalación de cientos de megavatios. A medida que el proyecto madure y amplíe su soporte para características avanzadas como comunicación bidireccional entre Go y el código JavaScript del WebView, podría convertirse en una opción estándar para el desarrollo de herramientas de escritorio en el ecosistema Go.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T04:03:48.345Z",
+  "links": [
+    {
+      "title": "Artículo original sobre Glaze en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de la librería purego",
+      "url": "https://pkg.go.dev/purego"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño aproximado de paquetes de aplicaciones con Glaze",
+      "value": "Menos de 5 MB"
+    },
+    {
+      "label": "Dependencias externas requeridas",
+      "value": "Solo la librería purego"
+    },
+    {
+      "label": "Sistemas operativos compatibles",
+      "value": "Windows, macOS y Linux"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

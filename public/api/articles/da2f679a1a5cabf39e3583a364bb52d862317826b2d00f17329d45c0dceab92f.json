@@ -1,0 +1,76 @@
+{
+  "id": "da2f679a1a5cabf39e3583a364bb52d862317826b2d00f17329d45c0dceab92f",
+  "title": "UPower 1.91.3 Corrige un error que degradaba la batería de portátiles",
+  "summary": "La última actualización de UPower, el motor de gestión de energía de Linux, elimina un fallo que hacía que ciertos portátiles entraran inadvertidamente en modo de carga rápida, acelerando su desgaste.",
+  "url": "https://www.phoronix.com/news/UPower-1.91.3",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-03T18:57:11.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=framework-laptop&image=framework_laptop_2",
+  "imageAlt": "UPower 1.91.3 Corrige un error que degradaba la batería de portátiles",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La última actualización de UPower, el motor de gestión de energía de Linux, elimina un fallo que hacía que ciertos portátiles entraran inadvertidamente en modo de carga rápida, acelerando su desgaste.",
+  "keyPoints": [
+    "La corrección evita que la batería de portátiles entre en modo de carga rápida, reduciendo el riesgo de degradación prematura.",
+    "La versión 1.91.3 corrige un comportamiento que afectaba a varios modelos, mejorando la longevidad de la batería.",
+    "El fallo estaba presente en sistemas que usaban UPower 1.91.2 y versiones anteriores, afectando a usuarios de laptops con Linux.",
+    "La actualización garantiza una gestión más precisa de la energía, alineándose con las mejores prácticas de hardware.",
+    ""
+  ],
+  "whyMatters": "El desgaste acelerado de las baterías de portátiles representa un coste económico y ambiental significativo, pues obliga a reemplazos frecuentes y a la generación de residuos electrónicos. Al corregir este defecto, UPower no solo protege la inversión de los usuarios, sino que también contribuye a la sostenibilidad del ecosistema Linux, reforzando la confianza en la plataforma como alternativa viable frente a sistemas operativos propietarios. Además, la mejora en la gestión de energía puede traducirse en una mayor autonomía y rendimiento, factores críticos para profesionales y estudiantes que dependen de sus dispositivos en movilidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=framework-laptop&image=framework_laptop_2",
+      "alt": "Portátil con Linux mostrando la interfaz de UPower",
+      "caption": "Imagen de portada que ilustra la capa de gestión de energía UPower en un portátil"
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#UPower",
+    "#Batería",
+    "#Linux"
+  ],
+  "fullArticle": "UPower, la capa de abstracción de gestión de energía que se ejecuta en la mayoría de los sistemas Linux, acaba de lanzar la versión 1.91.3, que corrige un error que provocaba que ciertos portátiles entraran en modo de carga rápida de forma involuntaria. Este comportamiento, que se había detectado en varias familias de laptops, podía acelerar el desgaste de la batería y reducir su vida útil.\n\nEl fallo se originaba cuando UPower identificaba incorrectamente el estado de la batería y activaba el modo \"fast\" de carga, una práctica que aumenta la temperatura interna y, con el tiempo, reduce la capacidad de la celda. La nueva actualización elimina esa lógica errónea y garantiza que la carga se realice en el modo adecuado.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=framework-laptop&image=framework_laptop_2]\n\nEsta corrección es particularmente relevante para los usuarios de Linux que dependen de la fiabilidad de sus dispositivos en entornos profesionales y académicos. Al prevenir la degradación prematura de la batería, la actualización no solo protege la inversión del usuario, sino que también reduce la generación de residuos electrónicos.\n\nEl equipo de UPower ha publicado un changelog detallado que indica que la versión 1.91.3 corrige la “carga rápida involuntaria” en modelos que utilizan la versión 1.91.2 o anteriores. Además, se ha añadido una capa de verificación que asegura que la batería sólo entre en modo de carga rápida cuando el fabricante lo indica explícitamente.\n\nLos desarrolladores de Linux continúan trabajando para mejorar la compatibilidad con una amplia gama de hardware, y esta actualización es un claro ejemplo de cómo la comunidad puede responder rápidamente a problemas críticos que afectan a la experiencia del usuario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T19:31:00.386Z",
+  "links": [
+    {
+      "title": "Phoronix – UPower 1.91.3 Release Notes",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=UPower-1.91.3-Release"
+    },
+    {
+      "title": "Wikipedia – UPower",
+      "url": "https://es.wikipedia.org/wiki/UPower"
+    },
+    {
+      "title": "GitHub – UPower Repository",
+      "url": "https://github.com/hadess/UPower"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión",
+      "value": "1.91.3"
+    },
+    {
+      "label": "Modo de carga rápido evitado",
+      "value": "Sí"
+    },
+    {
+      "label": "Mejora en la longevidad de la batería",
+      "value": "Reducción del desgaste"
+    },
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "2024-07-02"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

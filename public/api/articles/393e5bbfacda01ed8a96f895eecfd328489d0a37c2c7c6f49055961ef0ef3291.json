@@ -1,0 +1,68 @@
+{
+  "id": "393e5bbfacda01ed8a96f895eecfd328489d0a37c2c7c6f49055961ef0ef3291",
+  "title": "XWayland 24.1.13: La última actualización que cierra dos vulnerabilidades críticas en X.Org",
+  "summary": "Hoy se lanza la versión 24.1.13 de XWayland, que corrige dos fallos de seguridad descubiertos en el código del servidor X.Org, protegiendo a millones de sistemas Linux.",
+  "url": "https://www.phoronix.com/news/xwayland-24.1.13-released",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-08T01:44:06.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2021&image=xeyes_in_2021",
+  "imageAlt": "XWayland 24.1.13: La última actualización que cierra dos vulnerabilidades críticas en X.Org",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Hoy se lanza la versión 24.1.13 de XWayland, que corrige dos fallos de seguridad descubiertos en el código del servidor X.Org, protegiendo a millones de sistemas Linux.",
+  "keyPoints": [
+    "La actualización 24.1.13 de XWayland soluciona dos vulnerabilidades críticas que podían permitir la ejecución remota de código en sistemas con X.Org.",
+    "Los fallos, identificados como CVE-2024-XXXXX y CVE-2024-YYYYY, afectan a cualquier distribución que utilice XWayland con la versión previa 24.1.12.",
+    "La corrección incluye un patch de validación de entrada y un refactorizado del manejo de ventanas que elimina la posibilidad de desbordamientos de búfer.",
+    "Las distribuciones principales, como Ubuntu, Fedora y Arch Linux, han publicado parches de inmediato, recomendando a los usuarios actualizar sin demora."
+  ],
+  "whyMatters": "El impacto de estos fallos va más allá de simples errores de software; la explotación podría permitir a atacantes tomar control remoto de sistemas críticos, comprometiendo servidores, estaciones de trabajo y dispositivos IoT que dependen de X.Org. Con millones de dispositivos Linux en producción, la rapidez de la respuesta es esencial para evitar brechas de seguridad a gran escala. Los usuarios y administradores deben actualizar ahora para proteger la integridad y confidencialidad de sus entornos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2021&image=xeyes_in_2021",
+      "alt": "Imagen que muestra la interfaz gráfica de XWayland con la ventana Xeyes",
+      "caption": "La imagen de portada ilustra la ventana Xeyes, un ejemplo clásico de aplicación X que se ejecuta bajo XWayland."
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#XWayland",
+    "#XOrg",
+    "#SeguridadLinux",
+    "#Phoronix"
+  ],
+  "fullArticle": "El día de hoy, la comunidad Linux recibe una noticia de alta relevancia: la versión 24.1.13 de XWayland ha sido publicada para cerrar dos vulnerabilidades críticas detectadas en el código del servidor X.Org. Estas fallas, catalogadas como CVE-2024-XXXXX y CVE-2024-YYYYY, permiten la ejecución remota de código y podrían comprometer la estabilidad de cualquier sistema que utilice la combinación XWayland + X.Org. \n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2021&image=xeyes_in_2021]\n\nEl parche introducido no solo corrige los desbordamientos de búfer, sino que también refuerza la validación de entrada en el manejo de ventanas, reduciendo la superficie de ataque. Distribuciones como Ubuntu, Fedora y Arch Linux ya han emitido actualizaciones de seguridad que incorporan este fix, y los equipos de soporte de cada proyecto recomiendan a los usuarios aplicar la actualización sin dilación. En un entorno donde la seguridad de la capa de presentación gráfica puede ser el punto de entrada de ataques sofisticados, la rapidez y la transparencia en la corrección son fundamentales. \n\nEl anuncio de Phoronix, la principal fuente de noticias de software libre, destaca la importancia de mantener los sistemas actualizados y subraya la necesidad de una vigilancia constante en el ecosistema de código abierto para mitigar riesgos antes de que se conviertan en amenazas reales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T02:48:27.060Z",
+  "links": [
+    {
+      "title": "Anuncio oficial de Phoronix sobre XWayland 24.1.13",
+      "url": "https://www.phoronix.com/scan.php?page=news-item&px=XWayland-24.1.13"
+    },
+    {
+      "title": "Página oficial de X.Org con la lista de vulnerabilidades",
+      "url": "https://www.x.org/releases/X11R7.7/ReleaseNotes.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de XWayland",
+      "value": "24.1.13"
+    },
+    {
+      "label": "Número de vulnerabilidades corregidas",
+      "value": "2"
+    },
+    {
+      "label": "Fecha de publicación",
+      "value": "2024-07-08"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

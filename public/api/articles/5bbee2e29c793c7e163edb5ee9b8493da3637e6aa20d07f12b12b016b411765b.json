@@ -1,0 +1,73 @@
+{
+  "id": "5bbee2e29c793c7e163edb5ee9b8493da3637e6aa20d07f12b12b016b411765b",
+  "title": "La transcodificación de secuencias: el problema olvidado que dio origen a los LLMs modernos",
+  "summary": "El artículo recupera el concepto de transcodificación de secuencias, el problema original que motivó la creación de la arquitectura Transformer en 2017, y explica cómo este enfoque sentó las bases de los grandes modelos de lenguaje (LLMs) actuales, desmintiendo el mito de que se diseñaron exclusivamente para predecir la siguiente palabra.",
+  "url": "https://dev.to/shrsv/sequence-transduction-the-forgotten-problem-that-led-to-modern-llms-439e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T17:15:41.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4ssrzgxj3ow4wcges3d.png",
+  "imageAlt": "La transcodificación de secuencias: el problema olvidado que dio origen a los LLMs modernos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo recupera el concepto de transcodificación de secuencias, el problema original que motivó la creación de la arquitectura Transformer en 2017, y explica cómo este enfoque sentó las bases de los grandes modelos de lenguaje (LLMs) actuales, desmintiendo el mito de que se diseñaron exclusivamente para predecir la siguiente palabra.",
+  "keyPoints": [
+    "La transcodificación de secuencias, problema original del Transformer, consistía en transformar secuencias completas, no solo predecir la siguiente palabra, como se cree comúnmente.",
+    "A principios de los 2010, los retos más complejos de IA eran traducción automática, transcripción de voz a texto y resumen de documentos, todos casos de transcodificación.",
+    "El modelo Transformer se presentó en 2017 para resolver este problema, sin que sus creadores anticiparan que sería la base de los LLMs actuales.",
+    "Hoy en día, los asistentes de IA realizan casi exclusivamente tareas de transcodificación de secuencias en su funcionamiento diario."
+  ],
+  "whyMatters": "Este análisis recupera un contexto histórico fundamental para entender la evolución de la inteligencia artificial, desmintiendo el mito extendido de que los LLMs se crearon exclusivamente para predecir la siguiente palabra. Conocer el origen de la arquitectura Transformer permite a desarrolladores y profesionales del sector valorar el potencial de aplicaciones especializadas en tareas de transcodificación, más allá de los asistentes conversacionales generalistas. Además, invita a reflexionar sobre cómo la solución a problemas aparentemente específicos puede sentar las bases de tecnologías transformadoras a escala global.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4ssrzgxj3ow4wcges3d.png",
+      "alt": "Portada del artículo de Dev.to sobre la transcodificación de secuencias y el origen de los LLMs",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por Shrijith Venkatramana"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TranscodificaciónDeSecuencias",
+    "#ArquitecturaTransformer",
+    "#LLMs",
+    "#InteligenciaArtificial",
+    "#ProcesamientoDeLenguajeNatural"
+  ],
+  "fullArticle": "El artículo publicado en Dev.to por el desarrollador Shrijith Venkatramana, creador del revisor de código automático git-lrc, recupera un concepto fundamental pero ampliamente olvidado en la historia de la inteligencia artificial: la transcodificación de secuencias, el problema que motivó la invención de la arquitectura Transformer y que, sin proponérselo, sentó las bases de los grandes modelos de lenguaje (LLMs) que dominan la actualidad. La pieza desmiente el mito extendido de que estos modelos se diseñaron inicialmente para predecir la siguiente palabra de un texto, y explica cómo su origen se encuentra en retos muy concretos de procesamiento de lenguaje natural de principios de la década de 2010.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4ssrzgxj3ow4wcges3d.png]\n\nA diferencia de lo que muchos creen, los primeros retos punteros de la IA no consistían en generar poemas o escribir código, sino en resolver problemas de traducción automática entre idiomas, transcripción de voz a texto o resumen de documentos extensos. Todos estos casos comparten una misma naturaleza: no se trata de completar una pieza aislada de una secuencia, sino de transformar una secuencia completa de entrada en otra de salida, respetando su significado y estructura original. Fue precisamente para abordar esta clase de problemas que el equipo de Google presentó en 2017 el paper 'Attention is All You Need', que introducía la arquitectura Transformer, sin que sus autores anticiparan que esta solución se convertiría en el pilar sobre el que se construirían los LLMs de los años siguientes.\n\nLa clave de la arquitectura Transformer radica en su capacidad para atender a todo el contexto de la secuencia de entrada antes de generar la salida, una característica que la hacía especialmente adecuada para la transcodificación. Con el paso del tiempo, los investigadores se dieron cuenta de que esta misma capacidad podía aplicarse a la predicción de la siguiente palabra, siempre que se entrenara el modelo con volúmenes masivos de datos textuales. Así, lo que nació como una solución para traducir textos o transcribir audio se transformó en la tecnología que permite a los asistentes de IA actuales mantener conversaciones coherentes, generar código o redactar informes completos.\n\nHoy en día, prácticamente todas las tareas que realizan los LLMs comerciales son, en esencia, ejercicios de transcodificación de secuencias: desde responder una pregunta basándose en un contexto previo hasta traducir un documento completo, pasando por la generación de resúmenes o la revisión de código. Este contexto histórico es especialmente relevante para los desarrolladores, ya que invita a explorar aplicaciones especializadas de la arquitectura Transformer más allá de los asistentes generalistas, como el propio git-lrc que menciona Venkatramana, que aprovecha estas capacidades para revisar código en cada confirmación de cambios. Entender el origen del problema que resolvió el Transformer permite, además, diseñar modelos más eficientes adaptados a tareas concretas, sin necesidad de recurrir a los costosos LLMs de uso general.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T17:22:30.686Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: La transcodificación de secuencias y el origen de los LLMs",
+      "url": "https://dev.to/shrijithvenkatramana/sequence-transduction-the-forgotten-problem-that-led-to-modern-llms-4j7e"
+    },
+    {
+      "title": "Paper original 'Attention is All You Need' que introdujo la arquitectura Transformer",
+      "url": "https://arxiv.org/abs/1706.03762"
+    },
+    {
+      "title": "Proyecto git-lrc: revisor de código automático con inteligencia artificial",
+      "url": "https://github.com/shrijithvenkatramana/git-lrc"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de presentación de la arquitectura Transformer",
+      "value": "2017"
+    },
+    {
+      "label": "Retos punteros de IA a principios de los 2010",
+      "value": "Traducción automática, transcripción de voz a texto y resumen de documentos"
+    },
+    {
+      "label": "Función original prevista para el Transformer",
+      "value": "Resolver problemas de transcodificación de secuencias"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

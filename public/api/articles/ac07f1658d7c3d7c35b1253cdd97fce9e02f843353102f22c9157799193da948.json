@@ -1,0 +1,77 @@
+{
+  "id": "ac07f1658d7c3d7c35b1253cdd97fce9e02f843353102f22c9157799193da948",
+  "title": "Crea un empleado de IA para tu pyme por menos de un café al día: se activa por Telegram y atiende clientes sin descanso",
+  "summary": "Un desarrollador publicó la arquitectura de un bot de Telegram que funciona como empleado de IA para pequeñas empresas, encargándose de atención al cliente, gestión de pedidos y soporte de ventas por un coste diario inferior al de una taza de café, con una pila tecnológica sencilla basada en Python, Flask y NGINX.",
+  "url": "https://dev.to/modelhub_dev/i-built-a-telegram-bot-that-acts-as-your-ai-employee-heres-the-architecture-4249",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T08:06:43.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7miml42dq083rbh4iph6.png",
+  "imageAlt": "Crea un empleado de IA para tu pyme por menos de un café al día: se activa por Telegram y atiende clientes sin descanso",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador publicó la arquitectura de un bot de Telegram que funciona como empleado de IA para pequeñas empresas, encargándose de atención al cliente, gestión de pedidos y soporte de ventas por un coste diario inferior al de una taza de café, con una pila tecnológica sencilla basada en Python, Flask y NGINX.",
+  "keyPoints": [
+    "El bot resuelve la sobrecarga de tareas de los dueños de pymes, que deben atender clientes, gestionar pedidos y ventas de forma simultánea sin personal adicional.",
+    "Su arquitectura usa Python/Flask para webhooks, NGINX como proxy inverso y multiprocesamiento para ejecutar múltiples roles de empleado en paralelo sin bloqueos.",
+    "Las respuestas de IA se generan a través de la API de ModelHub con modelos DeepSeek, ofreciendo razonamiento de alta calidad a un coste muy reducido.",
+    "A diferencia de chatbots básicos o contrataciones personal, la solución funciona 24/7, no requiere bajas por enfermedad y se despliega en minutos."
+  ],
+  "whyMatters": "Esta solución supone un punto de inflexión para las pequeñas empresas, que habitualmente no cuentan con presupuesto para contratar personal especializado en atención al cliente o gestión de ventas. Al automatizar tareas repetitivas por un coste marginal, los emprendedores pueden destinar sus recursos a actividades de crecimiento en lugar de resolver consultas de stock o seguimiento de pedidos. Además, su arquitectura abierta y basada en herramientas accesibles permite que cualquier desarrollador lo adapte a necesidades específicas de sectores como el comercio electrónico o el comercio internacional, democratizando el acceso a herramientas de IA avanzada para pymes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7miml42dq083rbh4iph6.png",
+      "alt": "Portada del artículo que explica la arquitectura del bot de Telegram con IA para pymes",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#BotTelegram",
+    "#IAparaPymes",
+    "#EmpleadoIA",
+    "#DesarrolloSistemas",
+    "#DeepSeek"
+  ],
+  "fullArticle": "Dirigir una pequeña empresa supone asumir decenas de roles a la vez: eres el equipo de ventas, el servicio de atención al cliente, el gestor de pedidos y el responsable de logística, todo al mismo tiempo. Cada minuto que inviertes en responder consultas como '¿tienen este producto en stock?' es un minuto que no dedicas a hacer crecer tu negocio, y la falta de personal cualificado agrava aún más esta sobrecarga. Hasta ahora, las alternativas para aliviar esta carga pasaban por contratar a un empleado a tiempo completo, con un coste inasumible para la mayoría de pymes, recurrir a chatbots básicos que no entienden el contexto de las consultas o desarrollar un sistema de IA propio, una tarea compleja y reservada para equipos técnicos grandes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7miml42dq083rbh4iph6.png]\n\nPrecisamente para cubrir ese vacío nació este 'empleado de IA' desplegable a través de Telegram, una herramienta que se encarga de forma autónoma de la atención al cliente, la gestión de pedidos y el soporte de ventas de las pequeñas empresas, con un coste diario inferior al de una taza de café. A diferencia de las soluciones existentes, combina la personalización de un empleado humano con la disponibilidad 24/7 de un sistema automatizado, sin bajas por enfermedad, vacaciones o errores por cansancio. El sistema se adapta a cualquier tipo de pyme, desde tiendas de comercio electrónico hasta negocios de comercio internacional, y se puede configurar en cuestión de minutos sin necesidad de conocimientos avanzados de programación por parte del usuario final.\n\nLa arquitectura del sistema es sorprendentemente sencilla y eficiente, lo que explica su bajo coste y su alta fiabilidad. El flujo comienza cuando un usuario envía un mensaje al bot de Telegram: la API de Telegram envía un webhook con la información del mensaje a un servidor NGINX, que actúa como proxy inverso y se encarga de terminar la conexión SSL para aligerar la carga de trabajo de la aplicación principal. NGINX redirige la solicitud a una aplicación Flask desarrollada en Python, que valida la firma HMAC de la solicitud para garantizar que proviene de Telegram y la enruta al proceso de empleado de IA correspondiente según el bot que haya recibido el mensaje. Cada rol de empleado (atención al cliente, gestión de pedidos, soporte de ventas) se ejecuta en un proceso independiente de multiprocesamiento, por lo que si uno de ellos está procesando una solicitud larga, los demás siguen respondiendo de forma instantánea sin bloqueos.\n\nTodas las respuestas de inteligencia artificial se generan a través de la API de ModelHub, que da acceso a modelos de lenguaje DeepSeek, elegidos por ofrecer un equilibrio excepcional entre calidad de razonamiento, comprensión de contexto y coste, muy inferior al de otros modelos de referencia. El equipo ya ha probado la solución en pymes de comercio electrónico y comercio internacional, donde ha reducido en más de un 70% el tiempo que los dueños dedican a tareas de atención al cliente y gestión de pedidos. De cara al futuro, los desarrolladores planean añadir integraciones con plataformas de pago y sistemas de gestión de inventario, además de lanzar una versión de código abierto para que la comunidad pueda adaptarla a cualquier sector.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T08:25:53.921Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Flask",
+      "url": "https://flask.palletsprojects.com"
+    },
+    {
+      "title": "API de modelos DeepSeek",
+      "url": "https://platform.deepseek.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Coste diario del bot",
+      "value": "Menos de 1 euro (equivalente a una taza de café)"
+    },
+    {
+      "label": "Reducción de tiempo en tareas administrativas",
+      "value": "70% en pymes de comercio electrónico probadas"
+    },
+    {
+      "label": "Disponibilidad del sistema",
+      "value": "24 horas al día, 7 días a la semana, sin bajas"
+    },
+    {
+      "label": "Roles de empleado de IA soportados",
+      "value": "3 (atención al cliente, gestión de pedidos, soporte de ventas)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

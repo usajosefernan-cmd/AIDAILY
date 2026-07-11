@@ -1,0 +1,77 @@
+{
+  "id": "446bb763e461f1257734134c5b6b0b0f53b9644fbe055a2da4bea2dff2a7636f",
+  "title": "Construye tu primer shooter espacial en solo 100 líneas de código con Limn Engine, el motor 2D sin configuración",
+  "summary": "Tutorial paso a paso publicado en Dev.to que enseña a desarrollar un juego de disparos espacial completo usando Limn Engine, un motor 2D ligero que se ejecuta en el navegador sin necesidad de instalaciones, con un código de aproximadamente 100 líneas que incluye movimiento de nave, sistema de disparos, oleadas de enemigos y marcador de puntuación.",
+  "url": "https://dev.to/kehinde_owolabi_e2e54567a/build-your-first-space-shooter-game-with-limn-engine-3055",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T00:32:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fio5nxmqatgv9zjyx7c2w.png",
+  "imageAlt": "Construye tu primer shooter espacial en solo 100 líneas de código con Limn Engine, el motor 2D sin configuración",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Tutorial paso a paso publicado en Dev.to que enseña a desarrollar un juego de disparos espacial completo usando Limn Engine, un motor 2D ligero que se ejecuta en el navegador sin necesidad de instalaciones, con un código de aproximadamente 100 líneas que incluye movimiento de nave, sistema de disparos, oleadas de enemigos y marcador de puntuación.",
+  "keyPoints": [
+    "Limn Engine es un motor de juegos 2D sin configuración que se ejecuta directamente en el navegador, eliminando la necesidad de instalaciones o entornos de desarrollo complejos.",
+    "El tutorial permite construir un shooter espacial completo con nave jugable, sistema de disparos, oleadas de enemigos y contador de puntuación en aproximadamente 100 líneas de código.",
+    "El desarrollo comienza con un archivo HTML simple que genera un lienzo con fondo de degradado azul, al que se añaden componentes visuales y de lógica paso a paso.",
+    "El juego incluye elementos de interfaz como marcador de puntuación y contador de vidas, implementados con componentes de texto personalizables en color y posición."
+  ],
+  "whyMatters": "Este tutorial democratiza el desarrollo de videojuegos 2D al eliminar las barreras de entrada típicas de motores más complejos, permitiendo que creadores sin experiencia previa en entornos de desarrollo puedan publicar juegos funcionales en minutos. La apuesta por la simplicidad de Limn Engine responde a una tendencia creciente de herramientas ligeras basadas en web que reducen la fricción para prototipar y compartir proyectos interactivos. Además, la publicación en Dev.to amplifica el alcance de este conocimiento, fomentando una comunidad de desarrolladores aficionados que pueden experimentar con mecánicas de juegos clásicos sin invertir en software o hardware especializado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fio5nxmqatgv9zjyx7c2w.png",
+      "alt": "Portada del tutorial de creación de shooter espacial con Limn Engine, que muestra una nave espacial cyan sobre un fondo de estrellas",
+      "caption": "Imagen de portada del artículo tutorial de Dev.to para crear un juego de disparos espaciales con Limn Engine"
+    }
+  ],
+  "subcategory": "Videojuegos",
+  "hashtags": [
+    "#LimnEngine",
+    "#ShooterEspacial",
+    "#DesarrolloDeVideojuegos",
+    "#DevTo",
+    "#JuegosWeb"
+  ],
+  "fullArticle": "El portal especializado en desarrollo Dev.to ha publicado un tutorial detallado que permite a cualquier usuario, independientemente de su nivel de experiencia, crear un videojuego de disparos espaciales completo en poco más de 100 líneas de código. La herramienta elegida para el proyecto es Limn Engine, un motor de juegos 2D de código abierto que se ejecuta directamente en el navegador sin necesidad de instalaciones, configuraciones previas ni dependencias externas, lo que lo convierte en una opción ideal para quienes se inician en el desarrollo de videojuegos o buscan prototipar ideas de forma rápida.\n\nEl proceso de desarrollo comienza con la creación de un archivo HTML básico que, al abrirse en cualquier navegador moderno, genera un lienzo con un fondo de degradado azul que simula el espacio. A partir de este punto, el tutorial introduce los conceptos básicos del motor: el objeto Display, encargado de crear el lienzo, ejecutar el bucle de juego y gestionar las entradas del usuario, y los Componentes, que son todos los elementos visibles y lógicos del juego, desde la nave del jugador hasta los enemigos, las balas y los textos de interfaz.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fio5nxmqatgv9zjyx7c2w.png]\n\nUno de los puntos fuertes del tutorial es su enfoque práctico y desglosado: cada bloque de código se explica con una tabla de parámetros que detalla su función, como las dimensiones de la nave (40x40 píxeles), su color cyan, su posición inicial en la parte inferior de la pantalla o el tipo de forma rectangular que la define. El juego incorpora mecánicas clásicas del género: movimiento de la nave, disparo de proyectiles, aparición de oleadas de enemigos y un sistema de puntuación y vidas que se muestra en la parte superior de la pantalla con textos de diferentes tamaños y colores.\n\nLa elección de Limn Engine para este proyecto no es casual: su filosofía de cero configuración reduce drásticamente la curva de aprendizaje, permitiendo que los usuarios vean resultados tangibles en minutos en lugar de horas o días de configuración de entornos. El tutorial incluye además un enlace para probar la versión final del juego en línea, lo que permite a los lectores experimentar el producto terminado antes de siquiera empezar a escribir código. Esta aproximación práctica y accesible se alinea con las tendencias actuales de democratización del desarrollo de videojuegos, que buscan acercar la creación de contenido interactivo a públicos no técnicos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T00:46:00.670Z",
+  "links": [
+    {
+      "title": "Artículo original del tutorial en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Sitio oficial de Limn Engine",
+      "url": "https://limnengine.com"
+    },
+    {
+      "title": "Documentación oficial de Limn Engine",
+      "url": "https://limnengine.com/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Líneas de código del juego completo",
+      "value": "Aproximadamente 100 líneas"
+    },
+    {
+      "label": "Tamaño de la nave del jugador",
+      "value": "40x40 píxeles"
+    },
+    {
+      "label": "Posición inicial de la nave",
+      "value": "400px desde la izquierda, 520px desde la parte superior"
+    },
+    {
+      "label": "Tamaño de fuente del marcador de puntuación",
+      "value": "32 píxeles"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

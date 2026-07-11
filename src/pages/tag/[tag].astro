@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Portal from '../../components/Portal.jsx';
+import { readFileSync, existsSync } from 'fs';
+import { join } from 'path';
+
+function normalizeText(text) {
+  if (!text) return '';
+  return String(text).toLowerCase().trim();
+}
+
+export async function getStaticPaths() {
+  function normalizeText(text) {
+    if (!text) return '';
+    return String(text).toLowerCase().trim();
+  }
+
+  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
+  if (!existsSync(cachePath)) return [];
+  
+  try {
+    const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
+    if (Array.isArray(cacheData)) {
+      const tagsSet = new Set();
+      cacheData.forEach(art => {
+        if (Array.isArray(art.hashtags)) {
+          art.hashtags.forEach(tag => {
+            const cleanTag = normalizeText(tag).replace('#', '');
+            if (cleanTag) {
+              tagsSet.add(cleanTag);
+            }
+          });
+        }
+      });
+      
+      return Array.from(tagsSet).map(tag => ({
+        params: { tag },
+        props: { tagKey: tag }
+      }));
+    }
+  } catch (e) {
+    console.error("Error al generar rutas en tag/[tag].astro:", e);
+  }
+  return [];
+}
+
+const { tag } = Astro.params;
+const { tagKey } = Astro.props;
+
+let tagArticles = [];
+let totalArticlesCount = 0;
+
+try {
+  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
+  if (existsSync(cachePath)) {
+    const cacheContent = readFileSync(cachePath, 'utf-8');
+    const allArts = JSON.parse(cacheContent);
+    if (Array.isArray(allArts)) {
+      const filtered = allArts.filter(art => {
+        if (!Array.isArray(art.hashtags)) return false;
+        return art.hashtags.some(h => normalizeText(h).replace('#', '') === tagKey);
+      });
+
+      totalArticlesCount = filtered.length;
+      filtered.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
+      tagArticles = filtered.slice(0, 200);
+    }
+  }
+} catch (e) {
+  console.error(`Error cargando tag ${tagKey} en Astro:`, e);
+}
+
+const tagTitle = '#' + tagKey;
+---
+
+<Layout 
+  title={`Reportes sobre ${tagTitle} — AIDAILY`} 
+  description={`Últimas noticias y análisis sobre el tema caliente ${tagTitle} en AIDAILY, optimizados por inteligencia artificial.`}
+>
+  <Portal 
+    client:load 
+    recentArticles={tagArticles} 
+    totalArticlesCount={totalArticlesCount}
+    initialTag={tagKey}
+  />
+</Layout>

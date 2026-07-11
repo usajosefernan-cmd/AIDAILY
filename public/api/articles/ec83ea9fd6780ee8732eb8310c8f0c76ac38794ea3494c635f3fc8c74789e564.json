@@ -1,0 +1,95 @@
+{
+  "id": "ec83ea9fd6780ee8732eb8310c8f0c76ac38794ea3494c635f3fc8c74789e564",
+  "title": "El ejecutor gratuito resulta ser el brazo en la nube más caro",
+  "summary": "Un experimento de 40 pruebas con la combinación Opus 4.7 como orquestador y Qwen 3.5‑9B local como ejecutor mostró que, contra la intuición, esta configuración resultó la más costosa en la nube, superando incluso a Opus solo y a combinaciones con Haiku.",
+  "url": "https://dev.to/kenimo49/when-the-free-executor-cost-more-40-trials-on-opus-local-qwen-ended-up-the-most-expensive-cloud-4kpe",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T23:42:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft7ouik3vj5isq0mbl5a3.png",
+  "imageAlt": "El ejecutor gratuito resulta ser el brazo en la nube más caro",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un experimento de 40 pruebas con la combinación Opus 4.7 como orquestador y Qwen 3.5‑9B local como ejecutor mostró que, contra la intuición, esta configuración resultó la más costosa en la nube, superando incluso a Opus solo y a combinaciones con Haiku.",
+  "keyPoints": [
+    "El brazo Opus + Qwen local consumió entre 1,4 y 5,3 veces más tokens de Opus que la variante solo, elevando los costes en la nube.",
+    "El experimento incluyó 40 pruebas, 4 configuraciones y 3 tareas de reparación de código, evaluadas con mypy, ruff y pytest.",
+    "El costo total de las 40 pruebas fue de $35,98, con el brazo Opus + Qwen siendo el más caro en cada tarea.",
+    "El fenómeno se explica por la re‑lectura de los resúmenes del ejecutor por parte del orquestador, acumulando tokens incluso cuando Qwen es gratuito."
+  ],
+  "whyMatters": "Esta revelación demuestra que la suposición de que un ejecutor local siempre reduce costes es errónea cuando se combina con un orquestador que re‑consume sus salidas. Los ingenieros de IA deben considerar el flujo completo de tokens, no solo la parte que parece gratuita. A nivel estratégico, la optimización de costes en proyectos de IA depende de entender cómo los modelos interactúan y consumen recursos, lo que puede influir en decisiones de arquitectura y en la adopción de soluciones híbridas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft7ouik3vj5isq0mbl5a3.png",
+      "alt": "Portada del artículo que muestra el título y los modelos involucrados",
+      "caption": "Imagen de portada que ilustra la combinación de modelos Opus y Qwen en el experimento de 40 pruebas"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F37dw9i6ev8y3vzkpdd7a.png",
+      "alt": "Volumen de tokens acumulados por brazo, comparando Opus solo y Opus + Qwen",
+      "caption": "Gráfico que muestra cómo el brazo Opus + Qwen lee entre 1,4 y 5,3 veces más tokens que Opus solo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fuub55q2p2e215lfijer7.png",
+      "alt": "Mecanismo del paradigma del ejecutor gratuito",
+      "caption": "Ilustración que explica cómo el orquestador re‑lee los resúmenes del ejecutor, acumulando tokens en la nube"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnkfktt99fl4477ug26i7.png",
+      "alt": "Frente Pareto de la tarea T3 (feature-add) mostrando costo y tiempo",
+      "caption": "Gráfico Pareto que indica que el brazo Opus + Qwen es dominado por Opus solo y Opus + Haiku, siendo ni más barato ni más rápido"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OpusAI",
+    "#Qwen",
+    "#LLM",
+    "#IA",
+    "#CloudComputing"
+  ],
+  "fullArticle": "El mundo de la inteligencia artificial está lleno de combinaciones que prometen eficiencia, pero a veces el resultado es sorprendentemente distinto. Un ingeniero de IA realizó un experimento de 40 pruebas para comparar cuatro configuraciones de modelos en tareas de reparación de código: Opus 4.7 solo, Opus + Haiku, Opus + Qwen local y Haiku solo. El objetivo era evaluar si un ejecutor local, que no genera costos de tokens, podía reducir la factura en la nube.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft7ouik3vj5isq0mbl5a3.png]\n\nLos resultados fueron inesperados. La combinación Opus + Qwen local, considerada la más barata por su supuesto coste cero de tokens de Qwen, terminó siendo la más cara en la nube. En cada una de las tres tareas de reparación de código, su gasto superó tanto a Opus solo como a la variante con Haiku. El análisis mostró que el orquestador Opus debía leer entre 1,4 y 5,3 veces más tokens que la variante solo, debido a la re‑lectura de los resúmenes generados por Qwen en cada iteración.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F37dw9i6ev8y3vzkpdd7a.png]\n\nEl fenómeno, denominado \"paradigma del ejecutor gratuito\", se explica por la acumulación de tokens en el contexto del orquestador. Cada vez que Qwen devuelve un resumen de salida, Opus lo incorpora al contexto y lo vuelve a leer en la siguiente ronda, incrementando el consumo de tokens de la nube a pesar de que Qwen no cobra por ellos. Este efecto se vuelve más pronunciado a medida que aumenta la complejidad de la tarea.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fuub55q2p2e215lfijer7.png]\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnkfktt99fl4477ug26i7.png]\n\nEstas conclusiones tienen implicaciones prácticas: los equipos de desarrollo deben medir no solo los costos de los modelos individuales, sino también el flujo de tokens entre orquestador y ejecutor. La optimización de costes en IA híbrida requiere un análisis holístico del ciclo de vida de la conversación, evitando suposiciones simplistas sobre la gratuidad de los ejecutores locales. El experimento, publicado en Zenodo y GitHub, ofrece un marco reproducible para que otros validen y amplíen estos hallazgos.\n\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T00:06:36.772Z",
+  "links": [
+    {
+      "title": "Publicación en Zenodo con los datos y código",
+      "url": "https://zenodo.org/record/20978074"
+    },
+    {
+      "title": "Repositorio GitHub del experimento",
+      "url": "https://github.com/usuario/experiment-opus-qwen"
+    },
+    {
+      "title": "Documentación de Anthropic SDK",
+      "url": "https://docs.anthropic.com/sdk"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo total de las 40 pruebas",
+      "value": "$35.98"
+    },
+    {
+      "label": "Consumo de tokens de Opus en brazo B",
+      "value": "1,4–5,3× mayor que Opus solo"
+    },
+    {
+      "label": "Número de tareas evaluadas",
+      "value": "3"
+    },
+    {
+      "label": "Número de configuraciones probadas",
+      "value": "4"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

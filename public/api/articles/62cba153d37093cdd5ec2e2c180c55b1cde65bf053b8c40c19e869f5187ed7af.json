@@ -1,0 +1,71 @@
+{
+  "id": "62cba153d37093cdd5ec2e2c180c55b1cde65bf053b8c40c19e869f5187ed7af",
+  "title": "De 2001 a Astro 5: El monorepo que preserva 2.630 URLs y salvaguarda el legado del blog del autor",
+  "summary": "El autor consolida su blog, su sitio de charlas y su herramienta de sincronización de borradores en un solo monorepo Astro 5, manteniendo intactas 2.630 publicaciones de 2001 a 2020 y garantizando la permanencia de enlaces antiguos. La migración prioriza la preservación de URLs, la propiedad de activos y la escalabilidad, y revela un proceso de ingeniería que combina Hugo, Notist, variables de entorno y pipelines locales.",
+  "url": "https://dev.to/mattstratton/i-contain-multitudes-and-also-three-git-repos-33pf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-06T01:17:28.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "De 2001 a Astro 5: El monorepo que preserva 2.630 URLs y salvaguarda el legado del blog del autor",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor consolida su blog, su sitio de charlas y su herramienta de sincronización de borradores en un solo monorepo Astro 5, manteniendo intactas 2.630 publicaciones de 2001 a 2020 y garantizando la permanencia de enlaces antiguos. La migración prioriza la preservación de URLs, la propiedad de activos y la escalabilidad, y revela un proceso de ingeniería que combina Hugo, Notist, variables de entorno y pipelines locales.",
+  "keyPoints": [
+    "Se fusionaron tres repositorios en un monorepo Astro 5, preservando la historia completa de 2.630 publicaciones de 2001 a 2020.",
+    "La migración se centró en la preservación de URLs, configurando trailingSlash: 'always' y construyendo en formato de directorio para replicar los enlaces antiguos.",
+    "El sitio de charlas, previamente en Notist, ahora se aloja en el propio dominio, garantizando la propiedad de activos y evitando dependencias externas.",
+    "El pipeline de conversión de presentaciones PDF a imágenes se ejecuta localmente antes del commit, evitando la necesidad de root en hosts de despliegue."
+  ],
+  "whyMatters": "Esta consolidación demuestra cómo los creadores de contenido pueden migrar a tecnologías modernas sin perder su historia ni dependencias externas. La preservación de URLs evita la pérdida de tráfico orgánico y refuerza la autoridad de búsqueda. Además, el enfoque de propiedad de activos protege la continuidad frente a la caída de terceros, un aprendizaje valioso para cualquier desarrollador que dependa de plataformas externas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen de la portada del blog del autor",
+      "caption": "Foto ilustrativa del blog del autor en dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Astro",
+    "#Hugo",
+    "#Monorepo"
+  ],
+  "fullArticle": "El blog del autor, que comenzó en LiveJournal a principios de los 2000, ha atravesado varias plataformas antes de llegar a Astro 5. Se conservan 2.630 publicaciones de 2001 a 2020, todas con URLs idénticas a las originales, gracias a la configuración de trailingSlash: 'always' y a la generación de directorios que replican el esquema de Hugo y WordPress.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\nEl apartado /writing/ ha evolucionado de un foco en contenido Postgres a una colección híbrida que incluye tanto publicaciones propias como guías externas de tigerdata.com. Con 14 entradas externas, el sistema normaliza ambos tipos en un único esquema GuideItem, manteniendo la coherencia visual y la información relevante.\nEl boletín /newsletter/ se gestiona a través de Buttondown, donde una función Astro content-layer recorre la API de la plataforma, recupera todos los correos y los exporta como una colección estática. Así, cada número, su índice y el feed RSS se generan en tiempo de construcción, sin dependencias dinámicas en producción.\nEl sitio de charlas, que antes residía en Notist, sufrió la pérdida de activos cuando la cuenta expiró. Para evitar esta vulnerabilidad, el autor trasladó todo el contenido a su propio dominio, asegurándose de que cada presentación PDF se convierta a PNG localmente con pdftoppm y Ghostscript antes de subirla al repositorio. Este enfoque elimina la dependencia de CDN externos y garantiza la disponibilidad continua del material.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T01:44:33.602Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Astro",
+      "url": "https://astro.build/docs"
+    },
+    {
+      "title": "Guía de migración de Hugo a Astro",
+      "url": "https://astro.build/guides/migrate-hugo"
+    },
+    {
+      "title": "API de Buttondown",
+      "url": "https://buttondown.email/api"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de publicaciones",
+      "value": "2.630"
+    },
+    {
+      "label": "Años cubiertos",
+      "value": "2001-2020"
+    },
+    {
+      "label": "Número de charlas",
+      "value": "106"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "6eae28bb3566379824ee448f5134ed969f35fed0a8350397a10b4052cd81766b",
+  "title": "Inteligencia artificial agente de ransomware: un ataque a Langflow que amenaza la ciberseguridad",
+  "summary": "Un actor malicioso explotó la vulnerabilidad CVE‑2025‑3248 de Langflow para ejecutar código Python, usar un modelo LLM para recolectar credenciales y cifrar 1 342 configuraciones de Nacos, generando un ransomware basado en IA.",
+  "url": "https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-03T11:00:00.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2025/08/AI-powered-ransomware.jpg",
+  "imageAlt": "Inteligencia artificial agente de ransomware: un ataque a Langflow que amenaza la ciberseguridad",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un actor malicioso explotó la vulnerabilidad CVE‑2025‑3248 de Langflow para ejecutar código Python, usar un modelo LLM para recolectar credenciales y cifrar 1 342 configuraciones de Nacos, generando un ransomware basado en IA.",
+  "keyPoints": [
+    "El actor, conocido como JadePuffer, aprovechó la falla de autenticación crítica de Langflow para ejecutar código arbitrario y lanzar un ataque de ransomware con IA.",
+    "El modelo LLM se adaptó en tiempo real, buscando secretos como claves API, credenciales de nube y wallets de criptomonedas, y luego cifró 1 342 ítems de configuración de Nacos.",
+    "El ataque incluyó explotación de CVE‑2021‑29441 y uso de la firma JWT por defecto de Nacos para insertar una puerta trasera administrativa.",
+    "Sysdig documentó que el LLM generó código con comentarios en lenguaje natural y corrigió errores de manera autónoma, demostrando un nivel avanzado de autonomía."
+  ],
+  "whyMatters": "Este incidente muestra cómo las vulnerabilidades de autenticación en frameworks de IA pueden convertirse en vectores de ransomware de alta sofisticación. La capacidad del modelo para auto‑ajustar su estrategia y generar código de ataque plantea un nuevo riesgo para infraestructuras críticas, especialmente aquellas que dependen de servicios de configuración como Nacos. Los profesionales de seguridad deben revisar las dependencias de IA y fortalecer la autenticación para evitar que la automatización se convierta en una herramienta de ataque.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2025/08/AI-powered-ransomware.jpg",
+      "alt": "Imagen que ilustra el ataque de ransomware impulsado por IA a Langflow",
+      "caption": "Un actor malicioso utilizó la vulnerabilidad de Langflow para lanzar un ransomware basado en IA."
+    },
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2022/04/SecurityWeek-Small-Dark.png",
+      "alt": "Logo de SecurityWeek",
+      "caption": "Fuente original de la noticia: SecurityWeek."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Langflow",
+    "#CVE20253248",
+    "#RansomwareAI"
+  ],
+  "fullArticle": "Un actor malicioso ha demostrado cómo una vulnerabilidad de autenticación en el framework de IA Langflow puede ser el punto de entrada para un ransomware dirigido por inteligencia artificial. La falla, identificada como CVE‑2025‑3248 y con una puntuación CVSS de 9.8, permitió a un atacante llamado JadePuffer ejecutar código Python arbitrario en el servidor donde corre Langflow.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2025/08/AI-powered-ransomware.jpg]\n\nTras obtener acceso, el atacante utilizó un modelo LLM para realizar reconocimiento, localizar secretos, y extraer credenciales de API, cuentas en la nube y wallets de criptomonedas. El LLM también volcó la base de datos Postgres de Langflow, escaneó la red interna y desplegó una tarea cron para mantener el acceso.\n\nEl siguiente paso fue pivotar a un servidor de producción que alojaba una base de datos MySQL y Nacos, una plataforma de configuración popular en arquitecturas de microservicios al estilo Alibaba. El atacante explotó la familia de bypass de autenticación CVE‑2021‑29441 y forjó un JWT con la firma por defecto de Nacos, logrando insertar una puerta trasera administrativa directamente en la base de datos.\n\nEl LLM, cayó en la fase de cifrado, encriptó 1 342 configuraciones de Nacos y generó una tabla de rescate con la demanda de rescate, la dirección de pago y un correo de contacto. La clave de cifrado se generó aleatoriamente y nunca se persistió, lo que prácticamente impide la recuperación de los datos.\n\nLos análisis de Sysdig revelan que el LLM no solo generó código con comentarios en lenguaje natural, sino que también ajustó sus acciones para superar fallos proprio, demostrando un nivel de autonomía que supera los ataques tradicionales.\n\nEsta operación subraya la necesidad de revisar la seguridad de los frameworks de IA y de reforzar la autenticación y la gestión de secretos en entornos de producción, ya que la automatización puede convertirse en una herramienta de ataque tan poderosa como en defensa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T04:32:18.462Z",
+  "links": [
+    {
+      "title": "Artículo original en SecurityWeek",
+      "url": "https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow"
+    },
+    {
+      "title": "Detalles de CVE‑2025‑3248 en NVD",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
+    },
+    {
+      "title": "Informe de Sysdig sobre el ataque",
+      "url": "https://sysdig.com/blog/langflow-ransomware-attack"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Puntuación CVSS",
+      "value": "9.8"
+    },
+    {
+      "label": "Ítems cifrados de Nacos",
+      "value": "1 342"
+    },
+    {
+      "label": "Número de secretos recuperados",
+      "value": "varios"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

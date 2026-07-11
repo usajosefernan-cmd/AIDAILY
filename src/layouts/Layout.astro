@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  date?: string;
+}
+
+const { title, description } = Astro.props;
+const siteBase = Astro.site?.toString() || 'https://aidaily.pro';
+const canonical = new URL(Astro.url.pathname, siteBase).toString();
+
+import '../styles/premium.css';
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="generator" content="IA Daily" />
+  <title>{title} | AIDAILY</title>
+  <meta name="description" content={description || "Noticias y análisis tecnológico y científico curados con inteligencia artificial. Estilo premium, mobile-first y en tiempo real."} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description || "Noticias y análisis tecnológico y científico curados con inteligencia artificial."} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Anti-FOUC: aplicar tema antes del primer render -->
+  <script is:inline>
+    (function() {
+      try {
+        var t = localStorage.getItem('aidaily_theme') || 'dark';
+        document.documentElement.classList.add('theme-' + t);
+      } catch(e) {
+        document.documentElement.classList.add('theme-dark');
+      }
+    })();
+  </script>
+  <!-- Telemetría de diagnóstico de errores en cliente -->
+  <script is:inline>
+    window.addEventListener('error', function(event) {
+      setTimeout(function() {
+        var feed = document.getElementById('news-feed');
+        if (feed) {
+          feed.innerHTML = '<div style="background:rgba(255,0,0,0.15); border:1px solid rgba(239,68,68,0.4); color:#f87171; padding:16px; border-radius:8px; margin:20px; font-family:monospace; text-align:left; font-size:0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"><h3 style="margin-top:0; color:#fff; font-size: 0.9rem;">⚠️ Error crítico de ejecución en cliente:</h3><p style="margin: 8px 0; font-weight: bold;">' + event.message + '</p><pre style="white-space:pre-wrap; margin:8px 0 0 0; background:rgba(0,0,0,0.25); padding:8px; border-radius:4px; font-size:0.7rem; color:#fca5a5; overflow-x:auto;">' + (event.error ? event.error.stack : 'No hay stack trace disponible') + '</pre></div>';
+        }
+      }, 100);
+    });
+  </script>
+</head>
+<body>
+  <slot />
+</body>
+</html>

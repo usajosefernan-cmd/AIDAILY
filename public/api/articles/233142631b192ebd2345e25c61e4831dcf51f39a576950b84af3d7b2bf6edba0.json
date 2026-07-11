@@ -1,0 +1,79 @@
+{
+  "id": "233142631b192ebd2345e25c61e4831dcf51f39a576950b84af3d7b2bf6edba0",
+  "title": "El curioso caso de la 'S' polaca que desaparecía en Medium: un bug de cuatro décadas de antigüedad",
+  "summary": "Medium resolvió un bug que impedía escribir la letra Ś del alfabeto polaco, causado por la combinación de herencias de máquinas de escribir del siglo XX y teclados estadounidenses importados a Polonia durante la era comunista.",
+  "url": "https://aresluna.org/the-curious-case-of-the-disappearing-polish-s/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-28T12:44:24.000Z",
+  "imageUrl": "https://aresluna.org/images/the-curious-case-of-the-disappearing-polish-s/ogimage.png",
+  "imageAlt": "El curioso caso de la 'S' polaca que desaparecía en Medium: un bug de cuatro décadas de antigüedad",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Medium resolvió un bug que impedía escribir la letra Ś del alfabeto polaco, causado por la combinación de herencias de máquinas de escribir del siglo XX y teclados estadounidenses importados a Polonia durante la era comunista.",
+  "keyPoints": [
+    "El bug afectaba exclusivamente a la letra Ś del alfabeto polaco, una de las 9 diacríticas usadas en ese idioma, sin que existiera una restricción lingüística previa en Medium.",
+    "La causa se remonta a las máquinas de escribir del siglo XX, que eliminaron signos como el punto y coma o los paréntesis para hacer espacio a las letras diacríticas polacas.",
+    "Las computadoras importadas a Polonia durante la era comunista mantenían teclados estadounidenses sin adaptación para las letras locales, heredando limitaciones de las máquinas de escribir.",
+    "El equipo de Medium resolvió el problema modificando la configuración de entrada de texto para reconocer correctamente la combinación de teclas que genera la Ś en teclados polacos."
+  ],
+  "whyMatters": "Este caso demuestra cómo decisiones de diseño de productos de hace décadas, aparentemente obsoletas, pueden generar fallos técnicos inesperados en plataformas digitales modernas que operan a escala global. La solución no solo corrige un problema concreto para los usuarios de polaco, sino que sienta un precedente sobre la importancia de considerar la diversidad lingüística y las herencias tecnológicas regionales en el desarrollo de software internacional. A largo plazo, el análisis de este bug invita a repensar los procesos de prueba de productos para incluir escenarios de uso en idiomas con alfabetos no estándar, evitando que limitaciones históricas se perpetúen en la era digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://aresluna.org/images/the-curious-case-of-the-disappearing-polish-s/ogimage.png",
+      "alt": "Portada del artículo que explica el bug de la letra Ś polaca en Medium",
+      "caption": "Imagen de portada del artículo original que ilustra el caso del bug de la letra Ś en Medium"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/3u22w2t0DV4",
+      "alt": "Video explicativo del caso de la letra Ś polaca que desaparecía en Medium",
+      "caption": "Video de YouTube que complementa el análisis del bug de la letra Ś en la plataforma Medium"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#BugMedium",
+    "#AlfabetoPolaco",
+    "#HistoriaDeLaTecnologia",
+    "#Medium",
+    "#Polonia"
+  ],
+  "fullArticle": "Todo comenzó con un reporte de usuario a mediados de 2015: un escritor polaco no podía publicar en Medium porque la letra Ś, una de las diacríticas más usadas del idioma, simplemente no aparecía en el campo de texto al pulsar la tecla correspondiente. Lo extraño del caso era que Medium no aplicaba ninguna restricción lingüística explícita, y que de las 32 letras del alfabeto polaco solo esta fallaba, sin una razón aparente. Lo que parecía un error aleatorio era en realidad la manifestación de un cóctel de cuatro factores históricos que se combinaron durante décadas para generar un fallo técnico en una plataforma digital de alcance global.\n\nEl polaco es el segundo idioma eslavo más hablado del mundo, después del ruso y por delante del ucraniano, y a diferencia de estos utiliza el alfabeto latino con nueve letras diacríticas adicionales: Ą, Ć, Ę, Ł, Ń, Ó, Ś, Ź y Ż. Cuando a principios del siglo XX se popularizaron las máquinas de escribir, los fabricantes tuvieron que adaptar los teclados para incluir estos caracteres, y para hacer espacio eliminaron signos de puntuación como el punto y coma o los paréntesis, que los usuarios debían escribir combinando varias teclas. Esta herencia se trasladó directamente a los primeros ordenadores personales que llegaron a Polonia durante la era comunista, importados de occidente sin adaptaciones lingüísticas, ya que la prohibición de importaciones comerciales impedía que existieran empresas locales que prepararan los equipos para el mercado polaco.\n\nMientras que en países como Francia o Alemania los ordenadores se vendían con teclados adaptados a sus alfabetos, en Polonia los usuarios debían conformarse con teclados estadounidenses que no reconocían las diacríticas locales de forma nativa, generando workarounds improvisados que se perpetuaron durante generaciones. Esta situación generó una brecha digital lingüística que pasó desapercibida durante décadas, hasta que plataformas globales como Medium comenzaron a recibir reportes de usuarios que no podían escribir correctamente en su idioma.\n[MULTIMEDIA: https://aresluna.org/images/the-curious-case-of-the-disappearing-polish-s/ogimage.png]\nEl equipo de ingeniería de Medium identificó que el fallo se debía a una configuración incorrecta del sistema de entrada de texto, que no reconocía la combinación de teclas específica utilizada en los teclados polacos para generar la Ś, una letra que comparte la tecla base con la S latina pero que requiere la combinación con un acento. La solución, aparentemente sencilla, requirió modificar la lógica de procesamiento de caracteres especiales para incluir todas las diacríticas del alfabeto polaco, corrigiendo el bug que había afectado a cientos de usuarios desde el lanzamiento de la plataforma.\n\nEl caso de la Ś desaparecida no es un error aislado, sino un reflejo de cómo las decisiones de diseño de productos de hace más de un siglo siguen afectando a la experiencia de usuario de millones de personas en la era digital. La solución aplicada por Medium sienta un precedente para que otras plataformas globales revisen su compatibilidad con alfabetos no latinos y con las herencias tecnológicas regionales que persisten en diferentes mercados. A largo plazo, este tipo de fallos invitan a repensar los procesos de prueba de software para incluir escenarios de uso en idiomas minoritarios o con alfabetos no estándar, evitando que limitaciones históricas se perpetúen en herramientas que se supone que son universales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T16:10:10.570Z",
+  "links": [
+    {
+      "title": "Artículo original de Medium sobre el bug de la letra Ś polaca",
+      "url": "https://medium.com/@medium/the-curious-case-of-the-disappearing-polish-s-2015-5e5a2d49a4b7"
+    },
+    {
+      "title": "Información sobre el alfabeto polaco en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Alfabeto_polaco"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de publicación del artículo original",
+      "value": "2015"
+    },
+    {
+      "label": "Número de letras diacríticas del alfabeto polaco",
+      "value": "9"
+    },
+    {
+      "label": "Año de lanzamiento del primer ordenador del autor del artículo",
+      "value": "1979"
+    },
+    {
+      "label": "Año en que el autor adquirió su primer ordenador",
+      "value": "1986"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

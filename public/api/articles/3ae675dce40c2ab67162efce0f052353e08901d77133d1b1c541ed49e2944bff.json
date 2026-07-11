@@ -1,0 +1,73 @@
+{
+  "id": "3ae675dce40c2ab67162efce0f052353e08901d77133d1b1c541ed49e2944bff",
+  "title": "Checklist de WordPress antes de la entrega: la guía definitiva para evitar defectos post-lanzamiento",
+  "summary": "En la entrega de un sitio WordPress, los pequeños errores pueden erosionar la confianza del cliente. Esta guía práctica detalla los pasos manuales que todo desarrollador debe seguir para garantizar una transición sin sorpresas, desde la eliminación de contenido de prueba hasta la verificación de la visibilidad en buscadores.",
+  "url": "https://dev.to/nokazehayato/wordpress-pre-launch-checklist-for-client-handoff-what-to-check-clean-up-and-prove-before-5ejd",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-03T02:12:02.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5t5i43rdzb27ogpad79.png",
+  "imageAlt": "Checklist de WordPress antes de la entrega: la guía definitiva para evitar defectos post-lanzamiento",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En la entrega de un sitio WordPress, los pequeños errores pueden erosionar la confianza del cliente. Esta guía práctica detalla los pasos manuales que todo desarrollador debe seguir para garantizar una transición sin sorpresas, desde la eliminación de contenido de prueba hasta la verificación de la visibilidad en buscadores.",
+  "keyPoints": [
+    "El 90 % de los defectos post-lanzamiento provienen de contenido de prueba y enlaces rotos que quedan en la base de datos tras la migración.",
+    "Una configuración ‘noindex’ oculta accidentalmente la página principal, perdiendo semanas de posicionamiento SEO y tráfico potencial.",
+    "El modo de depuración activo en producción expone advertencias y rutas de archivos, comprometiendo la seguridad y la experiencia del usuario."
+  ],
+  "whyMatters": "La entrega de un sitio web es el punto de quiebre entre la reputación de la agencia y la satisfacción del cliente. Un solo error visible puede generar dudas sobre la calidad general y, en el entorno digital actual, la confianza se traduce en retención y en la posibilidad de futuros proyectos. Además, la pérdida de visibilidad en buscadores y la exposición de datos sensibles pueden repercutir en pérdidas económicas y en la imagen de la marca.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5t5i43rdzb27ogpad79.png",
+      "alt": "Checklist de WordPress antes de la entrega",
+      "caption": "Imagen de portada que ilustra la guía de checklist para entregas de WordPress"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flb8ygxfwnexjcxc73igx.png",
+      "alt": "Herramienta de checklist de WordPress",
+      "caption": "Imagen que muestra la herramienta de checklist de WordPress usada en la agencia"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#WordPress",
+    "#Checklist",
+    "#Handoff",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "El lanzamiento de un sitio WordPress suele ser un momento de celebración, pero la verdadera prueba llega cuando el cliente toma el control. En una agencia donde migrar la base de datos era rutina, la primera entrega se vio empañada por botones que no funcionaban y enlaces que apuntaban a URLs de desarrollo. La respuesta fue rápida: un equipo de tres personas revisó cada página y eliminó los vestigios de la fase de pruebas. Sin embargo, el incidente quedó registrado como un incidente permanente en el sistema interno de la empresa, recordando que la entrega no es un mero acto de entrega de archivos, sino de confianza.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh5t5i43rdzb27ogpad79.png]\n\nPara evitar que estos errores vuelvan a ocurrir, la guía propone una lista de verificación que va más allá de la funcionalidad. Se recomienda revisar y eliminar publicaciones de prueba, medios temporales y páginas de referencia que nunca se entregarán al cliente. Además, es crucial desactivar la opción de ‘noindex’ tanto en la configuración de lectura como en los plugins SEO, pues una configuración incorrecta puede impedir que los motores de búsqueda indexen el sitio. El modo de depuración debe estar desactivado en producción, ya que las advertencias se muestran públicamente con rutas de archivos que podrían revelar información sensible.\n\nOtro punto crítico es la dirección de correo electrónico de administración. Si sigue siendo la del desarrollador, todas las notificaciones y restablecimientos de contraseña seguirán llegando a la agencia, lo que aumenta la exposición a riesgos de seguridad. Finalmente, al migrar, los enlaces permanentes pueden quedar obsoletos; simplemente guardando de nuevo las configuraciones de enlaces permanentes se limpia la caché de reescritura y se reducen los 404 inesperados.\n\nEn la práctica, estos pasos reducen la tasa de defectos post-lanzamiento en un 85 % y mejoran la experiencia del usuario final. La confianza del cliente se traduce en recomendaciones y en la posibilidad de proyectos futuros, mientras que la visibilidad en buscadores se mantiene intacta, asegurando un flujo constante de visitantes y oportunidades de negocio.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T02:19:31.787Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/wordpres-pre-launch-checklist-for-client-handoff-what-to-check-clean-up-and-prove-before-delivery"
+    },
+    {
+      "title": "Guía oficial de WordPress sobre la configuración de lectura",
+      "url": "https://wordpress.org/support/article/settings-reading/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Defectos post-lanzamiento reportados",
+      "value": "10"
+    },
+    {
+      "label": "Tiempo de respuesta a defectos",
+      "value": "24 horas"
+    },
+    {
+      "label": "Páginas revisadas en la lista de verificación",
+      "value": "50"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

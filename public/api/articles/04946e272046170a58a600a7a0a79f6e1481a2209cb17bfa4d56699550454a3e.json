@@ -1,0 +1,76 @@
+{
+  "id": "04946e272046170a58a600a7a0a79f6e1481a2209cb17bfa4d56699550454a3e",
+  "title": "Dos proyectos con LangGraph que me enseñaron a diseñar sistemas multiagente: lecciones para desarrolladores",
+  "summary": "Un profesional con 15 años de experiencia en gestión de equipos y DevOps comparte las lecciones aprendidas al construir dos sistemas multiagente con LangGraph para automatizar la generación de notas de versión y la optimización de pipelines de CI/CD, destacando patrones de diseño clave para la interacción humano-agente.",
+  "url": "https://dev.to/debashish_ghosal_dddbcca0/two-langgraph-projects-that-taught-me-how-to-design-multi-agent-systems-53n1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T06:19:19.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk1kko52oaray2tvy3t4g.png",
+  "imageAlt": "Dos proyectos con LangGraph que me enseñaron a diseñar sistemas multiagente: lecciones para desarrolladores",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un profesional con 15 años de experiencia en gestión de equipos y DevOps comparte las lecciones aprendidas al construir dos sistemas multiagente con LangGraph para automatizar la generación de notas de versión y la optimización de pipelines de CI/CD, destacando patrones de diseño clave para la interacción humano-agente.",
+  "keyPoints": [
+    "LangGraph se adapta a profesionales de DevOps al estructurar los agentes como DAGs con ramas condicionales, etapas paralelas y puertas de aprobación, similares a pipelines de CI.",
+    "El primer proyecto automatiza notas de versión con un supervisor que enruta commits a subagentes, con interrupciones humanas diferenciadas para cambios disruptivos y parches de seguridad.",
+    "El segundo proyecto optimiza pipelines de CI/CD de gran escala, identificando cuellos de botella y proponiendo ajustes con estimaciones de ahorro de tiempo y coste.",
+    "El diseño de interrupciones humanas adaptadas al tipo de juicio y un bucle de refinamiento cíclico evitan la fatiga por validaciones excesivas y errores de revisión."
+  ],
+  "whyMatters": "Estos patrones de diseño de sistemas multiagente suponen un avance clave para la adopción de la inteligencia artificial en entornos profesionales de desarrollo, al reducir la carga de trabajo repetitivo de los equipos de DevOps sin generar fricción en sus flujos de trabajo habituales. La correcta gestión de las interrupciones humanas adaptadas al tipo de decisión requerida resuelve uno de los principales obstáculos para la confianza en herramientas de IA: la saturación por validaciones innecesarias o el riesgo de pasar por alto errores críticos. A largo plazo, estos enfoques sientan las bases para sistemas de agente escalables que se integren de forma natural en procesos empresariales, acelerando la entrega de software y reduciendo los costes operativos de los equipos de desarrollo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk1kko52oaray2tvy3t4g.png",
+      "alt": "Imagen de portada del artículo sobre dos proyectos con LangGraph para diseñar sistemas multiagente",
+      "caption": "Portada del artículo original publicado en Dev.to que detalla las lecciones aprendidas en el desarrollo de sistemas multiagente con LangGraph"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#LangGraph",
+    "#SistemasMultiagente",
+    "#DevOps",
+    "#AutomatizacionCI"
+  ],
+  "fullArticle": "Con 15 años de experiencia en puestos de gestión de equipos y DevOps, el autor del artículo original en Dev.to decidió volver a la programación de la mano de la inteligencia artificial, con el objetivo de no solo usar herramientas existentes, sino construir sus propios agentes para automatizar tareas repetitivas de su día a día. LangGraph se convirtió en su herramienta favorita para esta tarea, ya que su estructura se alinea perfectamente con los conceptos que ya domina: grafos acíclicos dirigidos (DAGs), ramas condicionales, etapas paralelas y puertas de aprobación, funcionando básicamente como un pipeline de CI en el que algunos nodos ejecutan llamadas a un modelo de lenguaje grande (LLM) en lugar de scripts de shell. Para validar su enfoque, desarrolló dos proyectos consecutivos que resolvían problemas muy diferentes pero compartían patrones de diseño comunes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk1kko52oaray2tvy3t4g.png]\n\nEl primer proyecto aborda la tediosa tarea de redactar notas de versión, que requiere revisar cientos de commits, filtrar los relevantes, agruparlos por tipo y redactar un texto coherente, además de decidir el tipo de versión (mayor, menor o parche). El agente desarrollado automatiza la parte mecánica del proceso: un supervisor enruta cada commit a un subagente especializado según el tipo de cambio, los cambios disruptivos se detienen para revisión humana individual (cada uno requiere consejos de migración específicos), los parches de seguridad se revisan en bloque al tener un formato estandarizado, y la etapa de redacción consulta notas de versión anteriores del mismo repositorio para imitar el estilo de redacción. El aprendizaje clave de este proyecto es la combinación de un supervisor enrutador con interrupciones humanas híbridas, adaptadas al tipo de juicio que requiere cada paso, para no saturar a los equipos con validaciones innecesarias.\n\nEl segundo proyecto resuelve una frustración común en repositorios de gran tamaño: los pipelines de CI que tardan entre 30 y 120 minutos, en los que nadie audita manualmente los archivos YAML de configuración para detectar ineficiencias como cachés faltantes, pasos serializados que podrían ejecutarse en paralelo o contextos de construcción sobredimensionados. El agente desarrollado descarga los archivos de flujo de trabajo y el historial de ejecuciones, perfila cada trabajo, clasifica los cuellos de botella y propone ajustes con estimaciones de ahorro de tiempo y coste, deteniéndose solo para que el equipo humano decida entre las opciones (por ejemplo, 'activar la caché ahorra 5 minutos pero cuesta 0,02 dólares por ejecución'). El patrón clave aquí es el bucle de refinamiento cíclico: proponer, simular, refinar y mostrar al humano, con un único punto de validación en lugar de múltiples interrupciones. Ambos proyectos comparten además un sistema de manejo de respuestas inválidas de LLM: si el modelo devuelve JSON inválido o contenido vacío, se reintenta con un prompt más estricto, y si falla de nuevo, se aplican reglas predefinidas para que el pipeline no se bloquee.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T06:23:32.260Z",
+  "links": [
+    {
+      "title": "Artículo original publicado en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de LangGraph",
+      "url": "https://www.langchain.com/langgraph"
+    },
+    {
+      "title": "Guía de buenas prácticas para sistemas multiagente en entornos DevOps",
+      "url": "https://www.redhat.com/es/topics/ai/multi-agent-systems"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Años de experiencia en gestión de equipos del autor",
+      "value": "15 años"
+    },
+    {
+      "label": "Duración máxima de pipelines de CI en repositorios de gran tamaño",
+      "value": "120 minutos"
+    },
+    {
+      "label": "Ahorro de tiempo por activación de caché en pipelines",
+      "value": "5 minutos por ejecución"
+    },
+    {
+      "label": "Coste adicional por ejecución al activar la caché",
+      "value": "0,02 dólares por ejecución"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

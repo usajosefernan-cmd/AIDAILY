@@ -1,0 +1,77 @@
+{
+  "id": "71a28b031db1112f1027578278d4c4c1e25ac58ace180fd6399954ba13a90d59",
+  "title": "Tres amenazas de seguridad que marcaron la semana: escalada de privilegios en OpenBSD, fuga de datos por IA de GitHub y scripts maliciosos en CDN",
+  "summary": "La semana en ciberseguridad se centró en tres vulnerabilidades críticas: un fallo de uso después de liberación en OpenBSD que permite escalar privilegios a root, una técnica de inyección de prompts que engaña al agente de IA de GitHub para filtrar repositorios privados, y la detección de scripts bash ofuscados distribuidos a través de CDN en productos de consumo.",
+  "url": "https://dev.to/soytuber/openbsd-privilege-escalation-github-ai-agent-leaks-cdn-supply-chain-risks-c16",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T21:36:04.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk7544n6g1h4phkr6psgs.png",
+  "imageAlt": "Tres amenazas de seguridad que marcaron la semana: escalada de privilegios en OpenBSD, fuga de datos por IA de GitHub y scripts maliciosos en CDN",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La semana en ciberseguridad se centró en tres vulnerabilidades críticas: un fallo de uso después de liberación en OpenBSD que permite escalar privilegios a root, una técnica de inyección de prompts que engaña al agente de IA de GitHub para filtrar repositorios privados, y la detección de scripts bash ofuscados distribuidos a través de CDN en productos de consumo.",
+  "keyPoints": [
+    "CVE-2026-57589 es una vulnerabilidad de uso después de liberación en OpenBSD que permite a atacantes locales escalar privilegios a root del sistema.",
+    "Investigadores descubrieron 'GitLost', una técnica de inyección de prompts que engaña al agente de IA de GitHub para filtrar código de repositorios privados.",
+    "Se detectó un script bash ofuscado y autoevaluable distribuido por la CDN de Akamai en productos de consumo, evidenciando riesgos en cadenas de suministro.",
+    "Los expertos advierten que estos fallos requieren parches inmediatos, validación de entradas estricta para agentes de IA y monitoreo de scripts ofuscados en flujos de datos inesperados."
+  ],
+  "whyMatters": "Estas vulnerabilidades demuestran que los sistemas considerados seguros, como OpenBSD, y las herramientas de desarrollo modernas, como los agentes de IA de GitHub, no están exentas de fallos críticos que pueden comprometer datos sensibles y el control total de sistemas. La filtración de repositorios privados a través de inyección de prompts representa un riesgo inédito para la propiedad intelectual de empresas y desarrolladores, mientras que la distribución de scripts ofuscados por CDN en productos de consumo evidencia que las cadenas de suministro digitales son vectores de ataque impredecibles. Ignorar estas amenazas puede derivar en compromisos masivos de datos, pérdidas económicas y daños a la reputación de organizaciones y plataformas tecnológicas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk7544n6g1h4phkr6psgs.png",
+      "alt": "Portada del artículo sobre escalada de privilegios en OpenBSD, fugas por IA de GitHub y riesgos en cadenas de suministro de CDN",
+      "caption": "Imagen de portada del artículo de noticias de ciberseguridad publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#OpenBSD",
+    "#GitHub",
+    "#Ciberseguridad",
+    "#InyeccionDePrompts",
+    "#Akamai"
+  ],
+  "fullArticle": "La semana en materia de ciberseguridad estuvo marcada por tres amenazas de alto impacto que afectan a sistemas operativos, plataformas de desarrollo y cadenas de suministro digital. La primera de ellas es una vulnerabilidad crítica identificada como CVE-2026-57589, que afecta a OpenBSD, el sistema operativo reconocido por su enfoque en la seguridad, y que permite a atacantes con acceso local escalar privilegios hasta obtener control total del sistema como root. El fallo, de tipo uso después de liberación (UAF), se produce cuando un programa intenta utilizar memoria ya liberada, lo que puede derivar en ejecución de código arbitrario.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk7544n6g1h4phkr6psgs.png]\n\nLa segunda amenaza, bautizada como 'GitLost', es una técnica de inyección de prompts que engaña al agente de inteligencia artificial de GitHub para filtrar código de repositorios privados. Los investigadores demostraron que es posible eludir las salvaguardas de la plataforma mediante entradas maliciosas diseñadas para explotar la comprensión contextual del modelo, permitiendo la exfiltración de fragmentos de código sensible. Por último, se detectó un script bash ofuscado y autoevaluable distribuido por la CDN de Akamai en productos de consumo, como una camiseta de Uniqlo, lo que evidencia riesgos inesperados en las cadenas de suministro digitales.\n\nEstos incidentes subrayan la necesidad de aplicar parches de seguridad de forma inmediata, implementar validaciones de entrada estrictas y segmentación de contexto para los agentes de IA que acceden a datos sensibles, además de fortalecer el monitoreo de scripts ofuscados en flujos de datos no convencionales. La ciberseguridad debe ser una prioridad constante para administradores de sistemas, desarrolladores y plataformas tecnológicas, ya que las amenazas evolucionan y aparecen en los lugares más inesperados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T21:45:11.579Z",
+  "links": [
+    {
+      "title": "Detalle de la vulnerabilidad CVE-2026-57589 en OpenBSD (NVD)",
+      "url": "https://nvd.nist.gov/vuln/detail/cve-2026-57589"
+    },
+    {
+      "title": "Investigación sobre 'GitLost': filtración de repositorios privados por IA de GitHub",
+      "url": "https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/"
+    },
+    {
+      "title": "Análisis del script bash ofuscado distribuido por CDN de Akamai",
+      "url": "https://tris.sherliker.net/blog/obfuscated-self-evaluating-bash-script-by-cdn-akamai-being-supplied-to-consumers-via-retail-stores/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Identificador de la vulnerabilidad en OpenBSD",
+      "value": "CVE-2026-57589"
+    },
+    {
+      "label": "Tipo de fallo en OpenBSD",
+      "value": "Uso después de liberación (UAF)"
+    },
+    {
+      "label": "Nombre de la técnica de ataque a GitHub",
+      "value": "GitLost"
+    },
+    {
+      "label": "CDN involucrada en la distribución del script ofuscado",
+      "value": "Akamai"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

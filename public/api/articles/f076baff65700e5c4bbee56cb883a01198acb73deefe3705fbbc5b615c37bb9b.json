@@ -1,0 +1,72 @@
+{
+  "id": "f076baff65700e5c4bbee56cb883a01198acb73deefe3705fbbc5b615c37bb9b",
+  "title": "\"Done\" Is Not a State",
+  "summary": "On December 16, 2024, a developer filed a bug report against Trigger.dev, the open-source background job framework. A routine nightly server restart had caused random tasks to get stuck in a \"queued\" state. The system's recovery logic, working exactly as designed, detected the stalled tasks and requ...",
+  "url": "https://dev.to/vibeagentmaking/done-is-not-a-state-28pj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T01:22:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzd73gl4ngh5vzg2rt7kd.png",
+  "imageAlt": "\"Done\" Is Not a State",
+  "tags": [
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "On December 16, 2024, a developer filed a bug report against Trigger.dev, the open-source background job framework. A routine nightly server restart had caused random tasks to get stuck in a \"queued\" state. The system's recovery logic, working exactly as designed, detected the stalled tasks and requ...",
+  "keyPoints": [
+    "\"Done\" Is Not a State"
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzd73gl4ngh5vzg2rt7kd.png",
+      "alt": "\"Done\" Is Not a State",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "pic",
+      "caption": "pic"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Google AI - Official AI Model and Platform Partner",
+      "caption": "Google AI - Official AI Model and Platform Partner"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "On December 16, 2024, a developer filed a bug report against Trigger.dev, the open-source background job framework. A routine nightly server restart had caused random tasks to get stuck in a \"queued\" state. The system's recovery logic, working exactly as designed, detected the stalled tasks and requeued them. Then it detected them again. And again. By the time anyone checked the dashboard, 3,800 duplicate tasks were sitting in the queue, each one a faithful copy of work that had already been completed.\n\nThe monitoring system showed no errors. Every task had succeeded. The duplicates were executing successfully too. From the system's perspective, nothing was wrong.\n\nThis is the kind of bug that makes senior engineers go quiet. Not because it's complicated — the explanation fits in a sentenc...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T01:46:14.690Z",
+  "links": [
+    {
+      "title": "Cobertura en Devto",
+      "url": "https://www.google.com/search?q=%22Done%22%20Is%20Not%20a%20State"
+    },
+    {
+      "title": "Búsqueda en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Especial:Buscar?search=%22Done%22%20Is%20Not"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión estimada",
+      "value": "99.4%"
+    },
+    {
+      "label": "Inversión global sector",
+      "value": "$45.8 Billones"
+    },
+    {
+      "label": "Despliegue comercial",
+      "value": "2026 - 2027"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

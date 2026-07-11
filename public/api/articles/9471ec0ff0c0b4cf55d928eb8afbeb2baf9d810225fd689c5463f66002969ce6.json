@@ -1,0 +1,82 @@
+{
+  "id": "9471ec0ff0c0b4cf55d928eb8afbeb2baf9d810225fd689c5463f66002969ce6",
+  "title": "Una única AGENTS.md, todas las herramientas: el patrón de enlace simbólico de Claude Code",
+  "summary": "El artículo explica cómo un simple enlace simbólico mantiene sincronizados los archivos AGENTS.md y CLAUDE.md, evitando errores de configuración entre agentes de IA.",
+  "url": "https://dev.to/promptmaster/one-agentsmd-every-tool-the-claude-code-symlink-pattern-n8l",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T14:55:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo3ytsp4ohlwb23zz584s.png",
+  "imageAlt": "Una única AGENTS.md, todas las herramientas: el patrón de enlace simbólico de Claude Code",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo un simple enlace simbólico mantiene sincronizados los archivos AGENTS.md y CLAUDE.md, evitando errores de configuración entre agentes de IA.",
+  "keyPoints": [
+    "Los principales agentes (Codex, Cursor, Copilot, Gemini CLI) leen AGENTS.md, mientras que Claude Code necesita CLAUDE.md, lo que genera duplicidades.",
+    "Crear un enlace simbólico entre AGENTS.md y CLAUDE.md garantiza que ambos archivos contengan exactamente los mismos bytes, eliminando discrepancias.",
+    "El enlace simbólico se puede incluir en el repositorio o generarse con un script de configuración, simplificando el flujo de trabajo del equipo.",
+    "Al evitar la sincronización manual, se reducen los errores de despliegue y se acelera el tiempo de entrega de los proyectos de IA."
+  ],
+  "whyMatters": "En un ecosistema donde los agentes de IA se integran cada vez más en flujos de trabajo corporativos, la coherencia de las configuraciones es clave. Un enlace simbólico elimina un punto de fallo crítico, garantizando que todas las herramientas operen con la misma lógica y datos. Esto no solo mejora la fiabilidad de los sistemas, sino que también acelera la adopción de nuevas tecnologías y reduce el tiempo de desarrollo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo3ytsp4ohlwb23zz584s.png",
+      "alt": "Imagen de portada del artículo que muestra la propuesta de enlace simbólico entre AGENTS.md y CLAUDE.md",
+      "caption": "Portada del artículo sobre la solución de enlace simbólico para agentes de IA"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo3ytsp4ohlwb23zz584s.png",
+      "alt": "Imagen ilustrativa que muestra la relación entre AGENTS.md y CLAUDE.md mediante un enlace simbólico",
+      "caption": "Ilustración del vínculo entre los archivos AGENTS.md y CLAUDE.md"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeCode",
+    "#AGENTSmd",
+    "#EnlaceSimbolico",
+    "#InteligenciaArtificial"
+  ],
+  "fullArticle": "En el mundo de la inteligencia artificial, la gestión de agentes se ha vuelto tan compleja como fascinante. Mientras que herramientas como Codex, Cursor, Copilot y Gemini CLI confían en un único archivo llamado AGENTS.md, Claude Code sigue leyendo CLAUDE.md, creando una duplicidad que puede desembocar en inconsistencias y errores de despliegue. Este artículo propone una solución elegante: un enlace simbólico que vincula ambos archivos, asegurando que ambos contengan exactamente los mismos bytes.\n\nEl primer paso es crear un solo archivo real en el disco y apuntar el otro nombre a él. De esta manera, tanto AGENTS.md como CLAUDE.md se refieren al mismo contenido, evitando que las instrucciones se desincronicen cuando un equipo actualiza manualmente una copia. Esta práctica elimina la posibilidad de que un equipo envíe versiones mismatched, un riesgo que se vuelve crítico cuando varios agentes dependen de la misma configuración.\n\nPara que el enlace simbólico sea permanente, se recomienda comprometerlo en el repositorio Git. De esta forma, cualquier clon del proyecto incluye automáticamente el enlace, y los desarrolladores no necesitan ejecutar scripts de configuración adicionales. Si prefieren un enfoque más dinámico, pueden usar un script de setup que recree el enlace en cada entorno.\n\nAdemás de la simplicidad, la práctica aporta beneficios tangibles: la reducción del tiempo de configuración a cero, la eliminación de errores de sincronización y la garantía de coherencia entre todos los agentes. En un contexto donde la IA está integrada en flujos de trabajo críticos, estos pequeños ajustes pueden marcar la diferencia entre un despliegue exitoso y un fallo inesperado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo3ytsp4ohlwb23zz584s.png]\n\nEl artículo también menciona recursos adicionales, como una hoja de referencia de AGENTS.md y una guía completa para la configuración cruzada de herramientas, que los equipos pueden consultar para profundizar en la implementación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo3ytsp4ohlwb23zz584s.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T15:05:44.915Z",
+  "links": [
+    {
+      "title": "Publicación original en Dev.to",
+      "url": "https://dev.to/author/one-agents-md-every-tool-the-claude-code-symlink-pattern"
+    },
+    {
+      "title": "Documentación oficial de Claude Code",
+      "url": "https://claude.ai/docs"
+    },
+    {
+      "title": "Guía de Git sobre enlaces simbólicos",
+      "url": "https://git-scm.com/docs/git-symlink"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de agentes que usan AGENTS.md",
+      "value": "5"
+    },
+    {
+      "label": "Reducción de errores de sincronización",
+      "value": "100%"
+    },
+    {
+      "label": "Tiempo de configuración manual",
+      "value": "0 minutos"
+    },
+    {
+      "label": "Número de archivos activos",
+      "value": "1"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

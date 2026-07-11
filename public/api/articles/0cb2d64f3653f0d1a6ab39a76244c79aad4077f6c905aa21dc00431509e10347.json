@@ -1,0 +1,72 @@
+{
+  "id": "0cb2d64f3653f0d1a6ab39a76244c79aad4077f6c905aa21dc00431509e10347",
+  "title": "La mitad más cara de tu bot de incidentes es la que nunca construiste",
+  "summary": "Un artículo de ingeniería revela que la fase de verificación posterior a la remediación de incidentes es el eslabón más costoso y descuidado en las herramientas de gestión de incidencias, generando fallos recurrentes y mayores costes operativos.",
+  "url": "https://dev.to/lazypl82/the-expensive-half-of-your-incident-bot-is-the-half-you-didnt-build-3lb4",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T05:35:35.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fg6axvmnasbrd9ox7g1wq.png",
+  "imageAlt": "La mitad más cara de tu bot de incidentes es la que nunca construiste",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un artículo de ingeniería revela que la fase de verificación posterior a la remediación de incidentes es el eslabón más costoso y descuidado en las herramientas de gestión de incidencias, generando fallos recurrentes y mayores costes operativos.",
+  "keyPoints": [
+    "Un bot detectó un CrashLoopBackOff a las 3:12 a.m., propuso eliminar el pod y el operario lo aprobó sin verificar la resolución completa del fallo.",
+    "La fase de verificación posterior a la remediación no está automatizada en la mayoría de herramientas, dependiendo de la atención manual de operarios senior.",
+    "Un pod nuevo tras un reinicio tiene un periodo de gracia sin errores que no confirma que el fallo original se haya solucionado definitivamente.",
+    "Los incidentes no verificados generan reincidencias con mayor coste, contexto obsoleto y menor urgencia en la respuesta posterior."
+  ],
+  "whyMatters": "Este problema afecta directamente a la disponibilidad de servicios críticos para empresas y usuarios españoles, como banca, telecomunicaciones o administración pública, generando costes millonarios en tiempos de inactividad no planificados y sobrecargando a los equipos de operaciones senior, que realizan tareas manuales repetitivas sin que su esfuerzo se reconozca en los diagramas de arquitectura. A medida que las herramientas de inteligencia artificial se integran más en la gestión de incidentes, descuidar la fase de verificación perpetúa un ciclo de reincidencias que reduce la competitividad de las empresas tecnológicas europeas en un sector donde la disponibilidad de los servicios es un factor diferenciador clave. Implementar soluciones automatizadas para esta fase supone evitar reincidencias que multiplican el coste de los incidentes originales, además de liberar a los perfiles más senior para tareas de mayor valor aporte a la organización.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fg6axvmnasbrd9ox7g1wq.png",
+      "alt": "La mitad más cara de tu bot de incidentes es la que nunca construiste",
+      "caption": "Imagen de portada del artículo original de Dev.to que ilustra el concepto de la fase de verificación descuidada en la gestión de incidentes"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GestionDeIncidentes",
+    "#DevOps",
+    "#SRE",
+    "#AutomatizacionIT"
+  ],
+  "fullArticle": "A las 3:12 de la madrugada, un bot de gestión de incidentes detectó un error de CrashLoopBackOff en un servicio, propuso eliminar el pod afectado y el operario de guardia lo aprobó medio dormido dos minutos después. El nuevo pod se inició correctamente en segundos, el ticket se cerró automáticamente como resuelto y las gráficas de monitoreo se quedaron en silencio. Pero a las 3:52, la misma alerta se volvió a disparar: el canal de incidentes ya marcaba el problema como solucionado, el contexto de la primera alerta tenía cuarenta minutos de antigüedad y el operario ya había gastado su dosis de adrenalina de la noche.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fg6axvmnasbrd9ox7g1wq.png]\n\nNada de este bucle falló: la detección funcionó, la solución propuesta era razonable y el operario aprobó la acción tal como prometía el diagrama de arquitectura. El paso que nunca se ejecutó es el que nadie construyó: decidir si el incidente se había resuelto realmente. Mientras las herramientas de gestión de incidentes han automatizado durante años los extremos del bucle (detección con alertas y detección de anomalías, y remediación con runbooks ejecutables con un clic), la fase de verificación posterior sigue dependiendo de la atención manual de los operarios, que vigilan las gráficas durante un tiempo indefinido según su carga de trabajo o la hora de la noche.\n\nEl problema es que un pod nuevo tras un reinicio tiene un periodo de gracia sin errores que no confirma que el fallo original se haya eliminado: si el incidente se debió a un valor de configuración erróneo, un mensaje envenenado en una cola o un patrón de tráfico de un cliente, el error solo espera a volver a aparecer con el siguiente ciclo, una tormenta de reintentos o la próxima solicitud de ese usuario. Esta falta de verificación automatizada genera reincidencias con un coste mucho mayor: la segunda alerta llega con menor urgencia, con contexto obsoleto y a un operario que ya ha gastado su capacidad de atención, multiplicando el impacto del fallo original en servicios críticos para usuarios en España.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T06:03:15.934Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: La mitad más cara de tu bot de incidentes",
+      "url": "https://dev.to/thekensaid/the-expensive-half-of-your-incident-bot-is-the-half-you-didnt-build-3h8a"
+    },
+    {
+      "title": "Guía de gestión de incidentes del Centro Criptológico Nacional (España)",
+      "url": "https://www.ccn-cert.cni.es/publico/guia-de-gestion-de-incidentes.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo transcurrido entre el primer incidente y su reincidencia",
+      "value": "40 minutos"
+    },
+    {
+      "label": "Tiempo que tardó el operario en aprobar la acción correctiva",
+      "value": "2 minutos"
+    },
+    {
+      "label": "Proporción de productos de gestión de incidentes con capa de LLM para diagnóstico en 2024",
+      "value": "100% de los principales"
+    },
+    {
+      "label": "Ventana de verificación necesaria en servicios con baja demanda de tráfico",
+      "value": "Hasta 20 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

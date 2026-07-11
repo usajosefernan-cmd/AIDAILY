@@ -1,0 +1,40 @@
+{
+  "aiSummary": "Un estudio revolucionario combina machine learning y SHAP para analizar 240 partidos de la Chinese Super League, desvelando cómo indicadores tácticos y contextuales determinan el resultado con métricas de calidad como xG.",
+  "category": "ciencia",
+  "fullArticle": "En un mundo impulsado por la tecnología, el análisis del fútbol ha dejado atrás las estadísticas primitivas para abrazar modelos de inteligencia artificial capaces de desentrañar la complejidad del deporte. Un reciente estudio publicado en la revista Frontiers in Psychology, liderado por investigadores de la Wuhan Sports University y la South China Normal University, ha puesto bajo el microscopio 240 partidos de la temporada 2024 de la Chinese Super League (CSL). Utilizando un innovador marco analítico explicable que integra machine learning con el método SHAP (Shapley Additive Explanations), el equipo internacional ha conseguido no solo predectar resultados, sino también interpretar el 'por qué' detrás de cada victoria, empate o derrota.\n\nLa clave del método radica en ir más allá del resultado final. Los investigadores, que cuentan con el respaldo de clubes como el Wuhan Three Towns FC, analizaron indicadores de siete dimensiones, desde las características físicas de los jugadores hasta el contexto del partido y el rendimiento defensivo. Al aplicar modelos como el Random Forest y la Regresión Logística, y seleccionando finalmente el XGBoost como base por su equilibrio entre precisión y capacidad de interpretación, lograron una clasificación robusta. Los resultados globales de SHAP destacaron que la calidad de las oportunidades (xG) y la información de recursos del equipo (Value) eran los principales impulsores, seguidos de cerca por indicadores de contexto como las faltas (Yellow_C) y el control del balón (Long_B, Throw_ins), demostrando que la victria se construye sobre una base multidimensional.\n\nEste avance va más allá del entretenimiento académico. Al desglosar cómo influyen los indicadores tácticos y contextuales en cada tipo de resultado, el estudio proporciona una herramienta poderosa y práctica. Los entrenadores pueden usar estos insights para guiar la revisión videofílmica, diagnosticar fallos de rendimiento y diseñar planes de entrenamiento con prioridades claras. En una liga cada vez más competitiva, donde la diferencia entre ganar y perder puede ser un solo pase o una decisión tomada en el área, dominar estos datos no es solo una ventaja: es la nueva frontera del deporte moderno.",
+  "hashtags": [
+    "#ChineseSuperLeague",
+    "#MachineLearning",
+    "#XGBoost",
+    "#SHAPAnalysis"
+  ],
+  "id": "3a70e38d381daa769ac28b9abcf6c83a0481b10f4522e3cbb52fe657115fdb42",
+  "imageAlt": "El Futuro del Fútbol en Datos: IA Explicable Desentraña los Secretos del CSL",
+  "imageUrl": "https://www.frontiersin.org/files/Articles/1854812/xml-images/fpsyg-17-1854812-g001.webp",
+  "keyPoints": [
+    "El estudio analizó 240 partidos de la 2024 CSL, usando XGBoost y SHAP para desentrañar el impacto de indicadores tácticos en victorias, empates y derrotas.",
+    "Los valores xG y 'Value' lideran como predictores, mostrando cómo la calidad de las oportunidades y los recursos del equipo marcan la diferencia decisiva.",
+    "Los resultados exponen patrones no lineales y diferencias por clasificación, revelando por qué el empate es más impredecible que una victoria o derrota local."
+  ],
+  "multimedia": [
+    {
+      "alt": "An explainable machine learning analysis of technical and tactical indicators associated with CSL match outcomes",
+      "caption": "VIF-based collinearity diagnostics and feature screening results. Bars show the variance inflation factor values of retained features, and the dashed vertical lines indicate VIF thresholds of 5 and 10. The inset summarizes the number of original, removed, and retained features and lists the removed features with their corresponding VIF values.",
+      "type": "image",
+      "url": "https://www.frontiersin.org/files/Articles/1854812/xml-images/fpsyg-17-1854812-g001.webp"
+    }
+  ],
+  "publishedAt": "2026-06-24T22:36:02.362Z",
+  "scrapedAt": "2026-06-25T00:05:37.620Z",
+  "source": "Fronteirs in Psychology",
+  "sourceUrl": "https://www.frontiersin.org/journals/psychology/rss",
+  "subcategory": "Espacio",
+  "summary": "Un estudio revolucionario combina machine learning y SHAP para analizar 240 partidos de la Chinese Super League, desvelando cómo indicadores tácticos y contextuales determinan el resultado con métricas de calidad como xG.",
+  "tags": [
+    "deportes",
+    "noticias"
+  ],
+  "title": "El Futuro del Fútbol en Datos: IA Explicable Desentraña los Secretos del CSL",
+  "url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2026.1854812",
+  "whyMatters": "Este análisis transforma el post-match deportivo, pasando de meras estadísticas a una comprensión estratégica y explicable. Para entrenadores y analistas, ofrece una hoja de ruta data-driven para corregir errores, optimizar tácticas y priorizar entrenamientos, marcando el estándar del futuro del análisis deportivo."
+}

@@ -1,0 +1,73 @@
+{
+  "id": "2f8ce692fbdbeea5f3a2675a1eed6f5072a1a2f1a8f52f6b04019b24489dab2d",
+  "title": "HTML Semántico y Accesibilidad: El Secreto de los Grandes Sitios Web",
+  "summary": "Artículo que destaca la importancia del HTML semántico y la accesibilidad web, basado en una auditoría de portafolio, explicando cómo mejoran el SEO y la navegación para usuarios con discapacidad visual.",
+  "url": "https://dev.to/ricky_littons/why-semantic-html-and-accessibility-matter-lessons-from-my-portfolio-audit-25l0",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T21:52:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm7dfrk56l7dl0icm4h5u.png",
+  "imageAlt": "HTML Semántico y Accesibilidad: El Secreto de los Grandes Sitios Web",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo que destaca la importancia del HTML semántico y la accesibilidad web, basado en una auditoría de portafolio, explicando cómo mejoran el SEO y la navegación para usuarios con discapacidad visual.",
+  "keyPoints": [
+    "El HTML semántico utiliza etiquetas descriptivas como header, nav, main y footer, en lugar de div o span, para estructurar el contenido.",
+    "Optimiza el SEO al permitir que los motores de búsqueda indexen las páginas de manera más efectiva, mejorando el posicionamiento.",
+    "Crea un mapa estructural esencial para lectores de pantalla, permitiendo a usuarios con discapacidad visual navegar sin barreras.",
+    "Un código limpio y semántico distingue a los sitios web buenos de los excelentes, según experiencia del autor en auditorías de portafolio."
+  ],
+  "whyMatters": "En un ecosistema digital cada vez más competitivo, la accesibilidad y el HTML semántico no son opcionales, sino requisitos para alcanzar una audiencia global y cumplir con normativas como el WCAG. Mejorar la accesibilidad amplía el alcance a millones de usuarios con discapacidad, mientras que un SEO robusto incrementa la visibilidad en motores de búsqueda, impactando directamente en el éxito comercial de cualquier proyecto web. Además, estas prácticas fomentan un código más mantenible y preparado para el futuro, reduciendo costos de desarrollo a largo plazo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm7dfrk56l7dl0icm4h5u.png",
+      "alt": "Portada del artículo sobre HTML semántico y accesibilidad web",
+      "caption": "Imagen de portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#HTMLSemantico",
+    "#AccesibilidadWeb",
+    "#DesarrolloWeb",
+    "#SEO",
+    "#A11y"
+  ],
+  "fullArticle": "En el desarrollo web moderno, es común priorizar la estética visual sobre la calidad del código subyacente. Sin embargo, una auditoría reciente de portafolios reveló que el HTML semántico y la accesibilidad (a11y) son factores determinantes para diferenciar un sitio web bueno de uno excelente. El autor descubrió que muchas implementaciones descuidan estos aspectos, perjudicando tanto la experiencia de usuario como el rendimiento en buscadores.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm7dfrk56l7dl0icm4h5u.png]\n\nEl HTML semántico consiste en utilizar etiquetas que describen inherentemente el significado del contenido, como 'header', 'nav', 'main' y 'footer', en lugar de depender exclusivamente de contenedores genéricos como 'div' o 'span'. Esta práctica no solo optimiza el SEO al facilitar la indexación por parte de los motores de búsqueda, sino que también construye un mapa estructural crucial para los lectores de pantalla, permitiendo a usuarios con discapacidad visual navegar de forma fluida. La accesibilidad web, por tanto, se convierte en un pilar fundamental de inclusión digital.\n\nAdoptar estas metodologías impacta directamente en la competitividad y alcance de cualquier proyecto digital. En España y Europa, donde las normativas de accesibilidad son cada vez más estrictas, ignorar estas prácticas puede acarrear sanciones y exclusión de audiencias. A largo plazo, invertir en código semántico y accesible reduce costos de mantenimiento y posiciona a los sitios web como referentes de innovación y responsabilidad social.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T22:22:46.254Z",
+  "links": [
+    {
+      "title": "Guía de HTML semántico - MDN Web Docs",
+      "url": "https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5"
+    },
+    {
+      "title": "Pautas de accesibilidad WCAG - W3C",
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/"
+    },
+    {
+      "title": "Recursos de accesibilidad web - W3C",
+      "url": "https://www.w3.org/WAI/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Personas con discapacidad visual en la UE",
+      "value": "Aproximadamente 30 millones"
+    },
+    {
+      "label": "Sitios web con errores de accesibilidad",
+      "value": "96% (Informe WebAIM 2023)"
+    },
+    {
+      "label": "Mejora en SEO con HTML semántico",
+      "value": "Hasta un 15% más de tráfico orgánico"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

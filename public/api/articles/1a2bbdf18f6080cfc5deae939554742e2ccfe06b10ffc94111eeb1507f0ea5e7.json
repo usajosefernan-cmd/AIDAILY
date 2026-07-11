@@ -1,0 +1,69 @@
+{
+  "id": "1a2bbdf18f6080cfc5deae939554742e2ccfe06b10ffc94111eeb1507f0ea5e7",
+  "title": "ccRewind: La herramienta que lee tu historial de Claude sin modificar ni un byte",
+  "summary": "ccRewind es una herramienta de código abierto que indexa los archivos de historial de Claude Code en una base de datos SQLite local, garantizando que nunca modifica los archivos originales para preservar su integridad.",
+  "url": "https://dev.to/tznthou/why-ccrewind-never-writes-to-claude-2k6b",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T10:05:28.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fypl3b5xy19166jx0l99z.png",
+  "imageAlt": "ccRewind: La herramienta que lee tu historial de Claude sin modificar ni un byte",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "ccRewind es una herramienta de código abierto que indexa los archivos de historial de Claude Code en una base de datos SQLite local, garantizando que nunca modifica los archivos originales para preservar su integridad.",
+  "keyPoints": [
+    "ccRewind lee los archivos JSONL de ~/.claude/projects/ y los indexa en una base de datos SQLite local sin escribir en los archivos originales.",
+    "La herramienta garantiza que los archivos de historial permanezcan intactos, incluso si están siendo escritos por otro proceso, evitando corrupción.",
+    "Utiliza un sistema de fingerprinting con tiempo de modificación y contador de versión para detectar cambios y mantener sincronizada la base de datos.",
+    "La metadata creada por ccRewind, como etiquetas o archivos archivados, no se guarda en los archivos originales y se pierde al reconstruir el índice."
+  ],
+  "whyMatters": "Para desarrolladores y equipos que dependen de Claude Code, la integridad de los archivos de historial es fundamental para depuración, auditoría y cumplimiento normativo. ccRewind ofrece una solución que permite explorar y buscar en el historial sin riesgo de alterar los datos originales, lo que es crucial cuando se investigan errores sutiles o se reconstruyen secuencias de eventos. Su enfoque de solo lectura establece un nuevo estándar en la gestión de registros de actividad, garantizando que la evidencia digital permanezca inmutable y fiable.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fypl3b5xy19166jx0l99z.png",
+      "alt": "Portada del artículo explicando por qué ccRewind nunca escribe en ~/.claude/",
+      "caption": "Imagen de portada del artículo en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CcRewind",
+    "#ClaudeCode",
+    "#DesarrolloSoftware",
+    "#HerramientasDev",
+    "#OpenSource"
+  ],
+  "fullArticle": "ccRewind es una herramienta de código abierto diseñada para leer y indexar los archivos de historial de Claude Code almacenados en ~/.claude/projects/*.jsonl. A diferencia de otras soluciones, ccRewind nunca escribe en estos archivos originales, garantizando que permanezcan inalterados sin importar el tiempo transcurrido o las herramientas que los hayan analizado. Esta decisión de diseño, aunque aparentemente simple, tiene profundas implicaciones en la integridad de los datos y la confiabilidad de la depuración.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fypl3b5xy19166jx0l99z.png]\n\nLa filosofía detrás de ccRewind se basa en tratar los archivos JSONL como registros históricos inmutables: se saltea lo que no se puede leer, se preserva lo que no se entiende y nunca se permite que la opinión sobre los datos altere los datos mismos. Este enfoque, similar al de un arqueólogo que no modifica el yacimiento que excava, asegura que el archivo de sesión sea exactamente como se escribió el día de su creación. Esto ya ha demostrado su valor en casos reales, como cuando un error silencioso en herramientas de cliente causó comportamientos anómalos durante varias sesiones; la capacidad de volver a los datos originales sin alteraciones fue crucial para reconstruir los hechos sin contaminar la investigación con efectos secundarios.\n\nSin embargo, esta restricción tiene costos. ccRewind debe mantener una base de datos SQLite separada, que debe ser construida, migrada y sincronizada mediante reescaneos periódicos del sistema de archivos. Para determinar qué archivos han cambiado, utiliza un sistema de fingerprinting que combina el tiempo de modificación y un contador de versión por sesión, ya que no puede escribir un flag de 'procesado' en el propio archivo JSONL. Además, cualquier metadata como etiquetas o marcas de archivado se almacena exclusivamente en la base de datos de ccRewind, lo que significa que se pierden si se reconstruye el índice o se migra a otra máquina. A pesar de estas limitaciones, la herramienta se mantiene fiel a su promesa: el archivo fuente no cambia porque alguien lo miró.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T10:26:04.931Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Claude Code",
+      "url": "https://docs.anthropic.com/claude/docs/claude-code"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño del índice SQLite",
+      "value": "Aproximadamente 1 GB"
+    },
+    {
+      "label": "Método de detección de cambios",
+      "value": "Fingerprinting con tiempo de modificación y contador de versión por sesión"
+    },
+    {
+      "label": "Archivos fuente",
+      "value": "~/.claude/projects/*.jsonl"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

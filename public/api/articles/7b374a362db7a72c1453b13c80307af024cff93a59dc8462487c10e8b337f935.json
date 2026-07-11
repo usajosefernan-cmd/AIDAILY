@@ -1,0 +1,69 @@
+{
+  "id": "7b374a362db7a72c1453b13c80307af024cff93a59dc8462487c10e8b337f935",
+  "title": "Nuevo ataque GhostApproval engaña a herramientas de IA para hackear máquinas de desarrolladores",
+  "summary": "La firma de ciberseguridad Wiz ha revelado un nuevo método de ataque denominado GhostApproval que aprovecha una técnica de décadas de antigüedad para comprometer las máquinas de los desarrolladores mediante herramientas de codificación asistidas por inteligencia artificial.",
+  "url": "https://www.securityweek.com/ai-coding-tools-tricked-into-hacking-developer-machine-via-decades-old-technique",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-09T08:52:21.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Nuevo ataque GhostApproval engaña a herramientas de IA para hackear máquinas de desarrolladores",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La firma de ciberseguridad Wiz ha revelado un nuevo método de ataque denominado GhostApproval que aprovecha una técnica de décadas de antigüedad para comprometer las máquinas de los desarrolladores mediante herramientas de codificación asistidas por inteligencia artificial.",
+  "keyPoints": [
+    "Wiz ha identificado un nuevo vector de ataque bautizado como GhostApproval dirigido a herramientas de codificación con IA.",
+    "El método se aprovecha de una técnica de ingeniería social con décadas de antigüedad para engañar a los desarrolladores.",
+    "Los atacantes pueden inducir a las herramientas de IA a generar código malicioso que compromete la máquina del programador.",
+    "Este ataque destaca riesgos emergentes y críticos en la adopción de asistentes de programación basados en inteligencia artificial."
+  ],
+  "whyMatters": "Este descubrimiento es crucial porque expone una vulnerabilidad crítica en las herramientas de IA que cada vez más desarrolladores y empresas adoptan para acelerar la productividad. Afecta directamente a la cadena de suministro de software, ya que un ataque exitoso puede filtrar código propietario, robar credenciales o instalar malware en entornos de desarrollo. Para España y Europa, donde el sector tecnológico y la ciberseguridad son prioridades estratégicas, esto subraya la necesidad de auditorías rigurosas y actualizaciones de seguridad en estas herramientas antes de su despliegue generalizado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+      "alt": "Nuevo ataque GhostApproval engaña a herramientas de IA para hackear máquinas de desarrolladores",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#GhostApproval",
+    "#Ciberseguridad",
+    "#IA",
+    "#Wiz",
+    "#Desarrolladores"
+  ],
+  "fullArticle": "La firma de ciberseguridad Wiz ha revelado detalles de un nuevo método de ataque, denominado GhostApproval, que permite a actores maliciosos comprometer las máquinas de los desarrolladores mediante el engaño a herramientas de codificación asistidas por inteligencia artificial. El ataque se basa en una técnica de ingeniería social con décadas de antigüedad, adaptada al entorno moderno de asistentes de programación, que induce a estos sistemas a generar y ejecutar código malicioso sin el consentimiento explícito del usuario. El funcionamiento de GhostApproval aprovecha la confianza que los desarrolladores depositan en las recomendaciones de las herramientas de IA, manipulando entradas o contextos para que el modelo produzca instrucciones que, al ser ejecutadas, realizan acciones no autorizadas en el sistema anfitrión. Esto puede incluir la exfiltración de datos sensibles, la instalación de puertas traseras o el robo de credenciales de acceso a repositorios y servicios en la nube. Este hallazgo subraya la creciente superficie de ataque que representan las herramientas de IA en el ciclo de desarrollo de software. Para mitigar este riesgo, se recomienda a las organizaciones implementar políticas de revisión de código generado, limitar los privilegios de ejecución en entornos de desarrollo y mantener actualizadas las herramientas de seguridad que monitorean las interacciones con estos asistentes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T09:06:01.066Z",
+  "links": [
+    {
+      "title": "Artículo original en SecurityWeek sobre GhostApproval",
+      "url": "https://www.securityweek.com/ai-coding-tools-tricked-into-hacking-developer-machine-via-decades-old-technique/"
+    },
+    {
+      "title": "Laboratorio de seguridad de Wiz",
+      "url": "https://www.wiz.io/labs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Nombre del método de ataque",
+      "value": "GhostApproval"
+    },
+    {
+      "label": "Empresa descubridora",
+      "value": "Wiz"
+    },
+    {
+      "label": "Antigüedad de la técnica base",
+      "value": "Aproximadamente 30 años"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

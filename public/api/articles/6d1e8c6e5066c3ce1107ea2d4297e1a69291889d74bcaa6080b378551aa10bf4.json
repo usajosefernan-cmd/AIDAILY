@@ -1,0 +1,82 @@
+{
+  "id": "6d1e8c6e5066c3ce1107ea2d4297e1a69291889d74bcaa6080b378551aa10bf4",
+  "title": "Cómo migrar de WordPress sin perder SEO: la guía con redirecciones 301 que garantiza cero pérdida de tráfico",
+  "summary": "Guía práctica basada en la migración exitosa del sello lisboeta Satya Recs a un stack estático, que demuestra que un mapa de redirecciones 1:1 meticuloso es la única garantía para no perder posicionamiento SEO al abandonar WordPress, junto con la verificación de elementos on-page y la preservación estricta de URLs.",
+  "url": "https://dev.to/techpotions/how-to-migrate-off-wordpress-without-losing-seo-ep8",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T20:05:52.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Ftechpotions.com%2Fapi%2Fmedia%2Ffile%2Fmigrate-off-wordpress-without-losing-seo-cover.webp",
+  "imageAlt": "Cómo migrar de WordPress sin perder SEO: la guía con redirecciones 301 que garantiza cero pérdida de tráfico",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Guía práctica basada en la migración exitosa del sello lisboeta Satya Recs a un stack estático, que demuestra que un mapa de redirecciones 1:1 meticuloso es la única garantía para no perder posicionamiento SEO al abandonar WordPress, junto con la verificación de elementos on-page y la preservación estricta de URLs.",
+  "keyPoints": [
+    "El éxito de la migración del sello Satya Recs a un sitio estático se debió a un mapa de redirecciones 1:1 que preservó todas las URLs originales sin excepción.",
+    "Se generó el mapa extrayendo todas las URLs desde la API REST de WordPress y el sitemap XML, asignando una redirección 301 a cada ruta interna.",
+    "Se evitaron cambios de slugs, reglas de barras finales o bases de categorías, ya que cualquier modificación elimina equidad de enlaces y obliga a reevaluar la confianza del sitio.",
+    "Tras la migración se auditaron elementos on-page como títulos, meta descripciones, canonicales y JSON-LD para confirmar que no se perdieron señales SEO."
+  ],
+  "whyMatters": "Esta guía demuestra que migrar de WordPress a soluciones más ligeras y rápidas no tiene por qué suponer una pérdida de tráfico orgánico, un miedo que frena a muchas pymes y creadores que buscan reducir costos o mejorar el rendimiento. Al establecer un protocolo reproducible basado en redirecciones 1:1 y verificación de elementos on-page, se elimina el riesgo principal de las migraciones, que suelen suponer caídas de hasta el 40% del tráfico orgánico en los primeros meses. Para negocios dependientes del tráfico de buscadores, como el sello musical del caso de estudio, esto supone proteger ingresos y visibilidad a largo plazo sin renunciar a actualizar su stack tecnológico.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Ftechpotions.com%2Fapi%2Fmedia%2Ffile%2Fmigrate-off-wordpress-without-losing-seo-cover.webp",
+      "alt": "Portada de la guía para migrar de WordPress sin perder SEO",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Script de ejemplo para generar un mapa de redirecciones desde un sitemap XML",
+      "caption": "Fragmento de código del script que extrae URLs y genera el CSV de redirecciones para la migración"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#MigracionWeb",
+    "#SEO",
+    "#WordPress",
+    "#Redirecciones301"
+  ],
+  "fullArticle": "Migrar de WordPress a un stack tecnológico más ligero y rápido es un deseo común de muchos negocios y creadores, pero el miedo a perder todo el posicionamiento SEO acumulado durante años frena la mayoría de los intentos. El caso de éxito del sello multidisciplinary lisboeta Satya Recs, que pasó de WordPress a un sitio estático sin sufrir ni una sola caída en sus rankings orgánicos, demuestra que el riesgo se puede eliminar por completo con una planificación meticulosa. La clave indiscutible es un mapa de redirecciones 1:1 que preserve cada URL original sin excepción, evitando huecos que provoquen la pérdida de equidad de enlaces.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Ftechpotions.com%2Fapi%2Fmedia%2Ffile%2Fmigrate-off-wordpress-without-losing-seo-cover.webp]\nEl equipo de desarrollo generó el mapa de redirecciones extrayendo todas las URLs de publicaciones, páginas, tipos de post personalizados (lanzamientos, mezclas) y archivos de taxonomía directamente desde la API REST de WordPress, comparándolas con las rutas planificadas en el nuevo sitio estático. Este proceso se puede replicar fácilmente con un script sencillo que procesa el sitemap XML del sitio para generar un CSV con las rutas antiguas y nuevas, asignando una redirección 301 a cada entrada. Para el caso de Satya Recs, que se alojó en Netlify, este CSV se tradujo directamente en un archivo _redirects nativo de la plataforma, sin cadenas de redirección ni desvíos innecesarios.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\nUna vez finalizada la migración, no basta con el mapa de redirecciones: es imprescindible auditar todos los elementos on-page de las páginas de mayor tráfico, como títulos, meta descripciones, etiquetas canónicas y bloques JSON-LD, para confirmar que no se perdieron señales SEO durante el proceso. El equipo realizó una auditoría con navegador sin cabeza sobre las páginas más visitadas, y verificó que todos los datos estructurados y las etiquetas canónicas apuntaban correctamente al nuevo dominio. Como paso final, se recomienda enviar el nuevo sitemap a Google Search Console inmediatamente, mantener la propiedad del dominio antiguo verificada y monitorear el informe de Cobertura de forma constante durante las primeras semanas para detectar cualquier error a tiempo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T20:30:56.487Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Cómo migrar de WordPress sin perder SEO",
+      "url": "https://dev.to/techpotions/how-to-migrate-off-wordpress-without-losing-seo-4j9"
+    },
+    {
+      "title": "Guía de migración de Pressable para preservar el SEO",
+      "url": "https://pressable.com/blog/migrate-wordpress-without-losing-seo/"
+    },
+    {
+      "title": "Documentación oficial de redirecciones de Netlify",
+      "url": "https://docs.netlify.com/routing/redirects/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Variación de posicionamiento SEO tras la migración de Satya Recs",
+      "value": "0% de caída en rankings orgánicos"
+    },
+    {
+      "label": "Código de estado utilizado para todas las redirecciones",
+      "value": "301 (redirección permanente)"
+    },
+    {
+      "label": "Número de URLs críticas auditadas manualmente post-migración",
+      "value": "Entre 20 y 30 URLs de mayor tráfico"
+    },
+    {
+      "label": "Riesgo de caída de tráfico en migraciones sin protocolo",
+      "value": "Hasta el 40% en los primeros meses"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

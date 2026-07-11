@@ -1,0 +1,7 @@
+{
+  "name": "ia-daily",
+  "script": "npm",
+  "args": ["--prefix", "/opt/ia-daily", "run", "preview"],
+  "watch": ["/opt/ia-daily/dist"],
+  "ignore_watch": ["node_modules", "src"]
+}

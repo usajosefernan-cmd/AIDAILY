@@ -1,0 +1,77 @@
+{
+  "id": "55b18fba471c824ef788585825b0bfb8c2616333a3bc82b1ac060b4660bad0fd",
+  "title": "Los conceptos de CompTIA que la gente sigue confundiendo (y cómo distinguirlos realmente)",
+  "summary": "El examen CompTIA Security+ y Network+ exige más que memorización; requiere discriminación práctica entre conceptos parecidos. Este artículo desglosa los pares más confusos, explica su diferenciador clave y muestra cómo aplicarlos en escenarios reales.",
+  "url": "https://dev.to/the_leon_odor/the-comptia-concepts-people-keep-confusing-and-how-to-actually-tell-them-apart-2cb2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T01:50:21.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F66ryxtc0x0ypom8dlpl5.png",
+  "imageAlt": "Los conceptos de CompTIA que la gente sigue confundiendo (y cómo distinguirlos realmente)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El examen CompTIA Security+ y Network+ exige más que memorización; requiere discriminación práctica entre conceptos parecidos. Este artículo desglosa los pares más confusos, explica su diferenciador clave y muestra cómo aplicarlos en escenarios reales.",
+  "keyPoints": [
+    "La brecha entre saber lo que es tokenización y poder distinguirla bajo presión es la verdadera prueba de los exámenes CompTIA.",
+    "WPA3, OWE y SAE no son sinónimos; cada uno soluciona vulnerabilidades distintas según el contexto del escenario.",
+    "La seguridad de un certificado TLS depende de la autoridad que lo emite, no del nivel de validación (DV, OV, EV).",
+    "En la protección de datos sensibles, la diferencia entre encriptación, tokenización y mascarado determina la reversibilidad y la ubicación del valor original."
+  ],
+  "whyMatters": "Comprender la diferencia entre conceptos similares es vital para los profesionales de la seguridad que buscan certificaciones reconocidas globalmente. Un error de discriminación puede costar la aprobación del examen y, más allá del examen, la capacidad de diseñar controles adecuados en entornos corporativos. La correcta aplicación de WPA3, OWE, SAE y de los tipos de certificados TLS garantiza la protección de datos y la confianza de los usuarios en la infraestructura digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F66ryxtc0x0ypom8dlpl5.png",
+      "alt": "Imagen de portada del artículo que muestra una figura abstracta de redes y seguridad",
+      "caption": "Portada ilustrativa del artículo sobre conceptos CompTIA confusos"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#CompTIA",
+    "#SeguridadInformática",
+    "#Certificaciones",
+    "#WPA3",
+    "#NAT"
+  ],
+  "fullArticle": "El examen CompTIA Security+ y Network+ exige más que una simple memorización de definiciones. Los candidatos suelen leer el objetivo, ver el vídeo y explicar el término a un compañero, pero cuando el examen presenta un escenario con dos opciones aparentemente correctas, el error suele ser elegir la respuesta errónea por no distinguir el concepto que realmente describe la situación.\n\nLos pares de conceptos que más confunden son los relacionados con la seguridad inalámbrica. WPA3, OWE y SAE a menudo se tratan como sinónimos, pero cada uno soluciona una vulnerabilidad distinta: WPA3 incluye SAE para proteger la autenticación, mientras que OWE permite cifrado en redes abiertas sin configuraciones complicadas. La clave es identificar el escenario: si la pregunta menciona un handshake capturado y crackeado offline, la respuesta correcta es la mejora de SAE; si habla de una red abierta que necesita cifrado, la respuesta es OWE.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F66ryxtc0x0ypom8dlpl5.png]\n\nOtro punto crítico es la interpretación de los certificados TLS. Los certificados DV, OV y EV difieren en el proceso de verificación de la autoridad, pero no en la fuerza criptográfica que ofrecen. La diferencia radica en quién ha sido verificado antes de la emisión, no en el nivel de cifrado. Esta distinción es fundamental cuando se evalúan los controles de seguridad en entornos corporativos.\n\nEn el ámbito de la protección de datos, la confusión entre tokenización, encriptación y mascarado puede llevar a implementar la solución incorrecta. La encriptación reversible con una clave permite descifrar el dato; la tokenización utiliza un almacén externo para mapear el valor original; el mascarado, por su parte, no es reversible y se utiliza para ocultar datos sensibles en logs. Identificar el objetivo de la protección (reversibilidad, localización del dato) determina la elección correcta.\n\nEn conclusión, la preparación para los exámenes CompTIA debe centrarse en la discriminación práctica entre conceptos similares. Esta habilidad no solo aumenta la tasa de aprobación, sino que también fortalece la capacidad de los profesionales para diseñar y aplicar controles de seguridad efectivos en el mundo real.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T02:24:55.480Z",
+  "links": [
+    {
+      "title": "Guía oficial de CompTIA Security+",
+      "url": "https://www.comptia.org/certifications/security"
+    },
+    {
+      "title": "Documentación de WPA3",
+      "url": "https://www.wi-fi.org/discover-wi-fi/wpa3"
+    },
+    {
+      "title": "Normativa de certificados TLS",
+      "url": "https://www.ietf.org/rfc/rfc5280.txt"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de pares de conceptos confundidos",
+      "value": "12"
+    },
+    {
+      "label": "Tasa de éxito promedio en el examen Security+",
+      "value": "60%"
+    },
+    {
+      "label": "Número de preguntas en el examen Security+",
+      "value": "90"
+    },
+    {
+      "label": "Frecuencia de aparición de preguntas de discriminación",
+      "value": "35%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

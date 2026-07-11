@@ -1,0 +1,73 @@
+{
+  "id": "4f07d73bdcec28800f68e3e08409161f9e271122a66df27a8fc9cfd1a5677382",
+  "title": "Solución al error EPERM en Tanstack Router + Vite: evita que tu servidor se cierre al crear rutas",
+  "summary": "Un desarrollador soluciona un error de permisos EPERM en el sistema de vigilancia de archivos al combinar Tanstack Router con Vite, mediante una configuración de polling y estabilidad que mantiene activo el servidor de desarrollo.",
+  "url": "https://dev.to/flyingduck92/tanstack-router-vite-race-condition-in-filewatcher-2lmh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T22:57:38.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe142hb9sxpdhn1uc9k09.png",
+  "imageAlt": "Solución al error EPERM en Tanstack Router + Vite: evita que tu servidor se cierre al crear rutas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador soluciona un error de permisos EPERM en el sistema de vigilancia de archivos al combinar Tanstack Router con Vite, mediante una configuración de polling y estabilidad que mantiene activo el servidor de desarrollo.",
+  "keyPoints": [
+    "El error EPERM aparece al crear nuevas rutas en proyectos que usan Tanstack Router y Vite durante el desarrollo.",
+    "La solución se implementa agregando las opciones usePolling y stabilityThreshold al archivo vite.config.ts.",
+    "Si se generan múltiples rutas simultáneamente, se puede aumentar el valor de stabilityThreshold de 500 a 800 milisegundos.",
+    "Esta configuración es independiente del sistema operativo y no requiere modificaciones de hardware."
+  ],
+  "whyMatters": "Esta solución es fundamental para desarrolladores frontend que utilizan estas herramientas, ya que elimina interrupciones constantes en el flujo de trabajo que retrasan la entrega de funcionalidades. Al evitar el cierre inesperado del servidor de desarrollo, se reduce el tiempo de depuración y se incrementa la productividad en equipos que trabajan con enrutamiento dinámico. Además, al ser compatible con cualquier sistema operativo, se convierte en una medida universal aplicable en entornos locales y de integración continua, sin necesidad de ajustes específicos por plataforma.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe142hb9sxpdhn1uc9k09.png",
+      "alt": "Captura de pantalla del error EPERM en el filewatcher al usar Tanstack Router con Vite",
+      "caption": "Imagen de portada del artículo original de Dev.to que ilustra el problema de race condition"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#TanstackRouter",
+    "#Vite",
+    "#DesarrolloWeb",
+    "#EPERM",
+    "#HerramientasDev"
+  ],
+  "fullArticle": "El error EPERM (operation not permitted) en el filewatcher es un inconveniente recurrente para desarrolladores que trabajan con Tanstack Router y Vite, especialmente al crear nuevas rutas durante el proceso de desarrollo. Este fallo provoca que el servidor de desarrollo se cierre de forma inesperada, interrumpiendo el flujo de trabajo y generando retrasos en la implementación de funcionalidades. La causa raíz se relaciona con una condición de carrera en el sistema de vigilancia de archivos, que no se sincroniza correctamente con los cambios en la estructura de rutas. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe142hb9sxpdhn1uc9k09.png] La solución, compartida por la comunidad de desarrolladores, consiste en modificar el archivo vite.config.ts para agregar las opciones usePolling y stabilityThreshold. El uso de polling fuerza a Vite a revisar cambios en los archivos de forma periódica, mientras que stabilityThreshold define un margen de espera para confirmar que los cambios son estables antes de procesarlos. Si el problema persiste al generar múltiples rutas al mismo tiempo, basta con aumentar ligeramente el valor de stabilityThreshold, por ejemplo de 500 a 800 milisegundos. Esta configuración no depende del sistema operativo ni de características de hardware, por lo que es aplicable en cualquier entorno de desarrollo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T23:24:07.112Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Vite sobre configuración del filewatcher",
+      "url": "https://vitejs.dev/config/#server-watch"
+    },
+    {
+      "title": "Guía oficial de Tanstack Router para proyectos Vite",
+      "url": "https://tanstack.com/router/latest/docs/framework/vite/overview"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Valor predeterminado de stabilityThreshold",
+      "value": "500 milisegundos"
+    },
+    {
+      "label": "Valor ajustado recomendado para múltiples rutas",
+      "value": "800 milisegundos"
+    },
+    {
+      "label": "Tipo de error de sistema",
+      "value": "EPERM (operación no permitida)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

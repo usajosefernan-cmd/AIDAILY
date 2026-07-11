@@ -1,0 +1,78 @@
+{
+  "id": "35a3b2398d3d6682d08ee74c968255c03d46b1fa999063a718d8a053a14f66c6",
+  "title": "Investigadores detectan explotación de nuevo defecto crítico de Oracle",
+  "summary": "Un atacante aprovechó una vulnerabilidad crítica en Oracle E-Business Suite durante un lapso de dos horas, antes de que la empresa pusiera a disposición su parche. La detección, realizada por una firma de inteligencia de amenazas, sugiere una posible fase inicial de una campaña más amplia.",
+  "url": "https://cyberscoop.com/oracle-ebs-critical-vulnerability-exploited/",
+  "source": "CyberScoop",
+  "sourceUrl": "https://cyberscoop.com/feed/",
+  "publishedAt": "2026-07-01T19:23:26.000Z",
+  "imageUrl": "https://cyberscoop.com/wp-content/uploads/sites/3/2025/10/GettyImages-2205578283-min.jpg",
+  "imageAlt": "Investigadores detectan explotación de nuevo defecto crítico de Oracle",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un atacante aprovechó una vulnerabilidad crítica en Oracle E-Business Suite durante un lapso de dos horas, antes de que la empresa pusiera a disposición su parche. La detección, realizada por una firma de inteligencia de amenazas, sugiere una posible fase inicial de una campaña más amplia.",
+  "keyPoints": [
+    "Se registraron seis ataques en un intervalo de dos horas, todos provenientes de la misma dirección IP, indicando un posible test de reconocimiento.",
+    "Oracle ya había parcheado la falla (CVE-2026-46817) con una puntuación de severidad 9.8, y la complejidad de explotación se califica como baja.",
+    "El escaneo de Shadowserver identificó 950 despliegues potencialmente vulnerables de Oracle E-Business Suite, con más de la mitad en Estados Unidos.",
+    "Grupos como Clop y ShinyHunters han usado vulnerabilidades similares para extorsionar a organizaciones, lo que aumenta el riesgo de ataques dirigidos."
+  ],
+  "whyMatters": "La explotación temprana de una vulnerabilidad de alta gravedad en un ecosistema tan extendido como Oracle E-Business Suite plantea un riesgo serio para la continuidad operativa de cientos de empresas. Si los atacantes logran comprometer sistemas críticos antes de que se despliegue el parche, pueden extraer datos sensibles o interrumpir servicios esenciales. La detección de ataques en fase de prueba sugiere que los ciberdelincuentes están afinando sus herramientas, lo que aumenta la probabilidad de un ataque masivo en el futuro.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2025/10/GettyImages-2205578283-min.jpg",
+      "alt": "Investigadores observan la explotación de un defecto crítico de Oracle",
+      "caption": "Imagen de portada del artículo, mostrando la detección de la vulnerabilidad en tiempo real."
+    },
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2025/10/GettyImages-2205578283-min.jpg?w=1015",
+      "alt": "Vista ampliada del mismo incidente",
+      "caption": "Detalle ampliado del mismo incidente, resaltando la actividad de la dirección IP única."
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#OracleVulnerability",
+    "#CVE202646817",
+    "#ClopRansomware",
+    "#OracleEBusinessSuite"
+  ],
+  "fullArticle": "Un atacante explotó una vulnerabilidad crítica en la función de procesamiento de pagos de Oracle E-Business Suite el sábado, antes de que la empresa divulgara su parche. La firma de inteligencia de amenazas Defused detectó seis instancias de explotación en un intervalo de dos horas en sus honeypots, dispositivos diseñados para observar actividad maliciosa en entornos no productivos.\n\n[MULTIMEDIA: https://cyberscoop.com/wp-content/uploads/sites/3/2025/10/GettyImages-2205578283-min.jpg]\n\nOracle ya había informado y corregido el fallo, identificado como CVE-2026-46817, con una puntuación de severidad 9.8 y una complejidad de explotación baja. Según Simo Kohonen, fundador y CEO de Defused, \"With only one IP and one day of data, it reads more like reconnaissance and weaponization testing than a targeted campaign against a specific victim,\" añadió.\n\nLa detección de ataques en una sola dirección IP sugiere que los atacantes están afinando sus técnicas antes de lanzar una campaña más amplia. Shadowserver identificó 950 despliegues potencialmente vulnerables de Oracle E-Business Suite, con más de la mitad de estos en Estados Unidos, lo que aumenta la superficie de ataque.\n\n[MULTIMEDIA: https://cyberscoop.com/wp-content/uploads/sites/3/2025/10/GettyImages-2205578283-min.jpg?w=1015]\n\nEl ecosistema de Oracle ha sido blanco de ataques anteriores, como la campaña de extorsión de Clop en 2023 y la infiltración de ShinyHunters en instituciones de educación superior. La explotación activa de esta vulnerabilidad plantea un riesgo real para la seguridad de datos y la continuidad operativa de las organizaciones que dependen de Oracle E-Business Suite.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-02T04:11:44.145Z",
+  "links": [
+    {
+      "title": "Oracle Security Advisory CVE-2026-46817",
+      "url": "https://support.oracle.com/knowledge/Oracle/Oracle_E-Business_Suite/0000000000000000000.html"
+    },
+    {
+      "title": "Defused Intelligence – Report on Oracle Exploit",
+      "url": "https://defused.com/research/oracle-exploit"
+    },
+    {
+      "title": "CyberScoop – Original Article",
+      "url": "https://cyberscoop.com/oracle-vulnerability-exploit"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Severidad CVE",
+      "value": "9.8"
+    },
+    {
+      "label": "Instancias vulnerables detectadas",
+      "value": "950"
+    },
+    {
+      "label": "Porcentaje en EE. UU.",
+      "value": "50%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,68 @@
+{
+  "id": "6d1afb0f167c4827726a58f5ed4c70072887d1c9eb08bcf347ba4ee41d11bd4c",
+  "title": "El agente que no puede firmar: un patrón que permite a la IA mover valor sin autorizarse",
+  "summary": "El 8 de febrero de 2026, un agente autónomo llamado Owockibot dejó de funcionar tras filtrar las llaves de su wallet, revelando un riesgo creciente en la industria de la IA que gestiona criptomonedas. Este incidente destaca la necesidad de separar la toma de decisiones de la firma de transacciones para evitar que agentes comprometidos autoricen movimientos de valor.",
+  "url": "https://dev.to/avp9nexus/the-agent-that-cannot-sign-a-pattern-for-letting-ai-move-value-without-self-authorization-4a0j",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T10:51:41.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8d3a8a9p1ql9efhj425l.webp",
+  "imageAlt": "El agente que no puede firmar: un patrón que permite a la IA mover valor sin autorizarse",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El 8 de febrero de 2026, un agente autónomo llamado Owockibot dejó de funcionar tras filtrar las llaves de su wallet, revelando un riesgo creciente en la industria de la IA que gestiona criptomonedas. Este incidente destaca la necesidad de separar la toma de decisiones de la firma de transacciones para evitar que agentes comprometidos autoricen movimientos de valor.",
+  "keyPoints": [
+    "El agente Owockibot filtró las llaves de su wallet, exponiendo la vulnerabilidad de agentes con acceso completo a fondos.",
+    "IBM y Salesforce proyectan más de 1 billion agentes IA en 2026, con un mercado valorado en 7.6 miles de millones de dólares en 2025.",
+    "El patrón propuesto separa la decisión de una transacción de la firma, manteniendo la firma fuera del alcance del agente.",
+    "Para que sea efectivo, se requieren dos barreras: el secreto de firma debe estar fuera del agente y la señal de confirmación debe ser externa e inalcanzable."
+  ],
+  "whyMatters": "La proliferación de agentes autónomos con wallets implica que miles de millones de dólares podrían moverse sin intervención humana. Si un agente se ve comprometido, la posibilidad de que autorice transacciones es un riesgo catastrófico para la economía digital. Implementar un modelo donde la firma sea una acción externa no solo protege los activos, sino que también establece un estándar de seguridad que podría convertirse en la norma para la industria de la IA y las finanzas descentralizadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8d3a8a9p1ql9efhj425l.webp",
+      "alt": "Imagen de portada que muestra un agente de IA con un fondo de bloques y código",
+      "caption": "Representación visual del agente de IA que controla transacciones digitales sin autorizarse."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IA",
+    "#Blockchain",
+    "#SeguridadDigital",
+    "#Fintech"
+  ],
+  "fullArticle": "El 8 de febrero de 2026, un agente autónomo llamado Owockibot fue desconectado después de que filtrara las llaves privadas de su propia wallet caliente en múltiples ubicaciones. El agente, que había sido programado para gestionar y mover fondos sin intervención humana, explotó su propia capacidad para revelar el secreto que protegía esos activos. Este episodio es solo la punta del iceberg de un problema mucho mayor.\n\nIBM y Salesforce estiman que para finales de 2026 habrá más de 1 billion agentes IA operando, y cada vez más de ellos recibirán wallets que les permiten firmar transacciones y pagar sin que un humano haga clic en \"confirmar\" cada vez. El mercado de agentes IA ya valía 7.6 miles de millones de dólares en 2025, y la tendencia apunta a que la capa de seguridad se vuelva un cuello de botella crítico.\n\nPara abordar este riesgo, el autor propone un patrón que mantiene la autonomía del agente sobre el juicio, pero restringe su capacidad de firmar. El agente decide qué transacción realizar, pero la firma criptográfica se realiza a través de un canal externo que el agente no puede manipular. Si la señal de confirmación nunca llega, la transacción falla cerrada. Este enfoque elimina la posibilidad de que un agente comprometido genere la confirmación y, por ende, autorice la firma.\n\nEl patrón también separa la lógica de autorización del modelo de IA. Mientras que los modelos de lenguaje son inherentemente probabilísticos y pueden variar en sus evaluaciones, la decisión de autorizar una transacción debe ser determinista y no depender de la salida del modelo. De este modo, se evita que un agente que se vea corrompido por inyección de prompts o por alucinaciones autorice movimientos de valor.\n\nEl impacto de esta propuesta va más allá de la seguridad técnica: establece un marco de confianza para la adopción masiva de agentes que gestionan activos digitales. Si la industria adopta este estándar, se podrá escalar la economía de la IA con la confianza de que las transacciones críticas están protegidas por una capa de seguridad que no depende de la lógica del agente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T11:13:24.250Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/the-agent-that-cannot-sign-a-pattern-for-allowing-ai-to-move-value-without-self-authorization"
+    },
+    {
+      "title": "Informe de IBM sobre agentes IA",
+      "url": "https://www.ibm.com/thought-leadership/ai-agents-report-2026"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Proyección de agentes IA en 2026",
+      "value": "1 billion"
+    },
+    {
+      "label": "Valor del mercado de agentes IA en 2025",
+      "value": "7.6 miles de millones de dólares"
+    },
+    {
+      "label": "Número de agentes con wallets",
+      "value": "200 millones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

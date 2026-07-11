@@ -1,0 +1,73 @@
+{
+  "id": "307648785fa65a30faa6bc471ca21173058101dde84910daa35055a45aa281b6",
+  "title": "Diario de Hogar Inteligente: A veces lo más inteligente es quedarse con los interruptores tradicionales",
+  "summary": "Un usuario relata su frustrante experiencia probando sensores de presencia Aqara en el baño de su nuevo hogar para automatizar las luces, tras la que decidió volver a usar interruptores manuales al no conseguir que los dispositivos funcionasen de forma fiable.",
+  "url": "https://9to5mac.com/2026/07/10/smart-home-diary-sometimes-the-smart-thing-is-to-live-with-dumb-switches",
+  "source": "9to5Mac",
+  "sourceUrl": "https://9to5mac.com/feed/",
+  "publishedAt": "2026-07-10T16:00:00.000Z",
+  "imageUrl": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/Doing-battle-with-Aqara-presence-sensors-and-HomeKit.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+  "imageAlt": "Diario de Hogar Inteligente: A veces lo más inteligente es quedarse con los interruptores tradicionales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un usuario relata su frustrante experiencia probando sensores de presencia Aqara en el baño de su nuevo hogar para automatizar las luces, tras la que decidió volver a usar interruptores manuales al no conseguir que los dispositivos funcionasen de forma fiable.",
+  "keyPoints": [
+    "El autor probó sensores de presencia Aqara FP300 y FP2 en el baño de su nuevo hogar para automatizar las luces sin éxito.",
+    "El modelo FP300 resultó menos sensible que un sensor de movimiento convencional, requiriendo movimientos exagerados para detectar presencia.",
+    "El FP2, aunque detectaba micro movimientos como la respiración, generaba falsas detecciones que desactivaban zonas de control de las luces.",
+    "Tras una semana de pruebas sin solución, el autor decidió volver a usar interruptores manuales y conservar solo el hub para sensores de temperatura y humedad."
+  ],
+  "whyMatters": "Esta experiencia refleja un problema creciente en el sector de la domótica: muchos dispositivos prometidos como soluciones inteligentes generan más complicaciones que beneficios para el usuario medio, especialmente en mercados europeos como el español, donde la adopción de hogares inteligentes crece año tras año. El caso evidencia que la relación costo-beneficio de sensores de presencia de gama media aún no está justificada para tareas cotidianas simples, por lo que los consumidores deben priorizar la funcionalidad real sobre la novedad tecnológica al invertir en estos sistemas. Además, supone un llamado de atención para fabricantes como Aqara, que deben mejorar la fiabilidad de sus productos para que la automatización del hogar cumpla realmente su promesa de comodidad sin requerir horas de configuración y resolución de fallos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/Doing-battle-with-Aqara-presence-sensors-and-HomeKit.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "alt": "Sensor de presencia Aqara FP2 sobre una superficie de madera, junto a un hub de domótica y elementos de iluminación inteligente",
+      "caption": "Imagen de portada del artículo original de 9to5Mac que relata la experiencia de un usuario con sensores de presencia en el baño de su hogar"
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#HogarInteligente",
+    "#SensoresDePresencia",
+    "#Aqara",
+    "#Domotica",
+    "#TecnologiaParaElHogar"
+  ],
+  "fullArticle": "La automatización del hogar promete simplificar tareas cotidianas, pero en la práctica muchos dispositivos generan más frustraciones que beneficios, como demuestra la experiencia de un usuario que compartió su prueba con sensores de presencia en el baño de su nuevo hogar. Su objetivo era simple: que las luces se encendieran automáticamente al entrar al baño y se apagaran al salir, incluso cuando estuviera en la bañera sin moverse, evitando tener que pulsar el interruptor manualmente. Para lograrlo, invirtió en dos modelos de sensores de presencia de la marca Aqara, el FP300 y el FP2, además de un hub compatible con el estándar Matter y Zigbee para integrarlos con su sistema de domótica.\n\n[MULTIMEDIA: https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/Doing-battle-with-Aqara-presence-sensors-and-HomeKit.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1]\n\nEl primer modelo, el FP300 de batería, resultó completamente inútil para su propósito: solo detectaba presencia cuando el usuario realizaba movimientos muy bruscos, como saltos, por lo que era incluso menos fiable que un sensor de movimiento convencional. Optó entonces por el FP2, que funciona con alimentación USB y usa señales de radar mmWave para detectar micro-movimientos como la respiración, por lo que en teoría debía funcionar incluso estando completamente quieto en la bañera. Sin embargo, este modelo presentó el problema opuesto: generaba falsas detecciones de presencia que desactivaban zonas de control de las luces, incluso después de resetearlo, reubicarlo en diferentes puntos del baño y esperar una semana a que su sistema de IA aprendiera los patrones de uso.\n\nTras invertir horas en solucionar los fallos sin éxito, el usuario decidió que la comodidad de no pulsar un interruptor no justificaba el tiempo y dinero invertidos en la automatización. Actualmente mantiene las bombillas inteligentes para regular la intensidad de la luz durante los baños relajantes, pero ha vuelto a usar los interruptores manuales para encender y apagar las luces, y ha devuelto el sensor de presencia. El hub Matter-Zigbee sigue siendo útil para recoger datos de temperatura y humedad de sensores sencillos instalados en cada habitación, una funcionalidad que sí le aporta valor sin complicaciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T16:07:54.057Z",
+  "links": [
+    {
+      "title": "Artículo original en 9to5Mac",
+      "url": "https://9to5mac.com/smart-home-diary-sometimes-the-smart-thing-is-to-live-with-dumb-switches/"
+    },
+    {
+      "title": "Sitio oficial de Aqara para España",
+      "url": "https://www.aqara.com/es/"
+    },
+    {
+      "title": "Información oficial del estándar Matter para hogares inteligentes",
+      "url": "https://csa-iot.org/all-solutions/matter/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de inactividad para apagar luces de cocina con sensor de movimiento",
+      "value": "2 minutos"
+    },
+    {
+      "label": "Tiempo de prueba del sensor Aqara FP2 sin mejora",
+      "value": "1 semana"
+    },
+    {
+      "label": "Tecnología de detección de sensores de presencia",
+      "value": "Señales de radar mmWave, a diferencia de los sensores de movimiento por infrarrojos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,72 @@
+{
+  "id": "63f3f9aff9db944b1d37bd34933a0202306accd596e11286c5d9b933024c04b3",
+  "title": "Pagos por llamada API en USDC: la nueva forma de cobrar y verificar datos con recibos firmados",
+  "summary": "El protocolo x402 permite a los agentes y usuarios pagar por cada llamada API en USDC sin necesidad de claves o suscripciones, y recibir un recibo firmado que garantiza la integridad de los datos devueltos.",
+  "url": "https://dev.to/0rkz/charge-per-api-call-in-usdc-and-give-buyers-a-receipt-they-can-verify-59nc",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T20:23:54.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqhyuwxab28cz4by1cpu3.png",
+  "imageAlt": "Pagos por llamada API en USDC: la nueva forma de cobrar y verificar datos con recibos firmados",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El protocolo x402 permite a los agentes y usuarios pagar por cada llamada API en USDC sin necesidad de claves o suscripciones, y recibir un recibo firmado que garantiza la integridad de los datos devueltos.",
+  "keyPoints": [
+    "El protocolo x402 reutiliza HTTP 402 para cobrar por cada llamada API en USDC, eliminando la necesidad de cuentas y suscripciones.",
+    "La respuesta incluye un encabezado X-BYTE-Attestation con una atestación EIP-712 que firma los bytes exactos devueltos.",
+    "Los clientes pueden verificar la firma de forma offline, rechazando datos manipulados antes de procesarlos.",
+    "La solución funciona tanto en testnet (Arbitrum Sepolia) como en mainnet Base, con cambios mínimos de configuración."
+  ],
+  "whyMatters": "Este avance redefine la economía de los servicios API, ofreciendo un modelo de pago granular y seguro que elimina intermediarios y reduce costes de infraestructura. Al garantizar la integridad de los datos mediante firmas verificables, se protege la confianza en los agentes autónomos y se abre la puerta a aplicaciones descentralizadas que requieren trazabilidad y cumplimiento. Para desarrolladores, la implementación es sencilla y gratuita, lo que acelera la adopción y fomenta la innovación en pagos digitales y en el ecosistema blockchain.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqhyuwxab28cz4by1cpu3.png",
+      "alt": "Pantalla de la interfaz de pago por llamada API en USDC con recibo firmado",
+      "caption": "Imagen que ilustra el flujo de pago y la firma de recibo en el protocolo x402"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#X402",
+    "#USDC",
+    "#EIP712",
+    "#APIPayments"
+  ],
+  "fullArticle": "El ecosistema de APIs ha sufrido durante años la falta de un modelo de pago simple y seguro. Los desarrolladores suelen depender de claves de API, planes de suscripción o sistemas de facturación complejos que generan costos adicionales y fricciones de adopción. El protocolo x402, presentado recientemente, cambia esta dinámica al reutilizar el código de estado HTTP 402 – Payment Required – para cobrar a cada cliente por cada llamada API en la criptomoneda USDC. Este enfoque elimina la necesidad de cuentas, suscripciones y gestión de claves, ofreciendo una experiencia de pago directa y transparente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqhyuwxab28cz4by1cpu3.png]\n\nUna vez que el cliente paga, el gateway actúa como proxy y devuelve la respuesta original, pero con un nuevo encabezado X-BYTE-Attestation. Este encabezado contiene una firma EIP-712 que atesta los bytes exactos devueltos por el servidor, garantizando que el contenido no haya sido alterado. El cliente, antes de procesar la respuesta, puede recomputar el hash de los bytes recibidos y verificar la firma de forma offline, rechazando cualquier dato que no coincida. Esta capa de seguridad evita ataques de suplantación y manipulación de datos, algo que el modelo tradicional de pagos por API no contempla.\n\nEl protocolo está diseñado para funcionar tanto en entornos de prueba como en producción. En testnet, utiliza la cadena Arbitrum Sepolia (chainId 421614) como espacio de firma, mientras que en mainnet Base (chainId 8453) se realiza el settlement de USDC. Los desarrolladores pueden cambiar entre ambos entornos con una sola línea de configuración, lo que facilita la transición y la prueba de nuevas funcionalidades sin costos adicionales.\n\nEl impacto de esta innovación es doble: por un lado, democratiza el acceso a servicios API al eliminar barreras de entrada; por otro, fortalece la confianza en la integridad de los datos en aplicaciones críticas, como los agentes de IA que toman decisiones autónomas. Al ofrecer un recibo firmado verificable, los proveedores de datos pueden demostrar la autenticidad de su contenido, mientras que los usuarios obtienen garantías de que lo que reciben es exactamente lo que pagaron. Esta combinación de pagos simples y verificación de datos podría convertirse en el estándar para la economía de las APIs descentralizadas.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:40:53.035Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/x402-protocol"
+    },
+    {
+      "title": "Especificación EIP-712",
+      "url": "https://eips.ethereum.org/EIPS/eip-712"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Cadena de firma (EIP-712)",
+      "value": "Arbitrum Sepolia (421614)"
+    },
+    {
+      "label": "Cadena de settlement",
+      "value": "Base mainnet (8453)"
+    },
+    {
+      "label": "USDC por llamada (ejemplo)",
+      "value": "0.0001 USDC"
+    },
+    {
+      "label": "Tiempo de prueba gratuito",
+      "value": "Testnet sin claves ni suscripciones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

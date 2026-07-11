@@ -1,0 +1,77 @@
+{
+  "id": "f288e6e91f478c63f140da3ad2a12182eff26abc554a357995940baeb88f48a5",
+  "title": "Synapse: la nueva plataforma open‑source que revoluciona el análisis de composición de software",
+  "summary": "Se lanza Synapse, una herramienta de código abierto escrita en Go que centraliza la generación de SBOM, detección de vulnerabilidades, cumplimiento de licencias y evidencias en un único plano de control determinista y auditable.",
+  "url": "https://dev.to/nghiadaulau/introducing-synapse-a-deterministic-first-open-source-sca-and-evidence-platform-1k0i",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-06T18:48:33.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdbe4zvak1l7to2ag06bz.png",
+  "imageAlt": "Synapse: la nueva plataforma open‑source que revoluciona el análisis de composición de software",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se lanza Synapse, una herramienta de código abierto escrita en Go que centraliza la generación de SBOM, detección de vulnerabilidades, cumplimiento de licencias y evidencias en un único plano de control determinista y auditable.",
+  "keyPoints": [
+    "Synapse genera SBOM para más de 15 ecosistemas y combina detección de vulnerabilidades usando KEV, EPSS y CVSS en un solo flujo.",
+    "Los informes se exportan en formatos estándar como CycloneDX, SPDX, SARIF y OpenVEX, garantizando trazabilidad y reproducibilidad.",
+    "La herramienta se ejecuta en una arquitectura limpia de Go y permite fallar la CI automáticamente con el comando '--fail‑on high'."
+  ],
+  "whyMatters": "En un entorno donde la seguridad del software depende de procesos fragmentados, Synapse ofrece una solución integral que reduce errores humanos y mejora la confianza en los auditorías. Al ser de código abierto, fomenta la colaboración y la revisión independiente, esenciales para la transparencia en la gestión de riesgos. Además, su enfoque determinista permite a las organizaciones demostrar de forma verificable la ausencia de vulnerabilidades, un requisito cada vez más exigido por reguladores y clientes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdbe4zvak1l7to2ag06bz.png",
+      "alt": "Portada del artículo que muestra el logo de Synapse y una ilustración de código",
+      "caption": "Imagen de portada del anuncio oficial de Synapse"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla de la interfaz de línea de comandos de Synapse",
+      "caption": "Ejemplo de uso del CLI de Synapse para escanear un proyecto"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Synapse",
+    "#SCA",
+    "#OpenSource",
+    "#GoLang"
+  ],
+  "fullArticle": "La comunidad de desarrollo ha recibido hoy una herramienta que promete cambiar la forma en que se gestionan los riesgos de la cadena de suministro de software. Synapse, proyecto de código abierto escrito en Go, se plantea como un plano de control único que combina generación de SBOM, detección de vulnerabilidades, cumplimiento de licencias, evaluación de alcanzabilidad y generación de evidencias en un flujo determinista. La fragmentación tradicional, donde se usan distintas herramientas para cada tarea y se recurre a hojas de cálculo o capturas de pantalla para documentar hallazgos, queda atrás ante una solución que centraliza todo bajo una arquitectura limpia y reproducible. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdbe4zvak1l7to2ag06bz.png]\n\nEntre sus capacidades actuales, Synapse soporta más de quince ecosistemas para la generación automática de SBOM y emplea un modelo de priorización de riesgos que primero considera vulnerabilidades de exposición conocida (KEV), luego la probabilidad de explotación (EPSS) y finalmente la gravedad tradicional (CVSS). Los resultados pueden exportarse en formatos ampliamente adoptados como CycloneDX, SPDX, SARIF y OpenVEX, facilitando la integración con procesos de auditoría y cumplimiento. Además, la herramienta permite bloquear pipelines de CI con un simple comando '--fail‑on high', asegurando que el código no avance sin haber superado un umbral de riesgo aceptable. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl proyecto se lanza bajo una licencia abierta para invitar a la comunidad a revisarlo, contribuir y detectar posibles mejoras. Los autores subrayan que Synapse está destinado exclusivamente a pruebas de seguridad autorizadas; la herramienta verifica el alcance de los datos pero no la autorización legal del auditor. Los interesados pueden iniciar su participación revisando la documentación, el archivo CONTRIBUTING y enviando pull requests o abriendo issues en el repositorio. Un simple 'star' en GitHub ayuda a difundir la iniciativa y a atraer más colaboradores. En un momento en que la cadena de suministro de software se vuelve un objetivo crítico para atacantes, Synapse representa un paso importante hacia una gestión de riesgos más transparente y verificable.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T19:10:12.593Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Synapse en GitHub",
+      "url": "https://github.com/synapseproject/synapse"
+    },
+    {
+      "title": "Documentación de Synapse",
+      "url": "https://synapseproject.dev/docs"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/synapse/introducing-synapse-a-deterministic-first-open-source-sca-and-evidence-platform-1a2b"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Ecosistemas soportados",
+      "value": "Más de 15"
+    },
+    {
+      "label": "Formatos de informe generados",
+      "value": "CycloneDX, SPDX, SARIF, OpenVEX"
+    },
+    {
+      "label": "Comando de bloqueo de CI",
+      "value": "./bin/synapse-cli scan . --fail-on high"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

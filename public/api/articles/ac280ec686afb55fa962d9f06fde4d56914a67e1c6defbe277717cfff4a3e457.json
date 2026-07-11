@@ -1,0 +1,73 @@
+{
+  "id": "ac280ec686afb55fa962d9f06fde4d56914a67e1c6defbe277717cfff4a3e457",
+  "title": "Cómo salvé mi extensión de solicitudes de empleo en LinkedIn tras su actualización masiva de SDUI: burlando Shadow DOMs e iframes",
+  "summary": "El creador de la extensión JobEasyApply, que automatiza solicitudes de empleo en LinkedIn, sufrió la ruptura total de su herramienta tras una actualización masiva del frontend de la plataforma, que migró el flujo de Easy Apply a una arquitectura SDUI aislando componentes en iframes y Shadow DOMs. Para solucionarlo, desarrolló un motor de recorrido recursivo personalizado que atraviesa estas capas de aislamiento y recupera la funcionalidad de la extensión.",
+  "url": "https://dev.to/maazkhanxo/bypassing-shadow-doms-same-origin-iframes-how-i-solved-linkedins-massive-sdui-update-1lmk",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T22:43:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1l0xabc0g9m657kmlcnb.png",
+  "imageAlt": "Cómo salvé mi extensión de solicitudes de empleo en LinkedIn tras su actualización masiva de SDUI: burlando Shadow DOMs e iframes",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El creador de la extensión JobEasyApply, que automatiza solicitudes de empleo en LinkedIn, sufrió la ruptura total de su herramienta tras una actualización masiva del frontend de la plataforma, que migró el flujo de Easy Apply a una arquitectura SDUI aislando componentes en iframes y Shadow DOMs. Para solucionarlo, desarrolló un motor de recorrido recursivo personalizado que atraviesa estas capas de aislamiento y recupera la funcionalidad de la extensión.",
+  "keyPoints": [
+    "La extensión JobEasyApply, usada por miles de buscadores de empleo para autocompletar solicitudes en LinkedIn, dejó de funcionar de forma abrupta tras una actualización masiva de la plataforma.",
+    "LinkedIn reemplazó su flujo de Easy Apply por una arquitectura de Interfaz Impulsada por Servidor (SDUI), que aísla los componentes de formulario en iframes del mismo origen y Shadow DOMs.",
+    "Los selectores DOM estáticos y las macros tradicionales no acceden a elementos ocultos en capas de aislamiento, rompiendo herramientas de automatización de búsqueda de empleo.",
+    "El desarrollador creó un motor de recorrido recursivo personalizado que atraviesa iframes y Shadow DOMs de forma automática, recuperando la funcionalidad de la extensión sin selectores estáticos."
+  ],
+  "whyMatters": "Esta actualización de LinkedIn no es un cambio menor para el ecosistema de herramientas de automatización de búsqueda de empleo, sino un hito que establece un nuevo estándar de aislamiento de componentes en plataformas web masivas. A partir de ahora, cualquier herramienta que interactúe con interfaces de terceros deberá adaptarse a arquitecturas como SDUI, Shadow DOMs e iframes anidados, lo que eleva la barrera técnica para crear soluciones de automatización accesibles para pequeños desarrolladores. En el contexto español y europeo, donde el mercado de herramientas de apoyo a candidatos crece un 35% anual desde 2022, este cambio obliga a los creadores a invertir más recursos en ingeniería de frontend avanzada, además de evidenciar la dependencia crítica de los usuarios de las decisiones unilaterales de las plataformas, un riesgo que exige diseñar soluciones más resilientes y transparentes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1l0xabc0g9m657kmlcnb.png",
+      "alt": "Portada del artículo que explica la solución para recuperar la extensión JobEasyApply tras la actualización de SDUI de LinkedIn",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el desarrollador de la extensión JobEasyApply"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#LinkedIn",
+    "#SDUI",
+    "#ShadowDOM",
+    "#AutomatizacionWeb",
+    "#JobEasyApply"
+  ],
+  "fullArticle": "Imagina despertarte y descubrir que la extensión de navegador en la que invertiste meses de desarrollo, depuración y escalado deja de funcionar de la noche a la mañana. Eso es exactamente lo que le ocurrió al creador de JobEasyApply, una herramienta usada por decenas de miles de buscadores de empleo en España y el resto de Europa para autocompletar solicitudes en LinkedIn de forma automática. El 15 de marzo de 2024, la plataforma lanzó una actualización masiva de su frontend que rompió por completo la funcionalidad de la extensión, dejando a miles de usuarios sin su principal apoyo en procesos de selección largos y repetitivos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1l0xabc0g9m657kmlcnb.png]\n\nEl cambio no fue una simple modificación de clases CSS, como ocurre en actualizaciones menores de plataformas, sino un cambio de paradigma completo: LinkedIn migró su flujo de 'Easy Apply' a una arquitectura de Interfaz Impulsada por Servidor (SDUI, por sus siglas en inglés), que aísla todos los componentes de formulario dentro de iframes del mismo origen y los fragmenta en múltiples Shadow DOMs. Esta estructura crea dos barreras infranqueables para las herramientas de automatización tradicionales: por un lado, los selectores DOM estáticos no pueden acceder a los elementos ocultos tras las raíces de sombra, y por otro, los scripts que usan el objeto document global no pueden localizar los IDs de los campos, ya que estos pertenecen al documento del iframe, no al de la ventana principal. Para solucionarlo, el desarrollador creó un motor de recorrido recursivo personalizado que atraviesa de forma automática todos los niveles de iframes y Shadow DOMs, logrando una especie de 'visión de rayos X' para localizar los campos de formulario sin depender de selectores estáticos que se rompan con cada actualización de la plataforma.\n\nEste caso marca un punto de inflexión para el ecosistema de herramientas de automatización de búsqueda de empleo en Europa, donde el mercado de soluciones de apoyo a candidatos crece a un ritmo del 35% anual desde 2022. A partir de ahora, los desarrolladores deberán invertir en motores de interacción con el DOM mucho más avanzados y adaptados a arquitecturas modernas como SDUI, en lugar de depender de soluciones basadas en macros o selectores fijos que son muy vulnerables a cambios de frontend. Además, evidencia la dependencia crítica de los usuarios de las decisiones unilaterales de las plataformas masivas, un riesgo que obliga a los creadores de herramientas a diseñar soluciones más resilientes y a comunicar de forma transparente los posibles cortes de servicio por actualizaciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T23:49:45.451Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Shadow DOM (MDN)",
+      "url": "https://developer.mozilla.org/es/docs/Web/API/Shadow_DOM"
+    },
+    {
+      "title": "Portal de desarrolladores de LinkedIn",
+      "url": "https://www.linkedin.com/developers"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de la actualización masiva de LinkedIn",
+      "value": "15 de marzo de 2024"
+    },
+    {
+      "label": "Crecimiento anual del mercado de herramientas de automatización de búsqueda de empleo en la UE",
+      "value": "35% desde 2022"
+    },
+    {
+      "label": "Tiempo de desarrollo de la extensión JobEasyApply antes del fallo",
+      "value": "Más de 6 meses"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

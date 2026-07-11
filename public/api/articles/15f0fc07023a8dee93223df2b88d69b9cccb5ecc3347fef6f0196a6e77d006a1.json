@@ -1,0 +1,76 @@
+{
+  "id": "15f0fc07023a8dee93223df2b88d69b9cccb5ecc3347fef6f0196a6e77d006a1",
+  "title": "MiniMax M2.7: el modelo de IA open source que reescribió su propio código de entrenamiento",
+  "summary": "MiniMax lanzó el 12 de abril de 2026 M2.7, un modelo agente open source de 230.000 millones de parámetros con arquitectura Mixture-of-Experts que logró una mejora del 30% en la eficiencia de su entrenamiento al auto-optimizar su propia infraestructura, con resultados que igualan a GPT-5.3-Codex en SWE-bench Pro.",
+  "url": "https://dev.to/akaranjkar08/minimax-m27-open-source-ai-that-rewrote-its-own-training-code-535j",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T13:15:07.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft4wpeudaw015tz1kuzd8.png",
+  "imageAlt": "MiniMax M2.7: el modelo de IA open source que reescribió su propio código de entrenamiento",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "MiniMax lanzó el 12 de abril de 2026 M2.7, un modelo agente open source de 230.000 millones de parámetros con arquitectura Mixture-of-Experts que logró una mejora del 30% en la eficiencia de su entrenamiento al auto-optimizar su propia infraestructura, con resultados que igualan a GPT-5.3-Codex en SWE-bench Pro.",
+  "keyPoints": [
+    "MiniMax presentó el 12 de abril de 2026 M2.7, un modelo agente open source de 230.000 millones de parámetros con arquitectura Mixture-of-Experts.",
+    "El modelo tuvo acceso de escritura a su propia memoria y biblioteca de habilidades durante el entrenamiento, permitiéndose optimizar su infraestructura de forma autónoma.",
+    "M2.7 logró una mejora documentada del 30% en la eficiencia del proceso de entrenamiento mediante iteraciones autodirigidas, sin trucos de marketing.",
+    "Sus resultados en el benchmark SWE-bench Pro igualan a los del modelo GPT-5.3-Codex, a pesar de tener solo 10.000 millones de parámetros activos en inferencia."
+  ],
+  "whyMatters": "El lanzamiento de MiniMax M2.7 marca un hito en el desarrollo de inteligencia artificial, ya que es el primer modelo de producción en implementar un bucle de auto-mejora concreto y documentado durante su entrenamiento. Esta capacidad reduce drásticamente los costos y tiempos de desarrollo de modelos de alto rendimiento, al tiempo que democratiza el acceso a tecnología de punta al ser de código abierto. A largo plazo, este avance sienta las bases para sistemas de IA capaces de evolucionar de forma autónoma, lo que transformará la forma en que se desarrollan, despliegan y utilizan los modelos en sectores como la ingeniería de software, la investigación científica y la automatización de procesos empresariales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft4wpeudaw015tz1kuzd8.png",
+      "alt": "Portada del artículo sobre el modelo MiniMax M2.7 de inteligencia artificial open source",
+      "caption": "Imagen de portada del artículo original de Dev.to que presenta el modelo MiniMax M2.7"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MiniMaxM27",
+    "#IAOpenSource",
+    "#AutoMejoraIA",
+    "#ModeloMoE"
+  ],
+  "fullArticle": "El modelo de inteligencia artificial más destacado lanzado en abril de 2026 no proviene de OpenAI, Anthropic o Google, sino de la empresa china MiniMax, especializada en modelos multimodales y generación de video. Se trata de M2.7, un modelo agente de código abierto con arquitectura Mixture-of-Experts de 230.000 millones de parámetros, presentado oficialmente el 12 de abril. Su característica más revolucionaria es que participó activamente en su propio ciclo de desarrollo: durante el entrenamiento, tuvo acceso de escritura a su propia memoria y biblioteca de habilidades, herramientas que usó para optimizar su infraestructura de entrenamiento y lograr una mejora documentada del 30% en su rendimiento mediante iteraciones autodirigidas. No se trata de una metáfora ni de una claim de marketing: el modelo ya está disponible con sus pesos en Hugging Face, acompañado de un informe técnico que documenta el proceso y resultados de benchmark que igualan a los del GPT-5.3-Codex en SWE-bench Pro.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft4wpeudaw015tz1kuzd8.png]\n\nEl concepto de 'IA auto-evolutiva' ha aparecido en papers de investigación sobre aprendizaje por refuerzo por autojuego, búsqueda automatizada de arquitecturas neuronales y meta-aprendizaje durante años, pero MiniMax M2.7 es el primer modelo de producción en documentar un bucle de auto-mejora concreto ejecutado dentro de un entorno de entrenamiento agéntico. Durante su desarrollo, el modelo fue integrado en un scaffold agéntico autónomo con acceso a la propia infraestructura de experimentos de aprendizaje por refuerzo, y se le otorgó tres tipos de agencia sobre su proceso de entrenamiento: acceso de escritura a su memoria persistente, para registrar qué configuraciones experimentales funcionaban y cuáles fallaban; desarrollo de habilidades, para crear decenas de funciones Python reutilizables que pasaban a formar parte del entorno de entrenamiento; y modificación del propio scaffold, para proponer e implementar cambios en su lógica de evaluación, detección de bucles y estrategia de muestreo. Gracias a esta autonomía, el modelo descubrió por sí mismo tres clases de optimizaciones: la búsqueda de parámetros de muestreo óptimos, la generación de pautas de flujo de trabajo más específicas y la adición de lógica de detección de bucles circulares que eliminó ciclos de cómputo desperdiciados.\n\nLa arquitectura Mixture-of-Experts de M2.7 es clave para su accesibilidad: a pesar de tener 230.000 millones de parámetros totales, solo activa aproximadamente 10.000 millones en cada paso de inferencia, lo que reduce drásticamente los costos de despliegue, comparables a los de un modelo denso de 10 a 15.000 millones de parámetros. MiniMax recomienda su despliegue mediante SGLang, vLLM o la biblioteca Hugging Face Transformers, con una configuración mínima de cuatro GPUs de 96 GB de VRAM cada una. Sus resultados en benchmarks especializados, que igualan a los de GPT-5.3-Codex en tareas de ingeniería de software, demuestran que la auto-mejora durante el entrenamiento no solo reduce costos y tiempos, sino que también mejora la calidad final del modelo, abriendo un nuevo camino para el desarrollo de sistemas de inteligencia artificial más eficientes y capaces de evolucionar de forma autónoma.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T13:27:45.658Z",
+  "links": [
+    {
+      "title": "Sitio oficial de MiniMax",
+      "url": "https://www.minimax.io/"
+    },
+    {
+      "title": "Repositorio de MiniMax M2.7 en Hugging Face",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7"
+    },
+    {
+      "title": "Página oficial del benchmark SWE-bench Pro",
+      "url": "https://www.swebench.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "12 de abril de 2026"
+    },
+    {
+      "label": "Parámetros totales del modelo",
+      "value": "230.000 millones"
+    },
+    {
+      "label": "Parámetros activos en inferencia",
+      "value": "10.000 millones"
+    },
+    {
+      "label": "Mejora en eficiencia de entrenamiento",
+      "value": "30%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

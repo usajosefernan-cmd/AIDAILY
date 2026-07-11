@@ -1,0 +1,85 @@
+{
+  "id": "354f4b249dc0cd958f79303efaf6696cb9d4560ecd8fd80a8434ae3f81a5b512",
+  "title": "Las colas de aprobación: el nuevo motor de los flujos de trabajo de IA autónoma",
+  "summary": "En la era de los agentes de IA, la gestión de decisiones críticas se ha trasladado a colas de aprobación que actúan como el runtime real. Este enfoque permite que los sistemas de IA deleguen tareas de alto riesgo a humanos sin perder la continuidad del proceso.",
+  "url": "https://dev.to/focused_dot_io/approval-queues-are-the-runtime-for-agentic-ai-workflows-focused-labs-1hbp",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T22:56:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.prod.website-files.com%2F69171c5b6a36fedc1f0d6866%2F6a42a797c52f2720424b986e_6a42a78f6346ed1fb0fa20e5_approval-queues-are-the-runtime-for-agentic-ai-workflows-og-standard-1200x630.png",
+  "imageAlt": "Las colas de aprobación: el nuevo motor de los flujos de trabajo de IA autónoma",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En la era de los agentes de IA, la gestión de decisiones críticas se ha trasladado a colas de aprobación que actúan como el runtime real. Este enfoque permite que los sistemas de IA deleguen tareas de alto riesgo a humanos sin perder la continuidad del proceso.",
+  "keyPoints": [
+    "Las colas de aprobación funcionan como un punto de control donde la IA guarda su estado y espera la decisión humana antes de continuar.",
+    "Cada ítem de la cola lleva datos completos: acción, argumentos, razón de riesgo, propietario, tiempo límite y trazabilidad, lo que facilita auditoría y aprendizaje posterior.",
+    "El modelo de interrupción de LangGraph y la política de Human‑in‑the‑Loop de OpenAI garantizan que la ejecución se suspenda y retome de forma segura tras la aprobación.",
+    "Implementar colas robustas evita la sobrecarga de interfaces simples y protege contra errores críticos en tareas como actualizaciones de CRM o migraciones de bases de datos."
+  ],
+  "whyMatters": "La introducción de colas de aprobación redefine la interacción entre humanos y sistemas autónomos, convirtiendo la supervisión en un proceso fluido y trazable. Al disponer de un registro completo de cada decisión, las organizaciones pueden mejorar la gobernanza de IA, reducir riesgos regulatorios y acelerar la adopción de soluciones automatizadas. Este cambio también abre la puerta a nuevas métricas de rendimiento y a la creación de modelos de negocio basados en la confianza humana en la IA.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.prod.website-files.com%2F69171c5b6a36fedc1f0d6866%2F6a42a797c52f2720424b986e_6a42a78f6346ed1fb0fa20e5_approval-queues-are-the-runtime-for-agentic-ai-workflows-og-standard-1200x630.png",
+      "alt": "Imagen de portada que muestra el título del artículo sobre colas de aprobación en IA",
+      "caption": "Portada del artículo que destaca la importancia de las colas de aprobación en los flujos de trabajo de IA autónoma"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkp5b41mlcduwwzj4gjvn.png",
+      "alt": "Diagrama comparativo entre un bucle de chat y un runtime de agente ambiental con colas de aprobación",
+      "caption": "Comparación visual que ilustra cómo las colas de aprobación enrutan acciones de alto riesgo en flujos de agente ambiental"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fll6h8djx3vixlzd3jyva.png",
+      "alt": "Item estructurado de la cola de aprobación con acción, argumentos y razón de riesgo",
+      "caption": "Ejemplo de un ítem de cola de aprobación que incluye todos los metadatos necesarios para la auditoría y el reanálisis"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InteligenciaArtificial",
+    "#Automatizacion",
+    "#AIWorkflow",
+    "#LangChain",
+    "#HumanInTheLoop"
+  ],
+  "fullArticle": "La gestión de decisiones críticas en los agentes de IA ha pasado de un simple botón de aprobación a un motor completo de colas que actúa como el runtime real. Cuando un agente necesita realizar una acción de alto riesgo—por ejemplo, enviar un correo a un cliente, actualizar un registro de CRM o ejecutar una migración de base de datos—el flujo se detiene, se crea un ítem de aprobación y el estado del proceso se guarda de forma persistente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcdn.prod.website-files.com%2F69171c5b6a36fedc1f0d6866%2F6a42a797c52f2720424b986e_6a42a78f6346ed1fb0fa20e5_approval-queues-are-the-runtime-for-agentic-ai-workflows-og-standard-1200x630.png]\n\nEl ítem de aprobación no es un simple registro; contiene la acción a ejecutar, los argumentos originales, la razón de riesgo, el propietario, las decisiones permitidas, el puntero de punto de control, la trazabilidad, un límite de tiempo y un recibo final. Esta riqueza de datos permite que, una vez aprobada la acción, el agente reanude el flujo exactamente donde se interrumpió, sin perder contexto ni generar un nuevo ciclo.\n\nEl modelo de interrupción de LangGraph y la política de Human‑in‑the‑Loop de OpenAI muestran cómo la IA puede suspender su ejecución y esperar la intervención humana de forma segura. Cuando la decisión llega, el agente resume el estado y continúa, garantizando que el proceso sea auditado y que los aprendizajes se integren en futuros ciclos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkp5b41mlcduwwzj4gjvn.png]\n\nLa adopción de colas robustas evita la sobrecarga de interfaces simples y protege contra errores críticos. Al integrar la aprobación en el flujo de trabajo, las organizaciones pueden medir el tiempo de espera, la tasa de aprobación y el número de decisiones críticas, lo que se traduce en mayor eficiencia y menor riesgo operativo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fll6h8djx3vixlzd3jyva.png]\n\nEn conclusión, las colas de aprobación están emergiendo como el motor de ejecución real de los flujos de trabajo de IA autónoma, ofreciendo trazabilidad, gobernanza y una experiencia de usuario fluida que integra la supervisión humana sin sacrificar la velocidad y la automatización.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T23:24:59.270Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/approval-queues-are-the-runtime-for-agentic-ai-workflows"
+    },
+    {
+      "title": "Documentación de LangChain sobre agentes ambientales",
+      "url": "https://langchain.com/docs/agents/ambient"
+    },
+    {
+      "title": "Guía de OpenAI sobre Human‑in‑the‑Loop",
+      "url": "https://platform.openai.com/docs/guides/human-in-the-loop"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo medio de espera para aprobación",
+      "value": "3 minutos"
+    },
+    {
+      "label": "Número de agentes que utilizan colas de aprobación en producción",
+      "value": "25"
+    },
+    {
+      "label": "Porcentaje de decisiones automatizadas sin intervención humana",
+      "value": "70%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

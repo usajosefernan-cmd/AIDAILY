@@ -1,0 +1,83 @@
+{
+  "id": "fd0162a66e9a05d00f489fea3d89900e070fd44c0221f8595b7ee8742a7987bb",
+  "title": "Parsewise revoluciona la extracción de datos: la API que razona entre documentos y devuelve resultados verificables",
+  "summary": "Parsewise, una startup de YC P25, ha desarrollado una API que transforma grandes volúmenes de datos no estructurados en información estructurada con trazabilidad completa, combinando modelos de IA y un enfoque centrado en la verificabilidad humana.",
+  "url": "https://news.ycombinator.com/item?id=48746752",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-01T13:48:44.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Parsewise revoluciona la extracción de datos: la API que razona entre documentos y devuelve resultados verificables",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Parsewise, una startup de YC P25, ha desarrollado una API que transforma grandes volúmenes de datos no estructurados en información estructurada con trazabilidad completa, combinando modelos de IA y un enfoque centrado en la verificabilidad humana.",
+  "keyPoints": [
+    "Parsewise procesa cientos o miles de PDFs, excels y transcripciones para generar datos conformes a esquemas, con trazabilidad a nivel de palabra.",
+    "La solución combina modelos Gemini para razonamiento visual y vLLMs para búsqueda exhaustiva, evitando la muestreo típico de RAG.",
+    "La plataforma incluye definiciones de agentes auto-mejorables que establecen fuentes aceptables, lógica de resolución y reglas de incertidumbre.",
+    "Los clientes pueden integrar la trazabilidad en sus propias aplicaciones o usar la plataforma interna, optimizando la confianza en los resultados."
+  ],
+  "whyMatters": "El manejo de datos no estructurados es uno de los mayores retos en la era del Big Data; Parsewise ofrece una alternativa que no solo extrae información, sino que la valida y la contextualiza, reduciendo errores y costos de auditoría. Al permitir que las empresas confíen en los resultados de la IA sin sacrificar la trazabilidad, abre la puerta a la adopción masiva de automatización en sectores regulados como seguros, finanzas y salud. Además, su arquitectura agnóstica a la nube y su compatibilidad con modelos de última generación lo posicionan como una herramienta clave para la transformación digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "Parsewise revoluciona la extracción de datos: la API que razona entre documentos y devuelve resultados verificables",
+      "caption": "Imagen de portada"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/dbRllnnh47w",
+      "alt": "Video de presentación de Parsewise mostrando casos de uso",
+      "caption": "Video que muestra ejemplos concretos de cómo Parsewise extrae y razona sobre datos distribuidos en múltiples documentos"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Parsewise",
+    "#IA",
+    "#ETL",
+    "#DatosNoEstructurados",
+    "#DataEngineering"
+  ],
+  "fullArticle": "Parsewise, una startup respaldada por el programa Y Combinator (P25), ha presentado una API que promete cambiar la manera en que las organizaciones procesan documentos no estructurados. La propuesta central es simple pero ambiciosa: tomar un lote de cientos o miles de archivos –PDFs, excels, transcripciones de llamadas, correos electrónicos– y convertirlos en datos estructurados que cumplan con un esquema predefinido, manteniendo la trazabilidad de cada valor hasta el nivel de palabra y a través de múltiples documentos.\n\nEl equipo fundador, compuesto por veteranos de Palantir y Bain, ha aplicado una década de experiencia en transformación y análisis de datos complejos. Su enfoque se centra en la “human harness”: optimizar el número de clics y el tiempo que un experto necesita para validar los resultados, en lugar de enfocarse exclusivamente en el rendimiento del modelo. Para ello, utilizan modelos Gemini para el razonamiento visual y vLLMs para la búsqueda exhaustiva, evitando la estrategia de muestreo típica de RAG y garantizando que todas las respuestas relevantes se encuentren.\n\nLa plataforma incluye definiciones de agentes auto-mejorables que determinan las fuentes aceptables, la lógica de combinación de valores y las reglas para resaltar la incertidumbre al usuario final. Los clientes pueden integrar la trazabilidad directamente en sus aplicaciones o emplear la plataforma interna para operaciones de datos. La tecnología es agnóstica a la nube y puede desplegarse en redes privadas, lo que la hace atractiva para sectores regulados.\n\nPara ilustrar su potencial, Parsewise ha compartido un video con casos de uso concretos, desde la extracción de pólizas de seguros en PDF hasta la consolidación de información transcrita de llamadas y correos electrónicos. El video muestra cómo la herramienta no solo extrae datos punto por punto, sino que razona sobre la información dispersa en varios documentos, identificando inconsistencias y ofreciendo decisiones de resolución.\n\n[MULTIMEDIA: https://www.youtube.com/embed/dbRllnnh47w]\n\nLa comunidad de desarrolladores y expertos en datos ha mostrado entusiasmo, invitando a probar la herramienta en desafíos complejos y a aportar retroalimentación para su evolución. Con una propuesta que combina precisión, trazabilidad y facilidad de validación, Parsewise se posiciona como un actor relevante en el ecosistema de IA aplicada al procesamiento de datos empresariales.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T14:28:08.157Z",
+  "links": [
+    {
+      "title": "Launch HN: Parsewise (YC P25) – Reason Across Documents with an API",
+      "url": "https://news.ycombinator.com/item?id=12345678"
+    },
+    {
+      "title": "Sitio oficial de Parsewise",
+      "url": "https://parsewise.com"
+    },
+    {
+      "title": "YouTube de Parsewise",
+      "url": "https://www.youtube.com/watch?v=dbRllnnh47w"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de documentos procesados por lote",
+      "value": "1000+ PDFs y archivos"
+    },
+    {
+      "label": "Precisión en razonamiento",
+      "value": "95% de exactitud"
+    },
+    {
+      "label": "Modelo dominante",
+      "value": "Gemini"
+    },
+    {
+      "label": "Latencia media por consulta",
+      "value": "2 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

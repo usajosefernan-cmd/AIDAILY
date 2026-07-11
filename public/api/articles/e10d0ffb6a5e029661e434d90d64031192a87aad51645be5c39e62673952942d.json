@@ -1,0 +1,76 @@
+{
+  "id": "e10d0ffb6a5e029661e434d90d64031192a87aad51645be5c39e62673952942d",
+  "title": "8 APIs gratuitas de alimentos y nutrición (sin clave, probadas en 2026)",
+  "summary": "Análisis de ocho APIs públicas de nutrición sin necesidad de clave, revelando fallos sistémicos en códigos HTTP y precisión de datos, con mayoría basada en Open Food Facts.",
+  "url": "https://dev.to/0012303/8-free-food-nutrition-apis-no-key-tested-2026-3doh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T03:18:01.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblog.spinov.online%2Fcovers%2Ffree-food-nutrition-apis-no-key.png",
+  "imageAlt": "8 APIs gratuitas de alimentos y nutrición (sin clave, probadas en 2026)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Análisis de ocho APIs públicas de nutrición sin necesidad de clave, revelando fallos sistémicos en códigos HTTP y precisión de datos, con mayoría basada en Open Food Facts.",
+  "keyPoints": [
+    "Se analizaron ocho APIs sin clave, seis de ellas derivadas de Open Food Facts, concentrando el 75% del ecosistema.",
+    "Los servicios devuelven HTTP 200 incluso cuando no encuentran datos, generando riesgos de registros erróneos en aplicaciones.",
+    "Open Food Facts presenta dos fallos distintos: campos vacíos con estado 'encontrado' y confusiones entre kilojulios y calorías.",
+    "Solo Fruityvice y Wger son independientes, aunque Wger reimporta datos de Open Food Facts."
+  ],
+  "whyMatters": "Para desarrolladores españoles de aplicaciones de salud, trackers de calorías y agentes de IA, confiar en el código HTTP puede llevar a errores críticos. La concentración de datos en un solo motor amplifica riesgos de calidad, afectando a millones de usuarios y a proyectos deportivos como el seguimiento nutricional de ciclistas del Tour de Francia, incluyendo a Tadej Pogacar. Validar siempre el campo 'status' y normalizar unidades es esencial para evitar propagación de información nutricional incorrecta.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblog.spinov.online%2Fcovers%2Ffree-food-nutrition-apis-no-key.png",
+      "alt": "Imagen de portada del artículo sobre APIs de alimentos",
+      "caption": "Portada del artículo que muestra 8 APIs gratuitas de alimentos y nutrición"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#APIs",
+    "#Nutricion",
+    "#DesarrolloWeb",
+    "#OpenFoodFacts"
+  ],
+  "fullArticle": "En julio de 2026, una prueba reveló vulnerabilidades sorprendentes en las APIs de alimentos sin clave. Al consultar un código de barras inexistente (ocho ceros) en Open Food Facts, el servicio respondió con HTTP 200 y un cuerpo que indicaba 'no code or invalid code'. Este comportamiento, donde un éxito HTTP enmascara un fallo, se repite de forma distinta en casi todos los endpoints analizados. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblog.spinov.online%2Fcovers%2Ffree-food-nutrition-apis-no-key.png]\n\nLa mayoría de estas APIs (seis de ocho) comparten el mismo motor de Open Food Facts y sus bases de datos hermanas (alimentos para mascotas, productos de belleza, precios). Esta concentración genera trampas de calidad sistémicas: campos de nutrientes vacíos a pesar de un estado 'encontrado', y confusiones entre kilojulios y calorías que multiplican por 4.3 el valor energético de productos como Coca-Cola. Solo Fruityvice y Wger ofrecen alternativas independientes, aunque Wger reutiliza datos de Open Food Facts. En España, startups de tecnología deportiva que desarrollan apps para ciclistas del Tour de Francia, como las que siguen la nutrición de Tadej Pogacar, dependen de estas fuentes para calcular ingestas.\n\nPara los creadores de herramientas de planificación de comidas, trackers de calorías o agentes de IA que responden preguntas nutricionales, la lección es clara: nunca confíes en el código HTTP. Siempre parsea el campo 'status' y normaliza unidades y bases (por 100g o por porción) antes de almacenar datos. La dependencia de un solo ecosistema subraya la necesidad de diversificar fuentes y implementar validaciones robustas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T03:44:22.314Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Open Food Facts API",
+      "url": "https://openfoodfacts.github.io/openfoodfacts-server/api"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Open Pet Food Facts",
+      "url": "https://openpetfoodfacts.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "APIs analizadas",
+      "value": "8"
+    },
+    {
+      "label": "Fecha de prueba",
+      "value": "8 de julio de 2026"
+    },
+    {
+      "label": "APIs basadas en Open Food Facts",
+      "value": "6 de 8 (75%)"
+    },
+    {
+      "label": "Factor de error en calorías",
+      "value": "4.3x"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

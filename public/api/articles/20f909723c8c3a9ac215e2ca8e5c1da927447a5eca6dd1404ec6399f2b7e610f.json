@@ -1,0 +1,69 @@
+{
+  "id": "20f909723c8c3a9ac215e2ca8e5c1da927447a5eca6dd1404ec6399f2b7e610f",
+  "title": "Cómo reduje una imagen Docker de 1,2 GB a 180 MB sin tocar una línea de código",
+  "summary": "Un desarrollador explica cómo optimizó una imagen Docker de 1,2 GB a 180 MB mediante técnicas sencillas como el uso de imágenes base ligeras, la eliminación de herramientas de compilación y una correcta gestión de capas, sin modificar el código de la aplicación.",
+  "url": "https://dev.to/devopsaitoolkit/how-i-cut-a-docker-image-from-12gb-to-180mb-2ah8",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T02:32:56.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0wkm2tjcdrs7v0l0o869.png",
+  "imageAlt": "Cómo reduje una imagen Docker de 1,2 GB a 180 MB sin tocar una línea de código",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador explica cómo optimizó una imagen Docker de 1,2 GB a 180 MB mediante técnicas sencillas como el uso de imágenes base ligeras, la eliminación de herramientas de compilación y una correcta gestión de capas, sin modificar el código de la aplicación.",
+  "keyPoints": [
+    "La eliminación de herramientas de compilación y dependencias de desarrollo en la imagen final redujo el tamaño en aproximadamente 500 MB.",
+    "El cambio de una imagen base completa como node:20 a una versión slim o distroless disminuye cientos de MB y reduce la superficie de ataque.",
+    "Ordenar las capas del Dockerfile para copiar primero el archivo de bloqueo de dependencias acelera las reconstrucciones hasta en un 80%.",
+    "El uso de .dockerignore y la limpieza de archivos temporales en la misma capa RUN evitan que archivos innecesarios aumenten el tamaño de la imagen."
+  ],
+  "whyMatters": "Esta optimización es crucial para equipos que despliegan aplicaciones en contenedores, ya que imágenes más pequeñas significan tiempos de pull y despliegue significativamente menores, lo que se traduce en ciclos de desarrollo más ágiles y costos reducidos en almacenamiento y transferencia de datos. Además, al eliminar componentes innecesarios, se reduce la superficie de ataque, mejorando la seguridad del entorno de producción. En un ecosistema donde la eficiencia y la seguridad son prioritarias, estas prácticas se convierten en estándares esenciales para cualquier flujo de DevOps moderno.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0wkm2tjcdrs7v0l0o869.png",
+      "alt": "Imagen de portada del artículo que ilustra la reducción de tamaño de una imagen Docker",
+      "caption": "Imagen de portada del artículo original en Dev.to sobre optimización de contenedores"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Docker",
+    "#DevOps",
+    "#Contenedores",
+    "#Optimizacion",
+    "#Despliegue"
+  ],
+  "fullArticle": "En el mundo del desarrollo de software, las imágenes Docker excesivamente grandes son un dolor de cabeza común: ralentizan las implementaciones, consumen ancho de banda y aumentan los costos de almacenamiento. Un desarrollador compartió su experiencia al heredar un servicio con una imagen de 1,2 GB, que tardaba minutos en desplegarse y generaba frustración en el equipo. Sin modificar una sola línea del código de la aplicación, logró reducirla a 180 MB aplicando una serie de buenas prácticas en el Dockerfile.\n\nEl artículo original incluye una imagen de portada que representa visualmente este logro.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0wkm2tjcdrs7v0l0o869.png]\n\nEl secreto principal radica en eliminar todo lo que no es necesario en tiempo de ejecución. La imagen original incluía compiladores, encabezados de desarrollo y el caché completo de paquetes, lo que sumaba unos 500 MB. Al cambiar a una base más ligera, como node:20-slim, o incluso a imágenes distroless para binarios estáticos, se pueden eliminar cientos de megabytes más. Además, optimizar el orden de las capas —copiando primero el archivo de bloqueo de dependencias para aprovechar el caché— y usar un .dockerignore para excluir archivos innecesarios, transformó un tiempo de reconstrucción de 4 minutos en solo 20 segundos. La limpieza de archivos temporales en la misma capa RUN también es clave para evitar que el historial de capas conserve datos innecesarios.\n\nEstas optimizaciones no solo mejoran la eficiencia operativa, sino que también reducen la superficie de ataque, un aspecto cada vez más valorado por los equipos de seguridad. En un entorno donde la agilidad y la seguridad van de la mano, dominar estas técnicas se ha vuelto indispensable para cualquier ingeniero DevOps o desarrollador que trabaje con contenedores.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T02:42:46.227Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Docker: Buenas prácticas para Dockerfiles",
+      "url": "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño imagen original",
+      "value": "1.2 GB"
+    },
+    {
+      "label": "Tamaño imagen optimizada",
+      "value": "180 MB"
+    },
+    {
+      "label": "Ahorro solo con eliminar herramientas de compilación",
+      "value": "~500 MB"
+    },
+    {
+      "label": "Reducción en tiempo de reconstrucción",
+      "value": "De 4 minutos a 20 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

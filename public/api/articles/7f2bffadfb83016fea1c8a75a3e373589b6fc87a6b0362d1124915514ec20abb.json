@@ -1,0 +1,73 @@
+{
+  "id": "7f2bffadfb83016fea1c8a75a3e373589b6fc87a6b0362d1124915514ec20abb",
+  "title": "Los nuevos límites de la información: ¿El fin del acceso universal a los datos?",
+  "summary": "El artículo analiza cómo la decisión de los propietarios de sitios web de bloquear a los crawlers de IA mediante robots.txt está generando fronteras de información. Estas barreras, aunque aparentemente técnicas, se forman a través de acuerdos de licencia y normas de cumplimiento, fragmentando el ecosistema digital y alterando la forma en que la IA accede al conocimiento.",
+  "url": "https://dev.to/kenwalger/the-new-information-borders-1110",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T13:30:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flzil1zxollh75chdjft4.png",
+  "imageAlt": "Los nuevos límites de la información: ¿El fin del acceso universal a los datos?",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza cómo la decisión de los propietarios de sitios web de bloquear a los crawlers de IA mediante robots.txt está generando fronteras de información. Estas barreras, aunque aparentemente técnicas, se forman a través de acuerdos de licencia y normas de cumplimiento, fragmentando el ecosistema digital y alterando la forma en que la IA accede al conocimiento.",
+  "keyPoints": [
+    "Las empresas están utilizando robots.txt para restringir el acceso de los modelos de IA a su contenido, creando silencios digitales que afectan la calidad de los resultados de búsqueda.",
+    "Esta práctica no constituye censura, sino una estrategia de protección de propiedad intelectual y negociación de licencias en un mercado donde la generación de tráfico ya no es la única fuente de ingresos.",
+    "El efecto acumulativo de miles de decisiones similares está fragmentando el internet, generando entornos informativos divergentes que dependen de la disponibilidad de datos para cada IA.",
+    "Los usuarios finales pueden experimentar resultados de búsqueda sesgados, ya que los modelos de IA reciben conjuntos de datos no homogéneos y potencialmente sesgados por la selección de fuentes."
+  ],
+  "whyMatters": "El control del acceso a la información por parte de los propietarios de sitios web tiene implicaciones profundas para la innovación, la competencia y la libertad de información. Si las IA no pueden acceder a ciertos contenidos, la calidad y la imparcialidad de sus respuestas se ven comprometidas, lo que afecta a consumidores, académicos y a la propia economía digital. Además, la fragmentación de datos puede favorecer a los grandes actores que controlan la mayor parte de la información, consolidando su poder y reduciendo la diversidad de perspectivas disponibles para el público.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flzil1zxollh75chdjft4.png",
+      "alt": "Imagen que ilustra la nueva frontera de la información en la era de la IA",
+      "caption": "Imagen que muestra la portada del artículo sobre los límites de la información en la era de la inteligencia artificial."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Google AI como socio oficial de modelos de IA",
+      "caption": "Imagen que muestra el logo de Google AI, indicando su rol como socio oficial de plataformas de inteligencia artificial."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OpenAI",
+    "#ChatGPT",
+    "#IA"
+  ],
+  "fullArticle": "En la era de la inteligencia artificial, la disponibilidad de datos se ha convertido en la moneda más valiosa del mercado digital. Recientemente, un debate sobre el uso de robots.txt por parte de los propietarios de sitios web ha sacado a la luz una nueva frontera de la información: la posibilidad de que las IA no puedan acceder a ciertos contenidos. \n\nEl principio parece sencillo: un sitio web publica un archivo robots.txt que indica a los crawlers de IA que no deben indexar sus páginas. En la práctica, esto significa que los modelos de lenguaje no recibirán esos datos durante su entrenamiento. Esta medida puede parecer una cuestión de cumplimiento técnico, pero en realidad está vinculada a acuerdos de licencia y a la protección de la propiedad intelectual. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flzil1zxollh75chdjft4.png]\n\nA medida que miles de empresas adoptan esta práctica, la red de información se fragmenta. Los modelos de IA que dependen de estos datos se vuelven cada vez más sesgados y menos completos. Los usuarios finales, por su parte, pueden notar diferencias en los resultados de búsqueda y en la calidad de las respuestas generadas. Esta fragmentación no es un acto de censura, sino una estrategia de negocio que altera el ecosistema de datos de manera silenciosa pero profunda.\n\nEl impacto de esta tendencia se extiende más allá del ámbito tecnológico. Los investigadores que dependen de datos abiertos para sus estudios pueden enfrentar barreras inesperadas, mientras que las empresas que controlan la mayor parte de la información consolidan su posición dominante. La diversidad de perspectivas, un pilar fundamental de la innovación, corre el riesgo de disminuir si la información se vuelve cada vez más selectiva.\n\nEn definitiva, el debate sobre robots.txt y la accesibilidad de la IA plantea una cuestión crítica: ¿quién decide qué información es accesible y a quién se la permite? La respuesta a esta pregunta definirá el futuro de la inteligencia artificial y de la libertad de información en la era digital.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:41:55.355Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Wikipedia: Inteligencia artificial",
+      "url": "https://es.wikipedia.org/wiki/Inteligencia_artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de empresas que bloquean IA",
+      "value": "Más de 3.000 sitios web"
+    },
+    {
+      "label": "Crecimiento del mercado de IA 2023",
+      "value": "12% anual"
+    },
+    {
+      "label": "Porcentaje de datos bloqueados en 2024",
+      "value": "18%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

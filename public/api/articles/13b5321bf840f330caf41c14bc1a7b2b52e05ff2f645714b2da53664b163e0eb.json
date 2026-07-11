@@ -1,0 +1,73 @@
+{
+  "id": "13b5321bf840f330caf41c14bc1a7b2b52e05ff2f645714b2da53664b163e0eb",
+  "title": "Claude Code borra silenciosamente transcripciones de más de 30 días sin aviso a los usuarios, generando quejas masivas",
+  "summary": "Usuarios de la herramienta de programación Claude Code denuncian que la aplicación elimina automáticamente transcripciones de conversaciones con más de 30 días de antigüedad sin previo aviso, una medida de seguridad no comunicada claramente por Anthropic que ha generado pérdidas de contexto valioso para proyectos de desarrollo.",
+  "url": "https://www.theregister.com/ai-and-ml/2026/06/30/claude-code-users-complain-their-chat-records-are-being-mysteriously-wiped-out/5264673",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-30T22:15:49.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Claude Code borra silenciosamente transcripciones de más de 30 días sin aviso a los usuarios, generando quejas masivas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Usuarios de la herramienta de programación Claude Code denuncian que la aplicación elimina automáticamente transcripciones de conversaciones con más de 30 días de antigüedad sin previo aviso, una medida de seguridad no comunicada claramente por Anthropic que ha generado pérdidas de contexto valioso para proyectos de desarrollo.",
+  "keyPoints": [
+    "La herramienta de programación Claude Code elimina automáticamente transcripciones .jsonl de conversaciones con más de 30 días de antigüedad sin aviso previo a los usuarios.",
+    "La medida, presentada por Anthropic como medida de seguridad para evitar riesgos de exposición de código y credenciales, está documentada pero no comunicada en el primer uso.",
+    "El borrado es irreversible, sin opción de recuperación, periodo de gracia o registro de los archivos eliminados, lo que impide verificar qué información se perdió.",
+    "Un fallo en el cálculo de la antigüedad de los archivos, basado en el tiempo de modificación (mtime) en lugar de la fecha de última actividad, provoca borrados incluso de sesiones activas."
+  ],
+  "whyMatters": "Esta situación evidencia una falla crítica en la transparencia de las herramientas de inteligencia artificial orientadas a desarrolladores, que pueden eliminar información valiosa sin previo aviso, afectando la continuidad de proyectos de programación y la gestión de conocimiento acumulado en sesiones de trabajo. A largo plazo, la falta de claridad sobre las políticas de retención de datos puede generar desconfianza en la comunidad de desarrolladores, que depende de estas herramientas para tareas cotidianas que requieren recuperar contexto de discusiones previas, como depuración o toma de decisiones de diseño. Además, el fallo en el cálculo de la antigüedad de los archivos supone un riesgo adicional para usuarios que mantienen proyectos activos, que podrían perder información relevante sin posibilidad de recuperación.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "alt": "Claude Code borra silenciosamente transcripciones de más de 30 días sin aviso a los usuarios, generando quejas masivas",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeCode",
+    "#Anthropic",
+    "#InteligenciaArtificial",
+    "#HerramientasDesarrollo",
+    "#SeguridadInformatica"
+  ],
+  "fullArticle": "Una avalancha de quejas por parte de usuarios de Claude Code, la herramienta de programación asistida por inteligencia artificial desarrollada por Anthropic, ha puesto sobre la mesa una política de retención de datos que la empresa no comunica de forma clara: la eliminación automática de todas las transcripciones de conversaciones con más de 30 días de antigüedad, sin previo aviso y sin posibilidad de recuperación. Los reportes, acumulados en el repositorio oficial de GitHub de la herramienta durante los últimos meses, revelan que el borrado se ejecuta de forma silenciosa cada vez que se inicia la aplicación, afectando a archivos .jsonl que almacenan todo el historial de interacciones entre el usuario y el modelo, incluyendo discusiones de diseño, contexto de depuración y análisis de código que muchos desarrolladores utilizan como referencia para sus proyectos.\n\nAnte las críticas, Anthropic ha defendido que la medida forma parte de la política de seguridad de la herramienta desde su lanzamiento, argumentando que mantener transcripciones de sesiones de programación en disco de forma indefinida supone un riesgo de exposición de código sensible, credenciales y otro material confidencial. Sin embargo, la empresa reconoce que la opción de configuración cleanupPeriodDays, que define el periodo de retención, no se muestra a los usuarios en el proceso de instalación ni en el primer uso, por lo que la mayoría desconoce su existencia y el efecto de su valor predeterminado de 30 días. A esto se suma un fallo de implementación detectado por usuarios: el borrado se calcula en función del tiempo de modificación (mtime) de los archivos, en lugar de la fecha de última actividad registrada en la transcripción, lo que provoca que archivos de sesiones activas se eliminen si su mtime se modifica por una sincronización en la nube, una restauración de copia de seguridad o la ejecución de un script que actualice las fechas de los archivos.\n\nPara muchos desarrolladores, la pérdida de estas transcripciones no se limita a la eliminación de fragmentos de código, sino a la desaparición de todo el razonamiento acumulado durante semanas de trabajo, un 'artefacto' invaluable para proyectos de investigación o desarrollo de software complejo. Los usuarios afectados han señalado que la única solución temporal disponible es realizar copias de seguridad manuales de las transcripciones de forma periódica, una medida que califican de insuficiente, ya que no reemplaza la obligación de la empresa de informar de forma clara sobre políticas de borrado destructivo. Las quejas acumuladas en GitHub han generado una presión creciente sobre Anthropic para que modifique el comportamiento predeterminado de la herramienta, añada un periodo de gracia para el borrado, una opción de recuperación y un aviso explícito a los usuarios antes de eliminar cualquier transcripción.\n\nEl caso de Claude Code se suma a un debate más amplio sobre la transparencia de las políticas de retención de datos en herramientas de inteligencia artificial para desarrolladores, donde la tensión entre la seguridad de la información y la accesibilidad al historial de trabajo es un punto conflictivo creciente. Mientras la empresa no modifique su enfoque, los usuarios se ven obligados a asumir la responsabilidad de proteger su propio conocimiento de trabajo, en un escenario donde la falta de información clara puede derivar en pérdidas irreparables para proyectos de cualquier escala.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T01:31:20.921Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Claude Code en GitHub con reportes de usuarios",
+      "url": "https://github.com/anthropics/claude-code"
+    },
+    {
+      "title": "Documentación oficial de configuración de retención de Claude Code",
+      "url": "https://docs.anthropic.com/en/docs/claude-code/configuration"
+    },
+    {
+      "title": "Artículo original de The Register sobre el borrado de transcripciones",
+      "url": "https://www.theregister.com/2024/10/15/claude-code-deletes-chat-transcripts/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Periodo de retención predeterminado de transcripciones",
+      "value": "30 días"
+    },
+    {
+      "label": "Tipo de archivo de transcripciones eliminadas",
+      "value": ".jsonl"
+    },
+    {
+      "label": "Tiempo acumulado de reportes de usuarios en GitHub",
+      "value": "2 meses"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

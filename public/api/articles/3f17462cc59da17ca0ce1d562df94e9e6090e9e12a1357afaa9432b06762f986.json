@@ -1,0 +1,69 @@
+{
+  "id": "3f17462cc59da17ca0ce1d562df94e9e6090e9e12a1357afaa9432b06762f986",
+  "title": "El enlace olvidado: por qué 'funciona' no es lo mismo que 'se mantiene'",
+  "summary": "En el desarrollo de un asistente de AI, un enlace simbólico que apuntaba a recursos compartidos se perdió en la memoria del sistema, revelando la importancia de la visibilidad y mantenimiento de los enlaces en repositorios de código.",
+  "url": "https://dev.to/orieken/the-forgotten-symlink-why-it-works-is-not-the-same-as-it-is-maintained-17hh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T01:13:08.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9kf364494zl9a38ned4u.png",
+  "imageAlt": "El enlace olvidado: por qué 'funciona' no es lo mismo que 'se mantiene'",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En el desarrollo de un asistente de AI, un enlace simbólico que apuntaba a recursos compartidos se perdió en la memoria del sistema, revelando la importancia de la visibilidad y mantenimiento de los enlaces en repositorios de código.",
+  "keyPoints": [
+    "El enlace simbólico .cursor/agents apuntaba a ../shared/agents y fue commitado el 09-04-2026.",
+    "El repositorio centraliza la verdad en shared/, generando o enlazando archivos específicos por plataforma.",
+    "La ausencia de un sistema visible para los enlaces causó confusión entre desarrolladores y usuarios finales.",
+    "El descubrimiento de los enlaces olvidados subraya la necesidad de documentación y verificación constante en proyectos de IA."
+  ],
+  "whyMatters": "La gestión inadecuada de enlaces simbólicos puede provocar errores de configuración, pérdida de funcionalidad y retrasos en la entrega de productos. En entornos de IA, donde múltiples plataformas comparten código, la falta de visibilidad puede afectar la escalabilidad y la mantenibilidad. Los equipos deben adoptar procesos de auditoría y documentación para evitar que 'funcione' se convierta en un estado temporal.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9kf364494zl9a38ned4u.png",
+      "alt": "Enlace simbólico olvidado en repositorio de herramientas de AI",
+      "caption": "Imagen que ilustra el tema del artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AI",
+    "#DevOps",
+    "#Repositorio",
+    "#Symlink",
+    "#OpenSource"
+  ],
+  "fullArticle": "El mundo del desarrollo de asistentes de inteligencia artificial se vuelve cada vez más complejo cuando múltiples plataformas comparten código. En el caso del repositorio ai‑assistant‑dot‑files, la presencia de enlaces simbólicos a archivos compartidos parecía una solución elegante, pero resultó ser un punto débil que se perdió en la memoria del sistema. El enlace .cursor/agents apuntaba a ../shared/agents, y su existencia fue confirmada por un commit del 09‑04‑2026 con el hash d0b54d3.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9kf364494zl9a38ned4u.png]\n\nEl repositorio mantiene una única fuente de verdad en la carpeta shared/, donde se alojan agentes, habilidades, reglas y contratos. Los archivos específicos de cada plataforma, ya sea Claude Code, Cursor, Windsurf o Gemini/Antigravity, se generan o enlazan a partir de esta capa central. Sin embargo, la falta de un sistema que haga visibles, verifique y dé sentido a los enlaces simbólicos provocó que los desarrolladores no pudieran identificar su existencia ni su propósito dentro del flujo de instalación. Este descuido expuso la fragilidad de depender de enlaces sin documentación ni validación automática.\n\nPara evitar que 'funciona' se convierta en un estado transitorio, los equipos de desarrollo deben integrar auditorías regulares de enlaces, generar documentación clara y establecer reglas de verificación en los pipelines de CI/CD. La lección aprendida aquí es que la sostenibilidad de un proyecto de IA depende tanto de su arquitectura técnica como de la disciplina de mantenimiento de sus dependencias.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T01:23:36.542Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Repositorio ai-assistant-dot-files en GitHub",
+      "url": "https://github.com/ejemplo/ai-assistant-dot-files"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de commit",
+      "value": "09‑04‑2026"
+    },
+    {
+      "label": "Hash de commit",
+      "value": "d0b54d3"
+    },
+    {
+      "label": "Plataformas compatibles",
+      "value": "4"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

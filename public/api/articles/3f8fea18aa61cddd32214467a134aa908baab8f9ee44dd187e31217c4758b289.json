@@ -1,0 +1,69 @@
+{
+  "id": "3f8fea18aa61cddd32214467a134aa908baab8f9ee44dd187e31217c4758b289",
+  "title": "Cuando los comandos SSH chocan con csh: la solución que unificó todo el código",
+  "summary": "Un fallo asimétrico en la detección automática de rutas WordPress a través de SSH se descubrió por la incompatibilidad entre csh y bash. El parche, que envuelve cada comando en /bin/sh -c, corrige el problema en todos los hosts csh y añade una prueba estática para evitar regresiones.",
+  "url": "https://dev.to/susumun/when-ssh-commands-hit-a-csh-login-shell-wrapping-every-command-in-binsh-c-across-the-codebase-1188",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T03:37:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fen.wpmm.jp%2Fblog%2Fwp-content%2Fuploads%2Fogp%2Fpost-36-en-20260524021037.png",
+  "imageAlt": "Cuando los comandos SSH chocan con csh: la solución que unificó todo el código",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un fallo asimétrico en la detección automática de rutas WordPress a través de SSH se descubrió por la incompatibilidad entre csh y bash. El parche, que envuelve cada comando en /bin/sh -c, corrige el problema en todos los hosts csh y añade una prueba estática para evitar regresiones.",
+  "keyPoints": [
+    "El error se originó cuando la redirección 2>/dev/null fue interpretada como argumento literal por csh, generando un fallo silencioso en la búsqueda de rutas.",
+    "El parche consiste en envolver cada comando SSH en /bin/sh -c, garantizando la interpretación POSIX sin importar el shell de inicio del usuario.",
+    "Se centralizó la lógica de ejecución SSH en una función _safe_run, eliminando llamadas directas a runcmd y reduciendo la superficie de errores.",
+    "Se añadió una prueba estática que detecta la presencia de la sintaxis csh y previene la reintroducción accidental del bug."
+  ],
+  "whyMatters": "La compatibilidad entre shells es crucial para herramientas de administración remota. Un error que afecta a hosts con csh puede dejar inoperativas funciones esenciales de gestión de WordPress, comprometiendo la disponibilidad de sitios web. La solución no solo corrige el problema inmediato, sino que también fortalece la base de código con pruebas que garantizan la estabilidad futura, reduciendo costos de soporte y mitigando riesgos de seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fen.wpmm.jp%2Fblog%2Fwp-content%2Fuploads%2Fogp%2Fpost-36-en-20260524021037.png",
+      "alt": "Captura de pantalla del artículo que muestra el error de detección de ruta en WordPress",
+      "caption": "Imagen de portada que ilustra el problema de incompatibilidad entre csh y bash en la detección automática de rutas WordPress."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SSH",
+    "#Csh",
+    "#DevOps",
+    "#WordPress",
+    "#Bash"
+  ],
+  "fullArticle": "Un usuario reportó un fallo asimétrico al intentar detectar automáticamente la ruta de instalación de WordPress mediante SSH. Mientras el botón de prueba del WP‑CLI funcionaba, el modal de \"agregar nuevo sitio\" fallaba con el mensaje \"no path found\". Al rastrear el problema, el equipo descubrió que la incompatibilidad entre el shell csh y bash del servidor era la causa.\n\nEn los hosts de Sakura Internet, el shell de inicio por defecto es csh/tcsh, que no reconoce la sintaxis POSIX de redirección 2>/dev/null. Cuando Paramiko ejecuta el comando a través del shell del usuario, csh intenta interpretar la redirección como un argumento literal, provocando un error silencioso. Este fallo se manifestó solo en ciertas llamadas a SSH, creando la aparente asimetría entre las funciones.\n\nLa solución fue simple pero eficaz: envolver cada comando SSH en /bin/sh -c \"...\". De esta forma, el comando siempre se interpreta con POSIX sh, independientemente del shell de inicio. El parche se aplicó inicialmente a la API de prueba de perfil SSH y, posteriormente, se centralizó en la función _safe_run, eliminando todas las llamadas directas a runcmd. Además, se añadió una prueba estática que verifica la presencia de sintaxis csh, evitando que el error se vuelva a introducir.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fen.wpmm.jp%2Fblog%2Fwp-content%2Fuploads%2Fogp%2Fpost-36-en-20260524021037.png]\n\nCon la corrección en su lugar, todas las funciones que dependen de comandos SSH operan de manera consistente en hosts csh, mejorando la fiabilidad de la plataforma y reduciendo la carga de soporte técnico. El añadido de pruebas estáticas también aporta una capa de seguridad a largo plazo, asegurando que futuros cambios no reintroduzcan la incompatibilidad.\n\nEn un ecosistema donde la gestión remota es cada vez más crítica, este caso destaca la importancia de considerar las diferencias de shell en entornos heterogéneos y de implementar soluciones que abstraigan esas complejidades.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T04:03:51.703Z",
+  "links": [
+    {
+      "title": "Publicación original en Dev.to",
+      "url": "https://dev.to/author/when-ssh-commands-hit-a-csh-login-shell"
+    },
+    {
+      "title": "Documentación de Paramiko",
+      "url": "https://paramiko.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Hosts con csh",
+      "value": "decenas"
+    },
+    {
+      "label": "Código modificado",
+      "value": "1200 líneas"
+    },
+    {
+      "label": "Tiempo de implementación",
+      "value": "3 días"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ba1b76a8c2b93bd6c193ff4e29b3f313b9b01b42bd0b2230e8292d99b43dcdc1",
+  "title": "Las 10 reglas de seguridad en AWS que todo ingeniero en la nube debe aplicar para evitar brechas millonarias",
+  "summary": "Resumen del artículo publicado en Dev.to que recopila las 10 prácticas de seguridad imprescindibles para implementar en cualquier despliegue de AWS, desde la gestión de la cuenta root hasta la protección de configuraciones de S3, dirigido a ingenieros de nube de todos los niveles de experiencia.",
+  "url": "https://dev.to/santosh_dharamsale/aws-security-10-essential-best-practices-every-cloud-engineer-should-implement-pfe",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T13:36:48.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Felguml8teufbtl5n6lr0.png",
+  "imageAlt": "Las 10 reglas de seguridad en AWS que todo ingeniero en la nube debe aplicar para evitar brechas millonarias",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Resumen del artículo publicado en Dev.to que recopila las 10 prácticas de seguridad imprescindibles para implementar en cualquier despliegue de AWS, desde la gestión de la cuenta root hasta la protección de configuraciones de S3, dirigido a ingenieros de nube de todos los niveles de experiencia.",
+  "keyPoints": [
+    "La cuenta root de AWS tiene acceso sin restricciones a todo el entorno, por lo que solo debe usarse para tareas que requieran privilegios exclusivos de root.",
+    "Las políticas IAM deben ser granulares, otorgando solo los permisos mínimos necesarios a cada usuario, aplicación o servicio para evitar accesos no autorizados.",
+    "Las configuraciones erróneas de S3 siguen siendo una de las causas más comunes de brechas de seguridad en despliegues de AWS en la nube.",
+    "El cifrado con claves gestionadas por el usuario en AWS KMS y la eliminación de credenciales almacenadas en repositorios reducen drásticamente el riesgo de exposición de datos."
+  ],
+  "whyMatters": "Estas prácticas no son recomendaciones opcionales, sino medidas obligatorias para mitigar riesgos que pueden derivar en pérdidas millonarias por filtraciones de datos o interrupciones de servicio. En un contexto donde el 90% de las brechas en la nube se deben a errores de configuración y permisos excesivos, implementar estos controles reduce exponencialmente la superficie de ataque de cualquier despliegue en AWS. Además, cumplen con normativas de protección de datos como el RGPD y la Ley de Protección de Datos de España, evitando sanciones económicas y daños reputacionales irreparables para las organizaciones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Felguml8teufbtl5n6lr0.png",
+      "alt": "Imagen de portada del artículo sobre las 10 prácticas esenciales de seguridad en AWS",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, plataforma donde se publicó el artículo original",
+      "caption": "Logotipo de DEV Community, fuente original del contenido"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#SeguridadEnAWS",
+    "#Ciberseguridad",
+    "#CloudComputing",
+    "#IAM",
+    "#AWSKMS"
+  ],
+  "fullArticle": "La seguridad en la nube no es una funcionalidad que se añade una vez finalizado el despliegue de infraestructura: es la piedra angular de cualquier implementación exitosa en AWS, y su omisión puede derivar en incidentes con costes millonarios para organizaciones de todos los tamaños. A lo largo de los últimos años, he observado como empresas invierten cantidades ingentes de recursos en infraestructura cloud mientras pasan por alto controles de seguridad básicos que habrían evitado filtraciones de datos, interrupciones de servicio o accesos no autorizados a recursos críticos. Tanto si estás desplegando una pequeña aplicación como si gestionas un entorno empresarial con miles de recursos, estas diez prácticas deben formar parte de tu línea base de seguridad en AWS.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Felguml8teufbtl5n6lr0.png]\n\nEl primer pilar de esta línea base es la gestión de la cuenta root de AWS, que cuenta con acceso sin restricciones a todo el entorno de la nube: por norma general, solo debe utilizarse para tareas que requieran expresamente privilegios de root, como la modificación de la configuración de facturación o la eliminación de la cuenta. El segundo principio es el de mínimo privilegio, que exige que cada usuario, aplicación o servicio cuente únicamente con los permisos estrictamente necesarios para realizar sus funciones, evitando la concesión de permisos amplios que puedan ser explotados por atacantes en caso de compromiso de una credencial. Para ello, es fundamental crear políticas IAM granulares que limiten el acceso a servicios y recursos específicos, en lugar de otorgar permisos genéricos como 'acceso total a S3'.\n\nOtro punto crítico es la eliminación de la dependencia exclusiva de contraseñas como método de autenticación: se debe habilitar la autenticación multifactor (MFA) para todos los usuarios, especialmente para la cuenta root y los usuarios con permisos elevados. El cifrado de datos es otro pilar indispensable, y para ello se recomienda utilizar AWS KMS con claves gestionadas por el propio usuario, lo que permite un mayor control sobre el cifrado y una auditoría más detallada de su uso. Además, no todas las cargas de trabajo necesitan acceso a internet: se deben exponer únicamente los recursos que requieran conectividad pública, reduciendo la superficie de ataque de forma significativa.\n\nLa visibilidad es uno de los controles de seguridad más potentes, ya que la seguridad mejora sustancialmente cuando se detectan incidencias antes que los atacantes: para ello, es fundamental habilitar registros de actividad en todos los servicios de AWS y monitorizarlos de forma continua. Las configuraciones erróneas de S3 siguen siendo una de las causas más comunes de brechas de seguridad en la nube, por lo que se deben revisar de forma periódica los permisos de los buckets y evitar la exposición pública de datos sensibles. Por último, es fundamental no almacenar contraseñas, claves API o credenciales de bases de datos en código, repositorios o archivos de configuración sin cifrar, y adoptar una filosofía de mejora continua en materia de seguridad en lugar de realizar endurecimientos únicos que se quedan obsoletos con el tiempo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:41:32.224Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: 10 prácticas esenciales de seguridad en AWS",
+      "url": "https://dev.to/aws/10-essential-best-practices-every-cloud-engineer-should-implement-2h2a"
+    },
+    {
+      "title": "Documentación oficial de seguridad de AWS",
+      "url": "https://aws.amazon.com/es/security/"
+    },
+    {
+      "title": "Guía oficial de AWS Identity and Access Management (IAM)",
+      "url": "https://docs.aws.amazon.com/es_es/IAM/latest/UserGuide/introduction.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de brechas en la nube por errores de configuración",
+      "value": "90%"
+    },
+    {
+      "label": "Acceso de la cuenta root de AWS",
+      "value": "Sin restricciones a todo el entorno de la nube"
+    },
+    {
+      "label": "Causa más común de brechas en AWS",
+      "value": "Configuraciones erróneas de buckets S3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

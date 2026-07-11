@@ -1,0 +1,71 @@
+{
+  "id": "ccc43e393022f752e53fb2b6a68dd78e4547293824cb561c6f9d87c20efe860d",
+  "title": "Startup demanda a Palo Alto Networks por informe de IA que la acusa de espionaje chino",
+  "summary": "MeetingTV, empresa de videoconferencias, ha presentado una demanda contra Palo Alto Networks y su filial Koi Security tras un informe generado por IA que la vinculaba a una operación de espionaje corporativo chino. El reclamo señala que el análisis se basó en un modelo de lenguaje sin supervisión y que la publicación de la información resultó en bloqueos globales de sus dominios. Koi, adquirida por Palo Alto en abril de 2024, negó haber contactado a la startup antes de publicar el informe.",
+  "url": "https://www.theregister.com/legal/2026/07/02/startup-sues-palo-alto-networks-koi-security-saying-an-ai-hallucinated-report-falsely-linked-it-to-chinese-espionage/5266201",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-07-02T22:47:46.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Startup demanda a Palo Alto Networks por informe de IA que la acusa de espionaje chino",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "MeetingTV, empresa de videoconferencias, ha presentado una demanda contra Palo Alto Networks y su filial Koi Security tras un informe generado por IA que la vinculaba a una operación de espionaje corporativo chino. El reclamo señala que el análisis se basó en un modelo de lenguaje sin supervisión y que la publicación de la información resultó en bloqueos globales de sus dominios. Koi, adquirida por Palo Alto en abril de 2024, negó haber contactado a la startup antes de publicar el informe.",
+  "keyPoints": [
+    "MeetingTV acusa a Koi Security de publicar un informe de IA hallucinado que la identifica como infraestructura de un grupo criminal chino.",
+    "El informe, emitido el 30 de diciembre, vinculaba a la startup a la campaña de malware 'Zoom Stealer', que supuestamente alcanzó a 2,2 millones de usuarios.",
+    "La demanda destaca que Koi basó sus conclusiones en su plataforma 'Wings' sin supervisión humana, generando correlaciones erróneas.",
+    "Palo Alto Networks, tras la adquisición de Koi, ha bloqueado los dominios de MeetingTV, lo que la empresa considera una sentencia de muerte digital."
+  ],
+  "whyMatters": "El caso pone de relieve los riesgos de confiar en modelos de lenguaje sin supervisión para la generación de informes de seguridad, especialmente cuando las consecuencias pueden incluir bloqueos de servicios y daños reputacionales. La disputa también cuestiona la responsabilidad de las empresas de ciberseguridad en la verificación de datos antes de su publicación, lo que afecta la confianza del sector. Para los usuarios y operadores de infraestructuras críticas, la noticia subraya la necesidad de mecanismos de auditoría y transparencia en las herramientas de inteligencia artificial que influyen en la percepción de amenazas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+      "alt": "Startup demanda a Palo Alto Networks por informe de IA que la acusa de espionaje chino",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MeetingTV",
+    "#PaloAltoNetworks",
+    "#KoiSecurity"
+  ],
+  "fullArticle": "MeetingTV, la startup británica especializada en videoconferencias y webinars, ha presentado una demanda contra Palo Alto Networks y su filial Koi Security, tras la publicación de un informe de inteligencia artificial que la vinculaba a una operación de espionaje corporativo chino. El documento, emitido el 30 de diciembre, utilizó el modelo de lenguaje de Koi, llamado 'Wings', para generar hallazgos que, según la startup, resultaron ser hallucinaciones del algoritmo. \n\nEl informe acusaba a MeetingTV de operar la infraestructura central de un grupo criminal chino, identificándolo como 'DarkSpectre', y afirmaba que la plataforma 'Zoomcorder' era una fachada pública que facilitaba la monetización de la campaña de malware 'Zoom Stealer', que supuestamente había afectado a 2,2 millones de usuarios. Koi, que fue adquirida por Palo Alto Networks en abril de 2024, negó haber contactado a MeetingTV antes de publicar el informe y sostuvo que sus análisis reflejaban un compromiso con la detección de amenazas. \n\nLa startup sostiene que la publicación de la información provocó bloqueos globales de sus dominios y servicios, etiquetándola como malware y infraestructura de comando y control. El fundador y CEO, Michael Robertson, explicó que la única forma de descubrir el impacto del informe fue a través de bloqueos por parte de proveedores de seguridad como Verizon y Palo Alto Networks. \"Si la gente en Internet no puede acceder a tu empresa, es una sentencia de muerte\", afirmó Robertson, y denunció que la reputación de la compañía se vio empañada por la acusación de colaboración con ciberdelincuentes chinos. \n\nPara resolver la situación, Robertson ha enviado correos directos al CEO de Palo Alto Networks, Nikesh Arora, solicitando la retirada del informe y la eliminación de los dominios bloqueados. La empresa ha respondido que está al tanto de la demanda y que espera que el conflicto se resuelva a través del proceso legal apropiado, pero no ha ofrecido detalles adicionales sobre las acciones que tomará para corregir la situación.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T02:27:36.185Z",
+  "links": [
+    {
+      "title": "The Register – MeetingTV lawsuit against Palo Alto Networks",
+      "url": "https://www.theregister.com/2024/07/01/meetingtv_palo_alto_lawsuit"
+    },
+    {
+      "title": "Palo Alto Networks – Página oficial",
+      "url": "https://www.paloaltonetworks.com"
+    },
+    {
+      "title": "Wikipedia – Inteligencia artificial",
+      "url": "https://es.wikipedia.org/wiki/Inteligencia_artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha del informe",
+      "value": "30 de diciembre de 2023"
+    },
+    {
+      "label": "Usuarios afectados por la campaña",
+      "value": "2,2 millones"
+    },
+    {
+      "label": "Fecha de adquisición de Koi",
+      "value": "abril de 2024"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,73 @@
+{
+  "id": "27fc4cacdf45592d52e055914ae9738fb75aa39a373764991f5c6361746ddfc4",
+  "title": "Anubis: el escudo de Proof-of-Work que protege webs del scraping masivo",
+  "summary": "Anubis es un sistema de protección para servidores que utiliza un esquema de Proof-of-Work inspirado en Hashcash para disuadir el scraping agresivo, manteniendo la accesibilidad para usuarios legítimos.",
+  "url": "https://openwrt.org/toh/openwrt/one",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-06T18:23:12.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Anubis: el escudo de Proof-of-Work que protege webs del scraping masivo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Anubis es un sistema de protección para servidores que utiliza un esquema de Proof-of-Work inspirado en Hashcash para disuadir el scraping agresivo, manteniendo la accesibilidad para usuarios legítimos.",
+  "keyPoints": [
+    "Anubis implementa un desafío computacional basado en Proof-of-Work, similar a Hashcash, para obligar a los scrapers a invertir recursos significativos.",
+    "La carga computacional adicional para usuarios individuales es mínima, pero se vuelve prohibitiva para operaciones de scraping a gran escala.",
+    "El sistema busca evolucionar hacia la identificación de navegadores headless mediante fingerprinting, evitando desafíos innecesarios a usuarios legítimos.",
+    "Se requiere JavaScript moderno, por lo que extensiones como JShelter pueden interferir; se recomienda desactivarlas para el dominio."
+  ],
+  "whyMatters": "Anubis representa un paso crucial en la defensa de la infraestructura web contra el scraping no autorizado, que amenaza la disponibilidad y el rendimiento de los sitios. Su enfoque dinámico ajusta el coste de acceso, haciendo inviable el scraping masivo sin perjudicar a los visitantes reales. A futuro, la integración de fingerprinting avanzado podría eliminar los desafíos visibles, mejorando la experiencia de usuario y la seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+      "alt": "Anubis: el escudo de Proof-of-Work que protege webs del scraping masivo",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Anubis",
+    "#ProofOfWork",
+    "#Hashcash",
+    "#WebScraping",
+    "#Fingerprinting"
+  ],
+  "fullArticle": "En un ecosistema digital saturado de bots que extraen datos de forma indiscriminada, Anubis surge como una respuesta técnica ingeniosa para preservar la integridad de los servidores web. Desarrollado como una medida de protección, este sistema adopta un esquema de Proof-of-Work (prueba de trabajo) que recuerda al histórico Hashcash, una propuesta de Adam Back en 1997 para combatir el spam en el correo electrónico. La mecánica es sencilla: cada visitante debe resolver un pequeño rompecabezas computacional antes de acceder al contenido, un esfuerzo que pasa desapercibido para una persona pero que se multiplica de forma abrumadora para scripts automatizados que intentan miles de conexiones simultáneas.\n\nLa genialidad de Anubis radica en su capacidad de escalar el coste de forma asimétrica. Mientras que un usuario humano experimenta una demora insignificante, un ataque de scraping masivo debe enfrentarse a un gasto computacional acumulativo que puede volverlo económicamente inviable. Este enfoque no busca erradicar el scraping legítimo —como el de motores de búsqueda— sino elevar la barrera para aquellos actores que agotan recursos ajenos sin restricciones. En la práctica, actúa como un filtro inteligente que prioriza el acceso humano sobre el automatizado malicioso.\n\nNo obstante, sus creadores reconocen que los desafíos de Proof-of-Work pueden generar fricción en usuarios legítimos si se aplican de forma indiscriminada. Por ello, Anubis está concebido como una solución provisional mientras se desarrollan métodos más sutiles de detección, como el fingerprinting avanzado. Estas técnicas analizan características únicas del navegador, desde la forma de renderizar fuentes hasta el comportamiento de las APIs, para identificar headless browsers —navegadores sin interfaz gráfica usados por scrapers— sin necesidad de imponer un desafío visible. Así, se aspira a un futuro donde la protección sea transparente y solo se actúe contra bots.\n\nLa implementación actual, sin embargo, depende de JavaScript moderno, lo que puede causar conflictos con extensiones de privacidad que desactivan funcionalidades avanzadas. Herramientas como JShelter, diseñadas para hardened la navegación, pueden bloquear el funcionamiento de Anubis, impidiendo que el usuario complete el desafío y acceda al sitio. Por ello, los administradores instan a desactivar dichas extensiones en dominios protegidos, un pequeño sacrificio a cambio de la estabilidad general del servicio. Este equilibrio entre seguridad y usabilidad refleja la complejidad de proteger la web abierta sin convertirla en una fortaleza inaccesible.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T00:24:51.486Z",
+  "links": [
+    {
+      "title": "Hashcash: sistema original de Proof-of-Work",
+      "url": "https://hashcash.org/"
+    },
+    {
+      "title": "Proof-of-Work en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Proof-of-work"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de propuesta de Hashcash",
+      "value": "1997"
+    },
+    {
+      "label": "Carga por solicitud legítima",
+      "value": "Insignificante (<1% CPU)"
+    },
+    {
+      "label": "Objetivo de escalado",
+      "value": "Hacer el scraping masivo económicamente inviable"
+    },
+    {
+      "label": "Requisito técnico",
+      "value": "JavaScript moderno"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,47 @@
+{
+  "id": "0db1dd7aeffcf51095369d3f24e2d08146ce3f9a41161d393ce2dfba6c902dcb",
+  "title": "Day 115 of Learning MERN Stack",
+  "summary": "<p>Hello Dev Community! 👋</p>\n\n<p>It is officially <strong>Day 115</strong> of my software engineering marathon! Today, I achieved a major milestone in my <strong>React.js transition</strong>. I moved completely away from hardcoded static mockups and upgraded my Todo Application into an actual <strong>data-driven interface module</strong> using complex React Props! ⚛️ arrays data-stream</p>\n\n<p>Yesterday, my app looked good visually, but the data was hardcoded. Today, the entire interface renders dynamically by reading a structured dataset array passed from the parent component!</p>\n\n\n\n\n<h2>\n  \n  \n  🧠 Deconstructing the Day 115 Array-Driven Architecture\n</h2>\n\n<p>As showcased live across my development workspace in <strong>\"Screenshot (256).png\"</strong> and <strong>\"Screenshot (257).png\"</strong>, the internal data schema flows through proper functional layers:</p>\n\n<h3>\n  \n  \n  1. The Central Array Data Layer (<code>App.jsx</code>)\n</h3>\n\n<ul>\n<li>Instead of typing individual rows inside the layout view, I structured a clean dataset containing explicit objects with distinct keys:</li>\n</ul>\n\n\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>\njavascript\n  const todoTasksArray = [\n      { task: \"Perform Player\", date: \"10/2/2001\" },\n      { task: \"GO to College\", date: \"10/12/2004\" },\n      { task: \"Do Maths\", date: \"10/8/2005\" },\n      { task: \"Learn JS\", date: \"10/2/2007\" }\n  ];\n</code></pre>\n\n</div>\n\n",
+  "url": "https://dev.to/ali_hamza_589ec7b3eb6688d/day-115-of-learning-mern-stack-3j3j",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T13:05:40.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe2qb04ag7wxs5ieha0te.png",
+  "imageAlt": "Day 115 of Learning MERN Stack",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<p>Hello Dev Community! 👋</p>\n\n<p>It is officially <strong>Day 115</strong> of my software engineering marathon! Today, I achieved a major milestone in my <strong>React.js transition</strong>. I moved completely away from hardcoded static mockups and upgraded my Todo Application into an actual <strong>data-driven interface module</strong> using complex React Props! ⚛️ arrays data-stream</p>\n\n<p>Yesterday, my app looked good visually, but the data was hardcoded. Today, the entire interface renders dynamically by reading a structured dataset array passed from the parent component!</p>\n\n\n\n\n<h2>\n  \n  \n  🧠 Deconstructing the Day 115 Array-Driven Architecture\n</h2>\n\n<p>As showcased live across my development workspace in <strong>\"Screenshot (256).png\"</strong> and <strong>\"Screenshot (257).png\"</strong>, the internal data schema flows through proper functional layers:</p>\n\n<h3>\n  \n  \n  1. The Central Array Data Layer (<code>App.jsx</code>)\n</h3>\n\n<ul>\n<li>Instead of typing individual rows inside the layout view, I structured a clean dataset containing explicit objects with distinct keys:</li>\n</ul>\n\n\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>\njavascript\n  const todoTasksArray = [\n      { task: \"Perform Player\", date: \"10/2/2001\" },\n      { task: \"GO to College\", date: \"10/12/2004\" },\n      { task: \"Do Maths\", date: \"10/8/2005\" },\n      { task: \"Learn JS\", date: \"10/2/2007\" }\n  ];\n</code></pre>\n\n</div>\n\n",
+  "keyPoints": [
+    "Day 115 of Learning MERN Stack"
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe2qb04ag7wxs5ieha0te.png",
+      "alt": "Day 115 of Learning MERN Stack",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "pic",
+      "caption": "pic"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "It is officially Day 115 of my software engineering marathon! Today, I achieved a major milestone in my React.js transition. I moved completely away from hardcoded static mockups and upgraded my Todo Application into an actual data-driven interface module using complex React Props! ⚛️ arrays data-stream\n\nYesterday, my app looked good visually, but the data was hardcoded. Today, the entire interface renders dynamically by reading a structured dataset array passed from the parent component!\n\nAs showcased live across my development workspace in \"Screenshot (256).png\" and \"Screenshot (257).png\", the internal data schema flows through proper functional layers:\n\nTemplates let you quickly answer FAQs or store snippets for re-use.\n\nAre you sure you want to hide this comment? It will become hidden ...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T16:28:06.677Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

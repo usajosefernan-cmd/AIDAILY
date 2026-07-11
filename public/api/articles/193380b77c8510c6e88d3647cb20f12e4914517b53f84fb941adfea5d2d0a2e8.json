@@ -1,0 +1,72 @@
+{
+  "id": "193380b77c8510c6e88d3647cb20f12e4914517b53f84fb941adfea5d2d0a2e8",
+  "title": "Microsoft activa por defecto la copia de seguridad de Windows 11 en dispositivos empresariales fuera de la UE",
+  "summary": "Microsoft habilitará de forma predeterminada la función de copia de seguridad de configuraciones y aplicaciones de Microsoft Store en dispositivos empresariales de Windows 11 fuera de la Unión Europea, comenzando por la versión 26H2, con excepciones para equipos regulados por la Ley de Mercados Digitales o con políticas de bloqueo explícito.",
+  "url": "https://tech.slashdot.org/story/26/07/07/1933209/microsoft-flips-windows-backup-on-by-default-outside-the-eu",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "publishedAt": "2026-07-07T22:20:55.802Z",
+  "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Microsoft activa por defecto la copia de seguridad de Windows 11 en dispositivos empresariales fuera de la UE",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Microsoft habilitará de forma predeterminada la función de copia de seguridad de configuraciones y aplicaciones de Microsoft Store en dispositivos empresariales de Windows 11 fuera de la Unión Europea, comenzando por la versión 26H2, con excepciones para equipos regulados por la Ley de Mercados Digitales o con políticas de bloqueo explícito.",
+  "keyPoints": [
+    "La función 'Copia de seguridad y restauración de configuración de Windows' guarda ajustes del dispositivo y la lista de apps de Microsoft Store para restaurar en equipos nuevos.",
+    "La activación por defecto aplica a dispositivos empresariales de Windows 11 26H2 y versiones posteriores fuera de la UE, excluyendo equipos regulados por la DMA o con políticas de desactivación explícita.",
+    "Microsoft justifica la medida para reducir la carga de administradores ante pérdidas, renovaciones de hardware o restablecimientos inesperados, aunque se trata de una solución parcial de resiliencia.",
+    "Organizaciones con requisitos de privacidad o soberanía de datos pueden desactivar la función, ya que se implementa como opción de exclusión voluntaria."
+  ],
+  "whyMatters": "Esta medida supone un cambio de paradigma en la gestión de dispositivos empresariales, al trasladar la responsabilidad de la copia de seguridad a los usuarios por defecto, lo que puede generar conflictos con normativas de protección de datos fuera de la UE y sumar carga administrativa a departamentos de TI que deban verificar el cumplimiento de políticas de soberanía digital. Además, marca un precedente para futuras funcionalidades de Windows que se activen sin consentimiento previo, reabriendo el debate sobre el equilibrio entre la experiencia de usuario y la autonomía de las organizaciones para gestionar sus datos. A largo plazo, la decisión podría influir en la adopción de Windows 11 en entornos empresariales con requisitos normativos estrictos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+      "alt": "Microsoft activa por defecto la copia de seguridad de Windows 11 en dispositivos empresariales fuera de la UE",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Microsoft",
+    "#Windows11",
+    "#CopiaDeSeguridadEmpresarial",
+    "#LeyMercadosDigitales"
+  ],
+  "fullArticle": "Microsoft ha anunciado que activará de forma predeterminada la herramienta de copia de seguridad y restauración de configuración de Windows en dispositivos empresariales de Windows 11 fuera de la Unión Europea, comenzando por la versión 26H2 del sistema operativo. La función, que guarda los ajustes personalizados del equipo y la lista de aplicaciones instaladas desde la Microsoft Store, permite restaurar toda la configuración en un dispositivo nuevo en casos de pérdida, robo, renovación de hardware o restablecimiento forzado del sistema. La medida excluye automáticamente a los dispositivos regulados por la Ley de Mercados Digitales (DMA) de la UE, así como a los equipos con políticas de administración que desactiven explícitamente la función, y no aplica a versiones anteriores a Windows 11 26H2.\n\nLa decisión de Microsoft de implementar la función como opción de exclusión voluntaria (opt-out) en lugar de requerir la activación manual por parte de los administradores (opt-in) ha generado preocupación en departamentos de tecnología de empresas con requisitos estrictos de privacidad o soberanía de datos. La compañía justifica la medida como un paso dentro de su esfuerzo de resiliencia para Windows, aunque aclara que no se trata de una solución de copia de seguridad integral, sino de una herramienta complementaria para escenarios específicos. Los administradores advierten que la activación por defecto podría sumar carga de trabajo al tener que verificar que la función no entre en conflicto con las políticas de protección de datos de cada organización.\n\nA largo plazo, este movimiento sienta un precedente sobre cómo Microsoft implementará nuevas funcionalidades en Windows 11, priorizando la experiencia de usuario estándar sobre la necesidad de consentimiento previo en entornos empresariales. La medida podría impulsar la adopción de herramientas de gestión de dispositivos más estrictas por parte de las empresas, además de reavivar el debate sobre la soberanía digital y el cumplimiento normativo en entornos corporativos. Por el momento, los usuarios de Windows 11 26H2 fuera de la UE recibirán la actualización en las próximas semanas, con la opción de desactivar la función en la configuración de copia de seguridad del sistema.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T23:27:56.268Z",
+  "links": [
+    {
+      "title": "Noticia original en Slashdot",
+      "url": "https://tech.slashdot.org/story/26/07/07/1933209/microsoft-flips-windows-backup-on-by-default-outside-the-eu"
+    },
+    {
+      "title": "Documentación oficial de Microsoft sobre la copia de seguridad de Windows",
+      "url": "https://learn.microsoft.com/es-es/windows/client-management/mdm/backup-restore"
+    },
+    {
+      "title": "Ley de Mercados Digitales de la Unión Europea",
+      "url": "https://digital-strategy.ec.europa.eu/es/policies/digital-markets-act"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión mínima de Windows 11 afectada",
+      "value": "26H2"
+    },
+    {
+      "label": "Ámbito geográfico de aplicación",
+      "value": "Dispositivos empresariales fuera de la Unión Europea"
+    },
+    {
+      "label": "Normativa de excepción",
+      "value": "Ley de Mercados Digitales (DMA) de la UE"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

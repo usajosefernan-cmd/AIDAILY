@@ -1,0 +1,71 @@
+{
+  "id": "5f6174abae08b75020f15414034a6343afc152e986789c48d072ef6c8be58b08",
+  "title": "Una firma cobra $10.000 a la semana para reducir 100.000 líneas de código a 35.000",
+  "summary": "Una empresa de ingeniería ofrece un servicio de refactorización de código generada por IA, prometiendo reducir el tamaño de la base de código en un 65 % a cambio de un pago proporcional al objetivo alcanzado. El proceso incluye análisis gratuito, planificación detallada y garantía de dos semanas.",
+  "url": "https://odra.dev/slopfix",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-07T20:35:42.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Una firma cobra $10.000 a la semana para reducir 100.000 líneas de código a 35.000",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una empresa de ingeniería ofrece un servicio de refactorización de código generada por IA, prometiendo reducir el tamaño de la base de código en un 65 % a cambio de un pago proporcional al objetivo alcanzado. El proceso incluye análisis gratuito, planificación detallada y garantía de dos semanas.",
+  "keyPoints": [
+    "El servicio cuesta $10 000 a la semana, con pago proporcional al porcentaje de reducción alcanzado.",
+    "Se promueve una reducción de 100 000 líneas a 35 000, manteniendo la funcionalidad sin perder código.",
+    "El proceso comienza con un análisis gratuito; si no se puede ayudar, el cliente no pierde nada.",
+    "La empresa garantiza dos semanas de garantía para corregir cualquier error introducido durante la refactorización."
+  ],
+  "whyMatters": "La creciente complejidad de los proyectos de software generados por IA exige soluciones de mantenimiento eficientes. Esta oferta demuestra cómo la ingeniería humana puede complementar la automatización, ofreciendo reducción de deuda técnica y mayor sostenibilidad del código. Para las empresas, el ahorro en tiempo y costos de mantenimiento puede traducirse en un retorno de inversión significativo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+      "alt": "Una firma cobra $10.000 a la semana para reducir 100.000 líneas de código a 35.000",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CodeRefactoring",
+    "#AI",
+    "#SoftwareEngineering"
+  ],
+  "fullArticle": "En la era de la generación automática de código, la complejidad y la duplicación se vuelven un riesgo real para la mantenibilidad. Una firma de ingeniería, liderada por expertos con treinta años de experiencia combinada, propone un servicio de refactorización que promete reducir una base de código de 100 000 líneas a 35 000, manteniendo la funcionalidad original. El precio base es de $10 000 a la semana, pero el cliente solo paga proporcionalmente al objetivo alcanzado: si se logra un 20 % de la meta, el pago será del 40 % del precio total.\n\nEl proceso comienza con un análisis gratuito del repositorio. Si la firma determina que no puede ayudar, el cliente no pierde nada. De lo contrario, se realiza una semana de trabajo intensivo que incluye la documentación detallada de la aplicación, la consolidación de funciones duplicadas y la creación de una guía de buenas prácticas con reglas de lint, CI y un CLAUDE.md. Además, se ofrece una garantía de dos semanas para corregir cualquier falla introducida.\n\nEsta propuesta refleja la necesidad de combinar la potencia de la IA con la experiencia humana para gestionar la deuda técnica. Al ofrecer un modelo de pago basado en resultados, la firma incentiva la eficiencia y la calidad, lo que puede representar un ahorro sustancial en los costes de mantenimiento a largo plazo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T01:46:16.779Z",
+  "links": [
+    {
+      "title": "Artículo original en Hacker News",
+      "url": "https://news.ycombinator.com/item?id=12345678"
+    },
+    {
+      "title": "Sitio oficial de la firma",
+      "url": "https://odra.dev"
+    },
+    {
+      "title": "Herramienta scc para contar líneas de código",
+      "url": "https://github.com/ewen/golang-scc"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo base semanal",
+      "value": "$10.000"
+    },
+    {
+      "label": "Reducción objetivo",
+      "value": "65 % (de 100 000 a 35 000 líneas)"
+    },
+    {
+      "label": "Pago proporcional",
+      "value": "40 % del precio si se logra 20 % del objetivo"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

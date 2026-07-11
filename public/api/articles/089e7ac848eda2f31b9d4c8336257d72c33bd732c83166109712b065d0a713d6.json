@@ -1,0 +1,71 @@
+{
+  "id": "089e7ac848eda2f31b9d4c8336257d72c33bd732c83166109712b065d0a713d6",
+  "title": "Polymarket: el hackeo que revela el riesgo de los proveedores externos en el mundo cripto",
+  "summary": "La plataforma de predicción Polymarket sufrió un ataque de cadena de suministro cuando un proveedor externo fue comprometido, permitiendo a los atacantes inyectar código malicioso en su sitio web y robar fondos de usuarios. La empresa ha confirmado la pérdida, pero no ha revelado cifras ni el nombre del proveedor. Este incidente subraya la vulnerabilidad de las infraestructuras web tradicionales que rodean a los contratos inteligentes.",
+  "url": "https://dev.to/newzlet_news/polymarket-hack-how-third-party-vendors-risk-your-crypto-5hbl",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T00:40:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2qvd2jbrd8sim190gynd.png",
+  "imageAlt": "Polymarket: el hackeo que revela el riesgo de los proveedores externos en el mundo cripto",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La plataforma de predicción Polymarket sufrió un ataque de cadena de suministro cuando un proveedor externo fue comprometido, permitiendo a los atacantes inyectar código malicioso en su sitio web y robar fondos de usuarios. La empresa ha confirmado la pérdida, pero no ha revelado cifras ni el nombre del proveedor. Este incidente subraya la vulnerabilidad de las infraestructuras web tradicionales que rodean a los contratos inteligentes.",
+  "keyPoints": [
+    "Polymarket confirmó que hackers robaron fondos tras comprometer a un proveedor externo, inyectando código malicioso en su web.",
+    "El ataque se limitó a usuarios afectados por el código, sin tocar directamente los contratos inteligentes en la cadena de bloques.",
+    "La empresa no divulgó el monto total robado ni el nombre del proveedor, dejando a la comunidad sin claridad sobre la magnitud del daño.",
+    "Firmas de monitoreo como PeckShield detectaron actividad sospechosa en la cadena de bloques, confirmando la transferencia de fondos ilícitos."
+  ],
+  "whyMatters": "Este incidente demuestra que la seguridad de las plataformas cripto no depende únicamente de los contratos inteligentes, sino también de las dependencias externas que alimentan su interfaz web. Los usuarios, que confían en la descentralización como garantía de protección, pueden quedar completamente vulnerables ante brechas en la cadena de suministro. La falta de transparencia sobre el proveedor comprometido impide a otras plataformas evaluar su exposición, creando un riesgo sistémico que podría afectar a miles de usuarios en todo el ecosistema cripto.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2qvd2jbrd8sim190gynd.png",
+      "alt": "Imagen de portada del artículo sobre el hackeo de Polymarket",
+      "caption": "Polymarket: el hackeo que expone la vulnerabilidad de los proveedores externos en el ecosistema cripto."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Polymarket",
+    "#CiberAtaque",
+    "#CriptoSeguridad"
+  ],
+  "fullArticle": "Polymarket, una de las plataformas de predicción más grandes del sector cripto, anunció en X que hackers habían robado fondos de usuarios tras comprometer a un proveedor externo. El ataque se realizó inyectando código malicioso directamente en el sitio web de la plataforma, afectando a usuarios seleccionados y dejando a la empresa sin claridad sobre la magnitud de la pérdida.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2qvd2jbrd8sim190gynd.png]\n\nEl portavoz de Polymarket, Connor Brandi, confirmó que el proveedor comprometido fue la vía de entrada, pero se negó a revelar el nombre del tercero ni a proporcionar detalles sobre la cantidad de fondos sustraídos. La compañía aseguró que ha aislado la brecha y está contactando directamente a los usuarios afectados, comprometiéndose a reembolsar los montos perdidos. No obstante, la falta de datos concretos deja a la comunidad sin una imagen clara del alcance del daño.\n\nLa firma de monitoreo de blockchain PeckShield detectó actividad sospechosa en la cadena de bloques en el mismo período en que Polymarket hizo público el incidente, lo que sugiere que los fondos robados fueron transferidos a cuentas externas. Este hallazgo resalta la importancia de la trazabilidad pública en el cripto, aunque la responsabilidad de la vulnerabilidad recae en la infraestructura web tradicional que rodea a los contratos inteligentes.\n\nEl caso de Polymarket subraya la paradoja de la descentralización: mientras los contratos inteligentes en la cadena de bloques son resistentes a la manipulación, la capa web que los usuarios interactúan puede ser comprometida por proveedores externos. Este tipo de ataques de cadena de suministro, ya conocidos en el ámbito de la ciberseguridad tradicional, se están convirtiendo en un riesgo cada vez mayor para el ecosistema cripto, que a menudo se promociona como más seguro que la infraestructura financiera convencional.\n\nLa comunidad cripto debe prestar atención a la transparencia de las dependencias externas y exigir auditorías más rigurosas de los proveedores que integran sus plataformas. Solo así se podrá mitigar el riesgo de que una brecha en un tercero derribe la confianza en la seguridad de los mercados descentralizados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T01:03:47.171Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to (en inglés)",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Informe de PeckShield sobre la actividad sospechosa",
+      "url": "https://peckshield.com/"
+    },
+    {
+      "title": "Polymarket en X (Twitter)",
+      "url": "https://twitter.com/Polymarket"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de anuncio",
+      "value": "20 de junio de 2024"
+    },
+    {
+      "label": "Monto total robado",
+      "value": "Desconocido"
+    },
+    {
+      "label": "Número de usuarios afectados",
+      "value": "Desconocido"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

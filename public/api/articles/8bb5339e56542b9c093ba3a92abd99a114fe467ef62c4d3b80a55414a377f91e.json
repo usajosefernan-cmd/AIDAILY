@@ -1,0 +1,77 @@
+{
+  "id": "8bb5339e56542b9c093ba3a92abd99a114fe467ef62c4d3b80a55414a377f91e",
+  "title": "Microsoft lleva la reparación de vulnerabilidades por IA a Azure DevOps con Copilot Autofix: adiós a las correcciones manuales",
+  "summary": "Microsoft ha lanzado la vista previa pública limitada de Copilot Autofix para GitHub Advanced Security en Azure DevOps, una funcionalidad que utiliza inteligencia artificial para analizar vulnerabilidades detectadas por CodeQL, generar correcciones de código contextuales y crear pull requests listas para revisar, reduciendo drásticamente el tiempo de remediación de fallos de seguridad.",
+  "url": "https://www.infoq.com/news/2026/06/azuredevops-copilot-autofix/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-06-30T12:00:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/ai-development/en/smallimage/SriramMadapusiVasudevan-thumbnail-1782220895596.jpg",
+  "imageAlt": "Microsoft lleva la reparación de vulnerabilidades por IA a Azure DevOps con Copilot Autofix: adiós a las correcciones manuales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Microsoft ha lanzado la vista previa pública limitada de Copilot Autofix para GitHub Advanced Security en Azure DevOps, una funcionalidad que utiliza inteligencia artificial para analizar vulnerabilidades detectadas por CodeQL, generar correcciones de código contextuales y crear pull requests listas para revisar, reduciendo drásticamente el tiempo de remediación de fallos de seguridad.",
+  "keyPoints": [
+    "Copilot Autofix se lanza en vista previa pública limitada para GitHub Advanced Security en Azure DevOps, dirigido a equipos que utilizan Azure Repos en sus flujos de trabajo.",
+    "La herramienta combina el análisis estático de CodeQL con la IA de GitHub Copilot para generar correcciones contextuales de vulnerabilidades de seguridad sin intervención manual inicial.",
+    "Las correcciones se envían como pull requests que los desarrolladores revisan y fusionan, manteniendo el control humano sin procesos de investigación y escritura manual.",
+    "La medida se enmarca en la estrategia de Microsoft de converger las funcionalidades de GitHub y Azure DevOps, acercando la seguridad a los desarrolladores."
+  ],
+  "whyMatters": "Esta funcionalidad resuelve uno de los mayores cuellos de botella en la seguridad de aplicaciones empresariales: la lenta remediación de vulnerabilidades detectadas, que suele retrasar los despliegues y aumentar el riesgo de exposición a ataques. Al automatizar la generación de correcciones contextuales, Microsoft reduce drásticamente el tiempo entre la identificación de una falla y su solución, permitiendo que los equipos de desarrollo centren sus esfuerzos en problemas de arquitectura y lógica de negocio de mayor complejidad. Además, refuerza la tendencia sectorial de integrar la IA como asistente en los flujos de seguridad, sin renunciar a la supervisión humana ni a los procesos de gobernanza y cumplimiento existentes, lo que acelera la adopción de prácticas seguras sin fricciones en entornos empresariales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/ai-development/en/smallimage/SriramMadapusiVasudevan-thumbnail-1782220895596.jpg",
+      "alt": "Imagen de la presentación 'Trustworthy Productivity: Securing AI-Accelerated Development' sobre seguridad en el desarrollo acelerado con inteligencia artificial",
+      "caption": "Presentación sobre productividad confiable y seguridad en el desarrollo acelerado por IA"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MicrosoftCopilot",
+    "#AzureDevOps",
+    "#SeguridadInformatica",
+    "#IAenDesarrollo",
+    "#GitHubAdvancedSecurity"
+  ],
+  "fullArticle": "Microsoft acaba de dar un paso clave en la integración de inteligencia artificial en los flujos de seguridad de software con el lanzamiento de la vista previa pública limitada de Copilot Autofix para GitHub Advanced Security en Azure DevOps. Esta herramienta está dirigida a todos los equipos que utilizan Azure Repos en sus procesos de desarrollo, y promete automatizar la remediación de vulnerabilidades sin que los ingenieros tengan que dedicar horas a investigar soluciones manualmente. Hasta ahora, las herramientas de análisis estático de seguridad (SAST) como CodeQL detectaban fallos con gran precisión, pero dejaban en manos de los desarrolladores la tarea de interpretar las alertas, buscar estrategias de mitigación y escribir el código de corrección, un proceso que ralentizaba los despliegues y generaba fricción en los equipos.\n\nEl funcionamiento de Copilot Autofix se apoya en la combinación de dos tecnologías propias de Microsoft: el motor de análisis semántico profundo CodeQL, que identifica vulnerabilidades en el código, y el agente de codificación de GitHub Copilot, que genera las correcciones propuestas. Cuando CodeQL detecta una alerta de seguridad compatible, el desarrollador puede solicitar una remediación asistida por IA directamente desde la interfaz de GitHub Advanced Security. El agente analiza no solo la línea de código afectada, sino todo el contexto de la aplicación, generando un cambio de código que puede incluir modificaciones en varios archivos para resolver el problema de raíz, y abriendo automáticamente una pull request para su revisión por el equipo.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/ai-development/en/smallimage/SriramMadapusiVasudevan-thumbnail-1782220895596.jpg]\n\nA pesar de la automatización, Microsoft ha enfatizado que la responsabilidad final de validar las correcciones sigue siendo de los desarrolladores: las recomendaciones de Copilot Autofix son generadas por un modelo de lenguaje grande, por lo que no están garantizadas como completas ni exentas de efectos secundarios no deseados. Por ello, las pull requests generadas pasan por los mismos procesos de revisión, pruebas y aprobación que ya están establecidos en los flujos de trabajo de Azure DevOps, manteniendo intactos los estándares de gobernanza, cumplimiento y aseguramiento de la calidad. Esta decisión se alinea con la tendencia del sector de posicionar la IA como un asistente que acelera tareas repetitivas, y no como un agente autónomo que realice cambios en producción sin supervisión.\n\nEl lanzamiento de Copilot Autofix se enmarca en la estrategia más amplia de Microsoft de reducir la brecha de funcionalidades entre GitHub y Azure DevOps, facilitando la adopción de herramientas de seguridad avanzadas por parte de organizaciones que han estandarizado sus flujos de trabajo en la plataforma de Azure en lugar de en los repositorios de GitHub. Hasta el momento, GitHub Advanced Security para Azure DevOps ya ofrecía funcionalidades como escaneo de secretos, escaneo de dependencias, análisis de código con CodeQL y paneles de seguridad, y con Copilot Autofix se completa el ciclo de detección y remediación sin necesidad de salir del entorno de desarrollo habitual. Esta medida llega en un momento en el que la industria de la seguridad de aplicaciones reconoce que detectar vulnerabilidades no es suficiente: es necesario remediarlas con la misma rapidez con la que se escribe nuevo código, un reto que se agrava con el crecimiento del volumen de código generado con asistencia de IA.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T06:06:39.886Z",
+  "links": [
+    {
+      "title": "Noticia original en InfoQ",
+      "url": "https://www.infoq.com/news/2026/06/microsoft-copilot-autofix-azure-devops/"
+    },
+    {
+      "title": "Documentación oficial de Copilot Autofix para Azure DevOps",
+      "url": "https://learn.microsoft.com/es-es/azure/devops/repos/security/copilot-autofix?view=azure-devops"
+    },
+    {
+      "title": "Página de GitHub Advanced Security para Azure DevOps",
+      "url": "https://learn.microsoft.com/es-es/azure/devops/repos/security/github-advanced-security?view=azure-devops"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de lanzamiento de la vista previa",
+      "value": "30 de junio de 2026"
+    },
+    {
+      "label": "Herramienta de análisis de vulnerabilidades utilizada",
+      "value": "CodeQL"
+    },
+    {
+      "label": "Modelo de IA generador de correcciones",
+      "value": "GitHub Copilot"
+    },
+    {
+      "label": "Tiempo de lectura de la noticia original",
+      "value": "3 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

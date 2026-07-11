@@ -1,0 +1,68 @@
+{
+  "id": "02ad3eebfc7987eebfa218614424d584a91414dd93f4eddac961294b800a26eb",
+  "title": "La Tarea de Fondo que Se Congeló: Un Misterio de Ahorro de CPU en Serverless",
+  "summary": "Un desarrollador enfrentó un problema crítico en Cloud Run donde las tareas en segundo plano se congelan tras enviar una respuesta debido al modo de asignación de CPU basado en solicitudes. La solución es esperar a que la tarea se complete antes de responder.",
+  "url": "https://dev.to/dalenguyen/the-background-task-that-froze-a-serverless-cpu-throttling-mystery-3j3d",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T22:06:35.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwlu1oeeocc5kh4emz6zm.png",
+  "imageAlt": "La Tarea de Fondo que Se Congeló: Un Misterio de Ahorro de CPU en Serverless",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador enfrentó un problema crítico en Cloud Run donde las tareas en segundo plano se congelan tras enviar una respuesta debido al modo de asignación de CPU basado en solicitudes. La solución es esperar a que la tarea se complete antes de responder.",
+  "keyPoints": [
+    "Cloud Run reduce el CPU a cero tras el envío de la respuesta, deteniendo tareas asincrónicas",
+    "BackgroundTasks no ejecutan inmediatamente, causando retrasos impredecibles",
+    "La solución es awaitear la tarea antes de devolver la respuesta HTTP",
+    "El problema afecta cualquier trabajo programado después de la respuesta en plataformas con CPU limitado"
+  ],
+  "whyMatters": "Este caso revela una falla crítica en arquitecturas serverless, donde la optimización de recursos puede convertirse en un riesgo de fiabilidad. Los desarrolladores deben entender las limitaciones de plataformas como Cloud Run para evitar errores silenciosos que impactan en la entrega de servicios. La lección es priorizar la ejecución crítica antes de responder, evitando dependencias en la asignación de CPU post-respuesta.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwlu1oeeocc5kh4emz6zm.png",
+      "alt": "Ilustración del problema de CPU throttling en Cloud Run",
+      "caption": "Imagen de portada del artículo: La Tarea de Fondo que Se Congeló"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CloudRun",
+    "#Serverless",
+    "#BackgroundTasks",
+    "#CPUThrottling"
+  ],
+  "fullArticle": "Un desarrollador enfrentó un problema inesperado en Cloud Run: una tarea en segundo plano se congelaba tras enviar una respuesta HTTP. La causa era el modo de asignación de CPU por defecto de la plataforma, que reduce el poder de procesamiento a casi cero tras el final de una solicitud. Esto significaba que las tareas programadas con BackgroundTasks no se ejecutaban hasta que llegaba otra solicitud, o nunca si no había tráfico adicional. La solución propuesta fue evitar el uso de BackgroundTasks y, en su lugar, awaitear la ejecución de la tarea antes de devolver la respuesta. Esta ajuste eliminó el problema, ya que el trabajo se completaba en menos de un segundo, dentro del presupuesto de latencia aceptable para webhooks. La experiencia resalta la importancia de adaptar las estrategias de programación a las características específicas de cada plataforma cloud.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T22:54:10.447Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación de Cloud Run",
+      "url": "https://cloud.google.com/run"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de ejecución de la tarea",
+      "value": "1 segundo"
+    },
+    {
+      "label": "Impacto en tareas programadas",
+      "value": "Pueden retrasarse hasta 3 minutos o fallar"
+    },
+    {
+      "label": "Solución propuesta",
+      "value": "Awaitear la tarea antes de responder"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "03ace8c4d13284a4742906cb53d943cbe47b140be5012f27a2525b7405ded528",
+  "title": "Un sniffer ICMP escrito en Assembly x64 que se salta toda la pila de red del sistema operativo",
+  "summary": "Artículo que detalla el desarrollo de un sniffer de paquetes ICMP escrito íntegramente en Assembly x64, sin dependencias de librerías externas, que utiliza syscalls nativas de Linux para capturar tráfico en bruto a nivel de kernel, con fines educativos y de investigación en seguridad informática.",
+  "url": "https://dev.to/jm00nj/building-a-low-level-icmp-sniffer-in-x64-assembly-raw-sockets-5128",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T16:53:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fghyf1ili5m75ly0lr4rn.png",
+  "imageAlt": "Un sniffer ICMP escrito en Assembly x64 que se salta toda la pila de red del sistema operativo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo que detalla el desarrollo de un sniffer de paquetes ICMP escrito íntegramente en Assembly x64, sin dependencias de librerías externas, que utiliza syscalls nativas de Linux para capturar tráfico en bruto a nivel de kernel, con fines educativos y de investigación en seguridad informática.",
+  "keyPoints": [
+    "El proyecto está desarrollado íntegramente en Assembly x64 para arquitecturas de 64 bits, sin dependencias de librerías C estándar como libc.",
+    "Utiliza syscalls nativos de Linux, concretamente sys_socket con parámetros AF_INET y SOCK_RAW, para filtrar exclusivamente tráfico ICMP.",
+    "Incorpora un motor de conversión de enteros a cadenas ASCII escrito desde cero, sin recurrir a funciones externas como printf o itoa.",
+    "La herramienta está diseñada exclusivamente para fines de investigación en seguridad y auditoría de sistemas, prohibido su uso en redes ajenas."
+  ],
+  "whyMatters": "Este proyecto supone un recurso educativo de gran valor para investigadores de seguridad y programadores de sistemas, al permitir entender el funcionamiento de la pila de red de Linux sin las capas de abstracción que suelen ocultar detalles críticos en auditorías. Al prescindir de dependencias externas, reduce la superficie de ataque y es especialmente útil en entornos where no se pueden cargar librerías adicionales. Además, cubre un hueco casi inexistente en la documentación actual: herramientas de análisis de red funcionales escritas en Assembly x64, un lenguaje cada vez más relevante para la optimización de software de seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fghyf1ili5m75ly0lr4rn.png",
+      "alt": "Imagen de portada del artículo sobre el sniffer ICMP desarrollado en Assembly x64",
+      "caption": "Portada del artículo original publicado en Dev.to que explica el desarrollo de la herramienta de análisis de red de bajo nivel"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#AssemblyX64",
+    "#SnifferICMP",
+    "#Ciberseguridad",
+    "#ProgramacionDeSistemas",
+    "#LinuxSyscalls"
+  ],
+  "fullArticle": "En el ámbito de la seguridad de redes y el análisis de paquetes, las herramientas más utilizadas suelen estar desarrolladas en lenguajes de alto nivel como Python (con librerías como Scapy) o en C, que aún permiten un control relativamente cercano al hardware. Sin embargo, cuando el objetivo es eliminar por completo todas las capas de abstracción de la pila de red del sistema operativo y comunicarse directamente con el procesador, los recursos disponibles se vuelven extremadamente escasos: encontrar herramientas de redes modernas, sin dependencias y escritas en Assembly x64 es casi una misión imposible en la actualidad. El proyecto que nos ocupa, un sniffer ICMP desarrollado íntegramente en este lenguaje de bajo nivel, supone un hito en ese sentido, al prescindir por completo de librerías estándar como libc y recurrir exclusivamente a llamadas al sistema (syscalls) nativas de Linux.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fghyf1ili5m75ly0lr4rn.png]\n\nEl funcionamiento de la herramienta se apoya en la creación de un socket en bruto mediante la syscall 41 (sys_socket), con los parámetros AF_INET y SOCK_RAW, configurado para filtrar exclusivamente tráfico del protocolo ICMP, descartando cualquier paquete TCP o UDP que circule por la interfaz de red. Los paquetes capturados se leen en un búfer de memoria mediante la syscall sys_recvfrom, y al llegar en formato completamente en bruto, el código debe saltarse 28 bytes de cabeceras de protocolo para acceder al payload real, una operación que se realiza con la instrucción de Assembly lea rsi, [sniffed_data + 28]. Para evitar depender de funciones externas de conversión de enteros a cadenas, el autor desarrolló un motor propio que divide cada octeto de la dirección IP entre 10 usando la instrucción div, suma 48 (el valor ASCII del carácter '0') a los restos para convertirlos en caracteres legibles, los escribe en un búfer de 16 bytes en orden inverso e inserta puntos entre octetos mediante saltos condicionales para evitar cadenas mal formadas.\n\nPara investigadores de seguridad, miembros de equipos Blue Team y entusiastas del desarrollo de exploits, esta herramienta supone un recurso educativo sin igual, que permite entender en profundidad cómo interactúa una aplicación con la pila de red del kernel de Linux sin las capas de abstracción que suelen ocultar detalles críticos en auditorías de seguridad. El código fuente completo está disponible en el perfil de GitHub del autor para su revisión y pruebas en entornos controlados. Es fundamental recordar que el proyecto se ha creado exclusivamente para fines de investigación y educación, y su uso en redes que no son de propiedad del usuario está terminantemente prohibido, además de constituir un delito en la mayoría de jurisdicciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T17:06:59.648Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de syscalls de Linux",
+      "url": "https://man7.org/linux/man-pages/man2/syscall.2.html"
+    },
+    {
+      "title": "Guía de Raw Sockets en Linux",
+      "url": "https://www.tldp.org/HOWTO/Socket-Programming-HOWTO/raw-sockets.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de syscall para crear el socket",
+      "value": "41 (sys_socket)"
+    },
+    {
+      "label": "Bytes de cabecera saltados para acceder al payload ICMP",
+      "value": "28 bytes"
+    },
+    {
+      "label": "Tamaño del búfer para conversión de IP a ASCII",
+      "value": "16 bytes"
+    },
+    {
+      "label": "Valor sumado a restos de división para convertir a ASCII",
+      "value": "48 (0x30)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

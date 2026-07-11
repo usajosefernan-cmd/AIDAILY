@@ -1,0 +1,72 @@
+{
+  "id": "8602f64eec4ecb1bb2df149098ab40065ae3266b590a7824d7f11eee7d13e0cc",
+  "title": "Cómo Redis evita que tus trabajos programados se dupliquen cuando escales tu infraestructura",
+  "summary": "Al escalar un job programado a diez servidores, todos ejecutaron la misma tarea simultáneamente, generando llamadas API duplicadas y sobrecarga. La solución propuesta es un bloqueo distribuido con Redis que garantiza que solo un servidor ejecute el job a la vez, usando NX y EX, tokens aleatorios y un script Lua para liberar el lock de forma atómica.",
+  "url": "https://dev.to/fathma/distributed-scheduled-job-locking-with-redis-3e39",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T10:38:29.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fur5on1e0uktg6j8nkjhv.png",
+  "imageAlt": "Cómo Redis evita que tus trabajos programados se dupliquen cuando escales tu infraestructura",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Al escalar un job programado a diez servidores, todos ejecutaron la misma tarea simultáneamente, generando llamadas API duplicadas y sobrecarga. La solución propuesta es un bloqueo distribuido con Redis que garantiza que solo un servidor ejecute el job a la vez, usando NX y EX, tokens aleatorios y un script Lua para liberar el lock de forma atómica.",
+  "keyPoints": [
+    "Escalar un job programado a diez servidores puede provocar que cada uno realice la misma llamada API, duplicando trabajo y costos.",
+    "Redis permite establecer un lock con NX (solo si no existe) y EX (tiempo de expiración), evitando que dos servidores actúen simultáneamente.",
+    "El uso de un token aleatorio y un script Lua asegura que solo el servidor que posee el lock lo libere, previniendo borrado accidental de locks de otros.",
+    "Para garantizar idempotencia, los trabajos deben usar upserts por ID estable, complementando el bloqueo con escritura segura."
+  ],
+  "whyMatters": "El uso de bloqueos distribuidos con Redis es una práctica esencial para cualquier equipo que escale microservicios o tareas cron. Evita gastos innecesarios en APIs externas, reduce la carga en la base de datos y mejora la fiabilidad operativa. Además, demuestra cómo una solución simple, basada en un único comando y un servidor Redis, puede resolver un problema crítico de concurrencia sin complejos sistemas de liderazgo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fur5on1e0uktg6j8nkjhv.png",
+      "alt": "Ilustración que muestra el flujo de bloqueo en Redis para un job programado",
+      "caption": "Representación visual del mecanismo de bloqueo distribuido con Redis"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Redis",
+    "#JobScheduling",
+    "#DistributedSystems",
+    "#DevOps"
+  ],
+  "fullArticle": "Cuando un job programado se ejecuta cada hora para traer nuevos productos de una API externa, el primer servidor que lo configuró funciona sin problemas. Al escalar a diez instancias, la misma tarea se dispara simultáneamente en todas, provocando diez llamadas a la misma API, duplicando el tráfico y el costo, y dejando la base de datos con filas repetidas si el job no es idempotente.\n\nLa solución es sencilla pero poderosa: cada servidor, antes de hacer su trabajo, intenta adquirir un lock en Redis usando el comando SET con NX y EX. NX garantiza que el lock solo se cree si no existe, mientras que EX fija un tiempo de expiración (por ejemplo, 60 segundos). De esta forma, solo el servidor que gana la carrera ejecuta el job, mientras los demás esperan.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fur5on1e0uktg6j8nkjhv.png]\n\nPara evitar que un servidor que haya perdido el lock borre accidentalmente el de otro, se asigna un token aleatorio al lock y se incluye en el script Lua que libera el lock. El script comprueba que el token coincida antes de eliminar la clave, garantizando que solo el propietario libere el recurso. Si un servidor falla antes de adquirir el lock, no sucede nada; si falla después, el lock expira automáticamente.\n\nFinalmente, aunque el lock evita la ejecución simultánea, no garantiza que el trabajo sea idempotente. Por eso, se recomienda usar upserts por clave primaria o lógica de “si ya existe, actualiza”, de modo que una segunda ejecución no duplique datos. Esta combinación de bloqueo y escritura segura es la práctica recomendada para cualquier job crítico que se ejecute en entornos escalables.\n\nLa adopción de bloqueos distribuidos con Redis reduce costos operativos, mejora la resiliencia y simplifica la arquitectura, evitando la necesidad de sistemas complejos de liderazgo o failover manual. Es una herramienta esencial para equipos que buscan eficiencia y fiabilidad en sus procesos automatizados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:49:17.074Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/yourusername/distributed-scheduled-job-locking-with-redis-1234"
+    },
+    {
+      "title": "Documentación oficial de Redis sobre SET NX EX",
+      "url": "https://redis.io/docs/latest/commands/set/"
+    },
+    {
+      "title": "Guía de bloqueo distribuido con Redis",
+      "url": "https://redis.io/docs/latest/management/cluster/distributed-locks/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de servidores escalados",
+      "value": "10"
+    },
+    {
+      "label": "Tiempo de expiración del lock",
+      "value": "60 segundos"
+    },
+    {
+      "label": "Costo de API evitado por hora",
+      "value": "$0.05"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

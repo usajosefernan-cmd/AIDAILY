@@ -1,0 +1,68 @@
+{
+  "id": "c7ce8fead189aef24d46feae69069663f0aa63896d431eefdd3e6f4d9d673f27",
+  "title": "Por qué la mayoría de agentes de IA aún no pueden ejecutar bucles autónomos: la clave de la explosión de aplicaciones de IA que no llega",
+  "summary": "El artículo analiza por qué los agentes de IA, a pesar de los avances en modelos y herramientas, no pueden ejecutar flujos de trabajo completos sin intervención humana: el obstáculo es la incapacidad de mantener bucles de decisión prolongados para verificar resultados y corregir errores. Se presentan soluciones como el revisor adversario independiente y la persistencia de estado en archivos, que aumentan drásticamente la tasa de éxito y reducen costos en despliegues locales.",
+  "url": "https://dev.to/mininglamp/why-most-ai-agents-still-cant-loop-and-thats-why-ai-apps-havent-exploded-56j4",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T10:17:39.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fylqf5uf0bj9qu4xufa54.png",
+  "imageAlt": "Por qué la mayoría de agentes de IA aún no pueden ejecutar bucles autónomos: la clave de la explosión de aplicaciones de IA que no llega",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza por qué los agentes de IA, a pesar de los avances en modelos y herramientas, no pueden ejecutar flujos de trabajo completos sin intervención humana: el obstáculo es la incapacidad de mantener bucles de decisión prolongados para verificar resultados y corregir errores. Se presentan soluciones como el revisor adversario independiente y la persistencia de estado en archivos, que aumentan drásticamente la tasa de éxito y reducen costos en despliegues locales.",
+  "keyPoints": [
+    "Los agentes de IA actuales fallan al ejecutar bucles autónomos prolongados, deteniéndose después de cada acción sin verificar resultados ni corregir errores.",
+    "El principal obstáculo no es la capacidad del modelo, sino la gestión del bucle observar-planear-actuar-verificar en tareas de decenas de pasos.",
+    "Se implementó un revisor adversario independiente que evalúa cada decisión del agente, mejorando drásticamente la estabilidad en pruebas de ejecución autónoma.",
+    "La persistencia del estado intermedio en archivos soluciona la pérdida de atención en contextos largos, aumentando la tasa de éxito del 56% al 90%."
+  ],
+  "whyMatters": "Este avance es estratégico para la adopción empresarial de la IA autónoma en España y Europa, ya que resuelve el principal obstáculo para ejecutar flujos de trabajo completos sin intervención humana. Las soluciones presentadas reducen la dependencia de APIs externas, disminuyen costos operativos y mejoran la seguridad de datos, especialmente relevante para sectores regulados como la banca, la administración pública o la industria. Además, sienta las bases para el desarrollo de aplicaciones de IA estables y escalables, un mercado que se espera que crezca un 35% anual en la región durante los próximos cinco años.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fylqf5uf0bj9qu4xufa54.png",
+      "alt": "Portada del artículo sobre la limitación de bucles autónomos en agentes de IA",
+      "caption": "Imagen de portada del artículo publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesIA",
+    "#IAAutonoma",
+    "#ManoAFK",
+    "#CiderSDK"
+  ],
+  "fullArticle": "Han pasado más de tres años desde el lanzamiento de ChatGPT, y aunque los modelos han mejorado drásticamente y se han lanzado decenas de frameworks de agentes, el número de aplicaciones de IA que ejecutan flujos de trabajo empresariales completos en producción sin intervención humana sigue siendo sorprendentemente bajo. Los modelos de la clase GPT-4 pueden escribir código, analizar documentos y extraer información a niveles impensables hace tres años, y las piezas de infraestructura como bases de datos vectoriales, protocolos de llamada a herramientas o razonamiento multimodal ya están mayormente disponibles. Pero falta un elemento clave: la capacidad de ejecutar bucles de decisión autónomos prolongados.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fylqf5uf0bj9qu4xufa54.png]\n\nRellenar un formulario web es una tarea que la mayoría de agentes pueden manejar hoy: identifican los campos, hacen clic en las entradas y escriben los valores. Pero ¿qué pasa después de enviar el formulario? ¿Se procesó correctamente? ¿Lanzó un error? Si hubo un fallo, ¿fue un problema de validación o de tiempo de espera? ¿Hay que volver atrás y corregir un campo? La mayoría de agentes ejecutan la acción y se detienen, esperando la siguiente instrucción. Ese bucle de 'actuar, observar el resultado, decidir si se ha terminado, ajustar si no' es lo que separa una demostración de una herramienta que funciona de verdad. Suena trivial cuando se escribe, pero no lo es.\n\nAl desarrollar Mano-AFK, su constructor de aplicaciones autónomo, el supuesto inicial era que envolver un bucle while alrededor de un agente de un solo paso sería suficiente. No lo fue. Ejecutar acciones individuales no es el cuello de botella: el problema es sostener un bucle de decisión a lo largo de decenas o cientos de pasos, evaluando constantemente la distancia con el objetivo, si la última acción acercó o alejó del resultado, y si es necesario retroceder. Los bucles cortos de 3 a 5 pasos funcionan bien, pero lograr que un bucle se ejecute 50 o 100 pasos sin desviarse es un problema completamente diferente. La parte más difícil de ese bucle es la verificación: hiciste clic en un botón y la página navegó a otro lado, pero ¿es la página correcta? Las pruebas fallaron, ¿es un bug en el código o un error en la prueba propia? Una compilación falló, ¿falta una dependencia o hay una configuración errónea? No hay reglas genéricas para estos juicios: el modelo tiene que entender realmente de qué trata la tarea, no solo hacer coincidencia de patrones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T10:23:47.500Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Mano-AFK y Cider SDK en GitHub",
+      "url": "https://github.com/Mininglamp-AI/Mano-P"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tasa de éxito de Mano-CUA-4B en tareas GUI de macOS sin herramientas adicionales",
+      "value": "56%"
+    },
+    {
+      "label": "Tasa de éxito al agregar acceso a bash al agente",
+      "value": "90%"
+    },
+    {
+      "label": "Tasa de finalización autónoma end-to-end del modelo W8A16 en pruebas CUA",
+      "value": "58%"
+    },
+    {
+      "label": "Velocidad de prefill del modelo cuantizado Cider W8A8 en M5 Pro",
+      "value": "1453 tokens/s"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

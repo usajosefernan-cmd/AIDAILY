@@ -1,0 +1,40 @@
+{
+  "aiSummary": "Un estudio profundo sobre la postura de seguridad de los despliegues de IA en el mundo real, centrándose en la herramienta construida por el autor.",
+  "category": "tecnologia",
+  "fullArticle": "El autor exploró cómo los agentes de IA modernos van más allá del texto, realizando acciones como navegar web y ejecutar comandos. A través de un escaneo exhaustivo, descubrió que la seguridad de las configuraciones MCP es fundamental para proteger a los usuarios. Este estudio subraya la necesidad urgente de auditorías técnicas en el desarrollo de IA.",
+  "hashtags": [
+    "#IASeguridad",
+    "#MCP",
+    "#Tecnología"
+  ],
+  "id": "c8501389ad6d2dc3503da5ff21ccf7c0d7b0eb77276d74d27fb57bc9d1956f99",
+  "imageAlt": "Análisis de la seguridad en MCP tras el escaneo de GitHub",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4nwqnr60eau5k0nrkpbe.png",
+  "keyPoints": [
+    "Se analizaron 1.200 configuraciones de MCP desde GitHub para evaluar riesgos reales.",
+    "El escaneo reveló brechas de seguridad críticas en un alto porcentaje de configuraciones.",
+    "Se identificaron amenazas que van más allá de la generación de texto, como acceso a comandos y bases de datos.",
+    "La herramienta de seguridad permitió detectar vulnerabilidades antes de su explotación."
+  ],
+  "multimedia": [
+    {
+      "alt": "Portada del análisis sobre MCP y seguridad",
+      "caption": "Imagen que resume el estudio sobre configuraciones de MCP en GitHub.",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4nwqnr60eau5k0nrkpbe.png"
+    }
+  ],
+  "publishedAt": "2026-06-25T22:25:41.000Z",
+  "scrapedAt": "2026-06-25T22:34:28.962Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "Un estudio profundo sobre la postura de seguridad de los despliegues de IA en el mundo real, centrándose en la herramienta construida por el autor.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Análisis de la seguridad en MCP tras el escaneo de GitHub",
+  "url": "https://dev.to/ad_0846/i-scanned-1200-mcp-configs-from-github-heres-what-i-found-45b3",
+  "whyMatters": "Este análisis es crucial para evitar brechas de seguridad que podrían comprometer sistemas críticos y afectar la confianza en tecnologías emergentes."
+}

@@ -1,0 +1,79 @@
+{
+  "id": "008f9571147376db3aa28031d738a3119b70197a427a00f5975742f60fa3d630",
+  "title": "El estado del streaming a Apache Iceberg en 2026: Todas las rutas, su latencia y qué hacer cuando los segundos no alcanzan",
+  "summary": "El artículo analiza las opciones de streaming para cargar datos en tablas Apache Iceberg en 2026, explicando los tres hechos fundamentales de la plataforma que definen la latencia y los compromisos de cada alternativa, además de patrones arquitectónicos para casos que requieren frescura inferior a los segundos sin renunciar al lakehouse.",
+  "url": "https://dev.to/alexmercedcoder/the-state-of-streaming-to-apache-iceberg-in-july-2026-every-path-its-latency-and-what-to-do-when-i6p",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T22:50:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh9dgcx5h162r7xj4oz5s.png",
+  "imageAlt": "El estado del streaming a Apache Iceberg en 2026: Todas las rutas, su latencia y qué hacer cuando los segundos no alcanzan",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza las opciones de streaming para cargar datos en tablas Apache Iceberg en 2026, explicando los tres hechos fundamentales de la plataforma que definen la latencia y los compromisos de cada alternativa, además de patrones arquitectónicos para casos que requieren frescura inferior a los segundos sin renunciar al lakehouse.",
+  "keyPoints": [
+    "La pregunta dominante en 2026 sobre Iceberg ya no es si adoptarlo, sino qué tan frescas pueden ser las tablas y cómo actuar cuando no lo son suficiente.",
+    "Tres hechos clave de Iceberg rigen todas las opciones: los datos son invisibles hasta el commit, los commits consumen recursos y generan archivos pequeños que afectan lecturas.",
+    "Flink es la alternativa open source de menor latencia, con frescura de entre 10 segundos y un minuto, a cambio de mayor carga de mantenimiento y gestión de eliminaciones.",
+    "Todo pipeline de streaming a Iceberg necesita dos partes: ingesta y mantenimiento, siendo la omisión de la segunda el fallo más frecuente en despliegues productivos."
+  ],
+  "whyMatters": "Este análisis es estratégico para todas las empresas españolas y europeas que construyen lakehouses con Apache Iceberg, ya que la elección del pipeline de streaming impacta directamente en su capacidad para tomar decisiones basadas en datos en tiempo real. Entender los compromisos de latencia, costo y carga operativa evita despliegues fallidos que generan tablas inutilizables por archivos pequeños o commits excesivos. Además, el inminente lanzamiento de Iceberg v4, que resolverá los problemas actuales de commits, hace que este conocimiento sea fundamental para planificar migraciones y sacar ventaja competitiva en sectores como finanzas, retail o logística, donde la frescura de los datos es un factor crítico de negocio.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh9dgcx5h162r7xj4oz5s.png",
+      "alt": "Portada del artículo sobre el estado del streaming a Apache Iceberg en julio de 2026",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh9dgcx5h162r7xj4oz5s.png",
+      "alt": "Portada alternativa del artículo sobre streaming a Apache Iceberg",
+      "caption": "Versión de portada del artículo para redes sociales"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ApacheIceberg",
+    "#Streaming",
+    "#IngenieriaDeDatos",
+    "#Flink",
+    "#Lakehouse"
+  ],
+  "fullArticle": "En 2026, la pregunta más frecuente en equipos de ingeniería de datos ya no es si deben usar Apache Iceberg para sus lakehouses, sino qué tan frescas pueden ser sus tablas y qué hacer cuando la latencia del pipeline no es suficiente. Este artículo analiza de forma exhaustiva todas las opciones de streaming disponibles, desde motores open source como Flink hasta conectores de Kafka, brokers que escriben Iceberg de forma nativa, pipelines gestionados por proveedores y bases de datos de streaming, cada una con latencias, costos, carga operativa y compromisos muy diferentes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh9dgcx5h162r7xj4oz5s.png]\n\nLa base de todo análisis se sustenta en tres hechos inmutables de Iceberg que permiten evaluar cualquier afirmación de los proveedores: primero, los datos no son visibles para las consultas hasta que se confirma un commit que publica una nueva instantánea de la tabla, por lo que la frescura no depende solo de la velocidad de escritura, sino de la frecuencia de commits y del tiempo que tarda el motor de consultas en detectar la nueva instantánea. Segundo, los commits no son gratuitos: cada uno genera nuevos archivos de metadatos, listas de manifiestos y manifiestos, además de un intercambio atómico en el catálogo, lo que genera un piso práctico de latencia de entre varios segundos y minutos, además de contención si hay varios escritores simultáneos. Tercero, los commits frecuentes generan archivos pequeños que envenenan el rendimiento de las consultas, por lo que todo pipeline necesita una rutina de mantenimiento de compactación y expiración de instantáneas para ser viable.\n\nEntre las opciones open source dominantes, Flink se consolida como la alternativa de menor latencia, con frescura de entre 10 segundos y un minuto, ideal para casos de uso de cambio de datos en captura (CDC) que requieren espejos near-real-time de bases de datos operativas, aunque a cambio de una mayor carga de mantenimiento por las eliminaciones de igualdad. El artículo también aborda los patrones arquitectónicos para cargas de trabajo que requieren frescura inferior a los segundos, sin renunciar a la arquitectura de lakehouse, y explica cómo evaluar cualquier nuevo producto de streaming a Iceberg desde primeros principios, dado que la física del sistema no cambia.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T23:02:45.481Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Apache Iceberg",
+      "url": "https://iceberg.apache.org"
+    },
+    {
+      "title": "Documentación de Apache Flink",
+      "url": "https://flink.apache.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Rango de latencia común de Flink a Iceberg",
+      "value": "10 segundos a 1 minuto"
+    },
+    {
+      "label": "Número de commits diarios con intervalo de 10 segundos",
+      "value": "8.640 commits al día"
+    },
+    {
+      "label": "Rango de intervalo de commits viable en Iceberg v3",
+      "value": "Entre varios segundos y minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,69 @@
+{
+  "id": "95bfe3e12a299257f1c26a26fbd27d52bfb6714d133b8dea7502397051816df7",
+  "title": "V.E.L.O.C.I.T.Y.-OS: La revolución de Swarms, Streaming sin cabeza y Hot‑Patching sin interrupciones",
+  "summary": "En la undécima entrega de la serie, el autor presenta un sistema operativo de bajo nivel que opera completamente dentro de la caché L3, introduciendo tres servicios esenciales: Nexus Swarms para la multitarea, Beacon Headless Streaming para la visualización remota y un módulo de Hot‑Patching OTA sin tiempo de inactividad. El artículo detalla la arquitectura, la comunicación entre agentes, la protección de mensajes con Merkle hashes y la actualización segura de drivers.",
+  "url": "https://dev.to/unitbuilds_cc/velocity-os-swarms-headless-streaming-rcu-hot-patching-part-11-6e5",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T15:26:56.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnylfbjykivcv0tqif95w.jpeg",
+  "imageAlt": "V.E.L.O.C.I.T.Y.-OS: La revolución de Swarms, Streaming sin cabeza y Hot‑Patching sin interrupciones",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En la undécima entrega de la serie, el autor presenta un sistema operativo de bajo nivel que opera completamente dentro de la caché L3, introduciendo tres servicios esenciales: Nexus Swarms para la multitarea, Beacon Headless Streaming para la visualización remota y un módulo de Hot‑Patching OTA sin tiempo de inactividad. El artículo detalla la arquitectura, la comunicación entre agentes, la protección de mensajes con Merkle hashes y la actualización segura de drivers.",
+  "keyPoints": [
+    "El OS se ejecuta dentro de la caché L3, reduciendo latencia y permitiendo la ejecución de JIT y modelos de IA en tiempo real.",
+    "Nexus Swarms permite lanzar agentes aislados con PIDs sandboxed, comunicándose a través de anillos de mensajes sin bloqueo y protegidos por Merkle hashes.",
+    "Beacon Headless Streaming divide la pantalla en una cuadrícula de 80×50 celdas, enviando frames RLE a 30+ FPS por COM1 o Ethernet, con entrada de teclado y ratón inyectada directamente.",
+    "El módulo de Hot‑Patching OTA utiliza firmas criptográficas y una tabla de despacho global para actualizar drivers sin reiniciar, manteniendo la coherencia de punteros RCU."
+  ],
+  "whyMatters": "Este enfoque redefine la forma en que los sistemas operativos gestionan la concurrencia y la actualización en entornos críticos. Al ejecutar el kernel dentro de la caché, se elimina la dependencia de hardware externo, lo que abre la puerta a dispositivos IoT ultra‑rápidos y a servidores de alto rendimiento con mínima latencia. La capacidad de parchear drivers en caliente sin interrupción garantiza disponibilidad continua, un requisito clave para infraestructuras de misión crítica y la próxima generación de dispositivos inteligentes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnylfbjykivcv0tqif95w.jpeg",
+      "alt": "Portada del artículo V.E.L.O.C.I.T.Y.-OS",
+      "caption": "Imagen de portada que ilustra la arquitectura del sistema operativo."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fz04ktsytshu9irmhckh0.png",
+      "alt": "Diagrama de contexto de tareas cooperativas y arquitectura de hot‑patching RCU",
+      "caption": "Diagrama que muestra el flujo de cambio de contexto y el intercambio de funciones de drivers RCU."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#VeloCityOS",
+    "#HotPatching",
+    "#Swarms"
+  ],
+  "fullArticle": "El sistema operativo V.E.L.O.C.I.T.Y.-OS ha llegado a la undécima entrega de su serie, presentando una arquitectura que opera íntegramente dentro de la caché L3 del procesador. Esta decisión estratégica permite eliminar la latencia típica de los dispositivos de almacenamiento y habilita la ejecución simultánea de compilaciones en segundo plano, inferencias de modelos de IA y la renderización de la GUI sin colapsar el kernel.\\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnylfbjykivcv0tqif95w.jpeg]\\n\\nPara abordar los cuellos de botella de multitarea, el autor introdujo Nexus Swarms, un runtime que permite a los hilos JIT o a la shell LLM lanzar agentes hijos mediante la llamada sys_spawn_agent. Cada agente se ejecuta en un heap aislado con PIDs sandboxed y se comunica a través de anillos de mensajes de memoria compartida. Los paquetes llevan un hash Merkle que se recalcula en cada escritura y se valida al leer, garantizando la integridad de los datos sin bloquear la cola. El diagrama de contexto cooperativo y la arquitectura de hot‑patching RCU ilustran cómo se intercambian funciones de drivers en tiempo real.\\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fz04ktsytshu9irmhckh0.png]\\n\\nPara sistemas sin pantalla física, Beacon Headless Streaming divide la pantalla en una cuadrícula de 80×50 celdas. Cada tick calcula firmas para cada celda, detecta cambios de píxeles y transmite marcos RLE sobre COM1 o Ethernet a más de 30 FPS. Los paquetes entrantes decodifican movimientos de teclado y ratón, inyectándolos directamente en las colas de entrada del kernel. Se anuncia que este protocolo será reemplazado próximamente por V.E.L.O.C.I.T.Y. Remote, ampliando la capacidad de control remoto.\\n\\nEl módulo de Hot‑Patching OTA Zero‑Downtime utiliza una tabla de despacho global de entradas del driver. Cuando se detecta una actualización, el kernel firma el nuevo código, valida la coherencia de punteros RCU y despliega la nueva función sin reiniciar el núcleo, manteniendo la continuidad del servicio. Esta técnica, descrita como una transacción distribuida con concurrencia optimista, ofrece un registro auditado de cada cambio y quién lo aprobó, elevando la trazabilidad y la seguridad.\\n\\nEn conjunto, estos avances posicionan a V.E.L.O.C.I.T.Y.-OS como un prototipo de futuro para sistemas embebidos y servidores de alto rendimiento, donde la velocidad, la resiliencia y la actualización continua son imperativos. La serie completa de 12 partes promete profundizar aún más en cada componente, ofreciendo una visión completa de la arquitectura que podría redefinir la industria.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T15:46:46.422Z",
+  "links": [
+    {
+      "title": "V.E.L.O.C.I.T.Y.-OS: Swarms, Headless Streaming & RCU Hot-Patching (Parte 11) en Dev.to",
+      "url": "https://dev.to/author/article-url"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de partes de la serie",
+      "value": "12"
+    },
+    {
+      "label": "Velocidad de streaming Beacon",
+      "value": "30+ FPS"
+    },
+    {
+      "label": "Tamaño de la caché L3 utilizada",
+      "value": "8-12 MB"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

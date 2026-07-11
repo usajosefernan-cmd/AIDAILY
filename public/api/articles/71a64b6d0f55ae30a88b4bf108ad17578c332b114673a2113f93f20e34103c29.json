@@ -1,0 +1,72 @@
+{
+  "id": "71a64b6d0f55ae30a88b4bf108ad17578c332b114673a2113f93f20e34103c29",
+  "title": "El truco para saber qué fuente se está usando de verdad en tu navegador (no la que dice el CSS)",
+  "summary": "El artículo explica que el método getComputedStyle().fontFamily solo devuelve la pila de fuentes declarada en CSS, no la fuente efectivamente renderizada, un problema especialmente crítico para idiomas como el japonés, donde las diferencias entre fuentes de sistema son muy marcadas. Se analizan técnicas de detección clásicas con canvas y la API moderna de carga de fuentes CSS, además de presentar la herramienta Japanese Font Finder para automatizar este proceso.",
+  "url": "https://dev.to/ktg0215/how-to-detect-which-font-is-actually-rendering-in-a-browser-not-just-the-css-stack-12cd",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T15:17:35.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5sofqamqblr75wn7ztml.png",
+  "imageAlt": "El truco para saber qué fuente se está usando de verdad en tu navegador (no la que dice el CSS)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica que el método getComputedStyle().fontFamily solo devuelve la pila de fuentes declarada en CSS, no la fuente efectivamente renderizada, un problema especialmente crítico para idiomas como el japonés, donde las diferencias entre fuentes de sistema son muy marcadas. Se analizan técnicas de detección clásicas con canvas y la API moderna de carga de fuentes CSS, además de presentar la herramienta Japanese Font Finder para automatizar este proceso.",
+  "keyPoints": [
+    "El método getComputedStyle().fontFamily devuelve la lista de fuentes declaradas en CSS, no la fuente efectivamente usada para renderizar cada carácter.",
+    "La detección precisa es especialmente crítica para idiomas como el japonés, cuyas fuentes del sistema tienen diferencias visuales muy marcadas entre sí.",
+    "La técnica clásica con elementos canvas mide el ancho del texto renderizado para compararlo con el ancho de la fuente monospace de reserva.",
+    "La API moderna de carga de fuentes CSS permite comprobar la disponibilidad de fuentes web, aunque no cubre las fuentes del sistema instaladas."
+  ],
+  "whyMatters": "Esta distinción es fundamental para desarrolladores y diseñadores web que trabajan con tipografías internacionales, especialmente para idiomas con sistemas de escritura complejos como el japonés, coreano o chino. Un error en la detección de la fuente puede generar diferencias visuales inesperadas entre sistemas operativos, rompiendo la identidad visual de un sitio o afectando la legibilidad del contenido. A medida que la web se globaliza, herramientas como Japanese Font Finder permiten automatizar estos controles y garantizar una experiencia de usuario consistente sin importar el dispositivo o sistema del usuario.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5sofqamqblr75wn7ztml.png",
+      "alt": "Imagen de portada del artículo sobre detección de fuentes en navegadores",
+      "caption": "Portada del artículo original de Dev.to que explica métodos para detectar la fuente realmente renderizada en un navegador"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#DesarrolloWeb",
+    "#TipografiaWeb",
+    "#APICargaFuentes",
+    "#JapaneseFontFinder"
+  ],
+  "fullArticle": "Durante años, la mayoría de desarrolladores web ha dado por sentado que el método getComputedStyle(element).fontFamily devuelve la fuente que el navegador está usando realmente para renderizar el texto de un elemento. Nada más lejos de la realidad: este método solo devuelve la pila de fuentes declarada en las reglas CSS, una lista de prioridades que el navegador recorre para elegir la primera fuente disponible que contenga el glifo del carácter que se va a mostrar. Esta distinción suele ser irrelevante para textos en alfabeto latín, donde los sistemas operativos de Windows, macOS y Linux comparten un conjunto reducido de fuentes system comunes, pero se vuelve crítica para idiomas con sistemas de escritura complejos, como el japonés.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5sofqamqblr75wn7ztml.png]\n\nEn el caso del japonés, las diferencias visuales entre las fuentes de sistema más habituales —Hiragino Kaku Gothic ProN, Yu Gothic y Noto Sans JP— son muy notorias, con variaciones en el peso visual, el contraste de trazos y la forma de las letras que pueden cambiar completamente la apariencia de un sitio. Un portal diseñado en macOS, donde Hiragino es la fuente japonesa predeterminada, puede verse completamente diferente en un equipo con Windows, donde el navegador recurre a Yu Gothic como fallback. A esto se suma que muchas fuentes CJK (chino, japonés, coreano) no incluyen la totalidad de los kanji o caracteres del idioma, por lo que el navegador puede usar una fuente para unos caracteres y otra para los que no están cubiertos, generando resultados inconsistentes que rompen la armonía visual del diseño original.\n\nPara solucionar este problema, los equipos de desarrollo han recurrido a técnicas de detección más precisas. La más clásica se apoya en elementos <canvas> del HTML: se renderiza un carácter de prueba con cada fuente de la pila y se compara su ancho con el ancho que tendría ese mismo carácter en la fuente monospace de reserva del sistema. Si el ancho es diferente, significa que la fuente solicitada está disponible y se está usando; si coincide, el navegador ha recurrido al fallback. Este método tiene debilidades, ya que algunas fuentes pueden tener anchos de glifo idénticos por coincidencia, por lo que es necesario probar varios caracteres para reducir los falsos positivos, aunque algunos casos límite siguen siendo difíciles de resolver.\n\nLos navegadores modernos ofrecen una alternativa más limpia con la API de carga de fuentes CSS: el método document.fonts.check() permite verificar si una fuente está cargada y lista para usar, aunque solo tiene en cuenta las fuentes que han sido solicitadas explícitamente mediante declaraciones @font-face o que se han usado para renderizar texto en la página, por lo que no cubre las fuentes del sistema instaladas por defecto. Precisamente para automatizar esta detección en textos japoneses se creó Japanese Font Finder, una herramienta que permite identificar la fuente real usada en cada elemento de una página, solucionando un problema que hasta ahora requería pruebas manuales y tediosas por parte de los desarrolladores, y garantizando una experiencia visual consistente para los usuarios de todo el mundo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T21:48:51.496Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación de la API de carga de fuentes CSS en MDN",
+      "url": "https://developer.mozilla.org/es/docs/Web/API/CSS_Font_Loading_API"
+    },
+    {
+      "title": "Documentación de getComputedStyle en MDN",
+      "url": "https://developer.mozilla.org/es/docs/Web/API/Window/getComputedStyle"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fuentes de sistema japonesas comparadas en el artículo",
+      "value": "Hiragino Kaku Gothic ProN, Yu Gothic, Noto Sans JP"
+    },
+    {
+      "label": "Método clásico de detección de fuentes",
+      "value": "Medición de ancho de glifos en elemento canvas"
+    },
+    {
+      "label": "API moderna para verificar disponibilidad de fuentes web",
+      "value": "document.fonts.check()"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

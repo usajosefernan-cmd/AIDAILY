@@ -1,0 +1,76 @@
+{
+  "id": "ec7076d91519697489c1480f8d8967e41c58db008209df310ba951c9d1cd0d6c",
+  "title": "Video-MME-Logical: El nuevo test que revela la brecha entre humanos y modelos de IA en razonamiento temporal de videos",
+  "summary": "Se presenta Video-MME-Logical, un benchmark controlado para evaluar la capacidad de razonamiento temporal lógico en modelos de lenguaje grandes multimodales, que aísla esta habilidad de otras capacidades como el reconocimiento de objetos. El benchmark incluye 25 categorías de tareas basadas en cinco operaciones temporales lógicas, y permite ajustar la dificultad de forma controlada. Los experimentos muestran una brecha sustancial entre el rendimiento de los modelos de última generación y el humano, que no se cierra ni con ajuste fino con hasta 500.000 muestras.",
+  "url": "https://huggingface.co/papers/2606.27828",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "publishedAt": "2026-06-30T07:41:11.192Z",
+  "imageUrl": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27828/gradient.png",
+  "imageAlt": "Video-MME-Logical: El nuevo test que revela la brecha entre humanos y modelos de IA en razonamiento temporal de videos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se presenta Video-MME-Logical, un benchmark controlado para evaluar la capacidad de razonamiento temporal lógico en modelos de lenguaje grandes multimodales, que aísla esta habilidad de otras capacidades como el reconocimiento de objetos. El benchmark incluye 25 categorías de tareas basadas en cinco operaciones temporales lógicas, y permite ajustar la dificultad de forma controlada. Los experimentos muestran una brecha sustancial entre el rendimiento de los modelos de última generación y el humano, que no se cierra ni con ajuste fino con hasta 500.000 muestras.",
+  "keyPoints": [
+    "El benchmark aísla el razonamiento temporal lógico de habilidades como el reconocimiento de objetos o la complejidad de escena.",
+    "Incluye 25 categorías de tareas basadas en cinco operaciones temporales lógicas controladas: seguimiento de estado, conteo secuencial, ordenación temporal, espacialidad dinámica y composición estructural.",
+    "Los experimentos con modelos de última generación muestran una brecha sustancial con el rendimiento humano, que crece al aumentar la complejidad del razonamiento.",
+    "El ajuste fino supervisado con hasta 500.000 muestras generadas mejora el rendimiento, pero no consigue cerrar la brecha de razonamiento detectada."
+  ],
+  "whyMatters": "Este benchmark es un paso clave para avanzar en la inteligencia artificial multimodale, ya que permite aislar y medir una capacidad cognitiva compleja que hasta ahora no se podía evaluar de forma controlada. Su existencia obliga a los equipos de desarrollo de modelos a enfrentarse a una limitación real que no se soluciona con más datos o ajuste fino convencional, impulsando la investigación en arquitecturas capaces de razonar sobre el cambio a lo largo del tiempo. A largo plazo, dominar el razonamiento temporal lógico en videos es esencial para aplicaciones como la vigilancia inteligente, la asistencia a personas mayores o la comprensión de contenido audiovisual automática, sectores que mueven miles de millones de euros anuales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27828/gradient.png",
+      "alt": "Portada del artículo de presentación del benchmark Video-MME-Logical para evaluación de razonamiento temporal lógico en modelos de IA multimodales",
+      "caption": "Imagen de portada del artículo original del benchmark, publicado en la plataforma Hugging Face Papers"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#VideoMMELogical",
+    "#IAmultimodal",
+    "#RazonamientoTemporal",
+    "#BenchmarkIA"
+  ],
+  "fullArticle": "La inteligencia artificial multimodale da pasos agigantados en los últimos años, pero aún queda un largo camino por recorrer para que los modelos entiendan y razonen sobre contenido visual dinámico, más allá de identificar objetos o eventos en fotogramas individuales. Para medir este hueco de forma precisa y controlada, un equipo de investigadores ha lanzado Video-MME-Logical, un benchmark diseñado exclusivamente para evaluar el razonamiento temporal lógico en modelos de lenguaje grandes multimodales (MLLMs). A diferencia de pruebas anteriores que mezclaban esta habilidad con la complejidad de la escena, el reconocimiento estático o variaciones temporales no controladas, este nuevo test aísla la capacidad de mantener, actualizar y componer evidencia a medida que los estados visuales evolucionan a lo largo de los fotogramas de un video.\n\n[MULTIMEDIA: https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27828/gradient.png]\n\nLa estructura de Video-MME-Logical se organiza en torno a cinco operaciones temporales lógicas fundamentales: seguimiento de estado, conteo secuencial, ordenación temporal, espacialidad dinámica y composición estructural. A partir de estas operaciones se han generado 25 categorías de tareas de grano fino, en las que se controlan de forma rigurosa los estados de los objetos, las transiciones entre ellos, las dependencias temporales y las composiciones lógicas. El benchmark permite además ajustar la dificultad de forma controlada variando el horizonte temporal y la complejidad del razonamiento, y cuenta con una funcionalidad de diagnóstico intermedio que verifica si el modelo recupera la traza de razonamiento lógico requerida antes de emitir la respuesta final.\n\nLas pruebas realizadas con los modelos de última generación disponibles en el mercado han revelado una brecha sustancial entre el rendimiento humano y el de los sistemas de inteligencia artificial, una diferencia que se amplía de forma considerable a medida que aumenta la complejidad de las operaciones temporales lógicas. Incluso aplicando ajuste fino supervisado con hasta 500.000 muestras generadas de forma sintética, los modelos no logran cerrar esta brecha de razonamiento, lo que evidencia que el problema no se soluciona simplemente con más datos de entrenamiento convencionales.\n\nVideo-MME-Logical se posiciona como un banco de pruebas escalable que servirá tanto para analizar las limitaciones actuales de los MLLMs como para impulsar el desarrollo de nuevas arquitecturas capaces de razonar sobre el cambio a lo largo del tiempo. Su utilidad va más allá de la investigación académica: dominar el razonamiento temporal lógico en videos es un requisito indispensable para aplicaciones como la vigilancia inteligente, la asistencia a personas mayores con sistemas de monitoreo, la edición automática de contenido audiovisual o la comprensión de escenas complejas en tiempo real, sectores que mueven miles de millones de euros anuales a nivel global.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T07:45:54.710Z",
+  "links": [
+    {
+      "title": "Página oficial del proyecto Video-MME-Logical",
+      "url": "https://mrakas.github.io/video-mme-logical"
+    },
+    {
+      "title": "Repositorio oficial del benchmark en GitHub",
+      "url": "https://github.com/Mrakas/video-mme-logical"
+    },
+    {
+      "title": "Artículo original del benchmark en Hugging Face Papers",
+      "url": "https://huggingface.co/papers/2606.27828"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Categorías de tareas del benchmark",
+      "value": "25"
+    },
+    {
+      "label": "Operaciones temporales lógicas base",
+      "value": "5"
+    },
+    {
+      "label": "Máximo de muestras para ajuste fino",
+      "value": "500.000"
+    },
+    {
+      "label": "Funcionalidad de diagnóstico intermedio",
+      "value": "Verificación de trazas de razonamiento lógico antes de la respuesta final"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

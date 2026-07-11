@@ -1,0 +1,69 @@
+{
+  "id": "34f4ae6fd8dea7e66709ec359c810aa404822a29e50b5d23e4b8217a74d639a8",
+  "title": "Meteor 3.5 revoluciona el tiempo real: change streams por defecto y adiós al oplog",
+  "summary": "Meteor 3.5 introduce change streams como mecanismo de reactividad predeterminado, eliminando la dependencia del oplog de MongoDB y permitiendo un funcionamiento eficiente en entornos gestionados y serverless. La actualización incluye mejoras en DDP, auth y rendimiento, con actualización a Node.js 24.",
+  "url": "https://dev.to/meteor/meteor-35-is-out-j13",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-06T19:42:52.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdu34yon35ettoeh4tf8d.png",
+  "imageAlt": "Meteor 3.5 revoluciona el tiempo real: change streams por defecto y adiós al oplog",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Meteor 3.5 introduce change streams como mecanismo de reactividad predeterminado, eliminando la dependencia del oplog de MongoDB y permitiendo un funcionamiento eficiente en entornos gestionados y serverless. La actualización incluye mejoras en DDP, auth y rendimiento, con actualización a Node.js 24.",
+  "keyPoints": [
+    "Change streams por defecto eliminan la necesidad de tailing del oplog, reduciendo el consumo de CPU y costos en servidores.",
+    "La reactividad en tiempo real ahora funciona en MongoDB gestionado y serverless (Atlas Shared, Serverless) sin configuración adicional.",
+    "Se moderniza la capa de transporte DDP con reanudación de sesiones, opción uws y DISABLE_SOCKJS completo.",
+    "Actualización a Node.js 24 y dependencias modernizadas, junto con nuevas herramientas de autenticación y rate limiting."
+  ],
+  "whyMatters": "Este lanzamiento marca un punto de inflexión en la escalabilidad de aplicaciones en tiempo real, al desvincular la reactividad del oplog de MongoDB y abrir la puerta a despliegues económicos en plataformas gestionadas. La reducción del trabajo por instancia permite mayor densidad de usuarios por servidor, lo que se traduce en menores costos operativos y mayor sostenibilidad. Además, la compatibilidad con change streams posiciona a Meteor como un framework moderno, listo para arquitecturas serverless y entornos cloud-native, garantizando su relevancia futura en un ecosistema que exige eficiencia y bajo mantenimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdu34yon35ettoeh4tf8d.png",
+      "alt": "Portada del artículo anunciando Meteor 3.5",
+      "caption": "Imagen de portada del artículo oficial en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MeteorJS",
+    "#MongoDB",
+    "#ChangeStreams",
+    "#NodeJS",
+    "#RealTime"
+  ],
+  "fullArticle": "El framework JavaScript Meteor alcanza su versión 3.5, una actualización amplia que centra su gravedad en la capa de datos reactivos, el componente que opera en producción de forma ininterrumpida. Esta release no solo afecta al controlador de base de datos, sino que se extiende desde el middleware de autenticación hasta el runtime de Node.js. Entre sus novedades, destaca la adopción de change streams como mecanismo de reactividad por defecto, un hito que promete reducir costos y simplificar despliegues en entornos gestionados.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdu34yon35ettoeh4tf8d.png]\n\nDurante años, la reactividad en Meteor dependió del oplog de MongoDB, el registro de replicación que la base de datos escribe de forma continua. Cada servidor de aplicación debía 'rastrear' (tail) este flujo completo, filtrando en el proceso de Node solo los cambios relevantes. Este modelo implicaba dos costos importantes: primero, el oplog contiene todas las escrituras de la base de datos, no solo las de la aplicación, por lo que operaciones externas (ETL, migraciones, servicios terceros) obligaban a procesar y descartar datos innecesarios, elevando el consumo de CPU. Segundo, ataba a los equipos a MongoDB autogestionado, ya que en servicios gestionados como Atlas Shared o Serverless el oplog no está accesible, forzando el uso de polling, una técnica ineficiente y cara.\n\nMeteor 3.5 resuelve estas limitaciones al hacer de los change streams la opción predeterminada. Esta funcionalidad, disponible en MongoDB 6+ en modo réplica set o sharded cluster, traslada la detección de cambios al servidor de base de datos, reduciendo la carga por suscripción y permitiendo despliegues en plataformas gestionadas sin configuración adicional. Si el entorno no soporta change streams, el framework recurre automáticamente a oplog o polling, garantizando compatibilidad sin intervención del desarrollador. Esta transición se acompaña de mejoras en la capa DDP, como la reanudación de sesiones que sobrevive a desconexiones, un transporte enchufable con opción uws, la posibilidad de desactivar SockJS y optimizaciones en EJSON que reducen asignaciones en el camino caliente.\n\nEn el plano de la autenticación y las APIs, llega accounts-express para rutas autenticadas de primera clase, un DDPRateLimiter asíncrono y logins de cliente completamente basados en promesas. Además, la plataforma se actualiza a Node.js 24 y moderniza dependencias clave como la collación de MongoDB, OTPAuth para 2FA y http-proxy-3. Los primeros datos de rendimiento, compartidos por la comunidad en foros públicos, muestran reducciones tangibles en el uso de CPU y menores necesidades de infraestructura, confirmando que la línea de mejora continua iniciada en la serie 3.x madura en esta versión.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T22:03:15.359Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/meteor/meteor-3-5-is-out-1h5c"
+    },
+    {
+      "title": "Changelog de Meteor 3.5 en GitHub",
+      "url": "https://github.com/meteor/meteor/blob/devel/History.md#v350"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Node.js",
+      "value": "24"
+    },
+    {
+      "label": "Versión mínima de MongoDB",
+      "value": "6+"
+    },
+    {
+      "label": "Estrategia de reactividad por defecto",
+      "value": "Change streams"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

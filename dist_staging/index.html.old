@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de Noticias IA - Emilio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f4f6f9; color: #333; margin: 0; padding: 0; }
+    .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+    h1 { color: #1a237e; margin-bottom: 8px; }
+    .subtitle { color: #666; margin-bottom: 32px; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+    .day-card { background: #fff; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 5px solid #1a237e; }
+    .day-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .day-card .date { font-size: 20px; font-weight: bold; color: #1a237e; }
+    .day-card .label { font-size: 13px; color: #888; margin-bottom: 8px; }
+    .day-card a { text-decoration: none; color: #1565c0; font-size: 14px; }
+    .day-card a:hover { text-decoration: underline; }
+    .day-card.empty { border-left-color: #ccc; opacity: 0.7; }
+    .day-card.empty .date { color: #999; }
+    .footer { margin-top: 40px; color: #999; font-size: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calendario de Noticias de IA</h1>
+    <p class="subtitle">Informes diarios generados automáticamente para Emilio</p>
+    <div class="calendar-grid">
+      <!--
+        Las tarjetas se cargan dinámicamente desde el directorio reports/.
+        El cron genera un archivo por día aqui: reports/YYYY-MM-DD.html
+      -->
+      <div class="day-card empty">
+        <div class="date">---</div>
+        <div class="label">Sin informes</div>
+      </div>
+    </div>
+    <div class="footer">Generado en Oracle VPS — hermes agent</div>
+  </div>
+</body>
+</html>

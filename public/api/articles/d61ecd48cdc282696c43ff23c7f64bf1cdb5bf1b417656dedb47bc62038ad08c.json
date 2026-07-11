@@ -1,0 +1,76 @@
+{
+  "id": "d61ecd48cdc282696c43ff23c7f64bf1cdb5bf1b417656dedb47bc62038ad08c",
+  "title": "Creé una Habilidad de Claude que Automatiza Loop Engineering en tu Repositorio",
+  "summary": "El ingeniero Shivansh Pandey ha desarrollado una habilidad para Claude que configura automáticamente un proceso de loop engineering, permitiendo que un agente de IA realice tareas repetitivas sin intervención humana constante.",
+  "url": "https://dev.to/sxivansx/i-wrote-a-claude-skill-that-sets-up-loop-engineering-in-your-repo-2pok",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T08:46:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fru5gaumkt1ei5vrdfakf.png",
+  "imageAlt": "Creé una Habilidad de Claude que Automatiza Loop Engineering en tu Repositorio",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El ingeniero Shivansh Pandey ha desarrollado una habilidad para Claude que configura automáticamente un proceso de loop engineering, permitiendo que un agente de IA realice tareas repetitivas sin intervención humana constante.",
+  "keyPoints": [
+    "'Loop engineering automatiza el prompting de IA, definiendo objetivo y condición de parada una sola vez y ejecutando ciclos de trabajo, verificación y registro'",
+    "'La habilidad se compone de seis módulos: disparador, archivo de estado, descubrimiento, creador, verificador y condición de parada, simplificando la configuración'",
+    "'El proceso evita efectos secundarios como despliegues o push sin confirmación previa, garantizando control sobre cambios automáticos'",
+    "'El autor enfatiza la necesidad de guardrails para prevenir que la autonomía se convierta en un riesgo, asegurando que solo se activen flujos aprobados'"
+  ],
+  "whyMatters": "Esta innovación reduce la carga de trabajo de los ingenieros al delegar la repetición de tareas a un agente de IA, lo que acelera la entrega de software y minimiza errores humanos. Al incorporar guardrails que requieren confirmación antes de ejecutar acciones críticas, se mantiene la responsabilidad humana sobre los cambios que afectan el entorno de producción. En un ecosistema donde la velocidad y la calidad son competitivas, este enfoque ofrece una solución equilibrada entre automatización y control.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fru5gaumkt1ei5vrdfakf.png",
+      "alt": "Imagen de portada del artículo que muestra la interfaz de Claude con la habilidad de Loop Engineering",
+      "caption": "Portada del artículo que ilustra la nueva habilidad de Claude para automatizar flujos de trabajo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeAI",
+    "#LoopEngineering",
+    "#OpenSource",
+    "#GitHub"
+  ],
+  "fullArticle": "El ingeniero Shivansh Pandey ha lanzado una habilidad para Claude que implementa lo que él denomina \"loop engineering\", una metodología que automatiza el prompting de agentes de IA. Al definir una meta y una condición de parada una sola vez, el agente ejecuta tareas, las verifica con un verificador independiente y registra los resultados, repitiendo el ciclo hasta alcanzar el objetivo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fru5gaumkt1ei5vrdfakf.png]\n\nLa habilidad se construye sobre seis componentes: un disparador que inicia el proceso, un archivo de estado que persiste la información, un paso de descubrimiento para identificar el trabajo, un creador que genera el código, un verificador que asegura la calidad y una condición de parada que decide cuándo terminar. Todo esto se empaqueta en un solo comando, eliminando la necesidad de configurar manualmente cada paso.\n\nPara evitar que la autonomía se convierta en un riesgo, la herramienta exige la confirmación explícita del usuario antes de ejecutar cualquier acción con efectos secundarios, como despliegues, push a repositorios o trabajos programados. De esta forma, el ingeniero mantiene la responsabilidad de los cambios finales, mientras que el proceso automatizado se encarga de los bucles de trabajo repetitivos.\n\nSi buscas acelerar la entrega de código sin sacrificar la calidad ni la supervisión, la habilidad de loop engineering de Shivansh Pandey ofrece una solución práctica y segura. Puedes clonarla y apuntarla a cualquier tarea recurrente, manteniendo siempre los guardrails que protegen tu flujo de trabajo.\n\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T09:27:58.890Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Repositorio GitHub de Loop Engineering",
+      "url": "https://github.com/sxivansx/loop-engineering"
+    },
+    {
+      "title": "Documentación oficial de Claude",
+      "url": "https://claude.ai/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Componentes del skill",
+      "value": "6"
+    },
+    {
+      "label": "Repositorio",
+      "value": "github.com/sxivansx/loop-engineering"
+    },
+    {
+      "label": "Autor",
+      "value": "Shivansh Pandey"
+    },
+    {
+      "label": "Confirmación requerida",
+      "value": "Sí"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,67 @@
+{
+  "id": "f6b6b7ba98e2ae6d8689c7f116b13ab932df279dffb7812fb0b7c9a922c211ea",
+  "title": "Tu herramienta web libre: 300+ recursos sin anuncios ni registro",
+  "summary": "Se presenta yourhack.ai, un directorio de más de 300 herramientas web gratuitas que funcionan completamente sin anuncios, sin registro y sin enviar datos a servidores externos.",
+  "url": "https://dev.to/codelong888/i-put-300-free-web-tools-in-one-place-with-no-ads-and-no-signup-1cf6",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-03T01:51:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F56afq54nacj7uigpytm4.png",
+  "imageAlt": "Tu herramienta web libre: 300+ recursos sin anuncios ni registro",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se presenta yourhack.ai, un directorio de más de 300 herramientas web gratuitas que funcionan completamente sin anuncios, sin registro y sin enviar datos a servidores externos.",
+  "keyPoints": [
+    "yourhack.ai alberga 300+ herramientas web gratuitas, cada una con su propia página accesible offline y sin necesidad de registro.",
+    "El sitio se ejecuta como un único Cloudflare Worker, lo que elimina la necesidad de backend, base de datos o pasos de construcción, reduciendo costos a casi cero.",
+    "El modelo de desarrollo permite añadir nuevas herramientas con una simple entrada en un array, facilitando el crecimiento continuo sin complicar el código.",
+    "La plataforma prioriza la privacidad, ya que todas las operaciones se realizan en el navegador del usuario y no se envían datos a terceros."
+  ],
+  "whyMatters": "El lanzamiento de yourhack.ai representa una apuesta audaz por la privacidad y la eficiencia en la era de los servicios en la nube. Al eliminar anuncios y registros, ofrece una experiencia sin distracciones y sin riesgo de seguimiento. Además, su arquitectura ligera abre la puerta a la creación de ecosistemas de herramientas accesibles y sostenibles, lo que puede influir en la forma en que desarrolladores y usuarios perciben la economía digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F56afq54nacj7uigpytm4.png",
+      "alt": "Portada del artículo que muestra la interfaz de yourhack.ai con su diseño minimalista",
+      "caption": "La portada del artículo presenta la interfaz limpia y moderna de yourhack.ai, resaltando su enfoque en la privacidad y la simplicidad."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#WebTools",
+    "#Privacidad",
+    "#Productividad"
+  ],
+  "fullArticle": "El mundo digital se ha visto saturado de herramientas en línea que, a cambio de funcionalidad, exigen datos personales y publicidad constante. Con this, el creador de yourhack.ai ofrece una alternativa radical: un directorio de más de 300 herramientas web gratuitas que operan sin anuncios, sin registro y sin enviar información fuera del navegador del usuario.\n\nEl sitio funciona como un único Cloudflare Worker que carga una pequeña tabla de registro. Cada herramienta se convierte en una página propia, accesible offline una vez cargada, y todo el procesamiento ocurre localmente. Este enfoque elimina la necesidad de servidores, bases de datos y procesos de construcción, reduciendo los costos operativos a prácticamente cero.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F56afq54nacj7uigpytm4.png]\n\nEl modelo de crecimiento es especialmente ingenioso: añadir una herramienta nueva implica simplemente agregar un objeto al array de registro. No se necesita crear nuevas rutas ni plantillas, lo que permite escalar el directorio sin complicar el código base. Esta simplicidad técnica se traduce en una experiencia de usuario limpia y sin interrupciones.\n\nPara los usuarios, la plataforma ofrece un modo claro y oscuro, compatibilidad móvil y la posibilidad de sugerir nuevas herramientas. El creador invita a la comunidad a contribuir con recursos que aún no están presentes, lo que posiciona a yourhack.ai como un proyecto colaborativo y en constante evolución.\n\nEl impacto de esta iniciativa va más allá de la comodidad del usuario. Al demostrar que un ecosistema de herramientas puede funcionar sin publicidad ni recopilación de datos, yourhack.ai plantea un modelo viable de sostenibilidad que podría inspirar a otros desarrolladores a adoptar prácticas similares, favoreciendo la privacidad y la eficiencia en la web.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T02:04:19.570Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/yourhack/yourhack-ai-300-free-web-tools-without-ads-and-signup-2a3b"
+    },
+    {
+      "title": "Documentación de Cloudflare Workers",
+      "url": "https://developers.cloudflare.com/workers/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Herramientas incluidas",
+      "value": "300+"
+    },
+    {
+      "label": "Costo de operación",
+      "value": "casi cero"
+    },
+    {
+      "label": "Crecimiento diario",
+      "value": "se añade cada día"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,83 @@
+{
+  "id": "8d4f65f6c25a89436701df7216f446c0ea6d8866ecc33353cc03f08cbd1c7acf",
+  "title": "Un kit de phishing se convierte en servicio completo de BEC",
+  "summary": "Investigadores de Cisco Talos han descubierto ARToken, una plataforma de phishing que va más allá de los kits tradicionales, ofreciendo un entorno de negocio de correo electrónico comprometido como servicio. Este nuevo actor combina evasión sofisticada, manipulación de reglas de bandeja y enlaces compartidos, y se apoya en la inteligencia artificial para escalar ataques. La herramienta se dirige a cuentas de pago de empresas, explotando relaciones comerciales reales y apuntando a sectores como el público y la vida científica.",
+  "url": "https://cyberscoop.com/artoken-bec-platform-cisco-talos/",
+  "source": "CyberScoop",
+  "sourceUrl": "https://cyberscoop.com/feed/",
+  "publishedAt": "2026-07-01T10:00:00.000Z",
+  "imageUrl": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/06/GettyImages-1470607326.jpg",
+  "imageAlt": "Un kit de phishing se convierte en servicio completo de BEC",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores de Cisco Talos han descubierto ARToken, una plataforma de phishing que va más allá de los kits tradicionales, ofreciendo un entorno de negocio de correo electrónico comprometido como servicio. Este nuevo actor combina evasión sofisticada, manipulación de reglas de bandeja y enlaces compartidos, y se apoya en la inteligencia artificial para escalar ataques. La herramienta se dirige a cuentas de pago de empresas, explotando relaciones comerciales reales y apuntando a sectores como el público y la vida científica.",
+  "keyPoints": [
+    "ARToken, la nueva plataforma BEC-as-a-service, incorpora un sistema anti-análisis de siete capas y manipula reglas de bandeja de entrada",
+    "EvilTokens, afiliado de ARToken, registró un aumento del 1,380 % en ataques phishing este año gracias a la IA",
+    "Los mensajes de phishing se dirigen a contactos de cuentas por pagar, usando relaciones comerciales reales para aumentar la credibilidad"
+  ],
+  "whyMatters": "La aparición de ARToken marca un hito en la evolución de las campañas de phishing, pues ofrece a los ciberdelincuentes una infraestructura casi completa de BEC, reduciendo la barrera de entrada y potenciando la sofisticación de los ataques. Su capacidad para evadir análisis y manipular reglas de correo electrónico plantea un riesgo serio para las empresas que dependen de Microsoft 365 y otros servicios en la nube, incrementando la probabilidad de compromisos de cuentas críticas. Los atacantes ahora pueden lanzar campañas más dirigidas y difíciles de detectar, lo que exige una revisión urgente de las defensas de ciberseguridad corporativa y una mayor concienciación sobre los riesgos de BEC.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/06/GettyImages-1470607326.jpg",
+      "alt": "Kit de phishing que se asemeja a servicio BEC",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/06/GettyImages-1470607326.jpg?w=1013",
+      "alt": "Foto de Sadi Maria, iStock/Getty Images Plus",
+      "caption": "Fotografía de Sadi Maria, iStock/Getty Images Plus"
+    },
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2025/05/GettyImages-2163344994.jpg?w=539",
+      "alt": "Imagen de Getty Images sobre ciberseguridad",
+      "caption": "(Getty Images)"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Phishing",
+    "#BEC",
+    "#Ciberseguridad",
+    "#EvilTokens"
+  ],
+  "fullArticle": "Cisco Talos reveló el miércoles ARToken, una plataforma de phishing que se asemeja a un servicio completo de Business Email Compromise (BEC). A diferencia de los kits tradicionales, ARToken ofrece una interfaz de operador que comparte infraestructura con EvilTokens, una operación de phishing-as-a-service diseñada para eludir la autenticación multifactor y comprometer cuentas de Microsoft 365. La herramienta destaca por su sistema anti-análisis de siete capas, su capacidad para manipular reglas de bandeja de entrada y generar enlaces de acceso compartidos, lo que la convierte en un entorno de BEC verdaderamente maduro.\n[MULTIMEDIA: https://cyberscoop.com/wp-content/uploads/sites/3/2026/06/GettyImages-1470607326.jpg]\nLos investigadores describen los mensajes de phishing de ARToken como altamente dirigidos, explotando relaciones comerciales reales. Un ejemplo citado muestra un correo que se hace pasar por un contacto de cuentas por pagar de un contratista de Wisconsin, dirigido a un empleado de una compañía de ciencias de la vida en EE. UU. El mensaje solicita la confirmación de facturas pendientes, una táctica que aprovecha la familiaridad de los receptores con procesos de pago. Este nivel de personalización aumenta la probabilidad de éxito y dificulta la detección.\nEl crecimiento exponencial de EvilTokens, con un aumento del 1,380 % en ataques este año, sugiere que ARToken podría ser la próxima ola de herramientas de phishing que los ciberdelincuentes usarán. Aunque Cisco Talos aún no ha identificado a los operadores detrás de la plataforma, se sabe que el sector público ya ha sido objetivo, lo que indica que la amenaza se extiende a organizaciones críticas.\nEn un contexto donde la ciberseguridad se enfrenta a amenazas cada vez más sofisticadas, la aparición de ARToken subraya la necesidad de fortalecer las defensas contra BEC, mejorar la detección de anomalías en el correo electrónico y educar a los empleados sobre los riesgos de los mensajes aparentemente legítimos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T10:20:47.271Z",
+  "links": [
+    {
+      "title": "CyberScoop – El kit de phishing que se parece más a BEC-as-a-service",
+      "url": "https://cyberscoop.com/this-phishing-kit-looks-more-like-bec-as-a-service/"
+    },
+    {
+      "title": "Cisco Talos – Blog de investigación de seguridad",
+      "url": "https://blog.talosintelligence.com/"
+    },
+    {
+      "title": "Wikipedia – Business Email Compromise",
+      "url": "https://es.wikipedia.org/wiki/Business_Email_Compromise"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Aumento de ataques phishing de EvilTokens",
+      "value": "1 380 % en el primer semestre de 2024"
+    },
+    {
+      "label": "Capas de anti-análisis de ARToken",
+      "value": "7"
+    },
+    {
+      "label": "Tipo de objetivo de phishing",
+      "value": "Cuentas por pagar de empresas de ciencias de la vida"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

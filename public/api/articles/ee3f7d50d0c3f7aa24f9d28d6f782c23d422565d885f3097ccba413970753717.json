@@ -1,0 +1,73 @@
+{
+  "id": "ee3f7d50d0c3f7aa24f9d28d6f782c23d422565d885f3097ccba413970753717",
+  "title": "Tres preguntas que hago a cada sistema: la mayoría de revisiones de diseño las omiten",
+  "summary": "El artículo destaca la importancia de identificar y documentar las tres preguntas críticas que revelan la madurez, resiliencia y comprensibilidad de un sistema. Estas preguntas, que van más allá de la tecnología, ayudan a evitar sorpresas en el mantenimiento y a facilitar la incorporación de nuevos equipos.",
+  "url": "https://dev.to/saeedhbi/three-questions-i-ask-every-system-most-design-reviews-skip-all-three-4ok",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T09:43:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F36nyr0cckyu9kfmh5lvg.png",
+  "imageAlt": "Tres preguntas que hago a cada sistema: la mayoría de revisiones de diseño las omiten",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo destaca la importancia de identificar y documentar las tres preguntas críticas que revelan la madurez, resiliencia y comprensibilidad de un sistema. Estas preguntas, que van más allá de la tecnología, ayudan a evitar sorpresas en el mantenimiento y a facilitar la incorporación de nuevos equipos.",
+  "keyPoints": [
+    "Las decisiones de diseño siempre cierran opciones; nombrar las restricciones evita sorpresas al escalar o cambiar el sistema.",
+    "Un documento de arquitectura que incluye las tres preguntas facilita la detección de fallos y la trazabilidad de cambios en producción.",
+    "Los equipos que documentan los compromisos de diseño reducen el riesgo de dependencias ocultas y aceleran la incorporación de nuevos ingenieros.",
+    "La historia de un sistema se vuelve accesible cuando los eventos y decisiones se registran como artefactos primarios, no solo logs."
+  ],
+  "whyMatters": "En un entorno donde los sistemas deben evolucionar rápidamente, la falta de claridad sobre las decisiones críticas puede traducirse en costosas reescrituras y en una pérdida de conocimiento cuando los ingenieros originales dejan la organización. Documentar las tres preguntas clave convierte la arquitectura en un activo tangible, reduciendo el tiempo de onboarding y mejorando la resiliencia frente a incidentes inesperados. Para los responsables de producto y operaciones, esto significa menores riesgos de interrupciones y mayor confianza en la escalabilidad del sistema.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F36nyr0cckyu9kfmh5lvg.png",
+      "alt": "Portada del artículo que ilustra la importancia de las tres preguntas clave en la arquitectura de sistemas",
+      "caption": "Imagen de portada que muestra la relevancia de las preguntas críticas en el diseño de sistemas"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Diagrama que representa cómo las decisiones de diseño afectan la evolución de un sistema",
+      "caption": "Ilustración que muestra la relación entre decisiones de arquitectura y la madurez del sistema"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Arquitectura",
+    "#Decisiones",
+    "#Sistemas"
+  ],
+  "fullArticle": "En el corazón de cualquier proyecto de software de gran escala suele encontrarse un documento de arquitectura que, en teoría, debería contener todo lo que un ingeniero necesita saber para construir y mantener el sistema. El caso que se presenta aquí es un documento de catorce páginas, fruto de seis meses de trabajo, que el equipo celebra como una obra maestra de diseño. Sin embargo, el autor revela que la verdadera riqueza del documento no reside en su extensión, sino en tres preguntas que, si se responden, revelan la madurez, la resiliencia y la comprensibilidad del sistema.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F36nyr0cckyu9kfmh5lvg.png]\n\nEstas preguntas van más allá de los detalles de implementación o las elecciones tecnológicas: se centran en cómo el sistema envejece, cómo falla y cómo puede ser entendido por alguien que no lo construyó. El autor argumenta que la ausencia de respuestas a estas preguntas es la causa subyacente de la brecha entre un sistema bueno y uno excelente. Cuando las decisiones de diseño se toman sin nombrar explícitamente las restricciones que impone, los equipos posteriores terminan enfrentándose a opciones cerradas sin saberlo, lo que conduce a sorpresas costosas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl autor enfatiza que la documentación que realmente perdura es aquella que describe las decisiones críticas, incluso cuando resultan incómodas. Un ejemplo citado es la imposibilidad de transacciones distribuidas; reconocer y documentar esta limitación permite a los equipos futuros planificar con antelación y evitar intentar soluciones imposibles. Además, la capacidad de reconstruir la secuencia de cambios significativos mediante eventos primarios –en lugar de confiar únicamente en logs de servicio– convierte al sistema en un artefacto que coopera con la investigación, no que la resista.\n\nEn la práctica, los equipos que adoptan esta filosofía de “arquitectura de decisiones” pueden leer la historia del sistema como un proceso de excavación arqueológica, identificando compromisos de diseño, optimizaciones pasadas y dependencias ocultas. Esta perspectiva no solo facilita la incorporación de nuevos ingenieros, sino que también reduce el riesgo de que la falta de conocimiento se convierta en un cuello de botella cuando el sistema evoluciona o cuando se enfrenta a incidentes críticos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T10:11:45.216Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Martin Fowler: Arquitectura de software",
+      "url": "https://martinfowler.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de desarrollo del documento",
+      "value": "6 meses"
+    },
+    {
+      "label": "Número de páginas del documento",
+      "value": "14 páginas"
+    },
+    {
+      "label": "Número de preguntas clave",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

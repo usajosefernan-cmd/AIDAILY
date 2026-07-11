@@ -1,0 +1,77 @@
+{
+  "id": "7d2f7d2f96b1deb044dae4db0f46cd0ca88e8c601a307740983c4b8a472553f6",
+  "title": "El 90 % del éxito de la IA en producción está en el 'harness', no en el modelo",
+  "summary": "En la producción de inteligencia artificial, la infraestructura que rodea el modelo—observabilidad, evaluaciones continuas, rollback y detección de fallos silenciosos—es la pieza clave, según expertos. La falta de esta capa explica por qué la mayoría de los pilotos fracasan al mes nueve.",
+  "url": "https://dev.to/blake_aber_f8c344d227aa82/harness-engineering-1nmg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T15:34:19.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwsvvml4aaaqhi32162ty.png",
+  "imageAlt": "El 90 % del éxito de la IA en producción está en el 'harness', no en el modelo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En la producción de inteligencia artificial, la infraestructura que rodea el modelo—observabilidad, evaluaciones continuas, rollback y detección de fallos silenciosos—es la pieza clave, según expertos. La falta de esta capa explica por qué la mayoría de los pilotos fracasan al mes nueve.",
+  "keyPoints": [
+    "El 90 % del rendimiento de un modelo en producción depende de la infraestructura que lo rodea, no del propio algoritmo.",
+    "La observabilidad continua detecta desviaciones de entrada y salida, evitando que un modelo que pasaba la validación se vuelva inestable.",
+    "Los evals de producción deben ser económicos, estructurados y con responsabilidad asignada, no solo una función del equipo de plataforma.",
+    "El rollback rápido, con autoridad humana y mecanismo técnico, es esencial para evitar pérdidas prolongadas.",
+    "La detección de fallos silenciosos, que se manifiestan como salidas plausibles pero erróneas, es el mayor riesgo no detectado."
+  ],
+  "whyMatters": "El entendimiento de que el éxito de la IA en producción depende de la ingeniería del harness tiene profundas implicaciones estratégicas. Las empresas que invierten en observabilidad, evals continuos y mecanismos de rollback ganarán una ventaja competitiva de 24 meses, mientras que aquellas que tratan estos componentes como post‑despliegue corren el riesgo de fracasos silenciosos y pérdidas regulatorias. En un mercado donde la diferenciación pasa de la capacidad del modelo a la robustez de su entorno, la inversión en harness se convierte en un imperativo de supervivencia corporativa.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwsvvml4aaaqhi32162ty.png",
+      "alt": "Imagen de portada que muestra la arquitectura de un harness de IA",
+      "caption": "Imagen de portada que muestra la arquitectura de un harness de IA"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ejemplo de panel de métricas de observabilidad en producción",
+      "caption": "Ejemplo de panel de métricas de observabilidad en producción"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Alianzas estratégicas de Google AI con proveedores de datos",
+      "caption": "Alianzas estratégicas de Google AI con proveedores de datos"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GoogleAI",
+    "#Neon",
+    "#Algolia",
+    "#AIharness"
+  ],
+  "fullArticle": "La producción de inteligencia artificial no es solo cuestión de entrenar un modelo avanzado; es un ejercicio de ingeniería que requiere una infraestructura robusta que rodee al modelo. Según expertos, el 90 % del éxito de un piloto en producción se debe a esta capa de harness, mientras que solo el 10 % proviene de la capacidad del modelo mismo. Esta disparidad explica por qué muchos pilotos, que pasan la validación inicial, mueren silenciosamente al mes nueve.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwsvvml4aaaqhi32162ty.png]\n\nEl primer eslabón del harness es la observabilidad, que va más allá de un simple dashboard. Se trata de una infraestructura que ejecuta el modelo contra escenarios nombrados, rastrea el drift de salida a lo largo del tiempo y alerta cuando la distribución de entrada ha cambiado lo suficiente como para que el conjunto de validación ya no cubra la realidad de producción. Sin esta capa, el modelo es una instantánea, no un sistema.\n\nLa evaluación continua, o evals, es otro componente crítico. No se trata del conjunto de pruebas usado en entrenamiento; se trata de evaluaciones que se ejecutan en producción, contra cargas reales, con una cadencia que detecta regresiones antes de que se acumulen. Estas evaluaciones deben ser económicas, estructuradas y, lo más importante, propiedad de una persona concreta, no de un equipo de plataforma.\n\nEl rollback, que a menudo se confunde con el manifiesto de versiones del modelo, es el mecanismo que permite retirar un modelo de producción en minutos cuando algo sale mal. Incluye la autoridad humana, el mecanismo técnico, la ruta de fallback y la auditoría posterior. La mayoría de los programas tratan el rollback como algo que se resolverá si surge la necesidad, pero los que realmente entregan a escala lo diseñan desde el principio.\n\nEl riesgo más sutil es la detección de fallos silenciosos. Cuando un modelo produce salidas plausibles pero erróneas, el usuario no lo percibe hasta que se realiza una auditoría. Detectar este tipo de fallas requiere instrumentar la frontera entre el modelo y el consumidor final, registrando lo que el modelo dijo, lo que el usuario hizo con esa información y si el resultado coincidió con la confianza del modelo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLos pilotos que fallan al mes nueve no lo hacen porque el modelo empeora; lo hacen porque el harness nunca se construyó y el entorno del modelo cambió. Este modo de falla no aparece en demos de proveedores, que se ejecutan sobre el conjunto estático con el que se afinó el modelo, ni en los informes de pilotos, que terminan antes del mes nueve. Solo aparece en la reunión del comité directivo al mes diez, cuando alguien pregunta por qué las métricas se han mantenido planas y se descubre que el modelo ha estado fallando silenciosamente durante un trimestre.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nEl gap de ingeniería del harness representa una ventaja estructural en la producción de IA durante los próximos 24 meses. Para los fondos de capital privado, esto significa demostrar IA internamente antes de escalarla a las carteras. Las empresas que tratan estos componentes como post‑despliegue enfrentarán reconstrucciones reactivas, mientras que las que los integran desde el principio operarán a un ritmo diferente para 2027. En definitiva, la diferencia entre un piloto que entrega y uno que muere silenciosamente radica en la inversión en observabilidad, evals, rollback y detección de fallos silenciosos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T19:49:58.142Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de éxito en producción",
+      "value": "90%"
+    },
+    {
+      "label": "Mes de caída promedio",
+      "value": "9 meses"
+    },
+    {
+      "label": "Ventaja competitiva a 24 meses",
+      "value": "24 meses"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

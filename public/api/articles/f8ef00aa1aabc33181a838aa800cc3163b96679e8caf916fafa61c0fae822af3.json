@@ -1,0 +1,83 @@
+{
+  "id": "f8ef00aa1aabc33181a838aa800cc3163b96679e8caf916fafa61c0fae822af3",
+  "title": "Netflix reduce la latencia de lectura en Cassandra de segundos a milisegundos con división dinámica de particiones",
+  "summary": "Netflix ha implementado un mecanismo automático de división de particiones para Apache Cassandra que reduce drásticamente la latencia en lecturas de series temporales, mejorando el rendimiento y la disponibilidad sin cambios en las aplicaciones.",
+  "url": "https://www.infoq.com/news/2026/07/netflix-cassandra-partition/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-06T14:24:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/netflix-cassandra-partition/en/resources/1netflixparition-1782197618285.jpeg",
+  "imageAlt": "Netflix reduce la latencia de lectura en Cassandra de segundos a milisegundos con división dinámica de particiones",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Netflix ha implementado un mecanismo automático de división de particiones para Apache Cassandra que reduce drásticamente la latencia en lecturas de series temporales, mejorando el rendimiento y la disponibilidad sin cambios en las aplicaciones.",
+  "keyPoints": [
+    "El sistema divide automáticamente particiones grandes de series temporales en Cassandra, reduciendo la latencia de segundos a decenas de milisegundos.",
+    "Se eliminaron los tiempos de inactividad y la necesidad de reparticionamiento masivo o modificaciones en el código de las aplicaciones.",
+    "La implementación incluye validación comparativa y rollout gradual para garantizar consistencia y seguridad operativa.",
+    "Además de la latencia, se redujeron los timeouts, el uso de CPU y la cola de hilos en los clusters de producción."
+  ],
+  "whyMatters": "Esta innovación resuelve un problema crítico en escalabilidad de bases de datos NoSQL para series temporales, permitiendo a Netflix manejar cargas de trabajo masivas sin interrupciones ni costosos rediseños. La capacidad de evolucionar el almacenamiento de forma transparente sienta un precedente para otras empresas que enfrentan crecimiento descontrolado de particiones, mejorando la fiabilidad y eficiencia operativa en entornos de producción a gran escala.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/netflix-cassandra-partition/en/resources/1netflixparition-1782197618285.jpeg",
+      "alt": "Diagrama de la arquitectura de división dinámica de particiones en Cassandra",
+      "caption": "Fuente: Netflix Blog Post"
+    },
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/netflix-cassandra-partition/en/resources/1Screenshot 2026-06-22 at 11.35.44 PM-1782197618285.png",
+      "alt": "Captura de pantalla del proceso de rollout gradual de la funcionalidad",
+      "caption": "Fuente: Netflix Blog Post"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Netflix",
+    "#Cassandra",
+    "#ApacheCassandra",
+    "#BasesDeDatos",
+    "#Performance"
+  ],
+  "fullArticle": "Netflix ha logrado un hito en la optimización de bases de datos NoSQL al reducir drásticamente la latencia de lectura en Apache Cassandra para sus servicios de series temporales. El problema de las particiones excesivamente grandes, que pueden crecer hasta superar los 500 MB, ha sido un quebradero de cabeza para los ingenieros, generando latencias de segundos, sobrecarga de compactación, presión de memoria y distribución desigual de carga. La solución ideada por el equipo de Netflix consiste en un framework automatizado de evolución de particiones que detecta cuando una partición excede umbrales predefinidos y la divide asincrónicamente en particiones hijas más pequeñas, sin necesidad de intervención manual, rediseños de esquema o reparticionamiento masivo.\n\nLa arquitectura introduce una capa de metadatos que mantiene un registro de las relaciones entre particiones padre e hijas. Durante una consulta, el servicio de metadatos identifica qué particiones hijas contienen los datos solicitados y enruta las lecturas en paralelo, fusionando los resultados antes de devolverlos al cliente. Este proceso es completamente transparente para las aplicaciones, que siguen consultando la misma partición lógica. Para garantizar la seguridad operativa, la implementación inicial se limitó a particiones inmutables, conservando la partición original como respaldo durante la migración.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/netflix-cassandra-partition/en/resources/1netflixparition-1782197618285.jpeg]\n\nEl despliegue se realizó mediante un rollout gradual, validando en cada fase la consistencia entre los resultados de la ruta de lectura antigua y la nueva. Para ello, se utilizaron pipelines de verificación existentes que comparaban los datos devueltos por la partición original con los de la nueva ruta. Este enfoque minimizó riesgos y permitió detectar discrepancias antes de aumentar el tráfico. Tras la implementación, Netflix reportó una mejora sustancial: la latencia media pasó de segundos a decenas de milisegundos (entre 10 y 19 ms), mientras que la latencia tail se redujo de varios segundos a aproximadamente 200 ms o menos. Además, se observaron disminuciones en los timeouts de lectura, el uso de CPU y la cola de hilos en los clusters afectados.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/3000x4000/filters:quality(85)/filters:no_upscale()/news/2026/07/netflix-cassandra-partition/en/resources/1Screenshot 2026-06-22 at 11.35.44 PM-1782197618285.png]\n\nEl éxito de esta iniciativa abre la puerta a futuras mejoras, como el soporte para particiones anchas mutables y mecanismos para reprocesar divisiones fallidas. La metodología de validación incremental y la reducción de la superficie de cambio demuestran un enfoque maduro para introducir modificaciones arquitectónicas complejas en sistemas de producción a escala, ofreciendo un modelo a seguir para otras organizaciones que enfrentan desafíos similares de escalabilidad en bases de datos distribuidas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T01:29:12.834Z",
+  "links": [
+    {
+      "title": "Artículo original en InfoQ",
+      "url": "https://www.infoq.com/news/2026/07/netflix-cassandra-partition/"
+    },
+    {
+      "title": "Documentación oficial de Apache Cassandra",
+      "url": "https://cassandra.apache.org/"
+    },
+    {
+      "title": "Blog de ingeniería de Netflix",
+      "url": "https://netflixtechblog.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Latencia media de lectura",
+      "value": "de segundos a 10-19 ms"
+    },
+    {
+      "label": "Latencia tail (p99)",
+      "value": "de varios segundos a ≤200 ms"
+    },
+    {
+      "label": "Umbral de partición grande",
+      "value": ">500 MB"
+    },
+    {
+      "label": "Mejora operativa",
+      "value": "Sin downtime ni cambios en aplicaciones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

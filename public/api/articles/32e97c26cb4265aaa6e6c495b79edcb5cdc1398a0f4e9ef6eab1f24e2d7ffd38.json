@@ -1,0 +1,73 @@
+{
+  "id": "32e97c26cb4265aaa6e6c495b79edcb5cdc1398a0f4e9ef6eab1f24e2d7ffd38",
+  "title": "APT vinculado a China amplía su arsenal con nuevas puertas traseras 'Leash' para routers SOHO",
+  "summary": "Cisco alerta que el grupo APT responsable de la campaña LapDogs ha actualizado su kit de malware para routers SOHO con tres nuevas backdoors: LongLeash, DogLeash y JarLeash, que aumentan su capacidad de intrusión y persistencia en redes pequeñas y domésticas.",
+  "url": "https://www.securityweek.com/china-linked-apt-expands-arsenal-with-new-leash-backdoors",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-08T15:42:11.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "APT vinculado a China amplía su arsenal con nuevas puertas traseras 'Leash' para routers SOHO",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Cisco alerta que el grupo APT responsable de la campaña LapDogs ha actualizado su kit de malware para routers SOHO con tres nuevas backdoors: LongLeash, DogLeash y JarLeash, que aumentan su capacidad de intrusión y persistencia en redes pequeñas y domésticas.",
+  "keyPoints": [
+    "El grupo APT vinculado a China, responsable de la campaña LapDogs, ha incorporado tres nuevas variantes de puertas traseras a su arsenal de malware para routers SOHO.",
+    "Las nuevas backdoors, bautizadas LongLeash, DogLeash y JarLeash, permiten a los atacantes mantener acceso persistente a redes pequeñas y domésticas sin ser detectados.",
+    "Cisco, que detectó esta actualización del toolkit de malware, advierte que estas herramientas amplían las capacidades de robo de datos y control remoto de dispositivos de red.",
+    "Los routers SOHO, habitualmente utilizados por pequeñas empresas y hogares, son objetivos prioritarios por su baja tasa de actualización de seguridad y su exposición directa a internet."
+  ],
+  "whyMatters": "Esta noticia es crítica porque los routers SOHO son puntos de entrada habituales para ataques a redes empresariales y domésticas, y la incorporación de estas nuevas backdoors eleva significativamente el riesgo de intrusiones masivas. Las capacidades ampliadas de persistencia y sigilo de LongLeash, DogLeash y JarLeash permiten a los grupos APT robar datos sensibles durante meses o incluso años sin ser detectados, lo que representa una amenaza directa para la seguridad de información confidencial de empresas y particulares. Además, la vinculación a actores estatales chinos añade una capa de riesgo geopolítico, ya que estos ataques suelen estar orientados al robo de propiedad intelectual y datos estratégicos de países occidentales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+      "alt": "APT vinculado a China amplía su arsenal con nuevas puertas traseras 'Leash' para routers SOHO",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#China",
+    "#Ciberseguridad",
+    "#MalwareRouters",
+    "#BackdoorsLeash",
+    "#CiscoAlert"
+  ],
+  "fullArticle": "El equipo de investigación de seguridad de Cisco ha detectado una actualización significativa en el arsenal de malware del grupo de amenazas persistentes avanzadas (APT) vinculado a China y responsable de la campaña de ataques bautizada como LapDogs. Según el informe publicado por la firma de ciberseguridad, los atacantes han incorporado tres nuevas puertas traseras (backdoors) a su toolkit dirigido a routers de oficina pequeña y hogar (SOHO): LongLeash, DogLeash y JarLeash, que amplían sus capacidades de intrusión, persistencia y robo de datos en redes de baja seguridad.\n\nEstas nuevas variantes de malware están diseñadas para evadir los sistemas de detección convencionales y mantener un acceso encubierto a los dispositivos infectados durante periodos prolongados, permitiendo a los atacantes interceptar tráfico de red, robar credenciales y moverse lateralmente hacia redes internas una vez que acceden al router. Los routers SOHO son objetivos especialmente valorados por los grupos APT debido a su escasa tasa de actualización de firmware, su configuración de seguridad predeterminada débil y su exposición directa a internet, lo que los convierte en puntos de entrada ideales para ataques a redes empresariales y domésticas.\n\nCisco advierte que esta expansión del arsenal del grupo LapDogs representa una amenaza creciente para la seguridad global, ya que los actores estatales chinos suelen utilizar este tipo de herramientas para robar propiedad intelectual, datos estratégicos y información sensible de organizaciones y gobiernos de todo el mundo. Las organizaciones se recomienda actualizar el firmware de sus routers, cambiar las contraseñas predeterminadas y monitorizar el tráfico de red en busca de patrones sospechosos asociados a estas nuevas backdoors.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T19:55:28.244Z",
+  "links": [
+    {
+      "title": "Noticia original en SecurityWeek",
+      "url": "https://www.securityweek.com/china-linked-apt-expands-arsenal-with-new-leash-backdoors/"
+    },
+    {
+      "title": "Centro de advisories de ciberseguridad de Cisco",
+      "url": "https://sec.cloudapps.cisco.com/security/center/publicationListing.x"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de nuevas backdoors detectadas",
+      "value": "3"
+    },
+    {
+      "label": "Tipo de dispositivos objetivo",
+      "value": "Routers SOHO"
+    },
+    {
+      "label": "Autoría de la amenaza",
+      "value": "Grupo APT vinculado a China"
+    },
+    {
+      "label": "Campaña asociada a la amenaza",
+      "value": "LapDogs"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

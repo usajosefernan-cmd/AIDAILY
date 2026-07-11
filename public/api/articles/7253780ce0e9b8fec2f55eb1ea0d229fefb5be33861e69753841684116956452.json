@@ -1,0 +1,81 @@
+{
+  "id": "7253780ce0e9b8fec2f55eb1ea0d229fefb5be33861e69753841684116956452",
+  "title": "IA que aprende sin exponer secretos: un nuevo modelo protege la lengua Ojibwe",
+  "summary": "Un investigador de Minnesota desarrolla un sistema de aprendizaje activo que protege la privacidad de los hablantes Ojibwe, combinando privacidad diferencial, computación multipartita y algoritmos de selección de muestras críticas.",
+  "url": "https://dev.to/rikinptl/privacy-preserving-active-learning-for-heritage-language-revitalization-programs-during-36l3",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T11:01:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F30pn558lzbwj2s6bykun.png",
+  "imageAlt": "IA que aprende sin exponer secretos: un nuevo modelo protege la lengua Ojibwe",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un investigador de Minnesota desarrolla un sistema de aprendizaje activo que protege la privacidad de los hablantes Ojibwe, combinando privacidad diferencial, computación multipartita y algoritmos de selección de muestras críticas.",
+  "keyPoints": [
+    "Con solo 5.000 frases etiquetadas, la IA redujo el presupuesto de consultas en un 40% gracias al pre‑entrenamiento en lenguas algonquinas.",
+    "El modelo recorre 12 rondas de aprendizaje activo, cada una solicitando 50 ejemplos, y alcanza una precisión comparable al aprendizaje no privado con solo un 15% de sobrecarga.",
+    "La ventana de recuperación cultural sigue una ley de potencias: el 10 % de los hablantes restantes aporta el 70 % de las características lingüísticas únicas."
+  ],
+  "whyMatters": "Este avance demuestra que la inteligencia artificial puede colaborar con comunidades indígenas sin comprometer su patrimonio cultural. Al proteger la privacidad de cada frase, se abre un camino ético para la digitalización de lenguas en peligro. El enfoque híbrido, que combina privacidad diferencial y computación multipartita, puede replicarse en otras áreas sensibles, como la salud o la protección de datos personales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F30pn558lzbwj2s6bykun.png",
+      "alt": "Imagen de portada del artículo sobre aprendizaje activo preservando privacidad",
+      "caption": "Portada del artículo que muestra la intersección de IA y revitalización lingüística"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1560472354-b33ff0c44a43%3Fixlib%3Drb-4.0.3%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80",
+      "alt": "Ilustración de revitalización de lenguas patrimoniales",
+      "caption": "Representación visual de la revitalización de lenguas patrimoniales"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PrivacyPreserving",
+    "#HeritageLanguage",
+    "#InteligenciaArtificial",
+    "#Ojibwe"
+  ],
+  "fullArticle": "En un pequeño centro comunitario del norte de Minnesota, un investigador se encontró con la realidad de que los últimos hablantes nativos del idioma Ojibwe están envejeciendo y que cada conversación es un tesoro cultural que no puede ser almacenado en la nube sin su consentimiento. Esta conversación —o su ausencia— dio origen a una pregunta de investigación: ¿cómo diseñar un sistema de IA que aprenda de datos lingüísticos sensibles cuando cada etiqueta es un artefacto cultural y la privacidad es innegociable? \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F30pn558lzbwj2s6bykun.png]\n\nEl investigador combinó la privacidad diferencial de Rényi (RDP) con la computación multipartita (MPC). La RDP ofrece límites de composición más estrictos, esenciales cuando se realizan múltiples consultas sobre un conjunto de datos pequeño, mientras que la MPC permite a los ancianos etiquetar datos sin que ninguna parte vea la anotación completa. Además, desarrolló una estrategia de muestreo ponderado por criticidad que prioriza frases con alta probabilidad de contener rasgos lingüísticos únicos, basándose en la observación de que el último 10 % de los hablantes produce el 70 % de las características restantes. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1560472354-b33ff0c44a43%3Fixlib%3Drb-4.0.3%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D80]\n\nEn un piloto con tres ancianos Ojibwe y un archivista lingüístico, el sistema utilizó un Raspberry Pi 4 con chip TPM para el almacenamiento seguro de claves, evitando cualquier conexión a Internet. El modelo, un transformador compacto de 6 capas y 4 cabezas de atención, se entrenó con 5 000 oraciones transcritas. Tras 12 rondas de aprendizaje activo, cada una con 50 ejemplos, el modelo alcanzó una precisión comparable a la de un sistema no privado, con solo un 15 % de sobrecarga en eficiencia de consulta. Este resultado muestra que la protección de datos y la eficacia técnica pueden coexistir, ofreciendo una solución viable para comunidades que necesitan preservar su idioma sin exponer su cultura a riesgos digitales. ",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:47:12.781Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Wikipedia: Ojibwe",
+      "url": "https://es.wikipedia.org/wiki/Ojibwe"
+    },
+    {
+      "title": "Guía de Privacidad Diferencial",
+      "url": "https://www.privacy-differential.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Frases etiquetadas iniciales",
+      "value": "5 000"
+    },
+    {
+      "label": "Reducción de presupuesto de consultas",
+      "value": "40 %"
+    },
+    {
+      "label": "Ventana de recuperación crítica",
+      "value": "10 % de hablantes generan 70 % de rasgos lingüísticos"
+    },
+    {
+      "label": "Número de rondas de aprendizaje activo",
+      "value": "12"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

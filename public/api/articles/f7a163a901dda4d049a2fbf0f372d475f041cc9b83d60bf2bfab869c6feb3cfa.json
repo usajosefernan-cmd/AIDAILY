@@ -1,0 +1,76 @@
+{
+  "id": "f7a163a901dda4d049a2fbf0f372d475f041cc9b83d60bf2bfab869c6feb3cfa",
+  "title": "Por qué tus imágenes están arruinando tus Core Web Vitals (y cómo lo solucioné en una tarde)",
+  "summary": "Las imágenes representan entre el 60% y el 70% del peso total de las páginas web, afectando directamente la métrica LCP de los Core Web Vitals. La conversión a formatos modernos como WebP y AVIF, junto con herramientas de procesamiento por lotes, permite reducir drásticamente el tamaño de los archivos sin perder calidad visual, mejorando el rendimiento de forma significativa con poco esfuerzo.",
+  "url": "https://dev.to/muhayminbinmehmood/why-your-images-are-killing-your-core-web-vitals-and-how-i-fixed-it-in-one-afternoon-47mm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T10:34:35.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fobvm8xeuguxrokx3xn4q.png",
+  "imageAlt": "Por qué tus imágenes están arruinando tus Core Web Vitals (y cómo lo solucioné en una tarde)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Las imágenes representan entre el 60% y el 70% del peso total de las páginas web, afectando directamente la métrica LCP de los Core Web Vitals. La conversión a formatos modernos como WebP y AVIF, junto con herramientas de procesamiento por lotes, permite reducir drásticamente el tamaño de los archivos sin perder calidad visual, mejorando el rendimiento de forma significativa con poco esfuerzo.",
+  "keyPoints": [
+    "Las imágenes son responsables del 60-70% del peso total de las páginas web, siendo el principal factor que degrada la métrica LCP de los Core Web Vitals de Google.",
+    "El formato WebP, desarrollado por Google, reduce el tamaño de los archivos entre un 60% y un 80% en comparación con JPEG, manteniendo la misma calidad perceptual y soportando transparencia y animaciones.",
+    "El soporte de WebP supera el 97% a nivel global en navegadores en 2026, por lo que los fallbacks a JPEG ya no son necesarios en la mayoría de los casos.",
+    "Herramientas como BatchSet permiten realizar conversiones por lotes, redimensionado y eliminación de fondos con IA de forma gratuita, sin necesidad de conocimientos técnicos avanzados."
+  ],
+  "whyMatters": "La optimización de imágenes es una de las acciones de mayor retorno de inversión en materia de rendimiento web, ya que impacta directamente en la experiencia de usuario, el posicionamiento en motores de búsqueda y la tasa de conversión de sitios de comercio electrónico y blogs. A diferencia de las micro-optimizaciones de JavaScript, que suelen requerir horas de trabajo para ganar milisegundos, la adopción de formatos modernos de compresión permite reducir el tiempo de carga de forma drástica con un esfuerzo mínimo. A medida que los motores de búsqueda priorizan cada vez más los sitios que cumplen con los Core Web Vitals, descuidar este aspecto supone una desventaja competitiva creciente para cualquier proyecto digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fobvm8xeuguxrokx3xn4q.png",
+      "alt": "Imagen de portada del artículo sobre optimización de imágenes y Core Web Vitals",
+      "caption": "Portada del artículo original publicado en Dev.to que explica el impacto de las imágenes en el rendimiento web"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CoreWebVitals",
+    "#WebP",
+    "#OptimizacionWeb",
+    "#BatchSet"
+  ],
+  "fullArticle": "Si ejecutas PageSpeed Insights en casi cualquier tienda en línea, blog o sitio de portafolio, te encontrarás con el mismo culpable en la parte superior del informe: las imágenes. No es tu paquete de JavaScript, ni tus fuentes: las imágenes, que suelen representar entre el 60% y el 70% del peso total de la página. Es un problema fácil de ignorar, porque no se percibe como un fallo de rendimiento 'real': nadie profila una etiqueta <img> de la misma forma que analiza una llamada a API lenta. Pero el Largest Contentful Paint (LCP), una de las tres métricas de Core Web Vitals de Google, es en la mayoría de las páginas literalmente una imagen. Si esa imagen es un JPEG de 2 a 4 MB directamente salido de la cámara de un teléfono, ya has perdido la métrica antes de que se ejecute una sola línea de tu JavaScript cuidadosamente optimizado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fobvm8xeuguxrokx3xn4q.png]\n\nLa reacción instintiva suele ser 'pasar la imagen por TinyPNG', pero esa solución solo ataca una capa superficial del problema: sigues atado al algoritmo de compresión de JPEG, que tiene décadas de antigüedad. WebP, desarrollado por Google, utiliza un esquema de compresión más moderno y produce archivos entre un 60% y un 80% más pequeños que JPEG con la misma calidad visual percibida, sin generar artefactos molestos. Además, soporta transparencia alfa como PNG y animaciones como GIF, por lo que en la mayoría de los casos reemplaza a los tres formatos de forma definitiva. El soporte de navegadores ya no es una limitante: WebP supera el 97% de cobertura global en 2026, incluyendo Safari desde su versión 14, por lo que los fallbacks a JPEG 'por si acaso' ya no aportan un beneficio real. Si buscas reducir el tamaño un 20% o 30% adicional, AVIF, basado en AV1, supera a WebP en compresión, a cambio de una codificación más lenta y un soporte ligeramente menos universal: la regla general es usar WebP como base y AVIF como mejora para usuarios avanzados si tienes tiempo de procesamiento por lotes disponible.\n\nConvertir una imagen de forma individual es un trabajo de 10 segundos: solo tienes que arrastrar el archivo a cualquier convertidor en línea. Pero convertir un catálogo de 300 imágenes de productos, cada una necesitando redimensionado, cambio de formato y una configuración de calidad consistente, es un problema completamente diferente. Hacerlo manualmente en Photoshop te quita una tarde entera, y escribir un script personalizado con sharp o ImageMagick supone un mantenimiento adicional para lo que debería ser una tarea de cinco minutos. Para cerrar esa brecha nació BatchSet, una herramienta de procesamiento de imágenes por lotes basada en navegador que incluye rutas de ingesta adaptadas a flujos de trabajo reales, eliminación de fondos con IA y conversión gratuita e ilimitada entre formatos WebP, AVIF, JPG y PNG sin necesidad de registro. En pruebas con fotografías estándar de productos de comercio electrónico, se lograron reducciones de peso de hasta el 80%, lo que se traduce en una mejora sustancial de la puntuación LCP, no en un error de redondeo. Si no has auditado tu pipeline de imágenes recientemente, se trata de la labor de optimización de rendimiento con mayor retorno de inversión disponible en la actualidad, más impactante que la mayoría de las micro-optimizaciones de JavaScript y con mucho menos esfuerzo del que se suele creer cuando se trabaja por lotes en lugar de archivo por archivo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T10:48:50.991Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Herramienta PageSpeed Insights de Google",
+      "url": "https://developers.google.com/speed/pagespeed/insights/"
+    },
+    {
+      "title": "Documentación oficial de WebP",
+      "url": "https://developers.google.com/speed/webp"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de peso de imágenes en páginas web",
+      "value": "60-70%"
+    },
+    {
+      "label": "Reducción de tamaño de archivos con WebP vs JPEG",
+      "value": "60-80%"
+    },
+    {
+      "label": "Soporte global de navegadores para WebP en 2026",
+      "value": "97%+"
+    },
+    {
+      "label": "Reducción de peso adicional con AVIF vs WebP",
+      "value": "20-30%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

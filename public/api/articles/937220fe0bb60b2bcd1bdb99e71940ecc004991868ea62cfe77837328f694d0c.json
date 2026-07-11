@@ -1,0 +1,77 @@
+{
+  "id": "937220fe0bb60b2bcd1bdb99e71940ecc004991868ea62cfe77837328f694d0c",
+  "title": "Docker Compose for Local Development: Complete Setup (2026)",
+  "summary": "Guía actualizada 2026 para configurar Docker Compose en desarrollo local, optimizando rendimiento en macOS, unificando entornos de trabajo entre desarrolladores e integrando herramientas como Postgres, Redis y MailHog para pruebas sin riesgos.",
+  "url": "https://dev.to/stacknotice/docker-compose-for-local-development-complete-setup-2026-2gid",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T15:21:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2fmpnqczejpctr2c7i3.png",
+  "imageAlt": "Docker Compose for Local Development: Complete Setup (2026)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Guía actualizada 2026 para configurar Docker Compose en desarrollo local, optimizando rendimiento en macOS, unificando entornos de trabajo entre desarrolladores e integrando herramientas como Postgres, Redis y MailHog para pruebas sin riesgos.",
+  "keyPoints": [
+    "La configuración unifica entornos de desarrollo para todo el equipo, eliminando conflictos de dependencias y versiones entre ordenadores de los desarrolladores.",
+    "Se utilizan volúmenes nombrados en lugar de montajes de host para acelerar drásticamente instalaciones de npm y compilaciones de Next.js en macOS.",
+    "MailHog captura todos los correos salientes de prueba (registros, restablecimientos de contraseña) sin necesidad de SMTP real, evitando envíos accidentales a usuarios.",
+    "Habilitar VirtioFS en Docker Desktop para macOS Ventura o superior soluciona errores de conexión anticipada de la app a Postgres durante el inicio de servicios."
+  ],
+  "whyMatters": "Esta configuración elimina una de las principales fuentes de fricción en equipos de desarrollo, especialmente en España y Europa, donde los conflictos de entornos locales generan pérdidas de productividad por errores que solo se reproducen en el ordenador de un desarrollador. Al unificar la infraestructura y optimizar el rendimiento en macOS, reduce drásticamente el tiempo de onboarding de nuevos miembros y evita costes asociados a la resolución de problemas de dependencias. Además, la integración de herramientas de prueba como MailHog mejora la calidad del código al permitir validar flujos de correo sin riesgos de afectar a usuarios reales, una práctica cada vez más exigida en proyectos de desarrollo de software en el mercado europeo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2fmpnqczejpctr2c7i3.png",
+      "alt": "Imagen de portada de la guía de configuración de Docker Compose para desarrollo local 2026",
+      "caption": "Portada del artículo original publicado en Dev.to sobre configuración de Docker Compose para entornos de desarrollo locales"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DockerCompose",
+    "#DesarrolloLocal",
+    "#DevOps",
+    "#NextJS",
+    "#MacOS"
+  ],
+  "fullArticle": "Configurar entornos de desarrollo local homogéneos para todo un equipo de programadores es uno de los retos más comunes en proyectos de software modernos, especialmente cuando se trabajan con stacks que incluyen bases de datos, sistemas de caché y servicios de correo. La guía actualizada para 2026 de configuración de Docker Compose resuelve este problema con una estructura sencilla que permite a cualquier desarrollador levantar un entorno de trabajo completo con solo ejecutar los comandos git clone seguido de make dev, sin necesidad de ajustes manuales en su ordenador.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2fmpnqczejpctr2c7i3.png]\nLa comunicación entre servicios se realiza mediante nombres de servicio estandarizados, como db:5432 para la base de datos Postgres, cache:6379 para Redis o mailhog:1025 para el servicio de correo de pruebas, lo que elimina errores de configuración de conexiones. Una de las optimizaciones más importantes para usuarios de macOS es el uso de volúmenes nombrados en lugar de montajes directos del sistema de archivos del host, ya que los montajes de host generan una ralentización muy notable en operaciones como npm install o compilaciones de Next.js; al usar volúmenes nombrados, estas operaciones se ejecutan dentro de la máquina virtual de Docker sin cruzar la barrera del hipervisor, logrando rendimientos mucho más cercanos a los de una instalación nativa. Para maximizar aún más el rendimiento, se recomienda habilitar la opción VirtioFS en Docker Desktop, disponible para macOS Ventura y versiones superiores, un ajuste que también soluciona errores comunes en los que la aplicación intenta conectarse a Postgres antes de que el servicio haya terminado de inicializarse, causando crashes sin una causa aparente. El uso de MailHog como servicio de correo de prueba permite capturar todos los correos salientes generados por flujos de registro, restablecimiento de contraseña o notificaciones, sin necesidad de configurar un servidor SMTP real y sin riesgo de enviar correos accidentales a usuarios finales, una funcionalidad especialmente útil en etapas de desarrollo y testing. Esta misma configuración se puede ejecutar directamente en entornos de integración continua (CI), lo que acelera los pipelines de pruebas y garantiza que los resultados obtenidos en el servidor de CI sean idénticos a los que se obtienen en los entornos locales de los desarrolladores.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T15:34:29.691Z",
+  "links": [
+    {
+      "title": "Artículo completo original de la guía de Docker Compose para desarrollo local 2026",
+      "url": "https://stacknotice.com/blog/docker-compose-local-dev-2026"
+    },
+    {
+      "title": "Documentación oficial de Docker Compose",
+      "url": "https://docs.docker.com/compose/"
+    },
+    {
+      "title": "Guía de configuración de VirtioFS en Docker Desktop para macOS",
+      "url": "https://docs.docker.com/desktop/settings/mac/#virtiofs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Puerto de Postgres en la configuración",
+      "value": "5432"
+    },
+    {
+      "label": "Puerto de Redis en la configuración",
+      "value": "6379"
+    },
+    {
+      "label": "Puerto de MailHog en la configuración",
+      "value": "1025"
+    },
+    {
+      "label": "Versión mínima de macOS para habilitar VirtioFS",
+      "value": "macOS Ventura o superior"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

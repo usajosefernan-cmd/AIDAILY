@@ -1,0 +1,76 @@
+{
+  "id": "5916e2dbf3471218c7dee3b3c5c4e870b8e3166cf400d4a4f3015d1fae1e4e20",
+  "title": "Epoch Duel: La batalla cyberpunk que te enseña a alinear modelos de IA como un experto",
+  "summary": "Un juego de cartas interactivo inspirado en Gwent explica de forma práctica y visual cómo los ingenieros ajustan y alinean modelos de lenguaje grandes mediante técnicas como pruning, DPO y mitigación del olvido catastrófico.",
+  "url": "https://dev.to/unitbuilds_cc/epoch-duel-cyberpunk-llm-alignment-battle-2g5j",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T18:57:56.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwwbhix2xd4x8lu9pnv36.jpeg",
+  "imageAlt": "Epoch Duel: La batalla cyberpunk que te enseña a alinear modelos de IA como un experto",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un juego de cartas interactivo inspirado en Gwent explica de forma práctica y visual cómo los ingenieros ajustan y alinean modelos de lenguaje grandes mediante técnicas como pruning, DPO y mitigación del olvido catastrófico.",
+  "keyPoints": [
+    "El juego 'Epoch Duel' utiliza mecánicas de cartas cyberpunk para representar el proceso de alineación de LLM, incluyendo pruning, DPO y mitigación del olvido catastrófico.",
+    "El pruning elimina pesos innecesarios, comprimiendo los modelos entre un 30% y 50% con mínima pérdida de precisión, reduciendo costos de despliegue.",
+    "DPO optimiza directamente desde pares de preferencias, evitando el modelo de recompensa y siendo más estable que PPO, usado en Llama 3 y Mistral.",
+    "El olvido catastrófico se mitiga mezclando datos de preentrenamiento general durante el fine-tuning para preservar conocimientos previos."
+  ],
+  "whyMatters": "Esta iniciativa democratiza conceptos avanzados de ingeniería de IA, permitiendo que desarrolladores y entusiastas comprendan de forma práctica cómo se optimizan los modelos en producción. Al visualizar procesos abstractos como el pruning o DPO en un juego interactivo, se reduce la barrera de entrada y se fomenta la innovación en técnicas de alineación. Además, resalta la importancia de la eficiencia computacional y la estabilidad en el desarrollo de IA, factores críticos para su adopción empresarial y ética.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwwbhix2xd4x8lu9pnv36.jpeg",
+      "alt": "Portada del artículo 'Epoch Duel: Cyberpunk LLM Alignment Battle' mostrando el juego de cartas inspirado en Gwent",
+      "caption": "Imagen de portada del artículo que presenta el juego de cartas cyberpunk para enseñar alineación de modelos de lenguaje."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#EpochDuel",
+    "#AlineacionIA",
+    "#DPO",
+    "#Llama3"
+  ],
+  "fullArticle": "La alineación de modelos de lenguaje grandes (LLM) es un proceso complejo que combina técnicas como el ajuste supervisado (SFT), la optimización por preferencias directas (DPO) y la poda de pesos (pruning). Para hacer estos conceptos más accesibles, un ingeniero ha creado 'Epoch Duel', un juego de cartas cyberpunk inspirado en Gwent que simula el ciclo de entrenamiento y alineación de un modelo de IA. Los jugadores asumen el rol de ingenieros de alineación y compiten contra una IA adversaria utilizando cartas que representan operaciones reales de optimización.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwwbhix2xd4x8lu9pnv36.jpeg]\n\nLas mecánicas del juego reflejan fielmente los pipelines de producción: la poda elimina pesos cercanos a cero, comprimiendo el modelo entre un 30% y 50% sin pérdida significativa de precisión, mientras que DPO optimiza la política directamente desde pares de preferencias, evitando el modelo de recompensa y ofreciendo mayor estabilidad que PPO. Por otro lado, el olvido catastrófico se mitiga mezclando datos generales durante el fine-tuning, preservando habilidades como la codificación al especializar el modelo en medicina. Desarrollado en HTML, CSS y JavaScript vanilla, el juego funciona embebido en Dev.to y enfrenta desafíos de diseño para adaptarse a espacios reducidos sin perder la esencia del tablero de Gwent.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T19:05:15.013Z",
+  "links": [
+    {
+      "title": "Documentación oficial de DPO en Hugging Face",
+      "url": "https://huggingface.co/docs/trl/main/en/dpo_trainer"
+    },
+    {
+      "title": "Blog oficial de Llama 3",
+      "url": "https://ai.meta.com/blog/llama-3/"
+    },
+    {
+      "title": "Guía de Pruning en TensorFlow",
+      "url": "https://www.tensorflow.org/model_optimization/guide/pruning"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Compresión de modelos con pruning",
+      "value": "30-50%"
+    },
+    {
+      "label": "Rondas de entrenamiento en el juego",
+      "value": "3 Epochs"
+    },
+    {
+      "label": "Modelos que usan DPO como estándar",
+      "value": "Llama 3 y Mistral"
+    },
+    {
+      "label": "Tecnologías de desarrollo del juego",
+      "value": "HTML/CSS/JS vanilla"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

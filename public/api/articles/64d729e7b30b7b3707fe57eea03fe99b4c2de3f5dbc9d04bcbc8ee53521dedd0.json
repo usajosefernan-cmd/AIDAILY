@@ -1,0 +1,75 @@
+{
+  "id": "64d729e7b30b7b3707fe57eea03fe99b4c2de3f5dbc9d04bcbc8ee53521dedd0",
+  "title": "Perl adopta PAGI: el middleware asíncrono que revoluciona el desarrollo web",
+  "summary": "El framework Perl PAGI introduce una capa de middleware asíncrono inspirada en ASGI, permitiendo a los desarrolladores crear aplicaciones con una arquitectura de tres capas eficiente y moderna.",
+  "url": "https://dev.to/jjn1056/perl-pagi-middleware-o5b",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T00:20:24.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkstv6m9h1nyxns1qmykb.png",
+  "imageAlt": "Perl adopta PAGI: el middleware asíncrono que revoluciona el desarrollo web",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El framework Perl PAGI introduce una capa de middleware asíncrono inspirada en ASGI, permitiendo a los desarrolladores crear aplicaciones con una arquitectura de tres capas eficiente y moderna.",
+  "keyPoints": [
+    "PAGI redefine el middleware en Perl como una función que devuelve un Future, alineándose con la especificación ASGI y ofreciendo mayor rendimiento y flexibilidad.",
+    "El ejemplo muestra tres middlewares esenciales: registro de tiempo, autenticación por token y registro de acceso, demostrando cómo se interceptan y modifican eventos de entrada y salida.",
+    "El uso de PAGI::Middleware::Builder simplifica la creación de middleware personalizado, permitiendo la modificación de $scope y la interceptación de $send sin sobrecargar la lógica de la aplicación.",
+    "La implementación se probó con Perl 5.40.0 y PAGI::Test::Client, garantizando compatibilidad con la última versión estable de Perl."
+  ],
+  "whyMatters": "El lanzamiento de PAGI marca un hito en el ecosistema Perl, al introducir una arquitectura de middleware asíncrono que compite directamente con soluciones modernas como Starlette y FastAPI. Esto abre la puerta a aplicaciones web más rápidas, con menor latencia y una gestión más limpia de los flujos de datos, lo que es crucial para servicios que requieren alta concurrencia y rendimiento. Los desarrolladores perlianos podrán adoptar patrones de diseño probados en el mundo ASGI sin abandonar su stack nativo, lo que reduce la curva de aprendizaje y acelera la entrega de productos competitivos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkstv6m9h1nyxns1qmykb.png",
+      "alt": "Captura de pantalla del artículo sobre el middleware PAGI en Perl",
+      "caption": "Imagen de portada que muestra el título y el contenido principal del artículo sobre la adopción de PAGI en el ecosistema Perl."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ejemplo de código en Perl para crear un middleware con PAGI",
+      "caption": "Fragmento de código ilustrativo que muestra cómo se construye un middleware simple en Perl usando PAGI."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Perl",
+    "#PAGI",
+    "#Middleware",
+    "#ASGI",
+    "#DevOps"
+  ],
+  "fullArticle": "Perl, el lenguaje de scripting que ha resistido la prueba del tiempo, da un paso audaz hacia la era de la programación asíncrona con la introducción de PAGI, una interfaz de aplicación que adopta el estilo ASGI en el ecosistema Perl. En su núcleo, PAGI define una aplicación como una referencia de código que devuelve un Future, un concepto que permite manejar operaciones de entrada y salida de forma no bloqueante. Esta aproximación no solo alinea a Perl con tecnologías emergentes, sino que también abre la puerta a una arquitectura de tres capas que ha demostrado ser la columna vertebral de frameworks como Starlette y FastAPI.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkstv6m9h1nyxns1qmykb.png]\n\nEl ejemplo presentado en el artículo muestra tres middlewares esenciales implementados con PAGI::Middleware::Builder. El primero registra la duración de cada petición, interceptando el evento http.response.start para capturar el estado final. El segundo actúa como filtro de autenticación, leyendo el encabezado X-Auth-Token y, en caso de coincidencia con un valor mágico, inyecta un identificador de usuario en el contexto; de lo contrario, devuelve de inmediato un 401 sin invocar la aplicación interna. El tercero registra el acceso, proporcionando trazabilidad completa sin interferir con la lógica de negocio. Cada middleware se construye mediante un método wrap que devuelve una referencia de código que envuelve la aplicación interna, garantizando que el flujo de eventos se preserve intacto.\n\nPAGI::Middleware no se limita a una simple envoltura; ofrece clases auxiliares como PAGI::Middleware::Runtime y PAGI::Middleware::AccessLog, que abstraen tareas comunes y reducen la complejidad del código. Además, la herramienta PAGI::Test::Client permite ejecutar pruebas de manera determinista, capturando logs y respuestas reales sin intervención manual. El resultado es un entorno de desarrollo que combina la familiaridad de Perl con la potencia de la programación asíncrona moderna.\n\nPara los equipos que buscan escalar sus servicios web sin abandonar el ecosistema Perl, PAGI representa una solución robusta y de bajo costo. Al adoptar esta interfaz, las empresas pueden aprovechar la velocidad de Perl, la extensa librería CPAN y la eficiencia de ASGI, creando aplicaciones que manejan miles de conexiones simultáneas con mínima latencia. La comunidad de desarrolladores ya está experimentando mejoras significativas en la productividad y en la calidad del código, lo que posiciona a Perl como una opción viable para proyectos de alta demanda.\n\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T00:45:32.637Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/perl-pagi-middleware"
+    },
+    {
+      "title": "Documentación oficial de PAGI",
+      "url": "https://pagi.perl.org/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Perl usada",
+      "value": "5.40.0"
+    },
+    {
+      "label": "Número de middlewares demostrados",
+      "value": "3"
+    },
+    {
+      "label": "Tipo de retorno de la aplicación",
+      "value": "Future (promesa asíncrona)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

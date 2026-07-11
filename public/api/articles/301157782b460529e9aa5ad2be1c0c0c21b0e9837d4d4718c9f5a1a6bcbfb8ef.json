@@ -1,0 +1,72 @@
+{
+  "aiSummary": "El ingeniero SwiftUI Cadento logró que su temporizador Pomodoro estuviera disponible en 39 idiomas desde el primer día, demostrando que una infraestructura de localización bien pensada puede hacer que añadir nuevos idiomas sea prácticamente gratuito.",
+  "category": "tecnologia",
+  "fullArticle": "El día del lanzamiento de Cadento, un temporizador Pomodoro creado con SwiftUI y SwiftData, la aplicación ya estaba disponible en 39 idiomas, desde catalán y croata hasta hebreo y tailandés. Mientras la mayoría de las apps indie siguen la ruta típica de publicar primero en inglés y luego añadir un puñado de idiomas \"grandes\", Cadento tomó un enfoque radicalmente diferente: la localización fue la piedra angular de su lanzamiento.\n\nLa clave de este éxito fue el catálogo de cadenas de Xcode 15 (.xcstrings). En lugar de mantener un archivo Localizable.strings por cada idioma, el desarrollador utilizó un único JSON que contenía el idioma fuente y todas las traducciones anidadas bajo cada clave. Esta estructura permitió que el coste marginal de agregar un idioma adicional fuera prácticamente nulo una vez que la pipeline estaba configurada. Además, la app soporta variantes regionales como es-419 (España vs. Latinoamérica), pt-BR y pt-PT, lo que garantiza que la terminología y las fechas se adapten a cada contexto cultural.\n\nA pesar de la aparente simplicidad de la interfaz –palabras como \"Start\", \"Focus\", \"Break\" y \"Streak\"– el proceso de internacionalización no estuvo exento de retos. En alemán y finlandés, los textos se expanden en un 30‑40 %, obligando a eliminar anchos fijos y a probar siempre con el idioma más largo. Para los lenguajes RTL como árabe e hebreo, se necesitó ajustar manualmente los gráficos de progreso y la tabla de calor para evitar que se volvieran incoherentes.\n\nEl autor subraya que la localización no se trata solo de traducir cadenas. Se trata de revisar fechas, números, reglas de pluralidad y de asegurarse de que cada idioma esté bien representado. Cuando una cadena se traduce pero resulta incorrecta, el sistema de estado de la traducción indica que existe una traducción, no que sea de calidad. Cadento adoptó un enfoque pragmático: las frases críticas fueron revisadas exhaustivamente, mientras que el resto se consideró “suficientemente bueno” y sujeto a mejoras futuras.\n\nEl resultado es una app que no solo compite en el mercado de temporizadores Pomodoro, sino que también destaca por su disponibilidad multilingüe en tiendas donde la mayoría de sus competidores permanecen en inglés. Este modelo demuestra que, con la herramienta adecuada y una planificación cuidadosa, la internacionalización puede convertirse en una ventaja estratégica para desarrolladores solitarios, abriendo puertas a mercados globales sin incurrir en costes prohibitivos.",
+  "hashtags": [
+    "#SwiftUI",
+    "#I18n",
+    "#Pomodoro"
+  ],
+  "id": "301157782b460529e9aa5ad2be1c0c0c21b0e9837d4d4718c9f5a1a6bcbfb8ef",
+  "imageAlt": "Un solo desarrollador lanza una app Pomodoro en 39 idiomas: la historia de la internacionalización",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2hy9kyfykb4tex3mpl0j.png",
+  "interestingData": [
+    {
+      "label": "Idiomas disponibles",
+      "value": "39"
+    },
+    {
+      "label": "Ventajas de la localización",
+      "value": "Margen de coste casi cero tras la configuración inicial"
+    },
+    {
+      "label": "Variante regionales incluidas",
+      "value": "es-419, pt-BR, pt-PT, zh-Hans, zh-Hant, zh-HK"
+    },
+    {
+      "label": "Plataformas soportadas",
+      "value": "iOS 18, watchOS 11, Apple Watch, iCloud"
+    }
+  ],
+  "keyPoints": [
+    "Cadento, la app de temporizador Pomodoro, se lanzó con 39 idiomas incluidos, abarcando desde catalán hasta hebreo y tailandés.",
+    "La clave fue Xcode 15 y su catálogo de cadenas (.xcstrings), que permite gestionar traducciones en un solo archivo JSON.",
+    "El costo marginal de añadir un idioma extra se redujo a cero una vez establecida la cadena de trabajo y se evitó la codificación de anchos fijos.",
+    "La estrategia de localización también incluyó variantes regionales, como es-419 y pt-BR, garantizando precisión cultural y lingüística."
+  ],
+  "links": [
+    {
+      "title": "Publicación original en Dev.to",
+      "url": "https://dev.to/author-post"
+    },
+    {
+      "title": "App Store – Cadento",
+      "url": "https://apps.apple.com/app/id6784636854"
+    },
+    {
+      "title": "Documentación de Xcode 15 y .xcstrings",
+      "url": "https://developer.apple.com/documentation/xcode/xcstrings"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Captura de pantalla de la app Cadento con la barra de navegación y los botones de temporizador",
+      "caption": "Pantalla principal de Cadento mostrando la interfaz multilingüe",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2hy9kyfykb4tex3mpl0j.png"
+    }
+  ],
+  "publishedAt": "2026-06-27T04:51:46.000Z",
+  "scrapedAt": "2026-06-27T05:03:47.228Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "El ingeniero SwiftUI Cadento logró que su temporizador Pomodoro estuviera disponible en 39 idiomas desde el primer día, demostrando que una infraestructura de localización bien pensada puede hacer que añadir nuevos idiomas sea prácticamente gratuito.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Un solo desarrollador lanza una app Pomodoro en 39 idiomas: la historia de la internacionalización",
+  "url": "https://dev.to/netflowers/i-shipped-a-pomodoro-app-in-39-languages-as-a-solo-dev-heres-how-i18n-actually-went-4l80",
+  "whyMatters": "Esta iniciativa muestra que los desarrolladores independientes pueden competir con grandes empresas al ofrecer experiencias multilingües completas, abriendo mercados locales que suelen quedar desatendidos. La adopción de una pipeline de traducción eficiente no solo reduce costes, sino que también mejora la retención y la conversión en regiones donde la competencia es mínima. En un mundo donde la accesibilidad digital es cada vez más crítica, la historia de Cadento sirve como modelo para futuros proyectos que buscan expandirse globalmente sin sacrificar calidad ni recursos."
+}

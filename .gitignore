@@ -22,3 +22,18 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Claves privadas
+id_rsa_oracle.key
+*.key
+ayudavps/*.key
+
+
+
+free_providers_research.md
+
+# AIDAILY Generated Files and Folders
+/data/
+/logs/
+/backups/
+*.lock

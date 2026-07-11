@@ -1,0 +1,72 @@
+{
+  "aiSummary": "Se lanza chatgpt2codex, una herramienta open source que permite importar conversaciones completas de ChatGPT a sesiones locales de Codex CLI, eliminando la necesidad de copiar y pegar fragmentos de forma manual y manteniendo todo el contexto de diseño, restricciones y decisiones arquitectónicas.",
+  "category": "tecnologia",
+  "fullArticle": "La mayoría de los proyectos de desarrollo de software nacen de conversaciones: ya sea para explorar una decisión arquitectónica en ChatGPT, depurar una idea antes de modificar el código base o plantear preguntas generales que luego se concretan en un flujo de trabajo de desarrollo local una vez que la dirección del proyecto está clara. El problema habitual es que el contexto generado en esas conversaciones se queda en la interfaz web del asistente de IA, sin una forma sencilla de transferirlo a entornos de programación locales como terminales, editores o agentes de codificación específicos de cada repositorio. Hasta ahora, los desarrolladores tenían que copiar y pegar fragmentos de forma manual, con el riesgo de omitir detalles clave como restricciones de rendimiento o trade-offs analizados durante la conversación.\n\nPresentamos chatgpt2codex, una herramienta open source desarrollada por el ingeniero vv-bogdanov que resuelve esa brecha de forma elegante y sin fricciones. Esta utilidad, disponible de forma gratuita en GitHub y npm, permite importar una conversación completa de ChatGPT a una sesión local de Codex CLI, el agente de codificación de OpenAI, manteniendo intacto todo el hilo de contexto: desde notas de diseño iniciales hasta decisiones de implementación y limitaciones del proyecto. De esta forma, el agente de codificación local puede retomar el trabajo como si hubiera participado en la conversación desde el principio, sin necesidad de reexplicar cada elección tomada previamente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyo1k1ax3y4uy3lh6ro07.png]\n\nEl funcionamiento de la herramienta es extremadamente sencillo: solo se necesita una URL pública de una conversación compartida de ChatGPT para ejecutar la importación. Por defecto, la sesión importada se adjunta al directorio del proyecto en el que se ejecuta el comando, aunque el usuario puede especificar otra ruta de directorio si necesita vincular el contexto a un proyecto diferente. La herramienta también incluye una opción de previsualización que permite revisar el contenido que se va a importar sin escribir ningún archivo en el sistema, y un sistema de protección que impide sobrescribir sesiones de Codex ya existentes para el mismo directorio, evitando pérdidas de trabajo accidental.\n\nMás allá de la comodidad que supone evitar el copiado manual de fragmentos, chatgpt2codex impulsa la interoperabilidad entre herramientas de IA, un eje débil habitual en los flujos de desarrollo asistido. Al ser un proyecto open source, la comunidad de desarrolladores puede contribuir a mejorarlo, adaptándolo a otros agentes de codificación o añadiendo funcionalidades como la importación de conversaciones privadas en el futuro. Su aparición evidencia la creciente demanda de soluciones que eliminen las barreras entre los asistentes de IA conversacionales y los entornos de producción de software, un paso clave para la adopción masiva de estas tecnologías en el ecosistema de desarrollo.",
+  "hashtags": [
+    "#ChatGPT",
+    "#CodexCLI",
+    "#HerramientasDeDesarrollo",
+    "#InteligenciaArtificialOpenSource"
+  ],
+  "id": "7b877cdf770f8723a0f451ddd4e3c71e23a823ad5d0f1d076bb8f68f8902fa05",
+  "imageAlt": "La herramienta que traslada tus conversaciones de ChatGPT a Codex CLI sin perder ni un detalle de contexto",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyo1k1ax3y4uy3lh6ro07.png",
+  "interestingData": [
+    {
+      "label": "Plataformas de distribución",
+      "value": "GitHub y npm"
+    },
+    {
+      "label": "Número de modos de importación",
+      "value": "3"
+    },
+    {
+      "label": "Protección contra sobrescritura",
+      "value": "Sí, error automático si existe sesión previa en el directorio"
+    }
+  ],
+  "keyPoints": [
+    "La herramienta open source chatgpt2codex permite importar sesiones completas de ChatGPT a Codex CLI de forma automática.",
+    "Elimina la necesidad de copiar y pegar manualmente fragmentos de conversaciones con decisiones de diseño o restricciones técnicas.",
+    "Admite URLs públicas de ChatGPT compartidas, se adjunta al directorio del proyecto actual o a uno especificado por el usuario.",
+    "Incluye modos de previsualización de importación y protección contra sobrescritura de sesiones existentes de Codex."
+  ],
+  "links": [
+    {
+      "title": "Repositorio oficial de chatgpt2codex en GitHub",
+      "url": "https://github.com/vv-bogdanov/chatgpt2codex"
+    },
+    {
+      "title": "Paquete npm de chatgpt2codex",
+      "url": "https://www.npmjs.com/package/chatgpt2codex"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/vv-bogdanov/preserving-context-when-moving-from-chatgpt-to-codex-cli"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Imagen de portada del artículo sobre la herramienta chatgpt2codex para transferir conversaciones de ChatGPT a Codex CLI",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que explica el funcionamiento de chatgpt2codex",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyo1k1ax3y4uy3lh6ro07.png"
+    }
+  ],
+  "publishedAt": "2026-06-30T07:48:26.000Z",
+  "scrapedAt": "2026-06-30T08:13:21.199Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "Se lanza chatgpt2codex, una herramienta open source que permite importar conversaciones completas de ChatGPT a sesiones locales de Codex CLI, eliminando la necesidad de copiar y pegar fragmentos de forma manual y manteniendo todo el contexto de diseño, restricciones y decisiones arquitectónicas.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "La herramienta que traslada tus conversaciones de ChatGPT a Codex CLI sin perder ni un detalle de contexto",
+  "url": "https://dev.to/vvbogdanov/preserving-context-when-moving-from-chatgpt-to-codex-cli-bpl",
+  "whyMatters": "Esta herramienta resuelve una fricción muy común en los flujos de trabajo de desarrollo de software, donde el intercambio de contexto entre asistentes de IA conversacionales y entornos de programación locales suele implicar procesos manuales propensos a errores. Al automatizar la transferencia de conversaciones completas, reduce el tiempo de adaptación de los agentes de codificación locales y evita la pérdida de información crítica como decisiones arquitectónicas o restricciones de proyecto. Su lanzamiento como proyecto open source impulsa la interoperabilidad entre herramientas de IA, un eje clave para la evolución de los flujos de desarrollo asistido en los próximos años.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

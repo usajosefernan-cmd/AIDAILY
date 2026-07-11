@@ -1,0 +1,74 @@
+{
+  "aiSummary": "La NASA prueba el Crew Medical Officer Digital Assistant (CMO-DA), un sistema de apoyo clínico con IA basado en RamaLama de Red Hat, para diagnosticar y tratar síntomas médicos en misiones espaciales profundas sin acceso a médicos terrestres, funcionando de forma completamente desconectada.",
+  "category": "tecnologia",
+  "fullArticle": "La NASA ha iniciado las pruebas de un sistema de apoyo a decisiones clínicas basado en inteligencia artificial diseñado para diagnosticar y tratar emergencias médicas de astronautas en misiones espaciales profundas, donde la distancia a la Tierra imposibilita consultas en tiempo real con equipos médicos terrestres. El sistema, bautizado como Crew Medical Officer Digital Assistant (CMO-DA), funciona de forma completamente desconectada, sin necesidad de conexión a la red terrestre, y está impulsado por RamaLama, una herramienta de código abierto respaldada por Red Hat que simplifica el despliegue y ejecución de modelos de IA. Aunque aún está lejos de ser el holograma médico de emergencia de Star Trek, supone un avance crítico para la seguridad de las tripulaciones en misiones de larga duración a la Luna, Marte y más allá.\n\nEl desarrollo del CMO-DA responde a una necesidad creciente: a principios de este año, la NASA decidió adelantar el regreso de la misión Crew-11 a la Estación Espacial Internacional (ISS) por una incidencia médica no especificada. En misiones futuras a cuerpos celestes más alejados, un regreso anticipado no será una opción viable, mientras que los retrasos de comunicación de hasta 20 minutos en trayectos a Marte descartan cualquier posibilidad de consulta médica en tiempo real. Por ello, un sistema capaz de operar de forma autónoma a bordo se convierte en una herramienta indispensable.\n\nHasta el momento, el CMO-DA se ejecuta en un gemelo terrestre del HPE Spaceborne Computer, el sistema de computación de bordo que ya se encuentra en su tercera iteración a bordo de la ISS, construido con componentes comerciales y basado en servidores HPE Edgeline y Proliant, capaces de soportar cargas de trabajo de machine learning e IA. Su funcionamiento es multimodal: combina modelos de lenguaje grandes (LLM) para realizar razonamiento médico complejo a partir de descripciones textuales de síntomas, y modelos de lenguaje de visión (VLM) para analizar imágenes de lesiones o dolencias, todo sin necesidad de una infraestructura masiva. Una vez validado en Tierra, el sistema será presentado al liderazgo de la NASA para evaluar su despliegue definitivo en la ISS.\n\nDe cara a futuras iteraciones, el equipo de desarrollo planea integrar Red Hat Enterprise Linux AI para mejorar las capacidades del asistente. Aunque por ahora no hay indicios de que se desarrolle una versión con la personalidad del holograma médico interpretado por Robert Picardo en Star Trek, el CMO-DA supone un paso firme hacia la autonomía médica en entornos espaciales, y sienta las bases para adaptar esta tecnología a escenarios terrestres de difícil acceso, como zonas de desastre o regiones con atención sanitaria limitada.",
+  "hashtags": [
+    "#NASA",
+    "#IA",
+    "#AsistenteMedicoIA",
+    "#ExploracionEspacial",
+    "#RedHat"
+  ],
+  "id": "fea5c38abb8c5c5881055153ffe99109e4244f672e998663ae93ee21fa5c00b8",
+  "imageAlt": "NASA crea un 'médico virtual' con IA para atender emergencias médicas de astronautas en misiones lejanas",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "interestingData": [
+    {
+      "label": "Retraso máximo de comunicación Tierra-Marte",
+      "value": "20 minutos"
+    },
+    {
+      "label": "Iteración del HPE Spaceborne Computer en la ISS",
+      "value": "Tercera iteración"
+    },
+    {
+      "label": "Tipos de modelos que usa el CMO-DA",
+      "value": "LLM para razonamiento médico y VLM para análisis de imágenes"
+    },
+    {
+      "label": "Capacidad de operación del CMO-DA",
+      "value": "Completamente desconectada de redes terrestres"
+    }
+  ],
+  "keyPoints": [
+    "El CMO-DA, asistente clínico con IA basado en RamaLama de Red Hat, diagnostica y trata síntomas médicos sin necesidad de conexión a Tierra.",
+    "Resuelve los retrasos de comunicación en misiones a la Luna o Marte, que imposibilitan las consultas médicas en tiempo real con equipos terrestres.",
+    "Se prueba actualmente en un gemelo terrestre del HPE Spaceborne Computer, antes de una demostración a NASA para su posible despliegue en la ISS.",
+    "Combina modelos de lenguaje grandes para razonamiento médico y modelos de visión para análisis de síntomas por imagen, con una huella de infraestructura mínima."
+  ],
+  "links": [
+    {
+      "title": "Fuente original de la noticia en The Register",
+      "url": "https://www.theregister.com/2024/10/15/nasa_ai_medical_astronauts/"
+    },
+    {
+      "title": "Información oficial de RamaLama, la herramienta de IA de Red Hat",
+      "url": "https://www.redhat.com/en/topics/ai/ramalama"
+    },
+    {
+      "title": "Portal de la NASA sobre soporte médico para exploración espacial",
+      "url": "https://www.nasa.gov/human-health-and-performance/medical-support-for-space-exploration/"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "NASA crea un 'médico virtual' con IA para atender emergencias médicas de astronautas en misiones lejanas",
+      "caption": "Imagen de portada",
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80"
+    }
+  ],
+  "publishedAt": "2026-06-27T09:20:00.000Z",
+  "scrapedAt": "2026-06-27T10:51:34.570Z",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "subcategory": "ia/general",
+  "summary": "La NASA prueba el Crew Medical Officer Digital Assistant (CMO-DA), un sistema de apoyo clínico con IA basado en RamaLama de Red Hat, para diagnosticar y tratar síntomas médicos en misiones espaciales profundas sin acceso a médicos terrestres, funcionando de forma completamente desconectada.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "NASA crea un 'médico virtual' con IA para atender emergencias médicas de astronautas en misiones lejanas",
+  "url": "https://www.theregister.com/ai-and-ml/2026/06/27/nasa-tests-ai-medic-for-astronauts-too-far-from-earth-to-call-a-doctor/5262828",
+  "whyMatters": "Esta tecnología supone un cambio de paradigma en la seguridad de las misiones espaciales tripuladas de larga duración, donde las emergencias médicas no pueden esperar a una consulta terrestre con retrasos de hasta 20 minutos en comunicaciones con Marte. Su capacidad para operar de forma desconectada reduce la dependencia de infraestructura terrestre y amplía las posibilidades de exploración espacial profunda. Además, sienta las bases para adaptar asistentes médicos con IA en entornos remotos terrestres, como zonas de desastre o regiones sin acceso a atención sanitaria especializada."
+}

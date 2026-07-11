@@ -1,0 +1,74 @@
+{
+  "id": "4ee3283c742e9a61da5d36bcde3c9c2d3de3f6f5f920dc44092c357cfd9f4e46",
+  "title": "Creé un generador de informes PDF para NVIDIA SkillSpector: las habilidades de IA necesitan revisiones de seguridad urgentes",
+  "summary": "Un desarrollador creó un generador de informes PDF para la herramienta de seguridad NVIDIA SkillSpector, que escanea 'habilidades' de IA (paquetes instalables para asistentes de codificación) con riesgo de vulnerabilidades y contenido malicioso, según datos de la propia herramienta.",
+  "url": "https://dev.to/mbahubaishi/i-built-a-pdf-report-generator-for-nvidia-skillspector-because-ai-skills-need-better-security-8c9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T20:33:47.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnj56i7ry0fubzuqh8aqc.png",
+  "imageAlt": "Creé un generador de informes PDF para NVIDIA SkillSpector: las habilidades de IA necesitan revisiones de seguridad urgentes",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creó un generador de informes PDF para la herramienta de seguridad NVIDIA SkillSpector, que escanea 'habilidades' de IA (paquetes instalables para asistentes de codificación) con riesgo de vulnerabilidades y contenido malicioso, según datos de la propia herramienta.",
+  "keyPoints": [
+    "Las 'habilidades' de IA son paquetes instalables para asistentes de codificación como Claude Code o Gemini CLI, que funcionan como pequeños programas y requieren revisión de seguridad.",
+    "Los riesgos de estas habilidades no se limitan a ejecutables maliciosos: pueden ocultar inyecciones de prompts o divulgación de información sensible, según el Top 10 de OWASP para LLM.",
+    "La herramienta NVIDIA SkillSpector detectó que el 26,1% de las habilidades analizadas tienen vulnerabilidades y el 5,2% muestran intención maliciosa clara.",
+    "El nuevo generador de informes PDF automatiza la documentación de los resultados de las auditorías de seguridad, facilitando la toma de decisiones de los equipos de desarrollo."
+  ],
+  "whyMatters": "Esta noticia es relevante porque la adopción de asistentes de codificación con IA se está generalizando en equipos de desarrollo, y la instalación de habilidades de terceros sin revisión representa un riesgo creciente de filtraciones de datos o compromiso de sistemas. La herramienta NVIDIA SkillSpector y el nuevo generador de informes PDF permiten automatizar la detección de vulnerabilidades en estos paquetes, reduciendo la exposición a amenazas que hasta ahora pasaban desapercibidas. A largo plazo, la estandarización de revisiones de seguridad para habilidades de IA sentará las bases para un ecosistema de desarrollo más seguro y confiable, especialmente en entornos empresariales que manejan información sensible.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnj56i7ry0fubzuqh8aqc.png",
+      "alt": "Imagen de portada del artículo original sobre el generador de informes PDF para NVIDIA SkillSpector",
+      "caption": "Imagen de portada del artículo publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de DEV Community, plataforma de publicación de contenido para desarrolladores",
+      "caption": "Fuente original del artículo: Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#NvidiaSkillSpector",
+    "#SeguridadEnIA",
+    "#HabilidadesDeIA",
+    "#DesarrolloSeguro"
+  ],
+  "fullArticle": "En las últimas semanas, la popularidad de las 'habilidades' de IA, esos paquetes instalables que se agregan a asistentes de codificación como Claude Code, workflows de Codex o la CLI de Gemini, ha crecido de forma exponencial. A simple vista pueden parecer simples conjuntos de instrucciones o prompts, pero un análisis más detenido revela que funcionan como pequeños paquetes de software, con el mismo nivel de riesgo que cualquier complemento de terceros que se instala en un entorno de desarrollo. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnj56i7ry0fubzuqh8aqc.png]\n\nLos riesgos asociados a estas habilidades no siempre son evidentes: no se limitan a ejecutables maliciosos tradicionales, sino que pueden ocultar inyecciones de prompts, divulgación de información sensible o vulnerabilidades en la cadena de suministro, tal como detalla el Top 10 de OWASP para aplicaciones LLM. La propia herramienta de seguridad NVIDIA SkillSpector, dedicada a escanear estos paquetes, ha revelado datos preocupantes: el 26,1% de las habilidades analizadas contienen vulnerabilidades, y un 5,2% muestran una intención maliciosa clara. Ante la facilidad con la que se instalan y comparten estos paquetes, el autor del artículo desarrolló un generador de informes PDF que automatiza la documentación de los resultados de las auditorías de seguridad realizadas con SkillSpector.\n\nEsta herramienta llega en un momento clave para el ecosistema de desarrollo con IA, donde la falta de procesos de revisión estandarizados deja expuestos a equipos y empresas a amenazas difíciles de detectar. Al generar informes claros y estructurados de los hallazgos de seguridad, el generador de PDF facilita que los equipos de desarrollo y seguridad tomen decisiones informadas antes de instalar cualquier habilidad de terceros, reduciendo el riesgo de comprometer la integridad de sus proyectos y la confidencialidad de sus datos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T21:06:41.687Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/noroadsman/i-built-a-pdf-report-generator-for-nvidia-skillspector-because-ai-skills-need-better-security-reviews-1b8a"
+    },
+    {
+      "title": "Repositorio oficial de NVIDIA SkillSpector en GitHub",
+      "url": "https://github.com/NVIDIA/skillsSpector"
+    },
+    {
+      "title": "Top 10 de OWASP para aplicaciones LLM",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de habilidades de IA con vulnerabilidades",
+      "value": "26,1%"
+    },
+    {
+      "label": "Porcentaje de habilidades de IA con intención maliciosa",
+      "value": "5,2%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "e036f54875eb5da1322cce7016c89e37038c445bcae0af7c309371b39a19961b",
+  "title": "Guía Definitiva: Configura la Hibernación en Ubuntu 24.04 con Archivo Swap Sin Errores",
+  "summary": "Resumen: Ubuntu 24.04 LTS modificó silenciosamente los permisos de polkit, por lo que los métodos antiguos de configuración de hibernación con archivos .pkla no funcionan. Esta guía explica el proceso actualizado para configurar la hibernación usando un archivo de swap, evitando errores comunes y warnings en el arranque.",
+  "url": "https://dev.to/hallancosta/guia-completo-configurar-hibernacao-no-ubuntu-2404-com-swap-file-gib",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T20:10:21.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb7azl4gs39994y5dsp9r.png",
+  "imageAlt": "Guía Definitiva: Configura la Hibernación en Ubuntu 24.04 con Archivo Swap Sin Errores",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Resumen: Ubuntu 24.04 LTS modificó silenciosamente los permisos de polkit, por lo que los métodos antiguos de configuración de hibernación con archivos .pkla no funcionan. Esta guía explica el proceso actualizado para configurar la hibernación usando un archivo de swap, evitando errores comunes y warnings en el arranque.",
+  "keyPoints": [
+    "Ubuntu 24.04 LTS modificó silenciosamente los permisos de polkit, dejando obsoletos los tutoriales que usan archivos .pkla para configurar la hibernación.",
+    "La configuración correcta requiere agregar los parámetros resume y resume_offset en GRUB, sin crear archivos adicionales en el directorio de initramfs.",
+    "El valor de resume_offset se obtiene con el comando filefrag, eliminando los dos puntos del resultado para evitar errores de configuración.",
+    "No se debe crear el archivo /etc/initramfs-tools/conf.d/resume ni scripts personalizados, ya que el kernel lee los valores directamente desde GRUB."
+  ],
+  "whyMatters": "Esta guía es un recurso indispensable para los miles de usuarios de Ubuntu 24.04 que no logran activar la hibernación tras la actualización a la última versión LTS, un error que genera soporte innecesario y frustración. Al proporcionar un método actualizado y validado, se eliminan configuraciones erróneas que producen warnings en el arranque y se optimiza el rendimiento del sistema en equipos con recursos limitados. Además, evita que los usuarios pierdan tiempo con tutoriales obsoletos que no se adaptan a los cambios internos de la plataforma, garantizando una experiencia de uso estable y sin contratiempos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb7azl4gs39994y5dsp9r.png",
+      "alt": "Portada de la guía completa para configurar la hibernación en Ubuntu 24.04 con archivo swap",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Ubuntu2404",
+    "#HibernacionLinux",
+    "#SwapFile",
+    "#NobleNumbat",
+    "#TutorialLinux"
+  ],
+  "fullArticle": "Ubuntu 24.04 LTS (Noble Numbat) introdujo cambios silenciosos en el sistema de permisos de polkit que rompieron los métodos tradicionales para configurar la hibernación. La mayoría de tutoriales disponibles en internet utilizan el formato antiguo .pkla, que ya no es válido para esta versión, generando errores y warnings confusos en el arranque. Esta guía actualizada explica el proceso correcto, adaptado a las nuevas particularidades del sistema, utilizando un archivo de swap en lugar de una partición dedicada para simplificar la gestión del espacio en disco.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb7azl4gs39994y5dsp9r.png]\n\nEl primer paso consiste en obtener el valor de resume_offset ejecutando el comando filefrag sobre el archivo de swap, eliminando los dos puntos del resultado para obtener el número exacto. Luego, es necesario agregar los parámetros resume=UUID y resume_offset=valor en la configuración de GRUB, sin modificar los parámetros existentes como quiet splash. Es fundamental no crear el archivo /etc/initramfs-tools/conf.d/resume ni scripts personalizados en el directorio de initramfs, ya que el kernel lee automáticamente estos valores desde GRUB, y cualquier intento de sobrescribirlos genera errores de escritura en los archivos del sistema.\n\nEste método evita los warnings molestos que aparecen al iniciar el sistema cuando se configura incorrectamente el archivo de resume, y garantiza que la hibernación funcione de manera estable en equipos con Ubuntu 24.04, incluso en configuraciones que utilizan archivos de swap en lugar de particiones dedicadas. La aproximación es compatible con el kernel 6.17 o superior, versión incluida por defecto en la última versión LTS de Ubuntu, por lo que no se requieren modificaciones adicionales del sistema.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T20:25:28.632Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Ubuntu sobre hibernación",
+      "url": "https://help.ubuntu.com/community/Hibernation"
+    },
+    {
+      "title": "Página oficial de Ubuntu 24.04 LTS Noble Numbat",
+      "url": "https://ubuntu.com/blog/ubuntu-24-04-lts-noble-numbat"
+    },
+    {
+      "title": "Guía de configuración de GRUB en Ubuntu",
+      "url": "https://help.ubuntu.com/community/Grub2"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Ubuntu compatible",
+      "value": "24.04 LTS (Noble Numbat)"
+    },
+    {
+      "label": "Versión mínima de kernel requerida",
+      "value": "6.17 o superior"
+    },
+    {
+      "label": "Formato de configuración de polkit obsoleto",
+      "value": ".pkla"
+    },
+    {
+      "label": "Ejemplo de ID de regla de polkit",
+      "value": "58bf371d-01d1-4316-98c3-ef845c1825f2"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

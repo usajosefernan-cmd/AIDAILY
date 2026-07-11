@@ -1,0 +1,47 @@
+{
+  "id": "844767a618945215a6c8989b2c097a78d100e07f691e45d5bd57b717a50e26e7",
+  "title": "Prompting Is Dead. Long Live the Loop.",
+  "summary": "<h3>\n  \n  \n  A realistic first migration\n</h3>\n\n<p><strong>Before (prompting):</strong><br><br>\nEvery PR: manually ask the agent to fix CI, re-prompt after each failure.<br>\n<strong>After (looping):</strong><br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>/loop 5m check my PR, address review comments, and fix failing CI\n</code></pre>\n\n</div>\n\n\n\n<p>Add a skill that says: never mark CI fixed without re-running the full pipeline. Add <code>/goal all checks green, stop after 10 tries</code> for stubborn failures.</p>\n\n<h2>\n  \n  \n  Run it for a day. Note where it stalls—too eager merges, wrong files touched, missed edge cases—and <strong>encode those failures</strong> into skills. That iteration is the product. The prompt was never the product.\n</h2>\n\n<h2>\n  \n  \n  The Bottom Line\n</h2>\n\n<p>Prompting isn’t worthless. It’s <strong>incomplete</strong>.<br>\nThe best teams still write clear instructions—but they’ve stopped treating a single response as the finish line. They design loops: agents that gather context, act, verify, and repeat until a condition they didn’t have to guess at is satisfied.<br>\n<strong>Prompting is dead</strong> as the default paradigm for serious agentic work. Not because words stopped mattering, but because <strong>outcomes beat utterances</strong>.<br>\n<strong>The loop is here.</strong> Your job moved upstack: define what done means, how to verify it, when to run, and when to stop.<br>\nStart with one loop this week. Hand off one thing you used to re-prompt manually. Watch what breaks. Fix the system, not just the output.</p>\n\n<h2>\n  \n  \n  That’s not prompt engineering. That’s engineering.\n</h2>\n\n<h2>\n  \n  \n  <em>Inspired by Anthropic’s Claude Code team and their guide: <a href=\"https://claude.com/blog/getting-started-with-loops\" rel=\"noopener noreferrer\">Getting started with loops</a>. Examples use Claude Code primitives (<code>/goal</code>, <code>/loop</code>, <code>/schedule</code>, skills, workflows); the loop mindset applies to any agentic coding tool.</em>\n</h2>\n\n<p><strong>Tags:</strong> AI, Agentic AI, Prompt Engineering, Claude Code, Software Development, Developer Productivity, LLM, Automation<br>\n<strong>Estimated read time:</strong> 8 min</p>\n\n",
+  "url": "https://dev.to/rajesh_kumarkanumetta_b5/prompting-is-dead-long-live-the-loop-5cm5",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T10:20:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhsrhy7gr22amd2xm80q3.png",
+  "imageAlt": "Prompting Is Dead. Long Live the Loop.",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<h3>\n  \n  \n  A realistic first migration\n</h3>\n\n<p><strong>Before (prompting):</strong><br><br>\nEvery PR: manually ask the agent to fix CI, re-prompt after each failure.<br>\n<strong>After (looping):</strong><br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight plaintext\"><code>/loop 5m check my PR, address review comments, and fix failing CI\n</code></pre>\n\n</div>\n\n\n\n<p>Add a skill that says: never mark CI fixed without re-running the full pipeline. Add <code>/goal all checks green, stop after 10 tries</code> for stubborn failures.</p>\n\n<h2>\n  \n  \n  Run it for a day. Note where it stalls—too eager merges, wrong files touched, missed edge cases—and <strong>encode those failures</strong> into skills. That iteration is the product. The prompt was never the product.\n</h2>\n\n<h2>\n  \n  \n  The Bottom Line\n</h2>\n\n<p>Prompting isn’t worthless. It’s <strong>incomplete</strong>.<br>\nThe best teams still write clear instructions—but they’ve stopped treating a single response as the finish line. They design loops: agents that gather context, act, verify, and repeat until a condition they didn’t have to guess at is satisfied.<br>\n<strong>Prompting is dead</strong> as the default paradigm for serious agentic work. Not because words stopped mattering, but because <strong>outcomes beat utterances</strong>.<br>\n<strong>The loop is here.</strong> Your job moved upstack: define what done means, how to verify it, when to run, and when to stop.<br>\nStart with one loop this week. Hand off one thing you used to re-prompt manually. Watch what breaks. Fix the system, not just the output.</p>\n\n<h2>\n  \n  \n  That’s not prompt engineering. That’s engineering.\n</h2>\n\n<h2>\n  \n  \n  <em>Inspired by Anthropic’s Claude Code team and their guide: <a href=\"https://claude.com/blog/getting-started-with-loops\" rel=\"noopener noreferrer\">Getting started with loops</a>. Examples use Claude Code primitives (<code>/goal</code>, <code>/loop</code>, <code>/schedule</code>, skills, workflows); the loop mindset applies to any agentic coding tool.</em>\n</h2>\n\n<p><strong>Tags:</strong> AI, Agentic AI, Prompt Engineering, Claude Code, Software Development, Developer Productivity, LLM, Automation<br>\n<strong>Estimated read time:</strong> 8 min</p>\n\n",
+  "keyPoints": [
+    "Prompting Is Dead. Long Live the Loop."
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhsrhy7gr22amd2xm80q3.png",
+      "alt": "Prompting Is Dead. Long Live the Loop.",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "pic",
+      "caption": "pic"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "Before (prompting):\nEvery PR: manually ask the agent to fix CI, re-prompt after each failure.\nAfter (looping):\n\nAdd a skill that says: never mark CI fixed without re-running the full pipeline. Add /goal all checks green, stop after 10 tries for stubborn failures.\n\nPrompting isn’t worthless. It’s incomplete.\nThe best teams still write clear instructions—but they’ve stopped treating a single response as the finish line. They design loops: agents that gather context, act, verify, and repeat until a condition they didn’t have to guess at is satisfied.\nPrompting is dead as the default paradigm for serious agentic work. Not because words stopped mattering, but because outcomes beat utterances.\nThe loop is here. Your job moved upstack: define what done means, how to verify it, when to run, and wh...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T11:04:51.372Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

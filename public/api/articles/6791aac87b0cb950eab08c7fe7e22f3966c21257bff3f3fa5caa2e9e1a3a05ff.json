@@ -1,0 +1,77 @@
+{
+  "id": "6791aac87b0cb950eab08c7fe7e22f3966c21257bff3f3fa5caa2e9e1a3a05ff",
+  "title": "Cozy Café: el juego de café idle para Discord que premia la constancia sin castigar la ausencia",
+  "summary": "Segunda entrega de la serie de desarrollo de bots de Discord para principiantes, que presenta Cozy Café, un juego idle de gestión de cafetería ejecutable completamente en la plataforma, junto con la reorganización de la estructura de código para escalar el proyecto.",
+  "url": "https://dev.to/itsash/meet-cozy-cafe-19bh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T22:02:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm73unr24gzmumrb27awg.png",
+  "imageAlt": "Cozy Café: el juego de café idle para Discord que premia la constancia sin castigar la ausencia",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Segunda entrega de la serie de desarrollo de bots de Discord para principiantes, que presenta Cozy Café, un juego idle de gestión de cafetería ejecutable completamente en la plataforma, junto con la reorganización de la estructura de código para escalar el proyecto.",
+  "keyPoints": [
+    "Se trata de la segunda parte de una serie para principiantes de creación de bots de Discord con JavaScript, discord.js y Prisma, que presenta el proyecto final a desarrollar.",
+    "Cozy Café es un juego idle de gestión de cafetería que se ejecuta completamente dentro de Discord, sin necesidad de aplicaciones externas.",
+    "El juego no penaliza la inactividad: las ganancias se acumulan en tiempo real incluso cuando el jugador está desconectado, sin pérdida de progreso.",
+    "Para escalar el proyecto, se reorganiza el código separando cada comando en archivos independientes, aplicando el principio de separación de responsabilidades."
+  ],
+  "whyMatters": "Este proyecto es relevante porque demuestra el potencial de los bots de Discord para crear experiencias de juego casuales y de baja presión, alejadas de la dinámica de recompensas diarias obligatorias que caracteriza a muchos juegos móviles. La estructura de código que se implementa, basada en la separación de responsabilidades por comandos, es un patrón de ingeniería software aplicable a cualquier proyecto de bot que necesite escalar sin volverse inmanejable. Además, el enfoque de diseño 'cozy' del juego responde a una tendencia creciente de consumo de contenido digital que prioriza la satisfacción personal sobre la obligación, lo que puede marcar un camino para futuros proyectos de entretenimiento en plataformas comunitarias.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm73unr24gzmumrb27awg.png",
+      "alt": "Imagen de portada del artículo sobre Cozy Café, el juego idle de café para Discord",
+      "caption": "Portada del artículo de Dev.to que presenta el proyecto Cozy Café"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CozyCafe",
+    "#Discord",
+    "#DiscordJS",
+    "#Prisma",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "La segunda entrega de la serie de desarrollo de bots de Discord para principiantes, publicada en Dev.to, da un salto de calidad respecto a la primera entrega, que se limitaba a crear un esqueleto de bot capaz de responder al comando /ping con el mensaje 'Pong!'. En esta ocasión, el autor revela el proyecto final que se construirá a lo largo de todas las entregas: Cozy Café, un juego idle de gestión de cafetería que se ejecuta completamente dentro de la plataforma de Discord, sin necesidad de aplicaciones externas. La propuesta de juego se aleja de las dinámicas habituales de los juegos móviles, que penalizan a los usuarios por no conectarse a diario: las ganancias de la cafetería se acumulan en tiempo real incluso cuando el jugador está desconectado, por lo que no se pierde progreso por periodos de inactividad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fm73unr24gzmumrb27awg.png]\n\nEl funcionamiento de Cozy Café es sencillo y de baja exigencia: el usuario abre su cafetería con un comando slash, y a partir de ahí el establecimiento atiende clientes y genera monedas de forma automática, incluso cuando el jugador no está conectado. Cuando el usuario vuelve a entrar a Discord, puede usar el comando /collect para recoger las ganancias acumuladas durante su ausencia, que incluyen tanto monedas como nuevas recetas que se desbloquean de forma aleatoria. Con esas ganancias, el jugador puede comprar mejoras para su cafetería, como máquinas de espresso más eficientes, o desbloquear nuevas recetas para ampliar su menú, sin ninguna presión por hacerlo en un plazo concreto: las visitas al juego duran menos de un minuto y son completamente opcionales.\n\nPara que el proyecto pueda escalar sin convertirse en un código ilegible, el autor reorganiza la estructura del proyecto que se usó en la primera entrega, que concentraba todo el código en un único archivo index.js. Siguiendo el principio de separación de responsabilidades, cada comando del bot se alojará en su propio archivo independiente, de forma que agregar una nueva funcionalidad no implique modificar el código de los comandos existentes, y sea fácil localizar errores o realizar cambios en el futuro. La estructura de carpetas que se plantea incluye directorios separados para los comandos, los eventos y la configuración del bot, un patrón de diseño habitual en proyectos de desarrollo de bots de Discord a escala profesional.\n\nEl diseño de Cozy Café responde a una tendencia creciente en el sector del entretenimiento digital: los juegos 'cozy', que priorizan la satisfacción personal y la relajación por encima de la competitividad o la obligación de conectarse a diario. A diferencia de títulos que implementan rachas o penalizaciones por inactividad, este juego se basa en un sistema de recompensas constante, donde el jugador vuelve por el placer de coleccionar recetas, mejorar su menú y ver crecer su cafetería, no por miedo a perder progreso. Este enfoque no solo lo hace más accesible para usuarios que no quieren dedicar horas a un juego, sino que también lo convierte en un ejemplo perfecto de cómo la ingeniería de software puede aplicarse para crear experiencias digitales que se adapten a los ritmos de vida de los usuarios, y no al revés.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T22:26:17.922Z",
+  "links": [
+    {
+      "title": "Artículo original 'Meet Cozy Café' en Dev.to",
+      "url": "https://dev.to/tutorials/building-a-discord-bot-with-javascript-and-prisma"
+    },
+    {
+      "title": "Documentación oficial de discord.js",
+      "url": "https://discord.js.org/"
+    },
+    {
+      "title": "Documentación oficial de Prisma",
+      "url": "https://www.prisma.io/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración de inactividad en el ejemplo del artículo",
+      "value": "9 horas 12 minutos"
+    },
+    {
+      "label": "Clientes atendidos durante la inactividad de ejemplo",
+      "value": "74 clientes"
+    },
+    {
+      "label": "Monedas ganadas en el periodo de inactividad de ejemplo",
+      "value": "184 monedas"
+    },
+    {
+      "label": "Duración estimada de una visita al juego",
+      "value": "Menos de 1 minuto"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

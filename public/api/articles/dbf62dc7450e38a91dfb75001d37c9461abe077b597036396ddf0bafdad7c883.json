@@ -1,0 +1,46 @@
+{
+  "aiSummary": "El proyecto HagiCode incorpora una refactoría que permite asignar habilidades específicas a cada comando dentro de un preset, eliminando la necesidad de dividirlos en varios paquetes y mejorando la gestión y visualización en la interfaz.",
+  "category": "tecnologia",
+  "fullArticle": "HagiCode, el asistente de código impulsado por IA, ha lanzado una refactoría que transforma la manera en que sus presets gestionan las habilidades requeridas. Hasta ahora, los presets agrupaban varios comandos bajo una única lista de requisitos, obligando a los desarrolladores a dividirlos en paquetes separados cuando necesitaban combinaciones distintas de habilidades. Este esquema generaba configuraciones infladas y dificultaba la experiencia del usuario.\n\nLa solución propuesta, denominada extend‑preset‑task‑multiple‑skills‑support, introduce un campo opcional 'skill' directamente en la definición de cada comando dentro del archivo commands.json. De este modo, cada comando declara de forma autónoma la habilidad que necesita, manteniendo la información local y evitando la creación de tablas de mapeo externas que podrían desincronizarse. La decisión se sustenta en un principio de diseño que prioriza la coherencia y la facilidad de mantenimiento sobre una separación artificial de datos.\n\nAdemás de la mejora estructural, la interfaz visual de HagiCode ha sido actualizada para reflejar esta nueva arquitectura. Cada comando muestra ahora una insignia que indica la habilidad vinculada, un resumen rápido y la posibilidad de instalarlo con un solo clic, proporcionando una experiencia fluida y transparente. Estas visualizaciones facilitan a los usuarios identificar rápidamente qué comandos requieren qué habilidades, optimizando el flujo de trabajo.\n\nEl impacto de esta actualización trasciende el proyecto propio. Al demostrar una forma eficaz de manejar dependencias a nivel de comando, HagiCode sienta un precedente para otras plataformas de plugins y herramientas de desarrollo que buscan combinar flexibilidad y robustez. En un ecosistema donde la rapidez de iteración y la claridad de configuración son críticas, esta innovación refuerza la posición de HagiCode como referente en la integración de IA en la programación.",
+  "hashtags": [
+    "#HagiCode",
+    "#MultiSkill",
+    "#DevTools"
+  ],
+  "id": "dbf62dc7450e38a91dfb75001d37c9461abe077b597036396ddf0bafdad7c883",
+  "imageAlt": "HagiCode revoluciona los presets con soporte multi‑skill: cada comando define su propia habilidad",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk37v94j0inbrxd7vniyu.png",
+  "keyPoints": [
+    "Antes, todos los comandos de un preset compartían la misma lista de habilidades, lo que obligaba a fragmentar presets para casos heterogéneos.",
+    "La nueva arquitectura añade un campo opcional 'skill' directamente en la definición de cada comando, garantizando coherencia y evitando desincronizaciones.",
+    "Se evita la creación de una tabla de mapeo externa, reduciendo la complejidad de mantenimiento y los errores de datos divergentes.",
+    "El cambio se refleja en la UI con insignias y resúmenes que indican la habilidad vinculada, facilitando la instalación con un solo clic."
+  ],
+  "multimedia": [
+    {
+      "alt": "Precise Routing for Every Command: Practical Implementation of Multi-Skill Support in HagiCode Preset Task",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk37v94j0inbrxd7vniyu.png"
+    },
+    {
+      "alt": "pic",
+      "caption": "pic",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png"
+    }
+  ],
+  "publishedAt": "2026-06-23T11:52:41.000Z",
+  "scrapedAt": "2026-06-23T12:08:59.301Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "El proyecto HagiCode incorpora una refactoría que permite asignar habilidades específicas a cada comando dentro de un preset, eliminando la necesidad de dividirlos en varios paquetes y mejorando la gestión y visualización en la interfaz.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "HagiCode revoluciona los presets con soporte multi‑skill: cada comando define su propia habilidad",
+  "url": "https://dev.to/newbe36524/precise-routing-for-every-command-practical-implementation-of-multi-skill-support-in-hagicode-13na",
+  "whyMatters": "Esta mejora simplifica drásticamente la configuración de herramientas de desarrollo basadas en IA, reduciendo la fricción para los usuarios que requieren combinaciones específicas de habilidades. Al centralizar la declaración de dependencias, se acelera la iteración y el despliegue de nuevas funcionalidades, lo que puede impulsar la adopción de asistentes de código como HagiCode en entornos profesionales. Además, el enfoque modular sirve de referencia para otros proyectos que gestionan plugins o presets con requisitos variables."
+}

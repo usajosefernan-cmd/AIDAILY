@@ -1,0 +1,83 @@
+{
+  "id": "d0d45c87c32c447ef222d0af0689d3ce98f2f06e7c137caae17d3747fbc6a1a2",
+  "title": "PostGIS y DynamoDB impulsan una plataforma de hubs de entrega en tiempo real",
+  "summary": "Una innovadora solución de entrega en última milla combina la potencia espacial de PostGIS con la reactividad de DynamoDB Streams para redirigir paquetes a hubs locales y reducir fracasos de entrega.",
+  "url": "https://dev.to/np_hacks_code/how-postgis-and-dynamodb-streams-power-a-real-time-delivery-hub-platform-5719",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T19:37:04.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk33600jkc216trifv9lt.png",
+  "imageAlt": "PostGIS y DynamoDB impulsan una plataforma de hubs de entrega en tiempo real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una innovadora solución de entrega en última milla combina la potencia espacial de PostGIS con la reactividad de DynamoDB Streams para redirigir paquetes a hubs locales y reducir fracasos de entrega.",
+  "keyPoints": [
+    "El 15% de las entregas fallan en el primer intento, generando entre 5 y 15 dólares por reintento.",
+    "La plataforma Hold·My·Package usa hubs locales para retener paquetes y entregarlos cuando el destinatario está presente.",
+    "Aurora PostgreSQL con PostGIS gestiona el estado y la lógica espacial, mientras DynamoDB Streams maneja eventos y notificaciones en tiempo real.",
+    "El algoritmo ST_ClusterDBSCAN agrupa paquetes dentro de 500 metros, optimizando rutas sin servicios externos."
+  ],
+  "whyMatters": "Esta arquitectura demuestra cómo combinar bases de datos relacionales y NoSQL puede resolver problemas complejos de logística con eficiencia y escalabilidad. Al reducir los fracasos de entrega, las empresas ahorran miles de dólares y mejoran la experiencia del cliente, lo que puede traducirse en mayor lealtad y menores costos operativos. El enfoque también abre la puerta a nuevas oportunidades de negocio en la economía del hub local, transformando la forma en que se gestionan las entregas en ciudades congestionadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk33600jkc216trifv9lt.png",
+      "alt": "Portada del artículo que muestra una interfaz de gestión de entregas",
+      "caption": "Imagen de portada del artículo sobre la plataforma de hubs de entrega"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/veMvbaT5OBA",
+      "alt": "Video explicativo de la plataforma Hold·My·Package",
+      "caption": "Video de YouTube que muestra el funcionamiento de la plataforma"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logotipo de PostGIS en la documentación oficial",
+      "caption": "Logotipo oficial de PostGIS utilizado en la documentación"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PostGIS",
+    "#DynamoDB",
+    "#LogisticaDigital"
+  ],
+  "fullArticle": "En la era de la entrega instantánea, el 15 % de los paquetes no llegan en el primer intento, costando entre 5 y 15 dólares por reintento. Esta cifra, que se traduce en millones de euros al año, impulsa a los proveedores a buscar soluciones que eliminen la frustración tanto del repartidor como del destinatario.\n\nLa respuesta llega en forma de Hold·My·Package, una plataforma B2B que convierte a negocios locales—desde lavanderías hasta coworkings—en hubs de entrega. Cuando un repartidor falla, el paquete se redirige al hub más cercano con capacidad disponible, y se entrega al cliente cuando éste está en casa. Este modelo no solo reduce costos, sino que también mejora la sostenibilidad al optimizar rutas y disminuir viajes vacíos.\n\nEl corazón tecnológico combina Aurora PostgreSQL Serverless con la extensión PostGIS para manejar la lógica espacial y el estado de los paquetes, mientras que DynamoDB Streams registra cada cambio de estado y dispara notificaciones en tiempo real. La separación de responsabilidades permite que Aurora sea la fuente de verdad y DynamoDB la fuente de eventos, una arquitectura que evita la sobrecarga de un solo sistema.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk33600jkc216trifv9lt.png]\n\nEl algoritmo ST_ClusterDBSCAN agrupa paquetes dentro de 500 metros, lo que permite al operador ver, en una sola vista, las entregas que pueden combinarse en un único viaje. Este enfoque reduce la complejidad de la planificación de rutas y evita la necesidad de servicios externos de optimización.\n\n[MULTIMEDIA: https://www.youtube.com/embed/veMvbaT5OBA]\n\nCon una arquitectura que equilibra la robustez de PostgreSQL con la velocidad de DynamoDB, Hold·My·Package demuestra que la logística del futuro no necesita sacrificar precisión por rapidez. Al integrar hubs locales y datos espaciales, la plataforma ofrece una solución escalable que puede adaptarse a cualquier ciudad y a cualquier volumen de paquetes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:09:51.578Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article"
+    },
+    {
+      "title": "Documentación de Amazon Aurora PostgreSQL",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.html"
+    },
+    {
+      "title": "Guía oficial de PostGIS",
+      "url": "https://postgis.net/documentation/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de fracasos de entrega",
+      "value": "15 %"
+    },
+    {
+      "label": "Costo por reintento",
+      "value": "$5‑$15"
+    },
+    {
+      "label": "Radio de agrupación de paquetes",
+      "value": "500 metros"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

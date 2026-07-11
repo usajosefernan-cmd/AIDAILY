@@ -1,0 +1,95 @@
+{
+  "id": "98ae81e179aa80b30f4b37a76535a4ae033f4e38791e17b414f294f1ddc4aba0",
+  "title": "Co-localizar código y datos para un aumento de rendimiento del 450%: la revolución de Planck en la arquitectura de aplicaciones web",
+  "summary": "Planck introduce una arquitectura de cero distancia que integra código de aplicación y base de datos en un solo proceso mediante WebAssembly, eliminando la latencia de red y duplicando el rendimiento en pruebas comparativas.",
+  "url": "https://dev.to/rustoncloud/co-locating-data-and-application-code-for-a-45x-performance-gain-11o3",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T03:49:15.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fggekfqfst3agmqvev7l1.png",
+  "imageAlt": "Co-localizar código y datos para un aumento de rendimiento del 450%: la revolución de Planck en la arquitectura de aplicaciones web",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Planck introduce una arquitectura de cero distancia que integra código de aplicación y base de datos en un solo proceso mediante WebAssembly, eliminando la latencia de red y duplicando el rendimiento en pruebas comparativas.",
+  "keyPoints": [
+    "Planck fusiona el motor de base de datos y el entorno de ejecución de WebAssembly en un único proceso, eliminando la latencia de red en llamadas a datos",
+    "La herramienta planctl permite compilar, empaquetar y desplegar código WebAssembly directamente desde la terminal, con gestión de índices y backups",
+    "El Workbench integrado ofrece un dashboard visual para monitoreo de métricas, gestión de esquemas y programación de tareas administrativas",
+    "Pruebas muestran un 4.5x de mejora en rendimiento frente a pilas NodeJS/Express/MongoDB tradicionales mediante llamadas directas a memoria"
+  ],
+  "whyMatters": "Esta innovación redefine las arquitecturas de aplicaciones modernas al eliminar barreras de rendimiento inherentes a la separación de capas, permitiendo aplicaciones más reactivas y eficientes. Su enfoque basado en WebAssembly abre nuevas posibilidades para la integración de lenguajes de programación en entornos de bases de datos, con implicaciones directas en el desarrollo de aplicaciones de alto rendimiento y sistemas de procesamiento de datos en tiempo real.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fggekfqfst3agmqvev7l1.png",
+      "alt": "Imagen de portada mostrando el concepto de arquitectura Zero-Distance de Planck",
+      "caption": "Arquitectura Zero-Distance de Planck integrando código y datos en un único proceso"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo de Google AI como socio oficial de Planck",
+      "caption": "Google AI - Official AI Model and Platform Partner"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logotipo de Neon como socio de base de datos oficial",
+      "caption": "Neon - Official Database Partner"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logotipo de Algolia como socio de búsqueda oficial",
+      "caption": "Algolia - Official Search Partner"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Planck",
+    "#WebAssembly",
+    "#ArquitecturaZeroDistance",
+    "#DesarrolloDeSoftware",
+    "#HighPerformanceComputing"
+  ],
+  "fullArticle": "Las aplicaciones web modernas sufren de ineficiencias estructurales al ejecutar capas separadas en procesos distintos: un servidor NodeJS y una base de datos MongoDB comunicanse mediante conexiones de red, generando latencia y sobrecarga de serialización. Planck rompe este paradigma con su arquitectura Zero-Distance, que fusiona el motor de almacenamiento WiscKey (basado en LSM-trees) y un entorno de ejecución de WebAssembly en un único proceso. Al alojar el código de aplicación directamente dentro del proceso de la base de datos, las llamadas a datos se convierten en operaciones de memoria directa, eliminando los costos de red y protocolos. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fggekfqfst3agmqvev7l1.png] Esta integración permite alcanzar un 4.5x de mejora en rendimiento frente a pilas tradicionales, como demuestran las pruebas comparativas con NodeJS, ExpressJS y MongoDB. La solución incluye tres componentes esenciales: el binario Planck que gestiona almacenamiento y ejecución, planctl para compilación y despliegue desde terminal, y el Workbench -una consola web con dashboard visual para monitoreo de métricas, gestión de esquemas y programación de tareas como backups o garbage collection. La adopción requiere instalar binarios desde releases, inicializar el entorno y configurar el CLI, con comandos específicos para macOS y Linux que registran servicios en launchd o systemd respectivamente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T04:07:44.081Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Planck",
+      "url": "https://planck.dev/docs"
+    },
+    {
+      "title": "Repositorio de Planck en GitHub",
+      "url": "https://github.com/planck-dev/planck"
+    },
+    {
+      "title": "Guía de inicio rápido de Planck",
+      "url": "https://planck.dev/quickstart"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Mejora de rendimiento",
+      "value": "4.5x frente a pilas tradicionales"
+    },
+    {
+      "label": "Reducción de latencia",
+      "value": "Eliminación de round-trips de red"
+    },
+    {
+      "label": "Lenguaje de implementación",
+      "value": "WebAssembly"
+    },
+    {
+      "label": "Compatibilidad",
+      "value": "Soporta múltiples lenguajes mediante WebAssembly"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,72 @@
+{
+  "id": "089fde014337bbdb5951fdb84fb5a62806254a705fd23152f216892b6805062d",
+  "title": "¿Es una mala idea usar el Servicio de Accesibilidad de Android para un agente de ciberseguridad AI en el propio dispositivo? 🤖🛡️",
+  "summary": "Desarrollador crea Aigris, agente de ciberseguridad AI open source 100% en el dispositivo que usa el Servicio de Accesibilidad de Android para interceptar URLs y detectar phishing, pero enfrenta problemas de cumplimiento en Play Store y fricción en la experiencia de usuario.",
+  "url": "https://dev.to/ullahnaqeeb/is-using-androids-accessibility-service-for-an-on-device-ai-security-agent-a-bad-idea-1m0d",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T14:55:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpvryw7jrikrbwmjkbdqq.png",
+  "imageAlt": "¿Es una mala idea usar el Servicio de Accesibilidad de Android para un agente de ciberseguridad AI en el propio dispositivo? 🤖🛡️",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Desarrollador crea Aigris, agente de ciberseguridad AI open source 100% en el dispositivo que usa el Servicio de Accesibilidad de Android para interceptar URLs y detectar phishing, pero enfrenta problemas de cumplimiento en Play Store y fricción en la experiencia de usuario.",
+  "keyPoints": [
+    "Aigris es un proyecto de código abierto de agente de ciberseguridad con IA 100% integrado en el dispositivo, creado para proteger a usuarios móviles de phishing y estafas financieras en tiempo real.",
+    "El sistema usa el Servicio de Accesibilidad de Android para extraer URLs completas de navegadores como Chrome, Edge o Samsung Internet, evitando restricciones de deep links del sistema operativo.",
+    "Su arquitectura está optimizada para hardware de consumo: consume menos del 5% de CPU en reposo, usa menos de 200MB de RAM y aplica caché LRU con TTL de 10 minutos para reducir el consumo de batería.",
+    "El creador enfrenta dilemas de cumplimiento en Google Play Store, ya que las políticas de la plata bloquean apps que usan Servicios de Accesibilidad si no son tecnologías de asistencia, además de alta fricción para usuarios no técnicos al activar el permiso."
+  ],
+  "whyMatters": "Este proyecto expone los límites de las APIs de Android para desarrollar herramientas de ciberseguridad innovadoras sin root ni VPN, un problema recurrente para desarrolladores de soluciones de protección de usuarios finales. La decisión de usar el Servicio de Accesibilidad, aunque efectiva técnicamente, abre un debate sobre la flexibilidad de las políticas de Google Play Store para apps de seguridad que no se encuadran en la categoría de tecnologías de asistencia. Además, la fricción en la activación del permiso para usuarios no técnicos podría limitar la adopción de soluciones de ciberseguridad open source accesibles para el público general, un sector cada vez más vulnerable a ataques de phishing en dispositivos móviles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpvryw7jrikrbwmjkbdqq.png",
+      "alt": "Imagen de portada del artículo sobre el uso del Servicio de Accesibilidad de Android para un agente de ciberseguridad AI",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Aigris",
+    "#CiberseguridadMovil",
+    "#ServicioAccesibilidadAndroid",
+    "#IAEnDispositivo"
+  ],
+  "fullArticle": "El desarrollador Naqeeb Ullah ha creado Aigris, un agente de ciberseguridad con inteligencia artificial de código abierto, 100% ejecutado en el propio dispositivo móvil, diseñado para proteger a usuarios comunes de amenazas en tiempo real como phishing y estafas financieras. La elección técnica clave del proyecto es el uso del Servicio de Accesibilidad de Android para extraer la URL completa directamente de las barras de direcciones de navegadores mayoritarios como Chrome, Edge o Samsung Internet, lo que le permite interceptar intentos de phishing antes de que el navegador renderice el contenido malicioso, sorteando las restricciones de deep links del sistema operativo. La arquitectura de Aigris está altamente optimizada para hardware de consumo: la inferencia del modelo ONNX local y la extracción de URLs se ejecutan en hilos secundarios mediante corrutinas de Kotlin para no afectar el rendimiento, consume menos del 5% de CPU en estado inactivo, ocupa menos de 200MB de RAM y usa una caché LRU con un tiempo de vida de 10 minutos para hasta 100 entradas, evitando inferencias repetidas y ahorrando batería.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpvryw7jrikrbwmjkbdqq.png]\n\nSin embargo, esta elección técnica genera importantes dilemas de distribución y experiencia de usuario. Por un lado, Google Play Store bloquea de forma agresiva las aplicaciones que usan el Servicio de Accesibilidad si no se encuadran estrictamente en la categoría de tecnologías de asistencia, una medida derivada del abuso histórico de esta API por parte de malware. Por otro lado, para usuarios no técnicos, activar este permiso requiere navegar por menús profundos de Android y aceptar una advertencia que puede generar desconfianza, lo que supone una fricción muy alta para la adopción del proyecto. El creador ha abierto un debate en la comunidad para buscar alternativas menos invasivas, como APIs modernas de Android que permitan interceptar URLs de forma system-wide sin root ni VPN, así como experiencias de otros desarrolladores que hayan publicado apps de seguridad con este permiso y estrategias para explicar el permiso a usuarios finales sin generar rechazo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T15:06:25.488Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Aigris en GitHub",
+      "url": "https://github.com/ullah-naqeeb/aigris.git"
+    },
+    {
+      "title": "Documentación oficial del Servicio de Accesibilidad de Android",
+      "url": "https://developer.android.com/guide/topics/ui/accessibility/services"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Consumo máximo de CPU en reposo",
+      "value": "<5%"
+    },
+    {
+      "label": "Huella de memoria máxima",
+      "value": "<200MB"
+    },
+    {
+      "label": "Capacidad de caché LRU",
+      "value": "100 entradas con TTL de 10 minutos"
+    },
+    {
+      "label": "Navegadores compatibles para extracción de URLs",
+      "value": "Chrome, Edge, Samsung Internet"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

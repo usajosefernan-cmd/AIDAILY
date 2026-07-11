@@ -1,0 +1,77 @@
+{
+  "id": "d518ff185ef7d4a1cdeb0e9b302086be7fcef8109d31eb3dfad58f959cb557a6",
+  "title": "Escanear mi configuración de servidores MCP me dio 0 sobre 100: estos eran los fallos de seguridad críticos",
+  "summary": "Un desarrollador que usaba servidores MCP con Claude y Cursor creó una herramienta de auditoría gratuita que detectó fallos graves en su propia configuración, revelando que el 41% de los servidores MCP públicos no requieren autenticación y el 36,7% son vulnerables a SSRF, poniendo en riesgo datos y sistemas de usuarios.",
+  "url": "https://dev.to/alih552/i-scanned-my-mcp-setup-and-it-scored-0100-heres-what-was-wrong-28g",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T01:40:10.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwbzd17ja0yv5vadz21lb.png",
+  "imageAlt": "Escanear mi configuración de servidores MCP me dio 0 sobre 100: estos eran los fallos de seguridad críticos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador que usaba servidores MCP con Claude y Cursor creó una herramienta de auditoría gratuita que detectó fallos graves en su propia configuración, revelando que el 41% de los servidores MCP públicos no requieren autenticación y el 36,7% son vulnerables a SSRF, poniendo en riesgo datos y sistemas de usuarios.",
+  "keyPoints": [
+    "Un análisis de 7.000 servidores MCP públicos en 2026 reveló que el 41% no requiere autenticación y el 36,7% son vulnerables a ataques SSRF.",
+    "La herramienta de auditoría mcp-audit, gratuita y de código abierto, analiza configuraciones de MCP para clientes como Claude Desktop, Cursor o VS Code.",
+    "Los fallos más comunes detectados incluyen secretos en texto plano, versiones sin fijar de paquetes y acceso excesivo al sistema de archivos.",
+    "Cada servidor MCP adicional consume entre 50.000 y 75.000 tokens de contexto por solicitud, generando costes y latencia innecesarios."
+  ],
+  "whyMatters": "Esta noticia es crítica porque expone una brecha de seguridad generalizada en el ecosistema de servidores MCP, herramientas cada vez más usadas para ampliar las capacidades de modelos de IA generativa. Los fallos detectados no solo ponen en riesgo datos sensibles de usuarios y empresas, sino que también generan costes operativos innecesarios por consumo excesivo de tokens en las solicitudes a los modelos. Su impacto se extiende a todos los equipos de desarrollo que usan estos servidores, ya que la falta de buenas prácticas de seguridad puede derivar en filtraciones de datos, acceso no autorizado a sistemas internos y vulnerabilidades en la cadena de suministro de software que afecten a proyectos completos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwbzd17ja0yv5vadz21lb.png",
+      "alt": "Portada del artículo sobre auditoría de servidores MCP que obtuvo una calificación de 0 sobre 100",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#MCP",
+    "#SeguridadInformatica",
+    "#ClaudeAI",
+    "#HerramientasDesarrollo",
+    "#AuditoriaSeguridad"
+  ],
+  "fullArticle": "El uso de servidores MCP (Model Context Protocol) se ha extendido en los últimos meses entre desarrolladores que buscan ampliar las funcionalidades de asistentes de IA como Claude o editores de código como Cursor, permitiendo acceder a repositorios de GitHub, sistemas de archivos o motores de búsqueda directamente desde el modelo. Sin embargo, un análisis reciente de casi 7.000 servidores MCP públicos ha puesto de manifiesto graves fallos de seguridad generalizados: el 41% de ellos no requiere ningún tipo de autenticación, el 36,7% son vulnerables a ataques de falsificación de solicitudes del lado del servidor (SSRF) y solo el 8,5% implementa el protocolo OAuth para proteger el acceso. Esta situación ha llevado a un desarrollador a crear una herramienta de auditoría gratuita que, al analizar su propia configuración de servidores MCP, le otorgó una calificación de 0 sobre 100, evidenciando la magnitud de los riesgos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwbzd17ja0yv5vadz21lb.png]\n\nLa herramienta, bautizada como mcp-audit, es una interfaz de línea de comandos sin dependencias que analiza las configuraciones de MCP de clientes como Claude Desktop, Cursor, VS Code, Windsurf o archivos .mcp.json personalizados, sin enviar datos a servidores externos: todo el proceso se ejecuta de forma local para evitar exponer información sensible. El desarrollador, que acumulaba meses usando servidores MCP de todo tipo, detectó en su propia configuración fallos que cualquiera que use estas herramientas podría tener sin saberlo: desde servidores remotos sin autenticación que permiten a cualquier persona con la URL ejecutar herramientas, hasta secretos como tokens de GitHub almacenados en texto plano en archivos de configuración que quedan expuestos en el historial de Git.\n\nOtros errores comunes detectados por la herramienta incluyen el uso de comandos como npx -y o uvx sin fijar la versión del paquete, lo que supone un riesgo de cadena de suministro al ejecutar automáticamente la versión más reciente publicada, que podría contener código malicioso. También es frecuente encontrar servidores de sistema de archivos configurados con acceso a rutas demasiado amplias, como la carpeta de usuario completa, lo que permite al modelo de IA leer y escribir archivos fuera del proyecto en el que se trabaja. Además, un factor que pocos tienen en cuenta es el consumo excesivo de tokens: cada servidor MCP activo carga sus esquemas de herramientas en cada solicitud, por lo que cinco servidores pueden consumir entre 50.000 y 75.000 tokens de contexto antes de que el usuario escriba una sola palabra, generando costes elevados y latencia innecesaria en las respuestas del modelo.\n\nPara mitigar estos riesgos, el desarrollador recomienda fijar las versiones de todos los paquetes de servidores MCP, mover los secretos a variables de entorno o gestores de credenciales, limitar el acceso al sistema de archivos exclusivamente a la carpeta del proyecto activo y colocar autenticación delante de cualquier servidor remoto. Además, ha publicado una lista de verificación de seguridad para servidores MCP y un kit de inicio seguro llamado MCP Forge Kit, que incluye autenticación Bearer y JWT, protección contra SSRF, limitación de tasa de solicitudes, validaciones y pruebas integradas, para que los desarrolladores creen servidores seguros desde el primer commit. La herramienta mcp-audit es gratuita, de código abierto con licencia MIT y ya está disponible para que cualquier usuario revise su configuración y evite riesgos innecesarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T02:02:34.627Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de la herramienta mcp-audit",
+      "url": "https://github.com/alih552/mcp-audit"
+    },
+    {
+      "title": "Lista de verificación de seguridad para servidores MCP",
+      "url": "https://alih552.github.io/mcp-forge/checklist.html"
+    },
+    {
+      "title": "MCP Forge Kit: kit de inicio seguro para servidores MCP",
+      "url": "https://alih552.github.io/mcp-forge/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Servidores MCP públicos analizados en el estudio",
+      "value": "Casi 7.000"
+    },
+    {
+      "label": "Porcentaje de servidores sin autenticación",
+      "value": "41%"
+    },
+    {
+      "label": "Porcentaje de servidores vulnerables a SSRF",
+      "value": "36,7%"
+    },
+    {
+      "label": "Consumo de tokens por 5 servidores MCP activos por solicitud",
+      "value": "Entre 50.000 y 75.000 tokens"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

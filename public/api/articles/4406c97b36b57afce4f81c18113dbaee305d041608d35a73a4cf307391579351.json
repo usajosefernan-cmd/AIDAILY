@@ -1,0 +1,38 @@
+{
+  "id": "4406c97b36b57afce4f81c18113dbaee305d041608d35a73a4cf307391579351",
+  "title": "How to add a changelog to any web app with one script tag",
+  "summary": "Artículo que explica la importancia de integrar changelogs directamente en la interfaz de las aplicaciones web, presentando una solución de una sola etiqueta de script que funciona en cualquier framework sin necesidad de instalaciones adicionales.",
+  "url": "https://dev.to/michael-yousrie/how-to-add-a-changelog-to-any-web-app-with-one-script-tag-43b5",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T00:05:39.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "How to add a changelog to any web app with one script tag",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo que explica la importancia de integrar changelogs directamente en la interfaz de las aplicaciones web, presentando una solución de una sola etiqueta de script que funciona en cualquier framework sin necesidad de instalaciones adicionales.",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "How to add a changelog to any web app with one script tag",
+      "caption": "pic"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Realizas envíos todo el tiempo. Una solución aquí, una nueva configuración allá, una característica en la que pasaste todo un fin de semana. Y sus usuarios en su mayoría no se dan cuenta.\n\nEsa brecha es cara. Cuando las personas no pueden ver un producto en movimiento, se sienten abandonados, incluso cuando se envía todas las semanas. Se agitan un poco más rápido, envían correos electrónicos solicitando cosas que usted creó hace un mes y todo el impulso que realmente está creando permanece invisible.\n\nLa solución es aburrida y vieja: un registro de cambios. Pero no es un registro de cambios pudriéndose en un documento de Notion que nadie abre. Uno que aparece dentro de su aplicación, donde ya se encuentran los usuarios.\n\nUn widget de \"novedades\" es un pequeño botón o insignia en su interfaz de usuario. Haga clic en él y aparecerá un panel con sus últimas actualizaciones. Los usuarios lo ven en el flujo de uso de su producto, no en alguna página /changelog que nunca visitarían.\n\nTerminé creando una herramienta para esto (revelación honesta a continuación), pero la integración es la parte que vale la pena mostrar, porque es el patrón que debe seguir cualquier widget de registro de cambios:\n\nUna etiqueta de secuencia de comandos. Sin SDK, sin instalación de npm, sin acoplamiento de marco. Se comporta igual en React, Vue, Rails o una página HTML simple.\n\nDos detalles de implementación son importantes, ya sea que cree uno usted mismo o evalúe uno existente:\n\nLa herramienta es fácil...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T00:23:59.406Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

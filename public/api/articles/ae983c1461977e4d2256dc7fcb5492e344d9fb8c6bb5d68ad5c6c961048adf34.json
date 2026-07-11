@@ -1,0 +1,68 @@
+{
+  "aiSummary": "GitHub lanza Advanced Security, una suite de herramientas de seguridad integradas de forma nativa en su plataforma que permite detectar y corregir vulnerabilidades, filtrar secretos y monitorear dependencias en tiempo real, sin añadir complejidad a los flujos de trabajo de los desarrolladores.",
+  "category": "tecnologia",
+  "fullArticle": "En un ecosistema digital en el que las filtraciones de datos y las vulnerabilidades en aplicaciones suponen pérdidas millonarias y daños reputacionales para empresas de todos los tamaños, la integración de la seguridad en el ciclo de desarrollo de software se ha convertido en una prioridad ineludible. Hasta ahora, los equipos de desarrollo tenían que recurrir a herramientas de seguridad externas que añadían complejidad a sus flujos de trabajo, ralentizaban las entregas y generaban fricción entre los equipos de ingeniería y los de seguridad. GitHub, la plataforma de desarrollo colaborativo utilizada por más de 100 millones de desarrolladores en todo el mundo, acaba de dar un paso decisivo para resolver este problema con el lanzamiento de GitHub Advanced Security (GHAS), una suite de herramientas de seguridad nativas integradas directamente en su plataforma.\n\nGHAS agrupa dos productos clave: GitHub Secret Protection, dedicado a la detección y prevención de filtraciones de credenciales, claves API y otros secretos que los desarrolladores suelen subir accidentalmente a los repositorios; y GitHub Code Security, que incluye funcionalidades de análisis estático de código (SAST), análisis de composición de software (SCA) para detectar vulnerabilidades en dependencias de terceros, y escaneo de secretos en tiempo real. La suite incorpora además capacidades de inteligencia artificial basadas en GitHub Copilot Autofix, que no solo detecta vulnerabilidades, sino que propone correcciones automatizadas adaptadas al contexto del código, reduciendo drásticamente el tiempo que los desarrolladores dedican a resolver problemas de seguridad.\n\nA diferencia de los paquetes de seguridad tradicionales o los complementos de terceros que requieren configuraciones complejas y se ejecutan fuera del flujo de trabajo habitual de los desarrolladores, GHAS funciona de forma nativa dentro de GitHub, por lo que los equipos no tienen que cambiar sus hábitos de trabajo para adoptarlo. Esta eliminación de la fricción es clave: los estudios de la industria muestran que las herramientas de seguridad que interrumpen el flujo de trabajo de los desarrolladores tienen tasas de adopción de menos del 30%, mientras que las soluciones integradas de forma nativa superan el 80%. Además, al automatizar la detección y corrección de vulnerabilidades en etapas tempranas del ciclo de desarrollo, GHAS libera a los equipos de seguridad de tareas repetitivas, permitiéndoles centrarse en estrategias de protección más complejas y en la respuesta a amenazas críticas.\n\nLa herramienta ya está disponible como complemento para todos los repositorios de GitHub, así como para Azure DevOps, lo que amplía su alcance a equipos que utilizan la plataforma de desarrollo de Microsoft. Su lanzamiento llega en un momento en el que los ciberataques a aplicaciones han aumentado un 50% en el último año, según datos de la firma de ciberseguridad Check Point, y en el que el 80% de las filtraciones de datos se deben a vulnerabilidades en el código de las aplicaciones. Para las empresas, GHAS supone una forma de reducir el riesgo de incidentes de seguridad sin renunciar a la velocidad de desarrollo, un factor crítico en un mercado en el que la capacidad de lanzar actualizaciones rápidas es una ventaja competitiva clave.",
+  "hashtags": [
+    "#GitHubAdvancedSecurity",
+    "#Ciberseguridad",
+    "#DevSecOps",
+    "#CopilotAutofix"
+  ],
+  "id": "ae983c1461977e4d2256dc7fcb5492e344d9fb8c6bb5d68ad5c6c961048adf34",
+  "imageAlt": "GitHub Advanced Security: Adiós a las filtraciones de secretos y vulnerabilidades en el desarrollo de software",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "interestingData": [
+    {
+      "label": "Aumento de ciberataques a aplicaciones en el último año",
+      "value": "50%"
+    },
+    {
+      "label": "Filtraciones de datos por vulnerabilidades en código",
+      "value": "80%"
+    },
+    {
+      "label": "Tasa de adopción de herramientas de seguridad nativas",
+      "value": "Más del 80%"
+    }
+  ],
+  "keyPoints": [
+    "GitHub Advanced Security integra herramientas de análisis estático, escaneo de secretos y análisis de composición de software directamente en los flujos de trabajo nativos de la plataforma.",
+    "La solución utiliza inteligencia artificial de GitHub Copilot Autofix para ofrecer correcciones automatizadas de vulnerabilidades, reduciendo el tiempo de respuesta ante amenazas.",
+    "A diferencia de paquetes de seguridad tradicionales, GHAS no añade complejidad a la cadena de herramientas de desarrollo, lo que aumenta su adopción por parte de los equipos.",
+    "La herramienta está disponible como complemento para Azure DevOps, ampliando su alcance a equipos que utilizan esa plataforma de desarrollo."
+  ],
+  "links": [
+    {
+      "title": "Página oficial de GitHub Advanced Security",
+      "url": "https://github.com/advanced-security"
+    },
+    {
+      "title": "Documentación oficial de GitHub Advanced Security",
+      "url": "https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "GitHub Advanced Security: Adiós a las filtraciones de secretos y vulnerabilidades en el desarrollo de software",
+      "caption": "Imagen de portada",
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80"
+    }
+  ],
+  "publishedAt": "2026-06-27T12:51:03.179Z",
+  "scrapedAt": "2026-06-27T15:06:20.844Z",
+  "source": "GitHub Trending",
+  "sourceUrl": "https://github.com/trending",
+  "subcategory": "ciberseguridad",
+  "summary": "GitHub lanza Advanced Security, una suite de herramientas de seguridad integradas de forma nativa en su plataforma que permite detectar y corregir vulnerabilidades, filtrar secretos y monitorear dependencias en tiempo real, sin añadir complejidad a los flujos de trabajo de los desarrolladores.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "GitHub Advanced Security: Adiós a las filtraciones de secretos y vulnerabilidades en el desarrollo de software",
+  "url": "https://github.com/security/advanced-security",
+  "whyMatters": "La llegada de GitHub Advanced Security supone un cambio de paradigma en la integración de la seguridad en el ciclo de desarrollo de software, al eliminar la fricción que históricamente ha supuesto añadir herramientas de seguridad externas a los flujos de trabajo de los desarrolladores. Su enfoque nativo y basado en inteligencia artificial no solo reduce el riesgo de filtraciones de datos y vulnerabilidades en producción, sino que libera a los equipos de seguridad de tareas repetitivas para que puedan centrarse en estrategias de protección más complejas y de mayor valor para las organizaciones. En un contexto en el que los ciberataques a aplicaciones aumentan de forma exponencial, esta herramienta se convierte en un activo estratégico para empresas de cualquier tamaño que buscan proteger su código, sus datos de clientes y su reputación sin renunciar a la velocidad de desarrollo.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,83 @@
+{
+  "id": "16c13a5e87eea038e39b44b1cda5c6095d82cd26bc679af03885a363713ddfc4",
+  "title": "Los LLMs generan código inseguro en WordPress y cómo el nuevo sistema lo corrige",
+  "summary": "Los modelos de lenguaje de propósito general tienden a producir plugins de WordPress con fallos de seguridad críticos, pues replican patrones antiguos sin sanitizar datos. Un equipo de ingenieros creó una arquitectura de agentes que planifica, estructura y audita el código antes de entregarlo al desarrollador, garantizando que las funciones de sanitización, nonce y autorización se apliquen de forma obligatoria.",
+  "url": "https://dev.to/niat1961/why-llms-write-insecure-wordpress-code-and-the-architecture-we-built-to-fix-it-1lme",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T19:36:48.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqwq1t77ajliscuema7vg.png",
+  "imageAlt": "Los LLMs generan código inseguro en WordPress y cómo el nuevo sistema lo corrige",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los modelos de lenguaje de propósito general tienden a producir plugins de WordPress con fallos de seguridad críticos, pues replican patrones antiguos sin sanitizar datos. Un equipo de ingenieros creó una arquitectura de agentes que planifica, estructura y audita el código antes de entregarlo al desarrollador, garantizando que las funciones de sanitización, nonce y autorización se apliquen de forma obligatoria.",
+  "keyPoints": [
+    "Los LLMs generan plugins de WordPress de 400 líneas con errores de seguridad como falta de sanitización y autorización.",
+    "El problema surge porque el modelo predice tokens sin considerar restricciones de seguridad, reproduciendo fragmentos de 2014 de StackOverflow.",
+    "La solución es un pipeline de tres agentes: el primero convierte la solicitud en un manifiesto JSON, el segundo compila módulos separados y el tercero audita la salida.",
+    "El manifiesto obliga a incluir nonce y verificaciones de usuario antes de generar cualquier archivo, convirtiendo la seguridad en una decisión de diseño."
+  ],
+  "whyMatters": "En el ecosistema de WordPress, donde la mayoría de la lógica se ejecuta a través de hooks y callbacks, un fallo de seguridad en un plugin puede comprometer la base de datos completa y exponer datos sensibles a usuarios no autenticados. Al integrar un sistema de agentes que garantiza la sanitización y la autorización, se evita que vulnerabilidades se propaguen a miles de sitios, reduciendo el riesgo de ataques de inyección y XSS a escala masiva. Este enfoque también establece un nuevo estándar para la generación de código asistida por IA, mostrando que la ingeniería de software puede superar las limitaciones inherentes a los modelos de lenguaje.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqwq1t77ajliscuema7vg.png",
+      "alt": "Imagen de portada del artículo que muestra un código de plugin de WordPress con errores de seguridad",
+      "caption": "Portada ilustrativa del artículo sobre la generación insegura de código en WordPress"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Google AI - Official AI Model and Platform Partner",
+      "caption": "Logotipo de Google AI, ilustrando la asociación con modelos de lenguaje avanzados"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#WordPress",
+    "#LLM",
+    "#SeguridadWeb",
+    "#IA",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "Los modelos de lenguaje de propósito general, como GPT‑4 o Llama, se entrenan con enormes volúmenes de texto de Internet, entre los que se incluyen fragmentos de código de calidad variable. Cuando se les pide que escriban un plugin de WordPress, el resultado suele ser un archivo de 400 líneas que registra un hook con la prioridad incorrecta, escribe directamente en $wpdb sin sanitizar $_POST y llama a funciones obsoletas. Además, el manejador AJAX creado ejecuta sin restricciones a cualquier visitante que conozca el nombre de la acción, exponiendo un riesgo de inyección de datos y de escalada de privilegios.\n\nPara abordar este problema, los ingenieros de un equipo de investigación diseñaron una arquitectura de agentes que transforma la generación de código en un proceso determinista y verificable. El primer agente no escribe código; convierte la petición en inglés simple en un manifiesto JSON estructurado que declara los hooks, los requisitos de nonce y las funciones de autorización. Este manifiesto actúa como contrato: si el AJAX necesita un nonce, el agente siguiente está obligado a incluirlo.\n\nEl segundo agente compila el manifiesto en archivos separados: capa de datos, controladores y plantillas de vista. La separación de responsabilidades evita que un único archivo monolítico contenga lógica mezclada y facilita la auditoría. Finalmente, el tercer agente revisa la salida, asegurándose de que todas las funciones de sanitización, escape y verificación de permisos estén presentes antes de entregar el plugin al desarrollador.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqwq1t77ajliscuema7vg.png]\n\nEsta solución demuestra que la seguridad no es una característica secundaria de los modelos de lenguaje, sino un requisito de diseño que puede cumplirse con la arquitectura adecuada. Al convertir la generación de código en una cadena de agentes especializados, se elimina la dependencia de la probabilidad de tokens y se garantiza que cada plugin cumpla con las mejores prácticas de WordPress.\n\nEl impacto de esta innovación es amplio: los desarrolladores pueden generar plugins seguros sin sacrificar velocidad, y las comunidades de código abierto pueden incorporar revisiones automáticas en sus flujos de trabajo. Además, el enfoque sirve como plantilla para otros entornos CMS y frameworks, donde la combinación de hooks y bases de datos crea vectores de ataque similares.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T20:08:26.696Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/why-llms-write-insecure-wordpress-code-and-the-architecture-we-built-to-fix-it"
+    },
+    {
+      "title": "Documentación oficial de WordPress sobre hooks y seguridad",
+      "url": "https://developer.wordpress.org/plugins/hooks/"
+    },
+    {
+      "title": "Guía de sanitización y escape en WordPress",
+      "url": "https://developer.wordpress.org/apis/security/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Longitud típica del código generado",
+      "value": "400 líneas"
+    },
+    {
+      "label": "Número de validaciones de seguridad obligatorias",
+      "value": "3 (sanitización, nonce, autorización)"
+    },
+    {
+      "label": "Etapas del pipeline de agentes",
+      "value": "3 (planificación, compilación, auditoría)"
+    },
+    {
+      "label": "Porcentaje de código inseguro antes de la auditoría",
+      "value": "70 % (estimado)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

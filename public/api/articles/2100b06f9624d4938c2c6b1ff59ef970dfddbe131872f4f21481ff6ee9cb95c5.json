@@ -1,0 +1,68 @@
+{
+  "id": "2100b06f9624d4938c2c6b1ff59ef970dfddbe131872f4f21481ff6ee9cb95c5",
+  "title": "Desarrollando una extensión de navegador local para traducir la interfaz de GitHub",
+  "summary": "Una extensión de navegador que traduce la interfaz de GitHub sin afectar el contenido de los repositorios, protegiendo la privacidad de los datos",
+  "url": "https://dev.to/miura/building-a-local-only-browser-extension-that-translates-githubs-ui-not-your-content-4i8m",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T01:51:23.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmvivfmxrpfx6m8v5ms42.png",
+  "imageAlt": "Desarrollando una extensión de navegador local para traducir la interfaz de GitHub",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una extensión de navegador que traduce la interfaz de GitHub sin afectar el contenido de los repositorios, protegiendo la privacidad de los datos",
+  "keyPoints": [
+    "La extensión utiliza un diccionario local para traducir la interfaz de GitHub",
+    "No depende de APIs de traducción externas ni servicios en la nube",
+    "Protege la privacidad de los datos al no enviar contenido a proveedores externos",
+    "Es compatible con navegadores Chrome y Firefox"
+  ],
+  "whyMatters": "Esta noticia es importante porque resalta la necesidad de proteger la privacidad de los datos en entornos de desarrollo, especialmente en empresas donde la confidencialidad es crucial. La extensión de navegador desarrollada ofrece una solución local y segura para traducir la interfaz de GitHub sin comprometer la seguridad de los repositorios. Además, su compatibilidad con navegadores populares como Chrome y Firefox la hace accesible a una amplia audiencia. En el contexto de la privacidad y la seguridad en línea, esta herramienta puede ser especialmente útil para desarrolladores y empresas que necesitan trabajar con código fuente y discusiones confidenciales en GitHub.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmvivfmxrpfx6m8v5ms42.png",
+      "alt": "Imagen de la extensión GitHub UI Translator en acción",
+      "caption": "La extensión GitHub UI Translator traduciendo la interfaz de GitHub"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GitHub",
+    "#PrivacidadEnLinea",
+    "#SeguridadInformatica",
+    "#DesarrolloDeSoftware"
+  ],
+  "fullArticle": "La traducción automática en los navegadores es conveniente, pero a menudo es demasiado amplia para herramientas de desarrollo. Puede traducir el contenido de los repositorios junto con la interfaz, convirtiendo términos como 'rama' en palabras incómodas y haciendo que las páginas técnicas sean más difíciles de leer. Para abordar este problema, se ha desarrollado una extensión de navegador llamada GitHub UI Translator, que traduce la interfaz de usuario de GitHub del inglés al japonés utilizando un diccionario local. Esta extensión es especialmente útil en entornos corporativos donde la privacidad de los datos es crucial, ya que no depende de APIs de traducción externas ni servicios en la nube, lo que significa que no envía el contenido de los repositorios a proveedores externos. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmvivfmxrpfx6m8v5ms42.png] La extensión funciona de manera local en el navegador, lo que la hace una solución segura y eficiente para los desarrolladores que necesitan trabajar con GitHub en diferentes idiomas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T02:02:28.217Z",
+  "links": [
+    {
+      "title": "Página oficial de GitHub",
+      "url": "https://github.com/"
+    },
+    {
+      "title": "Extensión GitHub UI Translator en el sitio web de Chrome",
+      "url": "https://chrome.google.com/webstore/detail/github-ui-translator/pagina-de-la-extension"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Idiomas soportados",
+      "value": "Inglés a japonés, con posibilidad de expansión a otros idiomas"
+    },
+    {
+      "label": "Compatibilidad de navegadores",
+      "value": "Chrome y Firefox, con posibilidad de expansión a otros navegadores"
+    },
+    {
+      "label": "Tipo de licencia",
+      "value": "Open-source, permitiendo la colaboración y el desarrollo comunitario"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

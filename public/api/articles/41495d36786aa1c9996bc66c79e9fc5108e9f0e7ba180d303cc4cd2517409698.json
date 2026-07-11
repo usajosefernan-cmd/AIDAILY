@@ -1,0 +1,65 @@
+{
+  "aiSummary": "Un equipo de ingenieros ha completado la ingeniería inversa del chipset gráfico MCGA de IBM, utilizado en las computadoras PS/2 de los años 80, revelando funcionalidades ocultas como capacidad de genlock y detalles desconocidos de sus registros de control que no estaban documentados en los manuales técnicos originales.",
+  "category": "tecnologia",
+  "fullArticle": "El chipset MCGA (Multi-Color Graphics Array) fue la apuesta de IBM por la gráfica de bajo costo cuando lanzó su línea de computadoras personales PS/2 en 1987, integrado de serie en los modelos 25 y 30 de la gama. Durante décadas, su funcionamiento interno estuvo parcialmente documentado, con varios registros de control marcados como reservados y funcionalidades que no aparecían en los manuales técnicos oficiales. Ahora, un proyecto de ingeniería inversa liderado por entusiastas del hardware vintage ha logrado desentrañar los secretos de este componente icónico, revelando detalles que cambian lo que se sabía hasta ahora sobre su arquitectura y capacidades. El equipo analizó dos variantes del chipset: el controlador de memoria gate array y el formateador de vídeo, uno de ellos fabricado por Seiko bajo el modelo SLA6430, con 4342 celdas básicas de 4 transistores cada una, organizadas en 167 filas y 26 columnas, fabricado en un proceso CMOS de 2 micrómetros con dos capas de metal. La segunda variante, el SLA6330, cuenta con 3312 celdas básicas dispuestas en 144 filas y 23 columnas, con especificaciones de fabricación similares. El proceso de decapado de los chips permitió extraer su esquemático y layout, que ya están disponibles de forma pública en el repositorio del proyecto. Entre los descubrimientos más relevantes se encuentra la capacidad del MCGA para realizar genlock, es decir, sincronizar su señal de vídeo con señales de sincronismo externas HSYNC y VSYNC, una funcionalidad que no estaba documentada en el manual de referencia del PS/2 modelo 30, donde el bit correspondiente del registro 0x12 estaba marcado como reservado con valor 0. También se identificó el comportamiento real de varios bits de registros previamente desconocidos: por ejemplo, el bit 3 del registro 0x10 de control de modo solo afecta a los modos de texto de 80x25, multiplicando por dos los registros de temporización horizontal, mientras que el bit 2 del mismo registro permite cambiar el reloj de vídeo entre los 25,175 MHz por defecto y los 14,318 MHz de entrada. Este trabajo no solo permite corregir la documentación histórica de uno de los primeros chipsets gráficos integrados de IBM, sino que también facilita la creación de emuladores más precisos de las computadoras PS/2, así como la reparación de equipos antiguos que aún dependen de este componente. La publicación de los esquemáticos y layouts en un repositorio público supone un hito para la comunidad de preservación de hardware vintage, que ahora cuenta con información fiable para mantener vivo un pedazo de la historia de la computación personal. Además, el proyecto demuestra que incluso componentes de hace casi 40 años aún guardan secretos por descubrir, al alcance de la ingeniería inversa moderna.",
+  "hashtags": [
+    "#IBMMCGA",
+    "#IngenieriaInversa",
+    "#HardwareVintage",
+    "#ChipsGraficos"
+  ],
+  "id": "41495d36786aa1c9996bc66c79e9fc5108e9f0e7ba180d303cc4cd2517409698",
+  "imageAlt": "Ingenieros revelan los secretos ocultos del chip gráfico MCGA de IBM tras décadas de misterio",
+  "imageUrl": "https://opengraph.githubassets.com/8cb7ca151dec67b220c6ad4f2b0df9782dcc568265cc14fa075ac944e014100b/schlae/IBM_MCGA",
+  "interestingData": [
+    {
+      "label": "Año de lanzamiento del MCGA",
+      "value": "1987"
+    },
+    {
+      "label": "Cantidad de celdas básicas del chip Seiko SLA6430",
+      "value": "4342"
+    },
+    {
+      "label": "Cantidad de celdas básicas del chip Seiko SLA6330",
+      "value": "3312"
+    },
+    {
+      "label": "Proceso de fabricación de los chips",
+      "value": "CMOS de 2 micrómetros con 2 capas de metal"
+    }
+  ],
+  "keyPoints": [
+    "El MCGA fue el chipset gráfico de bajo costo lanzado por IBM en 1987 para sus computadoras PS/2 modelos 25 y 30.",
+    "La ingeniería inversa se realizó sobre dos variantes del chip fabricadas por Seiko, con 4342 y 3312 celdas básicas respectivamente.",
+    "Se descubrió que el MCGA soporta genlock para sincronización con señales externas, una funcionalidad no documentada en los manuales oficiales.",
+    "Se identificaron el comportamiento real de varios registros de control previamente marcados como reservados en la documentación de IBM."
+  ],
+  "links": [
+    {
+      "title": "Repositorio oficial del proyecto de ingeniería inversa del IBM MCGA",
+      "url": "https://github.com/schlae/IBM_MCGA"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Chips del MCGA de IBM sometidos a ingeniería inversa. Contribuye al desarrollo del proyecto schlae/IBM_MCGA creando una cuenta en GitHub.",
+      "caption": "Imagen de los chips del MCGA de IBM tras el proceso de ingeniería inversa, publicados en el repositorio oficial del proyecto.",
+      "type": "image",
+      "url": "https://opengraph.githubassets.com/8cb7ca151dec67b220c6ad4f2b0df9782dcc568265cc14fa075ac944e014100b/schlae/IBM_MCGA"
+    }
+  ],
+  "publishedAt": "2026-06-27T05:17:08.000Z",
+  "scrapedAt": "2026-06-27T06:04:14.445Z",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "subcategory": "software",
+  "summary": "Un equipo de ingenieros ha completado la ingeniería inversa del chipset gráfico MCGA de IBM, utilizado en las computadoras PS/2 de los años 80, revelando funcionalidades ocultas como capacidad de genlock y detalles desconocidos de sus registros de control que no estaban documentados en los manuales técnicos originales.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Ingenieros revelan los secretos ocultos del chip gráfico MCGA de IBM tras décadas de misterio",
+  "url": "https://github.com/schlae/IBM_MCGA",
+  "whyMatters": "Este hallazgo es de gran relevancia para la comunidad de preservación de hardware vintage, ya que permite documentar de forma precisa el funcionamiento de un componente icónico de la computación personal de los años 80, que hasta ahora contaba con información técnica incompleta. Además, abre la puerta a que desarrolladores de software moderno pueda crear emuladores más fieles de las computadoras PS/2, así como a la reparación y mantenimiento de equipos antiguos que aún utilizan este chipset. A largo plazo, también supone un hito en la práctica de la ingeniería inversa de hardware, demostrando que componentes de hace décadas aún guardan secretos por descubrir incluso para los estándares actuales."
+}

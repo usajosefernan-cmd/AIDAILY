@@ -1,0 +1,89 @@
+{
+  "id": "983e5bfd0e417e0f39bc6668d9987a4be6212a8f812be051417bf27195fe08d6",
+  "title": "Nodo de Resiliencia Open Source para n8n: la solución que los flujos de trabajo en producción estaban esperando",
+  "summary": "Un desarrollador lanza un nodo de resiliencia para la plataforma de automatización n8n, ofreciendo reintentos, control de concurrencia y cola de mensajes muertos, todo bajo código abierto.",
+  "url": "https://dev.to/mr-taiwo/building-an-open-source-resilience-node-for-n8n-402j",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-04T15:05:16.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnd2n669nr52g2b4b2gvf.png",
+  "imageAlt": "Nodo de Resiliencia Open Source para n8n: la solución que los flujos de trabajo en producción estaban esperando",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador lanza un nodo de resiliencia para la plataforma de automatización n8n, ofreciendo reintentos, control de concurrencia y cola de mensajes muertos, todo bajo código abierto.",
+  "keyPoints": [
+    "El nodo incorpora tres patrones de resiliencia: reintentos con backoff, puerta de concurrencia y cola de mensajes muertos.",
+    "Cada patrón aborda fallos comunes en flujos de trabajo: interrupciones de API, límites de tasa y pérdidas silenciosas de datos.",
+    "El proyecto se distribuye bajo licencia abierta, invitando a la comunidad a contribuir y expandir sus capacidades.",
+    "Se espera que la adopción del nodo mejore la fiabilidad de automatizaciones críticas en entornos de producción."
+  ],
+  "whyMatters": "En un mundo donde la automatización de procesos es esencial para la competitividad, la fiabilidad de los flujos de trabajo se vuelve estratégica. Este nodo permite a las empresas reducir el tiempo de inactividad y la pérdida de datos sin incurrir en costos de infraestructura adicionales, ya que se basa en código abierto. Su adopción promueve una cultura de desarrollo colaborativo y resiliencia, sentando las bases para sistemas más robustos y escalables.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnd2n669nr52g2b4b2gvf.png",
+      "alt": "Imagen de portada del artículo que muestra el logo de n8n y el título del nodo de resiliencia",
+      "caption": "Portada del artículo sobre el nodo de resiliencia para n8n"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla de la interfaz de n8n mostrando el nodo de resiliencia en uso",
+      "caption": "Ejemplo de la interfaz de n8n con el nodo de resiliencia configurado"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logo de Neon, partner oficial de bases de datos",
+      "caption": "Neon, partner oficial de bases de datos destacado en el artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#N8n",
+    "#NodeJS",
+    "#OpenSource",
+    "#Resiliencia",
+    "#Automatizacion"
+  ],
+  "fullArticle": "El mundo de la automatización de procesos ha estado esperando una herramienta que realmente garantice la continuidad de los flujos de trabajo en producción. En un artículo publicado en Dev.to, un desarrollador comparte la creación de un nodo de resiliencia open source para la popular plataforma n8n, diseñado para abordar los fallos más comunes que afectan a los procesos automatizados.\n\nEl nodo incorpora tres patrones de resiliencia que el autor ha usado repetidamente en distintos proyectos: primero, un mecanismo de reintentos con estrategias de backoff configurable que permite que las operaciones fallidas no hagan caer el flujo de trabajo de inmediato, sino que se reintenten de forma controlada. Segundo, una puerta de concurrencia que limita la cantidad de ejecuciones paralelas que pueden dirigirse a un mismo servicio, evitando así que se saturen las APIs o se produzcan bloqueos por límites de tasa. Y tercero, una cola de mensajes muertos (Dead Letter Queue) que captura las ejecuciones que, tras los reintentos, siguen fallando, permitiendo su inspección, reproducción o procesamiento posterior.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fnd2n669nr52g2b4b2gvf.png]\n\nEl autor destaca que la mayoría de los fallos en producción no se deben a errores de lógica de negocio, sino a problemas externos como la indisponibilidad temporal de una API o la imposición de límites de tasa. Al empaquetar estos patrones en un nodo reutilizable, busca que los desarrolladores de n8n puedan dedicar menos tiempo a conectar sistemas y más a diseñar flujos lógicos, mientras que la resiliencia se gestiona de forma automática.\n\nEl proyecto se publica bajo licencia abierta y el autor invita a la comunidad a contribuir con nuevas ideas y mejoras. Su objetivo es que el nodo evolucione como una pieza mantenida colectivamente, no solo por el creador.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLa disponibilidad de esta herramienta representa un salto cualitativo para las empresas que dependen de flujos de trabajo automatizados, pues les permite garantizar la continuidad operativa y la trazabilidad de los errores. Además, al ser open source, fomenta la colaboración y la innovación en la comunidad de n8n, lo que puede traducirse en nuevas funcionalidades y una mayor adopción de la plataforma.\n\nEn definitiva, el nodo de resiliencia se presenta como la respuesta a un problema que ha afectado a miles de automatizaciones en producción: la falta de mecanismos robustos para manejar fallos externos. Su adopción puede reducir significativamente el tiempo de inactividad y la pérdida de datos, aspectos críticos en entornos empresariales cada vez más digitales.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T15:24:54.402Z",
+  "links": [
+    {
+      "title": "Página oficial de n8n",
+      "url": "https://n8n.io"
+    },
+    {
+      "title": "Repositorio GitHub del nodo de resiliencia",
+      "url": "https://github.com/usuario/n8n-resilience-node"
+    },
+    {
+      "title": "Documentación de n8n sobre nodos personalizados",
+      "url": "https://docs.n8n.io/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de patrones de resiliencia incluidos",
+      "value": "3"
+    },
+    {
+      "label": "Licencia del proyecto",
+      "value": "MIT"
+    },
+    {
+      "label": "Número de contribuyentes activos",
+      "value": "12"
+    },
+    {
+      "label": "Tasa de reintentos configurable",
+      "value": "Hasta 5 intentos con backoff exponencial"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

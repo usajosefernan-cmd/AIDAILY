@@ -1,0 +1,73 @@
+{
+  "id": "6689d35d642c6af371233581ffbe84d0fa2d0d8099f7ec90037b1ba94131084e",
+  "title": "V.E.L.O.C.I.T.Y.-OS: NDA – El nacimiento de un lenguaje nativo para IA (Parte 2)",
+  "summary": "El ingeniero detrás de V.E.L.O.C.I.T.Y.-OS revela cómo la arquitectura Neural Document Architecture (NDA) supera los cuellos de botella de contexto de los modelos de lenguaje, ofreciendo un lenguaje binario nativo que reduce costes y garantiza integridad mediante raíces Merkle.",
+  "url": "https://dev.to/unitbuilds_cc/velocity-os-nda-the-birth-of-an-ai-native-language-part-2-4o98",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T10:13:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft0f03iiyeivrod1bop56.jpeg",
+  "imageAlt": "V.E.L.O.C.I.T.Y.-OS: NDA – El nacimiento de un lenguaje nativo para IA (Parte 2)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El ingeniero detrás de V.E.L.O.C.I.T.Y.-OS revela cómo la arquitectura Neural Document Architecture (NDA) supera los cuellos de botella de contexto de los modelos de lenguaje, ofreciendo un lenguaje binario nativo que reduce costes y garantiza integridad mediante raíces Merkle.",
+  "keyPoints": [
+    "Los costos de token de los modelos GLM 5.2 y Kimi alcanzan $1.73 y $0.86 por sesión, lo que hace inviable cargar todo el contexto en sistemas multiagente.",
+    "NDA representa la lógica como grafos semánticos de triples y se almacena en un formato binario sin asignación, reduciendo la latencia a nanosegundos.",
+    "El parser recursivo de NDA ejecuta cinco pasadas para propagar raíces Merkle, garantizando que cualquier alteración cambie instantáneamente la raíz y provea prueba criptográfica de historial.",
+    "El enfoque convierte a V.E.L.O.C.I.T.Y.-OS en un sistema de control de versiones distribuido para la cognición de agentes, más allá de un simple framework de agentes."
+  ],
+  "whyMatters": "Esta innovación redefine la forma en que los modelos de IA interactúan con el código, eliminando la traducción doble que genera alucinaciones y reduciendo costos de ejecución. Al ofrecer un lenguaje nativo y verificable, abre la puerta a sistemas más seguros y escalables, cruciales para la adopción industrial de IA. Los desarrolladores y las empresas de software deben prestar atención, pues la adopción de NDA podría acelerar la entrega de productos basados en IA con mayor fiabilidad y menores costes operativos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft0f03iiyeivrod1bop56.jpeg",
+      "alt": "Portada del artículo sobre V.E.L.O.C.I.T.Y.-OS y NDA",
+      "caption": "Imagen de portada que muestra el título y el logo de V.E.L.O.C.I.T.Y.-OS."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fayerdnp3ga00fi7ywqku.png",
+      "alt": "Diagrama comparativo de grafos de llamadas estándar y Merkle",
+      "caption": "Diagrama que ilustra la transición de llamadas basadas en dirección a raíces Merkle basadas en contenido."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#VeloCityOS",
+    "#NDA",
+    "#IA"
+  ],
+  "fullArticle": "El ingeniero responsable de V.E.L.O.C.I.T.Y.-OS ha publicado una segunda entrega de su serie sobre la creación de un lenguaje nativo para inteligencia artificial. El objetivo: superar el cuello de botella de ventana de contexto que surge cuando los agentes auto‑corregidos leen y modifican archivos de código en tiempo real. Con modelos como GLM 5.2 y Kimi, el coste de tokens por sesión alcanza los $1.73 y $0.86, respectivamente, lo que hace inviable cargar todo el código base en cada iteración.\n\nPara abordar este problema, se diseñó la Neural Document Architecture (NDA), un formato binario sin asignación que representa la lógica como un grafo semántico de triples sujeto‑predicado‑objeto. Al limitar la salida del modelo a opcodes válidos y tripletas estructuradas, se evita la generación de código sintácticamente inválido. El parser recursivo, implementado en nda_parser.rs, ejecuta cinco pasadas sobre el árbol de sintaxis abstracta para propagar raíces Merkle desde los nodos hoja hasta los padres. Esta técnica asegura que cualquier modificación altere instantáneamente la raíz, proporcionando una prueba criptográfica de historial sin costo de ejecución.\n\nEl resultado es un sistema que, en lugar de ser un simple framework de agentes, actúa como un control de versiones distribuido para la cognición de agentes. La trazabilidad no solo facilita la depuración, sino que también documenta el motivo de cada cambio y quién lo aprobó, algo que los sistemas tradicionales de generación de código con IA no ofrecen.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft0f03iiyeivrod1bop56.jpeg]\n\nLa arquitectura propuesta se compara con la tradicional mediante un diagrama que muestra la transición de llamadas basadas en dirección a raíces Merkle basadas en contenido.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fayerdnp3ga00fi7ywqku.png]\n\nCon la adopción de NDA, los desarrolladores pueden consultar la base de código a gran detalle, extraer solo lo necesario, modificarlo y comprometerlo sin inflar el contexto. Esta metodología promete una mayor eficiencia, seguridad y trazabilidad en el desarrollo de sistemas de IA complejos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T10:24:37.830Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/v.e.l.o.c.i.t.y-os-nda-the-birth-of-an-ai-native-language-part-2"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo por token de GLM 5.2",
+      "value": "$1.73"
+    },
+    {
+      "label": "Costo por token de Kimi",
+      "value": "$0.86"
+    },
+    {
+      "label": "Pasadas del parser para Merkle",
+      "value": "5"
+    },
+    {
+      "label": "Formato de almacenamiento NDA",
+      "value": "Binario sin asignación"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "de3caae89168e5dcfb13dd7c0849da42a54357fc22c29c9890a802405cce8dda",
+  "title": "Google lanza ADK 2.0 estable: la apuesta por la coordinación de agentes y el choque con OpenAI",
+  "summary": "La semana pasada Google publicó la versión 2.0.0 de su Agent Development Kit (ADK) y la 1.0.3 de a2a-sdk, marcando un hito en la creación de agentes de IA sin depender de OpenAI. La decisión subraya la divergencia entre ambos gigantes: Google apuesta por la coordinación entre agentes mediante el protocolo A2A, mientras OpenAI se centra en la capacidad de cada agente individual con Sandbox Agents.",
+  "url": "https://dev.to/peytongreen_dev/google-adk-20-is-stable-why-that-makes-the-openai-split-matter-more-3c6l",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-04T08:45:03.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyqnlvsiy6u9c4ltx3zh3.png",
+  "imageAlt": "Google lanza ADK 2.0 estable: la apuesta por la coordinación de agentes y el choque con OpenAI",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La semana pasada Google publicó la versión 2.0.0 de su Agent Development Kit (ADK) y la 1.0.3 de a2a-sdk, marcando un hito en la creación de agentes de IA sin depender de OpenAI. La decisión subraya la divergencia entre ambos gigantes: Google apuesta por la coordinación entre agentes mediante el protocolo A2A, mientras OpenAI se centra en la capacidad de cada agente individual con Sandbox Agents.",
+  "keyPoints": [
+    "Google anuncia ADK 2.0 estable, ofreciendo un marco de agentes multihilo listo para producción sin riesgo de cambios de prerelease.",
+    "El lanzamiento coincide con la versión 1.0.3 de a2a-sdk, reforzando la narrativa de Google como líder en coordinación de agentes a través del protocolo A2A.",
+    "OpenAI rechaza la propuesta de integración del protocolo A2A, prefiriendo el enfoque de agentes individuales con Sandbox Agents que permiten ejecutar código y modificar archivos.",
+    "La estabilidad de ADK 2.0 abre la puerta a arquitecturas de IA donde agentes especializados colaboran sin reinventar protocolos de comunicación."
+  ],
+  "whyMatters": "El anuncio de Google redefine el ecosistema de IA al ofrecer una solución estandarizada para la colaboración entre agentes, algo esencial para sistemas complejos de automatización. Mientras OpenAI mantiene su modelo de agentes autónomos, la divergencia estratégica puede impulsar la innovación en la forma de diseñar flujos de trabajo de IA, afectando a startups, corporaciones y desarrolladores que buscan integrar múltiples modelos en un solo flujo de trabajo. La decisión de Google también presiona a la industria a adoptar protocolos abiertos, favoreciendo la interoperabilidad y reduciendo la dependencia de proveedores únicos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyqnlvsiy6u9c4ltx3zh3.png",
+      "alt": "Portada del artículo que muestra el logotipo de Google y la frase 'ADK 2.0 Is Stable – Why That Makes the OpenAI Split Matter More'",
+      "caption": "Imagen de portada del artículo que destaca el lanzamiento de ADK 2.0"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Pequeña ilustración de un agente de IA interactuando con un servidor",
+      "caption": "Ilustración que representa la interacción entre agentes de IA"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GoogleADK",
+    "#OpenAI",
+    "#IA"
+  ],
+  "fullArticle": "La última semana marcó un hito decisivo en el mundo de la inteligencia artificial: Google lanzó la versión 2.0.0 de su Agent Development Kit (ADK) y, simultáneamente, la 1.0.3 de a2a-sdk. Este doble lanzamiento no es meramente una actualización de software; es una declaración clara de que Google dispone de un marco de agentes completamente funcional, listo para producción y sin depender de la alineación de OpenAI.\n\nLa estabilidad de ADK 2.0 significa que los desarrolladores pueden construir agentes sin el temor de que una próxima versión de prerelease rompa su código. Pero lo más impactante es la sincronía con a2a-sdk, que introduce el protocolo A2A, una capa de comunicación estandarizada que permite que agentes descubran, llamen y compartan contexto entre sí. Este protocolo responde a una necesidad tangible: cuando se combinan múltiples agentes especializados, ¿cómo se coordinan sin reinventar los protocolos cada vez?\n\nEn marzo de 2026, OpenAI recibió una propuesta de 1.200 líneas que incorporaba soporte A2A en su SDK. La respuesta: un enfriado “no gracias”. La postura de OpenAI no es hostil, pero sí revela una filosofía distinta. Mientras Google apuesta por la coordinación entre agentes, OpenAI se centra en la capacidad de cada agente individual, con Sandbox Agents que pueden ejecutar código, modificar archivos y persistir estados.\n\nPara quienes evalúan frameworks para sistemas de agentes en producción, la estabilidad de ADK 2.0 abre una puerta clara: si la interoperabilidad entre agentes es crucial, ADK + A2A ofrece una base robusta. Por otro lado, los Sandbox Agents de OpenAI siguen siendo una herramienta poderosa para tareas de alta autonomía dentro de un único agente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyqnlvsiy6u9c4ltx3zh3.png]\n\nLa decisión de Google de lanzar ambos paquetes al mismo tiempo no es casualidad; es un mensaje coordinado que posiciona a la compañía como el referente en frameworks de agentes multihilo. La comunidad de desarrolladores ahora enfrenta una bifurcación clara: optar por la coordinación abierta y estandarizada de Google o seguir con la autonomía y el sandboxing de OpenAI. El futuro de la IA colaborativa dependerá de cuál de estas filosofías logre capturar la imaginación de la industria y la práctica.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T09:04:59.692Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Google ADK",
+      "url": "https://developers.google.com/ads/agent-development-kit"
+    },
+    {
+      "title": "OpenAI Sandbox Agents",
+      "url": "https://platform.openai.com/docs/agents/sandbox"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de ADK",
+      "value": "2.0.0"
+    },
+    {
+      "label": "Versión de a2a-sdk",
+      "value": "1.0.3"
+    },
+    {
+      "label": "Número de líneas en la PR de A2A",
+      "value": "1.200"
+    },
+    {
+      "label": "Fecha de lanzamiento de ADK 2.0",
+      "value": "Enero de 2026"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

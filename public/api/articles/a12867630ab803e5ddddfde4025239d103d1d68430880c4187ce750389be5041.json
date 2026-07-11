@@ -1,0 +1,85 @@
+{
+  "id": "a12867630ab803e5ddddfde4025239d103d1d68430880c4187ce750389be5041",
+  "title": "GoalPulse AI: The Ultra-Passionate World Cup WhatsApp Companion Built with PHP & Google AI",
+  "summary": "GoalPulse AI es un bot de WhatsApp desarrollado con PHP, la API Graph de Meta y Google Gemini que actúa como comentarista y analista táctico ultrapasado para partidos de fútbol, generando respuestas cargadas de emoción en tiempo real para los aficionados durante el Mundial.",
+  "url": "https://dev.to/dicky_gaming_b4e3f44b4458/goalpulse-ai-the-ultra-passionate-world-cup-whatsapp-companion-built-with-php-google-ai-33fh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T04:24:58.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fodbfpjfp5m71wvc1q5kd.png",
+  "imageAlt": "GoalPulse AI: The Ultra-Passionate World Cup WhatsApp Companion Built with PHP & Google AI",
+  "tags": [
+    "deportes",
+    "noticias"
+  ],
+  "aiSummary": "GoalPulse AI es un bot de WhatsApp desarrollado con PHP, la API Graph de Meta y Google Gemini que actúa como comentarista y analista táctico ultrapasado para partidos de fútbol, generando respuestas cargadas de emoción en tiempo real para los aficionados durante el Mundial.",
+  "keyPoints": [
+    "El proyecto se presentó en el DEV Weekend Challenge: Passion Edition, orientado a cubrir la pasión de los aficionados al fútbol durante el Mundial.",
+    "Combina PHP, la API Graph de Meta y Google Gemini para procesar actualizaciones de partidos y generar respuestas cargadas de emoción en tiempo real.",
+    "Incluye validación de webhooks con HMAC SHA-256 para garantizar que solo los mensajes legítimos de Meta se procesen en el sistema.",
+    "Usa un algoritmo de retroceso exponencial para evitar la pérdida de mensajes ante picos de demanda en momentos decisivos del Mundial."
+  ],
+  "whyMatters": "Esta herramienta supone un avance significativo en la interacción de los aficionados con la información deportiva en tiempo real, eliminando la frialdad de los bots tradicionales para ofrecer una experiencia cercana a la de un comentarista en el estadio. A futuro, su arquitectura basada en tecnologías accesibles y modelos de IA avanzados puede servir de base para desarrollar asistentes personalizados para otros deportes o eventos masivos, adaptándose a las emociones de los usuarios. Además, demuestra que es posible crear productos con alto impacto social y comercial en el sector del entretenimiento sin necesidad de inversiones millonarias en infraestructura.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fodbfpjfp5m71wvc1q5kd.png",
+      "alt": "Imagen de portada del artículo sobre GoalPulse AI, el bot de WhatsApp para el Mundial",
+      "caption": "Imagen de portada del artículo original publicado en DEV Community"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo oficial de Google AI, socio tecnológico del proyecto",
+      "caption": "Logotipo de Google AI, proveedor del modelo Gemini utilizado en GoalPulse AI"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, comunidad de desarrolladores",
+      "caption": "Logotipo de DEV Community, fuente original de la publicación del proyecto"
+    }
+  ],
+  "subcategory": "futbol/laliga",
+  "hashtags": [
+    "#GoalPulseAI",
+    "#MundialFutbol",
+    "#IADeportiva",
+    "#WhatsAppBots",
+    "#GoogleGemini"
+  ],
+  "fullArticle": "El fútbol no es solo un deporte: es una pasión global que une a millones de personas en cada partido, especialmente durante eventos masivos como la Copa del Mundo. Para responder a la necesidad de los aficionados de compartir su emoción en tiempo real, un desarrollador creó GoalPulse AI, un bot de WhatsApp que actúa como comentarista y analista táctico ultrapasado, disponible directamente en los chats de los usuarios. A diferencia de los asistentes automatizados fríos y genéricos, este sistema está diseñado para captar la emoción de los mensajes de los fans y responder con la misma intensidad que se vive en un estadio.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fodbfpjfp5m71wvc1q5kd.png]\n\nEl desarrollo, presentado en el DEV Weekend Challenge: Passion Edition, combina tres tecnologías clave: PHP para la lógica del servidor, la API Graph de Meta para la integración con WhatsApp y Google Gemini, el modelo de IA de Google, para la generación de respuestas. El sistema incluye medidas de seguridad como la validación de firmas HMAC SHA-256 para asegurar que solo los mensajes legítimos de Meta se procesen, y un algoritmo de retroceso exponencial para evitar la caída de mensajes en momentos de pico de demanda, como un penal decisivo en el último minuto de un partido.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nLa configuración del modelo de Gemini con un parámetro de temperatura de 0,9 y un prompt de sistema centrado en la personalidad de un aficionado ultrapasado es lo que permite al bot transformar preguntas sobre táctica o comentarios sobre jugadas en respuestas cargadas de energía, como si se tratara de un amigo gritando desde el sofá. Este proyecto no solo ofrece una experiencia única para los fans, sino que también demuestra el potencial de combinar herramientas de desarrollo accesibles con modelos de IA avanzados para crear productos innovadores en el sector del entretenimiento deportivo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "deportes",
+  "scrapedAt": "2026-07-11T04:43:27.930Z",
+  "links": [
+    {
+      "title": "Artículo original del proyecto en DEV Community",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de Google Gemini API",
+      "url": "https://ai.google.dev/"
+    },
+    {
+      "title": "Documentación de la API Graph de Meta para WhatsApp",
+      "url": "https://developers.facebook.com/docs/whatsapp"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Parámetro de temperatura de Google Gemini",
+      "value": "0,9"
+    },
+    {
+      "label": "Algoritmo de gestión de límites de API",
+      "value": "Retroceso exponencial"
+    },
+    {
+      "label": "Método de validación de webhooks",
+      "value": "HMAC SHA-256"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

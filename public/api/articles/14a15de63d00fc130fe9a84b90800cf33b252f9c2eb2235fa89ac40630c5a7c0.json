@@ -1,0 +1,76 @@
+{
+  "id": "14a15de63d00fc130fe9a84b90800cf33b252f9c2eb2235fa89ac40630c5a7c0",
+  "title": "lapse: la herramienta que recupera el orden de tus fotos en ráfaga en Google Photos",
+  "summary": "Un desarrollador creó lapse, una herramienta CLI de código abierto que ajusta las marcas de tiempo EXIF de las fotos tomadas en ráfaga para que Google Photos las muestre en el orden de captura original, solucionando el problema de las imágenes que se desordenan al ser tomadas en el mismo segundo.",
+  "url": "https://dev.to/minodisk/lapse-keep-burst-photos-in-order-on-google-photos-249e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T14:45:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fswkheq7h0d169z42a50h.png",
+  "imageAlt": "lapse: la herramienta que recupera el orden de tus fotos en ráfaga en Google Photos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creó lapse, una herramienta CLI de código abierto que ajusta las marcas de tiempo EXIF de las fotos tomadas en ráfaga para que Google Photos las muestre en el orden de captura original, solucionando el problema de las imágenes que se desordenan al ser tomadas en el mismo segundo.",
+  "keyPoints": [
+    "lapse es una herramienta CLI gratuita y de código abierto que soluciona el desorden de fotos en ráfaga en Google Photos.",
+    "El problema se produce porque Google Photos ignora la marca de tiempo de milisegundos EXIF, por lo que fotos del mismo segundo pierden su orden de captura.",
+    "La herramienta solo modifica los timestamps de las fotos colapsadas en el mismo segundo, sin alterar el resto de datos ni la calidad de la imagen.",
+    "Es una operación segura, con modo de prueba previa y escritura atómica para evitar corrupciones de archivo incluso si el proceso se interrumpe."
+  ],
+  "whyMatters": "Esta herramienta resuelve un problema muy común entre fotógrafos aficionados y profesionales que organizan sus bibliotecas de imágenes en Google Photos, uno de los servicios de almacenamiento de fotos más utilizados del mundo, con millones de usuarios en España y Europa. A diferencia de soluciones genéricas de edición de metadatos, lapse está diseñada específicamente para este caso de uso, garantizando la integridad de los archivos y evitando la pérdida de datos sensibles como la información de GPS o las notas del fabricante. Su modelo de código abierto y la disponibilidad de binarios precompilados para los principales sistemas operativos la convierten en una solución accesible para cualquier usuario, sin necesidad de conocimientos avanzados de edición de metadatos fotográficos, lo que la hace especialmente relevante para el sector de la fotografía digital en el mercado hispanohablante.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fswkheq7h0d169z42a50h.png",
+      "alt": "Imagen de portada del artículo sobre la herramienta lapse para ordenar fotos en ráfaga en Google Photos",
+      "caption": "Imagen de portada del artículo original en Dev.to que presenta la herramienta lapse"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#LapseCLI",
+    "#GooglePhotos",
+    "#FotografiaDeRafaga",
+    "#MetadatosEXIF"
+  ],
+  "fullArticle": "Un desarrollador ha lanzado lapse, una herramienta de línea de comandos (CLI) gratuita y de código abierto que soluciona un problema muy extendido entre los usuarios de Google Photos: el desorden de las fotos tomadas en modo ráfaga. Cuando se captura una secuencia de imágenes en ráfaga, la mayoría de las cámaras registran varias fotos en el mismo segundo, guardando la diferencia de milisegundos en el campo de metadatos EXIF SubSecTimeOriginal. Sin embargo, Google Photos ignora esta información de subsegundo, por lo que al subir las fotos estas pierden su orden de captura original, mezclándose aleatoriamente.\n\nLa herramienta funciona recorriendo los archivos JPEG de un directorio en orden natural de nombre de archivo (por ejemplo, imagen_2.jpg antes de imagen_10.jpg) y ajustando solo las marcas de tiempo de las fotos colapsadas en el mismo segundo, desplazándolas un segundo hacia adelante cada una, sin modificar las que tienen timestamps únicos. A diferencia de otras soluciones de edición de metadatos, lapse nunca decodifica ni reconstruye el archivo JPEG: parchea los valores de la etiqueta de fecha y hora (19 bytes fijos) directamente en el segmento APP1, por lo que el resto del archivo, incluyendo los datos de imagen, etiquetas GPS y notas del fabricante, se mantiene idéntico bit a bit. El proceso de escritura es atómico, con un archivo temporal previo y renombrado posterior, por lo que incluso una interrupción inesperada del proceso no corrompe el archivo original.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fswkheq7h0d169z42a50h.png]\n\nAdemás, lapse incluye un modo de prueba (--dry-run) que permite previsualizar los cambios antes de aplicarlos, y es idempotente: si se vuelve a ejecutar sobre archivos ya corregidos, no modifica nada. Su implementación en Rust puro, con un analizador mínimo de TIFF/IFD propio, evita dependencias de herramientas como ExifTool que pueden corromper las notas del fabricante al reconstruir segmentos. Los binarios precompilados para Linux, macOS y Windows están disponibles en su página de lanzamientos, y también se puede compilar desde el código fuente con Cargo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T15:28:30.999Z",
+  "links": [
+    {
+      "title": "Artículo original de la herramienta lapse en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Página oficial de Google Photos",
+      "url": "https://photos.google.com"
+    },
+    {
+      "title": "Documentación oficial de metadatos EXIF",
+      "url": "https://exiftool.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño de la modificación por archivo",
+      "value": "19 bytes fijos por etiqueta de fecha y hora"
+    },
+    {
+      "label": "Sistemas operativos compatibles",
+      "value": "Linux, macOS y Windows"
+    },
+    {
+      "label": "Modo de prueba disponible",
+      "value": "Sí, con la bandera --dry-run para previsualizar cambios"
+    },
+    {
+      "label": "Tipo de implementación",
+      "value": "Rust puro con parser propio de TIFF/IFD"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

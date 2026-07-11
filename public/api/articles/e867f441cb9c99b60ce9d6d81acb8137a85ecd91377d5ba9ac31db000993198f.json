@@ -1,0 +1,79 @@
+{
+  "id": "e867f441cb9c99b60ce9d6d81acb8137a85ecd91377d5ba9ac31db000993198f",
+  "title": "Pipeline CI/CD casero con GitHub Actions: la revolución del despliegue sin complicaciones",
+  "summary": "El autor muestra cómo, con tan solo dos archivos YAML, automatiza la validación, construcción y despliegue de una app Next.js en un VPS, garantizando seguridad y sin interrupciones.",
+  "url": "https://dev.to/riusmax/a-homemade-cicd-pipeline-with-github-actions-1bl5",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T12:58:45.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fsergent.dev%2Fblog%2Fcicd-github-actions-maison%2Fcover.webp",
+  "imageAlt": "Pipeline CI/CD casero con GitHub Actions: la revolución del despliegue sin complicaciones",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor muestra cómo, con tan solo dos archivos YAML, automatiza la validación, construcción y despliegue de una app Next.js en un VPS, garantizando seguridad y sin interrupciones.",
+  "keyPoints": [
+    "El pipeline consta de cuatro etapas: lint, escaneo de vulnerabilidades, construcción de Docker y despliegue vía SSH, cada una bloquea la siguiente si falla.",
+    "Se utiliza Trivy con la opción ignore-unfixed:true para evitar bloqueos por vulnerabilidades sin parche, manteniendo la continuidad sin sacrificar seguridad.",
+    "El despliegue se realiza sin tiempo de inactividad: el contenedor antiguo se mantiene activo hasta que el nuevo está listo, y todo se controla con secretos gestionados por GitHub.",
+    "Se implementa un flujo separado para Pull Requests que valida lint, typecheck y build, pero no despliega, evitando errores en producción y reduciendo el riesgo de despliegues accidentales."
+  ],
+  "whyMatters": "Esta estrategia demuestra que la automatización avanzada no requiere infraestructuras corporativas ni equipos DevOps gigantes. Al integrar la seguridad directamente en el flujo de despliegue, se reduce la ventana de exposición a vulnerabilidades críticas. Para las empresas que buscan escalar sin sobrecostos, este enfoque ofrece un modelo replicable y mantenible que garantiza entregas rápidas y seguras.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fsergent.dev%2Fblog%2Fcicd-github-actions-maison%2Fcover.webp",
+      "alt": "Imagen de portada del artículo que muestra el flujo de CI/CD en GitHub Actions",
+      "caption": "Imagen de portada del artículo que ilustra el pipeline de CI/CD casero."
+    },
+    {
+      "type": "image",
+      "url": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8j7kvp660rqzt99zui8e.png",
+      "alt": "Diagrama de flujo del pipeline CI/CD con lint, escaneo, build y deploy",
+      "caption": "Diagrama que detalla las etapas del pipeline descrito en el artículo."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GitHubActions",
+    "#CI_CD",
+    "#DevOps",
+    "#Docker",
+    "#NextJS"
+  ],
+  "fullArticle": "En su artículo, el autor revela cómo convertir un VPS de Next.js en una máquina de producción prácticamente automática, con un pipeline de CI/CD que ocupa solo dos archivos YAML. El flujo comienza con un linting barato, seguido de un escaneo de vulnerabilidades con Trivy que bloquea la construcción si detecta fallos críticos. La fase de build genera una imagen Docker que se publica en GHCR, y el despliegue final se ejecuta vía SSH, actualizando el contenedor sin tiempo de inactividad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fsergent.dev%2Fblog%2Fcicd-github-actions-maison%2Fcover.webp]\n\nPara evitar que un PR arruine la producción, el autor separa el flujo de Pull Requests en otro workflow que valida lint, typecheck y build, pero no despliega. Esta separación asegura que cualquier error de tipo se detecte antes de que el código llegue a la rama master, reduciendo la probabilidad de fallos en producción.\n\n[MULTIMEDIA: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8j7kvp660rqzt99zui8e.png]\n\nEl uso de la opción ignore-unfixed:true en Trivy es clave: permite que el pipeline continúe cuando no hay parches disponibles, evitando bloqueos innecesarios. Al mismo tiempo, la política de 'fix antes de merge' mantiene el código actualizado. Este enfoque equilibrado evita la frustración de los desarrolladores y mantiene la seguridad como prioridad.\n\nEl resultado es un proceso donde el desarrollador puede hacer push a master, tomar un café y volver a encontrar su aplicación en producción, con la tranquilidad de que cada paso ha sido verificado y que la infraestructura está protegida. Este modelo demuestra que la automatización avanzada y la seguridad pueden coexistir sin costes prohibitivos ni complejidad excesiva.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T13:04:37.884Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/sergent/a-homemade-cicd-pipeline-with-github-actions-3j6p"
+    },
+    {
+      "title": "Documentación oficial de GitHub Actions",
+      "url": "https://docs.github.com/es/actions"
+    },
+    {
+      "title": "Guía de Trivy para escanear vulnerabilidades",
+      "url": "https://aquasecurity.github.io/trivy/latest/docs/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de etapas del pipeline",
+      "value": "4"
+    },
+    {
+      "label": "Tiempo promedio de despliegue",
+      "value": "menos de 5 minutos"
+    },
+    {
+      "label": "Tasa de fallos por vulnerabilidades críticas",
+      "value": "0% cuando se ignora unfix"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

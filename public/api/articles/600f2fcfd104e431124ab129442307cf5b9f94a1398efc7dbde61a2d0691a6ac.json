@@ -1,0 +1,73 @@
+{
+  "id": "600f2fcfd104e431124ab129442307cf5b9f94a1398efc7dbde61a2d0691a6ac",
+  "title": "Xahau se renueva: llega el oráculo de precios en cadena y los programas de recompensas personalizados para DeFi",
+  "summary": "La versión 2026.06.21 de xahaud incorpora dos enmiendas clave para el ecosistema DeFi: PriceOracle, que implementa el estándar XLS-47d para agregar precios de múltiples proveedores directamente en la cadena, eliminando la dependencia de fuentes externas vulnerables, e IOURewardClaim, que habilita programas de recompensas personalizados para incentivar la participación de usuarios en protocolos descentralizados.",
+  "url": "https://dev.to/ekiserrepe/learning-xahau-priceoracle-and-iourewardclaim-on-chain-prices-and-custom-reward-programmes-8jb",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T17:09:45.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi4a0rcpc3hpysx0kiasm.png",
+  "imageAlt": "Xahau se renueva: llega el oráculo de precios en cadena y los programas de recompensas personalizados para DeFi",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La versión 2026.06.21 de xahaud incorpora dos enmiendas clave para el ecosistema DeFi: PriceOracle, que implementa el estándar XLS-47d para agregar precios de múltiples proveedores directamente en la cadena, eliminando la dependencia de fuentes externas vulnerables, e IOURewardClaim, que habilita programas de recompensas personalizados para incentivar la participación de usuarios en protocolos descentralizados.",
+  "keyPoints": [
+    "La versión 2026.06.21 de xahaud introduce dos enmiendas que amplían las capacidades de DeFi en la red Xahau.",
+    "El estándar PriceOracle permite agregar precios de múltiples proveedores en cadena, eliminando la dependencia de fuentes externas vulnerables.",
+    "Cada objeto de oráculo soporta hasta 10 pares de precios y se puede dividir en múltiples objetos para necesidades mayores.",
+    "La enmienda IOURewardClaim habilita programas de recompensas personalizados para incentivar la participación en el ecosistema DeFi de Xahau."
+  ],
+  "whyMatters": "Estas enmiendas suponen un punto de inflexión para el ecosistema DeFi de Xahau, al resolver una de las vulnerabilidades más críticas de los contratos inteligentes: la dependencia de fuentes de precios externas que pueden ser manipuladas o quedar obsoletas. Al integrar la agregación de precios directamente en la cadena, se reduce drásticamente el riesgo de exploits y fallos en protocolos de préstamos, intercambios o derivados. Además, la posibilidad de crear programas de recompensas personalizados abre nuevas vías para incentivar la participación de usuarios y desarrolladores, acelerando la adopción de la red como plataforma de liquidación programable para aplicaciones financieras descentralizadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi4a0rcpc3hpysx0kiasm.png",
+      "alt": "Portada del artículo que explica las nuevas enmiendas PriceOracle e IOURewardClaim de la red Xahau",
+      "caption": "Imagen de portada del artículo original de Dev.to sobre las novedades de la versión 2026.06.21 de xahaud"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Xahau",
+    "#DeFi",
+    "#PriceOracle",
+    "#Blockchain",
+    "#IOURewardClaim"
+  ],
+  "fullArticle": "Xahau, la cadena de bloques diseñada como capa de liquidación programable, da un salto cualitativo en su desarrollo con el lanzamiento de la versión 2026.06.21 de su software de nodo xahaud, que incorpora dos enmiendas pensadas para expandir drásticamente las posibilidades de los constructores de aplicaciones de finanzas descentralizadas (DeFi) en su red. Estas novedades, que ya están disponibles para pruebas en el testnet de la plataforma, abordan dos de los pilares fundamentales de cualquier ecosistema DeFi maduro: la fiabilidad de las fuentes de precios y la flexibilidad para diseñar programas de incentivos personalizados.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi4a0rcpc3hpysx0kiasm.png]\n\nLa primera de las enmiendas, PriceOracle, implementa en Xahau el estándar XLS-47d de oráculos de precios, eliminando la necesidad de depender de fuentes externas vulnerables a fallos o manipulaciones. Cualquier cuenta de la red puede convertirse en proveedor de oráculo mediante una transacción OracleSet, publicando pares de activos y sus precios actualizados. Los consumidores de estos datos, como protocolos de intercambio o préstamos, pueden obtener un precio agregado de todos los proveedores que deseen consultar con una sola llamada RPC get_aggregate_price, que descarta automáticamente los valores atípicos para evitar distorsiones. Cada objeto de oráculo admite hasta 10 pares de precios en su serie PriceDataSeries, y los usuarios pueden crear múltiples objetos con identificadores OracleDocumentID distintos para ampliar la capacidad, siempre teniendo en cuenta que cada uno requiere una reserva de XAH en la cuenta.\n\nLa segunda enmienda, IOURewardClaim, introduce la capacidad de diseñar programas de recompensas totalmente personalizados directamente en la cadena, sin necesidad de desarrollos externos complejos. Esto permite a los constructores de protocolos DeFi incentivar acciones específicas de los usuarios: desde proporcionar liquidez en un pool, hasta participar en procesos de gobernanza o realizar operaciones de intercambio, ajustando las recompensas a las necesidades de cada proyecto. Esta funcionalidad reduce la fricción para lanzar programas de fidelización o incentivos comunitarios, al tiempo que garantiza la transparencia y la inmutabilidad de las reglas de distribución.\n\nTodas las funcionalidades de las nuevas enmiendas están disponibles para pruebas en el testnet de Xahau, accesible en wss://xahau-test.net, y requieren el uso de la librería xahau.js en su versión 4.1.0 o superior. Los desarrolladores interesados en probar las novedades pueden clonar el repositorio companion del artículo, configurar sus semillas de prueba y obtener cuentas financiadas gratuitamente desde el portal del testnet. La incorporación de estas capacidades posiciona a Xahau como una alternativa competitiva para el desarrollo de DeFi, al ofrecer soluciones nativas a problemas que en otras redes requieren desarrollos complementarios de terceros, reduciendo riesgos y costos de operación para los proyectos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T17:25:00.311Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev Community",
+      "url": "https://dev.to/xahau/learning-xahau-priceoracle-and-iourewardclaim-on-chain-prices-and-custom-reward-programmes-3j6e"
+    },
+    {
+      "title": "Documentación oficial de las enmiendas de Xahau",
+      "url": "https://xahau.net/docs/en/amendments/priceoracle"
+    },
+    {
+      "title": "Portal de acceso al testnet de Xahau",
+      "url": "https://xahau-test.net"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de xahaud con las nuevas enmiendas",
+      "value": "2026.06.21"
+    },
+    {
+      "label": "Número máximo de pares de precios por objeto de oráculo",
+      "value": "10"
+    },
+    {
+      "label": "Versión mínima requerida de la librería xahau.js",
+      "value": "4.1.0"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

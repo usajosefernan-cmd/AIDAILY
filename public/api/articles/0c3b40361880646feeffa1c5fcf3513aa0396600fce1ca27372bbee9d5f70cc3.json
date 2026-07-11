@@ -1,0 +1,79 @@
+{
+  "id": "0c3b40361880646feeffa1c5fcf3513aa0396600fce1ca27372bbee9d5f70cc3",
+  "title": "La empresa que solo existía en un código TypeScript acumula 80 impresiones en Google",
+  "summary": "Un desarrollador descubrió que una empresa ficticia inventada en un prompt de IA para generar contenido automatizado fue indexada por Google, generando 80 impresiones en 28 días de usuarios que buscan información de una entidad que no existe.",
+  "url": "https://dev.to/aimiten/80-impressions-every-visible-one-is-for-a-company-i-invented-in-a-typescript-file-3bl",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T07:10:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe9ec4k4z12e2ttaxr04q.png",
+  "imageAlt": "La empresa que solo existía en un código TypeScript acumula 80 impresiones en Google",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador descubrió que una empresa ficticia inventada en un prompt de IA para generar contenido automatizado fue indexada por Google, generando 80 impresiones en 28 días de usuarios que buscan información de una entidad que no existe.",
+  "keyPoints": [
+    "Un blog automatizado en valuefy.app generó contenido usando una empresa ficticia llamada TechFlow Solutions como ejemplo de caso de estudio.",
+    "Google indexó el nombre de la empresa inventada junto al contenido sobre fusiones y adquisiciones, posicionándolo en el puesto 7.1 de búsqueda.",
+    "El 86% de las 80 impresiones en 28 días corresponden a búsquedas de usuarios que investigan los datos financieros de TechFlow Solutions.",
+    "El resto de las páginas de calculadoras generadas automáticamente no reciben consultas visibles por debajo del umbral de privacidad de Google Search Console."
+  ],
+  "whyMatters": "Este caso evidencia una falla crítica en los sistemas de indexación de motores de búsqueda, que priorizan la coincidencia de términos sin verificar la veracidad de las entidades mencionadas en el contenido, generando resultados irrelevantes para los usuarios y tráfico inútil para los creadores. A nivel estratégico, demuestra que los prompts de generación de contenido con IA que incluyen datos ficticios pueden tener consecuencias imprevistas en el posicionamiento web, afectando tanto la calidad de los resultados de búsqueda como la credibilidad de las plataformas. A largo plazo, este tipo de anomalías obligará a los motores de búsqueda a implementar sistemas de detección de entidades ficticias más avanzados, además de exigir a los creadores de contenido automatizado una supervisión más estricta de los datos introducidos en los prompts de la IA.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe9ec4k4z12e2ttaxr04q.png",
+      "alt": "Portada del artículo que muestra el titular sobre las 80 impresiones generadas por una empresa ficticia inventada en un archivo TypeScript",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de la comunidad de desarrolladores DEV Community, plataforma donde se publicó el artículo original",
+      "caption": "Crédito de la fuente original: DEV Community"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TechFlowSolutions",
+    "#GeneracionContenidoIA",
+    "#PosicionamientoWeb",
+    "#TypeScript",
+    "#GoogleSearchConsole"
+  ],
+  "fullArticle": "El responsable de valuefy.app, una plataforma de generación de blogs automatizados, revisó las métricas de su página con mejor rendimiento en los últimos 28 días y se encontró con una anomalía que rompe todos los esquemas del posicionamiento web: de las 80 impresiones registradas en Google Search Console, ninguna correspondía a las consultas sobre el tema real del artículo, las salidas en el mercado de fusiones y adquisiciones, sino a búsquedas de una empresa que no existe. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe9ec4k4z12e2ttaxr04q.png] El funcionamiento de la generación de contenido en la plataforma se basa en una rutina programada que selecciona temas, envía solicitudes a una función edge de Supabase que a su vez llama al modelo Gemini de Google con un prompt de sistema extenso armado en el archivo prompt-builder.ts. Dentro de ese prompt se incluye un bloque de casos de estudio de empresas ficticias, diseñado expresamente para que la IA produzca contenido concreto y natural, en lugar de consejos abstractos y genéricos. Una de esas empresas inventadas es TechFlow Solutions, una firma de consultoría IT de Estocolmo con 22 millones de coronas suecas de ingresos, que supuestamente cambió su modelo de servicios por SaaS, generó confusión en sus compradores, dividió su negocio y vendió el área de servicios por cuatro veces su valor. El artículo generado con ese prompt, titulado 'El reinicio de las valoraciones: navegando por múltiplos de salida más bajos en el mercado de fusiones y adquisiciones actual', usó a TechFlow Solutions como ejemplo práctico. Google rastreó el contenido, indexó el nombre de la empresa ficticia junto al lenguaje especializado en due diligence de fusiones y adquisiciones, y determinó que era la página más relevante para mostrar a quienes buscan información financiera de TechFlow Solutions. El resultado es que la página se posiciona en el puesto 7.1 promedio, con 80 impresiones en 28 días, la más visible de todo el sitio, pero con cero clics: los usuarios que llegan buscan datos de una empresa que no existe, por lo que no encuentran lo que necesitan. El desarrollador también probó la generación automatizada de siete páginas de calculadoras especializadas en marketing, lanzadas entre el 21 y el 27 de junio: múltiplo de valoración, CPC, CTR, ROAS, CPA, gasto publicitario y tasa de consumo. Solo la calculadora de CTR tiene presencia en Google Search Console en el periodo de 28 días, con 19 impresiones, posición 5.5 y un clic, pero al revisar las consultas específicas no aparece ninguna: todas las impresiones están por debajo del umbral de privacidad de la herramienta, correspondientes a variantes de cola larga con muy pocas búsquedas cada una. Este patrón se repite en los últimos cinco clusters de contenido generado, lo que demuestra que la automatización sin supervisión de la veracidad de las entidades mencionadas no solo genera tráfico inútil, sino que también puede afectar la credibilidad de los resultados de búsqueda para los usuarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T07:23:38.465Z",
+  "links": [
+    {
+      "title": "Artículo original publicado en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de Google Search Console sobre umbrales de privacidad de consultas",
+      "url": "https://support.google.com/webmasters/answer/9109589"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Impresiones totales en 28 días",
+      "value": "80"
+    },
+    {
+      "label": "Posición promedio en Google",
+      "value": "7.1"
+    },
+    {
+      "label": "Porcentaje de impresiones de búsquedas de la empresa ficticia",
+      "value": "86%"
+    },
+    {
+      "label": "Calculadoras generadas en la última semana",
+      "value": "7"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,69 @@
+{
+  "id": "db16699f7faa35a77112b9c6f7107b8a23e6e6e6e7579823005aaddac1066442",
+  "title": "AR Hide and Seek: el juego indie que convierte el escondite casero en una experiencia de realidad aumentada con LiDAR",
+  "summary": "Un desarrollador independiente creó un juego de escondite multijugador local para iPhone que usa el sensor LiDAR para mapear habitaciones en tiempo real y colocar obstáculos virtuales alineados con la geometría real, tras inspirarse en una partida de escondite entre adultos. El proyecto requirió ajustes exhaustivos de equilibrio para evitar la frustración, y se limitó a multijugador local para eludir la complejidad de sincronización de espacios en partidas por red.",
+  "url": "https://dev.to/moakkaddev/building-ar-hide-and-seek-shipping-a-solo-indie-lidar-game-to-the-app-store-26ng",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T09:36:39.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "AR Hide and Seek: el juego indie que convierte el escondite casero en una experiencia de realidad aumentada con LiDAR",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador independiente creó un juego de escondite multijugador local para iPhone que usa el sensor LiDAR para mapear habitaciones en tiempo real y colocar obstáculos virtuales alineados con la geometría real, tras inspirarse en una partida de escondite entre adultos. El proyecto requirió ajustes exhaustivos de equilibrio para evitar la frustración, y se limitó a multijugador local para eludir la complejidad de sincronización de espacios en partidas por red.",
+  "keyPoints": [
+    "El juego surge de una partida de escondite entre adultos, donde el escondite perfecto pasó desapercibido por falta de atención del buscador.",
+    "AR Hide and Seek usa el LiDAR de los iPhone Pro para mapear el entorno en tiempo real con precisión de centímetros, colocando obstáculos virtuales alineados con la geometría real.",
+    "El desarrollo requirió ajustes exhaustivos de equilibrio: se redujo la densidad de obstáculos para que el juego sea desafiante sin volverse frustrante para el buscador.",
+    "Se optó por multijugador local exclusivamente para evitar la complejidad de sincronizar espacios físicos y compensar latencia en partidas por red."
+  ],
+  "whyMatters": "Este proyecto demuestra que la realidad aumentada con LiDAR puede crear experiencias lúdicas innovadoras que fusionan el mundo físico y digital de forma creíble, sin necesidad de equipos costosos más allá de un iPhone de gama alta. Su enfoque en multijugador local reduce barreras técnicas y prioriza la interacción presencial, un acierto en un mercado saturado de juegos online que requieren conexión constante. Además, sienta un precedente para desarrolladores independientes que quieren explotar sensores avanzados de dispositivos móviles sin invertir en hardware propio, abriendo la puerta a una nueva oleada de juegos de realidad mixta accesibles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla de AR Hide and Seek mostrando obstáculos virtuales integrados en una habitación real",
+      "caption": "Imagen promocional de AR Hide and Seek, el juego indie de escondite con realidad aumentada para iPhone"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ARHideAndSeek",
+    "#RealidadAumentada",
+    "#LiDAR",
+    "#DesarrolloIndie",
+    "#JuegosMovil"
+  ],
+  "fullArticle": "La idea de AR Hide and Seek nació de una partida de escondite 'extremadamente seria' que su creador jugó con sus primos siendo adultos, una situación que calificó de ridícula pero 'extrañamente perfecta': uno de los jugadores se ocultó detrás de un sofá a plena vista, sobreviviendo solo porque el buscador no miró con suficiente atención. Esta anécdota le llevó a plantearse una pregunta que cambió el rumbo del proyecto: ¿qué pasa cuando mirar con atención no es suficiente? La respuesta fue un juego de escondite multijugador local para 2 a 5 jugadores que usa el espacio físico de la habitación donde se juega, combinando escondites reales con obstáculos virtuales que dificultan la tarea del buscador.\n\nEl eje tecnológico del proyecto es el sensor LiDAR integrado en los modelos Pro de iPhone, que permite generar un mapa de profundidad del entorno en tiempo real con precisión de centímetros. Esta capacidad es fundamental para que los obstáculos virtuales se integren de forma creíble en el espacio físico: una caja puede apoyarse en el suelo, una pared virtual se alinea con una pared real, y los objetos no flotan ni se deslizan de su sitio, rompiendo la ilusión de realidad mixta. Como explica el desarrollador, sin esta información de profundidad fiable, los objetos podrían desplazarse, superponerse de forma errónea o flotar, destruyendo la inmersión que es el pilar del juego.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl desarrollo no estuvo exento de desafíos, especialmente en el equilibrio del juego. La primera prueba reveló que los obstáculos eran demasiado efectivos: con la densidad inicial, el buscador terminaba navegando prácticamente a ciegas, lo que generaba frustración. El equipo de desarrollo ajustó la densidad de obstáculos, modificó el temporizador de preparación y realizó decenas de pruebas hasta encontrar el punto exacto en el que el juego es desafiante pero no imposible. Este proceso de equilibrio, según el creador, es muy similar al de un juego de mesa: se trata de ajustar valores, observar el comportamiento de los jugadores y modificar las reglas después de cada ronda.\n\nOtro punto clave fue el diseño de la fase de escaneo previo a cada ronda, en la que el buscador debe mover el teléfono alrededor de la habitación para que el sistema AR entienda el espacio. Para que este proceso no se sintiera como una tarea tediosa, se desarrolló una interfaz con indicadores de progreso, señales direccionales y una animación estilo radar que guía al jugador sin abrumarle. La recompensa llega cuando los obstáculos empiezan a aparecer en la habitación: en ese momento, los jugadores entienden la mecánica de forma instantánea.\n\nLa decisión de limitar el juego a multijugador local, con un solo dispositivo que se pasa entre jugadores, fue consciente desde el principio. El desarrollador explica que una versión multijugador en red requiere resolver problemas muy complejos: que todos los dispositivos se pongan de acuerdo sobre la posición del espacio físico, compensar la latencia de conexión y mantener una sesión compartida estable. Aunque estos retos son 'fascinantes', no eran adecuados para la primera versión del juego, que prioriza la simplicidad y la interacción presencial sobre la escalabilidad en línea.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T09:51:12.341Z",
+  "links": [
+    {
+      "title": "Documentación oficial del sensor LiDAR para desarrolladores de Apple",
+      "url": "https://developer.apple.com/lidar/"
+    },
+    {
+      "title": "Categoría de juegos de realidad aumentada en la App Store",
+      "url": "https://www.apple.com/app-store/category/games/augmented-reality/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de jugadores por partida",
+      "value": "2 a 5 jugadores"
+    },
+    {
+      "label": "Precisión del mapeo LiDAR",
+      "value": "Precisión de centímetros en tiempo real"
+    },
+    {
+      "label": "Requisito de dispositivo",
+      "value": "iPhone Pro con sensor LiDAR"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,73 @@
+{
+  "aiSummary": "Un investigador descubrió código encubierto en Claude Code que rastrea a usuarios chinos sin su consentimiento. Anthropic confirmó que se trataba de un experimento para prevenir abusos, pero defensores de la privacidad criticaron la medida como una violación de la confianza.",
+  "category": "tecnologia",
+  "fullArticle": "Un investigador de seguridad especializado en privacidad, conocido en redes como 'Thereallo', descubrió la semana pasada un código oculto incrustado en Claude Code, la herramienta de desarrollo de la firma de inteligencia artificial Anthropic, que rastrea de forma encubierta a usuarios ubicados en China. El código, oculto mediante una técnica de esteganografía de prompts que lo hace invisible a simple vista, recopila información sensible como la zona horaria del usuario, su dirección proxy y posibles vínculos con laboratorios de IA chinos, y envía estos datos a los servidores de Anthropic sin el consentimiento explícito ni conocimiento de los afectados. El hallazgo, que el investigador calificó como 'un spyware encubierto', generó una oleada de críticas en la comunidad de seguridad informática por considerar que vulnera gravemente la confianza de los usuarios.\n\nTras la exposición pública del código, la empresa eliminó el tracker de forma inmediata. El ingeniero de Anthropic Thariq Shihipar confirmó en la red social X que el código se añadió en marzo como parte de un 'experimento' destinado a prevenir el abuso de cuentas por parte de revendedores no autorizados y protegerse de ataques de destilación de modelos, una técnica en la que firmas chinas copian los modelos de IA estadounidenses para crear productos competidores. Según una investigación de The Washington Post, estos revendedores venden acceso a los modelos gratuitos de Anthropic por un dólar al mes, mientras que suscripciones Pro que cuestan 100 dólares mensuales se comercializan en el mercado negro por tan solo 12 dólares. Shihipar añadió que la empresa tenía previsto eliminar el código desde hace tiempo, ya que los equipos de ingeniería habían desarrollado medidas de mitigación más efectivas desde su implementación.\n\nSin embargo, la explicación de Anthropic no convenció a los defensores de la privacidad, que señalaron que el incidente evidencia que la empresa está dispuesta a cruzar límites éticos para vigilar a sus usuarios, incluso contradiciendo su propia postura pública. Cabe recordar que Anthropic se negó rotundamente a permitir que el gobierno de Estados Unidos, durante la administración Trump, utilizara Claude para llevar a cabo labores de vigilancia sobre ciudadanos estadounidenses, una decisión que le valió un enfrentamiento legal con la Casa Blanca que derivó en una demanda interpuesta por la firma. Esta contradicción entre su discurso público de defensa de la privacidad y la implementación de herramientas de vigilancia encubiertas ha generado un profundo descontento entre sus usuarios y la comunidad de seguridad.\n\nEl caso también se enmarca en la creciente tensión geopolítica en el sector de la inteligencia artificial, donde las empresas estadounidenses intensifican sus esfuerzos para frenar el rápido avance de las firmas chinas. Según The Washington Post, en el último año las empresas chinas han igualado las capacidades de los modelos de IA estadounidenses en cuestión de meses, y recientemente un modelo gratuito de la firma china Zhipu AI superó a Claude Opus 4.8, lanzado en mayo, en la detección de vulnerabilidades informáticas. Este contexto explica la presión de Anthropic por proteger su propiedad intelectual, aunque la medida adoptada haya generado un daño irreparable en la confianza de sus usuarios y abierto un debate global sobre los límites éticos en el desarrollo de la inteligencia artificial.",
+  "hashtags": [
+    "#Anthropic",
+    "#Claude",
+    "#InteligenciaArtificial",
+    "#Privacidad",
+    "#VigilanciaDigital"
+  ],
+  "id": "27660781432242dcb6f2f592f021660f6f7bf9f0442ac20b805c226e3d35c5ef",
+  "imageAlt": "Anthropic elimina un tracker oculto en Claude Code que espiaba a usuarios chinos, contradiciendo su postura contra la vigilancia",
+  "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+  "interestingData": [
+    {
+      "label": "Fecha de implementación del tracker oculto",
+      "value": "Marzo de 2024"
+    },
+    {
+      "label": "Precio mínimo de suscripciones Pro de Claude en el mercado negro",
+      "value": "12 dólares mensuales"
+    },
+    {
+      "label": "Tiempo de igualación de capacidades de modelos de IA por parte de empresas chinas",
+      "value": "Meses"
+    },
+    {
+      "label": "Modelo chino que superó a Claude Opus 4.8 en detección de vulnerabilidades",
+      "value": "Zhipu AI"
+    }
+  ],
+  "keyPoints": [
+    "Un investigador de seguridad descubrió código oculto en Claude Code que rastrea a usuarios chinos sin su consentimiento explícito.",
+    "Anthropic confirmó que el tracker era un experimento de marzo para prevenir abusos de cuentas y ataques de destilación de modelos.",
+    "La empresa eliminó el código tras la exposición, pero defensores de la privacidad criticaron la medida como una violación de la confianza.",
+    "El incidente revela la creciente presión de las empresas estadounidenses para proteger sus modelos de IA de la competencia china."
+  ],
+  "links": [
+    {
+      "title": "Noticia original en Slashdot",
+      "url": "https://yro.slashdot.org/story/26/07/06/1836230/secret-claude-tracker-shocks-users-after-anthropics-anti-surveillance-stance"
+    },
+    {
+      "title": "Política de privacidad de Anthropic",
+      "url": "https://www.anthropic.com/privacy"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Anthropic elimina un tracker oculto en Claude Code que espiaba a usuarios chinos, contradiciendo su postura contra la vigilancia",
+      "caption": "Imagen de portada",
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
+    }
+  ],
+  "publishedAt": "2026-07-06T19:59:11.058Z",
+  "scrapedAt": "2026-07-06T20:15:37.173Z",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "subcategory": "ia/general",
+  "summary": "Un investigador descubrió código encubierto en Claude Code que rastrea a usuarios chinos sin su consentimiento. Anthropic confirmó que se trataba de un experimento para prevenir abusos, pero defensores de la privacidad criticaron la medida como una violación de la confianza.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Anthropic elimina un tracker oculto en Claude Code que espiaba a usuarios chinos, contradiciendo su postura contra la vigilancia",
+  "url": "https://yro.slashdot.org/story/26/07/06/1836230/secret-claude-tracker-shocks-users-after-anthropics-anti-surveillance-stance?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+  "whyMatters": "Este incidente expone una peligrosa contradicción en la postura de Anthropic, que se había posicionado como defensora de la privacidad al negarse a colaborar con la vigilancia gubernamental estadounidense. El uso de código oculto para rastrear usuarios sin su conocimiento establece un precedente preocupante en la industria de la inteligencia artificial, donde la protección de la propiedad intelectual empieza a chocar frontalmente con los derechos de privacidad de los usuarios. Además, la medida refleja la creciente tensión geopolítica en el sector tecnológico, donde las empresas estadounidenses intensifican sus esfuerzos para frenar el rápido avance de las firmas chinas, incluso a costa de sacrificar la confianza de su comunidad.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

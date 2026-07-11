@@ -1,0 +1,65 @@
+{
+  "id": "11d3f66882aa4011886edd05067a14525cea78b069e8a1d88e4ef527348756ef",
+  "title": "El Error Placebo: Por Qué los Desarrolladores Inteligentes Dejan Errores en su Código a Propósito",
+  "summary": "Artículo que explica la práctica del 'error placebo', donde desarrolladores experimentados introducen pequeños errores intencionales en su código para desviar la atención de fallos reales y evitar refactorizaciones innecesarias, protegiendo la arquitectura core del proyecto.",
+  "url": "https://dev.to/bhavnish_e35294bf0fd0b2df/the-placebo-bug-why-smart-developers-leave-mistakes-in-their-code-on-purpose-4og2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T18:24:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdaanrkqfpfbh2g0jxp5k.png",
+  "imageAlt": "El Error Placebo: Por Qué los Desarrolladores Inteligentes Dejan Errores en su Código a Propósito",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo que explica la práctica del 'error placebo', donde desarrolladores experimentados introducen pequeños errores intencionales en su código para desviar la atención de fallos reales y evitar refactorizaciones innecesarias, protegiendo la arquitectura core del proyecto.",
+  "keyPoints": [
+    "Los desarrolladores experimentados dejan errores menores y obvios en el código para desviar la atención de fallos reales y evitar cambios innecesarios.",
+    "Esta práctica surge como respuesta a jefes o seniors que revisan código solo para encontrar fallos y justificar su jerarquía, sin aportar valor real.",
+    "El error placebo protege la arquitectura compleja del proyecto y reduce el estrés del equipo, aunque no es una buena práctica de ingeniería.",
+    "El famoso caso del 'Corporate Duck' ilustra cómo un diseñador usó un elemento aleatorio para desviar la atención de cambios innecesarios por parte de su manager."
+  ],
+  "whyMatters": "Esta práctica revela dinámicas tóxicas en la gestión de equipos de desarrollo, donde la productividad se ve afectada por revisiones innecesarias. A largo plazo, erosiona la calidad del software y la cultura de excelencia técnica. Comprender este comportamiento permite implementar mejores prácticas de gestión y fomentar entornos de trabajo más saludables y eficientes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdaanrkqfpfbh2g0jxp5k.png",
+      "alt": "Ilustración del concepto de error placebo en desarrollo de software",
+      "caption": "Imagen de portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ErrorPlacebo",
+    "#DesarrolloSoftware",
+    "#IngenieriaSoftware",
+    "#CulturaTech",
+    "#GestionProyectos"
+  ],
+  "fullArticle": "En el mundo del desarrollo de software, una historia reciente muestra cómo un junior developer sufrió la presión de un senior que exigía refactorizar código perfectamente funcional para una aplicación con solo 500 usuarios mensuales. El senior, obsesionado con escalabilidad hipotética, ignoraba que el código cumplía con los requisitos actuales. Esta escena, cada vez más común, evidencia una dinámica tóxica en la gestión técnica.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdaanrkqfpfbh2g0jxp5k.png]\n\nFrente a esta situación, desarrolladores experimentados han adoptado una estrategia de supervivencia: el 'error placebo'. Consiste en dejar errores pequeños e intencionales, como un typo en un mensaje o un padding excesivo, para que el revisor los encuentre y se sienta satisfecho, protegiendo así la lógica core de refactorizaciones innecesarias. Este truco, reminiscente del 'Corporate Duck' de los años 90, donde un diseñador colocó un pato aleatorio en un personaje para desviar la atención de cambios arbitrarios, se ha convertido en una herramienta de gestión humana más que de ingeniería.\n\nSin embargo, esta práctica, aunque efectiva a corto plazo, no resuelve el problema de fondo: la falta de confianza y la necesidad de control excesivo en los equipos. A largo plazo, erosiona la calidad del código y la cultura de excelencia técnica. Por ello, es fundamental que las empresas fomenten revisiones constructivas y basadas en métricas reales, no en la mera búsqueda de fallos para justificar roles.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T18:47:50.663Z",
+  "links": [
+    {
+      "title": "Fuente original en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Usuarios mensuales en staging",
+      "value": "500"
+    },
+    {
+      "label": "Pico de usuarios hipotético",
+      "value": "10,000"
+    },
+    {
+      "label": "Antigüedad del truco del Corporate Duck",
+      "value": "Más de 10 años"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

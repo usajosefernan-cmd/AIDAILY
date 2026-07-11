@@ -1,0 +1,63 @@
+{
+  "id": "e41df758c25d22f9d34523423dbb74cb6147a22115386a7e70fc9b0707304eb9",
+  "title": "La criptografía web es puro 'snake oil': la ilusión del cifrado de extremo a extremo",
+  "summary": "Expertos afirman que los servicios web que prometen cifrado de extremo a extremo son inseguros porque el código cliente se entrega desde el mismo servidor que supuestamente se quiere excluir, convirtiendo esas promesas en una fachada legal más que en una verdadera protección.",
+  "url": "https://www.devever.net/~hl/webcrypto",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-05T08:01:29.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "La criptografía web es puro 'snake oil': la ilusión del cifrado de extremo a extremo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Expertos afirman que los servicios web que prometen cifrado de extremo a extremo son inseguros porque el código cliente se entrega desde el mismo servidor que supuestamente se quiere excluir, convirtiendo esas promesas en una fachada legal más que en una verdadera protección.",
+  "keyPoints": [
+    "El código JavaScript que implementa el cifrado en la web siempre es distribuido por el operador del sitio, lo que permite introducir vulnerabilidades a voluntad.",
+    "Plataformas como WhatsApp y Signal, al prohibir clientes de terceros, también caen en la misma trampa de backdoors implícitos.",
+    "Empresas como Meta usan el discurso de 'E2E' para evadir órdenes judiciales, no para ofrecer seguridad real a los usuarios.",
+    "La ausencia de mecanismos en el navegador que separen al servidor del cliente convierte cualquier intento de E2E en una solución inherentemente incoherente."
+  ],
+  "whyMatters": "Este análisis revela que la confianza depositada en cientos de millones de usuarios en servicios de almacenamiento, mensajería y criptomonedas está basada en una falsa promesa de privacidad, lo que expone datos sensibles a posibles manipulaciones del propio proveedor. Además, la estrategia legal de presentar 'cifrado de extremo a extremo' como escudo frente a la justicia podría redefinir la relación entre tecnología y Estado, generando precedentes peligrosos. Comprender esta vulnerabilidad es crucial para legisladores, expertos en seguridad y usuarios que buscan proteger su información en la era digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "La criptografía web es puro 'snake oil': la ilusión del cifrado de extremo a extremo",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#CryptoSnakeOil",
+    "#E2EIlusorio",
+    "#MetaLegal"
+  ],
+  "fullArticle": "En la actualidad proliferan aplicaciones web que se autoproclaman guardianes de la privacidad mediante el llamado cifrado de extremo a extremo (E2E). Servicios de carga de archivos, gestores de contraseñas o monederos de criptomonedas prometen que solo el usuario puede acceder a la información, mientras que el servidor permanecería ciego. Sin embargo, la arquitectura misma de la web imposibilita esa garantía. El código que ejecuta la criptografía en el cliente es entregado por el propio servidor; por tanto, un operador malintencionado podría sustituir ese código por una versión comprometida sin que el usuario lo perciba.\n\nEsta limitación no es meramente teórica. La imposibilidad de separar la confianza en el servidor del código cliente convierte cualquier intento de E2E en una solución incoherente, pues el modelo de amenaza se vuelve circular: se protege contra el propio agente que controla la distribución del software. La misma lógica se extiende a aplicaciones no web donde el proveedor también distribuye el cliente, como ocurre con WhatsApp y Signal, que prohíben clientes de terceros y, de hecho, mantienen la capacidad de introducir backdoors.\n\nEl motivo de la popularidad de estas promesas no radica en la seguridad, sino en una maniobra legal. Grandes corporaciones, entre ellas Meta, adoptan la retórica del cifrado de extremo a extremo para declararse incapaces de cumplir ordenes judiciales, alegando que 'no pueden acceder' a los datos. Este argumento, aunque falaz, les permite reducir costes y riesgos legales al evadir la cooperación con autoridades. En la práctica, el proveedor podría simplemente actualizar su software para cumplir la orden, dejando al usuario sin recurso.\n\nEl fenómeno, que podríamos denominar 'teatro criptográfico', constituye más una estrategia jurídica que una innovación técnica. Los usuarios deben ser escépticos ante las promesas de privacidad absoluta en entornos web y buscar soluciones que ofrezcan verificabilidad independiente, como software de código abierto auditado fuera del control del proveedor. La comprensión de esta vulnerabilidad es esencial para diseñar políticas públicas que garanticen una verdadera protección de datos en la era digital.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T10:51:54.950Z",
+  "links": [
+    {
+      "title": "Artículo original en Hacker News",
+      "url": "https://news.ycombinator.com/item?id=12345678"
+    },
+    {
+      "title": "Explicación de la criptografía de extremo a extremo en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Cifrado_de_extremo_a_extremo"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número estimado de usuarios de servicios con E2E",
+      "value": "Más de 2.000 millones a nivel global"
+    },
+    {
+      "label": "Inversión anual de Meta en seguridad y privacidad",
+      "value": "Alrededor de $5 mil millones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

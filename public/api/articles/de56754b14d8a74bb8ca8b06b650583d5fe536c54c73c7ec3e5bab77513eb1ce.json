@@ -1,0 +1,82 @@
+{
+  "id": "de56754b14d8a74bb8ca8b06b650583d5fe536c54c73c7ec3e5bab77513eb1ce",
+  "title": "Un repositorio de GitHub 'limpio' engaña a agentes de codificación con IA para ejecutar malware sin dejar rastro",
+  "summary": "Investigadores de la plataforma de seguridad 0DIN de Mozilla demuestran que un repositorio de GitHub sin código malicioso puede engañar a agentes de codificación con IA como Claude Code para ejecutar un shell inverso, accediendo a toda la información del desarrollador sin activar alertas de seguridad ni requerir aprobación de comandos sospechosos.",
+  "url": "https://www.bleepingcomputer.com/news/security/clean-github-repo-tricks-ai-coding-agents-into-running-malware/",
+  "source": "BleepingComputer",
+  "sourceUrl": "https://www.bleepingcomputer.com/feed/",
+  "publishedAt": "2026-06-27T14:22:36.000Z",
+  "imageUrl": "https://www.bleepstatic.com/c/t/stop-ai-attacks-970.jpg",
+  "imageAlt": "Un repositorio de GitHub 'limpio' engaña a agentes de codificación con IA para ejecutar malware sin dejar rastro",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores de la plataforma de seguridad 0DIN de Mozilla demuestran que un repositorio de GitHub sin código malicioso puede engañar a agentes de codificación con IA como Claude Code para ejecutar un shell inverso, accediendo a toda la información del desarrollador sin activar alertas de seguridad ni requerir aprobación de comandos sospechosos.",
+  "keyPoints": [
+    "El ataque no requiere código malicioso en el repositorio clonado, por lo que pasa desapercibido tanto para agentes de seguridad como para revisores humanos.",
+    "Los investigadores usaron Claude Code de Anthropic para demostrar que el agente ejecuta automáticamente toda la cadena de ataque sin alertar al usuario.",
+    "El shell obtenido por el atacante se ejecuta con los privilegios del desarrollador, permitiendo acceder a variables de entorno, claves API y archivos de configuración locales.",
+    "0DIN advierte que este método podría distribuirse a través de ofertas de trabajo falsas, tutoriales, publicaciones de blog o mensajes directos a desarrolladores."
+  ],
+  "whyMatters": "Este hallazgo supone una amenaza crítica para la seguridad de los flujos de desarrollo de software, ya que los agentes de codificación con IA están cada vez más integrados en las rutinas diarias de los programadores. A diferencia de los ataques tradicionales, no deja rastro en el repositorio, por lo que los sistemas de detección de malware convencionales son completamente ineficaces para identificarlo. Su difusión potencial a través de canales aparentemente legítimos como ofertas de empleo o tutoriales hace que el riesgo se extienda rápidamente a equipos de desarrollo de todo el mundo, comprometiendo datos sensibles de empresas y proyectos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.bleepstatic.com/c/t/stop-ai-attacks-970.jpg",
+      "alt": "Ilustración de ThreatLocker sobre protección contra ataques a herramientas de inteligencia artificial",
+      "caption": "Ilustración de ThreatLocker que representa medidas de seguridad para mitigar riesgos en sistemas de IA"
+    },
+    {
+      "type": "image",
+      "url": "https://www.bleepstatic.com/c/p/bas-report.jpg",
+      "alt": "Portada del whitepaper de Picus sobre simulación de ataques y brechas de seguridad",
+      "caption": "Portada del informe de Picus que explica cómo las pruebas de simulación de ataques evalúan la eficacia de las reglas de SIEM y EDR"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Mozilla0DIN",
+    "#ClaudeCode",
+    "#AtaquesIA",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "La creciente adopción de agentes de codificación impulsados por inteligencia artificial en los flujos de trabajo de los desarrolladores ha abierto una nueva frontera de riesgo para la seguridad informática, como acaban de demostrar investigadores de la plataforma de seguridad 0DIN de Mozilla. El equipo ha revelado un método de ataque novedoso que permite a un actor malicioso ejecutar código malicioso en el dispositivo de un desarrollador sin necesidad de incluir ningún componente peligroso en el repositorio de GitHub que el agente de IA va a procesar, evitando así cualquier detección por parte de sistemas de seguridad o revisores humanos.\n\n[MULTIMEDIA: https://www.bleepstatic.com/c/t/stop-ai-attacks-970.jpg]\n\nLa técnica, que por el momento se presenta como un concepto teórico ya demostrado en entornos controlados, se apoya en tres elementos que por separado no generan ninguna sospecha: un repositorio de GitHub completamente limpio, sin rastro de código malicioso; un error de configuración común que los agentes de IA suelen intentar solucionar automáticamente; y un registro DNS que el agente consulta sin que el usuario sea consciente. En la prueba de concepto, los investigadores utilizaron Claude Code, el asistente de codificación de Anthropic, para clonar un repositorio legítimo y ejecutar automáticamente los pasos de configuración del proyecto. Cuando el agente encontró un error de dependencia, siguió automáticamente las instrucciones de solución sugeridas, que incluían la ejecución de un script que consultaba un registro DNS controlado por los atacantes, el cual devolvía la dirección de un servidor que alojaba un shell inverso. Todo el proceso se realizó sin que el agente emitiera ninguna alerta, sin que el desarrollador tuviera que aprobar ningún comando sospechoso y sin que el repositorio original contuviera ningún código malicioso.\n\nComo explican los investigadores de 0DIN, 'Claude Code nunca decidió abrir un shell. Decidió solucionar un error. El shell inverso está a tres pasos de indirección de cualquier cosa que Claude Code evaluó realmente: un mensaje de error en el que confió, un script que recuperó un valor y un registro DNS que nunca vio'. El shell obtenido por el atacante se ejecuta con los mismos privilegios que el usuario desarrollador, lo que le permite acceder a variables de entorno, claves de API, archivos de configuración locales e incluso establecer mecanismos de persistencia en el dispositivo para mantener el acceso en el tiempo.\n\n0DIN advierte que, aunque por el momento se trata de una prueba de concepto, actores maliciosos podrían distribuir este tipo de repositorios a través de canales muy habituales en el ecosistema de desarrollo: ofertas de trabajo falsas, tutoriales en plataformas de formación, publicaciones de blog especializadas o incluso mensajes directos en redes profesionales como LinkedIn. Un dato relevante es que los equipos de seguridad solo registran el 54% de los ataques exitosos y emiten alertas por solo el 14% del total, por lo que este tipo de amenazas que no dejan rastro en los repositorios podrían pasar completamente desapercibidas, tal como demuestra el whitepaper de Picus sobre simulación de ataques y brechas, que pone de manifiesto la ineficacia de muchas reglas de SIEM y EDR actuales.\n\n[MULTIMEDIA: https://www.bleepstatic.com/c/p/bas-report.jpg]\n\nEste hallazgo pone de manifiesto la necesidad de actualizar los protocolos de seguridad en herramientas de desarrollo impulsadas por IA, que hasta ahora se centraban en detectar código malicioso en los repositorios, pero no en los flujos de ejecución automatizados que pueden derivar en accesos no autorizados. A medida que estos agentes se integren en más etapas del ciclo de vida del desarrollo de software, el riesgo de este tipo de ataques se multiplicará, por lo que es fundamental que tanto los desarrolladores como los equipos de seguridad adopten medidas de protección específicas para estas herramientas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T14:42:06.775Z",
+  "links": [
+    {
+      "title": "Artículo original de la noticia en BleepingComputer",
+      "url": "https://www.bleepingcomputer.com"
+    },
+    {
+      "title": "Plataforma de seguridad 0DIN de Mozilla",
+      "url": "https://0din.mozilla.org"
+    },
+    {
+      "title": "Documentación oficial de Claude Code de Anthropic",
+      "url": "https://www.anthropic.com/claude-code"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de ataques exitosos registrados por equipos de seguridad",
+      "value": "54%"
+    },
+    {
+      "label": "Porcentaje de ataques que generan alertas en sistemas de detección",
+      "value": "14%"
+    },
+    {
+      "label": "Pasos de indirección entre el código evaluado por el agente y el malware ejecutado",
+      "value": "3"
+    },
+    {
+      "label": "Canales de distribución potencial del ataque",
+      "value": "Ofertas de trabajo falsas, tutoriales, blogs y mensajes directos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

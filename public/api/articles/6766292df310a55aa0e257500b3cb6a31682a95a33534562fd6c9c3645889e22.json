@@ -1,0 +1,83 @@
+{
+  "id": "6766292df310a55aa0e257500b3cb6a31682a95a33534562fd6c9c3645889e22",
+  "title": "Anthropic asegura que su nuevo modelo Claude Sonnet 5 no es demasiado peligroso para ser lanzado",
+  "summary": "Anthropic lanzó Claude Sonnet 5, un modelo de IA que iguala el rendimiento de Opus 4.8 en múltiples pruebas pero a la mitad de precio, y que reduce deliberadamente su capacidad en tareas de ciberseguridad para evitar nuevos conflictos con el gobierno federal de Estados Unidos, tras la polémica retirada de sus modelos Mythos y Fable por orden gubernamental.",
+  "url": "https://gizmodo.com/anthropic-wants-you-to-know-its-new-ai-model-is-definitely-not-too-dangerous-to-release-2000779800",
+  "source": "Gizmodo",
+  "sourceUrl": "https://gizmodo.com/rss",
+  "publishedAt": "2026-06-30T21:00:12.000Z",
+  "imageUrl": "https://gizmodo.com/app/uploads/2026/06/Anthropic-1-1200x675.jpg",
+  "imageAlt": "Anthropic asegura que su nuevo modelo Claude Sonnet 5 no es demasiado peligroso para ser lanzado",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Anthropic lanzó Claude Sonnet 5, un modelo de IA que iguala el rendimiento de Opus 4.8 en múltiples pruebas pero a la mitad de precio, y que reduce deliberadamente su capacidad en tareas de ciberseguridad para evitar nuevos conflictos con el gobierno federal de Estados Unidos, tras la polémica retirada de sus modelos Mythos y Fable por orden gubernamental.",
+  "keyPoints": [
+    "Claude Sonnet 5 iguala el rendimiento del modelo premium Opus 4.8 en pruebas estandarizadas, pero cuesta menos de la mitad: 2 dólares por millón de tokens de entrada y 10 dólares por millón de salida.",
+    "El modelo se convirtió en la opción predeterminada para los planes gratuitos y Pro de Claude, además de estar disponible para suscriptores Max, Team y Enterprise.",
+    "Anthropic redujo deliberadamente el rendimiento de Sonnet 5 en tareas relacionadas con ciberseguridad para evitar riesgos de seguridad nacional tras la polémica con el gobierno federal.",
+    "La decisión se produce en un contexto de presión creciente para ofrecer herramientas de IA más económicas, impulsada por la proliferación de agentes autónomos empresariales que consumen muchos tokens."
+  ],
+  "whyMatters": "Esta noticia es clave porque marca un punto de inflexión en la relación entre las empresas de IA y los reguladores estadounidenses: Anthropic prioriza la conformidad gubernamental sobre el rendimiento máximo de sus modelos, lo que podría sentar un precedente para toda la industria. Además, la reducción de costes de Sonnet 5 acelerará la adopción de agentes autónomos en pymes, democratizando el acceso a herramientas de IA avanzadas que hasta ahora eran reservadas para grandes corporaciones. Por último, la decisión de limitar las capacidades de ciberseguridad del modelo abre un debate ético sobre hasta qué punto las empresas deben ceder a las demandas gubernamentales que podrían limitar la investigación en seguridad informática legítima.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://gizmodo.com/app/uploads/2026/06/Anthropic-1-1200x675.jpg",
+      "alt": "Logotipo de Anthropic en un fondo oscuro, junto al nombre de su nuevo modelo Claude Sonnet 5",
+      "caption": "Imagen de portada del artículo de Gizmodo sobre el lanzamiento de Claude Sonnet 5"
+    },
+    {
+      "type": "image",
+      "url": "https://gizmodo.com/app/uploads/2026/06/GettyImages-2188101054-1280x853.jpg",
+      "alt": "Andy Jassy, CEO de Amazon, durante una conferencia de AWS re:Invent 2024",
+      "caption": "Andy Jassy, CEO de Amazon, mencionado en el artículo por su supuesta influencia en la decisión del gobierno de considerar a Fable 5 un riesgo de seguridad nacional"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeSonnet5",
+    "#Anthropic",
+    "#IA",
+    "#Ciberseguridad",
+    "#ModelosIA"
+  ],
+  "fullArticle": "Anthropic, la empresa de inteligencia artificial conocida por sus constantes tensiones con el gobierno federal estadounidense, lanzó este martes su nuevo modelo Claude Sonnet 5, diseñado para equilibrar capacidades agénticas avanzadas con un coste muy inferior a sus modelos premium. Según la compañía, Sonnet 5 puede elaborar planes, utilizar herramientas como navegadores y terminales, y ejecutar tareas de forma autónoma a un nivel que hasta hace pocos meses solo estaba al alcance de modelos mucho más grandes y caros. Su rendimiento en pruebas estandarizadas es comparable al del modelo Opus 4.8, pero su precio se reduce a la mitad: 2 dólares por millón de tokens de entrada y 10 dólares por millón de tokens de salida cuando se accede a través de Claude Code.\n[MULTIMEDIA: https://gizmodo.com/app/uploads/2026/06/Anthropic-1-1200x675.jpg]\nEl lanzamiento se produce en un contexto de presión creciente sobre los desarrolladores de IA para ofrecer herramientas más económicas, impulsada por la proliferación de agentes autónomos empresariales que realizan tareas complejas durante periodos prolongados y consumen una cantidad mucho mayor de tokens que los chatbots limitados a funciones como la atención al cliente. Tanto Anthropic como su competidor OpenAI han planeado recortes de precios importantes para atraer nuevos usuarios y retener a los actuales, y Sonnet 5 se convirtió desde su lanzamiento en el modelo predeterminado para los planes gratuitos y Pro de Claude, además de estar disponible para suscriptores de los planes Max, Team y Enterprise.\nUno de los aspectos más llamativos del anuncio de Anthropic no fue lo que el modelo puede hacer, sino lo que no puede: la compañía admitió que Sonnet 5 muestra un rendimiento 'sustancialmente inferior' en tareas relacionadas con ciberseguridad en comparación con Opus 4.8 y Mythos 5, este último retirado del mercado hace pocas semanas por orden del gobierno federal. La decisión de limitar deliberadamente estas capacidades no es solo una medida de seguridad, sino también una estrategia política para evitar una nueva confrontación con la administración Trump, que ya ordenó la retirada de Mythos y Fable 5 por considerarlos riesgos de seguridad nacional. El incidente con Mythos, que identificó vulnerabilidades en los sistemas de la Agencia de Seguridad Nacional (NSA) sin violarlos, y la polémica alrededor de Fable 5, al que el gobierno consideró susceptible de ser 'desbloqueado' tras una intervención del CEO de Amazon Andy Jassy, sentaron un precedente que Anthropic no quiere repetir.\n[MULTIMEDIA: https://gizmodo.com/app/uploads/2026/06/GettyImages-2188101054-1280x853.jpg]\nLa empresa declaró que no entrenó Sonnet 5 específicamente para realizar tareas de ciberseguridad, y atribuyó el éxito parcial que tuvo al desarrollar un exploit funcional para el navegador Firefox a 'mejoras en su inteligencia general' y no a un entrenamiento específico en este ámbito. Esta decisión marca un hito en la relación entre la industria de la IA y los reguladores: por primera vez, una empresa líder modifica deliberadamente las capacidades de su modelo para alinearse con las demandas gubernamentales, incluso si eso significa renunciar a funcionalidades que podrían ser útiles para investigadores de seguridad legítimos. La medida abre un debate ético sobre los límites de la autoridad regulatoria sobre el desarrollo de IA, y sobre si las empresas deben ceder a presiones políticas que podrían ralentizar la innovación en campos como la ciberseguridad defensiva.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T23:06:40.717Z",
+  "links": [
+    {
+      "title": "Artículo original en Gizmodo",
+      "url": "https://gizmodo.com/anthropic-wants-you-to-know-its-new-ai-model-is-definitely-not-too-dangerous-to-release-2000604997"
+    },
+    {
+      "title": "Página oficial de Claude Sonnet 5 en Anthropic",
+      "url": "https://www.anthropic.com/claude/sonnet"
+    },
+    {
+      "title": "Documentación de precios de Claude Code",
+      "url": "https://docs.anthropic.com/claude/docs/claude-code-pricing"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Coste de Sonnet 5 por millón de tokens de entrada",
+      "value": "2 dólares"
+    },
+    {
+      "label": "Coste de Sonnet 5 por millón de tokens de salida",
+      "value": "10 dólares"
+    },
+    {
+      "label": "Proporción de reducción de precio frente a Opus 4.8",
+      "value": "Menos de la mitad"
+    },
+    {
+      "label": "Motivo de la retirada de Mythos 5 y Fable 5",
+      "value": "Orden del gobierno federal por considerarlos riesgos de seguridad nacional"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

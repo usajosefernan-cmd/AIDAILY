@@ -1,0 +1,73 @@
+{
+  "id": "439f9493aee3120ae403adf5300b52cb4270a617b3d6dcb4269bef7152d08bfb",
+  "title": "Operamos 9 agentes IA con 2 núcleos y 3,6 GB de RAM: un memorándum de ingeniería",
+  "summary": "En un gimnasio de China, 9 agentes de inteligencia artificial funcionan sobre un servidor de 2 núcleos y 3,6 GB de RAM, sin GPU ni nube, gestionados por la API DeepSeek y un marco de orquestación minimalista.",
+  "url": "https://dev.to/zwiserfit/we-run-9-ai-agents-on-2-cpu-cores-and-36gb-ram-the-engineering-memoir-3ad7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T21:05:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqpybd0zst0jnnpqs7rtl.png",
+  "imageAlt": "Operamos 9 agentes IA con 2 núcleos y 3,6 GB de RAM: un memorándum de ingeniería",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En un gimnasio de China, 9 agentes de inteligencia artificial funcionan sobre un servidor de 2 núcleos y 3,6 GB de RAM, sin GPU ni nube, gestionados por la API DeepSeek y un marco de orquestación minimalista.",
+  "keyPoints": [
+    "Un gimnasio en China opera 9 agentes IA con solo 2 núcleos y 3,6 GB de RAM, sin GPU ni nube.",
+    "Los agentes, gestionados por OpenClaw y Hermes, dependen de la API DeepSeek V4 Pro y Flash para el procesamiento LLM.",
+    "El sistema utiliza 'SOUL.md' para definir identidades y roles, garantizando audibilidad humana y machine-readable.",
+    "Cron y heartbeat son los únicos mecanismos de orquestación, demostrando que la complejidad se puede manejar con capas simples."
+  ],
+  "whyMatters": "Este enfoque demuestra que la IA de producción no necesita infraestructuras costosas, abriendo la puerta a pequeñas empresas y startups. Al operar 9 agentes con recursos tan limitados, se evidencia que la clave está en la orquestación y la selección inteligente de modelos. El modelo DeepSeek Flash, 30 veces más barato que Pro, muestra cómo la eficiencia económica puede coexistir con la funcionalidad, redefiniendo la viabilidad de la IA en entornos reales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqpybd0zst0jnnpqs7rtl.png",
+      "alt": "Equipo de agentes IA operando en servidor de gimnasio",
+      "caption": "Imagen de portada del artículo, mostrando el servidor que ejecuta los 9 agentes IA"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IA",
+    "#DeepSeek",
+    "#OpenClaw",
+    "#GimnasioIA",
+    "#IngenieríaAI"
+  ],
+  "fullArticle": "Un gimnasio en la zona sur de China ha sorprendido al mundo tecnológico al operar nueve agentes de inteligencia artificial sobre un servidor de solo 2 núcleos y 3,6 GB de RAM, sin GPU ni nube. Cada día, los miembros reciben informes de entrenamiento interpretados por IA, los entrenadores obtienen horarios optimizados y los inversionistas disponen de material de diligencia debida, todo gracias a una arquitectura de agentes colaborativos que se comunican y auditan entre sí.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqpybd0zst0jnnpqs7rtl.png]\n\nLa mayoría de los agentes corre bajo el marco OpenClaw (Node.js), mientras que uno, llamado Momo, utiliza Hermes (Python) por razones históricas. La carga de trabajo de lenguaje se delega a la API DeepSeek: los cuatro agentes estratégicos emplean DeepSeek V4 Pro, y los cinco operacionales usan DeepSeek V4 Flash, que resulta 30 veces más barato y suficiente para tareas rutinarias. El servidor local no ejecuta inferencias; simplemente orquesta, gestiona sesiones y almacena archivos.\n\nUna pieza clave del diseño es el archivo 'SOUL.md', que actúa como documento de identidad y configuración en tiempo de ejecución. Cuando un agente inicia, lee su SOUL.md y entiende su rol, lo que permite que la delegación de tareas sea explícita y auditada por humanos. Además, el sistema evita buses de eventos complejos, optando por dos capas simples: cron para tareas programadas y heartbeat para monitoreo dinámico.\n\nEl resultado es una plataforma de IA de producción que demuestra que la inversión en hardware no es un requisito imprescindible. Con una arquitectura de orquestación robusta y una API LLM rentable, es posible desplegar soluciones avanzadas en entornos con recursos limitados, lo que abre nuevas oportunidades para negocios pequeños y medianos que quieran aprovechar la IA sin incurrir en costos prohibitivos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T21:23:41.001Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Sitio oficial de DeepSeek",
+      "url": "https://deepseek.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de agentes",
+      "value": "9"
+    },
+    {
+      "label": "CPU y RAM",
+      "value": "2 núcleos, 3,6 GB de RAM"
+    },
+    {
+      "label": "Modelo DeepSeek Flash",
+      "value": "30× más barato que Pro"
+    },
+    {
+      "label": "Costo de operación",
+      "value": "Menor al 5% del presupuesto típico de IA"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

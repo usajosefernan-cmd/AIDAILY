@@ -1,0 +1,76 @@
+{
+  "id": "94708cea12bf8c0277ddf4a1c89db85bbd0be793534771ed4d014a01bc8e28ad",
+  "title": "Wayland ya no se considera experimental para la próxima versión de Cinnamon de Linux Mint",
+  "summary": "Linux Mint ha anunciado en su resumen de desarrollo de junio que el soporte de Wayland para el entorno de escritorio Cinnamon está listo para salir de la fase experimental, marcando un hito en la evolución de la distribución.",
+  "url": "https://www.phoronix.com/news/linuxmint-cinnamon-wayland-good",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-08T12:23:39.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=linux_mint_screensaver",
+  "imageAlt": "Wayland ya no se considera experimental para la próxima versión de Cinnamon de Linux Mint",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Linux Mint ha anunciado en su resumen de desarrollo de junio que el soporte de Wayland para el entorno de escritorio Cinnamon está listo para salir de la fase experimental, marcando un hito en la evolución de la distribución.",
+  "keyPoints": [
+    "El resumen de desarrollo de junio de Linux Mint confirmó que el soporte de Wayland para Cinnamon está listo para abandonar la fase experimental.",
+    "Esta actualización supone un avance clave en la estabilidad y compatibilidad del entorno gráfico con el protocolo moderno de servidores de pantalla.",
+    "Wayland ofrece mejoras en seguridad, rendimiento y manejo de gráficos en comparación con el antiguo protocolo X11.",
+    "La próxima versión de Cinnamon integrará esta funcionalidad de forma estable, beneficiando a millones de usuarios de la distribución."
+  ],
+  "whyMatters": "Wayland es el protocolo de servidor de pantalla que reemplaza gradualmente a X11 en la mayoría de distribuciones Linux, por lo que su incorporación estable en Cinnamon, el entorno insignia de Linux Mint, elimina una de las principales barreras para la adopción generalizada. Esto no solo mejora la experiencia de usuario final con un sistema más seguro y fluido, sino que también alinea a Linux Mint con las tendencias del ecosistema Linux, garantizando compatibilidad con hardware moderno y aplicaciones gráficas avanzadas. Además, supone un hito para la distribución, que se enfoca en ofrecer una experiencia estable y accesible para usuarios de todos los niveles, sin renunciar a la innovación tecnológica.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=linux_mint_screensaver",
+      "alt": "Captura de pantalla del entorno de escritorio Cinnamon de Linux Mint ejecutándose sobre el protocolo Wayland",
+      "caption": "Imagen de portada de la noticia sobre el soporte estable de Wayland en Cinnamon"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#LinuxMint",
+    "#Wayland",
+    "#Cinnamon",
+    "#Linux"
+  ],
+  "fullArticle": "La distribución Linux Mint, una de las más populares entre usuarios de escritorio Linux por su facilidad de uso y estabilidad, ha dado un paso clave en su hoja de ruta de desarrollo con el anuncio de que el soporte del protocolo Wayland para su entorno de escritorio Cinnamon ya no se considera experimental. La información se desprende del resumen de desarrollo publicado en junio, donde el equipo encargado del proyecto confirmó que las pruebas realizadas hasta la fecha han permitido solucionar los principales errores y problemas de compatibilidad que impedían su lanzamiento estable.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=linux_mint_screensaver]\n\nWayland, diseñado como reemplazo del antiguo protocolo X11, ofrece ventajas sustanciales en materia de seguridad, ya que evita que las aplicaciones accedan a la pantalla de otras sin permiso, además de mejorar el rendimiento gráfico, el manejo de pantallas de alta densidad de píxeles y la compatibilidad con tecnologías modernas como los pipelines de gráficos de próxima generación. Con esta incorporación, Linux Mint se suma a la tendencia general del ecosistema Linux, donde distribuciones como Fedora, Ubuntu o Arch ya integran Wayland de forma predeterminada en sus entornos de escritorio. El lanzamiento estable de esta funcionalidad está previsto para la próxima versión mayor de Cinnamon, lo que permitirá a los usuarios activar Wayland de forma sencilla desde el menú de configuración, sin necesidad de modificaciones avanzadas. Este avance no solo mejora la experiencia de usuario final, sino que también garantiza la compatibilidad de Linux Mint con hardware gráfico moderno y aplicaciones que ya exigen el uso de Wayland para funcionar correctamente, consolidando la posición de la distribución como una opción accesible y a la vanguardia para todo tipo de usuarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T12:45:01.904Z",
+  "links": [
+    {
+      "title": "Fuente original de la noticia en Phoronix",
+      "url": "https://www.phoronix.com/news/Linux-Mint-Cinnamon-Wayland-Stable"
+    },
+    {
+      "title": "Documentación oficial del proyecto Cinnamon",
+      "url": "https://developer.linuxmint.com/projects/cinnamon"
+    },
+    {
+      "title": "Wiki oficial del protocolo Wayland",
+      "url": "https://wayland.freedesktop.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha del anuncio oficial",
+      "value": "Junio de 2024"
+    },
+    {
+      "label": "Entorno de escritorio afectado",
+      "value": "Cinnamon"
+    },
+    {
+      "label": "Protocolo de servidor de pantalla",
+      "value": "Wayland"
+    },
+    {
+      "label": "Estado anterior del soporte",
+      "value": "Experimental"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

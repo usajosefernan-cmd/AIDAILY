@@ -1,0 +1,71 @@
+{
+  "id": "e54118bb00d5d66ac659ef86f5728f414c4dc2507dc7c51dd39bc82086b602cf",
+  "title": "Prueba de penetración: el manual definitivo para defenderse antes de que los atacantes lo hagan",
+  "summary": "El artículo explica cómo llevar a cabo una prueba de penetración siguiendo metodologías reconocidas como OSSTMM, NIST SP 800-115 y OWASP. Se desglosan las cinco fases, desde el alcance hasta el reporte, con consejos defensivos y buenas prácticas para la divulgación responsable.",
+  "url": "https://dev.to/rv_688a20c2e1fe40b6498568/the-step-by-step-process-of-penetration-testing-a-defensive-guide-5f8f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T10:57:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft2xrrijm2opu14p83qqh.png",
+  "imageAlt": "Prueba de penetración: el manual definitivo para defenderse antes de que los atacantes lo hagan",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo llevar a cabo una prueba de penetración siguiendo metodologías reconocidas como OSSTMM, NIST SP 800-115 y OWASP. Se desglosan las cinco fases, desde el alcance hasta el reporte, con consejos defensivos y buenas prácticas para la divulgación responsable.",
+  "keyPoints": [
+    "La prueba de penetración es hacking ético, siempre con permiso, y permite detectar fallos antes de que los atacantes los exploten.",
+    "Se basa en cinco fases estructuradas: alcance, reconocimiento, enumeración, explotación y post-explotación, cada una con recomendaciones defensivas.",
+    "Las metodologías OSSTMM, NIST SP 800-115 y OWASP garantizan consistencia, reproducibilidad y resultados accionables.",
+    "Los hallazgos deben priorizarse y corregirse para fortalecer la postura de defensa y evitar brechas costosas."
+  ],
+  "whyMatters": "En un entorno donde los ciberataques evolucionan cada día, conocer y aplicar una prueba de penetración estructurada se vuelve indispensable para las organizaciones. Detectar vulnerabilidades antes de que sean explotadas reduce el riesgo de pérdidas financieras, reputacionales y regulatorias. Además, la divulgación responsable fomenta la mejora continua de la seguridad y crea confianza entre clientes y socios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft2xrrijm2opu14p83qqh.png",
+      "alt": "Proceso paso a paso de la prueba de penetración: guía defensiva",
+      "caption": "Imagen de portada del artículo sobre pruebas de penetración"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#PenTesting",
+    "#Ciberseguridad",
+    "#EthicalHacking"
+  ],
+  "fullArticle": "La ciberseguridad se ha convertido en la columna vertebral de cualquier negocio moderno. Con la creciente sofisticación de los atacantes, las organizaciones necesitan una herramienta que les permita anticiparse a las amenazas: la prueba de penetración. Este proceso, también conocido como 'pen testing', replica las tácticas de los ciberdelincuentes para identificar debilidades en sistemas, redes y aplicaciones, pero con la ventaja de hacerlo de forma controlada y autorizada.\n\nEl artículo detalla las cinco fases que conforman una prueba de penetración: alcance, reconocimiento, enumeración, explotación y post-explotación. Cada fase sigue metodologías consolidadas como OSSTMM, NIST SP 800-115 y OWASP, lo que garantiza que los resultados sean reproducibles y accionables. En la fase de alcance se definen los objetivos y las reglas de compromiso; en reconocimiento se recopila información sobre la víctima; la enumeración identifica sistemas activos y servicios; la explotación busca vulnerabilidades reales; y la post-explotación evalúa la persistencia y la cobertura de los atacantes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft2xrrijm2opu14p83qqh.png]\n\nPara que la prueba sea efectiva, los analistas deben priorizar los hallazgos y remediar los riesgos críticos de inmediato. Además, la documentación y el reporte final son esenciales para comunicar los resultados a las partes interesadas y para planificar mejoras continuas. La divulgación responsable evita que los atacantes exploten las mismas vulnerabilidades y contribuye a la seguridad colectiva.\n\nEn definitiva, la prueba de penetración no es solo una práctica técnica; es una estrategia de gestión de riesgos que protege la integridad, la confidencialidad y la disponibilidad de los activos digitales de una organización.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T11:03:34.087Z",
+  "links": [
+    {
+      "title": "Guía oficial de NIST SP 800-115 sobre pruebas de penetración",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-115.pdf"
+    },
+    {
+      "title": "OWASP Testing Guide",
+      "url": "https://owasp.org/www-project-web-security-testing-guide/"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fases de la prueba",
+      "value": "5"
+    },
+    {
+      "label": "Metodologías principales",
+      "value": "3"
+    },
+    {
+      "label": "Frameworks citados",
+      "value": "OSSTMM, NIST SP 800-115, OWASP"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

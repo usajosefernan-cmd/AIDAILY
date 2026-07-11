@@ -1,0 +1,69 @@
+{
+  "aiSummary": "Un fundador de startups comparte su flujo de trabajo paso a paso para evaluar inversores antes de enviar un pitch, evitando perder tiempo en fondos sin interés en su sector o etapa, reduciendo sus intentos fríos en un 40% y aumentando su tasa de respuesta.",
+  "category": "tecnologia",
+  "fullArticle": "La mayoría de los fundadores de startups dedican semanas a pulir su presentación de inversión, pero apenas cuarenta minutos a investigar a la persona a la que se la enviarán. Un error que, como relata el autor del artículo original en Dev.to, le costó caro: hace unos años, invirtió hora y media en exponer los datos de tracción de su startup MentionFox a un socio de un fondo de tamaño mediano, que mostró interés aparente, para luego recibir un correo de rechazo automático con la frase 'no estamos activos actualmente en este sector vertical', una información que una simple búsqueda en Google habría revelado como cierta seis meses antes, cuando el fondo había cambiado silenciosamente su estrategia a infraestructura tecnológica profunda, sin realizar inversiones en B2B SaaS desde hacía tres años. Esta experiencia le sirvió para establecer una regla que aplica desde entonces: la investigación de inversores no es una tarea de contexto posterior a la decisión de presentar, sino un filtro previo para decidir si merece la pena enviar el pitch en absoluto.\n\nEl flujo de trabajo que describe se aleja de la práctica común de personalizar aperturas de correo para halagar a los inversores, y se centra en eliminar a los candidatos no aptos antes de escribir una sola palabra del mensaje. Para ello, el fundador se obliga a responder cuatro preguntas concretas sobre cada nombre de su lista, con pruebas concretas y no impresiones subjetivas. La primera se refiere a la actividad reciente: si el inversor o su fondo han realizado una inversión en una empresa de B2B SaaS en los últimos dieciocho meses, ya que el 'desplazamiento de tesis' es real y ocurre de forma silenciosa; un socio que realizó apuestas en SaaS entre 2019 y 2021 puede haber cambiado a climatología o fintech en los últimos dos años, y la página de portafolio pública del fondo suele estar desactualizada entre seis y doce meses, por lo que es necesario buscar señales en comunicados de prensa, anuncios de fundadores en LinkedIn o huellas de empresas de portafolio en lanzamientos de productos y contrataciones.\n\nLa segunda pregunta evalúa el ajuste de etapa: no se trata solo del tamaño de los cheques, ya que algunos fondos escriben cheques de 500.000 dólares en rondas de Serie A como seguidores, sino de los porcentajes de propiedad en rondas divulgadas y los asientos en consejos de administración que ocupa el socio en empresas de etapas similares a la del propio fundador. La tercera pregunta analiza lo que el inversor dice públicamente en podcasts, hilos de Twitter, publicaciones de Substack o mesas redondas en el último año, más allá de la declaración de tesis del fondo, que es material de marketing; si un socio pasó octubre y noviembre del año pasado hablando de su predilección por el crecimiento eficiente en capital, y la presentación del fundador abre con una diapositiva sobre quema agresiva de capital para capturar cuota de mercado, existe una clara incongruencia que es mejor detectar antes del pitch. La cuarta pregunta se centra en quién presentó a los fundadores de empresas de portafolio recientes a ese inversor: las introducciones calientes siguen siendo muy valoradas en etapas de semilla y Serie A temprana, pero no todas son iguales, ya que una introducción de un fundador respaldado por el socio en un fondo anterior tiene menos peso que la de alguien del portafolio activo actual.\n\nUn aspecto que muchos guías para fundadores solitarios omiten es que la frecuencia y el tono de la presencia pública de un inversor son en sí mismos datos relevantes. Un socio que publicó diecisiete veces en los últimos noventa días sobre un problema específico, como la brecha de medición de ROI en marketing B2B, no lo hace al azar: casi con toda seguridad está vinculado a una inversión reciente que le entusiasma, una tesis que está construyendo activamente o un problema de fundador que intenta resolver y para el que aún no ha encontrado la empresa adecuada, cualquiera de estos escenarios es relevante si el producto del fundador aborda ese problema. Por el contrario, un socio que ha estado prácticamente silenciado durante cuatro meses y reaparece solo para publicar sobre el cierre del fondo II y las relaciones con inversores institucionales está en modo captación de capital, por lo que es probable que no realice nuevas inversiones durante seis a nueve meses independientemente de lo que diga su sitio web.\n\nPara sistematizar este proceso, el autor desarrolló un sistema de puntuación que evalúa a cada inversor en cuatro criterios: la antigüedad de la actividad relevante del portafolio (con el mayor peso), la alineación de las señales públicas con el problema central de su startup (segundo peso), el ajuste de etapa y tamaño de cheque (tercero) y la accesibilidad de la ruta de introducción (cuarto). Cualquier inversor que no supere el umbral en los dos primeros criterios se traslada a una lista de 'espera cálida' en lugar de la lista de contacto activo. Este simple cambio redujo su volumen de pitches fríos en aproximadamente un 40% y mejoró significativamente su tasa de respuesta, ya que solo enviaba presentaciones a personas que habían dado evidencia concreta de estar prestando atención a su sector en ese momento. El proceso, detalla, no requiere un equipo de analistas: él mismo, como fundador solitario, lo ejecuta de forma regular, comenzando con una lista de 30 a 40 nombres obtenidos de búsquedas en Crunchbase, LinkedIn y rondas de financiación recientes de empresas adyacentes a la suya, para luego dedicar cinco minutos por nombre a la verificación de actividad reciente, eliminando a un tercio de los candidatos de inmediato si no superan la prueba de los dieciocho meses.",
+  "hashtags": [
+    "#FiltradoDeInversores",
+    "#PitchParaStartups",
+    "#EmprendimientoTecnológico",
+    "#DueDiligenceParaFundadores"
+  ],
+  "id": "1d7c29d0bceefceb75b2380b045ecbf4c131cccd04096a33eec569c3edd4c6ae",
+  "imageAlt": "Cómo un fundador solitario redujo sus pitches fríos en un 40% con un método de filtrado de inversores infalible",
+  "imageUrl": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg",
+  "interestingData": [
+    {
+      "label": "Tiempo de investigación inicial del fundador",
+      "value": "40 minutos"
+    },
+    {
+      "label": "Reducción de pitches fríos tras implementar el método",
+      "value": "40%"
+    },
+    {
+      "label": "Duración de la presentación fallida al fondo",
+      "value": "90 minutos"
+    },
+    {
+      "label": "Período de antigüedad máximo para considerar inversión relevante",
+      "value": "18 meses"
+    }
+  ],
+  "keyPoints": [
+    "El autor perdió 90 minutos presentando su startup a un fondo que había abandonado el sector B2B SaaS seis meses antes por no investigar su actividad reciente.",
+    "El método se basa en cuatro preguntas clave: actividad de inversión en los últimos 18 meses, ajuste de etapa, alineación con sus declaraciones públicas y acceso a introducciones calientes.",
+    "La frecuencia y el tono de la presencia pública de un inversor son datos clave: un socio que publica sobre un problema específico puede tener un interés activo en ese ámbito.",
+    "El sistema de puntuación del autor redujo su volumen de pitches fríos en un 40% y mejoró significativamente su tasa de respuesta al filtrar inversores no aptos."
+  ],
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Crunchbase: base de datos de empresas e inversores",
+      "url": "https://www.crunchbase.com"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Portada del artículo sobre flujo de trabajo para evaluar inversores antes de presentar un pitch",
+      "caption": "Imagen de portada del artículo original de Dev.to que explica el método de filtrado de inversores para fundadores de startups",
+      "type": "image",
+      "url": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg"
+    }
+  ],
+  "publishedAt": "2026-06-27T06:18:30.000Z",
+  "scrapedAt": "2026-06-27T06:22:21.655Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "Un fundador de startups comparte su flujo de trabajo paso a paso para evaluar inversores antes de enviar un pitch, evitando perder tiempo en fondos sin interés en su sector o etapa, reduciendo sus intentos fríos en un 40% y aumentando su tasa de respuesta.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Cómo un fundador solitario redujo sus pitches fríos en un 40% con un método de filtrado de inversores infalible",
+  "url": "https://dev.to/osakasaul/vetting-an-investor-before-you-pitch-them-a-solo-founders-workflow-463g",
+  "whyMatters": "Este método es fundamental para los fundadores de startups, especialmente los que operan en solitario, ya que reduce drásticamente el tiempo perdido en presentaciones a inversores que no tienen interés en su sector o etapa de desarrollo. En un ecosistema de inversión cada vez más competitivo, la capacidad de filtrar prospectos de forma eficiente puede marcar la diferencia entre conseguir la financiación necesaria para crecer o agotar los recursos antes de encontrar el inversor adecuado. Además, el enfoque basado en evidencia en lugar de impresiones subjetivas establece un nuevo estándar de rigor en la relación entre fundadores e inversores, minimizando frustraciones y maximizando las probabilidades de éxito en cada interacción."
+}

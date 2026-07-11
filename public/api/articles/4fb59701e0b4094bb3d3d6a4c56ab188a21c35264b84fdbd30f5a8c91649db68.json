@@ -1,0 +1,48 @@
+{
+  "aiSummary": "El framework WasmAgent convierte cada ejecución de agente en un punto de datos estructurado, evaluado por un motor de cumplimiento y exportado como ComplianceEvalRecord para entrenamiento SFT o DPO, sin intervención humana.",
+  "category": "tecnologia",
+  "fullArticle": "El paradigma tradicional de entrenamiento de agentes de IA suele depender de grandes volúmenes de datos etiquetados manualmente, un proceso costoso y lento. En contraste, el framework WasmAgent propone una innovación disruptiva: cada ejecución de agente se convierte en un punto de datos estructurado, evaluado por un motor de cumplimiento y exportado como ComplianceEvalRecord listo para entrenar modelos SFT o DPO, sin intervención humana.\n\nEl proceso \"full_pcl\" —ciclo completo de reparación— captura la cadena completa de eventos: ejecución, evaluación, parcheo o regeneración, re-evaluación y registro. Esta secuencia, que documenta fallos, intentos y soluciones, alimenta directamente el entrenamiento DPO, permitiendo que los modelos aprendan de los errores y no solo de los resultados finales. La evaluación IFEval × Qwen2.5-1.5B-Q4, probada con 3 semillas y 50 muestras, mostró un aumento de +8.7pp y una reducción de la varianza de ±2.0 a ±1.2, lo que se traduce en una mayor fiabilidad en producción.\n\nEl motor de cumplimiento actúa como señal de recompensa, eliminando la necesidad de anotaciones humanas. Este enfoque no solo reduce costes, sino que también acelera el ciclo de desarrollo, permitiendo iteraciones más rápidas y modelos más robustos. Además, la arquitectura modular de WasmAgent, con componentes como RolloutForkRunner y RolloutRanker, facilita la integración con otros sistemas y la escalabilidad a gran escala.\n\nEn un contexto donde la IA se despliega cada vez más en entornos críticos, la capacidad de aprender de forma autónoma y eficiente se vuelve un diferenciador estratégico. La combinación de datos de ejecución, evaluación automática y entrenamiento sin etiquetado abre nuevas posibilidades para la innovación en sectores que van desde la automatización industrial hasta los asistentes virtuales de atención al cliente, marcando un hito en la evolución de los agentes inteligentes.",
+  "hashtags": [
+    "#WasmAgent",
+    "#DPO",
+    "#Qwen25",
+    "#IFEval",
+    "#IA"
+  ],
+  "id": "4fb59701e0b4094bb3d3d6a4c56ab188a21c35264b84fdbd30f5a8c91649db68",
+  "imageAlt": "De los registros de ejecución a datos de entrenamiento: cómo los agentes aprenden sin humanos",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqltitwrbmnqq47on5dte.png",
+  "keyPoints": [
+    "WasmAgent captura cada ejecución del agente, evalúa y clasifica los resultados, creando registros de cumplimiento listos para entrenar modelos sin etiquetado manual.",
+    "El proceso full_pcl registra la secuencia completa de fallos y reparaciones, permitiendo que el modelo aprenda de los errores, no solo de los éxitos.",
+    "La evaluación IFEval × Qwen2.5-1.5B-Q4 mostró un aumento de +8.7pp y una reducción de la varianza, mejorando la fiabilidad en producción.",
+    "El verificador de cumplimiento actúa como señal de recompensa, eliminando la necesidad de anotaciones humanas costosas."
+  ],
+  "multimedia": [
+    {
+      "alt": "Representación visual del flujo de datos en Trace-to-Training",
+      "caption": "Ilustración que muestra cómo los registros de ejecución se convierten en datos de entrenamiento",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqltitwrbmnqq47on5dte.png"
+    },
+    {
+      "alt": "Ejemplo de código en el proceso de reparación",
+      "caption": "Fragmento de código que ilustra el ciclo de reparación completo",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png"
+    }
+  ],
+  "publishedAt": "2026-06-26T01:50:39.000Z",
+  "scrapedAt": "2026-06-26T02:01:54.795Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "El framework WasmAgent convierte cada ejecución de agente en un punto de datos estructurado, evaluado por un motor de cumplimiento y exportado como ComplianceEvalRecord para entrenamiento SFT o DPO, sin intervención humana.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "De los registros de ejecución a datos de entrenamiento: cómo los agentes aprenden sin humanos",
+  "url": "https://dev.to/telleroutlook/trace-to-training-how-agent-runs-become-learning-data-31c4",
+  "whyMatters": "Este enfoque representa un salto cualitativo en la eficiencia de entrenamiento de modelos de IA, reduciendo drásticamente la dependencia de datos etiquetados manualmente. Al convertir cada ejecución en un dato de aprendizaje, las empresas pueden acelerar el desarrollo de agentes más robustos y fiables, con menor coste y mayor rapidez de despliegue. La mejora en la varianza y la fiabilidad de producción también abre la puerta a aplicaciones críticas donde la precisión y la resiliencia son esenciales, como la automatización industrial o los sistemas de soporte al cliente."
+}

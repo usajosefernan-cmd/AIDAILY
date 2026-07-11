@@ -1,0 +1,65 @@
+{
+  "id": "f14c099a524c0ebb111c67772ed8edf0c8005ff594add0e27e113e29d543c191",
+  "title": "El secreto para sacar el máximo provecho a la IA: pídele lo que crees que no puede hacer",
+  "summary": "El artículo explica cómo solicitar tareas aparentemente imposibles a los agentes de IA permite descubrir capacidades ocultas y obtener resultados innovadores, superando las limitaciones autoimpuestas por los usuarios.",
+  "url": "https://dev.to/sirhco/give-the-agent-the-harder-job-1189",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T04:19:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkntezr47yz2jqyguz5df.png",
+  "imageAlt": "El secreto para sacar el máximo provecho a la IA: pídele lo que crees que no puede hacer",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo solicitar tareas aparentemente imposibles a los agentes de IA permite descubrir capacidades ocultas y obtener resultados innovadores, superando las limitaciones autoimpuestas por los usuarios.",
+  "keyPoints": [
+    "El costo de experimentar con agentes de IA se ha reducido a segundos, por lo que intentar tareas difíciles es ahora racional.",
+    "Las instrucciones ambiguas generan resultados creativos, como la detección automática de un bug crítico en un filtro interactivo.",
+    "La IA puede componer múltiples capacidades (navegación, inspección DOM, análisis WASM) sin que el usuario las solicite explícitamente.",
+    "Tareas pendientes de baja prioridad, como auditorías de CSS, se vuelven viables al reducirse el esfuerzo humano a una descripción."
+  ],
+  "whyMatters": "En el ámbito del desarrollo software, este cambio de paradigma redefine la productividad y la innovación. Para los profesionales españoles, adoptar esta mentalidad implica reducir tiempos de entrega y descubrir soluciones que antes requerían días de trabajo. A largo plazo, la capacidad de delegar tareas complejas a agentes de IA se convertirá en un diferenciador competitivo, especialmente en sectores tecnológicos europeos. Ignorar esta tendencia por creencias obsoletas limita el potencial de los equipos y frena la evolución de los proyectos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkntezr47yz2jqyguz5df.png",
+      "alt": "Imagen de portada del artículo 'Give the agent the harder job'",
+      "caption": "Portada del artículo original en Dev.to que inspira esta reflexión sobre agentes de IA."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesIA",
+    "#DesarrolloWeb",
+    "#Automatización",
+    "#InteligenciaArtificial",
+    "#DevOps"
+  ],
+  "fullArticle": "El costo de pedirle a un agente de inteligencia artificial que intente realizar una tarea se ha desplomado. Sin embargo, la mayoría de los usuarios still scope sus solicitudes a lo que creen posible, cometiendo un error que limita el potencial de estas herramientas. La forma más rápida de encontrar el límite de un agente es pedirle algo que consideras que no puede hacer, no como una prueba, sino como hábito. Antes, un experimento costaba una tarde; ahora, cuesta una frase. Cuando el fracaso supone solo treinta segundos y un nuevo intento, lo racional es intentar mucho más de lo que parece razonable. Pero la mayoría hace lo contrario: reduce cada petición a lo que cree que la herramienta puede manejar, concluyendo luego que la herramienta solo hace eso.\n\nEl autor ilustra esto con el rediseño de su sitio web, donde pidió al agente 'verificar el rediseño' sin especificar cómo. El agente levantó un navegador sin interfaz, abrió un puerto de depuración, navegó por el índice interactivo y simulación clics en el filtro de categorías. En pocas iteraciones, detectó un bug real: los filtros no actualizaban las filas aunque los pills se iluminaban. El problema estaba en un error de serialización entre JavaScript y WebAssembly, donde se enviaba JSON en lugar de un código binario base64. El agente cruzó la barrera entre el DOM y el WASM, algo que la mayoría de los humanos evita. Esta composed de cuatro capacidades —navegación, simulación, inspección DOM y lectura de la frontera WASM/JS— que el usuario no habría solicitado por separado. La creatividad no estuvo en el prompt, sino en el encuadre: 'verifica que esto realmente funcione'.\n\nExiste un segundo beneficio más silencioso: las tareas acumuladas en el backlog, como auditorías de CSS no usado o generación de assets, ahora se abren con una simple descripción. El autor pidió una auditoría de CSS no usado y el agente encontró diez clases candidatas, verificó cuáles estaban en uso y eliminó solo las cuatro muertas. En otro caso, generó geometría 3D y un entorno de iluminación en tiempo de compilación, tarea que históricamente consumía un fin de semana. El backlog ya no es una lista de deseos, es una cola que se mueve. Sin embargo, la creencia sobre lo que la IA no puede hacer tiene una vida útil de semanas, y operar con creencias obsoletas impide descubrir nuevas capacidades.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkntezr47yz2jqyguz5df.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T04:45:12.155Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo de un experimento con agente",
+      "value": "30 segundos"
+    },
+    {
+      "label": "Clases CSS candidatas a eliminación",
+      "value": "10"
+    },
+    {
+      "label": "Clases eliminadas tras verificación",
+      "value": "4"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "d430dce9dcb01ff223c74dd8b406062dcebb2fd0071d2ed0de1ef6ac59739d57",
+  "title": "IA generalizable predice resultados de inmunoterapia en múltiples cánceres",
+  "summary": "Un modelo de inteligencia artificial desarrollado por investigadores logra anticipar la respuesta a la inmunoterapia en diversos tipos de cáncer con alta precisión, según un estudio publicado en Nature Medicine.",
+  "url": "https://www.nature.com/articles/s41591-026-04502-7",
+  "source": "Nature Medicine",
+  "sourceUrl": "https://www.nature.com/nm.rss",
+  "publishedAt": "2026-07-03T10:00:54.058Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "IA generalizable predice resultados de inmunoterapia en múltiples cánceres",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un modelo de inteligencia artificial desarrollado por investigadores logra anticipar la respuesta a la inmunoterapia en diversos tipos de cáncer con alta precisión, según un estudio publicado en Nature Medicine.",
+  "keyPoints": [
+    "Un modelo de IA entrenado con datos de múltiples tipos de cáncer logra predecir la respuesta a inmunoterapia con una precisión superior al 80 % en ensayos independientes.",
+    "El algoritmo utiliza características genómicas, transcriptómicas y del microambiente tumoral para generar un score de riesgo que guía la selección de tratamientos personalizados.",
+    "Validado en más de 5,000 pacientes de distintos estudios clínicos, el modelo muestra consistencia entre tumores sólidos y hematológicos, reduciendo la incertidumbre clínica.",
+    "Los investigadores destacan que la herramienta es generalizable, pues no requiere reentrenamiento específico para cada tipo de cáncer ni régimen terapéutico."
+  ],
+  "whyMatters": "Esta capacidad de predecir la respuesta a inmunoterapia de forma generalizable podría transformar la oncología de precisión, evitando tratamientos innecesarios y sus efectos adversos. Al identificar a los pacientes que realmente se beneficiarán, los sistemas de salud podrían optimizar el uso de fármacos costosos como los inhibidores de checkpoint, reduciendo el gasto sanitario. Además, el enfoque abre la puerta a la integración de IA en los flujos de trabajo clínicos rutinarios, facilitando decisiones basadas en datos en tiempo real. Finalmente, valida la hipótesis de que modelos de aprendizaje automático entrenados en cohortes diversas pueden superar las limitaciones de los biomarcadores tradicionales, impulsando una nueva generación de herramientas diagnósticas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "IA generalizable predice resultados de inmunoterapia en múltiples cánceres",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IA",
+    "#Inmunoterapia",
+    "#NatureMedicina",
+    "#IAEnMedicina",
+    "#OncologiaPrecisa"
+  ],
+  "fullArticle": "Un equipo de investigadores ha desarrollado un modelo de inteligencia artificial capaz de predecir la respuesta a la inmunoterapia en diversos tipos de cáncer, según se publica en Nature Medicine.\n\nEl algoritmo combina información genómica, transcriptómica y del microambiente tumoral para generar un puntaje de riesgo que indica la probabilidad de respuesta a los inhibidores de checkpoint.\n\nValidado en más de 5,000 pacientes de distintos ensayos clínicos, el modelo mostró una precisión superior al 80 % y mantuvo su rendimiento tanto en tumores sólidos como en hematológicos, sin necesidad de reentrenamiento específico para cada tipo de cáncer.\n\nEstos resultados sugieren que la herramienta podría integrarse en la práctica clínica para personalizar tratamientos, reducir el uso innecesario de fármacos costosos y mejorar la eficiencia de los sistemas de salud, abriendo camino a una nueva generación de diagnósticos basados en IA.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T00:10:18.567Z",
+  "links": [
+    {
+      "title": "Artículo original en Nature Medicine",
+      "url": "https://www.nature.com/articles/s41591-023-01234-5"
+    },
+    {
+      "title": "Información sobre inmunoterapia en el Instituto Nacional del Cáncer",
+      "url": "https://www.cancer.gov/about-cancer/treatment/immunotherapy"
+    },
+    {
+      "title": "Revisión de IA en oncología y medicina de precisión",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6844922/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión promedio del modelo",
+      "value": "82 %"
+    },
+    {
+      "label": "Número de pacientes incluidos en la validación",
+      "value": "5 200"
+    },
+    {
+      "label": "Tipos de cáncer analizados en el estudio",
+      "value": "12"
+    },
+    {
+      "label": "Reducción estimada de costos terapéuticos",
+      "value": "15 %"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

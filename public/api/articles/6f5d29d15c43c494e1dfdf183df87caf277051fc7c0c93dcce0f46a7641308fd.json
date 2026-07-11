@@ -1,0 +1,94 @@
+{
+  "id": "6f5d29d15c43c494e1dfdf183df87caf277051fc7c0c93dcce0f46a7641308fd",
+  "title": "Cloudflare Meerkat: El servicio de consenso global que elimina las fallas por líderes caídos en su red de 330+ data centers",
+  "summary": "Cloudflare lanza Meerkat, un servicio de consenso distribuido experimental basado en el algoritmo QuePaxa, diseñado para garantizar consistencia fuerte y disponibilidad de escrituras en su red global de más de 330 data centers, superando las limitaciones de algoritmos tradicionales como Raft en redes de área amplia impredecibles.",
+  "url": "https://blog.cloudflare.com/meerkat-introduction",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-08T13:18:03.000Z",
+  "imageUrl": "https://cf-assets.www.cloudflare.com/zkvhlag99gkb/2m5WlLqGfABaWQdblYreVc/de77b9f9137d10c9dc2d6e71c6d8ee09/Introducing_Meerkat-_an_experiment_in_global_consensus-OG.png",
+  "imageAlt": "Cloudflare Meerkat: El servicio de consenso global que elimina las fallas por líderes caídos en su red de 330+ data centers",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Cloudflare lanza Meerkat, un servicio de consenso distribuido experimental basado en el algoritmo QuePaxa, diseñado para garantizar consistencia fuerte y disponibilidad de escrituras en su red global de más de 330 data centers, superando las limitaciones de algoritmos tradicionales como Raft en redes de área amplia impredecibles.",
+  "keyPoints": [
+    "Cloudflare desarrolló Meerkat para que sus servicios internos lean y modifiquen el estado del plano de control de forma consistente en sus 330+ data centers globales.",
+    "A diferencia de Raft, el algoritmo QuePaxa que usa Meerkat permite que todas las réplicas realicen escrituras en todo momento, sin detener el progreso por timeouts.",
+    "El servicio está diseñado inicialmente para gestionar pequeños fragmentos de estado del plano de control, como liderazgo de bases de datos replicadas, y se mantendrá interno por ahora.",
+    "Se trata de la primera implementación industrial de QuePaxa a escala global, un algoritmo presentado por investigadores del EPFL en 2023."
+  ],
+  "whyMatters": "Esta innovación resuelve un problema crítico para las infraestructuras distribuidas globales: la imposibilidad de garantizar consistencia fuerte y disponibilidad simultánea en redes con latencias impredecibles y fallos frecuentes. Al eliminar la dependencia de un líder único y los timeouts como punto de fallo, Meerkat reduce drásticamente el riesgo de interrupciones en servicios esenciales de Cloudflare, desde la ubicación de recursos de IA hasta la gestión de locks distribuidos. Su despliegue a escala global sienta un precedente para la adopción de algoritmos de consenso más resilientes en entornos de producción masiva, lo que podría transformar los estándares de diseño de sistemas distribuidos en la industria.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cf-assets.www.cloudflare.com/zkvhlag99gkb/2m5WlLqGfABaWQdblYreVc/de77b9f9137d10c9dc2d6e71c6d8ee09/Introducing_Meerkat-_an_experiment_in_global_consensus-OG.png",
+      "alt": "Imagen de portada del artículo de presentación de Cloudflare Meerkat",
+      "caption": "Imagen de portada del artículo oficial de Cloudflare que anuncia el nuevo servicio de consenso global Meerkat"
+    },
+    {
+      "type": "image",
+      "url": "https://blog.cloudflare.com/cdn-cgi/image/format=auto,dpr=3,width=64,height=64,gravity=face,fit=crop,zoom=0.5/https://cf-assets.www.cloudflare.com/zkvhlag99gkb/1CYzjboSN2jX2JkZpzkAN0/837e9a57e77efd26c440e2b216323f0f/unnamed.jpg",
+      "alt": "Retrato de James Larisch, investigador de Cloudflare y coautor del artículo de Meerkat",
+      "caption": "James Larisch, miembro del equipo de investigación de Cloudflare involucrado en el desarrollo del servicio Meerkat"
+    },
+    {
+      "type": "image",
+      "url": "https://blog.cloudflare.com/cdn-cgi/image/format=auto,dpr=3,width=64,height=64,gravity=face,fit=crop,zoom=0.5/https://cf-assets.www.cloudflare.com/zkvhlag99gkb/7nwbH50VfB6OUFgvJVD7yh/2f2381275ac2ff032dc6f1da1c52961b/cf8c8c1a-42dc-4dd6-8225-21723b1966bd.webp",
+      "alt": "Retrato de João Pedro Leite, investigador de Cloudflare y coautor del artículo de Meerkat",
+      "caption": "João Pedro Leite, miembro del equipo de investigación de Cloudflare involucrado en el desarrollo del servicio Meerkat"
+    },
+    {
+      "type": "image",
+      "url": "https://cf-assets.www.cloudflare.com/zkvhlag99gkb/4LOCTGkyM5ZFw05P2Os2Y8/a0d1dcceee291080f7de4a19c79d27c8/image1.png",
+      "alt": "Diagrama de arquitectura del servicio de consenso Meerkat de Cloudflare",
+      "caption": "Diagrama que muestra la arquitectura interna de Meerkat y su integración con la red global de data centers de Cloudflare"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#CloudflareMeerkat",
+    "#QuePaxa",
+    "#ConsensoDistribuido",
+    "#SistemasDistribuidos"
+  ],
+  "fullArticle": "Cloudflare opera una red global de más de 330 data centers, y muchos de sus servicios internos necesitan acceder y modificar el mismo estado del plano de control desde cualquier ubicación, con garantías de consistencia fuerte y disponibilidad incluso ante fallos de data centers o enlaces de red. Sin embargo, las condiciones impredecibles de Internet —caídas de servidores, saturación de colas, cortes de cables— complican el funcionamiento de sistemas distribuidos que garanticen que todos los lectores vean siempre el estado más actualizado, ya que los algoritmos de consenso tradicionales sufren en redes de área amplia con latencias variables.\nEl equipo de investigación de Cloudflare lleva un año desarrollando Meerkat, un servicio de consenso experimental basado en el algoritmo QuePaxa, presentado en 2023 por investigadores del EPFL. A diferencia de Raft, el algoritmo más usado en la industria, QuePaxa permite que todas las réplicas realicen escrituras en todo momento, sin depender de un líder único ni de timeouts que detengan el progreso del sistema, lo que lo hace ideal para la red de Cloudflare. Meerkat se diseñó inicialmente para gestionar pequeños fragmentos de estado del plano de control, como la información de liderazgo de bases de datos replicadas o la ubicación de recursos como instancias de modelos de IA, y por ahora se mantendrá como un servicio interno de la empresa.\n[MULTIMEDIA: https://cf-assets.www.cloudflare.com/zkvhlag99gkb/2m5WlLqGfABaWQdblYreVc/de77b9f9137d10c9dc2d6e71c6d8ee09/Introducing_Meerkat-_an_experiment_in_global_consensus-OG.png]\nSe trata de la primera implementación industrial de QuePaxa a escala global, un hito que podría marcar un cambio de paradigma en el diseño de sistemas distribuidos. El servicio aún está en fase experimental, pero sus prometedores resultados iniciales apuntan a que en el futuro podría estar disponible para clientes externos, ofreciendo una capa de consenso más resiliente para aplicaciones que requieren consistencia linealizable sin renunciar a la disponibilidad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T15:26:04.565Z",
+  "links": [
+    {
+      "title": "Artículo original de presentación de Meerkat en el blog de Cloudflare",
+      "url": "https://blog.cloudflare.com/meerkat-globally-distributed-consensus/"
+    },
+    {
+      "title": "Paper original del algoritmo QuePaxa presentado por investigadores del EPFL",
+      "url": "https://dl.acm.org/doi/10.1145/3597503.3623323"
+    },
+    {
+      "title": "Página de investigación de Cloudflare",
+      "url": "https://www.cloudflare.com/research/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Cantidad de data centers globales de Cloudflare",
+      "value": "Más de 330"
+    },
+    {
+      "label": "Año de publicación del algoritmo QuePaxa",
+      "value": "2023"
+    },
+    {
+      "label": "Tiempo de desarrollo de Meerkat por el equipo de Cloudflare",
+      "value": "1 año"
+    },
+    {
+      "label": "Nivel de consistencia que proporciona Meerkat",
+      "value": "Consistencia linealizable y serializable"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

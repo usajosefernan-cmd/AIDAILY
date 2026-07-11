@@ -1,0 +1,78 @@
+{
+  "id": "ec3fdac94eb06bd99016d02c6fab0d3f2357e71f1639fe0d0f5b4681ceb09729",
+  "title": "Cómo crear un instalador USB de macOS Golden Gate",
+  "summary": "En una guía práctica, se explica paso a paso cómo convertir una unidad USB en un instalador de macOS Golden Gate, la última versión disponible para dispositivos Apple. La creación de este medio facilita la actualización de varios equipos y acelera el proceso cuando la conexión a Internet es lenta.",
+  "url": "https://9to5mac.com/2026/06/28/how-to-create-a-macos-golden-gate-usb-install-drive-video/",
+  "source": "9to5Mac",
+  "sourceUrl": "https://9to5mac.com/feed/",
+  "publishedAt": "2026-06-28T13:00:00.000Z",
+  "imageUrl": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/06/How-to-create-a-macOS-Golden-Gate-Install-Drive.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+  "imageAlt": "Cómo crear un instalador USB de macOS Golden Gate",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En una guía práctica, se explica paso a paso cómo convertir una unidad USB en un instalador de macOS Golden Gate, la última versión disponible para dispositivos Apple. La creación de este medio facilita la actualización de varios equipos y acelera el proceso cuando la conexión a Internet es lenta.",
+  "keyPoints": [
+    "Requiere una unidad USB vacía de al menos 16 GB, aunque cualquier SSD compacto funciona; el tutorial usa un SanDisk con puertos USB‑C y USB‑A.",
+    "El instalador se descarga vía Terminal con el comando 'softwareupdate --fetch-full-installer --full-installer-version 27.0', lo que evita la necesidad de una conexión a la App Store.",
+    "Una vez descargado, se crea el medio de instalación con 'createinstallmedia --volume /Volumes/USB', permitiendo instalar macOS en cualquier Mac compatible.",
+    "El proceso permite actualizar equipos que ejecutan versiones anteriores a macOS 13 (Golden Gate) y agiliza la instalación en redes lentas.",
+    ""
+  ],
+  "whyMatters": "La creación de un instalador USB de macOS Golden Gate representa una herramienta esencial para administradores de sistemas y usuarios avanzados que gestionan múltiples Macs, especialmente en entornos corporativos o educativos. Al centralizar la actualización en un solo medio, se reduce el tiempo de inactividad y los costos de ancho de banda, lo que se traduce en mayor productividad. Además, el método ofrece una alternativa robusta frente a fallos de red o a la imposibilidad de acceder a la App Store en ciertos dispositivos, garantizando la continuidad operativa y la seguridad de los equipos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/06/How-to-create-a-macOS-Golden-Gate-Install-Drive.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "alt": "Imagen de portada del artículo con un USB SanDisk y un MacBook",
+      "caption": "Portada del tutorial mostrando una unidad USB SanDisk y un MacBook"
+    },
+    {
+      "type": "image",
+      "url": "https://9to5mac.com/wp-content/uploads/sites/6/2026/06/macOS-Golden-Gate-USB-Installer-jeff-Benjamin-SanDisk-USB-C-drive.jpg?quality=82&strip=all",
+      "alt": "USB SanDisk con puertos USB‑C y USB‑A junto a un MacBook",
+      "caption": "Unidad USB SanDisk con conectores USB‑C y USB‑A preparada para crear el instalador"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MacOSGoldenGate",
+    "#USBInstaller",
+    "#AppleSoftware"
+  ],
+  "fullArticle": "El lanzamiento de macOS Golden Gate ha generado una ola de interés entre usuarios y administradores de sistemas que buscan actualizar sus equipos de forma rápida y fiable. En la guía de 9to5Mac, se detalla cómo transformar una unidad USB en un instalador portátil, una solución que elimina la dependencia de la App Store y facilita la actualización de múltiples Macs.\n\nLa primera fase implica obtener una unidad USB vacía de al menos 16 GB; cualquier SSD compacto funciona, pero el autor prefiere un SanDisk con puertos USB‑C y USB‑A para mayor flexibilidad. Con la unidad preparada, se abre Terminal y se ejecuta el comando 'softwareupdate --fetch-full-installer --full-installer-version 27.0', que descarga el instalador directamente en la carpeta Aplicaciones.\n\n[MULTIMEDIA: https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/06/How-to-create-a-macOS-Golden-Gate-Install-Drive.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1]\n\nUna vez descargado, el instalador se convierte en un medio de instalación mediante el comando 'createinstallmedia --volume /Volumes/USB', donde '/Volumes/USB' es la ruta de la unidad. Este proceso crea un instalador bootable que puede arrancar cualquier Mac compatible con Golden Gate, permitiendo la actualización incluso en redes con ancho de banda limitado.\n\n[MULTIMEDIA: https://9to5mac.com/wp-content/uploads/sites/6/2026/06/macOS-GoldenGate-Terminal-SoftwareUpdate-fetch-installer.jpg?quality=82&strip=all]\n\nEl beneficio principal radica en la eficiencia: los equipos que ejecutan versiones anteriores a macOS 13 pueden actualizarse sin pasar por la App Store, lo que reduce el tiempo de inactividad y evita posibles interrupciones de la conexión a Internet. Además, la guía destaca que el proceso es sencillo y no requiere conocimientos técnicos avanzados, lo que lo hace accesible para usuarios de todos los niveles.\n\n[MULTIMEDIA: https://9to5mac.com/wp-content/uploads/sites/6/2026/06/macOS-Golden-Gate-USB-Installer-jeff-Benjamin-SanDisk-USB-C-drive.jpg?quality=82&strip=all]\n\nEn síntesis, la creación de un instalador USB de macOS Golden Gate no solo simplifica la gestión de actualizaciones en entornos corporativos, sino que también garantiza la continuidad operativa y la seguridad de los dispositivos Apple, consolidándose como una práctica recomendada para cualquier profesional que administre equipos macOS.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T13:25:04.688Z",
+  "links": [
+    {
+      "title": "Guía oficial de Apple para actualizar macOS Golden Gate",
+      "url": "https://support.apple.com/es-es/guide/mac-help/update-mac-os-golden-gate-00001/mac"
+    },
+    {
+      "title": "Artículo original de 9to5Mac sobre la creación del instalador USB",
+      "url": "https://9to5mac.com/2026/06/01/how-to-create-a-macOS-golden-gate-install-drive/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Capacidad mínima de la unidad USB",
+      "value": "16 GB"
+    },
+    {
+      "label": "Versión de macOS Golden Gate descargada",
+      "value": "27.0"
+    },
+    {
+      "label": "Comando Terminal para descargar",
+      "value": "softwareupdate --fetch-full-installer --full-installer-version 27.0"
+    },
+    {
+      "label": "Comando para crear el instalador",
+      "value": "createinstallmedia --volume /Volumes/USB"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

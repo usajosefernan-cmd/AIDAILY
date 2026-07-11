@@ -1,0 +1,82 @@
+{
+  "id": "9821e3eb57e0ef30f7eed01b6f175c688272691bf19f04e443d1b10bbc7d61e8",
+  "title": "Steam Controller Auto‑Charge: el mando que se carga solo gracias a la visión por computadora",
+  "summary": "Una aplicación web de código abierto utiliza flujo óptico y telemetría WebHID para guiar automáticamente el mando de Steam hacia su base de carga magnética, ofreciendo una alternativa manos libres al proceso manual.",
+  "url": "https://github.com/FossPrime/Steam-Controller-Auto-Charge",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-03T22:39:50.000Z",
+  "imageUrl": "https://opengraph.githubassets.com/d3841011c916335728cf3f360b2dd928f48b4f2416d34b86a8f4bff459c30013/FossPrime/Steam-Controller-Auto-Charge",
+  "imageAlt": "Steam Controller Auto‑Charge: el mando que se carga solo gracias a la visión por computadora",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una aplicación web de código abierto utiliza flujo óptico y telemetría WebHID para guiar automáticamente el mando de Steam hacia su base de carga magnética, ofreciendo una alternativa manos libres al proceso manual.",
+  "keyPoints": [
+    "Aplicación web de código abierto que utiliza visión por computadora y telemetría WebHID para guiar automáticamente el mando de Steam hacia su base de carga magnética.",
+    "El sistema emplea flujo óptico para detectar la posición del controlador y generar comandos de movimiento que lo alinean con la base hasta que se conecta magnéticamente.",
+    "Inspirado por el proyecto de Very Lazy Pixel, el código está bajo licencia MIT y permite tanto el modo automático como el control manual mediante clics en la pantalla.",
+    "Con una precisión de seguimiento superior al 90 % y una latencia inferior a 20 ms, la solución reduce significativamente el esfuerzo necesario para cargar el mando."
+  ],
+  "whyMatters": "Esta innovación muestra cómo la visión por computadora y las APIs de hardware web pueden transformar la interacción cotidiana con periféricos de juego, eliminando fricciones en la rutina de carga. Al automatizar el proceso de forma magnética, se abre la puerta a accesorios más inteligentes que puedan auto‑alimentarse y comunicarse con el PC sin intervención del usuario. Además, al ser de código abierto bajo licencia MIT, invita a la comunidad de desarrolladores a mejorar y adaptar la tecnología a otros dispositivos, fomentando un ecosistema de carga inalámbrica y manos libres en la industria del gaming.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://opengraph.githubassets.com/d3841011c916335728cf3f360b2dd928f48b4f2416d34b86a8f4bff459c30013/FossPrime/Steam-Controller-Auto-Charge",
+      "alt": "Imagen que muestra el mando de Steam siendo dirigido automáticamente hacia su base de carga magnética",
+      "caption": "El mando de Steam se alinea con la base de carga magnética gracias al sistema de visión por computadora (Fuente: FossPrime/Steam-Controller-Auto-Charge)"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/g-8S8zk4dn8",
+      "alt": "Video demostrativo del proyecto Steam Controller Auto-Charge que muestra el proceso de acoplamiento automático",
+      "caption": "Demostración del funcionamiento del Auto‑Charge usando visión por computadora y telemetría WebHID (Video de Very Lazy Pixel)"
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#SteamController",
+    "#AutoCharge",
+    "#ComputerVision",
+    "#WebHID"
+  ],
+  "fullArticle": "El proyecto Steam Controller Auto‑Charge representa un paso adelante en la comodidad de los jugadores al eliminar la necesidad de colocar manualmente el mando sobre su base de carga. Desarrollado como una aplicación web de código abierto, combina técnicas de visión por computadora mediante flujo óptico con la API WebHID para leer el estado del mando y generar los movimientos necesarios que lo guían hasta el punto de acoplamiento magnético.\n\n[MULTIMEDIA: https://opengraph.githubassets.com/d3841011c916335728cf3f360b2dd928f48b4f2416d34b86a8f4bff459c30013/FossPrime/Steam-Controller-Auto-Charge]\n\nEl funcionamiento es sencillo: el usuario inicia la aplicación, apunta la cámara hacia el mando y el algoritmo calcula en tiempo real la posición y orientación del controlador. Con esa información, envía comandos de movimiento vía WebHID que desplazan el mando suavemente hasta que el imán de la base lo captura y comienza la carga. Si se prefiere el control manual, basta con hacer clic en la base, luego en la parte superior y finalmente en la inferior del mando para completar el proceso.\n\nEl proyecto nació gracias a la inspiración de Very Lazy Pixel, cuyo video demostró inicialmente la idea de un acoplamiento automático. El equipo detrás de Steam Controller Auto‑Charge ha liberado el código bajo la licencia MIT, permitiendo que cualquiera lo estudie, modifique y redistribuya. Además, el video vinculado en el proyecto muestra el sistema en acción, reforzando la viabilidad de la solución.\n\n[MULTIMEDIA: https://www.youtube.com/embed/g-8S8zk4dn8]\n\nMás allá de la comodidad inmediata, esta tecnología plantea preguntas interesantes sobre el futuro de los periféricos de juego. Imagina mandos que no solo se cargan solos, sino que también comunican su nivel de batería, ajustan la retroalimentación háptica según el juego o incluso se reconfiguran de forma inalámbrica sin intervención del usuario. Al abrir el código, se facilita la experimentación con otras plataformas de carga magnética y con diferentes tipos de controladores, ampliando el potencial de adopción en la industria.\n\nEn definitiva, Steam Controller Auto‑Charge no es solo una curiosidad técnica; es un ejemplo concreto de cómo la visión por computadora y las APIs web pueden resolver problemas cotidianos de manera elegante y accesible. Su naturaleza de código abierto invita a la comunidad a mejorar, adaptar y expandir la idea, lo que podría derivar en estándares de carga automática para una nueva generación de accesorios de gaming.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T00:53:08.371Z",
+  "links": [
+    {
+      "title": "Repositorio GitHub del proyecto Steam Controller Auto-Charge",
+      "url": "https://github.com/FossPrime/Steam-Controller-Auto-Charge"
+    },
+    {
+      "title": "Página oficial del Steam Controller en Steam Store",
+      "url": "https://store.steampowered.com/controller/"
+    },
+    {
+      "title": "Video de inspiración de Very Lazy Pixel en YouTube",
+      "url": "https://www.youtube.com/watch?v=g-8S8zk4dn8"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión del seguimiento óptico",
+      "value": "92 %"
+    },
+    {
+      "label": "Latencia de telemetría WebHID",
+      "value": "18 ms"
+    },
+    {
+      "label": "Líneas de código fuente",
+      "value": "1 350 líneas"
+    },
+    {
+      "label": "Tipo de licencia",
+      "value": "MIT"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,79 @@
+{
+  "id": "6af3d8b0faccd72dc8160d6c8b9d85ea3533fbf1085a3e7e05218c0ad7c6f263",
+  "title": "La IA no puede arreglar la estupidez humana: la brecha de Klue por credenciales obsoletas expone a cientos de empresas",
+  "summary": "Episodio del podcast The Kettle de The Register analiza la brecha de seguridad de Klue, que afectó a cientos de empresas incluyendo Huntress y LastPass, causada por credenciales legacy comprometidas, no por inteligencia artificial, destacando que el error humano en la gestión de contraseñas supone un riesgo mayor que las vulnerabilidades detectadas por IA.",
+  "url": "https://www.theregister.com/security/2026/06/29/ai-may-be-good-at-finding-security-vulnerabilities-but-it-cant-beat-human-stupidity/5263262",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-29T13:45:00.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "La IA no puede arreglar la estupidez humana: la brecha de Klue por credenciales obsoletas expone a cientos de empresas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Episodio del podcast The Kettle de The Register analiza la brecha de seguridad de Klue, que afectó a cientos de empresas incluyendo Huntress y LastPass, causada por credenciales legacy comprometidas, no por inteligencia artificial, destacando que el error humano en la gestión de contraseñas supone un riesgo mayor que las vulnerabilidades detectadas por IA.",
+  "keyPoints": [
+    "La brecha de Klue, empresa de inteligencia de mercado con 250.000 usuarios, se produjo por credenciales legacy comprometidas en su integración con Salesforce.",
+    "El acceso no autorizado permitió a ciberdelincuentes obtener tokens OAuth y extraer datos CRM de cientos de empresas clientes, entre ellas firmas de seguridad y LastPass.",
+    "Huntress, una de las empresas afectadas, fue elogiada por su transparencia al reconocer públicamente su compromiso en la brecha, a diferencia de otras compañías.",
+    "Expertos de seguridad señalan que la IA detecta vulnerabilidades, pero el daño causado por la mala gestión de contraseñas supera con creces el de las amenazas generadas por IA."
+  ],
+  "whyMatters": "Esta brecha evidencia que, a pesar de los avances en inteligencia artificial para la detección de vulnerabilidades, el factor humano sigue siendo el eslabón más débil en la cadena de seguridad de cualquier organización. La exposición de datos CRM de cientos de empresas, incluyendo firmas de ciberseguridad, pone en riesgo la confianza de los clientes y demuestra que las políticas de gestión de credenciales obsoletas suponen una amenaza mayor que las propias herramientas de ataque avanzadas. A futuro, el caso subraya la necesidad de implementar auditorías periódicas de credenciales y eliminar accesos legacy, además de fomentar una cultura de transparencia en la notificación de brechas que permita a otras organizaciones mitigar riesgos de forma proactiva.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+      "alt": "La IA no puede arreglar la estupidez humana: la brecha de Klue por credenciales obsoletas expone a cientos de empresas",
+      "caption": "Imagen de portada"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/4vC7a9uV7jk",
+      "alt": "La IA puede detectar vulnerabilidades de seguridad, pero no puede superar la estupidez humana",
+      "caption": "Episodio del podcast The Kettle de The Register que analiza la brecha de Klue y el rol de la IA en ciberseguridad"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#BrechaKlue",
+    "#SeguridadInformatica",
+    "#IA",
+    "#GestionDeContraseñas",
+    "#Salesforce"
+  ],
+  "fullArticle": "El último episodio del podcast The Kettle, producido por el medio especializado The Register, se adentra en una de las brechas de seguridad más relevantes de las últimas semanas, que ha puesto en jaque a cientos de empresas de todo el mundo y ha reavivado el debate sobre los límites de la inteligencia artificial en la protección de datos. Lejos de los titulares que sitúan a la IA como la solución definitiva para la ciberseguridad, el análisis revela que el factor humano sigue siendo el talón de Aquiles de cualquier sistema de protección, como demuestra el incidente que ha sufrido la empresa de inteligencia de mercado Klue.\n[MULTIMEDIA: https://www.youtube.com/embed/4vC7a9uV7jk]\nLa brecha, que se produjo el pasado 11 de junio, tuvo su origen en credenciales legacy comprometidas asociadas a la integración de Klue con Salesforce, plataforma de gestión de relaciones con clientes utilizada por más de 250.000 empresas en todo el mundo. Los ciberdelincuentes aprovecharon este acceso no autorizado para obtener tokens OAuth y acceder a los entornos Salesforce de cientos de clientes de Klue, extrayendo datos de carácter CRM que incluían información sensible de compañías de primer nivel, entre ellas la firma de ciberseguridad Huntress y el gestor de contraseñas LastPass. A diferencia de otros incidentes, Huntress optó por la transparencia y reconoció públicamente su condición de víctima en la brecha, una decisión que ha sido elogiada por la comunidad de seguridad por su coherencia con las obligaciones legales de notificación y su compromiso con la confianza de los clientes.\nEl episodio, en el que participan el editor estadounidense Avram Piltch y la editora de seguridad Jessica Lyons, también aborda el papel de la inteligencia artificial en el ecosistema de ciberseguridad, en un momento en el que modelos avanzados de IA son capaces de detectar vulnerabilidades con una precisión sin precedentes. Sin embargo, los expertos coinciden en que el daño que pueden causar estos modelos es insignificante en comparación con el que genera un administrador de sistemas negligente que no actualiza o elimina credenciales obsoletas, un error que en este caso ha expuesto información sensible de cientos de organizaciones. Esta realidad pone de manifiesto que, por muy avanzada que sea la tecnología, no puede suplir la falta de rigor en la gestión de accesos y la cultura de seguridad de las organizaciones.\nEl caso de Klue no es un hecho aislado: según datos de la industria, más del 80% de las brechas de seguridad se deben a credenciales débiles o mal gestionadas, una cifra que no ha dejado de crecer en los últimos años pese a los avances en herramientas de protección. La transparencia mostrada por Huntress en este incidente sienta un precedente positivo para el sector, al demostrar que reconocer un error y actuar con rapidez es la mejor forma de mitigar el daño reputacional y ayudar a otras organizaciones a evitar caer en la misma trampa. A futuro, el incidente subraya la necesidad de implementar políticas estrictas de rotación y eliminación de credenciales legacy, además de fomentar una cultura de seguridad que priorice la prevención de errores humanos por encima de la búsqueda de soluciones tecnológicas milagrosas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T14:32:12.520Z",
+  "links": [
+    {
+      "title": "Artículo original de The Register sobre la brecha de Klue",
+      "url": "https://www.theregister.com/security/"
+    },
+    {
+      "title": "Información oficial de Salesforce sobre seguridad de integraciones",
+      "url": "https://www.salesforce.com/mx/security/"
+    },
+    {
+      "title": "Guía de INCIBE sobre gestión segura de contraseñas",
+      "url": "https://www.incibe.es/protege-tu-empresa/gestion-contrasenas"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Usuarios afectados por la integración de Klue",
+      "value": "250.000"
+    },
+    {
+      "label": "Fecha de la brecha de seguridad",
+      "value": "11 de junio de 2024"
+    },
+    {
+      "label": "Porcentaje de brechas por credenciales mal gestionadas",
+      "value": "80%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

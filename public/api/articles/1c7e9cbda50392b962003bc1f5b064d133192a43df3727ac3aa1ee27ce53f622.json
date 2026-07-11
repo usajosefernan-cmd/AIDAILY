@@ -1,0 +1,68 @@
+{
+  "id": "1c7e9cbda50392b962003bc1f5b064d133192a43df3727ac3aa1ee27ce53f622",
+  "title": "Tu base de código te está enviando una señal: ¿por qué la ignoras?",
+  "summary": "El artículo explica que el acoplamiento entre archivos de software no se limita a dependencias de código explícitas, sino que incluye vínculos conductuales ocultos que se manifiestan en patrones de modificación conjunta en el historial de commits, un fenómeno llamado acoplamiento de cambios que permite detectar fallos estructurales antes de que generen costosos problemas.",
+  "url": "https://dev.to/karlheinz_reichel_7ee08d/your-codebase-is-trying-to-tell-you-something-1550",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T16:07:41.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6r2m5noso55lcb0bsydk.png",
+  "imageAlt": "Tu base de código te está enviando una señal: ¿por qué la ignoras?",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica que el acoplamiento entre archivos de software no se limita a dependencias de código explícitas, sino que incluye vínculos conductuales ocultos que se manifiestan en patrones de modificación conjunta en el historial de commits, un fenómeno llamado acoplamiento de cambios que permite detectar fallos estructurales antes de que generen costosos problemas.",
+  "keyPoints": [
+    "El acoplamiento entre módulos de software no se limita a dependencias de importación visibles en el IDE, sino que incluye vínculos conductuales no documentados.",
+    "El análisis de commits históricos revela el acoplamiento de cambios: archivos que se modifican juntos de forma recurrente, señalando contratos ocultos compartidos.",
+    "Estos patrones de co-modificación permiten predecir fallos estructurales y reducir tiempos de depuración, evitando cascadas de cambios imprevistos.",
+    "Ignorar estas señales del historial de git aumenta el costo de mantenimiento y ralentiza la entrega de nuevas funcionalidades en proyectos de software."
+  ],
+  "whyMatters": "Este análisis es fundamental para equipos de desarrollo que buscan reducir la deuda técnica y optimizar los tiempos de entrega. Detectar el acoplamiento de cambios a tiempo permite refactorizar módulos de forma proactiva, evitando que pequeños fallos se conviertan en problemas que cuesten días de trabajo resolver. A largo plazo, implementar esta práctica mejora la mantenibilidad del código, reduce costos operativos y facilita la incorporación de nuevos desarrolladores al proyecto, generando un impacto directo en la productividad del equipo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6r2m5noso55lcb0bsydk.png",
+      "alt": "Imagen de portada del artículo que ilustra el concepto de acoplamiento de cambios en bases de código",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AcoplamientoDeCambios",
+    "#IngenieriaDeSoftware",
+    "#DeudaTecnica",
+    "#Git"
+  ],
+  "fullArticle": "Acabas de corregir un bug en el módulo de pagos: un caso límite en la lógica de cálculo que te obligó a modificar tres archivos sin relación aparente: el gestor de pagos, una utilidad de formateo de fechas y un cargador de configuración. Sabes que estos tres componentes no están vinculados por dependencias de código, pero igual tuviste que tocarlos para solucionar el problema, como si el sistema te obligara a hacerlo. Esta situación, común en casi cualquier proyecto de software, revela una capa de acoplamiento que ninguna herramienta de análisis de dependencias captura: la que se esconde en los patrones de comportamiento del código.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6r2m5noso55lcb0bsydk.png]\n\nLos investigadores en forense de software llaman a este fenómeno 'acoplamiento de cambios': la tendencia de dos o más archivos a aparecer juntos en el mismo commit de forma recurrente, a lo largo de meses o años de desarrollo. No se trata de coincidencias: si un par de archivos se modifica junto en 25 ocasiones en seis meses, existe un contrato oculto entre ellos, una suposición compartida que nunca se documentó pero que rige su funcionamiento. Este patrón se construye poco a poco en el historial de git, y pasa desapercibido hasta que un cambio menor desencadena una cascada de modificaciones que cuesta días de trabajo resolver. Aprender a leer estas señales permite a los equipos anticiparse a fallos estructurales, reducir la deuda técnica y acelerar la entrega de funcionalidades sin sorpresas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T16:27:46.697Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Tu base de código te está enviando una señal",
+      "url": "https://dev.to/your-codebase-is-trying-to-tell-you-something"
+    },
+    {
+      "title": "Wikipedia: Acoplamiento en ingeniería de software",
+      "url": "https://es.wikipedia.org/wiki/Acoplamiento_(inform%C3%A1tica)"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Co-commits mínimos para detectar acoplamiento",
+      "value": "25 modificaciones conjuntas en 6 meses"
+    },
+    {
+      "label": "Tiempo de implementación vs entrega por acoplamiento oculto",
+      "value": "20 minutos de desarrollo, 3 días de entrega"
+    },
+    {
+      "label": "Periodo mínimo de análisis de historial para detectar patrones",
+      "value": "Meses o años de commits"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

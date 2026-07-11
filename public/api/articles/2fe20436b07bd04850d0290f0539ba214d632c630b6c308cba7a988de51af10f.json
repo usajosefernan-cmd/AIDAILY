@@ -1,0 +1,84 @@
+{
+  "id": "2fe20436b07bd04850d0290f0539ba214d632c630b6c308cba7a988de51af10f",
+  "title": "Cómo redactar DESIGN.md para que los agentes de IA lo sigan",
+  "summary": "El artículo explica que, para que los agentes de IA comprendan y apliquen correctamente las reglas de diseño, es esencial describir intenciones y reglas en prose, no solo valores. Se destaca la importancia de los tokens y la prosa, la estructura de la documentación y los recursos disponibles.",
+  "url": "https://dev.to/promptmaster/how-to-write-designmd-prose-that-ai-agents-actually-follow-3bn7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T07:55:48.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "Cómo redactar DESIGN.md para que los agentes de IA lo sigan",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica que, para que los agentes de IA comprendan y apliquen correctamente las reglas de diseño, es esencial describir intenciones y reglas en prose, no solo valores. Se destaca la importancia de los tokens y la prosa, la estructura de la documentación y los recursos disponibles.",
+  "keyPoints": [
+    "Los agentes de IA interpretan mejor la intención cuando la documentación está escrita en prose, no solo con valores estáticos.",
+    "Los tokens describen valores, pero la prosa explica reglas que permiten generalizar a casos no cubiertos explícitamente.",
+    "Se recomienda una sección de 'Do’s and Don’ts' para prevenir errores comunes y garantizar coherencia en la salida.",
+    "Herramientas como la Quick‑Start Cheat Sheet y la guía completa facilitan la creación de DESIGN.md estructurados y accesibles."
+  ],
+  "whyMatters": "La forma en que se documentan las reglas de diseño determina la fiabilidad y la coherencia de los agentes de IA en producción. Una documentación bien redactada reduce errores, acelera la adopción por parte de diseñadores y asegura que las decisiones de diseño se mantengan alineadas con la identidad de la marca. En un mercado donde la IA es cada vez más omnipresente, la calidad de la documentación se convierte en un factor crítico de competitividad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen ilustrativa del documento DESIGN.md",
+      "caption": "Ejemplo de la estructura de un archivo DESIGN.md en un proyecto de IA."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Google AI - Socio oficial de modelos y plataformas de IA",
+      "caption": "Google AI como socio oficial de modelos y plataformas de IA, resaltando la integración de DESIGN.md con herramientas de Google."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Algolia - Socio oficial de búsqueda",
+      "caption": "Algolia como socio oficial de búsqueda, demostrando cómo DESIGN.md facilita la integración con sistemas de búsqueda avanzados."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#DesignMD",
+    "#IA",
+    "#DesarrolloAI",
+    "#DocumentacionTecnica"
+  ],
+  "fullArticle": "El auge de los agentes de IA ha impulsado la necesidad de documentación que vaya más allá de simples valores. En lugar de limitarse a declarar que un color es un código hexadecimal, los diseñadores deben explicar que ese color se usa únicamente para la acción principal, lo que permite que el agente generalice a situaciones no contempladas. Esta práctica convierte a la documentación en un canal de intención de diseño que los modelos de lenguaje comprenden con alta fidelidad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nPara evitar salidas fuera de la marca, cada línea de la documentación debe responder a una pregunta que el agente de otra manera adivinaría. Una sección de 'Do’s and Don’ts' es la pieza clave que previene errores comunes y mantiene la coherencia en los resultados. Los tokens, aunque fáciles de crear, son solo la base; la verdadera fuerza reside en la prosa que convierte esos valores en la identidad del producto.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nEl autor ofrece recursos gratuitos, como la Quick‑Start Cheat Sheet, y una guía completa que cubre el esquema de tokens, la CLI, la accesibilidad y la integración con Tailwind, DTCG export y otros sistemas. Además, anima a la comunidad a compartir la regla de diseño que les gustaría que los agentes respetaran, fomentando la colaboración y la mejora continua.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png]\n\nEn conclusión, la documentación de DESIGN.md no es solo una formalidad; es el puente que conecta la visión de diseño con la ejecución de la IA. Una prosa clara y estructurada garantiza que los agentes no solo sigan reglas, sino que las apliquen con la misma intención que el diseñador original.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T08:04:07.361Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/design-md-prose-para-agentes-de-ia"
+    },
+    {
+      "title": "Guía completa de DESIGN.md",
+      "url": "https://designmd.io/guide"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tokens por sección",
+      "value": "15"
+    },
+    {
+      "label": "Tokens de color",
+      "value": "7"
+    },
+    {
+      "label": "Tokens de acción",
+      "value": "3"
+    },
+    {
+      "label": "Tokens de accesibilidad",
+      "value": "2"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

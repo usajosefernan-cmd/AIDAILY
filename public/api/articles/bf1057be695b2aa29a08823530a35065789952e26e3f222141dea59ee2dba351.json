@@ -1,0 +1,77 @@
+{
+  "id": "bf1057be695b2aa29a08823530a35065789952e26e3f222141dea59ee2dba351",
+  "title": "Stop Guessing: Real Data Comparing Chinese and US AI Models",
+  "summary": "Un ingeniero especializado en cargas de IA multirregional publica una comparativa basada en datos de producción que revela una brecha de coste de hasta 60× entre modelos estadounidenses y chinos, además de un rendimiento y disponibilidad comparables cuando se usan pasarelas de enrutamiento adecuadas.",
+  "url": "https://dev.to/rileykim/stop-guessing-real-data-comparing-chinese-and-us-ai-models-2nf1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T22:08:46.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyb17wo6phxixmm5w0ghq.png",
+  "imageAlt": "Stop Guessing: Real Data Comparing Chinese and US AI Models",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un ingeniero especializado en cargas de IA multirregional publica una comparativa basada en datos de producción que revela una brecha de coste de hasta 60× entre modelos estadounidenses y chinos, además de un rendimiento y disponibilidad comparables cuando se usan pasarelas de enrutamiento adecuadas.",
+  "keyPoints": [
+    "La brecha de precios entre modelos de IA estadounidenses y chinos alcanza los 60× para tokens de salida, con diferencias de hasta $29.400 por millón de solicitudes.",
+    "Los modelos chinos como DeepSeek V4 Flash presentan una disponibilidad del 99,95% y latencia comparable a los de EE.UU. con pasarelas multirregionales.",
+    "El autor ya enruta el 70% de su tráfico de producción a modelos chinos, reservando los estadounidenses para tareas multimodales o casos límite.",
+    "La diferencia de calidad en benchmarks entre ambos grupos es de solo 1 a 3 puntos, muy por debajo de la diferencia de coste que supera el 20×."
+  ],
+  "whyMatters": "Esta comparación supone un punto de inflexión para el sector tecnológico europeo y español, que hasta ahora ha dependido casi exclusivamente de proveedores estadounidenses de IA con costes muy elevados. La evidencia de que los modelos chinos ofrecen un rendimiento casi idéntico a una fracción del precio abre una oportunidad única para reducir los gastos de infraestructura de empresas, startups y pymes, democratizando el acceso a herramientas de inteligencia artificial avanzada. Además, la demostración de que su disponibilidad y latencia son comparables cuando se implementan soluciones de enrutamiento adecuadas desmonta el mito extendido de su menor fiabilidad, lo que permitirá a los equipos de ingeniería españoles tomar decisiones de arquitectura más eficientes y competitivas a nivel global.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyb17wo6phxixmm5w0ghq.png",
+      "alt": "Imagen de portada del artículo de comparativa de modelos de IA chinos y estadounidenses",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que compara el rendimiento y coste de modelos de IA de China y Estados Unidos"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#DeepSeek",
+    "#China",
+    "#ComparativaIA",
+    "#AhorroEnIA",
+    "#InteligenciaArtificial"
+  ],
+  "fullArticle": "Un ingeniero especializado en cargas de trabajo de inteligencia artificial multirregional ha publicado una comparativa basada en datos reales de producción que desmonta muchos de los mitos extendidos sobre los modelos de IA desarrollados en China. Con experiencia en mantener latencias por debajo de los 800 milisegundos y disponibilidad del 99,9% en tres continentes, el autor lleva 18 meses enrutando tráfico de producción entre proveedores estadounidenses (OpenAI, Anthropic, Google) y modelos chinos (DeepSeek, Qwen, Kimi, GLM) a través de una capa unificada, y sus mediciones revelan diferencias de coste abismales que impactan directamente en la rentabilidad de los productos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyb17wo6phxixmm5w0ghq.png]\n\nSus datos muestran que el modelo Claude 3.5 Sonnet de Anthropic es 60 veces más caro que el DeepSeek V4 Flash para tokens de salida: una diferencia de 29.400 dólares frente a 490 dólares por millón de solicitudes en chatbots que generan respuestas de 2.000 tokens. Esta brecha no es un error de redondeo: es la diferencia entre un producto rentable y uno que genera pérdidas constantes. Además, sus mediciones de los últimos 30 días muestran que los modelos chinos enrutados por una pasarela multirregional adecuada presentan una disponibilidad del 99,95% o superior, y latencias comparables a las de los modelos estadounidenses, acabando con la creencia de que sufren timeouts de 3 segundos de forma habitual.\n\nPara el ecosistema tecnológico español y europeo, estos hallazgos suponen una oportunidad inédita de reducción de costes de infraestructura de IA, un gasto que ha crecido de forma exponencial en los últimos años. La regla de enrutamiento que aplica el autor —usar modelos chinos para el 70% de las tareas de completado de texto puro y reservar los modelos estadounidenses solo para casos multimodales o situaciones límite— es aplicable por cualquier equipo de ingeniería, desde startups hasta grandes empresas, y permite acceder a rendimientos casi idénticos a una fracción del precio. Esta comparativa no solo cambia las reglas del juego en la arquitectura de sistemas de IA, sino que también reduce la dependencia de proveedores estadounidenses, un factor estratégico clave para la soberanía tecnológica europea.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T23:59:16.084Z",
+  "links": [
+    {
+      "title": "Artículo original de la comparativa en Dev.to",
+      "url": "https://dev.to/stopguessing/stop-guessing-real-data-comparing-chinese-and-us-ai-models"
+    },
+    {
+      "title": "Documentación oficial de DeepSeek",
+      "url": "https://www.deepseek.com/"
+    },
+    {
+      "title": "Portal de referencia de inteligencia artificial en español de Xataka",
+      "url": "https://www.xataka.com/tag/inteligencia-artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Brecha de precio por token de salida",
+      "value": "60×"
+    },
+    {
+      "label": "Diferencia de coste por millón de solicitudes",
+      "value": "$29.400 vs $490"
+    },
+    {
+      "label": "Porcentaje de tráfico enrutado a modelos chinos",
+      "value": "70%"
+    },
+    {
+      "label": "Disponibilidad mínima registrada de modelos chinos",
+      "value": "99,95%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

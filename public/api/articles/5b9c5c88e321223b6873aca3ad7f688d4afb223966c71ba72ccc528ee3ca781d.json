@@ -1,0 +1,77 @@
+{
+  "id": "5b9c5c88e321223b6873aca3ad7f688d4afb223966c71ba72ccc528ee3ca781d",
+  "title": "n8n Notion Node: Automatiza la lectura, creación, actualización y búsqueda de páginas de bases de datos con un JSON gratuito",
+  "summary": "El nodo Notion de n8n permite a gestores de proyectos y contenidos automatizar todas las interacciones con Notion sin copiar y pegar, sin pagar a Zapier y sin escribir código. La guía cubre la conexión, las operaciones, filtrado, actualización de propiedades y casos de uso avanzados, y entrega un flujo JSON libre.",
+  "url": "https://dev.to/pirateprentice/n8n-notion-node-read-create-update-and-search-database-pages-free-json-1ho3",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T11:23:15.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhqeqt14040mqskcgugms.png",
+  "imageAlt": "n8n Notion Node: Automatiza la lectura, creación, actualización y búsqueda de páginas de bases de datos con un JSON gratuito",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El nodo Notion de n8n permite a gestores de proyectos y contenidos automatizar todas las interacciones con Notion sin copiar y pegar, sin pagar a Zapier y sin escribir código. La guía cubre la conexión, las operaciones, filtrado, actualización de propiedades y casos de uso avanzados, y entrega un flujo JSON libre.",
+  "keyPoints": [
+    "El nodo soporta cinco operaciones: leer, crear, actualizar, archivar y buscar, todo sin intervención manual.",
+    "El token de acceso solo funciona con páginas compartidas explícitamente; omitir el paso 2 provoca errores 404 en cada llamada.",
+    "Los filtros pueden ser simples, compuestos (AND/OR) o JSON crudo, y las propiedades son sensibles a mayúsculas y minúsculas.",
+    "La actualización puede incluir contenido de texto enriquecido, no solo propiedades, lo que facilita insertar notas o resúmenes generados por IA."
+  ],
+  "whyMatters": "Esta herramienta reduce la fricción entre Notion y flujos de trabajo automatizados, permitiendo a equipos de desarrollo y gestión de contenidos ahorrar tiempo y evitar errores humanos. Al eliminar la dependencia de plataformas de terceros como Zapier, las empresas reducen costos y riesgos de seguridad. Además, la posibilidad de insertar contenido dinámico abre nuevas oportunidades para la generación automática de documentación y reportes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhqeqt14040mqskcgugms.png",
+      "alt": "Portada del artículo que muestra el nodo n8n Notion en acción",
+      "caption": "El nodo Notion de n8n permite automatizar la interacción con bases de datos de Notion sin código."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de la interfaz de n8n mostrando la configuración de un nodo Notion",
+      "caption": "Configuración del nodo Notion en n8n, donde se establecen las operaciones y filtros."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#N8nNotion",
+    "#NotionAPI",
+    "#Automatizacion"
+  ],
+  "fullArticle": "El nodo Notion de n8n llega como una solución de automatización que elimina la necesidad de copiar y pegar manualmente entre Notion y otras herramientas. Con este nodo, los usuarios pueden programar flujos que leen, crean, actualizan y buscan páginas dentro de bases de datos de Notion sin escribir código ni pagar por servicios intermedios como Zapier. La guía completa explica cómo conectar la API de Notion a n8n, describiendo los pasos esenciales y los requisitos de autenticación.\n\nPara que el flujo funcione, es imprescindible compartir explícitamente las páginas con el token de acceso; omitir este paso genera un error 404 en cada llamada. El token debe incluir el permiso ‘read’ y ‘write’, y se recomienda usar la capa de seguridad de Notion para limitar el alcance.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhqeqt14040mqskcgugms.png]\n\nEl nodo ofrece tres tipos de filtros: simples (por propiedad), compuestos (AND/OR) y filtros en formato JSON crudo, lo que permite consultas complejas. Los identificadores de página siguen el mismo formato que los de la base de datos: 32 caracteres hexadecimales. Es crucial que los nombres de las propiedades coincidan exactamente con los de la base de datos, ya que la API es sensible a mayúsculas.\n\nLa actualización de páginas no se limita a cambiar propiedades; también permite insertar bloques de texto enriquecido, como párrafos, encabezados y listas. Además, el nodo permite archivar páginas, lo que las mueve a la papelera de Notion y actúa como la operación de borrado más cercana que ofrece la API. Este flujo se adapta a casos de uso donde se crea una entrada en la base de datos y luego se añade un resumen o notas generadas por IA.\n\nEn resumen, el nodo Notion de n8n ofrece una alternativa robusta y libre de código para integrar Notion en flujos de trabajo complejos, reduciendo costes, mejorando la seguridad y ampliando las posibilidades de automatización para equipos de todos los tamaños.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T11:47:38.461Z",
+  "links": [
+    {
+      "title": "Guía oficial de n8n Notion Node",
+      "url": "https://dev.to/author/n8n-notion-node"
+    },
+    {
+      "title": "Documentación de la API de Notion",
+      "url": "https://developers.notion.com/docs"
+    },
+    {
+      "title": "Documentación de n8n",
+      "url": "https://docs.n8n.io"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Formato de ID de página",
+      "value": "32 caracteres hexadecimales"
+    },
+    {
+      "label": "Operaciones disponibles",
+      "value": "5 (Read, Create, Update, Delete, Search)"
+    },
+    {
+      "label": "Número de filtros disponibles",
+      "value": "3 (Simple, Compound, Raw JSON)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

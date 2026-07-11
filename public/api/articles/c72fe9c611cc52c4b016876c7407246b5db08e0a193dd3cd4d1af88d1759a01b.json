@@ -1,0 +1,73 @@
+{
+  "id": "c72fe9c611cc52c4b016876c7407246b5db08e0a193dd3cd4d1af88d1759a01b",
+  "title": "Churo: el asistente de voz local que protege tu privacidad",
+  "summary": "Con la creciente preocupación por la recopilación de datos en la nube, el desarrollador MathObsession lanza Churo, un asistente de voz y copiloto terminal que opera de forma local, garantizando privacidad y seguridad. Disponible solo para MacOS en la versión actual, el proyecto promete compatibilidad con Windows en la próxima actualización.",
+  "url": "https://dev.to/mathobsession/frankly-keep-my-data-private-please-3eo7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T07:29:38.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2plixt5lipezz26saa6z.png",
+  "imageAlt": "Churo: el asistente de voz local que protege tu privacidad",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Con la creciente preocupación por la recopilación de datos en la nube, el desarrollador MathObsession lanza Churo, un asistente de voz y copiloto terminal que opera de forma local, garantizando privacidad y seguridad. Disponible solo para MacOS en la versión actual, el proyecto promete compatibilidad con Windows en la próxima actualización.",
+  "keyPoints": [
+    "Churo combina reconocimiento de voz y síntesis de voz de última generación para ofrecer una experiencia conversacional sin depender de servicios externos.",
+    "El asistente funciona de forma local, evitando el envío de datos a centros de datos y cumpliendo con la demanda de usuarios que valoran la privacidad.",
+    "Disponible únicamente para MacOS, la versión 2.0.1 incluirá soporte para Windows, ampliando su alcance a usuarios de ambos sistemas operativos.",
+    "Con plantillas predefinidas, Churo permite responder preguntas frecuentes y reutilizar fragmentos de texto, optimizando la productividad en el terminal."
+  ],
+  "whyMatters": "El lanzamiento de Churo refleja una tendencia creciente en la tecnología de IA: la necesidad de soluciones que respeten la privacidad del usuario. Al operar de forma local, evita la exposición de datos sensibles a proveedores de nube, lo que es crucial en un contexto donde la protección de datos personales se convierte en un requisito legal y ético. Además, su integración con el terminal posiciona a Churo como una herramienta valiosa para desarrolladores y usuarios avanzados que buscan automatizar tareas sin comprometer la seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2plixt5lipezz26saa6z.png",
+      "alt": "Imagen de portada del artículo sobre Churo",
+      "caption": "Portada del artículo que presenta el asistente de voz Churo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Churo",
+    "#PrivacidadIA",
+    "#AsistenteVoz",
+    "#IAlocal",
+    "#MacOS"
+  ],
+  "fullArticle": "En un mundo donde los asistentes de voz como Alexa, Siri o Google Assistant dependen de servidores en la nube, la idea de una herramienta que funcione completamente de forma local puede parecer revolucionaria. MathObsession, un desarrollador con experiencia en IA, responde a esta demanda con Churo, un asistente de voz y copiloto terminal que garantiza privacidad y rendimiento.\n\nChuro aprovecha tecnologías de Text‑to‑Speech y Speech‑to‑Text de última generación para ofrecer una experiencia conversacional fluida. Al procesar todo en el propio dispositivo, evita la transmisión de datos a centros de datos externos, lo que reduce el riesgo de filtraciones y cumple con normativas de protección de datos. La herramienta se instala con un simple comando pip: 'pip install churovoice', y se activa con 'churovoice --voice male'.\n\nAunque la versión actual es exclusiva para MacOS, el creador anuncia que la compatibilidad con Windows llegará en la versión 2.0.1, ampliando el alcance de la herramienta a una audiencia más amplia. Además, Churo incluye plantillas predefinidas que permiten responder preguntas frecuentes y reutilizar fragmentos de texto, lo que mejora la productividad en entornos de desarrollo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2plixt5lipezz26saa6z.png]\n\nEl proyecto se aloja en GitHub, donde los usuarios pueden explorar el código fuente y contribuir al desarrollo. Con la creciente preocupación por la privacidad en la era de la IA, Churo ofrece una alternativa que combina potencia, simplicidad y seguridad, posicionándose como una opción atractiva para desarrolladores y usuarios que buscan controlar sus datos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T07:45:19.840Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/MathObsession/churo-keep-my-data-private-please"
+    },
+    {
+      "title": "Repositorio GitHub de Churo",
+      "url": "https://github.com/MathObsession/Churo-assistant"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Compatibilidad",
+      "value": "MacOS solo (Windows en versión 2.0.1)"
+    },
+    {
+      "label": "Instalación",
+      "value": "pip install churovoice"
+    },
+    {
+      "label": "Alcance",
+      "value": "Asistente de voz y copiloto de terminal"
+    },
+    {
+      "label": "Tecnología",
+      "value": "Text‑to‑Speech y Speech‑to‑Text de última generación"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

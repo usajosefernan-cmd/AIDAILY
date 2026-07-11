@@ -1,0 +1,72 @@
+{
+  "id": "104f5c2b8b55eddaf4474a29cfa15c6ee3d5d435da2118c6e1d6c3fb1fc79d20",
+  "title": "Why We Silently Drop Clicks for Paused Campaigns (Instead of Returning 404)",
+  "summary": "Un equipo de desarrollo explica por qué no devuelven errores 404 para campañas de afiliados pausadas, diferenciando el manejo de píxeles de seguimiento y postbacks para evitar pérdida de ingresos y discrepancias facturables.",
+  "url": "https://dev.to/anand_rathnas_d5b608cc3de/why-we-silently-drop-clicks-for-paused-campaigns-instead-of-returning-404-53ia",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T04:18:01.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2zpkczfpptbvwz22d11i.png",
+  "imageAlt": "Why We Silently Drop Clicks for Paused Campaigns (Instead of Returning 404)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un equipo de desarrollo explica por qué no devuelven errores 404 para campañas de afiliados pausadas, diferenciando el manejo de píxeles de seguimiento y postbacks para evitar pérdida de ingresos y discrepancias facturables.",
+  "keyPoints": [
+    "Cuando una campaña de afiliados se pausa, los clics y conversiones entrantes se manejan de forma diferenciada según el tipo de llamada al sistema.",
+    "Los píxeles de seguimiento devuelven HTTP 200 y un GIF transparente para evitar que las redes publicitarias bloqueen el dominio por errores 4xx.",
+    "Los postbacks devuelven HTTP 400 con un mensaje claro para evitar pérdida silenciosa de datos y discrepancias en la facturación de comisiones.",
+    "La corrección de un error de escritura en los estados de conversión eliminó una clase completa de bugs sin necesidad de una solicitud de código separada."
+  ],
+  "whyMatters": "Esta práctica de ingeniería tiene un impacto directo en la fiabilidad de los sistemas de publicidad afiliada, un sector que mueve más de 12.000 millones de euros anuales en España y el resto de Europa. Evitar que las redes publicitarias marquen como muertos los endpoints de las marcas previene la pérdida de ingresos por campañas reactivadas, mientras que la transparencia en los postbacks elimina discrepancias facturables que pueden generar conflictos entre anunciantes y plataformas. Además, la cultura de realizar pequeñas correcciones de código mientras se trabaja en una funcionalidad reduce la acumulación de deuda técnica, mejorando la estabilidad del sistema a largo plazo para todos los actores del ecosistema de marketing digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2zpkczfpptbvwz22d11i.png",
+      "alt": "Imagen de portada del artículo que explica el manejo de clics en campañas de afiliados pausadas",
+      "caption": "Portada del artículo original publicado en Dev.to sobre buenas prácticas en el manejo de endpoints para campañas pausadas"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#IngenieríaDeSoftware",
+    "#PublicidadAfiliada",
+    "#DesarrolloDeAPIs",
+    "#GestiónDeCampañas"
+  ],
+  "fullArticle": "Cuando una marca decide pausar una campaña de publicidad afiliada, una pregunta crítica surge para los equipos de ingeniería: ¿qué debe ocurrir con los clics y conversiones que siguen llegando después de la pausa? La respuesta intuitiva inicial suele ser devolver un error 404 para todas las solicitudes, argumentando que el recurso (la campaña) ya no está disponible. Sin embargo, esta solución genera más problemas de los que resuelve, como explica un equipo de desarrollo en su artículo especializado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2zpkczfpptbvwz22d11i.png]\n\nLa solución implementada distingue entre dos tipos de endpoints por diseño, ya que sus llamadores son fundamentalmente diferentes. Los píxeles de seguimiento, que se cargan desde etiquetas <img> en sitios de publishers y redes publicitarias, devuelven un código HTTP 200 junto con un GIF transparente de 1x1 píxeles. Esto evita que las redes publicitarias marquen el dominio como un endpoint muerto por acumulación de errores 4xx, lo que podría hacer que dejen de disparar el píxel incluso después de reactivar la campaña. Por el contrario, los endpoints de postback, que son llamadas servidor a servidor por el backend de la marca cuando se produce una conversión, devuelven un error HTTP 400 con el mensaje 'La campaña no está activa'. Esta asimetría es clave: si se aceptasen silenciosamente las conversiones de una campaña pausada, la marca creería que se están generando comisiones cuando en realidad se están eliminando, generando discrepancias en la facturación 30 días después del cierre de liquidación.\n\nDurante el desarrollo de esta funcionalidad, el equipo también detectó un problema de tipado débil en los estados de conversión, que se gestionaban como cadenas de texto sin validación ni autocompletado. Un simple error de escritura como 'APROVED' (faltando la segunda 'P') generaba conversiones con un estado que el sistema no reconocía, provocando bugs difíciles de rastrear. La corrección de este error, realizada de forma paralela mientras se trabajaba en la funcionalidad principal, eliminó toda una clase de fallos sin necesidad de una solicitud de extracción separada, demostrando el valor de realizar pequeñas limpiezas de código de forma proactiva.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T04:42:48.721Z",
+  "links": [
+    {
+      "title": "Fuente original del artículo en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de códigos de estado HTTP - MDN",
+      "url": "https://developer.mozilla.org/es/docs/Web/HTTP/Status"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Código de respuesta para píxeles de campañas pausadas",
+      "value": "HTTP 200"
+    },
+    {
+      "label": "Código de respuesta para postbacks de campañas pausadas",
+      "value": "HTTP 400"
+    },
+    {
+      "label": "Plazo máximo para detectar discrepancias en comisiones por manejo incorrecto",
+      "value": "30 días"
+    },
+    {
+      "label": "Error de escritura corregido en estados de conversión",
+      "value": "APROVED (faltaba la segunda 'P')"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

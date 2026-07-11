@@ -1,0 +1,47 @@
+{
+  "id": "e60786b78e7b01def33f4ead4d6c4f8d9d78137692f14ea6ca029203ad743d6a",
+  "title": "5 Markdown Tricks That Make Your README Stand Out",
+  "summary": "<p>I've reviewed hundreds of GitHub READMEs while contributing to open source, and the difference between a forgettable one and one that makes people stop scrolling often comes down to a few small Markdown tricks.</p>\n\n<h2>\n  \n  \n  1. Collapsible Sections for Long Content\n</h2>\n\n<p>Nobody wants to scroll through 2,000 lines of setup instructions. Use HTML <code><details></code> tags to hide secondary content:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight html\"><code><span class=\"nt\"><details></span>\n<span class=\"nt\"><summary></span>Advanced Configuration<span class=\"nt\"></summary></span>\n\nYour long config docs here...\n\n<span class=\"nt\"></details></span>\n</code></pre>\n\n</div>\n\n\n\n<p>This renders as a clickable expandable section that keeps your README scannable.</p>\n\n<h2>\n  \n  \n  2. Task Lists for Roadmaps\n</h2>\n\n<p>GFM task lists aren't just for personal to-dos. Use them as a public roadmap:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code><span class=\"p\">-</span> [x] Core API (v1.0)\n<span class=\"p\">-</span> [x] Webhook support\n<span class=\"p\">-</span> [ ] GraphQL endpoint\n<span class=\"p\">-</span> [ ] Multi-region deployment\n</code></pre>\n\n</div>\n\n\n\n<p>Users instantly see what's done and what's coming.</p>\n\n<h2>\n  \n  \n  3. Reference-Style Links for Cleaner Source\n</h2>\n\n<p>Inline links make raw Markdown hard to read. Reference-style links keep paragraphs clean:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code>Check the <span class=\"p\">[</span><span class=\"nv\">contributing guide</span><span class=\"p\">][</span><span class=\"ss\">contrib</span><span class=\"p\">]</span> for details.\n\n<span class=\"p\">[</span><span class=\"ss\">contrib</span><span class=\"p\">]:</span> <span class=\"sx\">CONTRIBUTING.md</span>\n</code></pre>\n\n</div>\n\n\n\n<h2>\n  \n  \n  4. Mermaid Diagrams Inside Code Blocks\n</h2>\n\n<p>GitHub renders Mermaid diagrams in fenced code blocks. Show architecture without uploading an image:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code><span class=\"p\">```</span><span class=\"nl\">mermaid\n</span><span class=\"sb\">graph LR\n    Client-->API-->Database\n    API-->Cache</span>\n<span class=\"p\">```</span>\n</code></pre>\n\n</div>\n\n\n\n<h2>\n  \n  \n  5. Align Tables with Consistent Column Widths\n</h2>\n\n<p>Tables are Markdown's weakest feature. Make them maintainable by aligning columns:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code>| Parameter | Type   | Default | Description        |\n|-----------|--------|---------|--------------------|\n| timeout   | number | 5000    | Request timeout ms |\n| retries   | number | 3       | Max retry attempts |\n</code></pre>\n\n</div>\n\n\n\n<p>Adding spaces so the pipes align makes the raw source readable.</p>\n\n\n\n\n<p>The fastest way to test any of these is a live preview. I use <a href=\"https://codetoolbox.pro/tools/markdown-preview.html\" rel=\"noopener noreferrer\">this free Markdown previewer</a> when drafting READMEs or blog posts — it renders GFM tables, task lists, and diagrams in real time without touching a server.</p>\n\n",
+  "url": "https://dev.to/zhihu_wu_dea1d82af01a04d7/5-markdown-tricks-that-make-your-readme-stand-out-dmm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T13:06:25.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkheh7mwpo6lnh40mpuqu.png",
+  "imageAlt": "5 Markdown Tricks That Make Your README Stand Out",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<p>I've reviewed hundreds of GitHub READMEs while contributing to open source, and the difference between a forgettable one and one that makes people stop scrolling often comes down to a few small Markdown tricks.</p>\n\n<h2>\n  \n  \n  1. Collapsible Sections for Long Content\n</h2>\n\n<p>Nobody wants to scroll through 2,000 lines of setup instructions. Use HTML <code><details></code> tags to hide secondary content:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight html\"><code><span class=\"nt\"><details></span>\n<span class=\"nt\"><summary></span>Advanced Configuration<span class=\"nt\"></summary></span>\n\nYour long config docs here...\n\n<span class=\"nt\"></details></span>\n</code></pre>\n\n</div>\n\n\n\n<p>This renders as a clickable expandable section that keeps your README scannable.</p>\n\n<h2>\n  \n  \n  2. Task Lists for Roadmaps\n</h2>\n\n<p>GFM task lists aren't just for personal to-dos. Use them as a public roadmap:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code><span class=\"p\">-</span> [x] Core API (v1.0)\n<span class=\"p\">-</span> [x] Webhook support\n<span class=\"p\">-</span> [ ] GraphQL endpoint\n<span class=\"p\">-</span> [ ] Multi-region deployment\n</code></pre>\n\n</div>\n\n\n\n<p>Users instantly see what's done and what's coming.</p>\n\n<h2>\n  \n  \n  3. Reference-Style Links for Cleaner Source\n</h2>\n\n<p>Inline links make raw Markdown hard to read. Reference-style links keep paragraphs clean:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code>Check the <span class=\"p\">[</span><span class=\"nv\">contributing guide</span><span class=\"p\">][</span><span class=\"ss\">contrib</span><span class=\"p\">]</span> for details.\n\n<span class=\"p\">[</span><span class=\"ss\">contrib</span><span class=\"p\">]:</span> <span class=\"sx\">CONTRIBUTING.md</span>\n</code></pre>\n\n</div>\n\n\n\n<h2>\n  \n  \n  4. Mermaid Diagrams Inside Code Blocks\n</h2>\n\n<p>GitHub renders Mermaid diagrams in fenced code blocks. Show architecture without uploading an image:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code><span class=\"p\">```</span><span class=\"nl\">mermaid\n</span><span class=\"sb\">graph LR\n    Client-->API-->Database\n    API-->Cache</span>\n<span class=\"p\">```</span>\n</code></pre>\n\n</div>\n\n\n\n<h2>\n  \n  \n  5. Align Tables with Consistent Column Widths\n</h2>\n\n<p>Tables are Markdown's weakest feature. Make them maintainable by aligning columns:<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight markdown\"><code>| Parameter | Type   | Default | Description        |\n|-----------|--------|---------|--------------------|\n| timeout   | number | 5000    | Request timeout ms |\n| retries   | number | 3       | Max retry attempts |\n</code></pre>\n\n</div>\n\n\n\n<p>Adding spaces so the pipes align makes the raw source readable.</p>\n\n\n\n\n<p>The fastest way to test any of these is a live preview. I use <a href=\"https://codetoolbox.pro/tools/markdown-preview.html\" rel=\"noopener noreferrer\">this free Markdown previewer</a> when drafting READMEs or blog posts — it renders GFM tables, task lists, and diagrams in real time without touching a server.</p>\n\n",
+  "keyPoints": [
+    "5 Markdown Tricks That Make Your README Stand Out"
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkheh7mwpo6lnh40mpuqu.png",
+      "alt": "5 Markdown Tricks That Make Your README Stand Out",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "pic",
+      "caption": "pic"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "I've reviewed hundreds of GitHub READMEs while contributing to open source, and the difference between a forgettable one and one that makes people stop scrolling often comes down to a few small Markdown tricks.\n\nNobody wants to scroll through 2,000 lines of setup instructions. Use HTML <details> tags to hide secondary content:\n\nThis renders as a clickable expandable section that keeps your README scannable.\n\nGFM task lists aren't just for personal to-dos. Use them as a public roadmap:\n\nUsers instantly see what's done and what's coming.\n\nInline links make raw Markdown hard to read. Reference-style links keep paragraphs clean:\n\nGitHub renders Mermaid diagrams in fenced code blocks. Show architecture without uploading an image:\n\nTables are Markdown's weakest feature. Make them maintainable by...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T16:30:33.449Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

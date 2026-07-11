@@ -1,0 +1,76 @@
+{
+  "id": "d48b75d8b1ac1c2f648855065fd6aae2fe51d12334ce284b97fc91dcf295cc18",
+  "title": "macOS 28 dejará de soportar volúmenes encriptados de Mac OS Extended",
+  "summary": "Apple confirmó que a partir de macOS 28, los volúmenes encriptados con el formato Mac OS Extended (HFS+) dejarán de ser compatibles, por lo que los usuarios deberán desencriptarlos o reformatearlos a APFS para seguir usándolos.",
+  "url": "https://9to5mac.com/2026/07/08/psa-macos-28-will-drop-support-for-encrypted-mac-os-extended-volumes",
+  "source": "9to5Mac",
+  "sourceUrl": "https://9to5mac.com/feed/",
+  "publishedAt": "2026-07-08T13:40:25.000Z",
+  "imageUrl": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/mac-hdd.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+  "imageAlt": "macOS 28 dejará de soportar volúmenes encriptados de Mac OS Extended",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Apple confirmó que a partir de macOS 28, los volúmenes encriptados con el formato Mac OS Extended (HFS+) dejarán de ser compatibles, por lo que los usuarios deberán desencriptarlos o reformatearlos a APFS para seguir usándolos.",
+  "keyPoints": [
+    "A partir de macOS 28, el sistema solo admitirá volúmenes sin encriptar que usen el formato Mac OS Extended (HFS+).",
+    "Los usuarios con discos externos o volúmenes legados encriptados en HFS+ deberán desencriptarlos o reformatearlos a APFS para mantener la compatibilidad.",
+    "A partir de macOS 26, el sistema enviará notificaciones a los usuarios que usen volúmenes encriptados HFS+ incompatibles con futuras versiones.",
+    "La medida no aplica a los discos de copia de seguridad de Time Machine encriptados, que mantendrán su funcionamiento sin cambios."
+  ],
+  "whyMatters": "Esta medida supone un nuevo paso en la transición de Apple hacia el sistema de archivos APFS, que ofrece soporte nativo de encriptación y un rendimiento superior, abandonando definitivamente el legado de HFS+. Para los usuarios, implica una acción obligatoria antes de actualizar a macOS 28 para evitar perder acceso a sus datos almacenados en volúmenes externos o discos antiguos. A largo plazo, la medida simplifica la gestión de almacenamiento en el ecosistema Apple, pero genera una carga de trabajo temporal para quienes dependen de formatos de almacenamiento legacy.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/mac-hdd.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "alt": "Imagen de un disco duro externo conectado a un Mac, ilustrando la noticia sobre la eliminación de soporte para volúmenes encriptados HFS+ en macOS 28",
+      "caption": "Imagen de portada del artículo de 9to5Mac sobre el cambio de compatibilidad de formatos de almacenamiento en macOS 28"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#MacOS28",
+    "#Apple",
+    "#APFS",
+    "#HFSPlus"
+  ],
+  "fullArticle": "Apple ha anunciado una modificación importante en la compatibilidad de formatos de almacenamiento que entrará en vigor a partir de la versión 28 de su sistema operativo para Mac. Según un documento de soporte oficial publicado recientemente, el formato de archivos Mac OS Extended, también conocido como HFS+, solo será compatible con volúmenes (discos y dispositivos de almacenamiento externo) que no estén encriptados. Esto significa que todos los usuarios que actualmente usen discos externos, volúmenes de copia de seguridad o cualquier otro dispositivo de almacenamiento formateado en HFS+ con encriptación activada deberán realizar cambios obligatorios antes de actualizar a macOS 28 para seguir accediendo a su contenido.\n[MULTIMEDIA: https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/mac-hdd.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1]\nLa compañía no ha especificado los motivos detrás de esta decisión, aunque la medida se enmarca en la estrategia de Apple de abandonar definitivamente el formato HFS+ para consolidar APFS como el estándar único de almacenamiento en sus dispositivos. APFS, adoptado como formato predeterminado desde macOS High Sierra en 2017, incluye soporte nativo de encriptación, mayor rendimiento y funciones avanzadas de gestión de espacio. A partir de macOS 26, los usuarios recibirán notificaciones en el sistema cuando conecten un volumen encriptado HFS+ que no sea compatible con versiones futuras, con el fin de que puedan anticiparse al cambio. Para quienes necesiten seguir usando sus volúmenes afectados, Apple recomienda realizar una copia de seguridad previa de todos los datos, y luego reformatear el dispositivo a APFS o APFS (encriptado), un proceso que elimina permanentemente toda la información almacenada en el volumen.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T13:44:11.365Z",
+  "links": [
+    {
+      "title": "Artículo original en 9to5Mac sobre el cambio en macOS 28",
+      "url": "https://9to5mac.com/2026/07/01/macos-28-drop-support-encrypted-mac-os-extended-volumes/"
+    },
+    {
+      "title": "Documento de soporte oficial de Apple sobre formatos de disco compatibles",
+      "url": "https://support.apple.com/es-lamr/HT212505"
+    },
+    {
+      "title": "Información sobre el sistema de archivos APFS en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/APFS"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de macOS que elimina el soporte a HFS+ encriptado",
+      "value": "macOS 28"
+    },
+    {
+      "label": "Versión desde la que se enviarán alertas de incompatibilidad",
+      "value": "macOS 26"
+    },
+    {
+      "label": "Año de adopción de APFS como formato predeterminado en macOS",
+      "value": "2017"
+    },
+    {
+      "label": "Nombre alternativo del formato Mac OS Extended",
+      "value": "HFS+ (HFS Plus)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,77 @@
+{
+  "id": "e567cdb9336e38207ae49ffaa26f0151d88cbf54fd10e06504007c43eb4dfcd1",
+  "title": "PAL: El estándar abierto que le da 'manos' físicas a los agentes de inteligencia artificial para controlar hardware real",
+  "summary": "Un joven de 19 años ha propuesto PAL, un estándar abierto que resuelve la limitación de los agentes de IA para ejecutar código en hardware físico, basándose en el modelo REPL de Python y una arquitectura de dos núcleos en microcontroladores de bajo costo.",
+  "url": "https://dev.to/hanasite/pal-giving-ai-agents-hands-in-the-physical-world-48mj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T20:11:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3u150b0llp0juetgbzet.png",
+  "imageAlt": "PAL: El estándar abierto que le da 'manos' físicas a los agentes de inteligencia artificial para controlar hardware real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un joven de 19 años ha propuesto PAL, un estándar abierto que resuelve la limitación de los agentes de IA para ejecutar código en hardware físico, basándose en el modelo REPL de Python y una arquitectura de dos núcleos en microcontroladores de bajo costo.",
+  "keyPoints": [
+    "Un joven de 19 años propone PAL, un estándar abierto para que agentes de IA controlen hardware físico directamente, eliminando barreras de ejecución actuales.",
+    "La solución se basa en el modelo REPL de Python, isomorfo a la interacción de los agentes de IA, evitando registros de herramientas, esquemas JSON o complejas arquitecturas previas.",
+    "PAL funciona en microcontroladores de bajo costo como el ESP32, con un núcleo dedicado a la seguridad que aísla errores del agente para no interrumpir el control físico.",
+    "La propuesta supera limitaciones de soluciones existentes como el framework Chat Coding de Espressif, que requieren compilación, flasheo y reinicios lentos para agregar operaciones."
+  ],
+  "whyMatters": "Esta propuesta democratiza el acceso de la inteligencia artificial al mundo físico, eliminando las complejas capas de abstracción que hasta ahora limitaban a los agentes a entornos digitales. Su implementación en microcontroladores de bajo costo abre la puerta a aplicaciones masivas en domótica, robótica educativa, industria 4.0 y dispositivos del Internet de las Cosas sin necesidad de conocimientos avanzados de ingeniería de sistemas. Al reducir la barrera de entrada para que los agentes de IA interactúen con sensores, actuadores y otro hardware, PAL podría acelerar la adopción de soluciones autónomas en sectores que hasta ahora dependían de programación manual especializada.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3u150b0llp0juetgbzet.png",
+      "alt": "Ilustración de portada del artículo sobre PAL, el estándar que da capacidades de control físico a los agentes de inteligencia artificial",
+      "caption": "Imagen de portada del artículo original de Dev.to que explica el estándar PAL para agentes de IA"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PAL",
+    "#AgentesDeIA",
+    "#HardwareAbierto",
+    "#ESP32",
+    "#InteligenciaArtificialFisica"
+  ],
+  "fullArticle": "Los agentes de inteligencia artificial actuales han demostrado capacidades extraordinarias en entornos digitales: escriben código, buscan información en la web, despliegan servidores y gestionan bases de datos sin dificultad. Sin embargo, su capacidad se detiene en el límite del contenedor digital: no pueden interactuar con el mundo físico, como encender un relé, leer un sensor de temperatura o escanear un bus I2C. No se trata de una limitación de conocimiento: los modelos saben perfectamente qué hace una instrucción como machine.Pin(5, Pin.OUT), pero no tienen un terminal de ejecución físico donde correr ese código.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3u150b0llp0juetgbzet.png]\n\nEsta barrera podría tener solución gracias a PAL, un estándar abierto propuesto por un joven de 19 años que busca dotar a los agentes de IA de 'manos' en el mundo real. Hasta ahora, las propuestas existentes, como el framework 'Chat Coding' de Espressif que integra agentes completos en microcontroladores ESP32-S3, adolecen de arquitecturas demasiado pesadas e ineficientes: agregar una nueva operación requiere escribir código en C, compilarlo, flashearlo y reiniciar el dispositivo, un proceso que tarda al menos 10 minutos, una velocidad inviable para la iteración rápida que necesitan los agentes autónomos.\n\nLa clave del diseño de PAL reside en una observación sencilla pero revolucionaria: el modelo de interacción del REPL de Python es isomorfo al modelo de interacción de los agentes de IA. Esto elimina la necesidad de complejos registros de herramientas, esquemas JSON o registros de habilidades que ralentizan el desarrollo. Python, además, es el lenguaje que los grandes modelos de lenguaje generan con mayor precisión: representa el 25% de los repositorios públicos de GitHub, frente a menos del 0,5% de Lua, y modelos como Claude han procesado millones de llamadas a funciones de control de hardware como machine.Pin() en sus datos de entrenamiento.\n\nLa implementación de PAL en microcontroladores como el ESP32 aprovecha sus dos núcleos de procesamiento para separar responsabilidades: el núcleo 0 actúa como 'pedal de freno', supervisando de forma permanente el funcionamiento del agente que se ejecuta en el núcleo 1. Si el agente genera un bucle infinito, el núcleo 0 detecta un timeout de latido y reinicia la máquina virtual del núcleo 1; si intenta acceder a pines del sistema, la función machine.Pin() devuelve un error OSError; si el agente se bloquea, el núcleo 0 sigue funcionando, manteniendo en todo momento el enlace de control físico activo. La comunicación entre el agente y el hardware se realiza mediante código Python enviado por WebSocket, sin necesidad de preconfiguraciones ni esquemas predefinidos.\n\nEsta propuesta democratiza el acceso de la inteligencia artificial al mundo físico, eliminando las complejas capas de abstracción que hasta ahora limitaban a los agentes a entornos digitales. Su implementación en hardware de bajo costo abre la puerta a aplicaciones masivas en domótica, robótica educativa, industria 4.0 y dispositivos del Internet de las Cosas, sin necesidad de conocimientos avanzados de ingeniería de sistemas. Al reducir la barrera de entrada para que los agentes de IA interactúen con sensores, actuadores y otro hardware, PAL podría acelerar la adopción de soluciones autónomas en sectores que hasta ahora dependían de programación manual especializada.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T20:22:56.410Z",
+  "links": [
+    {
+      "title": "Artículo original sobre PAL en Dev.to",
+      "url": "https://dev.to/espressif/pal-giving-ai-agents-hands-in-the-physical-world-3u150b0ll"
+    },
+    {
+      "title": "Documentación oficial de MicroPython para ESP32",
+      "url": "https://docs.micropython.org/en/latest/esp32/quickref.html"
+    },
+    {
+      "title": "Repositorio oficial de herramientas de IA para microcontroladores de Espressif",
+      "url": "https://github.com/espressif/esp-ai-agent"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Edad del creador del estándar PAL",
+      "value": "19 años"
+    },
+    {
+      "label": "Participación de Python en repositorios públicos de GitHub",
+      "value": "25%"
+    },
+    {
+      "label": "Tiempo mínimo para agregar operaciones en arquitecturas existentes",
+      "value": "10 minutos"
+    },
+    {
+      "label": "Consumo energético de soluciones basadas en Python para microcontroladores",
+      "value": "5W"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

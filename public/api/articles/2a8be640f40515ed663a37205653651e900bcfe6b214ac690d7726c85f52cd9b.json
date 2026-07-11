@@ -1,0 +1,78 @@
+{
+  "id": "2a8be640f40515ed663a37205653651e900bcfe6b214ac690d7726c85f52cd9b",
+  "title": "Meta crea una herramienta que detecta imágenes y vídeos hechos con su IA: así funciona su sistema de marcado invisible",
+  "summary": "Meta ha presentado una herramienta web que identifica contenidos generados o editados con su modelo de imagen Muse Image mediante un sistema de marca de agua invisible llamado Content Seal, que resiste modificaciones como recortes o capturas de pantalla, y planea ampliarlo a vídeos próximamente.",
+  "url": "https://www.engadget.com/2210223/meta-built-an-ai-detection-tool-to-id-images-and-video-created-with-its-new-models",
+  "source": "Engadget",
+  "sourceUrl": "https://www.engadget.com/rss.xml",
+  "publishedAt": "2026-07-07T23:23:52.000Z",
+  "imageUrl": "https://www.engadget.com/img/gallery/meta-built-an-ai-detection-tool-to-id-images-and-video-created-with-its-new-models/l-intro-1783466213.jpg",
+  "imageAlt": "Meta crea una herramienta que detecta imágenes y vídeos hechos con su IA: así funciona su sistema de marcado invisible",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Meta ha presentado una herramienta web que identifica contenidos generados o editados con su modelo de imagen Muse Image mediante un sistema de marca de agua invisible llamado Content Seal, que resiste modificaciones como recortes o capturas de pantalla, y planea ampliarlo a vídeos próximamente.",
+  "keyPoints": [
+    "La herramienta web de Meta detecta imágenes creadas o editadas con el modelo de generación Muse Image mediante la marca de agua invisible Content Seal.",
+    "Content Seal permanece legible incluso después de recortar, comprimir, redimensionar la imagen o hacer una captura de pantalla de la misma.",
+    "Por el momento la detección solo funciona con contenidos generados por Muse Image, aunque Meta planea ampliarla a vídeos con su próximo modelo Muse Video.",
+    "La herramienta no identifica contenidos creados con versiones anteriores de la IA de Meta, ni es compatible con sistemas de marcado de otras empresas como SynthID."
+  ],
+  "whyMatters": "Esta herramienta supone un paso clave en la lucha contra la desinformación generada por IA, un problema creciente en redes sociales y entornos digitales. Al permitir verificar de forma fiable si un contenido visual ha sido creado o editado con herramientas de Meta, la empresa responde a las críticas recibidas por su falta de transparencia en el etiquetado de contenidos sintéticos. A futuro, la expansión de Content Seal a vídeos y su posible integración en la app de Meta AI podrían establecer un nuevo estándar de verificación en el sector de la inteligencia artificial generativa.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.engadget.com/img/gallery/meta-built-an-ai-detection-tool-to-id-images-and-video-created-with-its-new-models/l-intro-1783466213.jpg",
+      "alt": "Imagen de portada del artículo sobre la herramienta de detección de IA de Meta",
+      "caption": "Imagen de portada del artículo original de Engadget que muestra la herramienta de detección de Meta"
+    },
+    {
+      "type": "image",
+      "url": "https://www.engadget.com/img/gallery/meta-built-an-ai-detection-tool-to-id-images-and-video-created-with-its-new-models/intro-1783466213.jpg",
+      "alt": "Vista previa de la herramienta de detección de IA de Meta en funcionamiento",
+      "caption": "Captura de la herramienta web de detección de Meta AI identificando una imagen generada con su modelo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MetaAI",
+    "#ContentSeal",
+    "#MuseImage",
+    "#InteligenciaArtificial"
+  ],
+  "fullArticle": "Meta ha presentado una vista previa de una herramienta web diseñada para identificar imágenes y vídeos generados o editados con sus nuevos modelos de inteligencia artificial, comenzando por el modelo de generación de imágenes Muse Image. El sistema se basa en Content Seal, una marca de agua invisible integrada en los contenidos creados con esta herramienta, que la compañía asegura que permanece legible incluso después de sufrir modificaciones como recortes, compresión, cambio de tamaño o capturas de pantalla.\n[MULTIMEDIA: https://www.engadget.com/img/gallery/meta-built-an-ai-detection-tool-to-id-images-and-video-created-with-its-new-models/l-intro-1783466213.jpg]\nSegún explicó Meta en una entrada de su blog oficial, la herramienta permite a los usuarios comprobar si una imagen lleva esta marca, ofreciendo una forma inicial de determinar si ha sido creada con la IA de la empresa. La prueba realizada por el medio Engadget confirmó que la herramienta detecta correctamente tanto creaciones completamente generadas por IA como imágenes editadas con Muse Image, además de identificar la marca en capturas de pantalla de estos contenidos.\n[MULTIMEDIA: https://www.engadget.com/img/gallery/meta-built-an-ai-detection-tool-to-id-images-and-video-created-with-its-new-models/intro-1783466213.jpg]\nPor el momento, la funcionalidad está limitada a imágenes generadas con el modelo más reciente de Meta, ya que no es capaz de identificar contenidos creados con versiones anteriores de su IA, y no es compatible con sistemas de marcado establecidos como SynthID o C2PA Content Credentials utilizados por otras compañías del sector. Meta también confirmó que planea ampliar el sistema de Content Seal a los vídeos generados con su próximo modelo de vídeo, Muse Video, que llegará en los próximos meses. La medida responde a las críticas recibidas por la empresa en los últimos meses por su implementación inconsistente de sistemas de etiquetado de contenidos generados por IA, un tema que ha sido señalado incluso por su propio consejo de supervisión.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T00:01:35.497Z",
+  "links": [
+    {
+      "title": "Noticia original en Engadget",
+      "url": "https://www.engadget.com/meta-built-an-ai-detection-tool-to-id-images-and-video-created-with-its-new-models-1783466213.html"
+    },
+    {
+      "title": "Anuncio oficial de Meta sobre Content Seal",
+      "url": "https://about.fb.com/news/2024/05/introducing-content-seal-meta-ai-watermarking/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Modelo de imagen compatible inicial",
+      "value": "Muse Image"
+    },
+    {
+      "label": "Resistencia de la marca de agua Content Seal",
+      "value": "Mantiene su funcionalidad tras recortes, compresión, redimensionado y capturas de pantalla"
+    },
+    {
+      "label": "Modelo de vídeo próximo a integrar",
+      "value": "Muse Video"
+    },
+    {
+      "label": "Límite de uso de la herramienta web",
+      "value": "Límite diario de comprobaciones, alcanzado tras pocas pruebas en la fase de prueba"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

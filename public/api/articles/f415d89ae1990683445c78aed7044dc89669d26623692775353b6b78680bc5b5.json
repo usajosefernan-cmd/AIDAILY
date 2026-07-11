@@ -1,0 +1,79 @@
+{
+  "id": "f415d89ae1990683445c78aed7044dc89669d26623692775353b6b78680bc5b5",
+  "title": "Ingeniería de Plataformas: Cómo construir una plataforma interna de desarrollo que los equipos realmente usen",
+  "summary": "El artículo explica por qué la mayoría de las plataformas internas de desarrollador fracasan al ser impuestas de forma top‑down y muestra cómo un enfoque bottom‑up, basado en observar problemas reales y ofrecer un camino pavimentado, logró que el 80 % de los equipos adoptaran voluntariamente la plataforma tras seis meses de desarrollo.",
+  "url": "https://dev.to/samson_tanimawo/platform-engineering-building-an-internal-developer-platform-that-teams-actually-use-bgn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T00:53:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fnovaaiops.com%2Ffac2.png",
+  "imageAlt": "Ingeniería de Plataformas: Cómo construir una plataforma interna de desarrollo que los equipos realmente usen",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica por qué la mayoría de las plataformas internas de desarrollador fracasan al ser impuestas de forma top‑down y muestra cómo un enfoque bottom‑up, basado en observar problemas reales y ofrecer un camino pavimentado, logró que el 80 % de los equipos adoptaran voluntariamente la plataforma tras seis meses de desarrollo.",
+  "keyPoints": [
+    "El equipo de plataforma dedicó seis meses a crear un catálogo de servicios, aprovisionamiento automático y bases de datos self‑service, pero inicialmente nadie lo usó.",
+    "La falla típica de las plataformas internas es su construcción top‑down, imponiendo herramientas en lugar de surgir de necesidades reales detectadas en equipos.",
+    "Adoptando un enfoque bottom‑up, ofrecieron un camino pavimentado: hacer que lo correcto sea lo fácil, permitiendo desviaciones no soportadas bajo el principio 'lo rompes, lo posees'.",
+    "Tras seis meses sin mandatos, el 80 % de los equipos migró voluntariamente y el restante 20 % presentó casos legítimos que el equipo accommodó."
+  ],
+  "whyMatters": "Este enfoque demuestra que la adopción de plataformas internas depende más de la usabilidad y la respuesta a problemas reales que de la imposición de estándares. Al reducir la fricción y permitir excepciones controladas, las organizaciones pueden acelerar la entrega de software mientras mantienen gobernabilidad. El caso sirve de referencia para líderes de tecnología que buscan escalar DevOps sin generar resistencia, mostrando que una plataforma bien diseñada puede convertirse en un activo estratégico que mejora la productividad y la satisfacción del desarrollador.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fnovaaiops.com%2Ffac2.png",
+      "alt": "Imagen de portada que muestra el concepto de una plataforma interna de desarrollo con elementos de catálogo de servicios y automatización",
+      "caption": "Portada del artículo: Platform Engineering: Building an Internal Developer Platform That Teams Actually Use"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de la comunidad DEV donde se publicó el artículo original",
+      "caption": "Logo de DEV Community, plataforma donde apareció el artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PlatformEngineering",
+    "#InternalDeveloperPlatform",
+    "#NovaAIOps",
+    "#DevOps",
+    "#BottomUpApproach"
+  ],
+  "fullArticle": "Nuestro equipo de plataforma invirtió medio año en construir un catálogo de servicios elegante, con aprovisionamiento automático y bases de datos self‑service. A pesar del esfuerzo técnico, la adopción inicial fue nula; los equipos continuaron con sus flujos de trabajo habituales. Este escenario es común cuando las plataformas se diseñan desde la dirección sin escuchar a los usuarios finales.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fnovaaiops.com%2Ffac2.png]\n\nEl análisis reveló que la causa raíz era una mentalidad top‑down: se decidió qué herramientas debían usar todos, en vez de observar que ocho equipos estaban resolviendo el mismo problema de maneras diferentes. Al cambiar a un enfoque bottom‑up, el equipo ofreció un \"camino pavimentado\": simplificó la experiencia a cuatro botones esenciales y estableció la regla de que cualquier desviación fuera permitida pero sin soporte oficial, bajo el principio 'lo rompes, lo posees'. Esta estrategia hizo que lo correcto fuera también lo fácil de hacer.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nSin imponer mandatos, el equipo dejó que la plataforma se vendiera por sí misma. Al sexto mes, el 80 % de los equipos había migrado voluntariamente, mientras que el restante 20 % presentó casos de uso legítimos que fueron atendidos de forma individual. El resultado fue una plataforma que no solo se usó, sino que se convirtió en un referente interno de eficiencia y satisfacción del desarrollador. Para quienes deseen ver cómo integrar operaciones impulsadas por IA desde el inicio, el autor invita a explorar lo que se está construyendo en Nova AI Ops.\n\nEn resumen, la lección es clara: escuchar, observar y ofrecer una ruta de menor resistencia genera adopción orgánica y sostenible, evitando el gasto de recursos en soluciones que nadie quiere usar.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T01:30:15.009Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/samson/platform-engineering-building-an-internal-developer-platform-that-teams-actually-use"
+    },
+    {
+      "title": "Sitio de Nova AI Ops",
+      "url": "https://novaaiops.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de desarrollo",
+      "value": "6 meses"
+    },
+    {
+      "label": "Equipos que migraron voluntariamente",
+      "value": "80 %"
+    },
+    {
+      "label": "Equipos con casos edge atendidos",
+      "value": "20 %"
+    },
+    {
+      "label": "Número de botones esenciales en la plataforma",
+      "value": "4"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

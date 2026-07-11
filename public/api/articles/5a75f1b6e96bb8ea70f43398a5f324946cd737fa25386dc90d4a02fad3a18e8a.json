@@ -1,0 +1,73 @@
+{
+  "id": "5a75f1b6e96bb8ea70f43398a5f324946cd737fa25386dc90d4a02fad3a18e8a",
+  "title": "El flujo de trabajo que evita borrar contenido en Sanity: despublicar, archivar y restaurar en tres clics",
+  "summary": "El autor desarrolló un flujo de tres acciones personalizadas para Sanity que soluciona las limitaciones de la acción nativa de despublicación, permitiendo diferenciar entre contenido que necesita rework y el retirado permanentemente, sin usar el botón de borrado para evitar pérdida de datos.",
+  "url": "https://dev.to/nayankyada/how-i-build-an-unpublish-and-archive-workflow-in-sanity-339l",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T08:05:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "El flujo de trabajo que evita borrar contenido en Sanity: despublicar, archivar y restaurar en tres clics",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor desarrolló un flujo de tres acciones personalizadas para Sanity que soluciona las limitaciones de la acción nativa de despublicación, permitiendo diferenciar entre contenido que necesita rework y el retirado permanentemente, sin usar el botón de borrado para evitar pérdida de datos.",
+  "keyPoints": [
+    "El flujo añade un campo de estado 'archivado' a los esquemas de Sanity, sin alterar el ciclo de vida publicado/borrador nativo.",
+    "Las acciones personalizadas se registran en la API de acciones de documento de Sanity, limitadas a tipos de contenido como posts o páginas.",
+    "El front end usa consultas GROQ diferenciadas para mostrar contenido publicado y manejar slugs archivados con redirecciones 301 o 404 según corresponda.",
+    "La revalidación de caché se activa automáticamente vía webhooks de Sanity, eliminando el contenido archivado del sitio en segundos."
+  ],
+  "whyMatters": "Este flujo de trabajo resuelve un problema crítico en la gestión de contenido a largo plazo para equipos editoriales y clientes que necesitan mantener un registro histórico de todo su material sin perder datos de forma irreversible. Al diferenciar claramente entre contenido que requiere ajustes y el retirado permanentemente, se eliminan ambigüedades para los editores y se mejora el SEO al gestionar correctamente las redirecciones de URLs antiguas. Además, la implementación es ligera, no altera el funcionamiento nativo de Sanity y se adapta a proyectos existentes sin necesidad de refactorizaciones mayores, lo que lo convierte en una solución escalable y de bajo mantenimiento para cualquier sitio que use este CMS.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Diagrama del flujo de trabajo de despublicación, archivo y restauración de contenido en Sanity",
+      "caption": "Diagrama del flujo de tres acciones desarrollado para gestionar el ciclo de vida del contenido sin necesidad de borrados"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SanityCMS",
+    "#DesarrolloWeb",
+    "#GestionDeContenido",
+    "#NextJS",
+    "#GROQ"
+  ],
+  "fullArticle": "La acción nativa de despublicar documentos en Sanity, el popular CMS headless utilizado por equipos editoriales de todo el mundo, tiene una limitación que se convierte en un dolor de cabeza para proyectos de mediano y gran tamaño: solo retira el contenido del sitio público y deja un borrador en el estudio, sin ninguna información sobre el motivo de la baja ni herramientas para diferenciar entre un contenido que necesita ajustes y uno retirado de forma permanente. Esta ambigüedad genera confusión entre los editores, que no cuentan con un registro claro del estado de cada pieza, y puede derivar en errores de publicación o en la pérdida de material que en realidad debería mantenerse archivado para su reutilización futura. Para solucionar este problema, un desarrollador especializado en implementaciones de Sanity ha compartido un flujo de trabajo de tres acciones que elimina por completo la necesidad de usar el botón de borrado, irreversible sin una exportación previa del conjunto de datos.\n\nLa solución se basa en tres acciones personalizadas: Despublicar, Archivar y Restaurar, que se suman al ciclo de vida nativo de publicado/borrador sin alterarlo en absoluto. El único cambio necesario en el esquema de Sanity es la adición de un campo de estado en cada tipo de documento que requiera esta funcionalidad, que se marca como 'archivado' cuando se ejecuta la acción correspondiente. Este campo se configura como oculto para los editores, de forma que solo las acciones personalizadas pueden modificarlo, evitando desviaciones de estado por errores humanos. A diferencia del borrado, que elimina el documento de forma permanente, este flujo mantiene todos los registros en el conjunto de datos, cumpliendo con los requisitos de clientes que necesitan restaurar contenido estacional o reutilizar artículos antiguos en campañas futuras.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLa implementación técnica se apoya en la API de acciones de documento de Sanity, que permite reemplazar o ampliar la lista de acciones por defecto del estudio. Las tres acciones personalizadas se registran en el archivo de configuración de Sanity y se limitan a los tipos de contenido que lo requieran, como entradas de blog, páginas estáticas o casos de estudio. Para evitar conflictos entre las mutaciones de despublicación y archivo, que se ejecutan en la misma transacción, el desarrollador incluyó un retardo de 300 milisegundos en la acción de archivo, un valor que se encuentra dentro de la ventana de transacciones de Sanity y que ha demostrado ser fiable en todos los proyectos en los que se ha probado. En el front end, construido con Next.js en la mayoría de los casos, se ejecutan dos consultas GROQ diferenciadas: una para recuperar el contenido publicado de forma habitual, y otra ligera para comprobar si el slug del documento solicitado existe como contenido archivado en los borradores, a los que solo se accede con un token de lectura de servidor, nunca expuesto al cliente.\n\nLa gestión del SEO es uno de los puntos fuertes de este flujo: cuando un usuario accede a un slug de contenido archivado, se le redirige con un código 301 a la sección de blog principal, mientras que los slugs que nunca existieron devuelven un error 404, una distinción que Googlebot y otras herramientas de rastreo reconocen de forma diferente, mejorando el posicionamiento del sitio. La revalidación de la caché de Next.js se activa de forma automática gracias a los webhooks de Sanity: cuando se archiva o restaura un documento, el webhook envía la información del slug al manejador de eventos, que ejecuta la revalidación de la etiqueta correspondiente, eliminando el contenido del caché en menos de tres segundos. Para los editores, la experiencia es completamente transparente: en la barra de acciones del estudio solo ven las opciones de Publicar, Archivar y Restaurar para los tipos de contenido habilitados, sin acceso directo al campo de estado, por lo que no requieren formación adicional para usar el flujo.\n\nEste enfoque ha demostrado su eficacia en tres sitios en producción, donde ha eliminado por completo la pérdida de datos, ha clarificado la intención de los editores y ha permitido que el front end degrade de forma elegante tanto si un slug fue archivado como si nunca existió. La solución es ligera, no requiere modificaciones profundas en proyectos existentes que ya usen Sanity y se adapta a cualquier flujo de trabajo editorial que necesite mantener un control preciso sobre el ciclo de vida del contenido a largo plazo. A diferencia de otras implementaciones que dependen de plugins externos o de modificaciones complejas en el esquema, este flujo se apoya en funcionalidades nativas de Sanity y Next.js, lo que reduce el mantenimiento y el riesgo de errores futuros.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T08:28:14.783Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/sanity/how-i-build-an-unpublish-and-archive-workflow-in-sanity-1i5j"
+    },
+    {
+      "title": "Documentación de la API de acciones de documento de Sanity",
+      "url": "https://www.sanity.io/docs/document-actions"
+    },
+    {
+      "title": "Documentación oficial de GROQ",
+      "url": "https://www.sanity.io/docs/groq"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Retardo en eliminación de contenido archivado del caché",
+      "value": "Menos de 3 segundos"
+    },
+    {
+      "label": "Tiempo de espera en acción de archivo para evitar conflictos",
+      "value": "300 milisegundos"
+    },
+    {
+      "label": "Proyectos en producción que usan este flujo",
+      "value": "3 sitios"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

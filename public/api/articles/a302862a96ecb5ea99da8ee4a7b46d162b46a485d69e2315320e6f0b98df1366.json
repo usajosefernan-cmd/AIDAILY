@@ -1,0 +1,72 @@
+{
+  "id": "a302862a96ecb5ea99da8ee4a7b46d162b46a485d69e2315320e6f0b98df1366",
+  "title": "Día 89 de mi travesía en MERN: Domando expresiones regulares SQL",
+  "summary": "El autor celebra el día 89 de su reto de 100 días de desarrollo full‑stack, destacando la superación de dos desafíos de HackerRank que implican el uso avanzado de expresiones regulares SQL y anclas de cadena, y la aplicación práctica de estas herramientas para validar datos reales.",
+  "url": "https://dev.to/ali_hamza_589ec7b3eb6688d/day-89-of-learning-mern-stack-4h0n",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T09:55:31.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh0t8m8yicr2d2s7wnfr1.png",
+  "imageAlt": "Día 89 de mi travesía en MERN: Domando expresiones regulares SQL",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor celebra el día 89 de su reto de 100 días de desarrollo full‑stack, destacando la superación de dos desafíos de HackerRank que implican el uso avanzado de expresiones regulares SQL y anclas de cadena, y la aplicación práctica de estas herramientas para validar datos reales.",
+  "keyPoints": [
+    "El reto de 100 días culmina con la resolución de dos problemas complejos de HackerRank que requieren expresiones regulares SQL para validar números de teléfono y dominios de correo.",
+    "Se reemplaza el operador LIKE tradicional por REGEXP, reduciendo la complejidad del código y evitando repeticiones innecesarias.",
+    "El aprendizaje incluye anclas de cadena, permitiendo búsquedas precisas al inicio y final de los textos, lo que mejora el rendimiento de las consultas.",
+    "El autor documenta el progreso con capturas de pantalla que evidencian la correcta implementación de los patrones y la eficiencia del código."
+  ],
+  "whyMatters": "Dominar expresiones regulares SQL abre la puerta a validar y filtrar datos con mayor precisión, algo esencial en aplicaciones que manejan información sensible. Al sustituir LIKE por REGEXP, los desarrolladores reducen la carga de procesamiento y minimizan errores de validación. Este avance tiene implicaciones directas en la calidad de los sistemas de negocio y la seguridad de la información.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh0t8m8yicr2d2s7wnfr1.png",
+      "alt": "Imagen de portada que muestra el logotipo de MERN Stack y un fondo de código",
+      "caption": "Portada del artículo: el autor frente a su pantalla con el logo de MERN Stack y líneas de código en el fondo."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MERNStack",
+    "#SQLRegex",
+    "#HackerRank",
+    "#DesarrolloFullStack"
+  ],
+  "fullArticle": "El 30 de junio marca el día 89 de una intensa travesía de 100 días de aprendizaje en el stack MERN, donde el autor combina el poder de MongoDB, Express, React y Node.js con un enfoque profundo en la ingeniería de bases de datos. En esta etapa, se enfrenta a la complejidad de validar datos reales: números de teléfono, dominios de correo y consultas de texto específicas. La solución tradicional, el operador LIKE, se vuelve tediosa y propensa a errores, por lo que el autor recurre a expresiones regulares SQL (REGEXP) y anclas de cadena para lograr una validación elegante y eficiente.\n\nEl reto de HackerRank incluye dos problemas que ponen a prueba la lógica de patrones y la sintaxis de los anclajes, como ^ y $. La primera tarea consiste en identificar números de teléfono con formato exacto, mientras que la segunda exige la extracción de dominios de correo válidos sin usar LIKE. Al resolver ambos, el autor demuestra que REGEXP no solo simplifica el código sino que también mejora el rendimiento de las consultas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh0t8m8yicr2d2s7wnfr1.png]\n\nEl impacto de esta habilidad va más allá del reto personal: las empresas que dependen de bases de datos relacionales buscan desarrolladores capaces de escribir consultas limpias y seguras. Dominar REGEXP permite reducir la superficie de ataque de inyecciones y mejorar la calidad de los datos almacenados, factores críticos en la era de la información.\n\nEn resumen, el día 89 no solo representa un hito personal, sino también la consolidación de competencias que son altamente demandadas en el mercado laboral tecnológico. El autor invita a otros a seguir su ejemplo, demostrando que la práctica constante y la búsqueda de soluciones elegantes son la clave para avanzar en el competitivo mundo del desarrollo full‑stack.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T10:11:39.958Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/day-89-of-learning-mern-stack"
+    },
+    {
+      "title": "HackerRank – Desafíos de SQL",
+      "url": "https://www.hackerrank.com/domains/sql"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Día de avance",
+      "value": "89"
+    },
+    {
+      "label": "Objetivo total",
+      "value": "100 días"
+    },
+    {
+      "label": "Desafíos resueltos",
+      "value": "2"
+    },
+    {
+      "label": "Tecnología clave",
+      "value": "REGEXP SQL"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

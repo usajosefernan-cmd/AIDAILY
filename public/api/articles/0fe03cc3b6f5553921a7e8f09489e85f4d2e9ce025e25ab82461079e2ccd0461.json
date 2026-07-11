@@ -1,0 +1,77 @@
+{
+  "id": "0fe03cc3b6f5553921a7e8f09489e85f4d2e9ce025e25ab82461079e2ccd0461",
+  "title": "78 cartas, 5 idiomas y un solo código: la ruta i18n de Tarotas",
+  "summary": "Tarotas, la aplicación de tarot de Inithouse, entrega 78 cartas en cinco idiomas desde una sola base de código React, gestionando 390 páginas de detalle, 124 URLs únicas y 744 enlaces alternos hreflang.",
+  "url": "https://dev.to/jakub_inithouse/serving-78-cards-x-5-languages-from-one-codebase-our-i18n-routing-4i1k",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T04:21:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbwp69b57i9nbm56of9ld.png",
+  "imageAlt": "78 cartas, 5 idiomas y un solo código: la ruta i18n de Tarotas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Tarotas, la aplicación de tarot de Inithouse, entrega 78 cartas en cinco idiomas desde una sola base de código React, gestionando 390 páginas de detalle, 124 URLs únicas y 744 enlaces alternos hreflang.",
+  "keyPoints": [
+    "Se implementa un prefijo de idioma en la ruta, manteniendo slugs en inglés para simplificar el enrutamiento y la consistencia entre 390 páginas de detalle.",
+    "El contexto de idioma se alimenta del router y se consume en toda la app, reemplazando etiquetas, descripciones y títulos según la selección del usuario.",
+    "Se elimina la redirección automática basada en el navegador para evitar frustraciones y se ofrece un selector de idioma en el encabezado.",
+    "El sitemap y los tags hreflang se generan automáticamente a partir de la misma fuente de datos, garantizando coherencia y evitando errores SEO silenciosos."
+  ],
+  "whyMatters": "Este enfoque demuestra cómo una arquitectura de enrutamiento multilingüe bien pensada puede escalar sin duplicar código ni romper enlaces internos. La estrategia de mantener slugs en un idioma reduce la complejidad de la base de código y facilita el mantenimiento, mientras que la generación automática de sitemap y hreflang asegura la visibilidad internacional en buscadores. Para desarrolladores y empresas que buscan expandir su presencia global, Tarotas ofrece un caso práctico de cómo combinar rendimiento, SEO y experiencia de usuario en una sola aplicación.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbwp69b57i9nbm56of9ld.png",
+      "alt": "Pantalla de Tarotas mostrando la interfaz de selección de cartas en varios idiomas",
+      "caption": "Pantalla de la aplicación Tarotas, ilustrando la experiencia multilingüe con 78 cartas."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TarotApp",
+    "#I18n",
+    "#React",
+    "#SEO",
+    "#Multilingue"
+  ],
+  "fullArticle": "Tarotas, la aplicación de tarot desarrollada por Inithouse, permite a los usuarios barajar, extraer una carta y leer una interpretación tranquila sin necesidad de crear una cuenta. El reto técnico fue ofrecer esta experiencia en cinco idiomas (checo, eslovaco, inglés, alemán y polaco) a través de 78 cartas, todo desde una única base de código React.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbwp69b57i9nbm56of9ld.png]\n\nPara simplificar el enrutamiento, la app utiliza un prefijo de idioma en la ruta: el inglés ocupa la raíz como x‑default y los demás idiomas utilizan un código de dos letras (p. ej., /cs/cards/the-fool). Los slugs de las cartas permanecen en inglés en todas las versiones, lo que evita duplicar rutas y mantiene la consistencia entre enlaces cruzados. Este diseño se traduce en 390 páginas de detalle, 124 URLs únicas y 744 enlaces alternos hreflang.\n\nEl router extrae el prefijo de idioma en cada navegación y lo pasa a un contexto global que alimenta etiquetas, descripciones y títulos. Al eliminar la redirección automática basada en navigator.language, los usuarios pueden elegir su idioma preferido mediante un selector en el encabezado, evitando confusiones cuando, por ejemplo, un ciudadano checo desea la versión en alemán.\n\nLa generación automática del sitemap y de los tags hreflang a partir de la misma fuente de datos garantiza que ambos documentos estén siempre sincronizados. Cada página emite seis enlaces alternos (cinco idiomas más x‑default), y el sitemap refleja estos enlaces con <xhtml:link>. Esta coherencia previene errores SEO silenciosos y facilita la incorporación de nuevos idiomas; al añadir 'hu' a la lista, la app se expande a 24 URLs y 150 enlaces alternos adicionales sin tocar la lógica de enrutamiento.\n\nGoogle Search Console detectó las cinco variantes en un plazo de dos semanas tras la presentación del sitemap. Desde entonces, la app mantiene una presencia sólida en los resultados de búsqueda multilingües, mostrando cómo una arquitectura bien pensada puede escalar internacionalmente sin sacrificar rendimiento ni experiencia de usuario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T04:47:31.830Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de React",
+      "url": "https://es.reactjs.org/"
+    },
+    {
+      "title": "Guía de Vite para proyectos React",
+      "url": "https://vitejs.dev/guide/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tarjetas totales",
+      "value": "78"
+    },
+    {
+      "label": "Idiomas soportados",
+      "value": "5"
+    },
+    {
+      "label": "Páginas de detalle",
+      "value": "390"
+    },
+    {
+      "label": "Enlaces alternos hreflang",
+      "value": "744"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,72 @@
+{
+  "id": "f9ab23c87a565d6079dff02df302e544ad53884908cd1f030758b3cbb5651ba2",
+  "title": "Por qué los motores de reglas de negocio no solucionan el problema que prometen (y cómo evitarlo)",
+  "summary": "Los equipos de desarrollo llevan décadas intentando separar la lógica de negocio del código de aplicación con motores de reglas open source, pero estas herramientas solo resuelven el problema técnico, no el organizacional: la propiedad de las reglas sigue siendo de ingeniería, generando cuellos de botella, deuda técnica y desvíos a procesos manuales. La solución efectiva pasa por empoderar a los usuarios de negocio para modificar reglas sin necesidad de despliegues ni intervención de desarrollo.",
+  "url": "https://dev.to/snehasishkonger/how-modern-teams-separate-business-logic-from-application-code-4mdh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T07:54:58.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Faqt7b4ecxnghsy6cwifd.png",
+  "imageAlt": "Por qué los motores de reglas de negocio no solucionan el problema que prometen (y cómo evitarlo)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los equipos de desarrollo llevan décadas intentando separar la lógica de negocio del código de aplicación con motores de reglas open source, pero estas herramientas solo resuelven el problema técnico, no el organizacional: la propiedad de las reglas sigue siendo de ingeniería, generando cuellos de botella, deuda técnica y desvíos a procesos manuales. La solución efectiva pasa por empoderar a los usuarios de negocio para modificar reglas sin necesidad de despliegues ni intervención de desarrollo.",
+  "keyPoints": [
+    "Los equipos suelen sustituir la lógica de negocio hardcodeada por motores de reglas open source como Drools o Camunda, pero la propiedad de las reglas sigue siendo de ingeniería.",
+    "Los motores de reglas resuelven la separación técnica de la lógica, pero no el problema organizacional de quién tiene permiso para modificarla sin necesidad de despliegues.",
+    "La complejidad acumulada en las reglas genera deuda técnica, dilución de la propiedad del conocimiento y desvío de soluciones a hojas de cálculo manuales no controladas.",
+    "La solución efectiva combina herramientas de construcción visual de reglas por parte de usuarios de negocio, con auditoría completa y ejecución como servicio independiente."
+  ],
+  "whyMatters": "Este análisis es crítico para cualquier organización que dependa de reglas de negocio cambiantes (desde comercio electrónico hasta servicios financieros), ya que revela que la inversión en motores de reglas open source suele ser insuficiente si no se resuelve la barrera organizacional que impide a los equipos de negocio modificarlas de forma autónoma. El impacto se traduce en costos ocultos por desvíos a procesos manuales (como hojas de cálculo para excepciones de precios), retrasos en la implementación de cambios normativos o estrategias comerciales, y acumulación de deuda técnica que aumenta el riesgo de fallos en sistemas core. A futuro, las organizaciones que alineen la arquitectura de reglas con la autonomía de los equipos de negocio reducirán su time-to-market para cambios clave, minimizarán errores por intervenciones de desarrollo y ganarán agilidad competitiva en sectores donde la velocidad de adaptación es un factor diferenciador.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Faqt7b4ecxnghsy6cwifd.png",
+      "alt": "Imagen de portada del artículo sobre separación de lógica de negocio de código de aplicación",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#MotoresDeReglas",
+    "#Drools",
+    "#ArquitecturaDeSoftware",
+    "#LogicaDeNegocio"
+  ],
+  "fullArticle": "Cada pocos años, los equipos de desarrollo se topan con el mismo muro infranqueable: la lógica de descuentos, comprobaciones de elegibilidad y umbrales de fraude se ha convertido en código estructural de sus aplicaciones, de forma que cualquier modificación de una regla requiere abrir un ticket de sprint, pasar por una revisión de código e incluso intervenir en fin de semana. La solución habitual pasa por adoptar motores de reglas de negocio open source como Drools, implementar árboles de decisión basados en YAML o integrar Camunda en la pila tecnológica, pero dos años después la propiedad de esa lógica sigue siendo de ingeniería: solo ha cambiado la sintaxis en la que se escribe.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Faqt7b4ecxnghsy6cwifd.png]\n\nLos motores de reglas de negocio (BRE, por sus siglas en inglés) son sistemas que evalúan condiciones y devuelven decisiones de forma independiente a la aplicación que los consulta, eliminando la necesidad de anidar condicionales como 'si el usuario es premium y el carro supera los 500 euros, aplicar un 15% de descuento' dentro del servicio de pedidos. La propuesta es sencilla en teoría: separar el qué (la regla de negocio) del cómo (su implementación técnica), para que los cambios en estrategias de precios, umbrales de cumplimiento normativo o patrones de fraude no requieran despliegues de código. Pero esta arquitectura, aunque técnicamente sólida, no resuelve el problema organizacional de fondo: quién tiene permiso para modificar esas reglas sin intervención de los equipos de desarrollo.\n\nEl coste oculto de estos sistemas no se hace visible hasta que las reglas alcanzan una complejidad crítica: decenas de condiciones distribuidas entre cuatro equipos, con interacciones que nadie conoce en su totalidad. En ese punto surgen tres problemas estructurales: en primer lugar, la propiedad de la lógica se diluye, y cuando el ingeniero que la diseñó se va de la empresa, nadie se atreve a modificarla sin extensas pruebas por miedo a romper funcionalidades desconocidas. En segundo lugar, los equipos de negocio dejan de solicitar cambios, porque aprenden que cualquier modificación tarda al menos dos semanas en implementarse, por lo que empiezan a desviar las excepciones a hojas de cálculo manuales, generando procesos paralelos no controlados. En tercer lugar, la deuda de reglas se acumula: cada vez que una modificación se considera 'demasiado arriesgada', se añade una nueva condición al final de una función ya compleja, generando cadenas de if de cientos de líneas que nadie ha leído en su totalidad en años.\n\nEsta problemática no es exclusiva de equipos pequeños: se ha detectado en empresas con cientos de ingenieros, donde la lógica de negocio hardcodeada actúa como una fuerza gravitatoria que resiste el cambio al acumular complejidad. La solución no pasa solo por adoptar un motor de reglas, sino por garantizar que quien entiende las reglas de negocio pueda modificarlas sin necesidad de abrir un ticket ni desplegar código. Herramientas como Nected, un constructor visual de reglas que permite a los usuarios de negocio componer condiciones y resultados por sí mismos, con historial completo de auditoría y ejecución como servicio independiente, alinean por primera vez las piezas técnica y organizacional. El ecosistema open source ya cuenta con herramientas consolidadas como Drools (ahora parte del suite KIE de Red Hat), Easy Rules o OpenL Tablets, que resuelven la parte técnica de la externalización de reglas, pero la clave del éxito está en empoderar a los equipos de negocio para que no dependan de ingeniería para iterar.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T08:04:40.988Z",
+  "links": [
+    {
+      "title": "Artículo original publicado en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de Drools",
+      "url": "https://www.drools.org/"
+    },
+    {
+      "title": "Sitio oficial de Nected",
+      "url": "https://nected.io/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Umbral de complejidad crítica de reglas",
+      "value": "30 condiciones distribuidas entre 4 equipos"
+    },
+    {
+      "label": "Tiempo mínimo de modificación de una regla en sistemas tradicionales",
+      "value": "2 semanas"
+    },
+    {
+      "label": "Tiempo medio de dilución de propiedad de la lógica de negocio",
+      "value": "8 meses tras la salida del ingeniero responsable"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

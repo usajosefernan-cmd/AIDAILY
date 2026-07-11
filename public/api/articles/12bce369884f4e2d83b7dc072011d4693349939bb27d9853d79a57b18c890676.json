@@ -1,0 +1,79 @@
+{
+  "id": "12bce369884f4e2d83b7dc072011d4693349939bb27d9853d79a57b18c890676",
+  "title": "Cómo NVIDIA construye plataformas de IA a prueba de fallos: la clave está en equilibrar herramientas deterministas y agentes autónomos",
+  "summary": "Aaron Erickson, responsable del Laboratorio de IA Aplicada de NVIDIA DGX Cloud, explica en QCon San Francisco su metodología para diseñar plataformas de IA fiables a escala, basada en el equilibrio entre herramientas deterministas y agentes de descubrimiento, con ejemplos prácticos y pautas para desarrolladores y arquitectos.",
+  "url": "https://www.infoq.com/presentations/reliable-ai-platforms",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-07T08:03:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/reliable-ai-platforms/en/smallimage/aaron-erickson-thumbnail-1782819611516.jpeg",
+  "imageAlt": "Cómo NVIDIA construye plataformas de IA a prueba de fallos: la clave está en equilibrar herramientas deterministas y agentes autónomos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Aaron Erickson, responsable del Laboratorio de IA Aplicada de NVIDIA DGX Cloud, explica en QCon San Francisco su metodología para diseñar plataformas de IA fiables a escala, basada en el equilibrio entre herramientas deterministas y agentes de descubrimiento, con ejemplos prácticos y pautas para desarrolladores y arquitectos.",
+  "keyPoints": [
+    "Aaron Erickson, responsable del Laboratorio de IA Aplicada de NVIDIA DGX Cloud, comparte su enfoque para construir plataformas de IA fiables en entornos de producción a escala.",
+    "El experto ilustra con un caso práctico de plugin de IA para reorganizaciones empresariales los riesgos de aplicar IA sin una base de herramientas deterministas.",
+    "La charla explica cómo implementar pirámides de pruebas con LLM como juez y evitar la paradoja de la elección en sistemas de IA agenticos.",
+    "Erickson subraya que el equilibrio entre herramientas predecibles y agentes de descubrimiento es indispensable para evitar errores costosos en proyectos de IA a gran escala."
+  ],
+  "whyMatters": "Esta charla llega en un momento en que miles de empresas aceleran la adopción de IA sin contar con marcos de fiabilidad probados, lo que se traduce en errores costosos y proyectos fallidos. El enfoque de NVIDIA no solo ofrece herramientas prácticas para mitigar riesgos, sino que sienta las bases de una nueva arquitectura de sistemas de IA que combina la precisión de los sistemas deterministas con la flexibilidad de los agentes autónomos. Dominar este equilibrio se convertirá en una ventaja competitiva clave para cualquier organización que quiera escalar sus soluciones de IA de forma segura y eficiente en los próximos años.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/reliable-ai-platforms/en/smallimage/aaron-erickson-thumbnail-1782819611516.jpeg",
+      "alt": "Aaron Erickson, responsable del Laboratorio de IA Aplicada de NVIDIA DGX Cloud, durante su charla en QCon San Francisco",
+      "caption": "Charla de Aaron Erickson sobre diseño de plataformas de IA fiables en QCon San Francisco, cortesía de InfoQ"
+    },
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg",
+      "alt": "Diagrama de arquitectura de sistemas de IA agenticos que combinan herramientas deterministas y agentes de descubrimiento",
+      "caption": "Infografía sobre arquitectura de IA agentica, cortesía de InfoQ"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#NVIDIA",
+    "#IAFiables",
+    "#ArquitecturaIA",
+    "#QConSanFrancisco",
+    "#AgentesIA"
+  ],
+  "fullArticle": "La charla magistral de Aaron Erickson, responsable del Laboratorio de IA Aplicada de NVIDIA DGX Cloud, en QCon San Francisco, desmontó los mitos alrededor de la aplicación de IA sin marcos de fiabilidad, usando como ejemplo su experiencia fundando Orgspace, una startup que en 2023 lanzó un plugin de ChatGPT para reorganizaciones empresariales. Erickson explicó cómo la presión de los inversores por incorporar IA a cualquier producto llevó a su equipo a construir una herramienta que, si bien podía generar planes de reorg y borradores de correos de forma autónoma, nunca estuvo destinada a reemplazar a los departamentos de RRHH, sino a ilustrar los límites de la IA sin restricciones.\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/reliable-ai-platforms/en/smallimage/aaron-erickson-thumbnail-1782819611516.jpeg]\nEl núcleo de la presentación se centró en la necesidad de equilibrar dos enfoques complementarios en el diseño de plataformas de IA a escala: las herramientas deterministas, que ofrecen certeza y resultados predecibles para tareas críticas, y los agentes de descubrimiento, que exploran soluciones creativas para problemas complejos. Erickson detalló cómo NVIDIA implementa pirámides de pruebas donde un LLM actúa como juez para validar el comportamiento de los sistemas, además de técnicas para evitar la paradoja de la elección que frena la adopción de IA en entornos empresariales.\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg]\nPara el público de desarrolladores senior y arquitectos, la charla ofreció pautas concretas para aprovechar el contexto raro de los sistemas de IA, implementar jerarquías de agentes especializados y evitar errores comunes que cuestan millones de dólares en proyectos fallidos. La conclusión de Erickson fue clara: la fiabilidad de los sistemas de IA no depende de añadir más modelos o tokens, sino de diseñar arquitecturas que combinen lo mejor de la inteligencia humana y la capacidad de cómputo de las GPUs de NVIDIA.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T05:48:48.048Z",
+  "links": [
+    {
+      "title": "Presentación original de Aaron Erickson en InfoQ",
+      "url": "https://www.infoq.com/presentations/reliable-ai-platforms/"
+    },
+    {
+      "title": "Proyecto Llo11yPop de NVIDIA para monitorización de IA",
+      "url": "https://github.com/NVIDIA/Llo11yPop"
+    },
+    {
+      "title": "Sitio oficial de QCon San Francisco",
+      "url": "https://qconsf.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de incorporación de Aaron Erickson a NVIDIA",
+      "value": "2023"
+    },
+    {
+      "label": "Mes de lanzamiento del plugin de IA para reorganizaciones empresariales",
+      "value": "Abril de 2023"
+    },
+    {
+      "label": "Número de tipos de movimientos de personal soportados por el sistema de agentes",
+      "value": "9"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

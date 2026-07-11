@@ -1,0 +1,76 @@
+{
+  "id": "0dd1462fe5a6aa9cf000306ff04d1cb78736219b0287bb419f14619e40da7f22",
+  "title": "119 extensiones de Edge prometían bloquear anuncios o dar VPN gratis: en realidad eran malware que infectó a 2,6 millones de personas",
+  "summary": "Microsoft eliminó 119 extensiones maliciosas de su tienda de Edge, vinculadas a la campaña StegoAd que usaba esteganografía para ocultar código en imágenes. Las extensiones simulaban ser herramientas legítimas como bloqueadores de anuncios o VPNs, y solo activaban el malware en el 10% de las instalaciones para evitar detección, infectando a 2,6 millones de usuarios.",
+  "url": "https://www.malwarebytes.com/blog/news/2026/06/119-edge-extensions-promised-useful-tools-instead-downloaded-malware",
+  "source": "Malwarebytes Labs",
+  "sourceUrl": "https://www.malwarebytes.com/blog/feed",
+  "publishedAt": "2026-06-29T14:41:18.000Z",
+  "imageUrl": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/08/Screenshot-2023-08-24-at-6.14.55-PM.png?w=56",
+  "imageAlt": "119 extensiones de Edge prometían bloquear anuncios o dar VPN gratis: en realidad eran malware que infectó a 2,6 millones de personas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Microsoft eliminó 119 extensiones maliciosas de su tienda de Edge, vinculadas a la campaña StegoAd que usaba esteganografía para ocultar código en imágenes. Las extensiones simulaban ser herramientas legítimas como bloqueadores de anuncios o VPNs, y solo activaban el malware en el 10% de las instalaciones para evitar detección, infectando a 2,6 millones de usuarios.",
+  "keyPoints": [
+    "Microsoft eliminó 119 extensiones maliciosas de la tienda de Edge, vinculadas a la campaña de malware StegoAd que usaba esteganografía para ocultar código.",
+    "Las extensiones simulaban ser herramientas legítimas: bloqueadores de anuncios, VPNs, traductores, descargadores de vídeo o calculadoras.",
+    "El código malicioso se ocultaba en imágenes mediante esteganografía, y solo se activaba en el 10% de las instalaciones para evitar detección.",
+    "La campaña no explotaba vulnerabilidades del navegador, sino que engañaba a los usuarios para que instalaran extensiones de apariencia confiable."
+  ],
+  "whyMatters": "Esta campaña evidencia que las extensiones de navegador se han convertido en uno de los vectores de ataque más lucrativos para los ciberdelincuentes, ya que actúan como programas residentes con acceso a toda la actividad en línea del usuario. Su uso de esteganografía para ocultar código malicioso en imágenes marca un salto cualitativo en las técnicas de evasión de detección, que probablemente será replicado en futuras campañas contra navegadores basados en Chromium. Además, el hecho de que solo un 10% de las instalaciones activara el malware demuestra la sofisticación de los atacantes para evitar ser detectados por sistemas de seguridad y equipos de análisis, por lo que los usuarios deben extremar la precaución incluso al descargar extensiones de tiendas oficiales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/08/Screenshot-2023-08-24-at-6.14.55-PM.png?w=56",
+      "alt": "Icono del centro de amenazas de ciberseguridad de Malwarebytes",
+      "caption": "Icono del Threat Center, sección de análisis de amenazas de la firma de ciberseguridad Malwarebytes"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#StegoAd",
+    "#MalwareEdge",
+    "#Ciberseguridad",
+    "#ExtensionesMaliciosas"
+  ],
+  "fullArticle": "Microsoft anunció la eliminación de 119 extensiones maliciosas de su tienda oficial de complementos para Edge, como parte de una operación para desmantelar la campaña de malware StegoAd, que había conseguido infectar a 2,6 millones de usuarios en todo el mundo. La información fue revelada en un informe de los investigadores de seguridad de la compañía titulado 'Inside StegoAd: How We Disrupted a Massive Malicious Extension Campaign', en el que se detalla la sofisticación de un ataque que se valió de la confianza de los usuarios en herramientas aparentemente inocuas para distribuir código dañino. Las extensiones eliminadas simulaban ser herramientas de uso común: bloqueadores de anuncios, redes privadas virtuales (VPN) gratuitas, traductores, descargadores de vídeo, calculadoras o extensiones de cupones de descuento, todas ellas con funcionalidad básica real para no levantar sospechas iniciales.\n\nEl nombre de la campaña, StegoAd, combina los términos 'advertising' (publicidad) y 'steganography' (esteganografía), la técnica utilizada por los ciberdelincuentes para ocultar el código malicioso en el interior de imágenes que se mostraban en las extensiones, sin que los sistemas de seguridad detectaran anomalías. Pero la sofisticación del ataque no se limitaba a la ocultación: los atacantes diseñaron un mecanismo de activación selectiva, por el que solo el 10% de las instalaciones ejecutaba la fase final del malware, mientras que el 90% restante permanecía inactiva al menos en el primer intento, reduciendo el riesgo de detección masiva. Además, en muchos casos los delincuentes reutilizaron nombres de extensiones legítimas muy conocidas para generar un nivel adicional de confianza en los usuarios.\n\nA diferencia de muchos ataques que explotan vulnerabilidades sin parchear de los navegadores, esta campaña se basó exclusivamente en la ingeniería social: convencer a los usuarios de que instalaran un complemento de apariencia confiable, para luego desplegar el malware de forma gradual y sigilosa. Los investigadores advirtieron que, aunque la campaña fue detectada y eliminada de la tienda de Edge, las técnicas utilizadas son aplicables a todos los navegadores basados en Chromium, por lo que el riesgo se extiende a Chrome, Opera, Brave y otros derivados del mismo núcleo. Esto se debe a que las extensiones de estos navegadores comparten la misma estructura y permisos, por lo que el mismo método de ataque podría ser replicado en otras plataformas.\n\nLas extensiones de navegador representan un vector de ataque especialmente peligroso para los ciberdelincuentes, ya que actúan como pequeños programas residentes dentro del navegador, con acceso a toda la actividad en línea del usuario: contraseñas, datos de navegación, información de tarjetas de crédito o comunicaciones privadas. Por ello, los expertos recomiendan extremar la precaución incluso al descargar complementos de tiendas oficiales, verificar la identidad del desarrollador, no basarse únicamente en las valoraciones de otros usuarios y mantener instaladas soluciones de seguridad en tiempo real que detecten y eliminen extensiones maliciosas.\n[MULTIMEDIA: https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/08/Screenshot-2023-08-24-at-6.14.55-PM.png?w=56]\nLa campaña StegoAd se suma a una larga lista de amenazas que demuestran que la ciberseguridad debe ser una prioridad constante para todos los usuarios de internet, sin importar el navegador que utilicen.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T16:51:27.966Z",
+  "links": [
+    {
+      "title": "Informe original de Microsoft sobre la campaña StegoAd",
+      "url": "https://www.microsoft.com/en-us/security/blog/2023/11/16/inside-stegoad-how-we-disrupted-a-massive-malicious-extension-campaign/"
+    },
+    {
+      "title": "Centro de amenazas de Malwarebytes",
+      "url": "https://www.malwarebytes.com/threat-center/"
+    },
+    {
+      "title": "Tienda oficial de extensiones de Microsoft Edge",
+      "url": "https://microsoftedge.microsoft.com/addons"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Extensiones maliciosas eliminadas",
+      "value": "119"
+    },
+    {
+      "label": "Usuarios que descargaron las extensiones",
+      "value": "2,6 millones"
+    },
+    {
+      "label": "Porcentaje de instalaciones con malware activado",
+      "value": "10%"
+    },
+    {
+      "label": "Técnica de ocultación de malware utilizada",
+      "value": "Esteganografía en imágenes"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

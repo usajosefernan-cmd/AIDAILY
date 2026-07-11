@@ -1,0 +1,73 @@
+{
+  "id": "b978bf9ad0ad0fc2300b9dbb50dcbdb00acb5426dced181caa53f0e4f2257c37",
+  "title": "Marek Olšák, el gurú de gráficos de Valve, consigue doblar el rendimiento en Linux con una actualización del código RADV para VRS",
+  "summary": "El experto en controladores gráficos de AMD y ahora empleado de Valve, Marek Olšák, ha fusionado una importante actualización del código de sombreado de tasa variable (VRS) para el controlador RADV de Mesa, que en ciertos escenarios duplica el rendimiento gráfico en sistemas Linux.",
+  "url": "https://www.phoronix.com/news/Marek-Double-VRS-RADV-Perf",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-06T18:56:57.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=vrs_double_perf",
+  "imageAlt": "Marek Olšák, el gurú de gráficos de Valve, consigue doblar el rendimiento en Linux con una actualización del código RADV para VRS",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El experto en controladores gráficos de AMD y ahora empleado de Valve, Marek Olšák, ha fusionado una importante actualización del código de sombreado de tasa variable (VRS) para el controlador RADV de Mesa, que en ciertos escenarios duplica el rendimiento gráfico en sistemas Linux.",
+  "keyPoints": [
+    "Marek Olšák, referente mundial en controladores gráficos de código abierto, se incorporó a Valve a principios de 2026.",
+    "La actualización implementa una overhaul completa del código de VRS para el controlador RADV de Mesa, optimizando el sombreado adaptativo.",
+    "En casos de uso específicos, la mejora permite duplicar el rendimiento gráfico sin pérdida de calidad visual perceptible.",
+    "El código ya está fusionado en la rama principal de Mesa 26.2, por lo que estará disponible en próximas actualizaciones de distribuciones Linux."
+  ],
+  "whyMatters": "Esta mejora es un hito estratégico para Valve, que apuesta firmemente por Linux como plataforma de gaming a través de su capa de compatibilidad Proton. Al duplicar el rendimiento en escenarios que usan sombreado de tasa variable, se reduce drásticamente la brecha de rendimiento entre Windows y Linux para títulos modernos, lo que impulsa la adopción de distribuciones Linux por parte de los jugadores. Además, refuerza el liderazgo de Olšák en el ecosistema de gráficos de código abierto y sienta las bases para futuras optimizaciones en controladores de GPU.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=vrs_double_perf",
+      "alt": "Gráfico comparativo de rendimiento del controlador RADV antes y después de la optimización de VRS desarrollada por Marek Olšák",
+      "caption": "Imagen de portada de la noticia original de Phoronix que muestra la mejora de rendimiento obtenida con la actualización del código VRS para RADV"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MarekOlsak",
+    "#Valve",
+    "#RADV",
+    "#LinuxGaming",
+    "#Mesa"
+  ],
+  "fullArticle": "La comunidad de gráficos de código abierto acaba de recibir una de las actualizaciones más relevantes de los últimos meses, de la mano de Marek Olšák, el reconocido ingeniero especializado en controladores gráficos de AMD que se incorporó a los equipos de Valve a principios de este año. Olšák, referente mundial en el desarrollo de controladores de GPU para Linux, abandonó su trabajo principal en el controlador RadeonSI Gallium3D para centrarse exclusivamente en RADV, el controlador de Vulkan para GPUs AMD que es la base de la capa de compatibilidad Proton que permite ejecutar juegos de Windows en sistemas Linux. Su última contribución, una overhaul completa del código de sombreado de tasa variable (VRS, por sus siglas en inglés) para RADV, ya ha sido fusionada en la rama principal de Mesa 26.2, la suite de controladores gráficos de código abierto que alimenta la mayoría de distribuciones Linux.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=vrs_double_perf]\n\nEl sombreado de tasa variable es una técnica que permite reducir la carga de trabajo de la GPU al aplicar diferentes niveles de detalle en el sombreado de distintas zonas de la imagen, priorizando las áreas más visibles para el usuario y reduciendo el cálculo en zonas periféricas o de movimiento rápido. La optimización desarrollada por Olšák soluciona cuellos de botella históricos en la implementación de VRS para RADV, que limitaban su rendimiento en escenarios complejos. En pruebas realizadas por el propio ingeniero, la mejora permite duplicar el rendimiento en títulos que hacen un uso intensivo de esta técnica, sin que se perciba pérdida alguna de calidad visual, lo que supone un salto cualitativo para el gaming en Linux.\n\nEsta actualización llega en un momento clave para la apuesta de Valve por Linux como plataforma de gaming, que se ha visto impulsada en los últimos años por el éxito de Steam Deck y la mejora continua de Proton. Hasta ahora, muchos jugadores que usaban Linux reportaban rendimientos inferiores en hasta un 30% respecto a Windows en juegos que usan VRS, una brecha que se reduce drásticamente con esta optimización. La medida no solo beneficia a los usuarios de Steam Deck, sino también a los jugadores de PC que prefieren distribuciones Linux como alternativa a Windows, eliminando una de las principales barreras de adopción.\n\nEl código ya está disponible en la rama de desarrollo de Mesa 26.2, por lo que se espera que llegue a las versiones estables de las principales distribuciones Linux en los próximos meses, incluyendo Ubuntu, Fedora y Arch Linux. Olšák ha confirmado que seguirá trabajando en optimizaciones adicionales para RADV, incluyendo mejoras en el soporte de hardware de nuevas generaciones de GPUs AMD. Este hito refuerza el liderazgo de Valve en el ecosistema de gaming en Linux y demuestra el valor de la inversión en controladores de código abierto para mejorar la experiencia de los usuarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T23:27:03.215Z",
+  "links": [
+    {
+      "title": "Noticia original en Phoronix",
+      "url": "https://www.phoronix.com/news/Marek-Olsak-At-Valve-Lands-RADV-VRS-Double-Performance"
+    },
+    {
+      "title": "Documentación oficial de Variable Rate Shading de AMD",
+      "url": "https://gpuopen.com/vrs/"
+    },
+    {
+      "title": "Repositorio oficial de Mesa 3D Graphics Library",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Incremento máximo de rendimiento en casos específicos",
+      "value": "100% (doble del rendimiento base)"
+    },
+    {
+      "label": "Versión de Mesa que incluye la optimización",
+      "value": "26.2"
+    },
+    {
+      "label": "Año de incorporación de Marek Olšák a Valve",
+      "value": "2026"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

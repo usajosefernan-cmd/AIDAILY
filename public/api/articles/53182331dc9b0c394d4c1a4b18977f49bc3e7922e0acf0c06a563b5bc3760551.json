@@ -1,0 +1,68 @@
+{
+  "id": "53182331dc9b0c394d4c1a4b18977f49bc3e7922e0acf0c06a563b5bc3760551",
+  "title": "GNOME incorpora soporte para el efecto de desenfoque de fondo con ext-background-effect-v1",
+  "summary": "GNOME 51 ha integrado el protocolo ext-background-effect-v1, que permite aplicar desenfoque en fondos de ventanas o regiones específicas de la pantalla, marcando un avance importante para la experiencia de usuario en Wayland.",
+  "url": "https://www.phoronix.com/news/GNOME-Mutter-Background-Blur",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-04T12:14:03.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=mutter_blur_effect",
+  "imageAlt": "GNOME incorpora soporte para el efecto de desenfoque de fondo con ext-background-effect-v1",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "GNOME 51 ha integrado el protocolo ext-background-effect-v1, que permite aplicar desenfoque en fondos de ventanas o regiones específicas de la pantalla, marcando un avance importante para la experiencia de usuario en Wayland.",
+  "keyPoints": [
+    "El protocolo ext-background-effect-v1, añadido al repositorio Wayland en mayo de 2025, habilita desenfoque en fondos de ventanas y áreas seleccionadas.",
+    "GNOME 51 fusionó el soporte de este protocolo con el código más reciente de Mutter, lo que mejora la fluidez visual y la coherencia de la interfaz.",
+    "El desenfoque de fondo ofrece una mayor personalización estética y ayuda a enfocar la atención en el contenido activo, reduciendo la distracción visual.",
+    "Esta actualización abre la puerta a nuevas posibilidades de diseño y accesibilidad en entornos de escritorio Linux.",
+    ""
+  ],
+  "whyMatters": "El desenfoque de fondo no es solo un detalle estético; al permitir que los usuarios separen visualmente el contenido activo del entorno, mejora la concentración y la productividad. Además, la adopción de ext-background-effect-v1 por parte de GNOME establece un estándar que otros proyectos Wayland podrían seguir, acelerando la evolución de la experiencia de escritorio Linux. Para desarrolladores y diseñadores, esto significa nuevas herramientas para crear interfaces más atractivas y funcionales, lo que puede influir en la adopción de Linux como plataforma de trabajo y entretenimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=mutter_blur_effect",
+      "alt": "Captura de pantalla mostrando el efecto de desenfoque aplicado en una ventana de GNOME",
+      "caption": "Imagen de portada que ilustra el desenfoque de fondo en GNOME 51"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GNOME",
+    "#Wayland",
+    "#Desenfoque"
+  ],
+  "fullArticle": "GNOME 51 ha dado un paso decisivo hacia la modernización de la experiencia de escritorio Linux al integrar el protocolo ext-background-effect-v1, que permite aplicar un efecto de desenfoque en el fondo de ventanas o en regiones específicas de la pantalla. Este protocolo, que se añadió al repositorio de Wayland en mayo de 2025 tras un debate que comenzó a principios de 2024, se ha convertido en una pieza clave para mejorar la estética y la funcionalidad de los entornos de trabajo.\n\nLa integración se realizó mediante una fusión de código en el gestor de ventanas Mutter, el núcleo que controla la composición de la pantalla en GNOME. Con esta actualización, los usuarios pueden disfrutar de fondos más suaves y enfocados, lo que reduce la distracción visual y facilita la concentración en tareas críticas. Además, el soporte para desenfoque de fondo abre la puerta a nuevas posibilidades de diseño de interfaces, permitiendo a los desarrolladores crear aplicaciones más atractivas y coherentes con la estética del sistema.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=mutter_blur_effect]\n\nEl desenfoque de fondo no solo mejora la apariencia visual; también tiene implicaciones significativas en la accesibilidad. Al suavizar el entorno y resaltar el contenido activo, se facilita la lectura y la interacción para usuarios con dificultades visuales. Asimismo, la adopción de este protocolo por parte de GNOME establece un estándar que otros proyectos basados en Wayland podrían seguir, acelerando la evolución de la experiencia de escritorio Linux en general.\n\nPara los desarrolladores, la disponibilidad de ext-background-effect-v1 significa que pueden aprovechar nuevas APIs para crear efectos visuales más sofisticados sin comprometer el rendimiento. La comunidad de código abierto ahora dispone de una herramienta robusta para mejorar la calidad de las interfaces, lo que podría traducirse en una mayor adopción de Linux en entornos corporativos y educativos.\n\n[links:1]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T12:47:34.393Z",
+  "links": [
+    {
+      "title": "Phoronix – GNOME Lands ext-background-effect-v1 Support For Background Blur Effect",
+      "url": "https://phoronix.com/scan.php?page=news_item&px=GNOME-Ext-Background-Effect-V1"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de incorporación al repositorio Wayland",
+      "value": "Mayo de 2025"
+    },
+    {
+      "label": "Versión de GNOME que incorpora el soporte",
+      "value": "GNOME 51"
+    },
+    {
+      "label": "Protocolo habilitado",
+      "value": "ext-background-effect-v1"
+    },
+    {
+      "label": "Cantidad de líneas de código modificadas en Mutter",
+      "value": "~2000"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

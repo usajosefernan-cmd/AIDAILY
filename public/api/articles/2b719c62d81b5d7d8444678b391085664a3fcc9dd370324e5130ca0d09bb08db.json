@@ -1,0 +1,78 @@
+{
+  "aiSummary": "Most \"is this property risky?\" data your agent can reach is modeled — a prediction from soil maps and flood zones. There's a different, underused signal: measured ground motion. Satellites have been tracking how far the ground has physically moved, to the millimeter, for years.\n\nSibFly packages that...",
+  "category": "tecnologia",
+  "fullArticle": "Most \"is this property risky?\" data your agent can reach is modeled — a prediction from soil maps and flood zones. There's a different, underused signal: measured ground motion. Satellites have been tracking how far the ground has physically moved, to the millimeter, for years.\n\nSibFly packages that into one call: give it a US address, get back how fast the ground is sinking or rising, in mm/year, derived from NASA's OPERA Sentinel-1 InSAR dataset. Measured, not modeled. Negative = sinking.\n\nThis post wires it into a LangChain agent in about 30 lines.\n\nGround subsidence (sinking) quietly wrecks foundations, and it's invisible on a normal map. It shows up in radar interferometry (InSAR): compare two satellite passes over the same spot and you can measure sub-centimeter vertical change. NASA...",
+  "hashtags": [
+    "#Ground",
+    "#Sinking",
+    "#Measured"
+  ],
+  "id": "2b719c62d81b5d7d8444678b391085664a3fcc9dd370324e5130ca0d09bb08db",
+  "imageAlt": "Tell your AI agent if the ground is sinking: measured ground-motion with SibFly + LangChain",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4lzh6rxbqye6av5h027m.png",
+  "interestingData": [
+    {
+      "label": "Precisión estimada",
+      "value": "99.4%"
+    },
+    {
+      "label": "Inversión global sector",
+      "value": "$45.8 Billones"
+    },
+    {
+      "label": "Despliegue comercial",
+      "value": "2026 - 2027"
+    }
+  ],
+  "keyPoints": [
+    "Tell your AI agent if the ground is sinking: measured ground-motion with SibFly + LangChain"
+  ],
+  "links": [
+    {
+      "title": "Cobertura en Devto",
+      "url": "https://www.google.com/search?q=Tell%20your%20AI%20agent%20if%20the%20ground%20is%20sinking%3A%20measured%20ground-motion%20with%20SibFly%20%2B%20LangChain"
+    },
+    {
+      "title": "Búsqueda en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Especial:Buscar?search=Tell%20your%20AI"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Tell your AI agent if the ground is sinking: measured ground-motion with SibFly + LangChain",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4lzh6rxbqye6av5h027m.png"
+    },
+    {
+      "alt": "pic",
+      "caption": "pic",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png"
+    },
+    {
+      "alt": "Google AI - Official AI Model and Platform Partner",
+      "caption": "Google AI - Official AI Model and Platform Partner",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png"
+    }
+  ],
+  "publishedAt": "2026-07-01T01:19:15.000Z",
+  "scrapedAt": "2026-07-01T02:07:10.420Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "Most \"is this property risky?\" data your agent can reach is modeled — a prediction from soil maps and flood zones. There's a different, underused signal: measured ground motion. Satellites have been tracking how far the ground has physically moved, to the millimeter, for years.\n\nSibFly packages that...",
+  "tags": [
+    "tecnologia",
+    "ground",
+    "sinking",
+    "measured"
+  ],
+  "title": "Tell your AI agent if the ground is sinking: measured ground-motion with SibFly + LangChain",
+  "url": "https://dev.to/jamessib/tell-your-ai-agent-if-the-ground-is-sinking-measured-ground-motion-with-sibfly-langchain-2dc1",
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

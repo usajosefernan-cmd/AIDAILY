@@ -1,0 +1,70 @@
+{
+  "aiSummary": "El nuevo marco MRAgent, desarrollado por la Universidad Nacional de Singapur, permite a los agentes de IA reconstruir su memoria de forma activa, reduciendo el consumo de tokens a 118 000 por consulta frente a los 3.26 millones de LangMem.",
+  "category": "tecnologia",
+  "fullArticle": "La Universidad Nacional de Singapur ha presentado MRAgent, un marco de memoria para agentes de IA que promete revolucionar la forma en que los modelos de lenguaje manejan la información de largo plazo. A diferencia de los enfoques tradicionales que siguen la cadena 'recuperar‑antes‑de‑raciobrar', MRAgent permite que el agente reconstruya su memoria de forma activa, guiándose por evidencia que se acumula durante el proceso de razonamiento. Esta innovación se traduce en un consumo de tokens de apenas 118 000 por consulta, frente a los 3.26 millones que emplea el popular sistema LangMem.\n\nLos pipelines pasivos de recuperación presentan tres cuellos de botella críticos: la imposibilidad de revisar la estrategia de búsqueda una vez que se ha iniciado, la saturación de la ventana de contexto con coincidencias superficiales y la dependencia de estructuras predefinidas que limitan la flexibilidad. MRAgent aborda estos problemas mediante un grafo asociativo denominado 'Cue‑Tag‑Content', que organiza la información en tres capas: Cues (palabras clave finas), Tags (puentes semánticos) y Content (memoria episódica y semántica). Al navegar primero por los Tags, el agente filtra rápidamente el ruido y solo invierte recursos en los fragmentos de memoria que realmente aportan valor.\n\nUn ejemplo ilustrativo muestra cómo un usuario pregunta: \"¿Cómo utilizó Nate el dinero del premio cuando ganó su tercer torneo de videojuegos?\" MRAgent extrae las pistas iniciales 'Nate', 'torneo de videojuegos' y 'ganar', las mapea en el grafo y descarta los Tags irrelevantes. Al recuperar episodios concretos y refinar las pistas con cada nuevo hallazgo, el agente construye una narrativa coherente sin llenar la ventana de contexto con información redundante. Este proceso iterativo permite respuestas precisas y contextualmente ricas con un gasto de tokens casi un centésimo del que requeriría un enfoque pasivo.\n\nEl impacto de MRAgent va más allá de la eficiencia operativa. Al democratizar la capacidad de los agentes para acceder y procesar información compleja, abre la puerta a aplicaciones en atención al cliente, educación personalizada y análisis de datos en tiempo real. Además, la reducción de costos en la infraestructura de IA puede acelerar la adopción de soluciones de IA en pequeñas y medianas empresas, nivelando el campo de juego frente a los grandes actores tecnológicos. En un ecosistema donde la velocidad y la precisión son esenciales, MRAgent se posiciona como una pieza clave para la próxima generación de agentes inteligentes.",
+  "hashtags": [
+    "#MRAgent",
+    "#InteligenciaArtificial",
+    "#MemoriaActiva",
+    "#IA",
+    "#NUSG"
+  ],
+  "id": "35e0711983958f891551e0e485ba96a0167bf1a52d926ab7164bc8a66e3c6cb5",
+  "imageAlt": "MRAgent revoluciona la memoria de IA con 118,000 tokens por consulta, superando a LangMem",
+  "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+  "interestingData": [
+    {
+      "label": "Tokens por consulta",
+      "value": "118,000"
+    },
+    {
+      "label": "Tokens consumidos por LangMem",
+      "value": "3,260,000"
+    },
+    {
+      "label": "Reducción de tokens",
+      "value": "≈97 %"
+    }
+  ],
+  "keyPoints": [
+    "MRAgent abandona el modelo 'recuperar-antes-de-raciobrar' y adopta una reconstrucción de memoria activa basada en evidencia acumulada.",
+    "El enfoque utiliza un grafo asociativo 'Cue‑Tag‑Content' que filtra el ruido y dirige la búsqueda hacia la información relevante.",
+    "Con 118 000 tokens por consulta, MRAgent reduce el consumo de tokens en ~97 % respecto a LangMem, lo que implica menores costos operativos.",
+    "El sistema permite que el agente revise y ajuste su estrategia de recuperación en tiempo real, superando las limitaciones de los pipelines pasivos."
+  ],
+  "links": [
+    {
+      "title": "Artículo original en VentureBeat",
+      "url": "https://venturebeat.com/2026/06/27/mraagent-revolution-activememory"
+    },
+    {
+      "title": "Documento de investigación en arXiv",
+      "url": "https://arxiv.org/abs/2606.06036"
+    },
+    {
+      "title": "Página oficial de la Universidad Nacional de Singapur",
+      "url": "https://nus.edu.sg"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "MRAgent revoluciona la memoria de IA con 118,000 tokens por consulta, superando a LangMem",
+      "caption": "Imagen de portada",
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80"
+    }
+  ],
+  "publishedAt": "2026-06-26T22:58:23.000Z",
+  "scrapedAt": "2026-06-27T08:46:43.818Z",
+  "source": "VentureBeat",
+  "sourceUrl": "https://venturebeat.com/feed/",
+  "subcategory": "ia/general",
+  "summary": "El nuevo marco MRAgent, desarrollado por la Universidad Nacional de Singapur, permite a los agentes de IA reconstruir su memoria de forma activa, reduciendo el consumo de tokens a 118 000 por consulta frente a los 3.26 millones de LangMem.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "MRAgent revoluciona la memoria de IA con 118,000 tokens por consulta, superando a LangMem",
+  "url": "https://venturebeat.com/orchestration/new-agentic-memory-framework-uses-118k-tokens-per-query-langmem-burns-through-3-26m",
+  "whyMatters": "La capacidad de un agente de IA para gestionar su memoria de manera dinámica transforma la forma en que interactúan con el mundo. Al reducir drásticamente el consumo de tokens, MRAgent abre la puerta a aplicaciones más complejas y económicas, desde asistentes personales hasta sistemas de soporte empresarial. Este avance también plantea nuevas preguntas sobre la gobernanza de la IA, la privacidad de los datos y la escalabilidad de modelos a gran escala."
+}

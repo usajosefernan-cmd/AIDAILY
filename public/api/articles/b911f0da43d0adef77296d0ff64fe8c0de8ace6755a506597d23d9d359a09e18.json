@@ -1,0 +1,69 @@
+{
+  "id": "b911f0da43d0adef77296d0ff64fe8c0de8ace6755a506597d23d9d359a09e18",
+  "title": "Managing Focus in Angular: Dialogs, Drawers and Route Changes Without Stranding Your Users",
+  "summary": "El artículo explica que la gestión del foco es una disciplina fundamental de accesibilidad, no un simple ítem de checklist, y detalla soluciones nativas de Angular para evitar errores que dejan abandonados a usuarios de teclado y lectores de pantalla en cambios de ruta, diálogos y menús desplegables.",
+  "url": "https://dev.to/duncanfaulkner/managing-focus-in-angular-dialogs-drawers-and-route-changes-without-stranding-your-users-4agf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T19:33:30.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmf1ix61utxxnm9dngj6l.png",
+  "imageAlt": "Managing Focus in Angular: Dialogs, Drawers and Route Changes Without Stranding Your Users",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica que la gestión del foco es una disciplina fundamental de accesibilidad, no un simple ítem de checklist, y detalla soluciones nativas de Angular para evitar errores que dejan abandonados a usuarios de teclado y lectores de pantalla en cambios de ruta, diálogos y menús desplegables.",
+  "keyPoints": [
+    "La gestión del foco es una disciplina clave de accesibilidad, no un simple ítem de checklist, que diferencia aplicaciones que solo pasan auditorías de las usables por usuarios de teclado y lectores de pantalla.",
+    "Al cambiar de ruta en Angular, es obligatorio mover el foco al encabezado de la nueva página para evitar que el usuario quede abandonado en la parte superior del sitio.",
+    "Los diálogos y drawers deben atrapar el foco en su interior mientras están abiertos, y devolverlo al elemento que los abrió al cerrarse para no dejar al usuario perdido.",
+    "El CDK de Angular incluye herramientas nativas para gestionar el foco en diálogos, menús con navegación por teclas y cambios de ruta, sin necesidad de escribir código personalizado propenso a errores."
+  ],
+  "whyMatters": "La gestión correcta del foco no es un requisito de accesibilidad opcional, sino una obligación normativa en la Unión Europea, donde la Directiva (UE) 2016/2102 exige que todos los servicios públicos y aplicaciones de empresas de más de 50 empleados sean accesibles para personas con discapacidad. Descuida esta práctica supone excluir a aproximadamente el 10% de la población que utiliza tecnologías de asistencia, generando daño reputacional, pérdida de cuota de mercado y posibles sanciones económicas. Para el ecosistema de desarrollo español, donde Angular es uno de los frameworks más utilizados en proyectos empresariales y de administración pública, estas pautas suponen una guía práctica para cumplir con la normativa y construir aplicaciones inclusivas sin aumentar la complejidad del desarrollo, ya que el CDK incluye todas las herramientas necesarias de forma nativa.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmf1ix61utxxnm9dngj6l.png",
+      "alt": "Ilustración de portada del artículo sobre gestión del foco en aplicaciones Angular para mejorar la accesibilidad",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GestiónDeFoco",
+    "#AccesibilidadWeb",
+    "#Angular",
+    "#CDKA11y",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "La gestión del foco en interfaces web suele relegarse a un simple ítem en las listas de verificación de accesibilidad de los proyectos de desarrollo, cuando en realidad se trata de una disciplina fundamental que diferencia una aplicación que solo supera una auditoría técnica de una que es realmente usable por personas con discapacidad. Para usuarios que navegan exclusivamente con teclado o utilizan lectores de pantalla, el foco es su único punto de referencia dentro de la interfaz: cualquier cambio en la pantalla que no reposicione este elemento de forma correcta los deja abandonados, normalmente en la parte superior de la página, obligándolos a recorrer todo el contenido de nuevo para volver a su punto de trabajo, un error que ninguna herramienta de automatización detecta, ya que no se refleja en las capturas de DOM.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmf1ix61utxxnm9dngj6l.png]\n\nEn el ecosistema de Angular, existen soluciones nativas para evitar estos errores sin necesidad de escribir código personalizado propenso a fallos. Para los cambios de ruta, basta con suscribirse a los eventos de NavigationEnd del Router para mover el foco automáticamente al encabezado <h1> de la nueva página, garantizando que el usuario siempre sepa en qué punto de la aplicación se encuentra. Para diálogos, drawers y menús desplegables, el CDK de Angular incluye herramientas como el servicio Dialog, que atrapa el foco en el interior del elemento mientras está abierto y lo devuelve al elemento que lo activó al cerrarse, además de gestores de foco itinerante para menús con navegación por teclas de flecha, eliminando la necesidad de manejar manualmente eventos de teclado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T19:45:56.002Z",
+  "links": [
+    {
+      "title": "Artículo original sobre gestión de foco en Angular en Dev.to",
+      "url": "https://dev.to/angular/managing-focus-in-angular-dialogs-drawers-and-route-changes-without-stranding-your-users"
+    },
+    {
+      "title": "Documentación oficial del CDK de accesibilidad de Angular",
+      "url": "https://angular.dev/guide/cdk/a11y"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de población que usa tecnologías de asistencia",
+      "value": "Aproximadamente el 10% de los usuarios globales"
+    },
+    {
+      "label": "Normativa de accesibilidad vigente en la UE",
+      "value": "Directiva (UE) 2016/2102, de obligado cumplimiento para servicios públicos y empresas de más de 50 empleados"
+    },
+    {
+      "label": "Función nativa del CDK de Angular para diálogos",
+      "value": "Restauración automática del foco al elemento que abrió el diálogo, activada por defecto"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,73 @@
+{
+  "id": "f9d78a09881533593a44e8572bd60bb5d95f5e053d3f0971ff6194a82af55e51",
+  "title": "Nylas revoluciona la gestión de correos: cuotas por cliente con políticas de agente",
+  "summary": "El servicio de correo Nylas introduce una forma inteligente de asignar límites de envío, almacenamiento y retención a cada nivel de suscripción mediante políticas de agente vinculadas a espacios de trabajo, eliminando la necesidad de configurar cuotas individuales para cada cliente.",
+  "url": "https://dev.to/mqasimca/set-per-customer-send-quotas-with-agent-policies-nhf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T00:35:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3w9ln3a63opg07dkqhmb.png",
+  "imageAlt": "Nylas revoluciona la gestión de correos: cuotas por cliente con políticas de agente",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El servicio de correo Nylas introduce una forma inteligente de asignar límites de envío, almacenamiento y retención a cada nivel de suscripción mediante políticas de agente vinculadas a espacios de trabajo, eliminando la necesidad de configurar cuotas individuales para cada cliente.",
+  "keyPoints": [
+    "Las cuotas de envío y almacenamiento ya no son iguales para todos los clientes; cada nivel de suscripción tiene límites personalizados definidos por una política de agente.",
+    "Una política se asocia a un espacio de trabajo y todos los agentes dentro de ese espacio heredan automáticamente sus límites, simplificando la administración y evitando errores de configuración.",
+    "El cambio de política se refleja instantáneamente en todos los agentes del espacio, permitiendo migrar clientes a otro nivel sin interrupciones ni reconfiguración manual.",
+    "El enfoque centralizado reduce la sobrecarga operativa y mejora la fiabilidad del cumplimiento de límites, al delegar la supervisión directamente al propio sistema de Nylas."
+  ],
+  "whyMatters": "Esta innovación permite a las empresas que dependen de servicios de correo en la nube gestionar de manera más eficiente la escala y la seguridad de sus operaciones. Al delegar la administración de cuotas a políticas centralizadas, se reduce el riesgo de sobrecarga de infraestructura y se garantiza un cumplimiento consistente con los acuerdos de nivel de servicio. Para los proveedores de software, esto significa menos tiempo invertido en mantenimiento y más capacidad para escalar sus soluciones sin comprometer la calidad del servicio.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3w9ln3a63opg07dkqhmb.png",
+      "alt": "Representación gráfica de la política de cuotas por cliente en Nylas",
+      "caption": "Imagen que ilustra cómo Nylas asigna límites de envío y almacenamiento a cada workspace según la política de agente."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ejemplo de política de agente en la consola de Nylas",
+      "caption": "Captura de pantalla de la consola de Nylas mostrando la configuración de una política de agente con límites personalizados."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Nylas",
+    "#PolíticaDeEnvío",
+    "#GestiónDeDatos"
+  ],
+  "fullArticle": "El ecosistema de correo electrónico en la nube ha sufrido durante años la limitación de cuotas genéricas que no reflejan la diversidad de necesidades entre usuarios gratuitos y corporativos. Nylas, plataforma de integración de correo, ha lanzado una solución que cambia esta dinámica al permitir establecer cuotas específicas por cliente a través de políticas de agente. En lugar de asignar límites de envío, almacenamiento y retención de forma individual, la plataforma utiliza un modelo de espacio de trabajo: cada workspace recibe una política única que define los límites, y todos los agentes dentro de ese espacio heredan automáticamente esos parámetros. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3w9ln3a63opg07dkqhmb.png]\n\nEsta arquitectura simplifica la provisión de nuevos clientes: al crear un nuevo workspace se asigna la política correspondiente sin necesidad de calcular límites manualmente. Si un cliente necesita cambiar de nivel, basta con mover su workspace a otro con una política diferente y los límites se actualizan de inmediato. El resultado es una gestión de cuotas declarativa y versionable, que se integra con la infraestructura de IaC y se aplica directamente en el plano de recursos, reduciendo la posibilidad de errores de configuración y de sobrecarga de la infraestructura. \n\nPara los desarrolladores, Nylas ofrece comandos CLI que replican las llamadas HTTP, facilitando la automatización en scripts y en el código de la aplicación. La política, workspace y agente son recursos independientes en la API, lo que permite una administración clara y escalable. \n\nEn un mercado donde la personalización y la fiabilidad son clave, esta solución posiciona a Nylas como un actor que entiende las complejidades de la gestión de correo en entornos multi‑tenant, ofreciendo una alternativa robusta a las prácticas tradicionales de cuotas por cuenta.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T00:43:31.591Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Nylas sobre políticas y workspaces",
+      "url": "https://docs.nylas.com/docs/policies"
+    },
+    {
+      "title": "Blog de Nylas: Casos de uso de políticas de agente",
+      "url": "https://nylas.com/blog"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de clientes que pueden beneficiarse",
+      "value": "Más de 10.000"
+    },
+    {
+      "label": "Tiempo de calentamiento de dominios nuevos",
+      "value": "Cuatro semanas"
+    },
+    {
+      "label": "Número de políticas recomendadas por nivel",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

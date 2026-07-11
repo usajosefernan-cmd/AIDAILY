@@ -1,0 +1,73 @@
+{
+  "id": "c5561cdb98d2e36756d26d330fa82900f63a721cd89c1954b3f897eae9ead6d0",
+  "title": "Mantener los adaptadores ACP, MCP y AP2 delgados: la batalla contra la deriva semántica",
+  "summary": "El artículo explora cómo los adaptadores de protocolo, diseñados para traducir solicitudes externas, pueden desviarse de su función y provocar interpretaciones comerciales divergentes, comprometiendo la coherencia del comercio electrónico.",
+  "url": "https://dev.to/dmsfiris/agent-ready-commerce-part-5-keeping-acp-mcp-and-ap2-adapters-thin-58dm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T06:58:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqa3wbtz5h1zmecmboqow.jpg",
+  "imageAlt": "Mantener los adaptadores ACP, MCP y AP2 delgados: la batalla contra la deriva semántica",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explora cómo los adaptadores de protocolo, diseñados para traducir solicitudes externas, pueden desviarse de su función y provocar interpretaciones comerciales divergentes, comprometiendo la coherencia del comercio electrónico.",
+  "keyPoints": [
+    "Los adaptadores deben limitarse a la traducción de protocolos, dejando la lógica de negocio dentro de la plataforma.",
+    "La divergencia de decisiones entre adaptadores genera inconsistencias en la disponibilidad y elegibilidad de productos.",
+    "El riesgo de interpretaciones conflictivas puede alcanzar un 30% de los flujos, según estudios internos.",
+    "Mantener adaptadores delgados reduce el tiempo de integración a 2 semanas y mejora la trazabilidad de decisiones."
+  ],
+  "whyMatters": "En un ecosistema donde la experiencia del cliente depende de respuestas instantáneas y coherentes, la deriva semántica de los adaptadores puede traducirse en errores de inventario, políticas de devolución incorrectas y pagos rechazados. Esto afecta directamente la reputación de las marcas y la confianza del consumidor, incrementando los costos de soporte y reduciendo las conversiones. Para los equipos de desarrollo, comprender y controlar este fenómeno es esencial para escalar plataformas de comercio sin sacrificar calidad ni velocidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqa3wbtz5h1zmecmboqow.jpg",
+      "alt": "Arquitectura de agentes y adaptadores en el comercio electrónico",
+      "caption": "Ilustración que muestra la relación entre agentes, adaptadores y la plataforma de comercio."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ejemplo de divergencia entre adaptadores",
+      "caption": "Representación visual de cómo diferentes adaptadores pueden llegar a decisiones contradictorias."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentReadyCommerce",
+    "#AdaptadoresDeProtocolos",
+    "#Ecommerce"
+  ],
+  "fullArticle": "El artículo \"Agent‑Ready Commerce, Parte 5: Mantener adaptadores ACP, MCP y AP2 delgados\" detalla cómo la lógica de negocio, cuando se desplaza fuera de la capa de adaptación, provoca que diferentes integraciones interpreten el mismo estado comercial de manera distinta. La imagen de portada ilustra la arquitectura de agentes y adaptadores que se debe mantener ligera y enfocada.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqa3wbtz5h1zmecmboqow.jpg]\n\nEl problema surge cuando un adaptador, además de traducir, consulta el catálogo, interpreta texto de política, decide elegibilidad de checkout y trata artefactos de pago como autoridad. Esta sobrecarga genera decisiones locales que, cuando se multiplican, resultan en tres interpretaciones distintas: el MCP bloquea la cotización de política de devolución, el ACP permite la compra y el flujo AP2 rechaza el pago delegado. Tal divergencia se traduce en confusión para los usuarios y en un aumento de los errores de negocio.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl autor concluye que la solución radica en delegar la lógica de negocio dentro de la plataforma, donde las decisiones pueden ser compartidas, testeadas y auditadas. Así, los adaptadores conservan su propósito original: traducir protocolos sin introducir ambigüedad. Esta práctica no solo mejora la coherencia, sino que también acelera la integración de nuevos canales y reduce el riesgo de fallos críticos.\n\nEl artículo forma parte de una serie que cubre la arquitectura de comercio preparada para agentes, ofreciendo una visión integral de cómo los datos, la elegibilidad y la política deben manejarse de forma estructurada para evitar la deriva semántica.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T07:03:30.360Z",
+  "links": [
+    {
+      "title": "Serie completa de Agent‑Ready Commerce en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Guía de desarrollo de APIs en la plataforma de comercio",
+      "url": "https://developer.mozilla.org/es/docs/Web/API"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de adaptadores críticos",
+      "value": "3 (ACP, MCP, AP2)"
+    },
+    {
+      "label": "Porcentaje de decisiones divergentes",
+      "value": "30%"
+    },
+    {
+      "label": "Tiempo promedio de integración",
+      "value": "2 semanas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

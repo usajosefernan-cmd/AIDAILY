@@ -1,0 +1,77 @@
+{
+  "id": "1e46f8996bfc20ca148a9ad6451dfbcdccb815a8a3d24403c2e3dd4287ab180b",
+  "title": "Claves RSA con patrones de ceros masivos: la falla criptográfica que afectó a Yahoo, Verizon y miles de servidores",
+  "summary": "Investigadores del proyecto badkeys detectaron una nueva clase de claves RSA vulnerables caracterizadas por bloques regulares de ceros intercalados con datos aleatorios, presentes en entornos reales. El hallazgo afectó a certificados de grandes organizaciones como Yahoo y Verizon, así como a servidores con software CompleteFTP de EnterpriseDT, con versiones vulnerables que abarcan desde 2016 hasta 2023. Los expertos no descartan que se trate de puertas traseras deliberadas introducidas por actores estatales.",
+  "url": "https://www.schneier.com/blog/archives/2026/06/factoring-rsa-keys-with-many-zeros.html",
+  "source": "Schneier on Security",
+  "sourceUrl": "https://www.schneier.com/blog/index.rdf",
+  "publishedAt": "2026-06-29T16:05:18.000Z",
+  "imageUrl": "https://www.schneier.com/wp-content/uploads/2019/10/Bruce-Schneier.jpg",
+  "imageAlt": "Claves RSA con patrones de ceros masivos: la falla criptográfica que afectó a Yahoo, Verizon y miles de servidores",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores del proyecto badkeys detectaron una nueva clase de claves RSA vulnerables caracterizadas por bloques regulares de ceros intercalados con datos aleatorios, presentes en entornos reales. El hallazgo afectó a certificados de grandes organizaciones como Yahoo y Verizon, así como a servidores con software CompleteFTP de EnterpriseDT, con versiones vulnerables que abarcan desde 2016 hasta 2023. Los expertos no descartan que se trate de puertas traseras deliberadas introducidas por actores estatales.",
+  "keyPoints": [
+    "Investigadores del proyecto badkeys identificaron una nueva clase de claves RSA vulnerables con bloques regulares de ceros intercalados con datos aleatorios, halladas en fuentes públicas de todo internet.",
+    "El primer patrón de vulnerabilidad se detectó en certificados expirados de Yahoo, Verizon y dispositivos con software NetApp, sin que las empresas respondieran a las notificaciones de los investigadores.",
+    "El segundo patrón afecta a servidores SSH con CompleteFTP de EnterpriseDT, con vulnerabilidades en claves RSA generadas entre 2016 y 2019, y en claves DSA hasta diciembre de 2023.",
+    "El hallazgo revela fallos repetidos en implementaciones criptográficas independientes, lo que sugiere la posibilidad de puertas traseras deliberadas o bugs no detectados en más sistemas."
+  ],
+  "whyMatters": "Este hallazgo es crítico porque las claves RSA vulnerables pueden ser factorizadas fácilmente, permitiendo a atacantes romper el cifrado de comunicaciones, acceder a datos sensibles y suplantar identidades en sistemas que aún usen estas claves. Aunque afectan a una minoría de hosts, el patrón de fallos repetidos en implementaciones independientes sugiere que podrían existir puertas traseras deliberadas introducidas por actores estatales, lo que socava la confianza en infraestructuras criptográficas globales. Además, evidencia la necesidad de auditar rigurosamente el código de generación de claves en todos los dispositivos y software de uso masivo, ya que fallos similares podrían estar presentes en implementaciones no detectadas hasta ahora.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.schneier.com/wp-content/uploads/2019/10/Bruce-Schneier.jpg",
+      "alt": "Bruce Schneier, experto en seguridad informática y autor del blog Schneier on Security",
+      "caption": "Bruce Schneier, referente mundial en ciberseguridad, publicó el análisis sobre la nueva clase de claves RSA vulnerables"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#RSA",
+    "#Ciberseguridad",
+    "#Badkeys",
+    "#SchneierOnSecurity",
+    "#VulnerabilidadesCriptograficas"
+  ],
+  "fullArticle": "Un equipo de investigadores del proyecto badkeys, una herramienta de código abierto dedicada a detectar vulnerabilidades en claves públicas criptográficas, ha identificado una nueva y preocupante clase de claves RSA débiles que circulan en entornos reales. El hallazgo, publicado en el blog de referencia en seguridad Schneier on Security, revela que estas claves presentan un patrón característico de bloques regulares de ceros intercalados con datos aparentemente aleatorios, una falla que las hace extremadamente vulnerables a ataques de factorización que permiten recuperar la clave privada en tiempo récord. La detección se produjo mientras los desarrolladores de badkeys analizaban una masiva base de datos de claves públicas recopiladas de fuentes abiertas, entre ellas registros de transparencia de certificados, escaneos masivos de TLS y SSH en internet, claves PGP y otros repositorios públicos. Al buscar módulos RSA inusualmente dispersos, el equipo encontró miles de claves que se ajustaban a dos patrones de ceros repetidos diferentes, presentes en sistemas activos hasta hace poco. El primer patrón de vulnerabilidad se detectó en certificados emitidos para grandes organizaciones como Yahoo y Verizon, así como en dispositivos que ejecutan software de NetApp. Afortunadamente, todos estos certificados han expirado ya, aunque los investigadores notificaron el hallazgo a las empresas afectadas sin recibir respuesta sobre el origen del fallo en sus sistemas de generación de claves. [MULTIMEDIA: https://www.schneier.com/wp-content/uploads/2019/10/Bruce-Schneier.jpg] El segundo patrón, por su parte, afecta a servidores SSH que utilizan el software CompleteFTP desarrollado por EnterpriseDT. La vulnerabilidad subyacente impacta a las claves RSA generadas entre las versiones 10.0.0 y 12.0.0 del software, lanzadas entre diciembre de 2016 y marzo de 2019, así como a las claves DSA generadas entre las versiones 10.0.0 y 23.0.4, con un período de afectación que se extiende hasta diciembre de 2023. Aunque el número de hosts afectados representa una minoría dentro del ecosistema internet, el hallazgo cobra una relevancia mucho mayor por el hecho de que implementaciones criptográficas independientes han presentado fallos de generación de claves con patrones muy similares. Los investigadores y el propio Bruce Schneier no descartan que se trate de puertas traseras deliberadas, introducidas por actores estatales que habrían convencido a proveedores de software y servicios de distribuir estas claves vulnerables para poder acceder a comunicaciones cifradas en el futuro. El caso subraya la necesidad de auditar de forma rigurosa todos los procesos de generación de claves criptográficas en software de uso masivo, y de actualizar de inmediato cualquier sistema que aún utilice versiones afectadas de CompleteFTP o claves con el patrón de ceros identificado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T16:32:59.695Z",
+  "links": [
+    {
+      "title": "Artículo original en Schneier on Security",
+      "url": "https://www.schneier.com/blog/archives/2026/06/factoring_rsa_keys_with_many_zeros.html"
+    },
+    {
+      "title": "Proyecto badkeys: herramienta de detección de vulnerabilidades en claves públicas",
+      "url": "https://badkeys.info/"
+    },
+    {
+      "title": "Página oficial de CompleteFTP (EnterpriseDT) con actualizaciones de seguridad",
+      "url": "https://www.enterprisedt.com/products/completeftp/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Patrones de claves vulnerables identificados",
+      "value": "2"
+    },
+    {
+      "label": "Período de generación de claves RSA afectadas en CompleteFTP",
+      "value": "Diciembre de 2016 a Marzo de 2019"
+    },
+    {
+      "label": "Período de generación de claves DSA afectadas en CompleteFTP",
+      "value": "Diciembre de 2016 a Diciembre de 2023"
+    },
+    {
+      "label": "Grandes organizaciones con certificados vulnerables del primer patrón",
+      "value": "Yahoo, Verizon y dispositivos NetApp"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

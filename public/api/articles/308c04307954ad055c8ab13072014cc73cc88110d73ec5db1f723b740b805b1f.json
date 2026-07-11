@@ -1,0 +1,77 @@
+{
+  "id": "308c04307954ad055c8ab13072014cc73cc88110d73ec5db1f723b740b805b1f",
+  "title": "Diseño de tabla única en DynamoDB: la arquitectura que impulsa un juego multijugador en tiempo real",
+  "summary": "Artículo que detalla la implementación de una arquitectura de tabla única en Amazon DynamoDB para Kauwa Udd, un juego de reacción multijugador en tiempo real desarrollado para el H0 Hackathon, explicando los patrones de clave, el uso de índices para leaderboards y la gestión de datos temporales con TTL.",
+  "url": "https://dev.to/arunabh_priyadarshi_bfb98/single-table-dynamodb-design-for-a-real-time-game-rooms-rounds-leaderboards-1j4l",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T20:20:33.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhzx3whfuh5cyotxkt9r2.png",
+  "imageAlt": "Diseño de tabla única en DynamoDB: la arquitectura que impulsa un juego multijugador en tiempo real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo que detalla la implementación de una arquitectura de tabla única en Amazon DynamoDB para Kauwa Udd, un juego de reacción multijugador en tiempo real desarrollado para el H0 Hackathon, explicando los patrones de clave, el uso de índices para leaderboards y la gestión de datos temporales con TTL.",
+  "keyPoints": [
+    "El juego Kauwa Udd, creado para el H0 Hackathon, usa una única tabla de DynamoDB en lugar de múltiples tablas por entidad, simplificando la arquitectura.",
+    "La clave de partición (PK) y de ordenamiento (SK) organizan toda la información de salas, jugadores, rondas y reacciones en una sola partición por sala.",
+    "Un índice secundario global (GSI1) con clave de ordenamiento por puntuación permite generar leaderboards globales y por sala de forma eficiente, con orden numérico garantizado.",
+    "Los datos temporales como salas y rondas se eliminan automáticamente mediante TTL, mientras que los datos duraderos como estadísticas de usuario omiten esta configuración."
+  ],
+  "whyMatters": "Esta arquitectura demuestra que DynamoDB no está limitado a diseños de múltiples tablas, sino que puede adaptarse a casos de uso de alta concurrencia como juegos en tiempo real con una modelización de claves precisa. La reducción de la complejidad operativa al eliminar trabajos de limpieza manual y la posibilidad de escalar sin cambios de esquema son ventajas estratégicas para desarrolladores de aplicaciones serverless. Además, la integración nativa de servicios como Auth.js en la misma tabla reduce la fragmentación de datos y simplifica la gestión de identidades, lo que puede convertirse en un patrón referencia para proyectos de bajo presupuesto y alta demanda, como los desarrollados en hackathones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhzx3whfuh5cyotxkt9r2.png",
+      "alt": "Diagrama de la arquitectura de tabla única en DynamoDB para el juego Kauwa Udd, mostrando la distribución de claves PK y SK por sala de juego",
+      "caption": "Imagen de portada del artículo original en Dev.to que explica el diseño de tabla única para el juego multijugador en tiempo real"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#H0Hackathon",
+    "#DynamoDB",
+    "#AWS",
+    "#Vercel",
+    "#Serverless"
+  ],
+  "fullArticle": "Para el H0 Hackathon, un evento de desarrollo que reúne a creadores de todo el mundo para construir proyectos innovadores en tiempo récord, un equipo desarrolló Kauwa Udd, un juego de reacción multijugador en tiempo real alojado en Vercel y construido sobre Amazon DynamoDB. La premisa inicial del proyecto rompió con una práctica habitual entre los desarrolladores que usan esta base de datos NoSQL: en lugar de crear una tabla por cada entidad del sistema (usuarios, salas, puntuaciones), optaron por concentrar toda la lógica del juego en una única tabla, un enfoque que requiere una modelización de claves más cuidada pero que reduce drásticamente la complejidad operativa.\n\nEl diseño se sustenta en dos atributos fundamentales: la clave de partición (PK) y la clave de ordenamiento (SK), complementadas por un índice secundario global (GSI1, con sus propias claves GSI1PK y GSI1SK) que alimenta todos los leaderboards del juego. Cada sala de juego constituye una partición independiente, bajo la que se almacenan todos los elementos relacionados: metadatos de la sala, cada jugador, cada ronda y cada reacción o clic de los participantes. Esta estructura permite recuperar todo el estado de una partida activa con una única consulta a la base de datos, sin necesidad de unir datos de múltiples fuentes.\n\nPara acceder a las reacciones de una ronda concreta, el sistema usa la función begins_with sobre la clave de ordenamiento, de forma que consultar 'todos los clics de los jugadores en la ronda N' se reduce a una búsqueda por prefijo, una operación extremadamente eficiente en DynamoDB. Los leaderboards, por su parte, se construyen sobre el GSI1, cuya clave de ordenamiento está basada en la puntuación de los jugadores: para garantizar que el orden lexicográfico coincida con el numérico, las puntuaciones se almacenan con relleno de ceros o como valores numéricos. Cada 'bucket' de leaderboard (por ejemplo, LB#diario#global o LB#todos#sala#<código>) ocupa una partición del GSI, de forma que se pueden consultar los primeros N puestos de forma descendente con una simple consulta limitada, sin necesidad de procesos de ordenamiento adicionales.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhzx3whfuh5cyotxkt9r2.png]\n\nUn aspecto clave de la arquitectura es la gestión de datos temporales: salas, rondas y clics son información efímera, por lo que se les asigna un tiempo de vida (TTL) en segundos de época, y DynamoDB se encarga de eliminarlos automáticamente sin necesidad de trabajos de limpieza programados. Los datos duraderos, como las estadísticas de usuario o los leaderboards permanentes, omiten esta configuración, por lo que se conservan de forma indefinida. Incluso las sesiones de Auth.js se almacenan en la misma tabla mediante el adaptador de DynamoDB, usando claves con prefijos como USER# o ACCOUNT# que no colisionan con las claves del juego (ROOM#, OBJ#, LB#), lo que permite centralizar toda la información de la aplicación en un solo recurso.\n\nEl proyecto, que se puede probar de forma gratuita en su versión desplegada en Vercel, cuenta con su código completo disponible en GitHub para que cualquier desarrollador pueda revisar el diseño o adaptarlo a sus propios proyectos de juego en tiempo real. La elección de una arquitectura serverless, sin servidores que mantener y con escalado automático, lo convierte en un ejemplo particularmente útil para equipos pequeños o proyectos desarrollados en hackathones, donde los recursos son limitados y la velocidad de implementación es crítica.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:40:53.075Z",
+  "links": [
+    {
+      "title": "Juego Kauwa Udd en vivo",
+      "url": "https://kauwa-udd.vercel.app"
+    },
+    {
+      "title": "Código fuente del proyecto en GitHub",
+      "url": "https://github.com/nextjedi/kauwa-udd"
+    },
+    {
+      "title": "Documentación oficial de Amazon DynamoDB sobre modelado de datos",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración estándar de cada ronda de juego",
+      "value": "3 segundos"
+    },
+    {
+      "label": "Número de tablas de DynamoDB utilizadas",
+      "value": "1 tabla única para toda la aplicación"
+    },
+    {
+      "label": "Índices secundarios globales implementados",
+      "value": "1 GSI para leaderboards"
+    },
+    {
+      "label": "Método de ordenamiento de puntuaciones",
+      "value": "Relleno de ceros para coincidencia lexicográfica-numérica"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

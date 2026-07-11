@@ -1,0 +1,77 @@
+{
+  "id": "97c5a0c593153dbdf46a429110ea3e5c06a19a0576d817db6a5e0c2b5ea36650",
+  "title": "100 Días de DevOps, Día 4: Los permisos Linux que marcan la diferencia y por qué el versionado de S3 no puede ser opcional",
+  "summary": "Artículo de la serie 100 Días de DevOps que explica la importancia de configurar correctamente los permisos de Linux y activar el versionado de S3 para mitigar errores humanos y garantizar la resiliencia operativa en entornos de desarrollo.",
+  "url": "https://dev.to/ndcodes/100-days-of-devops-day-4-permissions-that-actually-matter-and-why-s3-versioning-shouldnt-be-2b7k",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T22:04:05.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy30gvhanopi3n4shse56.png",
+  "imageAlt": "100 Días de DevOps, Día 4: Los permisos Linux que marcan la diferencia y por qué el versionado de S3 no puede ser opcional",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo de la serie 100 Días de DevOps que explica la importancia de configurar correctamente los permisos de Linux y activar el versionado de S3 para mitigar errores humanos y garantizar la resiliencia operativa en entornos de desarrollo.",
+  "keyPoints": [
+    "Los permisos Linux, como el modo chmod 755, permiten definir con precisión qué usuarios pueden leer, escribir o ejecutar archivos, evitando accesos no autorizados.",
+    "El principio de mínimo privilegio reduce riesgos operativos al limitar los permisos solo a lo estrictamente necesario, evitando que errores humanos afecten sistemas de producción.",
+    "El versionado de S3 almacena cada versión de un objeto de forma independiente, lo que permite recuperar archivos eliminados o modificados por error sin pérdidas de datos.",
+    "Ni los permisos ni el versionado evitan que se cometan errores, pero sí reducen su impacto al limitar accesos indebidos y permitir recuperaciones rápidas."
+  ],
+  "whyMatters": "En entornos DevOps donde los despliegues continuos y la colaboración entre múltiples equipos son la norma, la correcta configuración de permisos y la activación obligatoria del versionado de S3 se convierten en pilares de resiliencia operativa. Estos mecanismos no solo mitigan el impacto de errores humanos, fallos de despliegue o accesos no autorizados, sino que también cumplen con requisitos de cumplimiento normativo y auditoría que exigen la trazabilidad completa de cambios en sistemas críticos. Ignorar estas prácticas no solo expone a las organizaciones a pérdidas de datos o interrupciones de servicio costosas, sino que también genera gastos de recuperación muy superiores a la inversión mínima que requiere su implementación.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy30gvhanopi3n4shse56.png",
+      "alt": "Imagen de portada del artículo 100 Días de DevOps, Día 4, sobre permisos Linux y versionado de S3",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DevOps",
+    "#AmazonS3",
+    "#PermisosLinux",
+    "#VersionadoS3",
+    "#ResilienciaOperativa"
+  ],
+  "fullArticle": "Los errores no siempre rompen un sistema de forma inmediata: algunos se quedan latentes, esperando el momento en que una persona sin autorización acceda a un recurso, se elimine el archivo equivocado o un despliegue salga mal. Las tareas del cuarto día de la serie 100 Días de DevOps se centran en establecer barreras de protección antes de que esos momentos críticos lleguen, con dos herramientas fundamentales para cualquier equipo de operaciones: los permisos de Linux y el versionado de S3 de AWS.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy30gvhanopi3n4shse56.png]\nUn script no es útil si no se puede ejecutar, pero otorgar permisos de ejecución a todos los usuarios no es la solución. Los permisos de Linux existen precisamente para definir con exactitud quién puede realizar cada acción sobre un archivo o directorio. El modo chmod 755, por ejemplo, asigna al propietario del archivo permisos de lectura, escritura y ejecución, mientras que el grupo al que pertenece y el resto de usuarios solo pueden leer y ejecutar el contenido. Al ejecutar el comando ls -l se muestra una representación como -rwxr-xr-x, donde el primer carácter indica que se trata de un archivo regular, y el comando ls -la permite visualizar también los archivos ocultos del directorio. La clave de los permisos no es solo hacer que las herramientas funcionen, sino limitar lo que no necesita ocurrir: si un script solo debe ser modificado por una persona concreta, no hay motivo alguno para conceder permisos de escritura al resto del equipo.\nEl principio de mínimo privilegio suena a un eslogan vacío de seguridad hasta que un error humano, como la edición accidental de un script de producción, genera una interrupción crítica en un sistema en funcionamiento. Por otro lado, los objetos almacenados en S3 eventualmente se eliminan o sobrescriben por errores humanos, fallos de despliegue o bugs en las aplicaciones. El versionado de S3 existe precisamente para que esos errores no se conviertan en desastres irreparables: una vez activado, no se puede desactivar completamente, solo suspender; cada versión de cada objeto se almacena por separado, lo que aumenta los costos de almacenamiento de forma proporcional al número de versiones, pero es un requisito obligatorio para la replicación de S3 y una práctica habitual en entornos que exigen cumplimiento normativo y copias de seguridad trazables.\nEs importante aclarar que el versionado no evita que se cometan errores, pero la capacidad de recuperación suele ser más valiosa que la prevención, ya que nadie es infalible en entornos de desarrollo acelerado. Ambos mecanismos, los permisos de Linux y el versionado de S3, resuelven el mismo problema: reducir el impacto de los errores humanos. Los permisos impiden que personas no autorizadas modifiquen recursos críticos, mientras que el versionado permite recuperar cambios cuando una persona autorizada comete un error con consecuencias. Ninguna de estas dos herramientas hace que un sistema sea más emocionante desde el punto de vista funcional, pero son la diferencia entre un pequeño contratiempo y una crisis operativa de grandes proporciones. La pregunta que todo equipo de DevOps debe hacerse de forma periódica es: si hoy se eliminara accidentalmente un archivo crítico o se modificara un script de producción, ¿cuánto tiempo tardarían en recuperar el servicio a su estado normal?",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T22:25:52.419Z",
+  "links": [
+    {
+      "title": "Documentación oficial de AWS sobre versionado de S3",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+    },
+    {
+      "title": "Página de manual oficial de chmod para sistemas Linux",
+      "url": "https://man7.org/linux/man-pages/man1/chmod.1.html"
+    },
+    {
+      "title": "Fuente original del artículo en Dev.to",
+      "url": "https://dev.to/100-days-of-devops/day-4-permissions-that-actually-matter-and-why-s3-versioning-shouldnt-be-optional"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Configuración de permisos chmod 755",
+      "value": "Propietario: lectura, escritura y ejecución (rwx); Grupo y otros: solo lectura y ejecución (r-x)"
+    },
+    {
+      "label": "Estado del versionado de S3 tras activación",
+      "value": "No se puede desactivar completamente, solo suspender temporalmente"
+    },
+    {
+      "label": "Requisito para replicación de S3",
+      "value": "El versionado debe estar activado para habilitar la replicación de objetos entre buckets"
+    },
+    {
+      "label": "Almacenamiento de versiones en S3",
+      "value": "Cada versión de un objeto se almacena de forma independiente, aumentando los costos de almacenamiento de forma proporcional"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

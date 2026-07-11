@@ -1,0 +1,69 @@
+{
+  "id": "600d1857b6a9520c3f42b09176ccbbf62acf253d89236960eaad799bba570661",
+  "title": "De Java a Python: construí un temporizador CLI que maneja interrupciones y excepciones en tiempo real",
+  "summary": "Artículo de un ingeniero Java que aprende Python desde cero, donde detalla la creación de un temporizador de cuenta regresiva CLI enfocado en el control del tiempo, el manejo de excepciones por interrupción del usuario y la separación de lógica e interfaz.",
+  "url": "https://dev.to/uya0526design/building-a-countdown-timer-cli-in-python-time-finally-mock-and-testing-exceptions-da4",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T11:24:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy3i4vppvai6dwnk3z8nm.png",
+  "imageAlt": "De Java a Python: construí un temporizador CLI que maneja interrupciones y excepciones en tiempo real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo de un ingeniero Java que aprende Python desde cero, donde detalla la creación de un temporizador de cuenta regresiva CLI enfocado en el control del tiempo, el manejo de excepciones por interrupción del usuario y la separación de lógica e interfaz.",
+  "keyPoints": [
+    "Es el tercer proyecto de la serie de Python del autor, tras un rastreador de peso y un generador de contraseñas CLI.",
+    "El temporizador ofrece opciones de 30, 60 segundos o valor personalizado, con cuenta regresiva en la misma línea y captura de interrupciones por Ctrl+C.",
+    "El código separa la lógica del temporizador en timer.py de la interfaz de menú en main.py, aplicando separación de responsabilidades.",
+    "El autor usa IA como Claude Pro y Cursor Pro para apoyo en diseño y depuración, sin delegar la escritura de código a herramientas automáticas."
+  ],
+  "whyMatters": "Este proyecto ejemplifica la aplicación de principios de programación estructurada y manejo de excepciones en herramientas de consola, conocimientos transferibles a cualquier desarrollo de software. La separación de responsabilidades implementada por el autor es un patrón fundamental para crear proyectos mantenibles y escalables, especialmente relevante para desarrolladores que migran de lenguajes como Java a Python. Además, la transparencia sobre el uso ético de herramientas de IA como apoyo, sin sustituir el razonamiento del programador, establece un modelo de trabajo referencia para la comunidad de desarrollo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy3i4vppvai6dwnk3z8nm.png",
+      "alt": "Portada del artículo sobre la construcción de un temporizador CLI en Python",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#PythonCLI",
+    "#DesarrolloSoftware",
+    "#ManejoExcepciones",
+    "#ProgramacionPython",
+    "#IngenieriaSoftware"
+  ],
+  "fullArticle": "El décimo artículo de un ingeniero Java que aprende Python desde cero detalla la creación de un temporizador de cuenta regresiva para línea de comandos, el tercer proyecto de su serie dedicada a este lenguaje tras un rastreador de peso y un generador de contraseñas CLI. A diferencia de los proyectos anteriores, centrados en calcular o generar valores, esta entrega se enfoca en dos pilares fundamentales de la programación: el control del tiempo y el manejo de excepciones, especialmente las interrupciones voluntarias del usuario durante la ejecución de un proceso.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy3i4vppvai6dwnk3z8nm.png]\nLa herramienta desarrollada permite al usuario seleccionar una duración predefinida de 30 o 60 segundos, o introducir un valor personalizado, tras lo que inicia una cuenta regresiva que se actualiza en la misma línea de la consola, sin generar nuevas líneas de salida. Si el usuario pulsa Ctrl+C en cualquier momento de la cuenta, el programa captura la excepción, muestra un mensaje de interrupción y retorna al menú inicial, sin cerrarse de forma abrupta. El autor separó la lógica del temporizador en el archivo timer.py de la interfaz de menú y el punto de entrada en main.py, aplicando el principio de separación de responsabilidades que ya había empleado en proyectos anteriores, un patrón muy similar al usado en Java para separar la lógica de negocio de la clase principal.\nEl eje central del desarrollo es el manejo de excepciones, con un foco especial en la interrupción por parte del usuario, un escenario que no se había abordado en los proyectos previos de la serie, donde los procesos siempre se ejecutaban hasta su finalización. El autor explica que utilizó herramientas de inteligencia artificial como Claude Pro para discusiones de diseño y resolución de dudas, y Cursor Pro como apoyo en la codificación, bajo una regla estricta: nunca delega la escritura de código a la IA, solo la usa para aclarar especificaciones, detectar errores y obtener sugerencias, verificando siempre el funcionamiento final por sí mismo. Esta transparencia sobre su flujo de trabajo, incluyendo los puntos en los que se atascó y las decisiones que tomó, convierte al artículo en un recurso formativo muy valioso para desarrolladores que se inician en Python, especialmente aquellos que provienen de lenguajes como Java y buscan aplicar sus conocimientos previos en un nuevo ecosistema. El código completo del proyecto está disponible en un repositorio público de GitHub, lo que permite consultar la implementación, modificarla y utilizarla como base para proyectos propios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T11:45:02.188Z",
+  "links": [
+    {
+      "title": "Repositorio oficial del proyecto de temporizador CLI en Python",
+      "url": "https://github.com/uya0526-design/countdown_timer_py"
+    },
+    {
+      "title": "Documentación oficial del módulo time de Python",
+      "url": "https://docs.python.org/3/library/time.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número total de artículos de la serie de aprendizaje de Python del autor",
+      "value": "10"
+    },
+    {
+      "label": "Opciones de duración predefinidas del temporizador",
+      "value": "30 segundos y 60 segundos"
+    },
+    {
+      "label": "Función utilizada para la pausa de un segundo en la cuenta regresiva",
+      "value": "time.sleep(1) del módulo time"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

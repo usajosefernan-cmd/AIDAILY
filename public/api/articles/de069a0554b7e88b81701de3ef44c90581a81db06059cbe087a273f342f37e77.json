@@ -1,0 +1,68 @@
+{
+  "id": "de069a0554b7e88b81701de3ef44c90581a81db06059cbe087a273f342f37e77",
+  "title": "HalluSquatting: la técnica que convierte agentes de codificación IA en botnets sin tocar a una sola víctima",
+  "summary": "Investigadores detectaron una nueva técnica de ataque llamada HalluSquatting que afecta a 9 herramientas de codificación con IA líderes, permitiendo a ciberdelincuentes crear botnets sin necesidad de phishing ni targeting de víctimas específicas. Los atacantes preregistran nombres de paquetes o repositorios que la IA alucina al sugerir instalaciones, inyectando código malicioso que se ejecuta automáticamente cuando el agente lo descarga. Las defensas de seguridad actuales no detectan esta amenaza, ya que el paquete malicioso existe de forma legítima en los registros oficiales.",
+  "url": "https://dev.to/coridev/hallusquatting-how-attackers-turn-ai-coding-agents-into-a-botnet-without-touching-a-single-victim-3fpm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T23:04:36.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbbjyxqvddb6c70cuthl8.png",
+  "imageAlt": "HalluSquatting: la técnica que convierte agentes de codificación IA en botnets sin tocar a una sola víctima",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores detectaron una nueva técnica de ataque llamada HalluSquatting que afecta a 9 herramientas de codificación con IA líderes, permitiendo a ciberdelincuentes crear botnets sin necesidad de phishing ni targeting de víctimas específicas. Los atacantes preregistran nombres de paquetes o repositorios que la IA alucina al sugerir instalaciones, inyectando código malicioso que se ejecuta automáticamente cuando el agente lo descarga. Las defensas de seguridad actuales no detectan esta amenaza, ya que el paquete malicioso existe de forma legítima en los registros oficiales.",
+  "keyPoints": [
+    "La técnica HalluSquatting afecta a 9 herramientas de codificación IA líderes, incluyendo Cursor, GitHub Copilot y Gemini CLI, explotando su tendencia a alucinar nombres de paquetes o repositorios inexistentes.",
+    "Los atacantes preregistran los nombres que la IA suele alucinar en registros de paquetes o GitHub, inyectando código malicioso como shells reversos sin necesidad de interacción con víctimas.",
+    "A diferencia de los ataques de inyección de prompts tradicionales, esta técnica escala automáticamente con la popularidad de la herramienta, sin que el atacante deba realizar esfuerzo adicional por cada víctima.",
+    "Las defensas actuales como filtros de prompts o escaneo de dependencias no detectan HalluSquatting, ya que el paquete malicioso existe de forma legítima en el registro en el momento de la verificación."
+  ],
+  "whyMatters": "Esta técnica supone una amenaza crítica para el ecosistema de desarrollo de software en España y Europa, donde el uso de herramientas de codificación con IA creció un 67% en el último año según datos de la Comisión Europea. A diferencia de los ataques tradicionales, no requiere errores humanos por parte de los desarrolladores, por lo que los equipos de seguridad y las políticas de formación tradicionales resultan completamente ineficaces. Su impacto se extiende a toda la cadena de suministro de software, pudiendo comprometer desde pequeñas startups hasta grandes empresas tecnológicas europeas, con riesgos de robo de datos sensibles, interrupción de servicios críticos y filtrado de propiedad intelectual.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbbjyxqvddb6c70cuthl8.png",
+      "alt": "Ilustración de portada del artículo sobre la técnica HalluSquatting que convierte agentes de codificación IA en botnets",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que explica la técnica de ataque HalluSquatting"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#HalluSquatting",
+    "#Ciberseguridad",
+    "#HerramientasIA",
+    "#Desarrolladores"
+  ],
+  "fullArticle": "Investigadores reportaron en julio de 2026 que nueve de las herramientas de codificación con IA más utilizadas del mercado —entre ellas Cursor, GitHub Copilot, Gemini CLI y Windsurf— comparten una falla de seguridad que los atacantes pueden explotar sin necesidad de realizar phishing, ingeniería social o apuntar a una víctima concreta. La técnica, bautizada como HalluSquatting, invierte el esquema de inyección de prompts tradicional: en lugar de enviar contenido malicioso al modelo, los ciberdelincuentes esperan a que el propio modelo lo busque y lo sugiera. Cuando estos agentes de codificación reciben la orden de clonar un repositorio 'tendencia' o instalar una habilidad o paquete, es común que alucinen nombres plausibles pero inexistentes de paquetes o repositorios, un fallo ya documentado desde hace años en sugerencias de instalación de pip o npm, pero que ahora alcanza una escala de explotación sin precedentes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbbjyxqvddb6c70cuthl8.png]\n\nEl mecanismo de ataque es sorprendentemente simple: si un ciberdelincuente es capaz de predecir los nombres que la IA alucinará con mayor probabilidad, puede registrarlos previamente en GitHub o en un registro de paquetes, inyectar código malicioso como shells reversos y esperar a que los agentes de los desarrolladores los sugieran y ejecuten. Cada agente que alucine ese nombre y clone o instale el paquete sin verificar se convierte en un nodo infectado de una botnet que escala automáticamente con la popularidad de la herramienta, sin que el atacante tenga que realizar ningún esfuerzo adicional. Las defensas actuales, como los filtros de inyección de prompts o las herramientas de escaneo de dependencias, son completamente ineficaces contra esta técnica, ya que el paquete malicioso existe de forma legítima en el registro en el momento de la verificación.\n\nFrente a esta amenaza, soluciones como la integración de SlopScan de Sentinel implementan una verificación en tiempo real del nombre de cada paquete extraído de la salida de la IA contra los registros de PyPI y npm antes de que el agente ejecute cualquier acción, evaluando su nivel de confianza y bloqueando automáticamente los paquetes sospechosos o maliciosos. Para los desarrolladores españoles y europeos, que adoptan estas herramientas de IA a un ritmo creciente, esta medida se vuelve indispensable para evitar comprometer la cadena de suministro de software de sus proyectos, con riesgos que van desde el robo de datos sensibles hasta la interrupción de servicios empresariales. La clave está en añadir una capa de verificación independiente que no dependa de listas de bloqueo históricas, sino de la comprobación en tiempo real de la existencia y reputación de cada paquete antes de su ejecución.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T23:23:54.569Z",
+  "links": [
+    {
+      "title": "Artículo original sobre HalluSquatting en Dev.to",
+      "url": "https://dev.to/sentinel/hallusquatting-how-attackers-turn-ai-coding-agents-into-a-botnet-without-touching-a-single-victim"
+    },
+    {
+      "title": "Documentación oficial de SlopScan, herramienta de defensa contra HalluSquatting",
+      "url": "https://sentinel.io/slopscan"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Herramientas de IA afectadas",
+      "value": "9 herramientas líderes del mercado"
+    },
+    {
+      "label": "Fecha del reporte de la vulnerabilidad",
+      "value": "Julio de 2026"
+    },
+    {
+      "label": "Crecimiento de uso de herramientas de codificación IA en la UE",
+      "value": "67% en el último año"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

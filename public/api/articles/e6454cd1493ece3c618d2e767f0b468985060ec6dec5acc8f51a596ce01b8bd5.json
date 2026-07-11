@@ -1,0 +1,81 @@
+{
+  "id": "e6454cd1493ece3c618d2e767f0b468985060ec6dec5acc8f51a596ce01b8bd5",
+  "title": "OpenAI resuelve un bug crítico de 18 años en GNU libunwind aplicando depuración epidemiológica a los crashes de ChatGPT",
+  "summary": "Ingenieros de OpenAI solucionaron un error de 18 años en la biblioteca GNU libunwind que causaba crashes aleatorios en Rockset, el servicio de infraestructura de datos que potencia la búsqueda y los plugins de ChatGPT, mediante un método de depuración epidemiológica que analiza patrones poblacionales de fallos en lugar de casos individuales.",
+  "url": "https://www.infoq.com/news/2026/07/openai-libunwind-core-dumps",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-09T10:15:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg",
+  "imageAlt": "OpenAI resuelve un bug crítico de 18 años en GNU libunwind aplicando depuración epidemiológica a los crashes de ChatGPT",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Ingenieros de OpenAI solucionaron un error de 18 años en la biblioteca GNU libunwind que causaba crashes aleatorios en Rockset, el servicio de infraestructura de datos que potencia la búsqueda y los plugins de ChatGPT, mediante un método de depuración epidemiológica que analiza patrones poblacionales de fallos en lugar de casos individuales.",
+  "keyPoints": [
+    "El bug causaba crashes aleatorios en Rockset, servicio de datos que alimenta la búsqueda y plugins de ChatGPT, con desvíos en punteros de pila y retornos a direcciones de memoria nulas.",
+    "El equipo usó depuración epidemiológica, analizando todos los volcados de memoria del último año para encontrar patrones poblacionales en lugar de examinar fallos individuales.",
+    "Se descubrieron dos bugs independientes: uno por un host de Azure con errores de cálculo silenciosos y otro por una condición de carrera en libunwind de 18 años de antigüedad.",
+    "El fix reordena instrucciones en _Ux86_64_setcontext para leer el registro de instrucción antes de actualizar el puntero de pila, eliminando una ventana de carrera de 100 picosegundos."
+  ],
+  "whyMatters": "Este hito demuestra que la aplicación de métodos epidemiológicos a la depuración de software puede resolver errores críticos que resisten análisis tradicionales, reduciendo tiempos de investigación de semanas a días. Para el sector de la inteligencia artificial y la infraestructura en la nube, la solución elimina un riesgo de estabilidad que afectaba a servicios de alto tráfico como ChatGPT, mejorando la fiabilidad para millones de usuarios. Además, el parche upstream a GNU libunwind beneficia a toda la comunidad de desarrolladores de sistemas en C++, previniendo crashes similares en otras aplicaciones que usen desenredo de excepciones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg",
+      "alt": "Portada del minilibro sobre Arquitectura de IA Agéntica",
+      "caption": "Recurso que analiza los patrones de diseño para construir sistemas de inteligencia artificial autónoma y escalables"
+    },
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/podcasts/team-operating-system-ai-era/en/smallimage/engineering-culture-podcast-thumbnail-1780644878321.jpg",
+      "alt": "Logo del podcast sobre Cultura de Ingeniería en la Era de la IA",
+      "caption": "Podcast que explora las dinámicas de trabajo y procesos en equipos de ingeniería de inteligencia artificial"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InteligenciaArtificial",
+    "#GNUlibunwind",
+    "#DepuracionEpidemiologica"
+  ],
+  "fullArticle": "Equipos de ingeniería de OpenAI enfrentaron durante semanas una serie de crashes misteriosos en Rockset, el servicio de infraestructura de datos en C++ que alimenta la función de búsqueda y los plugins de datos de ChatGPT. Los fallos presentaban síntomas incoherentes: funciones que retornaban a direcciones de memoria inválidas, desvíos de 8 bytes en los punteros de pila durante la ejecución y ninguna hipótesis de causa que se ajustara a todos los casos. El equipo descartó inicialmente errores de desenredo de excepciones de C++, al creer que contaba con contraejemplos de fallos en rutas que no usaban esta funcionalidad.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg]\n\nEl punto de inflexión llegó cuando abandonaron el análisis individual de crashes para adoptar la denominada depuración epidemiológica: un método que consiste en construir un pipeline para analizar automáticamente todos los volcados de memoria de producción del último año, buscando patrones a nivel poblacional en lugar de examinar casos aislados. El propio ChatGPT escribió un script que descargaba un prefijo de cada archivo de volcado, extraía registros, filtraba falsos positivos conocidos y clasificaba cada crash como retorno a nulo, pila desalineada u otro tipo. Al ejecutar este análisis en paralelo sobre todos los volcados de Rockset del año anterior, aparecieron correlaciones inmediatas: lo que parecía un solo síndrome era en realidad dos poblaciones de fallos con firmas completamente distintas.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/podcasts/team-operating-system-ai-era/en/smallimage/engineering-culture-podcast-thumbnail-1780644878321.jpg]\n\nLos crashes de pila desalineada se concentraban en una sola región de Azure, tenían una fecha de inicio clara y nunca ocurrían en nodos de ejecución prolongada. El equipo rastreó el origen a un host físico específico cuyo CPU producía resultados incorrectos de forma silenciosa, sin sobrecalentamiento ni excepciones de comprobación de máquina. Una vez retirado ese host del servicio, este tipo de crashes desapareció por completo. Los fallos restantes, de retorno a nulo, se debían a una condición de carrera en la función _Ux86_64_setcontext de GNU libunwind, presente desde hacía 18 años. Durante el desenredo de excepciones, la biblioteca sintetiza una estructura ucontext_t en la pila, actualiza el registro de instrucción y luego cambia el puntero de pila; en la ventana de una sola instrucción (aproximadamente 100 picosegundos) entre ambos pasos, la estructura deja de estar protegida por la zona roja del kernel, por lo que la llegada de una señal en ese instante corrompe el registro de instrucción y provoca un salto a direcciones nulas o basura. Rockset utiliza timer_create para enviar una señal SIGUSR2 cada pocos milisegundos para contabilidad de consultas, una frecuencia mucho mayor que la de aplicaciones típicas, lo que convirtió una carrera teóricamente imposible en fallos recurrentes en producción. El equipo envió el parche y un reproductor autocontenido del error a la comunidad de GNU libunwind, y confirmó que otros desenredores como libgcc no presentan la misma vulnerabilidad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T10:46:50.588Z",
+  "links": [
+    {
+      "title": "Artículo original en InfoQ sobre la solución del bug de libunwind",
+      "url": "https://www.infoq.com/news/2026/07/openai-gnu-libunwind-bug-fix/"
+    },
+    {
+      "title": "Post de ingeniería completo de OpenAI sobre depuración epidemiológica",
+      "url": "https://openai.com/blog/epidemiological-debugging-rockset"
+    },
+    {
+      "title": "Documentación oficial de GNU libunwind",
+      "url": "https://www.nongnu.org/libunwind/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Antigüedad del bug en libunwind",
+      "value": "18 años"
+    },
+    {
+      "label": "Duración de la ventana de carrera",
+      "value": "100 picosegundos"
+    },
+    {
+      "label": "Frecuencia de señales SIGUSR2 en Rockset",
+      "value": "Cada pocos milisegundos de tiempo de CPU"
+    },
+    {
+      "label": "Volumen de registros analizados",
+      "value": "Un año completo de volcados de memoria de producción"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

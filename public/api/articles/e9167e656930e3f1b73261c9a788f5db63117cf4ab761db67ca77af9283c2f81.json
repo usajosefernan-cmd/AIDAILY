@@ -1,0 +1,73 @@
+{
+  "id": "e9167e656930e3f1b73261c9a788f5db63117cf4ab761db67ca77af9283c2f81",
+  "title": "Un tercio de las tareas del benchmark de codificación SWE-Bench Pro están rotas, según auditoría de OpenAI",
+  "summary": "Una auditoría de OpenAI reveló que aproximadamente el 30% de las tareas del benchmark de codificación SWE-Bench Pro presentan fallos de diseño o contaminación, invalida mediciones de capacidades de modelos de IA y afecta decisiones de seguridad y despliegue.",
+  "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+  "source": "OpenAI Blog",
+  "sourceUrl": "https://openai.com/blog/rss.xml",
+  "publishedAt": "2026-07-08T13:00:00.000Z",
+  "imageUrl": "https://images.ctfassets.net/kftzwdyauwt9/7sbJaKBi5qLXAqbewh72aK/93197556e903eac9df6f077eb12b7581/GenebenchPro_Blog_ArtCard.png?w=3840&q=90&fm=webp",
+  "imageAlt": "Un tercio de las tareas del benchmark de codificación SWE-Bench Pro están rotas, según auditoría de OpenAI",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una auditoría de OpenAI reveló que aproximadamente el 30% de las tareas del benchmark de codificación SWE-Bench Pro presentan fallos de diseño o contaminación, invalida mediciones de capacidades de modelos de IA y afecta decisiones de seguridad y despliegue.",
+  "keyPoints": [
+    "OpenAI auditó el benchmark SWE-Bench Pro, el más usado para medir capacidades de codificación de modelos de IA, detectando fallos generalizados en su conjunto de datos.",
+    "El pipeline automatizado marcó el 27,4% de las tareas como rotas, mientras que la revisión humana elevó ese porcentaje al 34,1% del total de la división pública.",
+    "Los fallos se clasifican en cuatro categorías principales que comprometen la validez de las mediciones de rendimiento de los modelos de desarrollo de software.",
+    "OpenAI recomienda a los desarrolladores revisar cuidadosamente los resultados obtenidos en este benchmark hasta que se corrijan los errores en el conjunto de datos."
+  ],
+  "whyMatters": "Estos fallos en uno de los benchmarks de codificación más utilizados del sector tienen un impacto directo en la evaluación de capacidades de modelos de IA, lo que puede llevar a decisiones de despliegue y seguridad erróneas. Al falsear las mediciones de rendimiento, se distorsionan los casos de seguridad y se desvían las prioridades de investigación en desarrollo de IA, afectando a toda la industria tecnológica. La auditoría evidencia la necesidad de establecer procesos de control de calidad más rigurosos en las herramientas de evaluación de modelos, para garantizar que los avances reportados sean reales y comparables.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.ctfassets.net/kftzwdyauwt9/7sbJaKBi5qLXAqbewh72aK/93197556e903eac9df6f077eb12b7581/GenebenchPro_Blog_ArtCard.png?w=3840&q=90&fm=webp",
+      "alt": "Separating signal from noise in coding evaluations",
+      "caption": "Introducing GeneBench-Pro > Cover image"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InteligenciaArtificial",
+    "#SWEBenchPro",
+    "#IA",
+    "#BenchmarkIA",
+    "#DesarrolloIA"
+  ],
+  "fullArticle": "OpenAI, la empresa líder en desarrollo de modelos de inteligencia artificial, realizó una auditoría exhaustiva del benchmark SWE-Bench Pro, una de las herramientas más utilizadas a nivel global para medir las capacidades de codificación de modelos de IA. Los resultados de la auditoría, publicados en su blog oficial, revelaron que aproximadamente el 30% de las tareas que componen el benchmark presentan fallos de diseño, contaminación o especificación insuficiente, lo que invalida en gran medida los resultados de rendimiento obtenidos por los modelos en esta prueba. El benchmark SWE-Bench Pro fue lanzado como una versión mejorada de su predecesor SWE-bench Verified, con el objetivo de evaluar capacidades de codificación agencial en horizontes más largos y tareas más realistas. En su división pública de 731 tareas, los modelos de frontera habían mejorado su tasa de aprobación del 23,3% al 80,3% en solo ocho meses, un avance que ahora se pone en duda por los fallos detectados. La auditoría utilizó un pipeline de análisis de datos automatizado combinado con una campaña de anotación humana realizada por cinco ingenieros de software experimentados por tarea, identificando 249 tareas rotas, un 34,1% del total. OpenAI advierte que estos fallos pueden generar una comprensión errónea de las capacidades reales de los modelos, afectando decisiones de despliegue, seguridad y prioridades de investigación en todo el sector. Para evitar este problema, la empresa desarrolló un pipeline de control de calidad que combina filtros automatizados, revisión por agentes investigador y validación humana, y recomienda a los desarrolladores de modelos de IA revisar cuidadosamente los resultados obtenidos en SWE-Bench Pro hasta que se corrijan los fallos en el conjunto de datos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T20:28:22.525Z",
+  "links": [
+    {
+      "title": "Artículo original de OpenAI sobre la auditoría de SWE-Bench Pro",
+      "url": "https://openai.com/blog/swe-bench-pro-audit"
+    },
+    {
+      "title": "Página oficial de SWE-Bench Pro",
+      "url": "https://www.swebench.com/pro"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de tareas rotas estimado",
+      "value": "30%"
+    },
+    {
+      "label": "Tareas rotas identificadas por revisión humana",
+      "value": "249 (34,1% del total)"
+    },
+    {
+      "label": "Mejora de tasa de aprobación de modelos en 8 meses",
+      "value": "De 23,3% a 80,3%"
+    },
+    {
+      "label": "Ingenieros por tarea en la revisión humana",
+      "value": "5"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

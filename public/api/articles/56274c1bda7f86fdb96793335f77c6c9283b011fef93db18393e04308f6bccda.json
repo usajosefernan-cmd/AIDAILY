@@ -1,0 +1,73 @@
+{
+  "id": "56274c1bda7f86fdb96793335f77c6c9283b011fef93db18393e04308f6bccda",
+  "title": "Cómo construir un NAS minimalista con ZFS sin gastar en Synology ni TrueNAS: la guía definitiva",
+  "summary": "Guía paso a paso para crear un sistema de almacenamiento en red (NAS) básico y de alto rendimiento utilizando el sistema de archivos ZFS en Linux, evitando soluciones comerciales costosas y con funcionalidades innecesarias.",
+  "url": "https://neil.computer/notes/how-to-setup-minimal-zfs-nas-without-truenas",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-08T03:59:35.000Z",
+  "imageUrl": "https://neil.computer/content/images/2024/08/CleanShot-2024-08-23-at-23.09.01@2x.png",
+  "imageAlt": "Cómo construir un NAS minimalista con ZFS sin gastar en Synology ni TrueNAS: la guía definitiva",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Guía paso a paso para crear un sistema de almacenamiento en red (NAS) básico y de alto rendimiento utilizando el sistema de archivos ZFS en Linux, evitando soluciones comerciales costosas y con funcionalidades innecesarias.",
+  "keyPoints": [
+    "ZFS almacena toda la configuración en los discos, permitiendo mover el zpool a otro equipo sin perder datos ni reconfigurar.",
+    "Es posible crear un RAIDZ1 o RAIDZ2 con discos NVMe, obteniendo redundancia y un rendimiento superior al de soluciones comerciales.",
+    "No se requiere interfaz gráfica: con comandos básicos de Linux y OpenZFS puedes montar tu propio NAS en minutos.",
+    "Los alias en /etc/zfs/vdev_id.conf garantizan la identificación estable de los discos sin depender de nombres del sistema."
+  ],
+  "whyMatters": "Esta guía democratiza el acceso a soluciones de almacenamiento personalizadas, eliminando la dependencia de marcas que imponen licencias y funcionalidades innecesarias. Al aprovechar ZFS, los usuarios ganan control total sobre sus datos, con la seguridad de que la portabilidad de los zpools protege su inversión en hardware a largo plazo. Además, promueve una cultura de 'hágalo usted mismo' que fomenta el aprendizaje de tecnologías abiertas y reduce costos significativamente para pymes y usuarios avanzados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://neil.computer/content/images/2024/08/CleanShot-2024-08-23-at-23.09.01@2x.png",
+      "alt": "Imagen de portada del artículo original sobre construcción de un NAS minimalista con ZFS",
+      "caption": "Portada del artículo que explica cómo armar un NAS con ZFS sin soluciones comerciales"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ZFS",
+    "#NAS",
+    "#OpenZFS",
+    "#Linux",
+    "#Almacenamiento"
+  ],
+  "fullArticle": "En un mercado dominado por soluciones comerciales como Synology o QNAP, un usuario ha demostrado que es posible armar un sistema de almacenamiento en red (NAS) minimalista y de alto rendimiento utilizando únicamente el sistema de archivos ZFS en Linux. La premisa es sencilla: si no necesitas interfaces gráficas ni funcionalidades empresariales excesivas, puedes configurar un zpool y compartirlo por red con Samba en cuestión de minutos, sin costo de licencias. La clave radica en entender que ZFS es un sistema de archivos 'autocontenido', donde toda la configuración se almacena en los propios discos, lo que garantiza la portabilidad total de los datos.\n\n[MULTIMEDIA: https://neil.computer/content/images/2024/08/CleanShot-2024-08-23-at-23.09.01@2x.png]\n\nEl proceso comienza identificando los discos disponibles con comandos como 'lsblk' y creando alias en '/etc/zfs/vdev_id.conf' para garantizar una identificación estable, independientemente de cómo el sistema los detecte en cada arranque. Al crear el zpool, se recomienda usar la opción 'ashift=12' para alinear los sectores con los 4KB que usan los NVMe modernos, logrando un rendimiento óptimo. La flexibilidad de ZFS permite elegir entre RAIDZ1 (equivalente a RAID 5) o RAIDZ2 (equivalente a RAID 6) según el nivel de redundancia deseado, con la tranquilidad de que, incluso si el sistema operativo se corrompe, los datos permanecen intactos y accesibles desde cualquier otra máquina con OpenZFS instalado. Esta aproximación no solo reduce costos, sino que empodera a los usuarios con un control total sobre su infraestructura de almacenamiento, sin depender de fabricantes ni actualizaciones forzadas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T04:45:39.700Z",
+  "links": [
+    {
+      "title": "Documentación oficial de OpenZFS",
+      "url": "https://openzfs.org"
+    },
+    {
+      "title": "Guía de instalación de ZFS en sistemas Linux",
+      "url": "https://openzfs.org/wiki/Getting_Started"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Redundancia en RAIDZ2",
+      "value": "2 discos pueden fallar sin pérdida de datos"
+    },
+    {
+      "label": "Tamaño de sector óptimo para NVMe",
+      "value": "4KB (ashift=12)"
+    },
+    {
+      "label": "Comando para listar discos",
+      "value": "lsblk -d -o TRAN,NAME,TYPE,MODEL,SERIAL,SIZE"
+    },
+    {
+      "label": "Ruta de configuración de alias",
+      "value": "/etc/zfs/vdev_id.conf"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

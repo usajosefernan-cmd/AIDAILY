@@ -1,0 +1,73 @@
+{
+  "id": "8bc303c92b19f4b3638fcd73f11f30a07448b630d583f2be86e9457a47e676d8",
+  "title": "Breeze: El framework Go que logra 630k req/s y cero asignaciones, ¿el nuevo rey del alto rendimiento?",
+  "summary": "Se presenta Breeze, un framework HTTP escrito en Go que alcanza 630.000 solicitudes por segundo sin asignaciones de memoria en el heap, basado en el motor de red gnet. Incluye motor SPA integrado, manejo de WebSocket sin goroutines adicionales y un pool de workers inteligente, superando en benchmarks a Fiber en un 300% bajo mismas condiciones de hardware y carga útil.",
+  "url": "https://dev.to/nelthaarion/announcing-breeze-the-go-http-framework-that-redefines-raw-speed-58i6",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T07:10:02.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe1nmhlii496dazckxxi7.png",
+  "imageAlt": "Breeze: El framework Go que logra 630k req/s y cero asignaciones, ¿el nuevo rey del alto rendimiento?",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se presenta Breeze, un framework HTTP escrito en Go que alcanza 630.000 solicitudes por segundo sin asignaciones de memoria en el heap, basado en el motor de red gnet. Incluye motor SPA integrado, manejo de WebSocket sin goroutines adicionales y un pool de workers inteligente, superando en benchmarks a Fiber en un 300% bajo mismas condiciones de hardware y carga útil.",
+  "keyPoints": [
+    "Breeze alcanza 630.000 solicitudes por segundo con cero asignaciones de memoria en el heap, según pruebas de benchmark.",
+    "Está construido sobre gnet, un motor de redes event-driven que realiza llamadas directas a epoll/kqueue sin capas intermedias.",
+    "Incluye motor SPA integrado, manejo de WebSocket sin goroutines extra y un pool de workers con canal bufferizado de 16 elementos.",
+    "Supera en rendimiento a Fiber en un 300% en el mismo hardware y con la misma carga útil, sin necesidad de ajustes manuales."
+  ],
+  "whyMatters": "Breeze representa un salto cualitativo en el rendimiento de aplicaciones web escritas en Go, un lenguaje ya de por sí reconocido por su eficiencia. Su capacidad para procesar más de 600.000 solicitudes por segundo sin asignaciones de memoria reduce drásticamente los costos de infraestructura y la latencia, lo que lo convierte en una herramienta estratégica para empresas que manejan APIs de alto tráfico, plataformas de streaming o sistemas en tiempo real. Su enfoque en el event loop no bloqueante y la optimización extrema del 'hot path' sienta un nuevo precedente en el desarrollo de frameworks, impulsando a la comunidad Go a replantearse las arquitecturas convencionales basadas en goroutines por conexión. Para desarrolladores y arquitectos en España y Europa, supone una oportunidad para construir servicios más escalables y económicos, especialmente en sectores como fintech, telecomunicaciones o gaming, donde cada milisegundo de respuesta es crítico.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe1nmhlii496dazckxxi7.png",
+      "alt": "Portada del artículo de Dev.to que anuncia el lanzamiento de Breeze, el framework Go de alto rendimiento",
+      "caption": "Imagen de portada del artículo original en Dev.to presentando Breeze"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Breeze",
+    "#GoLang",
+    "#AltoRendimiento",
+    "#DesarrolloWeb",
+    "#FrameworkGo"
+  ],
+  "fullArticle": "Se ha presentado Breeze, un framework HTTP para Go que promete redefinir los estándares de velocidad bruta en el desarrollo de servicios web. Con un rendimiento declarado de 630.000 solicitudes por segundo y cero asignaciones de memoria en el heap, este proyecto supera en un 300% a Fiber, uno de los frameworks más populares del ecosistema Go, en pruebas realizadas en el mismo hardware y con la misma carga útil. A diferencia de otras soluciones que son simples envoltorios de net/http, Breeze está construido directamente sobre gnet, un motor de redes event-driven que interactúa con el sistema operativo mediante llamadas directas a epoll en Linux y kqueue en macOS, eliminando capas de abstracción innecesarias.\n\nLas optimizaciones implementadas por su creador son exhaustivas: el router se almacena en la pila mediante un array fijo de 16 elementos, evitando asignaciones en el heap; el análisis de cabeceras y rutas se realiza sin copias de bytes, utilizando unsafe.String; y la serialización de respuestas se realiza sin fmt.Sprintf, con buffers pre-dimensionados y mapeo de códigos de estado por índice de array. El pool de workers utiliza un canal bufferizado de 16 elementos que absorbe picos de tráfico, y en caso de saturación, genera goroutines adicionales sin bloquear el event loop principal, garantizando que este nunca se detenga. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe1nmhlii496dazckxxi7.png]\n\nOtra de sus características más destacadas es el manejo nativo de WebSocket sin generar goroutines por conexión, ya que el handler se ejecuta dentro del propio event loop de gnet, eliminando la sobrecarga de memoria por conexión. El WSHub integrado soporta difusión de mensajes, gestión de salas y desconexiones graceful, cumpliendo con el estándar RFC 6455 y ofreciendo reconexión automática en el cliente con backoff exponencial. Un servidor funcional completo puede escribirse en menos de 20 líneas de código, con un event loop por núcleo de CPU, balanceo RoundRobin y TCP_NODELAY activado por defecto, sin necesidad de configuración avanzada. Este nivel de optimización lo hace especialmente adecuado para aplicaciones que requieren throughput masivo y latencia mínima, como pasarelas de pago, motores de recomendación en tiempo real o infraestructuras de API para plataformas con millones de usuarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T07:23:38.137Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Repositorio oficial de gnet en GitHub",
+      "url": "https://github.com/panjf2000/gnet"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Rendimiento máximo declarado",
+      "value": "630.000 solicitudes por segundo"
+    },
+    {
+      "label": "Asignaciones de memoria en el heap",
+      "value": "Cero"
+    },
+    {
+      "label": "Mejora de rendimiento sobre Fiber",
+      "value": "3 veces más rápido"
+    },
+    {
+      "label": "Líneas de código para servidor básico",
+      "value": "Menos de 20 líneas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

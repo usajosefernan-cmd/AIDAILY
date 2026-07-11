@@ -1,0 +1,73 @@
+{
+  "id": "898e7d77d0183c84e08e1077512caa7b25971776121c3337beae16af09550058",
+  "title": "Fuera del circuito: Ya nadie se acerca al escritorio de un compañero",
+  "summary": "El artículo analiza la pérdida de una red de seguridad informal en los equipos de desarrollo con la incorporación de agentes de IA: la costumbre de los desarrolladores confundidos de acercarse a un compañero para aclarar dudas durante la implementación, que evitaba errores en producción. Los fallos tradicionales en sesiones de especificación ya tienen soluciones en Agile, pero este nuevo escenario no cuenta con mecanismos de reemplazo, generando un riesgo de errores que llegan directamente a los usuarios finales.",
+  "url": "https://dev.to/aepfli/left-of-the-loop-nobodys-walking-over-to-a-desk-4080",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T19:46:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyhhs5odfrutm7xcm4of6.png",
+  "imageAlt": "Fuera del circuito: Ya nadie se acerca al escritorio de un compañero",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza la pérdida de una red de seguridad informal en los equipos de desarrollo con la incorporación de agentes de IA: la costumbre de los desarrolladores confundidos de acercarse a un compañero para aclarar dudas durante la implementación, que evitaba errores en producción. Los fallos tradicionales en sesiones de especificación ya tienen soluciones en Agile, pero este nuevo escenario no cuenta con mecanismos de reemplazo, generando un riesgo de errores que llegan directamente a los usuarios finales.",
+  "keyPoints": [
+    "Antiguamente, los desarrolladores confundidos se acercaban al escritorio de un compañero para aclarar dudas, una red de seguridad informal no documentada que evitaba errores graves en producción.",
+    "Los fallos en sesiones de especificación (consensos falsos, historias demasiado grandes, personas equivocadas en la sala) ya tienen soluciones consolidadas en el marco Agile desde hace 20 años.",
+    "Los agentes de IA no replican la costumbre humana de preguntar a terceros durante la implementación, por lo que los errores de especificación llegan directamente a producción sin detección temprana.",
+    "El nuevo fallo no es el desvío de requisitos, sino la falta de un mecanismo que reemplace la red de seguridad humana que se pierde al eliminar al desarrollador del circuito de implementación."
+  ],
+  "whyMatters": "Este cambio es de alto impacto para todos los equipos de desarrollo que están incorporando agentes de IA en sus flujos de trabajo, ya que elimina una red de seguridad informal que evitaba errores costosos sin que los equipos sean conscientes de su pérdida. A largo plazo, esto puede generar un aumento en los costos de mantenimiento, fallos en producción que afecten la experiencia de los usuarios y sobrecarga en los equipos que no cuentan con mecanismos de reemplazo diseñados expresamente para este escenario. Las empresas deben revisar sus procesos de planificación e implementación para diseñar nuevos circuitos de comunicación que compensen esta ausencia, ya que las soluciones Agile tradicionales no cubren esta nueva casuística.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyhhs5odfrutm7xcm4of6.png",
+      "alt": "Portada del artículo 'Fuera del circuito: Ya nadie se acerca al escritorio de un compañero'",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#DesarrolloAgil",
+    "#AgentesIA",
+    "#IngenieriaDeSoftware",
+    "#IAEnDesarrollo",
+    "#ProcesosDeDesarrollo"
+  ],
+  "fullArticle": "Durante años, los equipos de desarrollo ágil contaron con una red de seguridad no documentada que evitaba que errores de planificación llegaran a producción: el desarrollador confundido que se acercaba al escritorio de un compañero para aclarar dudas en pleno proceso de implementación. Esta práctica informal, nunca escrita en ningún manual de procesos, funcionaba como un circuito de emergencia que detectaba fallos en la especificación de historias de usuario cuando aún era posible corregirlos sin costo elevado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyhhs5odfrutm7xcm4of6.png]\n\nLos fallos tradicionales en las sesiones de especificación (sesiones que se alargan sin llegar a un consenso, las personas equivocadas en la sala, historias de usuario demasiado grandes para definirse en una sola reunión, o consensos falsos por miedo a abrir debates) ya tienen soluciones consolidadas en el ecosistema Agile: refinamientos de sprint estructurados, políticas de invitación claras, criterios INVEST para dividir historias grandes y facilitación rotativa para evitar consensos artificiales. Ninguno de estos problemas es nuevo, y todos cuentan con herramientas probadas que los equipos pueden aplicar sin necesidad de reinventar la rueda.\n\nEl problema genuinamente nuevo surge cuando se reemplaza al desarrollador humano, que implementa la historia de usuario, por un agente de IA. El agente no tiene la costumbre de detenerse cuando encuentra una ambigüedad en la especificación para preguntarle a un compañero que estuvo en la sesión de planificación y que puede tener información que el agente desconoce. En su lugar, o bien interpreta la ambigüedad según su mejor criterio y avanza con la implementación, o bien se detiene y devuelve la pregunta a la misma persona que escribió el prompt, sin acceder a conocimientos externos que podrían aclarar la duda. Esta pérdida de la red de seguridad informal significa que errores que antes se detectaban en los primeros días del sprint, cuando aún era posible corregirlos sin afectar a los usuarios, ahora llegan directamente a producción, con el costo asociado de tener que solucionarlos en entornos productivos y con impacto en la experiencia de los usuarios finales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T20:02:23.910Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Guía oficial de Scrum",
+      "url": "https://www.scrum.org/resources/scrum-guide"
+    },
+    {
+      "title": "Criterios INVEST para historias de usuario",
+      "url": "https://www.agilealliance.org/glossary/invest/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Años de soluciones Agile para fallos de especificación",
+      "value": "20 años"
+    },
+    {
+      "label": "Momento de detección de errores en el modelo antiguo",
+      "value": "Días 2 del sprint"
+    },
+    {
+      "label": "Momento de detección de errores en el modelo con agentes IA",
+      "value": "Producción"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

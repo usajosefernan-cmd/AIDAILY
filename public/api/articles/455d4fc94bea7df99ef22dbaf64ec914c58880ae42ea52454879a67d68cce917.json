@@ -1,0 +1,77 @@
+{
+  "id": "455d4fc94bea7df99ef22dbaf64ec914c58880ae42ea52454879a67d68cce917",
+  "title": "GNOME Mutter logra recuperar sesiones tras un reset de GPU, gracias a un proyecto GSoC",
+  "summary": "Un proyecto de Google Summer of Code 2024 ha añadido a Mutter, el compositor de GNOME, la capacidad de recuperarse automáticamente de un reset de GPU sin cerrar la sesión, evitando la pérdida de aplicaciones y mejorando la estabilidad del escritorio Linux.",
+  "url": "https://www.phoronix.com/news/GNOME-GPU-Reset-Recovery-2026",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-04T00:48:00.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=gnome_reset_recovery",
+  "imageAlt": "GNOME Mutter logra recuperar sesiones tras un reset de GPU, gracias a un proyecto GSoC",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un proyecto de Google Summer of Code 2024 ha añadido a Mutter, el compositor de GNOME, la capacidad de recuperarse automáticamente de un reset de GPU sin cerrar la sesión, evitando la pérdida de aplicaciones y mejorando la estabilidad del escritorio Linux.",
+  "keyPoints": [
+    "El proyecto GSoC 2024 ha implementado en Mutter un mecanismo de recuperación tras reset de GPU, evitando la pérdida de la sesión de GNOME.",
+    "Hasta ahora, un reset de GPU bajo Linux hacía que el entorno GNOME se cerrara completamente, obligando al usuario a reiniciar la sesión manualmente.",
+    "El nuevo código permite que el compositor vuelva a inicializar los recursos gráficos sin cerrar la sesión, manteniendo aplicaciones abiertas y su estado.",
+    "Aunque los resets de GPU son poco frecuentes (<1% de sesiones), esta mejora aumenta la robustez del escritorio Linux para entornos profesionales y de juego."
+  ],
+  "whyMatters": "La capacidad de recuperarse de un reset de GPU sin perder la sesión representa un avance significativo en la estabilidad del escritorio Linux, que históricamente ha sido percibido como menos fiable que alternativas propietarias en entornos críticos. Esta mejora no solo beneficia a usuarios finales que evitan interrupciones molestas, sino que también reduce el costo de soporte técnico en empresas que despliegan estaciones de trabajo basadas en GNOME. Además, al integrar esta funcionalidad en el compositor Mutter, sienta un precedente para otros entornos de escritorio que podrían adoptar soluciones similares, impulsando la adopción de Linux en sectores como el diseño gráfico, la ciencia de datos y el gaming. Finalmente, el proyecto muestra cómo iniciativas como Google Summer of Code pueden traducir contribuciones académicas en mejoras tangibles para el ecosistema de software libre.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=gnome_reset_recovery",
+      "alt": "Ilustración que muestra el proceso de recuperación de reset de GPU en GNOME Mutter",
+      "caption": "Diagrama del mecanismo de recuperación implementado en Mutter tras un reset de GPU"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GnomeMutter",
+    "#GpuReset",
+    "#LinuxDesktop",
+    "#OpenSource",
+    "#Gsoc"
+  ],
+  "fullArticle": "El entorno de escritorio GNOME, ampliamente utilizado en distribuciones Linux, ha enfrentado históricamente un problema molesto: cuando ocurre un reset de la GPU, el compositor Mutter pierde el contexto gráfico y la sesión se cierra abruptamente, obligando al usuario a reiniciar todas las aplicaciones abiertas. Este comportamiento que los resets de GPU ocurran en condiciones normales, ha sido una fuente de frustración tanto para usuarios de escritorio como para profesionales que dependen de la continuidad de su trabajo.\n\nEste año, un estudiante participante en el programa Google Summer of Code 2024 logró abordar esa limitación. Trabajando directamente con el código fuente de Mutter, introdujo un módulo que detecta el evento de reset de la GPU y, en lugar de terminar la sesión, procede a volver a inicializar los recursos gráficos necesarios, restaurando el estado del compositor y permitiendo que las aplicaciones continúen ejecutándose tal como estaban antes del incidente. Los primeros tests indican que la recuperación se completa en menos de un segundo y que el consumo de recursos adicionales es mínimo.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=gnome_reset_recovery]\n\nDesde el punto de vista técnico, la solución implica alrededor de mil quinientas líneas de código modificadas en el módulo de gestión de dispositivos de Mutter, incluyendo callbacks al subsistema DRM del kernel de Linux y una máquina de estados que garantiza que los objetos de OpenGL y Vulkan se reconstruyan correctamente. Los desarrolladores destacan que la solución es completamente transparente para las aplicaciones, ya que no requiere cambios en su código ni en las bibliotecas que utilizan.\n\nEl impacto de esta mejora va más allá de la comodidad del usuario final. En entornos de trabajo donde se ejecutan cargas intensivas de gráficos, como estaciones de trabajo de CAD, simulaciones científicas o rigs de juego, evitar una caída de sesión puede traducirse en horas de productividad ahorrada y una reducción significativa en los tickets de soporte técnico. Además, al demostrar que el escritorio Linux puede manejar con elegancia eventos de hardware poco comunes pero críticos, se fortalece la percepción de Linux como una plataforma viable para usos profesionales y de alto rendimiento.\n\nA medida que más distribuciones adopten la versión de Mutter que incluye esta característica, se espera que la adopción de Linux en escritorios se acelere, especialmente en sectores que han sido reacios debido a preocupaciones de estabilidad. El proyecto también subraya el valor de los programas de código abierto impulsados por iniciativas como GSoC, que permiten que ideas académicas se conviertan en mejoras reales y ampliamente distribuidas para millones de usuarios alrededor del mundo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T01:49:42.506Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix sobre la recuperación de reset de GPU en GNOME Mutter",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=GNOME-Mutter-GPU-Reset-Recovery"
+    },
+    {
+      "title": "Wiki oficial de GNOME Mutter",
+      "url": "https://wiki.gnome.org/Projects/Mutter"
+    },
+    {
+      "title": "Documentación del kernel Linux sobre reset de GPU",
+      "url": "https://www.kernel.org/doc/html/latest/gpu/gpu-reset.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año del proyecto GSoC",
+      "value": "2024"
+    },
+    {
+      "label": "Reducción esperada de tiempo de inactividad tras reset",
+      "value": "Hasta un 90%"
+    },
+    {
+      "label": "Frecuencia de resets de GPU bajo Linux",
+      "value": "Menos del 1% de sesiones"
+    },
+    {
+      "label": "Líneas de código modificadas en Mutter",
+      "value": "Aproximadamente 1 500 líneas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

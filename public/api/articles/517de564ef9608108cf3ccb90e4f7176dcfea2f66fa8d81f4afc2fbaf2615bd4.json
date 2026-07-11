@@ -1,0 +1,80 @@
+{
+  "id": "517de564ef9608108cf3ccb90e4f7176dcfea2f66fa8d81f4afc2fbaf2615bd4",
+  "title": "Memory Sidecar v3.5.1: Fortalecimiento Operativo para Memoria Agnóstica de Agentes",
+  "summary": "La nueva versión 3.5.1 del Memory Sidecar, entregada a través del hermes-memory-installer, prioriza la madurez operativa sobre la velocidad de lanzamiento de funciones. Con límites de recursos cgroup, aislamiento de procesos, registro WAL y métricas OpenTelemetry, la actualización convierte la memoria de agentes en un servicio robusto y escalable.",
+  "url": "https://dev.to/manoir_yantai_f22f01340f0/memory-sidecar-v351-operational-hardening-for-agent-agnostic-memory-3f5o",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T06:00:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyskyvmgrvhqw7dywpcts.png",
+  "imageAlt": "Memory Sidecar v3.5.1: Fortalecimiento Operativo para Memoria Agnóstica de Agentes",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La nueva versión 3.5.1 del Memory Sidecar, entregada a través del hermes-memory-installer, prioriza la madurez operativa sobre la velocidad de lanzamiento de funciones. Con límites de recursos cgroup, aislamiento de procesos, registro WAL y métricas OpenTelemetry, la actualización convierte la memoria de agentes en un servicio robusto y escalable.",
+  "keyPoints": [
+    "El instalador genera unidades systemd con límites de memoria y CPU cgroup v2, evitando que un Sidecar consuma recursos del host.",
+    "Cada instancia corre en una MemoryZone aislada, protegiendo archivos y procesos de otros Sidecars en el mismo nodo.",
+    "Se añade un log de escritura adelantada (WAL) con modos memory, disk o sync, garantizando la durabilidad frente a fallos de almacenamiento.",
+    "El Sidecar expone métricas en /metrics:9610 y admite trazas OpenTelemetry, facilitando la observabilidad sin sobrecargar el sistema."
+  ],
+  "whyMatters": "En un ecosistema donde los agentes de IA dependen cada vez más de la persistencia de memoria para mantener contexto y aprendizaje, la estabilidad operativa se vuelve crítica. La actualización elimina tres fallos habituales: consumo descontrolado de recursos, contaminación entre instancias y pérdida silenciosa de datos durante caídas temporales. Para empresas que despliegan cientos de Sidecars, esto significa menor riesgo de interrupciones, mayor confianza en la integridad de los datos y una base sólida para escalar servicios de IA sin sacrificar rendimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyskyvmgrvhqw7dywpcts.png",
+      "alt": "Imagen que muestra la portada del artículo sobre Memory Sidecar v3.5.1",
+      "caption": "Portada del artículo que destaca el lanzamiento de la versión 3.5.1 del Memory Sidecar"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen de un diagrama de arquitectura del Sidecar",
+      "caption": "Diagrama simplificado que ilustra la arquitectura del Sidecar y su aislamiento en una MemoryZone"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#HermesMemory",
+    "#Sidecar",
+    "#IAinfrastructure",
+    "#OpenTelemetry",
+    "#Cgroups"
+  ],
+  "fullArticle": "El Memory Sidecar ha sido el motor invisible de las interacciones descentralizadas entre agentes, ofreciendo persistencia de memoria agnóstica sin depender de un framework de IA concreto. Con la llegada de la versión 3.5.1, el enfoque se desplaza de la velocidad de características a la madurez operativa, un cambio que resuena con equipos que ya utilizan Sidecars a escala en producción.\n\nEn esta actualización, el hermes-memory-installer se vuelve el eje central del despliegue: al leer un perfil YAML, valida los parámetros, genera la unidad systemd con límites de memoria y CPU cgroup v2 y lanza el Sidecar dentro de su propia MemoryZone. Esta zona incluye namespaces de montaje, PID y red, garantizando que una operación errónea no se propague a otros Sidecars ni al host.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyskyvmgrvhqw7dywpcts.png]\n\nPara la resiliencia de la escritura, se introduce un log de escritura adelantada (WAL) con modos configurables: memory, disk o sync. Si el backend (PostgreSQL, S3 o disco local) falla, el WAL almacena las mutaciones pendientes y las reproduce cuando la conexión se restablece, evitando pérdidas de datos silenciosas.\n\nLa observabilidad se refina con registro JSON estructurado por defecto y la opción de propagar trazas OpenTelemetry en cada operación de lectura o escritura. Además, el Sidecar expone métricas bajo el endpoint /metrics en el puerto 9610, y el instalador puede configurar automáticamente un objetivo de scrape de Prometheus mediante el descubrimiento de servicios integrado.\n\nEn conjunto, la versión 3.5.1 elimina los tres modos de falla más comunes: consumo de recursos sin control, contaminación cruzada entre instancias y pérdida de datos durante caídas transitorias. Los equipos que migran de versiones anteriores no enfrentan scripts de migración ni limpieza manual, ya que el instalador detecta unidades existentes, actualiza los límites y reinicia suavemente.\n\nEl mensaje es claro: si el despliegue de memoria de agentes se ha pospuesto por preocupaciones de estabilidad, la nueva versión ofrece la robustez necesaria para avanzar sin sacrificar la agilidad de desarrollo. Con hermes-memory-installer, la burocracia se reduce a un comando, permitiendo a los ingenieros concentrarse en construir agentes que realmente recuerden.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:27:45.909Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to (en inglés)",
+      "url": "https://dev.to/hermes-memory/memory-sidecar-v3-5-1-operational-hardening-for-agent-agnostic-memory-3b5"
+    },
+    {
+      "title": "Documentación oficial de Hermes Memory",
+      "url": "https://docs.hermes-memory.dev"
+    },
+    {
+      "title": "Repositorio GitHub del hermes-memory-installer",
+      "url": "https://github.com/hermes-memory/hermes-memory-installer"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Límite de memoria cgroup",
+      "value": "Configurado por el instalador en el perfil YAML"
+    },
+    {
+      "label": "Puerto de métricas",
+      "value": "9610"
+    },
+    {
+      "label": "Modo WAL disponible",
+      "value": "memory, disk, sync"
+    },
+    {
+      "label": "Número de Sidecars soportados",
+      "value": "1,000+ sin degradación"
+    }
+  ]
+}

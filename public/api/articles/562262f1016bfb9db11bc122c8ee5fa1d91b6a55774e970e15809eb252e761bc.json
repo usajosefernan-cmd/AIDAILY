@@ -1,0 +1,79 @@
+{
+  "id": "562262f1016bfb9db11bc122c8ee5fa1d91b6a55774e970e15809eb252e761bc",
+  "title": "El error de array que parece distinto en PHP, Python y JavaScript (pero es el mismo fallo)",
+  "summary": "Un fallo que se presenta de forma diferente en tres lenguajes de programación comunes: PHP, Python y JavaScript. Cada lenguaje maneja la copia y referencia de arrays de manera distinta, lo que puede provocar que los programadores vean cambios inesperados en sus datos tras varias llamadas a funciones.",
+  "url": "https://dev.to/bikkisingh/the-array-bug-that-looks-different-in-php-python-and-javascript-but-is-really-the-same-bug-3mlh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T02:24:39.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkyo0vg17819xl786eqn3.webp",
+  "imageAlt": "El error de array que parece distinto en PHP, Python y JavaScript (pero es el mismo fallo)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un fallo que se presenta de forma diferente en tres lenguajes de programación comunes: PHP, Python y JavaScript. Cada lenguaje maneja la copia y referencia de arrays de manera distinta, lo que puede provocar que los programadores vean cambios inesperados en sus datos tras varias llamadas a funciones.",
+  "keyPoints": [
+    "PHP copia arrays por defecto; para mutar el original se necesita pasar por referencia con &",
+    "Python comparte listas por referencia; una asignación crea un alias, y las listas anidadas requieren deepcopy",
+    "JavaScript maneja arrays como objetos; const evita reasignación pero no protege contra mutaciones internas",
+    "El error aparece tras varias capas de llamadas; el programador debe ajustar su modelo mental al lenguaje"
+  ],
+  "whyMatters": "El impacto de este fallo se siente en proyectos que combinan backend, scripts y frontend. Cuando un array se modifica inesperadamente, los datos pueden corromperse, provocar errores de negocio y aumentar el tiempo de depuración. Reconocer la diferencia entre copia y referencia en cada lenguaje permite diseñar código más robusto y reducir costes de mantenimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkyo0vg17819xl786eqn3.webp",
+      "alt": "Portada del artículo sobre el error de array en PHP, Python y JavaScript",
+      "caption": "Imagen que ilustra la similitud del error en los tres lenguajes"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkyo0vg17819xl786eqn3.webp",
+      "alt": "Portada del artículo (versión reducida) sobre el error de array",
+      "caption": "Imagen que muestra la portada del artículo en formato compacto"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#PHP",
+    "#Python",
+    "#JavaScript",
+    "#CopyOnWrite",
+    "#Const"
+  ],
+  "fullArticle": "En el mundo del desarrollo de software, un error que parece trivial puede convertirse en un dolor de cabeza cuando se trabaja con múltiples lenguajes. El fenómeno de que un array se modifique inesperadamente tras pasar por una función se manifiesta de forma distinta en PHP, Python y JavaScript, aunque la raíz del problema es la misma: la forma en que cada lenguaje gestiona la copia y la referencia de los datos.\n\nPHP adopta un modelo de copia por defecto. Cuando asignas un array a una nueva variable o lo pasas a una función, PHP crea una copia independiente. Si quieres que la función modifique el array original, debes pasar la referencia explícitamente usando el operador &. Este mecanismo evita la mutación accidental, pero exige que el programador sea consciente de cuándo necesita una referencia.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkyo0vg17819xl786eqn3.webp]\n\nEn contraste, Python trata las listas como referencias compartidas. Una asignación simplemente crea un alias al mismo objeto; cualquier cambio se refleja en todas las referencias. Las listas anidadas comparten la misma regla, por lo que una copia superficial sigue compartiendo sublistas. Para evitarlo, se debe usar deepcopy o reestructurar el código.\n\nJavaScript, por su parte, considera los arrays como objetos. Se pasan por referencia, pero la palabra clave const solo impide que la variable se reasigne; el contenido del array sigue siendo mutable. Este detalle a menudo confunde a los desarrolladores que esperan que const haga que el array sea inmutable.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkyo0vg17819xl786eqn3.webp]\n\nEl error se vuelve crítico cuando se trabaja en proyectos que integran un backend en PHP, scripts en Python y un frontend en JavaScript. Un cambio inesperado en un array puede propagarse a través de varias capas de la aplicación, provocando comportamientos erráticos y errores difíciles de rastrear. La solución pasa por reconocer el modelo de copia de cada lenguaje y ajustar el diseño de la función y la arquitectura de datos en consecuencia.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T02:45:02.711Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Wikipedia: Copy-on-write",
+      "url": "https://en.wikipedia.org/wiki/Copy-on-write"
+    },
+    {
+      "title": "Documentación oficial de Python sobre estructuras de datos",
+      "url": "https://docs.python.org/3/tutorial/datastructures.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Semántica de copia en PHP",
+      "value": "Copy-on-write (se crea copia al escribir)"
+    },
+    {
+      "label": "Referencia por defecto en Python",
+      "value": "Referencia compartida (se comparte el mismo objeto)"
+    },
+    {
+      "label": "Const en JavaScript",
+      "value": "Bloquea reasignación pero permite mutación del contenido"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

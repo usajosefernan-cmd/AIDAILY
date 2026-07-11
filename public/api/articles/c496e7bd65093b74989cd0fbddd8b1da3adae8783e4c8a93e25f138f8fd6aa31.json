@@ -1,0 +1,77 @@
+{
+  "id": "c496e7bd65093b74989cd0fbddd8b1da3adae8783e4c8a93e25f138f8fd6aa31",
+  "title": "Un desarrollador autodidacta lanza el primer starter de tienda para perfumes y cosméticos basado en Next.js 16 y revela los errores que le costaron horas resolver",
+  "summary": "Un desarrollador autodidacta presenta Aura, un starter de tienda en línea especializado en perfumes y cosméticos construido con Next.js 16, en el que comparte los retos técnicos que enfrentó durante su desarrollo y las soluciones que implementó para adaptarse a las particularidades de la venta de productos de belleza.",
+  "url": "https://dev.to/maegamidev/i-built-a-nextjs-16-store-starter-for-perfume-cosmetics-and-learned-a-few-things-fgg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T00:55:04.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F87pas0l44r3okys93acd.png",
+  "imageAlt": "Un desarrollador autodidacta lanza el primer starter de tienda para perfumes y cosméticos basado en Next.js 16 y revela los errores que le costaron horas resolver",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador autodidacta presenta Aura, un starter de tienda en línea especializado en perfumes y cosméticos construido con Next.js 16, en el que comparte los retos técnicos que enfrentó durante su desarrollo y las soluciones que implementó para adaptarse a las particularidades de la venta de productos de belleza.",
+  "keyPoints": [
+    "El starter Aura está especializado en el nicho de perfumes y cosméticos, diferenciándose de las plantillas genéricas de comercio electrónico al adaptarse a los hábitos de compra específicos de este sector.",
+    "El desarrollador solucionó la restricción de la nueva regla de lint de React 19 que prohíbe leer o escribir refs durante el render, sustituyendo el uso de refs por el estado de React.",
+    "Implementó CSS variables para los viales de perfume, evitando tener que crear versiones separadas para modo claro y oscuro, lo que reduce la carga de trabajo y el código duplicado.",
+    "El proyecto incluye adaptaciones a cambios de Next.js 16 como params y searchParams que ahora son promesas, y la configuración de Tailwind v4 en el archivo globals.css."
+  ],
+  "whyMatters": "Este lanzamiento es relevante porque cubre un nicho desatendido en el ecosistema de plantillas de comercio electrónico, donde la mayoría de soluciones son genéricas y no se adaptan a las particularidades de la venta de productos de belleza, como la necesidad de mostrar información olfativa o de composición de forma intuitiva. Las soluciones técnicas que comparte el desarrollador, como el manejo de refs en React 19 o el uso de CSS variables para temas, son de gran utilidad para otros profesionales que se enfrentan a las mismas restricciones en sus proyectos. Además, al ser un producto funcional con pruebas incluidas, reduce la barrera de entrada para pequeños emprendedores del sector de la belleza que quieren lanzar su tienda en línea sin altos costos de desarrollo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F87pas0l44r3okys93acd.png",
+      "alt": "Imagen de portada del artículo que anuncia el lanzamiento del starter de tienda para perfumes y cosméticos Aura basado en Next.js 16",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#NextJs16",
+    "#React19",
+    "#DesarrolloWeb",
+    "#EcommerceBelleza",
+    "#TailwindV4"
+  ],
+  "fullArticle": "Un desarrollador autodidacta ha dado a conocer Aura, un starter de tienda en línea especializado en el nicho de perfumes y cosméticos, construido sobre la base de Next.js 16, la última versión estable del framework de React para aplicaciones web. Se trata del primer proyecto terminado y puesto a la venta por su creador, quien decidió no lanzar una plantilla genérica de comercio electrónico, sino adaptarla a los hábitos de compra específicos de los productos de belleza, un segmento con particularidades que suelen ser ignoradas por las soluciones prehechas del mercado. El starter ya cuenta con una demostración pública en línea y está disponible para su compra a través de la plataforma Gumroad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F87pas0l44r3okys93acd.png]\n\nDurante el desarrollo, el creador se encontró con varios retos derivados de las novedades de las versiones más recientes de las herramientas que utilizó. El primero de ellos fue la nueva regla de lint de React 19, que prohíbe leer o escribir refs durante el proceso de render, lo que le obligó a modificar la implementación del panel deslizante de información de producto que se activa al pasar el cursor. La solución que adoptó fue sustituir el uso de refs por el estado de React, almacenando la información del último producto consultado en el estado de la aplicación para que el panel lo mantuviera visible incluso mientras se desliza fuera de la pantalla. Otro cambio significativo fue la adaptación a las modificaciones de Next.js 16, donde los objetos params y searchParams ahora son promesas que deben ser resueltas con await, además del cambio de ubicación de la configuración de Tailwind CSS, que en su versión 4 se aloja directamente en el archivo globals.css en lugar de un archivo de configuración independiente.\n\nUna de las decisiones de diseño que más satisfacción le generó al desarrollador fue la implementación de los viales de perfume, que no son imágenes estáticas sino elementos div con estilos CSS, para los que utilizó variables CSS para el relleno en lugar de colores fijos. Esta decisión le permitió que los mismos viales funcionen tanto en el modo claro como en el modo oscuro de la tienda sin necesidad de crear versiones duplicadas de los gráficos ni de añadir clases adicionales de modo oscuro, reduciendo la carga de trabajo y el tamaño del proyecto. El starter incluye además soporte nativo para temas claros y oscuros, tipografía tipada, pruebas automatizadas y todas las funcionalidades básicas de una tienda en línea adaptada al sector de la belleza.\n\nEl lanzamiento de Aura supone la primera incursión del desarrollador en la venta de productos digitales, por lo que ha invitado a la comunidad a enviar feedback sobre el diseño, el código o cualquier aspecto del proyecto para mejorarlo en futuras versiones. La iniciativa se enmarca en una tendencia creciente de lanzamiento de plantillas especializadas para nichos concretos del comercio electrónico, que buscan resolver las limitaciones de las soluciones genéricas que no tienen en cuenta las particularidades de cada sector. Para los pequeños emprendedores del mundo de la belleza, esta herramienta supone una oportunidad de lanzar su tienda en línea con costos de desarrollo reducidos y sin necesidad de conocimientos avanzados de programación, ya que el starter incluye toda la lógica de venta adaptada a productos como perfumes, cremas o maquillaje.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T01:27:37.144Z",
+  "links": [
+    {
+      "title": "Demostración en vivo del starter Aura",
+      "url": "https://aura-starter.vercel.app"
+    },
+    {
+      "title": "Página de compra del starter Aura en Gumroad",
+      "url": "https://maegami.gumroad.com/l/aura/LAUNCH"
+    },
+    {
+      "title": "Documentación oficial de Next.js 16",
+      "url": "https://nextjs.org/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Next.js utilizada",
+      "value": "Next.js 16"
+    },
+    {
+      "label": "Versión de React con restricción de refs",
+      "value": "React 19"
+    },
+    {
+      "label": "Versión de Tailwind CSS implementada",
+      "value": "Tailwind v4"
+    },
+    {
+      "label": "Nicho de mercado del starter",
+      "value": "Perfumes y cosméticos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

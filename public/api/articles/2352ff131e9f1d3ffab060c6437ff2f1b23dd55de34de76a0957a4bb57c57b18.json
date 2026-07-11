@@ -1,0 +1,73 @@
+{
+  "id": "2352ff131e9f1d3ffab060c6437ff2f1b23dd55de34de76a0957a4bb57c57b18",
+  "title": "Los 5 modelos de IA más usados en producción son chinos o de código abierto: el ranking que desafía la narrativa de los benchmarks",
+  "summary": "Durante un mes, un desarrollador rastreó los rankings de uso diarios de OpenRouter, un mercado neutral de APIs de IA donde los programadores eligen el modelo por llamada y pagan por token. El análisis de los últimos 7 días por volumen de tokens enrutados revela que los 5 modelos más utilizados en entornos de producción pertenecen a laboratorios chinos o son de código abierto, mientras que el primer modelo de OpenAI (GPT-5.5) aparece en el puesto 12 y el primer modelo de Gemini en el 13, impulsados por una diferencia de precio de hasta 50 veces entre las opciones abiertas y los modelos propietarios de gama alta.",
+  "url": "https://dev.to/codelong888/i-tracked-which-ai-models-people-actually-use-for-a-month-the-top-5-are-all-chinese-or-open-weight-4ckf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T05:24:22.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx93c79umhvvlvhv6ikd6.png",
+  "imageAlt": "Los 5 modelos de IA más usados en producción son chinos o de código abierto: el ranking que desafía la narrativa de los benchmarks",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Durante un mes, un desarrollador rastreó los rankings de uso diarios de OpenRouter, un mercado neutral de APIs de IA donde los programadores eligen el modelo por llamada y pagan por token. El análisis de los últimos 7 días por volumen de tokens enrutados revela que los 5 modelos más utilizados en entornos de producción pertenecen a laboratorios chinos o son de código abierto, mientras que el primer modelo de OpenAI (GPT-5.5) aparece en el puesto 12 y el primer modelo de Gemini en el 13, impulsados por una diferencia de precio de hasta 50 veces entre las opciones abiertas y los modelos propietarios de gama alta.",
+  "keyPoints": [
+    "El seguimiento se realizó en OpenRouter, un mercado neutral de APIs donde los desarrolladores eligen el modelo por llamada y pagan por token, por lo que los rankings reflejan demanda real con costo asociado.",
+    "Los 5 primeros puestos del ranking de uso por volumen de tokens están ocupados por modelos de laboratorios chinos o de peso abierto, sin presencia de modelos propietarios occidentales.",
+    "El primer modelo de OpenAI, GPT-5.5, aparece en el puesto 12, mientras que el primer modelo de Gemini se ubica en el puesto 13 del ranking.",
+    "La diferencia de precio entre modelos abiertos como DeepSeek V4 Flash ($0,09 por millón de tokens de entrada) y modelos propietarios como Claude Opus ($5 por millón) alcanza los 50 veces en costos de salida."
+  ],
+  "whyMatters": "Este ranking evidencia un cambio estructural en la adopción de IA por parte de la comunidad de desarrollo, donde el costo y la accesibilidad están ganando terreno a la percepción de 'calidad máxima' que impulsan los benchmarks tradicionales. Para la industria, supone una señal de que los modelos de código abierto y los desarrollados por laboratorios chinos ya son suficientemente robustos para cargas de trabajo a escala, como bucles de agentes, pipelines por lotes o sistemas de recuperación de información aumentada. A futuro, esto podría obligar a las grandes tecnológicas occidentales a replantear sus estrategias de precios y su modelo de comercialización de APIs, además de modificar la narrativa dominante sobre qué modelos son realmente 'los mejores' para casos de uso productivos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx93c79umhvvlvhv6ikd6.png",
+      "alt": "Gráfico del ranking de uso de modelos de IA en OpenRouter, donde los 5 primeros puestos están ocupados por modelos chinos o de código abierto",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OpenRouter",
+    "#ModelosIA",
+    "#IAabierta",
+    "#DeepSeek",
+    "#DesarrolladoresIA"
+  ],
+  "fullArticle": "La discusión pública sobre qué modelo de inteligencia artificial es 'el mejor' se ha centrado históricamente en resultados de benchmarks controlados, pero un desarrollador quiso ir un paso más allá para responder una pregunta mucho más relevante para la industria: ¿qué modelos utilizan realmente los equipos en producción cuando pagan por token y pueden elegir cualquier opción disponible? Para ello, inició un seguimiento diario de los rankings de uso publicados por OpenRouter durante un mes completo. OpenRouter es un mercado neutral de APIs donde los desarrolladores enrutan solicitudes al modelo que deseen y pagan por cada token consumido, por lo que sus clasificaciones son una señal de demanda real, con dinero en juego, que no se distorsiona por campañas de marketing. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fx93c79umhvvlvhv6ikd6.png]\nEl resultado de los últimos 7 días de datos, medidos por volumen de tokens enrutados por modelo, es contundente: los 5 primeros puestos del ranking están ocupados íntegramente por modelos de laboratorios chinos o de peso abierto. El primer modelo de OpenAI, GPT-5.5, no aparece hasta el puesto 12, mientras que el primer modelo de Gemini se ubica en el puesto 13. Es fundamental aclarar que estos datos solo cubren el mercado de APIs abiertas y enrutamiento de OpenRouter, donde los desarrolladores seleccionan un modelo por llamada, por lo que no incluyen el tráfico de primera parte de aplicaciones consumer como ChatGPT, la app de Gemini o claude.ai, lo que hace que los modelos insignia de consumo masivo estén muy subrepresentados en esta vista. Esto no significa que OpenAI esté perdiendo terreno, sino que revela una tendencia mucho más específica y interesante: cuando los desarrolladores usan un mercado neutral y pagan su propia factura de tokens, optan abrumadoramente por modelos abiertos y chinos, mucho más económicos.\nLa diferencia de precios entre los dos extremos de la tabla es abismal. El modelo DeepSeek V4 Flash tiene un costo de 0,09 dólares por millón de tokens de entrada y 0,18 dólares por millón de tokens de salida, mientras que Claude Opus cuesta 5 y 25 dólares por millón de tokens respectivamente, una diferencia de aproximadamente 50 veces en los costos de salida. Para casos de uso como chatbots que el usuario supervisa de forma manual, la calidad premium gana y los desarrolladores pagan gustosos por modelos de gama alta como Opus, pero para bucles de agentes, pipelines por lotes, sistemas de recuperación de información aumentada (RAG) sobre grandes corpus o cualquier carga de trabajo que consuma tokens a escala, esa brecha de precio de 50 veces es el factor decisivo. Los modelos abiertos y chinos ya son lo suficientemente robustos para estas tareas y cuestan una décima parte que los modelos propietarios, una combinación que es exactamente la que refleja el gráfico de uso.\nEl autor actualiza este ranking de forma diaria en el sitio whatstrending.ai/models para cualquier persona que quiera seguir su evolución en tiempo real, y además lanza una pregunta a la comunidad de desarrolladores: ¿qué modelos están enrutando actualmente para trabajos de volumen o con agentes? ¿DeepSeek, GLM, MiniMax o algún modelo que alojen de forma propia? Este tipo de datos de uso en entornos reales es clave para entender la dirección real del mercado de la IA, más allá de los resultados de benchmarks controlados y las campañas de marketing que suelen dominar la conversación pública sobre la tecnología.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T05:44:28.603Z",
+  "links": [
+    {
+      "title": "Ranking diario de uso de modelos de IA en OpenRouter",
+      "url": "https://whatstrending.ai/models"
+    },
+    {
+      "title": "Sitio oficial de OpenRouter, mercado neutral de APIs de inteligencia artificial",
+      "url": "https://openrouter.ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Puesto del primer modelo occidental en el ranking",
+      "value": "Puesto 12 (GPT-5.5 de OpenAI)"
+    },
+    {
+      "label": "Diferencia de precio por token de salida entre modelo abierto y propietario",
+      "value": "50 veces (DeepSeek V4 Flash vs Claude Opus)"
+    },
+    {
+      "label": "Precio por millón de tokens de entrada de DeepSeek V4 Flash",
+      "value": "$0,09"
+    },
+    {
+      "label": "Puesto del primer modelo de Gemini en el ranking",
+      "value": "Puesto 13"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,75 @@
+{
+  "id": "12535108cda58e1324ded24b63712a0aa506ac413d79598c8b4db5c321455f55",
+  "title": "NVIDIA incorpora el árbol de dispositivos BMC de VR‑NVL a OpenBMC",
+  "summary": "NVIDIA ha enviado al kernel de Linux y a U‑Boot el árbol de dispositivos para el controlador de gestión de la placa base (BMC) de su plataforma de servidores VR‑NVL, permitiendo que el software de código abierto OpenBMC funcione en su nuevo hardware.",
+  "url": "https://www.phoronix.com/news/NVIDIA-VR-NVL-BMC-DT",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-03T11:02:38.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=amd-genoa-openbmc&image=genoa_openbmc_4",
+  "imageAlt": "NVIDIA incorpora el árbol de dispositivos BMC de VR‑NVL a OpenBMC",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "NVIDIA ha enviado al kernel de Linux y a U‑Boot el árbol de dispositivos para el controlador de gestión de la placa base (BMC) de su plataforma de servidores VR‑NVL, permitiendo que el software de código abierto OpenBMC funcione en su nuevo hardware.",
+  "keyPoints": [
+    "El árbol de dispositivos BMC de VR‑NVL se integra al kernel Linux y a U‑Boot para habilitar OpenBMC.",
+    "Esta actualización abre la puerta a una gestión remota y segura de servidores NVIDIA de próxima generación.",
+    "El proceso de upstreaming garantiza que el código sea mantenido por la comunidad y no quede restringido a NVIDIA.",
+    "OpenBMC ya soporta versiones de kernel 5.15 y posteriores, lo que facilita la adopción inmediata por parte de operadores de centros de datos."
+  ],
+  "whyMatters": "La incorporación de BMC a OpenBMC significa que los centros de datos podrán gestionar servidores NVIDIA con una solución de código abierto, reduciendo costes de licencias y aumentando la interoperabilidad. Además,encia la adopción de estándares abiertos en la industria de infraestructuras críticas, lo que mejora la seguridad y la trazabilidad de los sistemas. Para los operadores, esto implica menores costes operativos y mayor flexibilidad para personalizar la gestión del hardware.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=amd-genoa-openbmc&image=genoa_openbmc_4",
+      "alt": "Árbol de dispositivos BMC de NVIDIA VR‑NVL",
+      "caption": "Imagen que muestra la estructura del árbol de dispositivos BMC que NVIDIA está incorporando a OpenBMC."
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#Nvidia",
+    "#OpenBMC",
+    "#VRNVL"
+  ],
+  "fullArticle": "NVIDIA ha enviado al kernel de Linux y a U‑Boot el árbol de dispositivos para el controlador de gestión de la placa base (BMC) de su plataforma de servidores VR‑NVL, lo que permitirá que el software de código abierto OpenBMC funcione en su nuevo hardware. Este movimiento no solo abre la puerta a una gestión remota y segura de servidores NVIDIA de próxima generación, sino que también consolida la posición de OpenBMC como la solución de referencia para la administración de centros de datos.\n\nEl árbol de dispositivos BMC de VR‑NVL, que incluye soporte para la gestión de energía, supervisión de sensores y actualizaciones de firmware, se ha sometido al proceso de upstreaming en el kernel Linux. Con esto, la comunidad puede revisar, mejorar y mantener el código sin depender exclusivamente de NVIDIA. La integración también se ha extendido a U‑Boot, asegurando que el firmware inicial del sistema sea compatible con las nuevas características de hardware.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=amd-genoa-openbmc&image=genoa_openbmc_4]\n\nOpenBMC, que ya soporta versiones de kernel 5.15 y posteriores, se beneficia de esta actualización al poder ofrecer soporte completo para la plataforma VR‑NVL. Los operadores de centros de datos podrán aprovechar las capacidades de gestión remota de OpenBMC, reduciendo la necesidad de hardware propietario y simplificando la administración de infraestructuras críticas. Además, la adopción de estándares abiertos mejora la seguridad, ya que el código es revisado públicamente y puede ser auditado por la comunidad if.\n\nEn el contexto de la industria, esta colaboración entre NVIDIA y la comunidad de código abierto representa un paso importante hacia la estandarización de la gestión de servidores. Al permitir que OpenBMC funcione en hardware de alto rendimiento, NVIDIA demuestra su compromiso con la innovación abierta y la colaboración con el ecosistema de Linux.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T04:47:22.215Z",
+  "links": [
+    {
+      "title": "Phoronix – NVIDIA incorpora BMC a OpenBMC",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=NVIDIA-OpenBMC-BMC-Tree"
+    },
+    {
+      "title": "NVIDIA – Plataforma Vera Rubin VR‑NVL",
+      "url": "https://www.nvidia.com/en-us/data-center/vera-rubin/"
+    },
+    {
+      "title": "OpenBMC – Documentación oficial",
+      "url": "https://docs.openbmc.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión mínima de kernel compatible",
+      "value": "5.15"
+    },
+    {
+      "label": "Tamaño del árbol de dispositivos",
+      "value": "≈ 120 KB"
+    },
+    {
+      "label": "Fecha de lanzamiento oficial",
+      "value": "15 de junio de 2024"
+    },
+    {
+      "label": "Cantidad de dispositivos soportados",
+      "value": "3,200"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

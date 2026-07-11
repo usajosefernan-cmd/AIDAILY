@@ -1,0 +1,76 @@
+{
+  "id": "1396bfda01d4c2aea667dde41a1078bf7ed720822d148a57750c6e8d424cf5be",
+  "title": "Elastic libera Atlas: el sistema de memoria para agentes de IA basado en ciencia cognitiva que guarda hasta años de interacciones",
+  "summary": "Elastic ha liberado como código abierto Atlas, un sistema construido sobre Elasticsearch que implementa tres tipos de memoria cognitiva (episódica, semántica y procedimental) para agentes de IA, permitiendo recordar interacciones de años, superar el límite de la ventana de contexto y aislar recuerdos por usuario, con un rendimiento de 0,89 en Recall@10 en pruebas de preguntas y respuestas.",
+  "url": "https://www.infoq.com/news/2026/06/elastic-atlas-agent-memory/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-06-30T13:00:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/document-infrastructure-rust-typst/en/smallimage/ErikSteiger-thumbnail-1782220478687.jpg",
+  "imageAlt": "Elastic libera Atlas: el sistema de memoria para agentes de IA basado en ciencia cognitiva que guarda hasta años de interacciones",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Elastic ha liberado como código abierto Atlas, un sistema construido sobre Elasticsearch que implementa tres tipos de memoria cognitiva (episódica, semántica y procedimental) para agentes de IA, permitiendo recordar interacciones de años, superar el límite de la ventana de contexto y aislar recuerdos por usuario, con un rendimiento de 0,89 en Recall@10 en pruebas de preguntas y respuestas.",
+  "keyPoints": [
+    "Atlas es un sistema de memoria para agentes de IA liberado como código abierto por Elastic, construido sobre Elasticsearch para garantizar escalabilidad y rendimiento.",
+    "Implementa tres tipos de memoria basados en ciencia cognitiva: episódica (qué sucedió), semántica (qué es verdad) y procedimental (qué funciona), cada una con índices separados.",
+    "Consolida recuerdos mediante un modelo de lenguaje que extrae hechos duraderos de interacciones episódicas y actualiza manuales de procedimiento con contadores de éxito y fracaso.",
+    "Utiliza una consulta híbrida que combina búsqueda léxica BM25 y semántica con Jina v5, con re-ranking por cross-encoder y aislamiento de recuerdos por usuario mediante DLS."
+  ],
+  "whyMatters": "Este desarrollo supone un hito para la construcción de agentes de IA verdaderamente útiles a largo plazo, ya que resuelve una de las limitaciones más grandes de los modelos actuales: la imposibilidad de recordar interacciones pasadas una vez finalizada la sesión. Al implementar estructuras de memoria basadas en modelos cognitivos humanos, Elastic no solo mejora la capacidad de respuesta de los agentes, sino que reduce costos de latencia y evita el efecto de 'pérdida en el medio' que afecta a los modelos con ventanas de contexto muy amplias. Su liberación como código abierto permitirá a la comunidad de desarrolladores adoptar y mejorar esta tecnología, acelerando la creación de asistentes personalizados capaces de adaptarse a las necesidades de cada usuario a lo largo del tiempo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/document-infrastructure-rust-typst/en/smallimage/ErikSteiger-thumbnail-1782220478687.jpg",
+      "alt": "Elastic Open-Sources Atlas Agent Memory Based on Cognitive Science",
+      "caption": "Million PDFs: Building a Modern Document Infrastructure with Rust and Typst"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Elastic",
+    "#AtlasAgent",
+    "#MemoriaIA",
+    "#CienciaCognitiva"
+  ],
+  "fullArticle": "El gigante de la tecnología Elastic ha dado un paso decisivo en la evolución de los agentes de inteligencia artificial al liberar como código abierto Atlas, un sistema de memoria persistente basado en principios de la ciencia cognitiva que resuelve una de las limitaciones más críticas de los modelos de lenguaje actuales: la incapacidad de recordar interacciones pasadas una vez finalizada la sesión de usuario. Construido sobre la base de Elasticsearch, Atlas está diseñado para integrarse con cualquier agente de IA a través del protocolo MCP (Model Context Protocol), garantizando además un aislamiento total de los recuerdos de cada usuario, una característica esencial para cumplir con normativas de privacidad y evitar filtraciones de información sensible. En pruebas de rendimiento en capacidades de preguntas y respuestas, el sistema ha alcanzado una puntuación de 0,89 en la métrica Recall@10, lo que demuestra su eficacia para recuperar información relevante de forma precisa.\n\nHasta ahora, el método habitual para dotar a los agentes de IA de contexto sobre interacciones anteriores consistía en introducir todo el historial de conversación en la ventana de contexto del modelo de lenguaje, una solución que se vuelve insostenible a medida que aumenta el volumen de interacciones. Como explica Elastic en su documentación, este enfoque genera sobrecostos, incrementa la latencia de respuesta y activa el efecto de 'pérdida en el medio', un fenómeno bien documentado por el que los modelos de lenguaje ignoran la información situada en posiciones intermedias de la ventana de contexto. 'Una ventana de contexto de 1 millón de tokens es una pizarra de notas, no un sistema de memoria', señalan los responsables del proyecto. 'Lo que falta es memoria a largo plazo: un almacén persistente que sobreviva al final de la sesión, que escale a años de interacciones y que permita recuperar hechos por contenido, por fecha y por usuario'.\n\nLa base conceptual de Atlas se apoya en la clasificación de la memoria humana desarrollada por la ciencia cognitiva, que distingue tres tipos fundamentales: la memoria episódica, que registra 'lo que sucedió' en cada interacción; la memoria semántica, que almacena 'lo que es verdad' en forma de hechos consolidados; y la memoria procedimental, que guarda 'lo que funciona' en forma de manuales de resolución de problemas. El sistema mantiene índices separados de Elasticsearch para cada tipo de memoria, ya que cada uno cuenta con reglas de almacenamiento y ciclo de vida distintas. Los recuerdos se generan almacenando cada entrada de usuario como un evento de memoria episódica, la mayoría de los cuales se desvanecen con el tiempo, aunque algunos se convierten en evidencia para hechos duraderos. Este proceso de consolidación lo realiza un modelo de lenguaje que identifica nuevos hechos, los almacena como oraciones cortas en la memoria semántica junto con las memorias episódicas que los respaldan, y elimina los hechos anteriores que quedan obsoletos.\n\nPara recuperar la información relevante, Atlas realiza una consulta híbrida única que combina la búsqueda léxica BM25 con la búsqueda semántica del modelo Jina v5, fusiona los resultados mediante Reciprocal Rank Fusion (RRF) y los reordena con un reranker de cross-encoder, garantizando así la máxima precisión en las respuestas. La seguridad de los datos está garantizada por el sistema de seguridad a nivel de documento (DLS) de Elasticsearch, que asegura que las consultas solo accedan a los recuerdos pertenecientes al usuario que realiza la petición. El lanzamiento de Atlas ha generado debate en comunidades como Hacker News, donde algunos usuarios han cuestionado si el uso de Elasticsearch como almacenamiento es 'excesivo' y han propuesto alternativas como bases de datos vectoriales más ligeras, aunque otros han defendido la elección por la capacidad de Elasticsearch para funciones como la puntuación por script, que escasea en soluciones más sencillas. El código fuente del sistema está disponible de forma gratuita en GitHub, lo que permitirá a desarrolladores de todo el mundo adaptarlo a sus propias necesidades y contribuir a su mejora.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T05:12:10.365Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Atlas en GitHub",
+      "url": "https://github.com/elastic/atlas"
+    },
+    {
+      "title": "Documentación oficial de Atlas",
+      "url": "https://www.elastic.co/guide/en/atlas/current/index.html"
+    },
+    {
+      "title": "Noticia original en InfoQ",
+      "url": "https://www.infoq.com/news/2026/06/elastic-open-sources-atlas-agent-memory/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Puntuación en Recall@10",
+      "value": "0,89"
+    },
+    {
+      "label": "Tipos de memoria implementados",
+      "value": "3 (episódica, semántica, procedimental)"
+    },
+    {
+      "label": "Protocolo de integración con agentes",
+      "value": "MCP (Model Context Protocol)"
+    },
+    {
+      "label": "Motor de almacenamiento base",
+      "value": "Elasticsearch"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

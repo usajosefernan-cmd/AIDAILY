@@ -1,0 +1,38 @@
+{
+  "id": "c57aeff019cb8698422bf261cab74b10af8799be6c6506c9e58ab1619f5e4045",
+  "title": "Teaching Claude Code to Write and Grow Its Own Skills: A Self-Replicating Agent Environment",
+  "summary": "La última vez escribí sobre dividir la memoria de Claude Code en cuatro capas. Esta es la continuación: una configuración en la que el propio Claude Code descubre \"procedimientos reutilizables\" y los acumula como habilidades a lo largo del tiempo.\n\nDespués de ejecutar esto durante unos meses, ~/.claude/skills/auto/ ahora tiene 64 habilidades generadas automáticamente. ...",
+  "url": "https://dev.to/bokuwalily/teaching-claude-code-to-write-and-grow-its-own-skills-a-self-replicating-agent-environment-20eb",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T17:30:33.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw2y61pxxxko95nb8zxk5.png",
+  "imageAlt": "Teaching Claude Code to Write and Grow Its Own Skills: A Self-Replicating Agent Environment",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La última vez escribí sobre dividir la memoria de Claude Code en cuatro capas. Esta es la continuación: una configuración en la que el propio Claude Code descubre \"procedimientos reutilizables\" y los acumula como habilidades a lo largo del tiempo.\n\nDespués de ejecutar esto durante unos meses, ~/.claude/skills/auto/ ahora tiene 64 habilidades generadas automáticamente. ...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw2y61pxxxko95nb8zxk5.png",
+      "alt": "Teaching Claude Code to Write and Grow Its Own Skills: A Self-Replicating Agent Environment",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "La última vez escribí sobre dividir la memoria de Claude Code en cuatro capas. Esta es la continuación: una configuración en la que el propio Claude Code descubre \"procedimientos reutilizables\" y los acumula como habilidades a lo largo del tiempo.\n\nDespués de ejecutar esto durante unos meses, ~/.claude/skills/auto/ ahora tiene 64 habilidades generadas automáticamente. En este artículo cubriré el diseño de esa autorreplicación, los mecanismos que previenen la sobreproducción y la curva de generación que observé mientras la operaba.\n\nClaude Code es capaz, pero entre sesiones olvida \"cómo solucioné este error la última vez\". Cómo arreglar la salida 78 de launchd, los pasos para crear un favicon con png-to-ico, cómo recortar la carga útil de RSC en Next.js: estos procedimientos que ya debería haber resuelto una vez se reconstruían desde cero cada vez.\n\nPodría escribir a mano adiciones a CLAUDE.md, pero eso se convierte en un flujo de trabajo de \"quien se da cuenta, lo escribe\", y eso no dura. Así que le di la vuelta a la idea y decidí que Claude hiciera el trabajo de encontrar los procedimientos también.\n\nLa generación de habilidades se divide en dos niveles.\n\nLuego, semanalmente se ejecuta un Curador (skill-curate.sh) para organizar periódicamente las habilidades acumuladas. La clave es separar generación y organización en d...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T17:45:13.970Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

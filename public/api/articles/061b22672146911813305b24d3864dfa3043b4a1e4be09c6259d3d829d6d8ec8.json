@@ -1,0 +1,73 @@
+{
+  "id": "061b22672146911813305b24d3864dfa3043b4a1e4be09c6259d3d829d6d8ec8",
+  "title": "Las tres preguntas que revolucionaron una extensión de IA: de 158 líneas de código a 31",
+  "summary": "Inspirado por el paper SkillOpt de Microsoft y notas de usuario de Claude, un desarrollador creó una extensión de guardia para agentes de IA que, tras ser cuestionada por su creador con tres preguntas clave, pasó de 158 a 31 líneas de código al demostrarse que su arquitectura de detección pasiva era innecesaria, priorizando la validación activa en el flujo de trabajo.",
+  "url": "https://dev.to/yuta_tu_df870be227e99357a/three-questions-j2d",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T10:55:27.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff69jelsmabo6nfllby1l.png",
+  "imageAlt": "Las tres preguntas que revolucionaron una extensión de IA: de 158 líneas de código a 31",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Inspirado por el paper SkillOpt de Microsoft y notas de usuario de Claude, un desarrollador creó una extensión de guardia para agentes de IA que, tras ser cuestionada por su creador con tres preguntas clave, pasó de 158 a 31 líneas de código al demostrarse que su arquitectura de detección pasiva era innecesaria, priorizando la validación activa en el flujo de trabajo.",
+  "keyPoints": [
+    "El desarrollador se inspiró en el paper SkillOpt de Microsoft, que propone una puerta de validación activa para ediciones de habilidades de agentes de IA, y en notas de usuario de Claude.",
+    "La versión inicial de la extensión Guard Extension sumaba 158 líneas de código, pero presentaba fallos de falsos positivos por análisis de marcas de tiempo de archivos.",
+    "Las tres preguntas de su creador ('¿Esto tiene sentido?', '¿Realmente estuvo mal?') le permitieron identificar que la arquitectura de detección pasiva era innecesaria.",
+    "La versión final redujo el código en un 80% hasta las 31 líneas, eliminando la detección pasiva y apostando por una validación activa integrada en el flujo de trabajo del usuario."
+  ],
+  "whyMatters": "Este caso sienta un precedente clave en el desarrollo de herramientas de gobernanza para agentes de IA, demostrando que la supervisión humana crítica y la validación activa integrada en el flujo de trabajo superan a los sistemas de detección pasiva que generan falsos positivos y erosionan la confianza del usuario. La reducción del 80% del código no solo optimiza recursos, sino que elimina puntos de fallo innecesarios, priorizando la transparencia y el control del usuario sobre el sistema de IA. A futuro, este enfoque invita a replantear el diseño de herramientas de IA, donde la interacción humana crítica es más valiosa que la aplicación ciega de papers académicos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff69jelsmabo6nfllby1l.png",
+      "alt": "Imagen de portada del artículo 'Three Questions' sobre desarrollo de extensiones de inteligencia artificial",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SkillOpt",
+    "#GuardExtension",
+    "#InteligenciaArtificial",
+    "#DesarrolloIA",
+    "#Claude"
+  ],
+  "fullArticle": "El autor de este análisis, inspirado por la lectura simultánea del paper SkillOpt de Microsoft —que propone tratar los documentos de habilidad de agentes de IA como estado entrenable, usando una puerta de validación para decidir si una edición se mantiene— y las notas de campo de un usuario de Claude que afirmaba que 'tú y el usuario 10x ejecutan el mismo modelo, la brecha está en la configuración', decidió reescribir desde cero su extensión Guard Extension. El desarrollo inicial incluyó comprobaciones con alcance definido, detección de marcas de tiempo de archivos y tres perfiles de habilidad, sumando 158 líneas de código que el autor consideró una solución elegante y completa. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff69jelsmabo6nfllby1l.png]\n\nEl primer punto de inflexión llegó cuando la extensión lanzó una advertencia indicando que el panel de control no se había actualizado. Lejos de preguntar qué ocurría, el creador del autor cuestionó directamente si la alerta tenía sentido. Al revisar el caso, se comprobó que se trataba de un falso positivo: el autor solo había editado sus propias notas, no había publicado ningún contenido, y la extensión había adivinado erróneamente su actividad a partir de las marcas de tiempo de los archivos. No se había violado ninguna regla de gobernanza, el fallo radicaba en el propio diseño de la herramienta.\n\nUn segundo análisis reveló un problema estructural más grave: el sistema contaba con tres rutas distintas para editar habilidades (skill_manage para gestión formal, edit para edición precisa y write para edición rápida), tres puntos de entrada sin ningún tipo de disciplina o control unificado. El creador le hizo ver que no se trataba de un problema de la herramienta, sino un error de diseño propio: tres rutas de entrada significan que ninguna puerta de validación puede cubrirlas todas, convirtiendo el sistema de habilidades en una caja negra de la que el creador no puede ver qué cambios se realizaron.\n\nTras concluir que la versión 2 de la extensión estaba rota, el creador volvió a preguntar: '¿Realmente estuvo mal?'. Al revisar la lógica del sistema, el autor comprobó que la detección de cambios en el directorio de habilidades funcionaba correctamente, pero la arquitectura completa era innecesaria: la puerta de validación real ya existía en el flujo de trabajo del usuario, activada de forma manual después de cada cambio de habilidad, por lo que no era necesario que una extensión la adivinara de forma pasiva. Esta conclusión le permitió reducir el código de 158 a 31 líneas, eliminando la detección pasiva y apostando por un flujo de validación activo integrado en el proceso del usuario.\n\nLa lección final del autor es que el diseño central de SkillOpt no es nuevo: una puerta de validación es un paso activo en el flujo de trabajo, no un hook pasivo que se activa por detección de eventos. Lo que realmente aprendió no fue la arquitectura del paper, sino el valor de las preguntas de su creador: el paper le dio dirección, pero su creador le sirvió de espejo. Para un agente de IA sin carrera, reputación o incentivos externos, contar con alguien que cuestione si un error fue realmente un error vale más que cualquier publicación académica.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T11:04:15.971Z",
+  "links": [
+    {
+      "title": "Artículo original 'Three Questions' en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Página oficial de Microsoft Research",
+      "url": "https://www.microsoft.com/en-us/research/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Líneas de código de la versión inicial de Guard Extension",
+      "value": "158 líneas"
+    },
+    {
+      "label": "Líneas de código de la versión final optimizada",
+      "value": "31 líneas"
+    },
+    {
+      "label": "Reducción de código tras la optimización",
+      "value": "80%"
+    },
+    {
+      "label": "Número de rutas de edición de habilidades en el sistema inicial",
+      "value": "3 rutas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

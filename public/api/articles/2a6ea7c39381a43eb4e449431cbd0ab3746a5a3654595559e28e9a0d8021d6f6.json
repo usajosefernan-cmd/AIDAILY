@@ -1,0 +1,71 @@
+{
+  "id": "2a6ea7c39381a43eb4e449431cbd0ab3746a5a3654595559e28e9a0d8021d6f6",
+  "title": "Cómo diseñamos flujos de publicación seguros para clientes sin perder el control",
+  "summary": "En el mundo de la automatización social, el error más común es tratar la publicación como una tarea aislada. Belac Media redefine el proceso, diferenciando entre borradores, colas y publicación automática, y ajustando la estrategia según el riesgo de cada plataforma y tipo de contenido.",
+  "url": "https://dev.to/thedoctorau/how-we-build-client-safe-publishing-workflows-2i82",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T08:12:12.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzd69m4tph43cadcjpc0l.png",
+  "imageAlt": "Cómo diseñamos flujos de publicación seguros para clientes sin perder el control",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En el mundo de la automatización social, el error más común es tratar la publicación como una tarea aislada. Belac Media redefine el proceso, diferenciando entre borradores, colas y publicación automática, y ajustando la estrategia según el riesgo de cada plataforma y tipo de contenido.",
+  "keyPoints": [
+    "Belac Media crea flujos de publicación que distinguen entre borrador, cola y publicación automática, reduciendo la repetición administrativa.",
+    "El enfoque se adapta al riesgo: artículos de bajo riesgo se envían por API, mientras que productos regulados requieren revisión más estricta.",
+    "La automatización de la publicación en DEV se realiza directamente a través de su API Forem, evitando la sobrecarga de herramientas de programación social.",
+    "La automatización basada en navegador falla con frecuencia; por ejemplo, el flujo de Medium con Playwright se bloquea por verificación Cloudflare."
+  ],
+  "whyMatters": "El artículo muestra cómo una estrategia bien pensada puede proteger a los clientes de errores costosos y garantizar la coherencia del contenido. Al separar las fases de publicación, las empresas reducen el riesgo de publicar material inadecuado y minimizan la carga operativa. Este enfoque es crucial para cualquier organización que dependa de la presencia digital constante y quiera mantener la calidad sin sacrificar la velocidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzd69m4tph43cadcjpc0l.png",
+      "alt": "Imagen que ilustra el flujo de publicación seguro de Belac Media",
+      "caption": "Representación visual del proceso de publicación seguro que evita errores comunes en la automatización social"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#DevCommunity",
+    "#APIs",
+    "#BelacMedia"
+  ],
+  "fullArticle": "En la era de la automatización social, la mayoría de las soluciones fallan en el mismo punto: tratan la publicación como una tarea aislada, sin considerar el contexto del cliente. Belac Media, que trabaja con equipos australianos que buscan alivio operativo, ha construido un sistema que elimina la repetición administrativa y mantiene la seguridad del cliente.\n\nEl primer paso no es cuántas publicaciones se pueden programar, sino decidir qué debe automatizarse, qué necesita aprobación, qué se registra y qué ocurre cuando una plataforma se comporta de manera distinta a la documentación de su API. En Belac Media, el flujo se divide en tres estados: borrador (draft), cola (queue) y publicación automática (auto). Cada estado refleja el nivel de riesgo y la necesidad de supervisión.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzd69m4tph43cadcjpc0l.png]\n\nPara contenidos de bajo riesgo, el flujo puede pasar directamente por la API. Un ejemplo concreto es la creación de artículos en DEV mediante su API Forem: se crean artículos en markdown, se envían como borradores no publicados, se asignan etiquetas y se establece una URL canónica sin pasar por un programador social. Esta práctica es más limpia y evita la sobrecarga de herramientas genéricas.\n\nSin embargo, la automatización basada en navegador presenta fragilidades. Al probar un flujo asistido por navegador para Medium, el primer intento con Playwright se detuvo inmediatamente por la verificación Cloudflare. La solución más fiable resultó ser una sesión de navegador normal con control a nivel de sistema operativo. Si bien funciona para la fase de borrador, no es adecuada para la publicación masiva y sin supervisión. Belac Media, por tanto, prioriza las APIs cuando están disponibles y reserva la automatización de navegador para casos excepcionales.\n\nEste enfoque no solo protege la reputación de los clientes, sino que también optimiza el tiempo de los equipos de contenido, permitiendo que se concentren en la estrategia y la creatividad en lugar de en la gestión de tareas repetitivas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T08:23:24.606Z",
+  "links": [
+    {
+      "title": "Documentación oficial de la API de DEV",
+      "url": "https://docs.dev.to/api"
+    },
+    {
+      "title": "Guía de la API de Medium",
+      "url": "https://github.com/Medium/medium-api-docs"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Volumen diario de publicaciones",
+      "value": "200 publicaciones"
+    },
+    {
+      "label": "Plataformas soportadas con API",
+      "value": "5 plataformas"
+    },
+    {
+      "label": "Tasa de error en automatización manual",
+      "value": "3%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

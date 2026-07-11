@@ -1,0 +1,82 @@
+{
+  "id": "a124c064f5f0301a69d1287a355d92fac92d36cf4243308695be8aea7c4f3d74",
+  "title": "Un desarrollador entrega una extensión AI en solo dos fines de semana",
+  "summary": "El autor describe cómo construyó una extensión de Chrome que integra ChatGPT y otros modelos de IA en un panel lateral, logrando el lanzamiento en 30 horas y atrayendo 15 usuarios en cinco semanas.",
+  "url": "https://dev.to/cwsaibuddy/i-shipped-an-ai-side-panel-in-2-weekends-5e5h",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T04:06:28.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpsnwqn2pzxfqfy2vw823.png",
+  "imageAlt": "Un desarrollador entrega una extensión AI en solo dos fines de semana",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor describe cómo construyó una extensión de Chrome que integra ChatGPT y otros modelos de IA en un panel lateral, logrando el lanzamiento en 30 horas y atrayendo 15 usuarios en cinco semanas.",
+  "keyPoints": [
+    "El MVP se completó en 14 horas durante el primer fin de semana, con una interfaz que muestra respuestas de IA en un panel lateral.",
+    "El desarrollo superó un obstáculo de CSP trasladando las peticiones a un background worker, permitiendo la comunicación segura con OpenAI.",
+    "Se integraron cuatro modelos de IA (OpenAI, Claude, Gemini y DeepSeek) en 16 horas adicionales, cada uno con su propia configuración de API.",
+    "La extensión fue aprobada en 3 días y, tras su publicación, recaudó 15 usuarios en cinco semanas, un resultado modesto pero demostrativo."
+  ],
+  "whyMatters": "La rapidez con la que se puede lanzar una extensión que incorpora IA demuestra la viabilidad de soluciones mínimas viables en la era del desarrollo ágil. Este caso muestra cómo los desarrolladores individuales pueden experimentar con tecnologías emergentes sin infraestructura compleja, acelerando la adopción de IA en el navegador. Para las empresas, representa una hoja de ruta práctica para integrar modelos de IA en productos existentes con recursos limitados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpsnwqn2pzxfqfy2vw823.png",
+      "alt": "Imagen de portada que muestra la extensión AI en un panel lateral",
+      "caption": "La extensión de Chrome muestra respuestas de IA en un panel lateral, ilustrando la funcionalidad principal del proyecto."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Google AI - Partner oficial de la plataforma de IA",
+      "caption": "Logotipo de Google AI que destaca la relevancia de los modelos de IA en la industria tecnológica."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ChromeExtensions",
+    "#OpenAI",
+    "#IA",
+    "#GoogleAI"
+  ],
+  "fullArticle": "Un programador de software decidió acelerar su proceso de desarrollo con un objetivo claro: lanzar una extensión de Chrome que permita al usuario resaltar texto, enviarlo a ChatGPT y ver la respuesta en un panel lateral. El primer fin de semana, de 9 a.m. a medianoche, logró un MVP funcional, aunque la experiencia inicial con una ventana emergente resultó poco intuitiva. Tras ajustar la interfaz a un panel lateral, el desarrollador se encontró con un problema de CSP que impidió el uso de fetch directamente desde el panel. La solución fue mover la llamada a la API de OpenAI al background worker y reenviar la respuesta al panel mediante chrome.runtime.sendMessage.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpsnwqn2pzxfqfy2vw823.png]\n\nCon la arquitectura establecida, el segundo fin de semana se dedicó a integrar cuatro modelos de IA diferentes. Cada uno requería ajustes en la URL base, la estructura de la solicitud y la forma de parsear la respuesta en streaming. El proceso tomó 16 horas, incluyendo pruebas exhaustivas y la resolución de errores de compatibilidad. Al finalizar, la extensión estaba lista para su publicación en el Chrome Web Store.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nLa revisión de la tienda tomó tres días, tras lo cual la extensión fue aprobada y publicada. El autor compartió la noticia en Reddit, X y Indie Hackers, y en las primeras 48 horas obtuvo nueve usuarios. Durante las cinco semanas siguientes, la base de usuarios aumentó a quince, una cifra modesta pero significativa para un proyecto de prueba de concepto. Este experimento subraya la viabilidad de lanzar soluciones de IA de forma rápida y con recursos mínimos, abriendo la puerta a nuevas posibilidades para desarrolladores y empresas.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T04:22:59.876Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/psnwqn2pzxfqfy2vw823"
+    },
+    {
+      "title": "Página de la extensión en Chrome Web Store",
+      "url": "https://chrome.google.com/webstore/detail/extension-id"
+    },
+    {
+      "title": "Documentación oficial de la API de OpenAI",
+      "url": "https://platform.openai.com/docs/api-reference"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo total de desarrollo",
+      "value": "30 horas"
+    },
+    {
+      "label": "Usuarios finales tras 5 semanas",
+      "value": "15 usuarios"
+    },
+    {
+      "label": "Modelos de IA integrados",
+      "value": "4 modelos"
+    },
+    {
+      "label": "Tiempo de revisión en Chrome Web Store",
+      "value": "3 días"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

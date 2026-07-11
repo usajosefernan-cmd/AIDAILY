@@ -1,0 +1,72 @@
+{
+  "id": "bdd0f0f10a8c3223a1299d73fdebec6c5d1064989ed88a632dfe7f3eb7ee9245",
+  "title": "Cómo reemplacé las llamadas a LLM por agentes de programación y ahorré hasta un 96% en costes",
+  "summary": "Un desarrollador explica cómo sustituyó las llamadas a modelos de lenguaje grandes por agentes de codificación para construir sus sistemas de IA, consiguiendo una reducción de costes de hasta el 96% al pasar de 2-7 dólares a 0,08-2 dólares por millón de tokens, usando un envoltorio CLI para salvar la falta de API pública de los agentes.",
+  "url": "https://dev.to/popiol/how-i-replaced-llm-calls-with-coding-agent-calls-and-saved-money-10p7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T21:46:15.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsjxdhtozuftuqwq1uuib.png",
+  "imageAlt": "Cómo reemplacé las llamadas a LLM por agentes de programación y ahorré hasta un 96% en costes",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador explica cómo sustituyó las llamadas a modelos de lenguaje grandes por agentes de codificación para construir sus sistemas de IA, consiguiendo una reducción de costes de hasta el 96% al pasar de 2-7 dólares a 0,08-2 dólares por millón de tokens, usando un envoltorio CLI para salvar la falta de API pública de los agentes.",
+  "keyPoints": [
+    "Los agentes de IA de cualquier tipo, desde conversacionales hasta sistemas RAG o ReAct, dependen de llamadas a LLM para funcionar, ya sea por API remota o local.",
+    "Sustituir el LLM base por un agente de codificación preentrenado permite reutilizar funcionalidades comunes y centrarse en el desarrollo de características personalizadas.",
+    "El coste por millón de tokens de los agentes de codificación oscila entre 0,08 y 2 dólares, frente a los 2 y 7 dólares de las llamadas a LLM por API.",
+    "La falta de API pública en los agentes de codificación se resuelve con un envoltorio CLI sencillo que se instala en la máquina de origen para su integración."
+  ],
+  "whyMatters": "Esta estrategia supone un cambio de paradigma para el desarrollo de agentes de IA en pymes y startups españolas, que pueden reducir drásticamente sus costes de operación sin renunciar a funcionalidades avanzadas. La reducción de hasta el 96% en el coste por tokens permite destinar presupuestos a la personalización de soluciones específicas para sectores como el comercio electrónico, la atención al cliente o la automatización de procesos administrativos en toda Europa. A largo plazo, esta aproximación democratiza el acceso a agentes de IA de alto rendimiento, eliminando la barrera económica que suponía el pago por uso de APIs de LLM para proyectos de pequeño y mediano tamaño.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsjxdhtozuftuqwq1uuib.png",
+      "alt": "Imagen de portada del artículo sobre cómo reemplazar llamadas a LLM por agentes de codificación para ahorrar costes",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AhorroCostesIA",
+    "#AgentesDeCodificacion",
+    "#InteligenciaArtificial",
+    "#DesarrolloIAEmpresarial"
+  ],
+  "fullArticle": "Tradicionalmente, cualquier agente de inteligencia artificial, desde los sistemas conversacionales más simples hasta las arquitecturas ReAct con múltiples herramientas o los sistemas de recuperación aumentada por generación (RAG), depende de llamadas a modelos de lenguaje grandes (LLM) para funcionar, ya sea mediante una API remota o un despliegue local. Esta dependencia supone un coste fijo por tokens procesados que se dispara en proyectos con alto volumen de interacciones, suponiendo una barrera económica para startups y pymes con presupuestos limitados. El autor del artículo original publicado en Dev.to plantea una alternativa revolucionaria: sustituir el LLM base por un agente de codificación ya entrenado, que integra de forma nativa funcionalidades avanzadas de agente sin necesidad de construir toda la arquitectura desde cero.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsjxdhtozuftuqwq1uuib.png]\n\nLa principal ventaja no es solo la reducción de la complejidad en el desarrollo, sino el ahorro económico: mientras que las llamadas a LLM por API tienen un coste de entre 2 y 7 dólares por millón de tokens, los agentes de codificación, que se comercializan por suscripción mensual, suponen un coste equivalente de entre 0,08 y 2 dólares por millón de tokens, una diferencia de hasta el 96% en el gasto operativo. La única barrera inicial es que estos agentes no cuentan con API pública, pero se resuelve con un envoltorio de línea de comandos (CLI) sencillo que se instala en la máquina de origen y permite comunicarse con el agente como si se tratara de una llamada a API tradicional, sin necesidad de conocimientos avanzados de integración.\n\nEsta aproximación es especialmente relevante para el ecosistema tecnológico español, donde startups y pymes suelen contar con presupuestos ajustados para el desarrollo de soluciones de inteligencia artificial. Al reducir drásticamente los costes de operación, se democratiza el acceso a agentes de IA de alto rendimiento, permitiendo que proyectos de pequeño escala compitan con soluciones de grandes empresas con presupuestos millonarios. A largo plazo, esta tendencia podría modificar el modelo de negocio de muchas empresas del sector, priorizando el desarrollo de agentes especializados sobre el pago por uso de modelos genéricos de LLM.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T22:02:51.741Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Cómo reemplacé llamadas a LLM por agentes de codificación y ahorré dinero",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Guía oficial de agentes de inteligencia artificial de AWS",
+      "url": "https://aws.amazon.com/es/what-is/ai-agents/"
+    },
+    {
+      "title": "Portal de Inteligencia Artificial del Gobierno de España",
+      "url": "https://www.ia.gob.es/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Coste máximo por 1M tokens de llamadas a LLM por API",
+      "value": "7 dólares"
+    },
+    {
+      "label": "Coste mínimo por 1M tokens de agentes de codificación",
+      "value": "0,08 dólares"
+    },
+    {
+      "label": "Ahorro máximo en costes de operación",
+      "value": "96%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

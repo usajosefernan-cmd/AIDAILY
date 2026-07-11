@@ -1,0 +1,81 @@
+{
+  "id": "0eb08536b0fc7b45910422af2107d5ca68235f1e031caf11af7c80110507d36d",
+  "title": "Del prompt al bucle: la ingeniería de IA cambia de nombre y el verificador se come el protagonismo",
+  "summary": "La disciplina de interactuar con modelos de lenguaje ha mutado de la 'ingeniería de prompts' (2022-2024) a la 'ingeniería de contexto' (2025) y ahora a la 'ingeniería de bucles' (2026). El verdadero cuello de botella ya no es el modelo, sino el mecanismo que verifica y detiene la ejecución.",
+  "url": "https://dev.to/reporails/prompt-engineering-context-engineering-loop-engineering-what-actually-changed-2357",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T11:16:04.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo01anytlxvvy6qop43ic.png",
+  "imageAlt": "Del prompt al bucle: la ingeniería de IA cambia de nombre y el verificador se come el protagonismo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La disciplina de interactuar con modelos de lenguaje ha mutado de la 'ingeniería de prompts' (2022-2024) a la 'ingeniería de contexto' (2025) y ahora a la 'ingeniería de bucles' (2026). El verdadero cuello de botella ya no es el modelo, sino el mecanismo que verifica y detiene la ejecución.",
+  "keyPoints": [
+    "La unidad de trabajo evolucionó de un mensaje aislado (prompt) a toda la ventana de contexto y finalmente al ciclo de generación y verificación.",
+    "Un análisis de 28,721 repositorios reveló que la mediana de archivos de instrucciones tiene 50 items pero solo 12 directivas reales que el modelo procesa.",
+    "El verificador es el nuevo cuello de botella: las comprobaciones deterministas chocan con las evaluaciones por modelo, creando bucles de juicio probabilístico.",
+    "Addy Osmani popularizó 'loop engineering' en 2026 tras sintetizar ideas de Cherny y Steinberger, centrando el foco en el mecanismo de decisión de parada."
+  ],
+  "whyMatters": "Esta evolución terminológica no es mero marketing, sino un reflejo de la madurez técnica de la IA agentica. Para las empresas y desarrolladores, entender que el 'verificador' es el limitante crítico cambia dónde se debe invertir el esfuerzo de ingeniería: ya no en escribir mejores instrucciones, sino en diseñar sistemas de control robustos que eviten que un agente se detenga en la iteración equivocada. Ignorar la distinción entre cheques deterministas y juicios de modelo puede llevar a fallos silenciosos en producción, donde un sistema parezca funcional pero no haya mejorado realmente el software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo01anytlxvvy6qop43ic.png",
+      "alt": "Línea de tiempo horizontal que muestra la evolución de la ingeniería de IA desde el prompt en 2022-2024, pasando por el contexto en 2025, hasta el bucle en 2026.",
+      "caption": "Evolución cronológica de las unidades de trabajo en la ingeniería de IA (Dev.to)."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6u8kdydypdb3pw6yu9w6.png",
+      "alt": "Diagrama simple de un bucle de agente mostrando las fases de generación, verificación y reintento.",
+      "caption": "Esquema básico del ciclo de ejecución en la ingeniería de bucles (Dev.to)."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk59xlik6cfe89y3co0ee.png",
+      "alt": "Tarjeta comparativa entre una verificación determinista y una verificación por modelo que pregunta a otro modelo si la salida es buena.",
+      "caption": "Contraste entre chequeos deterministas y evaluaciones por modelo en el bucle (Dev.to)."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IngenieriaDePrompts",
+    "#LoopEngineering",
+    "#AndrejKarpathy",
+    "#AddyOsmani",
+    "#AgentesIA"
+  ],
+  "fullArticle": "Hace apenas unos años, la habilidad estrella en el mundo de la IA generativa tenía un nombre sencillo: ingeniería de prompts. Se trataba de reescribir una frase hasta que el modelo obedeciera. Sin embargo, la disciplina ha sufrido una metamorfosis vertiginosa. Según un análisis publicado en Dev.to, pasamos de la 'ingeniería de contexto' en 2025 a la 'ingeniería de bucles' en 2026, donde el verdadero desafío ya no es qué le decimos al modelo, sino cómo verificamos su trabajo. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo01anytlxvvy6qop43ic.png] La evidencia empírica es contundente: un estudio sobre 28,721 repositorios mostró que la mayoría de los archivos de instrucciones están llenos de ruido irrelevante para el modelo. El cambio de paradigma es real; el 'contexto' se volvió la superficie a curar, pero el 'bucle' es ahora el objeto de diseño. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6u8kdydypdb3pw6yu9w6.png] El eslogan 'el verificador es el cuello de botella' esconde una trampa técnica. Existe una brecha entre las comprobaciones deterministas (ejecutar código) y las evaluaciones por modelo (juzgar si algo es 'claro'). Al poner un juez probabilístico a cargo de un generador probabilístico, el bucle puede terminar satisfecho en la iteración incorrecta, un riesgo que define la nueva frontera de la ingeniería de software autónomo. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fk59xlik6cfe89y3co0ee.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T11:28:10.746Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Prompt, Context and Loop Engineering",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "State of AI Instruction Quality (Análisis de repositorios)",
+      "url": "https://github.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Repositorios analizados",
+      "value": "28,721"
+    },
+    {
+      "label": "Items vs Directivas en instrucciones",
+      "value": "50 items y solo 12 directivas reales"
+    },
+    {
+      "label": "Año de popularización del Loop Engineering",
+      "value": "Junio de 2026"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

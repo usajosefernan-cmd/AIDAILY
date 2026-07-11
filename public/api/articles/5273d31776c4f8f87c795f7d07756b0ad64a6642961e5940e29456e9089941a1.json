@@ -1,0 +1,69 @@
+{
+  "id": "5273d31776c4f8f87c795f7d07756b0ad64a6642961e5940e29456e9089941a1",
+  "title": "La plataforma de inteligencia de costes cloud que prohíbe a la IA tomar decisiones de infraestructura",
+  "summary": "Un desarrollador creó una plataforma de inteligencia de costes de Azure que evita que la IA genere recomendaciones de infraestructura erróneas, separando la generación de explicaciones de la toma de decisiones basada en datos verificados.",
+  "url": "https://dev.to/upshivam786/building-an-ai-cloud-cost-intelligence-platform-that-doesnt-let-ai-make-infrastructure-decisions-5gbn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T04:11:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkzp5xtae4ukmyyjt2hkp.png",
+  "imageAlt": "La plataforma de inteligencia de costes cloud que prohíbe a la IA tomar decisiones de infraestructura",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creó una plataforma de inteligencia de costes de Azure que evita que la IA genere recomendaciones de infraestructura erróneas, separando la generación de explicaciones de la toma de decisiones basada en datos verificados.",
+  "keyPoints": [
+    "La IA generaba recomendaciones de infraestructura inexistentes, como SKUs de VM no soportados por Azure o comandos CLI con parámetros incorrectos.",
+    "El arquitecto rediseñó el sistema para separar la toma de decisiones, basada en APIs verificadas, de la generación de explicaciones por parte de la IA.",
+    "La IA solo se encarga de explicar en lenguaje natural decisiones ya validadas, sin inventar recomendaciones ni comandos de ejecución.",
+    "El proyecto planea ampliarse con tendencias de costes históricos, detección de anomalías y soporte multi-nube para AWS y GCP."
+  ],
+  "whyMatters": "Esta arquitectura resuelve un problema crítico en las herramientas de FinOps y DevOps asistidas por IA, donde los modelos de lenguaje generan recomendaciones erróneas que pueden generar costes adicionales o fallos de infraestructura. Al separar la toma de decisiones basada en datos verificados de la generación de explicaciones, se garantiza la fiabilidad sin renunciar a la usabilidad que aporta la IA. Su enfoque sienta un precedente para el desarrollo de herramientas de automatización cloud que equilibren innovación y seguridad, un pilar fundamental para la adopción masiva de la IA en entornos empresariales de infraestructura.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkzp5xtae4ukmyyjt2hkp.png",
+      "alt": "Ilustración de portada del artículo sobre la plataforma de inteligencia de costes cloud que no delega decisiones de infraestructura en la IA",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InteligenciaArtificial",
+    "#CloudComputing",
+    "#FinOps",
+    "#Azure",
+    "#DevOps"
+  ],
+  "fullArticle": "La mayoría de las demostraciones de herramientas de optimización de costes en la nube asistidas por inteligencia artificial siguen un patrón común: el modelo genera recomendaciones de forma autónoma para reducir el gasto en infraestructura. Pero al construir su propia plataforma de inteligencia de costes de Azure, un desarrollador se encontró con un fallo que cambió por completo la arquitectura de su proyecto. La IA generaba recomendaciones que, a simple vista, parecían correctas, pero que en la práctica no existían: sugería SKUs de máquinas virtuales no soportadas por Azure e incluso producía comandos de Azure CLI con parámetros erróneos, un error que podía traducirse en fallos de despliegue o costes imprevistos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkzp5xtae4ukmyyjt2hkp.png]\n\nLejos de intentar solucionar el problema modificando los prompts o ajustando el modelo de lenguaje, optó por rediseñar toda la aplicación para separar las funciones de toma de decisiones y generación de explicaciones. En la nueva arquitectura, la inteligencia artificial nunca decide qué acción ejecutar: su única función es explicar en lenguaje natural decisiones que ya han sido validadas previamente por un motor de recomendaciones determinista. Este motor se apoya en APIs oficiales de la nube, reglas de negocio definidas por los equipos y código determinista para generar las acciones a realizar, sin dejar espacio a la invención por parte del modelo.\n\nDe esta forma, cuando el sistema detecta una máquina virtual infrautilizada, el motor de recomendaciones calcula la opción de redimensionado más adecuada basándose en datos verificados, y es la IA la que se limita a generar una explicación comprensible para el usuario: 'Esta máquina virtual está muy infrautilizada. Redimensionarla puede reducir los costes mensuales sin afectar las cargas de trabajo actuales'. Este enfoque elimina el riesgo de que el modelo genere recomendaciones o comandos inválidos, ya que solo se limita a interpretar datos ya validados.\n\nEl desarrollador ha señalado que esta arquitectura es la que seguirá utilizando para ampliar la plataforma con funcionalidades como tendencias de costes históricos, detección de anomalías y soporte multi-nube para AWS y GCP. La lección aprendida es clara: las decisiones de infraestructura cloud deben basarse siempre en APIs verificadas, reglas de negocio y código determinista, y la IA solo aporta valor cuando ayuda a los ingenieros a entender esas decisiones, no cuando se encarga de generarlas. Si estás construyendo herramientas de DevOps o FinOps asistidas por IA, el autor invita a la comunidad a compartir cómo equilibras la automatización con la fiabilidad en tus proyectos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T04:25:42.354Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Azure Cost Management",
+      "url": "https://learn.microsoft.com/es-es/azure/cost-management-billing/"
+    },
+    {
+      "title": "Guía de FinOps para equipos de ingeniería",
+      "url": "https://www.finops.org/es/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tipo de error crítico generado por la IA en herramientas no validadas",
+      "value": "Recomendaciones de SKUs de VM no soportados y comandos CLI con parámetros incorrectos"
+    },
+    {
+      "label": "Ahorro potencial en costes cloud con optimización basada en datos verificados",
+      "value": "Entre un 20% y un 40% de la facturación mensual"
+    },
+    {
+      "label": "Número de proveedores cloud que soportará la plataforma en su fase final",
+      "value": "3 (Azure, AWS y GCP)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

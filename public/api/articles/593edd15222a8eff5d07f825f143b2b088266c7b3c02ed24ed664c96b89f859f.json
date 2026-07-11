@@ -1,0 +1,47 @@
+{
+  "id": "593edd15222a8eff5d07f825f143b2b088266c7b3c02ed24ed664c96b89f859f",
+  "title": "I got tired of Django being left behind in UI, so I built a shadcn/ui equivalent.",
+  "summary": "<p>For years, the React and Next.js ecosystems have had a massive advantage: premium, plug-and-play UI components. Tools like shadcn/ui completely changed how developers build interfaces by offering beautifully styled, accessible components with zero vendor lock-in.</p>\n\n<p>Meanwhile, if you were building a monolith with Django, htmx, and Alpine.js, you were left out in the cold. You either had to wire up custom HTML/CSS from scratch, fight with the complex configurations of heavy runtime libraries, or rely on locked pip packages where changing a simple button color required CSS overrides or forking a repo.</p>\n\n<p>I realized Django didn't need another heavy library. It needed a delivery system.</p>\n\n<p>Enter Djinn UI.</p>\n\n<p>Djinn UI (available now on PyPI) is a CLI-based component registry for Django. It brings the copy-paste ownership model directly to your Python backend.</p>\n\n<p>How it works:<br>\nInstead of adding a dependency to your INSTALLED_APPS, you simply run:<br>\ndjinn add dashboard</p>\n\n<p>Djinn drops the raw, perfectly styled HTML and Tailwind code directly into your templates/ folder. It uses native<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight liquid\"><code><span class=\"cp\">{%</span><span class=\"w\"> </span><span class=\"nt\">include</span><span class=\"w\"> </span><span class=\"cp\">%}</span>\n</code></pre>\n\n</div>\n\n\n\n<p>tags. No custom syntax to learn, no runtime overhead. It is your code, and you own it completely.</p>\n\n<p>Built for the Agentic Era:<br>\nWe aren't just catching up to React; we are jumping ahead. Djinn UI is the first Django UI system built with AI in mind. It ships with a built-in MCP server. If you use tools like Cursor, you can simply say, \"Build a pricing page using my Djinn components,\" and watch your AI agent scaffold your UI seamlessly.</p>\n\n<p>Stop wasting weeks building components. Reclaim the power of the monolith.</p>\n\n<p>Try it out: pip install djinn-ui<br>\nCheck out the pypi package here: <a href=\"https://pypi.org/project/djinn-ui/\" rel=\"noopener noreferrer\">https://pypi.org/project/djinn-ui/</a></p>\n\n",
+  "url": "https://dev.to/josephjbassey/i-got-tired-of-django-being-left-behind-in-ui-so-i-built-a-shadcnui-equivalent-3b6e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T22:48:29.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F16fz8oxptig4nncwl1r3.png",
+  "imageAlt": "I got tired of Django being left behind in UI, so I built a shadcn/ui equivalent.",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": "<p>For years, the React and Next.js ecosystems have had a massive advantage: premium, plug-and-play UI components. Tools like shadcn/ui completely changed how developers build interfaces by offering beautifully styled, accessible components with zero vendor lock-in.</p>\n\n<p>Meanwhile, if you were building a monolith with Django, htmx, and Alpine.js, you were left out in the cold. You either had to wire up custom HTML/CSS from scratch, fight with the complex configurations of heavy runtime libraries, or rely on locked pip packages where changing a simple button color required CSS overrides or forking a repo.</p>\n\n<p>I realized Django didn't need another heavy library. It needed a delivery system.</p>\n\n<p>Enter Djinn UI.</p>\n\n<p>Djinn UI (available now on PyPI) is a CLI-based component registry for Django. It brings the copy-paste ownership model directly to your Python backend.</p>\n\n<p>How it works:<br>\nInstead of adding a dependency to your INSTALLED_APPS, you simply run:<br>\ndjinn add dashboard</p>\n\n<p>Djinn drops the raw, perfectly styled HTML and Tailwind code directly into your templates/ folder. It uses native<br>\n</p>\n\n<div class=\"highlight js-code-highlight\">\n<pre class=\"highlight liquid\"><code><span class=\"cp\">{%</span><span class=\"w\"> </span><span class=\"nt\">include</span><span class=\"w\"> </span><span class=\"cp\">%}</span>\n</code></pre>\n\n</div>\n\n\n\n<p>tags. No custom syntax to learn, no runtime overhead. It is your code, and you own it completely.</p>\n\n<p>Built for the Agentic Era:<br>\nWe aren't just catching up to React; we are jumping ahead. Djinn UI is the first Django UI system built with AI in mind. It ships with a built-in MCP server. If you use tools like Cursor, you can simply say, \"Build a pricing page using my Djinn components,\" and watch your AI agent scaffold your UI seamlessly.</p>\n\n<p>Stop wasting weeks building components. Reclaim the power of the monolith.</p>\n\n<p>Try it out: pip install djinn-ui<br>\nCheck out the pypi package here: <a href=\"https://pypi.org/project/djinn-ui/\" rel=\"noopener noreferrer\">https://pypi.org/project/djinn-ui/</a></p>\n\n",
+  "keyPoints": [
+    "I got tired of Django being left behind in UI, so I built a shadcn/ui equivalent."
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F16fz8oxptig4nncwl1r3.png",
+      "alt": "I got tired of Django being left behind in UI, so I built a shadcn/ui equivalent.",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F16fz8oxptig4nncwl1r3.png",
+      "alt": "Cover image for I got tired of Django being left behind in UI, so I built a shadcn/ui equivalent.",
+      "caption": "Cover image for I got tired of Django being left behind in UI, so I built a shadcn/ui equivalent."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "For years, the React and Next.js ecosystems have had a massive advantage: premium, plug-and-play UI components. Tools like shadcn/ui completely changed how developers build interfaces by offering beautifully styled, accessible components with zero vendor lock-in.\n\nMeanwhile, if you were building a monolith with Django, htmx, and Alpine.js, you were left out in the cold. You either had to wire up custom HTML/CSS from scratch, fight with the complex configurations of heavy runtime libraries, or rely on locked pip packages where changing a simple button color required CSS overrides or forking a repo.\n\nI realized Django didn't need another heavy library. It needed a delivery system.\n\nDjinn UI (available now on PyPI) is a CLI-based component registry for Django. It brings the copy-paste ownersh...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T23:24:17.447Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

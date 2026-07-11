@@ -1,0 +1,82 @@
+{
+  "id": "b3ff158738a4510e2796dfc6fdd8455e98240e6a7018b6aa272ed40ca1a6a3a5",
+  "title": "Un canal de señales publica su propia tasa de éxito y la auditoría interna lo demuestra",
+  "summary": "Un desarrollador de trading algorítmico en Python ha revelado que los canales de señales de criptomonedas que anuncian altos porcentajes de ganancia están autoevaluándose y distorsionando sus métricas. Mediante un modo sombra y análisis exhaustivo, descubrió que el 91,7 % de las señales son obsoletas y que la mayoría de los mensajes no son señales útiles.",
+  "url": "https://dev.to/jugeni/a-published-win-rate-is-the-actor-auditing-itself-61c",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T08:29:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv3jlnggdyh2rw7rvmmje.png",
+  "imageAlt": "Un canal de señales publica su propia tasa de éxito y la auditoría interna lo demuestra",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador de trading algorítmico en Python ha revelado que los canales de señales de criptomonedas que anuncian altos porcentajes de ganancia están autoevaluándose y distorsionando sus métricas. Mediante un modo sombra y análisis exhaustivo, descubrió que el 91,7 % de las señales son obsoletas y que la mayoría de los mensajes no son señales útiles.",
+  "keyPoints": [
+    "El sistema de prueba ‘shadow mode’ permite evaluar señales sin ejecutar operaciones reales, usando datos de mercado con comisiones y slippage reales.",
+    "De 9 312 mensajes de un canal de Telegram, solo el 14,2 % contenían ideas de trade parseables y solo 109 eran accionables.",
+    "El 91,7 % de las señales parseables resultaron obsoletas, mientras que el 97,4 % de todos los mensajes era inactiva cuando se evaluó.",
+    "La inactividad se debe a la naturaleza broadcast de los canales: la señal se publica antes de que el sistema la procese y el mercado ya la haya reflejado."
+  ],
+  "whyMatters": "Este hallazgo cuestiona la fiabilidad de los canales de señales de criptomonedas, que a menudo se basan en métricas autoajustadas y no verificadas. Los inversores que confían en estos indicadores pueden perder oportunidades o incurrir en pérdidas. La transparencia y auditoría externa se vuelven esenciales para proteger a los usuarios y garantizar la integridad del mercado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv3jlnggdyh2rw7rvmmje.png",
+      "alt": "Imagen de portada del artículo",
+      "caption": "Portada del artículo que ilustra la temática de la tasa de éxito publicada por los canales de señales de criptomonedas"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv3jlnggdyh2rw7rvmmje.png",
+      "alt": "Gráfico de la distribución de mensajes en el canal de señales",
+      "caption": "Representación visual de los 9 312 mensajes analizados en el canal de señal de Telegram"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#CryptoTrading",
+    "#TelegramSignals",
+    "#ShadowMode",
+    "#PythonAlgo"
+  ],
+  "fullArticle": "Un desarrollador que construye sistemas de trading autónomos en Python ha descubierto que los canales de señales de criptomonedas que prometen tasas de éxito del 70‑80 % están publicando métricas autoajustadas que no reflejan la realidad del mercado. El autor emplea un modo sombra, donde el algoritmo ejecuta todas las operaciones en un entorno simulado con comisiones y slippage reales, pero sin colocar órdenes reales, y registra cada señal con su resultado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv3jlnggdyh2rw7rvmmje.png]\n\nEn un análisis de 9 312 mensajes de un canal de Telegram (febrero 2025‑junio 2026), solo el 14,2 % contenían una idea de trade parseable y de esas, solo 109 eran todavía accionables cuando el algoritmo las evaluó. Eso equivale a un 91,7 % de obsolescencia entre las señales parseables y a un 97,4 % cuando se considera el total de mensajes procesados.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv3jlnggdyh2rw7rvmmje.png]\n\nEl autor explica que la causa principal de la inactividad no es un fallo del algoritmo, sino la naturaleza broadcast de los canales: la señal se publica antes de que el sistema la procese y el mercado ya haya reaccionado, haciendo que la información sea obsoleta al momento de la ejecución. Además, la mayoría de los mensajes descartados eran anuncios de operaciones cerradas o publicidad del nivel de suscripción.\n\nLa conclusión es clara: los indicadores de éxito que los canales de señales publican son inherentemente engañosos si no se someten a auditorías externas que midan la efectividad real en tiempo real. Los inversores deben ser cautelosos y buscar fuentes que utilicen modos sombra y métricas verificadas antes de confiar en sus recomendaciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T08:44:30.771Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Wikipedia: Trading automático",
+      "url": "https://es.wikipedia.org/wiki/Trading_autom%C3%A1tico"
+    },
+    {
+      "title": "Coindesk: Guía de trading de criptomonedas",
+      "url": "https://www.coindesk.com/cryptocurrency-trading"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Mensajes totales analizados",
+      "value": "9 312"
+    },
+    {
+      "label": "Mensajes parseables",
+      "value": "1 318"
+    },
+    {
+      "label": "Mensajes stale",
+      "value": "1 209"
+    },
+    {
+      "label": "Porcentaje de mensajes stale",
+      "value": "91,7 %"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

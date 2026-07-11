@@ -1,0 +1,73 @@
+{
+  "id": "85b1633a0c12635e07f8b97a52df51e54ee132b00f00dc0751cdf948ede25e63",
+  "title": "Bot de Telegram sin comisiones: Cobra pagos VietQR al instante con AgentPay VN",
+  "summary": "AgentPay VN es un SDK de Python de código abierto que permite a bots de Telegram generar códigos QR VietQR para cobros directos a cuentas bancarias vietnamitas, sin intermediarios ni comisiones de procesadores de pago.",
+  "url": "https://dev.to/ai_services_f9c382bdb33b9/collect-vietqr-payments-in-telegram-bots-with-agentpay-4neb",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T00:35:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flih6je619f0kp6acbsvj.png",
+  "imageAlt": "Bot de Telegram sin comisiones: Cobra pagos VietQR al instante con AgentPay VN",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "AgentPay VN es un SDK de Python de código abierto que permite a bots de Telegram generar códigos QR VietQR para cobros directos a cuentas bancarias vietnamitas, sin intermediarios ni comisiones de procesadores de pago.",
+  "keyPoints": [
+    "AgentPay VN es un SDK de Python de código abierto con licencia MIT, diseñado para integrar cobros VietQR en bots de Telegram sin intermediarios.",
+    "El modelo de operación evita que el SDK maneje fondos: el QR redirige directamente a la cuenta bancaria del comerciante, eliminando riesgos de retención de dinero.",
+    "Se adapta al ecosistema bancario vietnamita, compatible con apps como MB Bank, Techcombank y VCB que ya soportan escaneo nativo de VietQR.",
+    "Incluye entorno de pruebas sandbox, soporte de webhooks para confirmaciones instantáneas y servidor MCP para integración con agentes de IA como Claude."
+  ],
+  "whyMatters": "Esta solución elimina una barrera crítica para emprendedores y pequeñas empresas en Vietnam, que veían cómo procesadores globales como Stripe se comían hasta el 40% de sus márgenes en transacciones de bajo valor. Su modelo de pago directo por rails bancarios locales, sin intermediarios, sienta un precedente que puede adaptarse a mercados europeos para reducir comisiones en sistemas de pago locales como Bizum o SEPA Instant. Para desarrolladores españoles, supone una referencia de cómo integrar pagos locales en bots de mensajería sin depender de plataformas extranjeras, abriendo nuevas vías de monetización para negocios pequeños y autónomos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flih6je619f0kp6acbsvj.png",
+      "alt": "Portada del artículo que explica la integración de pagos VietQR en bots de Telegram con AgentPay VN",
+      "caption": "Imagen de portada del artículo original de Dev.to sobre la herramienta de cobro sin intermediarios para bots de Telegram"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AgentPayVN",
+    "#VietQR",
+    "#BotsTelegram",
+    "#PagosSinComisiones",
+    "#DesarrolloPython"
+  ],
+  "fullArticle": "Los bots de Telegram se han convertido en una herramienta popular para emprendedores que venden cursos digitales, toman pedidos de cafeterías u ofrecen servicios freelance, pero la integración de pagos suele ser un obstáculo: procesadores globales como Stripe cobran comisiones tan altas que llegan a absorber el 40% de los márgenes en transacciones de entre 2 y 5 dólares. Para solucionar este problema nace AgentPay VN, un SDK de Python de código abierto con licencia MIT que permite generar códigos QR VietQR que apuntan directamente a la cuenta bancaria del comerciante, sin intermediarios, sin retención de fondos y sin comisiones de procesamiento.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flih6je619f0kp6acbsvj.png]\n\nLa solución está totalmente adaptada al ecosistema bancario vietnamita, compatible con las aplicaciones de MB Bank, Techcombank y VCB, que ya cuentan con soporte nativo para escanear códigos VietQR, por lo que los usuarios no necesitan crear cuentas adicionales ni superar pantallas de autenticación para completar el pago. AgentPay VN incluye un entorno de pruebas sandbox para desarrolladores, soporte de webhooks para recibir confirmaciones de pago instantáneas y un servidor MCP que permite integrarlo con agentes de IA como Claude para automatizar flujos de cobro. Un ejemplo práctico es el de una cafetería que vende expresos por Telegram: todo el flujo, desde la solicitud del pedido hasta la confirmación del pago, tarda solo 30 segundos, sin comisiones ni demoras en la liquidación.\n\nMás allá del mercado vietnamita, este modelo de pago directo por rails bancarios locales sienta un precedente que puede replicarse en España y Europa, donde sistemas como Bizum o SEPA Instant podrían integrarse de forma similar en bots de mensajería, eliminando comisiones para autónomos y pequeñas empresas que usan estas plataformas para vender productos o servicios. Al ser de código abierto, la comunidad de desarrolladores puede adaptar el SDK a diferentes sistemas de pago locales sin costes de licencia, democratizando el acceso a soluciones de cobro económicas para negocios de todos los tamaños.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T00:42:32.281Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to sobre AgentPay VN",
+      "url": "https://dev.to/agentpay/collect-vietqr-payments-in-telegram-bots-with-agentpay"
+    },
+    {
+      "title": "Documentación oficial de VietQR",
+      "url": "https://vietqr.net/es/"
+    },
+    {
+      "title": "Repositorio de AgentPay VN en GitHub",
+      "url": "https://github.com/agentpayvn/agentpay-sdk"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de margen perdido con procesadores globales en transacciones pequeñas",
+      "value": "40%"
+    },
+    {
+      "label": "Usuarios de Telegram en el sudeste asiático",
+      "value": "180 millones"
+    },
+    {
+      "label": "Duración promedio del flujo de cobro con AgentPay VN",
+      "value": "30 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

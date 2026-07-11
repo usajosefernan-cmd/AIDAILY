@@ -1,0 +1,76 @@
+{
+  "id": "c4921c02a3070547776a6360992daec06d526068046be7f142912a0113761d5e",
+  "title": "Claude en Chrome pierde clics constantemente: descubren las dos causas exactas del fallo de automatización",
+  "summary": "Un desarrollador que gestiona más de 600 herramientas web automatizadas con IA ha identificado las dos causas exactas de los fallos de clic de Claude integrado en Chrome, descartando que se deban a errores en los elementos de la página. Los fallos se producen por el cambio de tamaño de la ventana después de capturar la pantalla y por el intervalo entre clics dobles que supera el umbral de las aplicaciones, con una solución basada en el uso de referencias de elementos en vez de coordenadas.",
+  "url": "https://dev.to/mxhlix/claude-in-chrome-keeps-missing-clicks-i-measured-why-there-are-exactly-two-causes-2m8p",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T05:43:04.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fic1xtr7mhdf7bqgpnujg.png",
+  "imageAlt": "Claude en Chrome pierde clics constantemente: descubren las dos causas exactas del fallo de automatización",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador que gestiona más de 600 herramientas web automatizadas con IA ha identificado las dos causas exactas de los fallos de clic de Claude integrado en Chrome, descartando que se deban a errores en los elementos de la página. Los fallos se producen por el cambio de tamaño de la ventana después de capturar la pantalla y por el intervalo entre clics dobles que supera el umbral de las aplicaciones, con una solución basada en el uso de referencias de elementos en vez de coordenadas.",
+  "keyPoints": [
+    "Los clics fallidos en Claude para Chrome se deben a dos causas específicas, no a errores en los elementos de la página como se creía inicialmente.",
+    "El cambio de tamaño de la ventana del navegador después de capturar la pantalla desplaza las coordenadas de clic, generando errores de hasta un 15% de desviación.",
+    "La acción de doble clic de la herramienta genera un intervalo entre clics que supera el umbral de las aplicaciones, interpretándose como dos clics simples sin error en los registros.",
+    "La solución recomendada es abandonar los clics por coordenadas y usar referencias de elementos HTML o el árbol de accesibilidad para interactuar con la página."
+  ],
+  "whyMatters": "Este descubrimiento tiene un impacto directo en miles de equipos de desarrollo y automatización web en España y Europa, que dependen de herramientas como Claude para agilizar pruebas y operaciones diarias. Al identificar las causas exactas de un fallo tan extendido, se eliminan horas de depuración improductiva y se establecen buenas prácticas reutilizables para cualquier proyecto de automatización basado en coordenadas. Además, la recomendación de priorizar referencias de elementos sobre coordenadas marca un cambio de paradigma en el desarrollo de asistentes de automatización web, reduciendo la fragilidad de los sistemas ante cambios de diseño o escalado de pantalla.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fic1xtr7mhdf7bqgpnujg.png",
+      "alt": "Imagen de portada del artículo que explica los fallos de clic de Claude en Chrome",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por un desarrollador especializado en automatización web"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ClaudeAI",
+    "#AutomatizacionWeb",
+    "#DesarrolloWeb",
+    "#ChromeDevTools"
+  ],
+  "fullArticle": "Un desarrollador especializado en automatización web con inteligencia artificial, que gestiona más de 600 herramientas web sometidas a pruebas automatizadas, ha desvelado las causas exactas de los fallos de clic que se producen al usar Claude integrado en Chrome para automatización de navegador. Hasta ahora, muchos equipos de desarrollo achacaban estos errores a fallos en los elementos de las páginas o a problemas de renderizado, pero la investigación demuestra que el problema reside en dos fallos técnicos concretos de la herramienta de automatización.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fic1xtr7mhdf7bqgpnujg.png]\nEl primer causante es el cambio de tamaño de la ventana del navegador justo después de cargar la página: en el equipo del desarrollador, la medida innerWidth pasaba de 1664 píxeles a 1920 píxeles en un plazo de 2 a 3 segundos después de que la página se cargara completamente. Si se captura una captura de pantalla y se realizan clics basados en sus coordenadas durante ese período de ajuste, el clic se desplaza hasta un 15% a la derecha del objetivo, fallando de forma sistemática. El segundo fallo se produce en la acción de doble clic: la herramienta genera un intervalo entre los dos clics que supera el umbral de detección de doble clic de la mayoría de aplicaciones, por lo que el sistema lo interpreta como dos clics simples en lugar de una acción de doble clic, sin que los registros de la herramienta reflejen este error.\nLa solución recomendada por el experto es abandonar por completo los clics basados en coordenadas siempre que sea posible, sustituyéndolos por búsquedas de elementos por lenguaje natural o por lecturas del árbol de accesibilidad de la página, que generan referencias estables a los elementos incluso si cambia el diseño de la página o se escala la pantalla. Esta práctica no es aplicable en aplicaciones basadas en canvas o Flutter, como el editor de Rive, que no cuentan con elementos HTML identificables, por lo que en esos casos sigue siendo necesario recurrir a las coordenadas aplicando las medidas de espera de estabilización de la ventana que se detallan en el artículo original.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T06:04:11.959Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to sobre fallos de clic de Claude en Chrome",
+      "url": "https://dev.to/claude-in-chrome-keeps-missing-clicks-i-measured-why-there-are-exactly-two-causes-1b0e"
+    },
+    {
+      "title": "Documentación oficial de automatización de Chrome para desarrolladores",
+      "url": "https://developer.chrome.com/docs/automation"
+    },
+    {
+      "title": "Documentación oficial de Claude para integraciones y automatización",
+      "url": "https://claude.ai/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Herramientas web automatizadas gestionadas por el desarrollador",
+      "value": "más de 600"
+    },
+    {
+      "label": "Desviación máxima de coordenadas de clic por cambio de tamaño de ventana",
+      "value": "15% (factor de estiramiento de 1,15x)"
+    },
+    {
+      "label": "Tiempo de estabilización del tamaño de ventana después de cargar la página",
+      "value": "2 a 3 segundos"
+    },
+    {
+      "label": "Resolución de pantalla de referencia del estudio",
+      "value": "1920x1080 píxeles"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

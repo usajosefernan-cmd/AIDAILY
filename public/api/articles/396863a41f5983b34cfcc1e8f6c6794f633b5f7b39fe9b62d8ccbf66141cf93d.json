@@ -1,0 +1,47 @@
+{
+  "id": "396863a41f5983b34cfcc1e8f6c6794f633b5f7b39fe9b62d8ccbf66141cf93d",
+  "title": " This new Windows malware can take over your PC and wipe it clean ",
+  "summary": " GigaWiper is a remote access Trojan that can spy on victims and permanently wipe their systems in three different ways. ",
+  "url": "https://www.malwarebytes.com/blog/news/2026/07/this-new-windows-malware-can-take-over-your-pc-and-wipe-it-clean",
+  "source": "Malwarebytes Labs",
+  "sourceUrl": "https://www.malwarebytes.com/blog/feed",
+  "publishedAt": "2026-07-10T13:25:41.000Z",
+  "imageUrl": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2026/07/21.8248104block.png",
+  "imageAlt": " This new Windows malware can take over your PC and wipe it clean ",
+  "tags": [
+    "tecnologia",
+    "tecnologia",
+    "actualidad"
+  ],
+  "aiSummary": " GigaWiper is a remote access Trojan that can spy on victims and permanently wipe their systems in three different ways. ",
+  "keyPoints": [
+    " This new Windows malware can take over your PC and wipe it clean "
+  ],
+  "whyMatters": "Noticia de actualidad en el sector de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2026/07/21.8248104block.png",
+      "alt": "Malwarebytes blocks the C2 connections",
+      "caption": "Malwarebytes blocks the C2 connections"
+    },
+    {
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/11/Chrome-1200.png?w=1200",
+      "alt": "Chrome logo",
+      "caption": "Chrome logo"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Tecnologia"
+  ],
+  "fullArticle": "Microsoft published new research on GigaWiper, a modular Golang backdoor for Windows that combines robust remote access with multiple ways to permanently destroy systems and data.\n\nGigaWiper is a Windows backdoor that Microsoft has observed in intrusions since October 2025. Rather than being a single-purpose wiper, it’s an operational platform that blends command‑and‑control (C2), data destruction, and remote access options in a single piece of malware.\n\nWhat’s remarkable is that GigaWiper seems to be built using previously separate tools like the Crucio ransomware and the FlockWiper disk wiper, wrapped into a consolidated framework.\n\nBased on the characteristics of the malware, which include espionage features (screen capture, VNC‑like remote control, system inventory) and multiple ways t...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T14:04:35.611Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

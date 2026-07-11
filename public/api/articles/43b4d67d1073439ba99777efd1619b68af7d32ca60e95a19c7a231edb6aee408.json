@@ -1,0 +1,69 @@
+{
+  "id": "43b4d67d1073439ba99777efd1619b68af7d32ca60e95a19c7a231edb6aee408",
+  "title": "rxResource NO es un bus de comandos: Por qué no debes usarlo para mutaciones en Angular",
+  "summary": "El artículo explica por qué el componente rxResource de Angular no es adecuado para operaciones de mutación, detalla sus fallos graves y propone la herramienta correcta para este tipo de tareas.",
+  "url": "https://dev.to/ysndmr/rxresource-is-not-a-command-bus-2jj7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T15:12:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fysndmr.com%2Fapi%2Fog-cover%3Ftitle%3DrxResource%2520Is%2520Not%2520a%2520Command%2520Bus%26category%3Ddecision",
+  "imageAlt": "rxResource NO es un bus de comandos: Por qué no debes usarlo para mutaciones en Angular",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica por qué el componente rxResource de Angular no es adecuado para operaciones de mutación, detalla sus fallos graves y propone la herramienta correcta para este tipo de tareas.",
+  "keyPoints": [
+    "rxResource evalúa el stream al iniciar, llamando a la API de guardado con parámetros indefinidos sin intervención del usuario.",
+    "Los disparadores de guardado generan nuevas referencias de objeto, causando ejecuciones duplicadas o silenciosas por normalización o programación de Angular.",
+    "La recuperación de errores es deficiente, ya que el disparador conserva el último payload y reejecuta sin control explícito.",
+    "La herramienta adecuada para mutaciones únicas es una suscripción directa con señales Writable, predecible y testeable."
+  ],
+  "whyMatters": "Utilizar rxResource para mutaciones genera bugs impredecibles en producción, como llamadas a API no deseadas o ejecuciones duplicadas que afectan el rendimiento y la experiencia de usuario. Comprender la distinción entre operaciones idempotentes y comandos es fundamental para los desarrolladores Angular que trabajan con señales y RxJS, ya que evita la acumulación de deuda técnica y facilita el mantenimiento de aplicaciones escalables. Esta lección permite elegir la herramienta adecuada para cada problema, optimizando la estabilidad y la calidad del código en proyectos de desarrollo web moderno.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fysndmr.com%2Fapi%2Fog-cover%3Ftitle%3DrxResource%2520Is%2520Not%2520a%2520Command%2520Bus%26category%3Ddecision",
+      "alt": "Portada del artículo que explica por qué rxResource no es un bus de comandos en Angular",
+      "caption": "Imagen de portada del artículo original de Dev.to sobre el uso incorrecto de rxResource para mutaciones"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Angular",
+    "#RxJS",
+    "#SeñalesAngular",
+    "#DesarrolloFrontend",
+    "#ProgramacionWeb"
+  ],
+  "fullArticle": "El lanzamiento de rxResource en Angular generó entusiasmo entre los desarrolladores, que rápidamente intentaron utilizarlo para manejar mutaciones además de lecturas de datos. Sin embargo, su uso para operaciones que modifican estado conlleva riesgos importantes que pueden generar bugs en producción y deuda técnica difícil de depurar. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fysndmr.com%2Fapi%2Fog-cover%3Ftitle%3DrxResource%2520Is%2520Not%2520a%2520Command%2520Bus%26category%3Ddecision]\n\nEl primer problema radica en que el parámetro 'params' se inicializa como indefinido, por lo que en el primer renderizado se ejecuta la llamada a la API de guardado sin que el usuario haya realizado ninguna acción. A esto se suma que los disparadores de guardado generan una nueva referencia de objeto en cada ejecución, lo que puede causar llamadas duplicadas o, por el contrario, que se salte una ejecución si el pipeline normaliza el payload o el scheduler de Angular agrupa las operaciones. Además, la recuperación de errores es completamente deficiente: después de un fallo, el disparador conserva el último payload, por lo que una nueva ejecución con los mismos datos vuelve a activarse sin control explícito por parte del desarrollador.\n\nLa alternativa recomendada para mutaciones únicas es una suscripción directa acompañada de una señal Writable, que ofrece un comportamiento explícito, predecible y fácil de testear de forma aislada. La regla práctica que se propone es clara: rxResource está diseñado exclusivamente para lecturas idempotentes, es decir, operaciones que pueden ejecutarse varias veces con el mismo resultado sin efectos secundarios. Si una operación puede causar problemas al ejecutarse dos veces con la misma entrada, se trata de un comando, y los comandos no pertenecen a rxResource. Comprender la diferencia entre las herramientas de RxJS y las señales de Angular es fundamental para elegir la solución adecuada a cada problema y evitar errores comunes en el desarrollo de aplicaciones modernas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T15:26:44.461Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: rxResource Is Not a Command Bus",
+      "url": "https://dev.to/ysndmr/rxresource-is-not-a-command-bus-1l3h"
+    },
+    {
+      "title": "Documentación oficial de Angular sobre rxResource",
+      "url": "https://angular.dev/guide/signals/rxresource"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Angular que introdujo rxResource",
+      "value": "Angular 16"
+    },
+    {
+      "label": "Tipo de operación compatible con rxResource",
+      "value": "Lecturas idempotentes"
+    },
+    {
+      "label": "Problema principal al usarlo en mutaciones",
+      "value": "Llamadas a API no deseadas con parámetros indefinidos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

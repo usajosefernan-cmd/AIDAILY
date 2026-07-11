@@ -1,0 +1,101 @@
+{
+  "id": "f2dba25da6295ea9037923ab3f284670f0470a983098318392124ff225b8034e",
+  "title": "AI Avatar v15 revoluciona la experiencia de desarrollo: efectos visuales, TTS y animaciones 3D para VS Code y Chrome",
+  "summary": "La versión 15 de AI Avatar, aplicación gratuita para animar avatares VRM en entornos de desarrollo, incorpora efectos visuales colaborativos con RutenVeil, funcionalidad de texto a voz con múltiples motores, animaciones 3D divertidas y mensajes contextuales según el día y hora.",
+  "url": "https://dev.to/webdeveloperhyper/cool-effects-tts-and-fun-animations-ai-avatar-v15-vs-code-and-chrome-extension-3oec",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T12:25:01.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fevm59biu46t176pjujdk.png",
+  "imageAlt": "AI Avatar v15 revoluciona la experiencia de desarrollo: efectos visuales, TTS y animaciones 3D para VS Code y Chrome",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La versión 15 de AI Avatar, aplicación gratuita para animar avatares VRM en entornos de desarrollo, incorpora efectos visuales colaborativos con RutenVeil, funcionalidad de texto a voz con múltiples motores, animaciones 3D divertidas y mensajes contextuales según el día y hora.",
+  "keyPoints": [
+    "AI Avatar v15 es una actualización gratuita que permite animar avatares VRM 3D en VS Code y Chrome, respondiendo a chats de IA y pulsaciones de tecla.",
+    "La actualización incluye colaboración con RutenVeil para efectos visuales por capas, logrando profundidad 3D con ilustraciones planas y mayor mantenibilidad.",
+    "Se incorpora TTS con cuatro motores: Gemini TTS de alta calidad pero limitado, Web Speech API gratuito e ilimitado, y modelos locales Kokoro y VOICEVOX para inglés y japonés.",
+    "Se añaden modos de animación 3D Fuente de Millonario y Montaña Rusa, además de mensajes contextuales que se adaptan al día, hora y situación del usuario."
+  ],
+  "whyMatters": "Esta actualización posiciona a AI Avatar como una herramienta imprescindible para desarrolladores que buscan personalizar su entorno de trabajo con interacciones más humanas y entretenidas. La incorporación de TTS y efectos visuales colaborativos sienta un precedente para la integración de avatares inteligentes en flujos de productividad, reduciendo la fatiga y aumentando la motivación. Además, la apuesta por modelos locales de TTS y animaciones ligeras demuestra un enfoque equilibrado entre rendimiento, accesibilidad y experiencia de usuario, lo que impulsa su adopción tanto por usuarios principiantes como avanzados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fevm59biu46t176pjujdk.png",
+      "alt": "Imagen de portada del artículo sobre la actualización v15 de AI Avatar con efectos visuales, TTS y animaciones",
+      "caption": "Portada del artículo de Dev.to que anuncia la versión 15 de AI Avatar"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/oe025rprCqM",
+      "alt": "Video demostrativo de los efectos visuales de AI Avatar v15",
+      "caption": "Video de demostración de los efectos visuales colaborativos creados por RutenVeil"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/vQ9sC10_HNc",
+      "alt": "Video demostrativo de la funcionalidad de texto a voz (TTS) de AI Avatar v15",
+      "caption": "Video de demostración de las opciones de TTS integradas en la nueva versión"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/ACcrC_mWx_U",
+      "alt": "Video demostrativo del modo Fuente de Millonario de AI Avatar v15",
+      "caption": "Video de demostración del modo de animación Fuente de Millonario con monedas de oro y diamantes"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/iyecc2jEQcY",
+      "alt": "Video demostrativo del modo Montaña Rusa de AI Avatar v15",
+      "caption": "Video de demostración del modo de animación Montaña Rusa con tres variantes visuales"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AIAvatar",
+    "#Desarrolladores",
+    "#VSCode",
+    "#TTS",
+    "#VRM"
+  ],
+  "fullArticle": "La versión 15 de AI Avatar, la aplicación gratuita que permite animar avatares VRM 3D en respuesta a chats de IA y pulsaciones de tecla en VS Code y navegadores Chrome y Edge, llega con cuatro grandes novedades pensadas para hacer la experiencia de desarrollo más amena y personalizada. La actualización más destacada es la colaboración con el desarrollador RutenVeil, quien creó un conjunto de efectos visuales basados en animaciones CSS por capas, similares a las capas de Photoshop, que generan una sensación de profundidad 3D sin comprometer el rendimiento. Entre estos efectos destaca el 'Idol Stage', con una línea de tiempo precisa de 0,1 segundos que sincroniza luces y elementos gráficos para crear coreografías visuales complejas. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fevm59biu46t176pjujdk.png] Otra de las incorporaciones estrella es la funcionalidad de texto a voz (TTS), que incluye cuatro opciones para adaptarse a las necesidades de cada usuario: Gemini TTS, de alta calidad y rapidez pero limitado a 10 usos diarios en su plan gratuito; la Web Speech API, gratuita e ilimitada aunque con un tono robótico; y los modelos locales Kokoro (para inglés) y VOICEVOX (para japonés), que ofrecen una naturalidad mayor a cambio de un mayor consumo de recursos o necesidad de instalación previa. [MULTIMEDIA: https://www.youtube.com/embed/oe025rprCqM] Junto a ello, se añaden dos modos de animación 3D desarrollados con Three.js: el modo Fuente de Millonario, que genera fuentes de monedas de oro o diamantes rosas sin cálculos de colisión para mantener el rendimiento, y el modo Montaña Rusa, con tres variantes (Default, Arcoíris y Agua) que permiten disfrutar de recorridos ilimitados. [MULTIMEDIA: https://www.youtube.com/embed/vQ9sC10_HNc] [MULTIMEDIA: https://www.youtube.com/embed/ACcrC_mWx_U] [MULTIMEDIA: https://www.youtube.com/embed/iyecc2jEQcY] Por último, la actualización incorpora mensajes contextuales que se adaptan al día, la hora y la situación del usuario, eliminando la sensación de roboticidad de los mensajes fijos anteriores. Esta mejora, junto al resto de novedades, refuerza el objetivo de AI Avatar: alegrar a desarrolladores y usuarios, haciendo que su entorno de trabajo sea más divertido y personal sin renunciar a la productividad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T12:47:15.237Z",
+  "links": [
+    {
+      "title": "Página oficial del formato de avatar 3D VRM",
+      "url": "https://vrm.dev/"
+    },
+    {
+      "title": "Documentación oficial de Three.js para desarrollo de animaciones 3D",
+      "url": "https://threejs.org/docs/"
+    },
+    {
+      "title": "Documentación de la API Web Speech para texto a voz en navegadores",
+      "url": "https://developer.mozilla.org/es/docs/Web/API/Web_Speech_API"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Límite de usos diarios de Gemini TTS en plan gratuito",
+      "value": "10 usos por día"
+    },
+    {
+      "label": "Número de motores TTS integrados",
+      "value": "4 motores (Gemini TTS, Web Speech API, Kokoro, VOICEVOX)"
+    },
+    {
+      "label": "Variantes del modo Montaña Rusa",
+      "value": "3 variantes (Default, Arcoíris, Agua)"
+    },
+    {
+      "label": "Temas visuales incluidos en la actualización",
+      "value": "6 temas visuales diferentes"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

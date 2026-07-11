@@ -1,0 +1,52 @@
+{
+  "aiSummary": "Paradigm Shift ha descubierto una vulnerabilidad en el BootROM de los chips A12 y A13 de Apple, que no puede ser parcheada y permite ataques críticos.",
+  "category": "tecnologia",
+  "fullArticle": "La firma de investigación de seguridad Paradigm Shift ha publicado detalles de una nueva vulnerabilidad en el BootROM de los chips A12 y A13 de Apple, junto con un exploit funcional llamado 'usbliter8'. El BootROM, o SecureROM, es el primer código que ejecuta un iPhone al encenderse, y al estar integrado directamente en el chip, cualquier vulnerabilidad encontrada en él no puede ser parcheada con actualizaciones de software. Esto significa que los dispositivos afectados permanecerán vulnerables durante toda su vida útil. El último exploit público de BootROM conocido fue 'checkm8', lanzado en 2019 y que afectaba a dispositivos desde el iPhone 4S hasta el iPhone X. 'usbliter8' extiende esta historia a la siguiente generación de chips, abarcando desde el iPhone XS hasta la serie iPhone 11. El exploit aprovecha un error en el controlador USB de los chips de Apple, permitiendo a los atacantes manipular un puntero de hardware de manera que puedan escribir datos en ubicaciones de memoria que no deberían ser accesibles. Los investigadores de Paradigm Shift señalan que este parece ser un error en el hardware del controlador USB, no en el software de Apple. Aunque el exploit no afecta directamente el Secure Enclave, abre nuevas vías de ataque que pueden comprometer la seguridad del dispositivo. Paradigm Shift informó sus hallazgos a Apple Product Security antes de la publicación y trabajó con la empresa en una divulgación coordinada.",
+  "hashtags": [
+    "#Apple",
+    "#SeguridadInformatica",
+    "#Vulnerabilidad"
+  ],
+  "id": "b15b96c405a116cecedb9d2e3b492029942656bc0a712fa99a368f22f3e754e0",
+  "imageAlt": "Apple se enfrenta a una nueva vulnerabilidad inparable en sus chips A12 y A13",
+  "imageUrl": "https://images.macrumors.com/t/i5N2ww8k4rXF71LUiGaZtWYxMHU=/2500x/article-new/2023/06/iPhone-11-Pro-Feature-Green.jpg",
+  "keyPoints": [
+    "La vulnerabilidad afecta a iPhone XS hasta iPhone 11, aprovechando un error en el controlador USB.",
+    "El exploit 'usbliter8' permite ejecutar código malicioso y bajar la seguridad del dispositivo.",
+    "Apple no puede solucionar el problema con actualizaciones de software, dejando los dispositivos vulnerables permanentemente.",
+    "El exploit no afecta directamente el Secure Enclave, pero abre nuevas vías de ataque."
+  ],
+  "multimedia": [
+    {
+      "alt": "Apple's A12 and A13 Chips Facing New Unpatchable Exploit",
+      "caption": "Imagen de portada del artículo",
+      "type": "image",
+      "url": "https://images.macrumors.com/t/i5N2ww8k4rXF71LUiGaZtWYxMHU=/2500x/article-new/2023/06/iPhone-11-Pro-Feature-Green.jpg"
+    },
+    {
+      "alt": "iPhone 11 Pro Feature Green",
+      "caption": "iPhone 11 Pro Feature Green",
+      "type": "image",
+      "url": "https://images.macrumors.com/t/pErjuSd1hpu8WgaWuA0gQ3L5ECM=/400x0/article-new/2023/06/iPhone-11-Pro-Feature-Green.jpg?lossy"
+    },
+    {
+      "alt": "Dynamic Island iPhone 18 Pro Feature",
+      "caption": "Dynamic Island iPhone 18 Pro Feature",
+      "type": "image",
+      "url": "https://images.macrumors.com/t/r6p59KZTzg4hCA8GTGL_Cwh0aTw=/400x400/article-new/2026/01/Dynamic-Island-iPhone-18-Pro-Feature.jpg"
+    }
+  ],
+  "publishedAt": "2026-06-18T16:17:54.000Z",
+  "scrapedAt": "2026-06-20T19:19:26.117Z",
+  "source": "MacRumors",
+  "sourceUrl": "https://www.macrumors.com/macrumors.xml",
+  "subcategory": "gadgets",
+  "summary": "Paradigm Shift ha descubierto una vulnerabilidad en el BootROM de los chips A12 y A13 de Apple, que no puede ser parcheada y permite ataques críticos.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Apple se enfrenta a una nueva vulnerabilidad inparable en sus chips A12 y A13",
+  "url": "https://www.macrumors.com/2026/06/18/a12-and-a13-chips-facing-exploit/",
+  "whyMatters": "Esta vulnerabilidad tiene un impacto significativo en la seguridad de millones de dispositivos Apple, poniendo en riesgo la privacidad y la integridad de los usuarios. La imposibilidad de parchear el fallo mediante software lo convierte en una amenaza a largo plazo, lo que obliga a los usuarios a tomar medidas adicionales de seguridad."
+}

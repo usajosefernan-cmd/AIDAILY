@@ -1,0 +1,85 @@
+{
+  "id": "5e6cd491840255813548305d27603c130890f8298b3dd9cfa396816d4076e14b",
+  "title": "El Enfoque Multi-Agente: Rompiendo el Techo de Productividad en el Desarrollo de Software con IA",
+  "summary": "Itamar Friedman, CEO de Qodo, expone en QCon AI cómo los sistemas multi-agente adaptativos superan el límite de productividad de la IA en desarrollo de software, pasando del autocompletado simple a flujos de trabajo resilientes con pruebas autónomas, revisión de código inteligente y arbitraje robusto, además de la gobernanza de la comunicación entre agentes para un SDLC escalable y controlable.",
+  "url": "https://www.infoq.com/presentations/multi-agent-ai-architecture",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-08T14:06:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/multi-agent-ai-architecture/en/smallimage/itamar-friedman-thumbnail-1782818996066.jpeg",
+  "imageAlt": "El Enfoque Multi-Agente: Rompiendo el Techo de Productividad en el Desarrollo de Software con IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Itamar Friedman, CEO de Qodo, expone en QCon AI cómo los sistemas multi-agente adaptativos superan el límite de productividad de la IA en desarrollo de software, pasando del autocompletado simple a flujos de trabajo resilientes con pruebas autónomas, revisión de código inteligente y arbitraje robusto, además de la gobernanza de la comunicación entre agentes para un SDLC escalable y controlable.",
+  "keyPoints": [
+    "Itamar Friedman, CEO de Qodo, expone en QCon AI cómo los sistemas multi-agente superan el techo de productividad de la IA en desarrollo de software.",
+    "La transición del autocompletado simple a flujos resilientes integra pruebas autónomas, revisión de código inteligente y arbitraje robusto para mayor confiabilidad.",
+    "El 65% de los desarrolladores genera al menos un cuarto de su código con IA, y empresas reportan hasta un 50% de código generado por herramientas de IA.",
+    "La clave para automatizar el SDLC de forma confiable es un motor de contexto y verificación continua, no solo generación de código."
+  ],
+  "whyMatters": "Esta charla expone el salto cualitativo necesario para escalar la automatización del desarrollo de software con IA sin sacrificar confiabilidad. A medida que más del 50% del código en empresas proviene de herramientas de IA, los sistemas multi-agente con verificación integrada se vuelven imprescindibles para evitar fallos costosos en producción. Para líderes de ingeniería, adoptar este enfoque no solo aumenta la productividad, sino que reduce riesgos regulatorios y operativos en un ecosistema cada vez más dependiente de la generación de código automatizado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/multi-agent-ai-architecture/en/smallimage/itamar-friedman-thumbnail-1782818996066.jpeg",
+      "alt": "Itamar Friedman, CEO de Qodo, durante su presentación en QCon AI sobre el enfoque multi-agente para automatización del desarrollo de software",
+      "caption": "Presentación de Itamar Friedman en QCon AI sobre sistemas multi-agente para desarrollo de software confiable"
+    },
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg",
+      "alt": "Portada del minilibro sobre arquitectura de IA agéntica de InfoQ",
+      "caption": "Minilibro de InfoQ sobre arquitectura de IA agéntica, tema central de la presentación"
+    },
+    {
+      "type": "image",
+      "url": "https://res.infoq.com/presentations/multi-agent-ai-architecture/en/promoimage/qcon-ai-1783518498901.jpg",
+      "alt": "Imagen promocional del evento QCon AI donde se presentó la charla",
+      "caption": "Promoción del evento QCon AI, espacio para debates sobre ingeniería de IA a escala"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IAenDesarrollo",
+    "#SistemasMultiAgente",
+    "#AutomatizacionSoftware",
+    "#Qodo",
+    "#QConAI"
+  ],
+  "fullArticle": "Itamar Friedman, CEO y cofundador de Qodo, empresa especializada en soluciones de gobernanza de código con inteligencia artificial, presentó en el evento QCon AI su enfoque multi-agente para construir automatización del desarrollo de software confiable y controlable. Con más de 20 años de experiencia en innovación de machine learning y equipos ganadores de competiciones, Friedman explicó cómo los arquitectos y líderes de ingeniería pueden superar el techo de productividad actual de la IA pasando del simple autocompletado a flujos de trabajo resilientes. Su charla se centró en la integración de pruebas autónomas, revisión de código inteligente y un sistema de arbitraje robusto, además de la gobernanza de la comunicación entre agentes para construir un ciclo de vida de desarrollo de software (SDLC) impulsado por contexto y escalable.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/multi-agent-ai-architecture/en/smallimage/itamar-friedman-thumbnail-1782818996066.jpeg]\n\nFriedman respaldó su propuesta con datos contundentes: el 65% de los desarrolladores admite que al menos un cuarto de su código es generado por IA, y algunas empresas afirman que ya alcanzan el 50% de código generado por herramientas de IA. Este cambio de paradigma trae riesgos: en los últimos meses se registraron más de tres outages en servicios en la nube vinculados a código generado o revisado por IA, y encuestas revelan que herramientas como Cursor no siguen las reglas de los usuarios de forma consistente, generando implementaciones variables incluso con instrucciones detalladas. La solución no está en generar más código, sino en construir sistemas multi-agente donde la verificación continua y el motor de contexto sean el núcleo del flujo de trabajo.\n\n[MULTIMEDIA: https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/minibooks/agentic-ai-architecture/en/smallimage/agentic-ai-architecture-thumb-image-1782836155225.jpg]\n\nEl enfoque presentado por Friedman ya se aplica en producción en equipos de ingeniería líderes, y busca escalar la automatización del SDLC sin sacrificar calidad ni control. A diferencia de los flujos de trabajo simples basados en LLM, los sistemas multi-agente adaptativos permiten personalizar cada etapa del desarrollo, desde la planificación hasta la revisión de seguridad, adaptándose a las necesidades específicas de cada proyecto. Esta charla forma parte de QCon AI, un evento dirigido a profesionales de la ingeniería que busca compartir playbooks arquitectónicos y métricas de fallos usados por organizaciones peer en producción para escalar cargas de trabajo de IA de forma segura.\n\n[MULTIMEDIA: https://res.infoq.com/presentations/multi-agent-ai-architecture/en/promoimage/qcon-ai-1783518498901.jpg]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T14:45:40.951Z",
+  "links": [
+    {
+      "title": "Presentación original en InfoQ: El enfoque multi-agente para automatización del desarrollo de software",
+      "url": "https://www.infoq.com/presentations/multi-agent-ai-architecture/"
+    },
+    {
+      "title": "Sitio oficial de Qodo, empresa de gobernanza de código con IA fundada por Itamar Friedman",
+      "url": "https://www.qodo.ai/"
+    },
+    {
+      "title": "Sitio oficial del evento QCon AI, enfocado en ingeniería de IA a escala",
+      "url": "https://qcon.infoq.com/ai/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de desarrolladores que generan al menos un cuarto de su código con IA",
+      "value": "65%"
+    },
+    {
+      "label": "Porcentaje máximo de código generado por IA en empresas según declaraciones oficiales",
+      "value": "50%"
+    },
+    {
+      "label": "Número de outages en la nube relacionados con código generado por IA en los últimos meses",
+      "value": "Más de 3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

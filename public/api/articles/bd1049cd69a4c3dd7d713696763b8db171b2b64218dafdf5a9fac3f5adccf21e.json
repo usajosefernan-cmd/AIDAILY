@@ -1,0 +1,73 @@
+{
+  "id": "bd1049cd69a4c3dd7d713696763b8db171b2b64218dafdf5a9fac3f5adccf21e",
+  "title": "Osloq: el agente de IA que no arregla bugs, pero los explica",
+  "summary": "Osloq es un agente de inteligencia artificial diseñado para detectar, reproducir y reportar errores en código sin tocar el código fuente, ofreciendo evidencia y explicación a los desarrolladores.",
+  "url": "https://dev.to/gophernment/osloq-aih-ai-reproduction-ewlaaekid-bug-1blp",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-05T02:44:01.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4b0uiwr323v4n3m2b5k9.png",
+  "imageAlt": "Osloq: el agente de IA que no arregla bugs, pero los explica",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Osloq es un agente de inteligencia artificial diseñado para detectar, reproducir y reportar errores en código sin tocar el código fuente, ofreciendo evidencia y explicación a los desarrolladores.",
+  "keyPoints": [
+    "Osloq funciona como un detective de bugs, reproduciendo fallos en un sandbox aislado y entregando un informe con pruebas y contexto.",
+    "El agente opera con permisos de solo lectura en GitHub y elimina el sandbox tras la investigación, garantizando que el código nunca sea almacenado ni entrenado.",
+    "En lugar de ofrecer una solución automática, Osloq señala la causa raíz, dejando que el equipo decida la corrección, fomentando la confianza y la comprensión del problema.",
+    "Este enfoque contrasta con las herramientas de IA que proponen correcciones instantáneas, resaltando la importancia de la transparencia y la educación en la gestión de errores."
+  ],
+  "whyMatters": "La adopción de Osloq refleja una evolución en la cultura del desarrollo de software, priorizando la comprensión profunda sobre la rapidez de la corrección. Al no tocar el código, el agente evita introducir nuevos errores y mantiene la integridad del repositorio, lo que es esencial para proyectos críticos. Además, al proporcionar evidencia tangible, Osloq fortalece la confianza entre equipos distribuidos y mejora la trazabilidad de los fallos, factores clave para la resiliencia de sistemas complejos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4b0uiwr323v4n3m2b5k9.png",
+      "alt": "Portada del artículo sobre Osloq",
+      "caption": "Imagen que muestra el logo de Osloq y su función de detective de bugs."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ejemplo de reporte generado por Osloq",
+      "caption": "Captura de pantalla del informe de Osloq con evidencia de la reproducción del bug."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Osloq",
+    "#Ia",
+    "#Debugging"
+  ],
+  "fullArticle": "En el mundo del desarrollo de software, la rapidez con la que se corrigen los bugs suele ser la medida del éxito de una herramienta de IA. Osloq rompe con esta tradición al ofrecer una alternativa radical: no arregla los errores, los explica. Este agente de inteligencia artificial se posiciona como un detective de bugs que lee un issue de GitHub, rastrea el flujo de ejecución, reproduce el fallo en un sandbox aislado y entrega un informe con evidencia y una explicación clara de la causa.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4b0uiwr323v4n3m2b5k9.png]\n\nUna de las características más destacadas de Osloq es su compromiso con la privacidad y la seguridad. El sandbox se destruye inmediatamente después de la investigación, garantizando que el código nunca se almacene ni se utilice para entrenar modelos. Además, el GitHub App asociado opera con permisos de solo lectura, lo que rayos elimina cualquier riesgo de alteración accidental del repositorio.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl valor de Osloq radica en empoderar a los equipos de desarrollo. En lugar de ofrecer una solución automática que el desarrollador simplemente acepta o rechaza, el agente entrega un diagnóstico detallado y evidencia reproducible. El equipo puede entonces decidir cómo y cuándo corregir el error, lo que fomenta la comprensión profunda y la confianza entre los miembros del proyecto. Este enfoque resulta especialmente valioso en entornos donde los bugs afectan a un gran número de usuarios y la fiabilidad es primordial.\n\nLa aparición de Osloq subraya una tendencia creciente en la industria: la preferencia por herramientas que aporten transparencia y educación sobre la automatización sin supervisión. Al centrarse en la explicación y la evidencia, Osloq se posiciona como un recurso indispensable para equipos que buscan mejorar la calidad del software sin sacrificar la seguridad ni la integridad del código.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T03:03:06.978Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/osloq-article"
+    },
+    {
+      "title": "Repositorio de Osloq en GitHub",
+      "url": "https://github.com/osloq/osloq"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Permisos GitHub App",
+      "value": "Solo lectura"
+    },
+    {
+      "label": "Destrucción del sandbox",
+      "value": "Inmediatamente tras la investigación"
+    },
+    {
+      "label": "Código no entrenado",
+      "value": "No se almacena ni se utiliza para entrenamiento"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

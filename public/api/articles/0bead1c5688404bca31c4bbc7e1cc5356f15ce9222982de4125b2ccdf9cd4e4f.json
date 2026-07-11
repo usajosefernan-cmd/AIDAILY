@@ -1,0 +1,73 @@
+{
+  "id": "0bead1c5688404bca31c4bbc7e1cc5356f15ce9222982de4125b2ccdf9cd4e4f",
+  "title": "El CEO de Huntress reconoce que un analista filtró al operador de ransomware Devman la investigación del FBI: lo califica de 'mal juicio'",
+  "summary": "El ex analista de Huntress Ben Folland acusa a un empleado actual de la empresa de filtrar comunicaciones del FBI al operador de ransomware Devman, quien amenaza a su familia. El CEO de la firma, Kyle Hanslovan, reconoce la existencia de estas comunicaciones pero las califica de 'mal juicio' sin constituir una amenaza interna o actividad ilegal. Folland insiste en que la acción sí cumple con la definición de insider threat, al haber entregado información sensible de una investigación activa al criminal.",
+  "url": "https://www.theregister.com/security/2026/06/30/huntress-ceo-says-threat-hunter-used-poor-judgment-in-alerting-ransomware-crim-about-law-enforcement-probe/5264532",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-30T16:54:01.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "El CEO de Huntress reconoce que un analista filtró al operador de ransomware Devman la investigación del FBI: lo califica de 'mal juicio'",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El ex analista de Huntress Ben Folland acusa a un empleado actual de la empresa de filtrar comunicaciones del FBI al operador de ransomware Devman, quien amenaza a su familia. El CEO de la firma, Kyle Hanslovan, reconoce la existencia de estas comunicaciones pero las califica de 'mal juicio' sin constituir una amenaza interna o actividad ilegal. Folland insiste en que la acción sí cumple con la definición de insider threat, al haber entregado información sensible de una investigación activa al criminal.",
+  "keyPoints": [
+    "Un ex empleado de Huntress denuncia que un analista actual filtró información del FBI al operador de ransomware Devman, que amenaza a su familia.",
+    "El CEO de Huntress reconoce las comunicaciones entre el analista y el criminal, pero las califica de 'mal juicio', no de actividad ilegal.",
+    "Devman es un operador de ransomware vinculado al código filtrado de Conti, presuntamente ubicado en Rusia, que ataca objetivos globalmente.",
+    "La empresa afirma no tener pruebas de conducta ilegal y sigue investigando, mientras el ex empleado insiste en que se trata de una amenaza interna clara."
+  ],
+  "whyMatters": "Este caso pone en tela de juicio los protocolos de seguridad de las empresas de ciberseguridad, instituciones que deben ser las primeras en proteger la información sensible y evitar filtraciones a actores maliciosos. Si un empleado puede compartir datos de investigaciones policiales activas con criminales, se rompe la confianza de los clientes y se incrementa el riesgo de ataques más dirigidos y sofisticados. Además, evidencia la delgada línea que existe entre la recopilación de inteligencia de amenazas (una práctica habitual en el sector) y la colaboración involuntaria o deliberada con ciberdelincuentes, abriendo el debate sobre la necesidad de regulaciones más estrictas para estas interacciones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+      "alt": "El CEO de Huntress reconoce que un analista filtró al operador de ransomware Devman la investigación del FBI: lo califica de 'mal juicio'",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Huntress",
+    "#Ransomware",
+    "#Devman",
+    "#Ciberseguridad",
+    "#FBI"
+  ],
+  "fullArticle": "La empresa de ciberseguridad Huntress se encuentra en el centro de una polémica tras las acusaciones de un ex empleado que asegura que un analista actual de la compañía filtró información sensible de una investigación del FBI a un operador de ransomware conocido como Devman. El CEO de la firma, Kyle Hanslovan, reconoció esta semana la existencia de comunicaciones 'cuestionables y a largo plazo' entre el empleado y el ciberdelincuente, aunque las calificó de 'mal juicio' y negó que constituyan una actividad ilegal o una amenaza interna.\n\nEl ex analista de operaciones de seguridad de Huntress, Ben Folland, quien abandonó la empresa en febrero, aseguró la semana pasada que el empleado en cuestión pasó comunicaciones de las fuerzas de seguridad estadounidenses a Devman, un operador de ransomware presuntamente ubicado en Rusia que utiliza código modificado de DragonForce basado en el filtrado de Conti, y que actualmente amenaza a Folland y a su familia. Según Folland, cuando el FBI contactó al empleado para recabar información sobre Devman, esta reenvió inmediatamente las comunicaciones exactas al criminal, incluyendo capturas de pantalla con nombres de agentes federales, y se negó a cooperar con la investigación porque quería proteger al delincuente.\n\nHanslovan inicialmente rechazó las acusaciones de Folland sin dar detalles, pero en una publicación de blog esta semana amplió la información, afirmando que la investigación interna no ha encontrado pruebas de conducta ilegal, actividad de amenaza interna o filtraciones adicionales, aunque sí implementaron políticas más estrictas para los investigadores y medidas administrativas contra el empleado. Folland, por su parte, respondió en LinkedIn que la acción no se limita a 'mal juicio', sino que constituye una amenaza interna clara: 'Si alguien dentro de un banco avisa a un estafador que la policía lo investiga, nadie lo llamaría solo mal juicio. Lo llamarían por su nombre: un insider'.\n\nEl caso ha generado alarma en el sector de la ciberseguridad, donde es común que los analistas mantengan comunicaciones con actores maliciosos para recopilar inteligencia sobre amenazas, pero estos intercambios suelen estar regulados por estrictos protocolos éticos y legales. La supuesta filtración de información de una investigación activa del FBI no solo pone en riesgo a los clientes de Huntress, que podrían ser objetivo de ataques de Devman, sino que también socava la confianza en las empresas de seguridad que deben proteger sus sistemas. Por el momento, el FBI no ha emitido comentarios sobre el caso, y Huntress se ha negado a dar más detalles citando los derechos de privacidad del empleado involucrado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T03:46:30.145Z",
+  "links": [
+    {
+      "title": "Fuente original de la noticia en The Register",
+      "url": "https://www.theregister.com/security/"
+    },
+    {
+      "title": "Blog oficial de Huntress con la declaración del CEO",
+      "url": "https://huntress.com/blog"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de salida del ex empleado Ben Folland de Huntress",
+      "value": "Febrero de 2024"
+    },
+    {
+      "label": "Base del código del ransomware operado por Devman",
+      "value": "Código modificado de DragonForce basado en el filtrado de Conti"
+    },
+    {
+      "label": "Presunta ubicación del operador de ransomware Devman",
+      "value": "Rusia"
+    },
+    {
+      "label": "Medida adoptada por Huntress tras el incidente",
+      "value": "Implementación de políticas más estrictas para investigadores y acciones administrativas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

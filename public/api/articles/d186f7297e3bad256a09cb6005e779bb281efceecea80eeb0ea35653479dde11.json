@@ -1,0 +1,79 @@
+{
+  "id": "d186f7297e3bad256a09cb6005e779bb281efceecea80eeb0ea35653479dde11",
+  "title": "V.E.L.O.C.I.T.Y.-OS: El lienzo sináptico y la GPU V‑NCE (Parte 10)",
+  "summary": "El desarrollador presenta la evolución de su sistema operativo de bajo nivel, destacando la interfaz gráfica Synaptic Canvas y la API de cómputo V‑NCE GPU, todo ejecutándose dentro de la caché L3 del procesador.",
+  "url": "https://dev.to/unitbuilds_cc/velocity-os-the-synaptic-canvas-gui-v-nce-gpu-part-10-3om8",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T15:13:27.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F18vr9nxumvmwrdano6np.jpeg",
+  "imageAlt": "V.E.L.O.C.I.T.Y.-OS: El lienzo sináptico y la GPU V‑NCE (Parte 10)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El desarrollador presenta la evolución de su sistema operativo de bajo nivel, destacando la interfaz gráfica Synaptic Canvas y la API de cómputo V‑NCE GPU, todo ejecutándose dentro de la caché L3 del procesador.",
+  "keyPoints": [
+    "El kernel sin drivers de NVMe ya carga archivos y ejecuta código JIT, pero el nuevo compositor visual ofrece una interfaz gráfica doble buffer sin flicker.",
+    "Se diseñaron tres GUIs sin soporte de flotantes: GlassmorphicShellGui, MatrixRainGui y SynapticCanvasGui, cada una compila bajo #![no_std].",
+    "El compositor calcula similitud coseno entre archivos FAT32 y posiciona nodos con un algoritmo de fuerza dirigida totalmente en entero.",
+    "La GPU V‑NCE Compute API acelera cálculos de embeddings y trazado de splines Bezier, permitiendo un rendimiento de hasta 60 fps en la caché L3."
+  ],
+  "whyMatters": "El proyecto demuestra que es viable construir un sistema operativo completo y auto‑sanador dentro de la caché L3, reduciendo latencia y consumo de energía. La integración de una GPU de cómputo de propósito general en este entorno abre nuevas posibilidades para la ejecución de tareas de IA y simulaciones en tiempo real sin dependencias externas. Para la comunidad de desarrollo de sistemas, este enfoque representa un hito que podría redefinir la arquitectura de software embebido y la computación de alto rendimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F18vr9nxumvmwrdano6np.jpeg",
+      "alt": "Portada del artículo sobre V.E.L.O.C.I.T.Y.-OS",
+      "caption": "Portada del artículo que presenta la evolución de V.E.L.O.C.I.T.Y.-OS"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F620e5hfig6afnv1y6hwt.png",
+      "alt": "Pantalla Glassmorphic Shell GUI",
+      "caption": "Pantalla del Glassmorphic Shell GUI, terminal con efecto de vidrio esmerilado"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5odkgdie0dvni01beizk.png",
+      "alt": "Diagrama de flujo del pipeline de Synaptic Canvas",
+      "caption": "Diagrama que ilustra el pipeline de gráficos de Synaptic Canvas, desde buffers de pantalla hasta splines Bezier"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#VeloCityOS",
+    "#SynapticCanvas",
+    "#VNCeGPU"
+  ],
+  "fullArticle": "El creador de V.E.L.O.C.I.T.Y.-OS ha completado la décima entrega de su serie de desarrollo de sistemas operativos de bajo nivel, presentando la evolución de su interfaz gráfica Synaptic Canvas y la nueva API de cómputo V‑NCE GPU. Con el kernel ya capaz de cargar archivos desde NVMe y ejecutar código JIT, el objetivo era superar la limitación de una terminal serial y ofrecer una experiencia visual sin precedentes.\\n\\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F18vr9nxumvmwrdano6np.jpeg]\\n\\nEl compositor visual, construido sobre el protocolo UEFI GOP, utiliza un esquema de doble buffer que evita el parpadeo al pintar directamente en la memoria de pantalla. La arquitectura se basa en tres GUIs distintas, todas compilables bajo #![no_std] y sin librerías de punto flotante: GlassmorphicShellGui, que ofrece un terminal con apariencia de vidrio esmerilado; MatrixRainGui, una referencia divertida al clásico efecto de lluvia; y SynapticCanvasGui, que transforma archivos y bloques JIT en nodos flotantes en un plano 2D.\\n\\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F620e5hfig6afnv1y6hwt.png]\\n\\nEl núcleo del compositor calcula la similitud coseno entre todos los archivos FAT32 y posiciona los nodos mediante un algoritmo de fuerza dirigida implementado íntegramente en entero, con un método Newton‑Raphson de raíz cuadrada personalizado. Los nodos se repelen, se atraen según la similitud y se concentran suavemente hacia el centro de la pantalla, generando splines Bezier que visualizan la transmisión de datos entre hilos JIT.\\n\\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F5odkgdie0dvni01beizk.png]\\n\\nPara acelerar estos cálculos y el trazado, se estableció la base de la API de cómputo V‑NCE GPU. Esta API permite que la GPU se encargue de los embeddings y del renderizado, reduciendo la carga del CPU y manteniendo el rendimiento dentro de la caché L3. El resultado es una experiencia gráfica fluida de hasta 60 fps, todo sin salir del entorno de bajo nivel del sistema operativo.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T15:27:37.175Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño de caché L3",
+      "value": "2 MB"
+    },
+    {
+      "label": "Número de GUIs",
+      "value": "3"
+    },
+    {
+      "label": "Rendimiento de renderizado",
+      "value": "60 fps"
+    },
+    {
+      "label": "Arquitectura base",
+      "value": "UEFI GOP"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

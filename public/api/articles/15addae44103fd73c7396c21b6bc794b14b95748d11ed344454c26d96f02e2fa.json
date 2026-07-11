@@ -1,0 +1,74 @@
+{
+  "id": "15addae44103fd73c7396c21b6bc794b14b95748d11ed344454c26d96f02e2fa",
+  "title": "De los prompts a los pipelines: Cómo transformo la codificación agéntica en un flujo de trabajo de ingeniería reproducible",
+  "summary": "El artículo explica cómo transformar la codificación agéntica, que suele basarse en prompts improvisados, en un flujo de trabajo de ingeniería estructurado, reproducible e inspeccionable mediante el uso de la herramienta po8rewq/agentic-skills, que organiza las tareas en etapas definidas y separa la lógica de orquestación centralizada de los elementos específicos de cada proyecto.",
+  "url": "https://dev.to/po8rewq/from-prompts-to-pipelines-how-i-use-agentic-coding-as-an-engineering-workflow-52fh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T21:25:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Frevolugame.com%2Fp%2Ffrom-prompts-to-pipelines-how-i-use-agentic-coding-as-an-engineering-workflow%2Fcover-image.png",
+  "imageAlt": "De los prompts a los pipelines: Cómo transformo la codificación agéntica en un flujo de trabajo de ingeniería reproducible",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo transformar la codificación agéntica, que suele basarse en prompts improvisados, en un flujo de trabajo de ingeniería estructurado, reproducible e inspeccionable mediante el uso de la herramienta po8rewq/agentic-skills, que organiza las tareas en etapas definidas y separa la lógica de orquestación centralizada de los elementos específicos de cada proyecto.",
+  "keyPoints": [
+    "La codificación agéntica tradicional basada en prompts improvisados no es adecuada para tareas complejas de arquitectura, pruebas o revisiones de código.",
+    "La herramienta po8rewq/agentic-skills organiza el trabajo en etapas secuenciales: requisitos, arquitectura, implementación, verificaciones, revisión y creación de pull requests.",
+    "Cada etapa del flujo genera artefactos inspeccionables que permiten retomar el trabajo sin necesidad de reconstruir el contexto mental completo.",
+    "La separación entre la lógica de orquestación centralizada y los elementos específicos de cada proyecto hace que el flujo de trabajo sea sostenible a largo plazo."
+  ],
+  "whyMatters": "Esta aproximación marca un punto de inflexión en la adopción de la IA para desarrollo de software, ya que deja atrás la prueba y error con prompts para establecer procesos de ingeniería robustos, alineados con las buenas prácticas tradicionales de la disciplina. A largo plazo, permite a los equipos escalar el uso de herramientas de codificación agéntica sin perder trazabilidad, control de calidad ni capacidad de auditoría de los cambios. Además, reduce la carga cognitiva de los desarrolladores, que pueden centrarse en evaluar resultados concretos en lugar de intentar preservar el contexto de conversaciones extensas con modelos de IA.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Frevolugame.com%2Fp%2Ffrom-prompts-to-pipelines-how-i-use-agentic-coding-as-an-engineering-workflow%2Fcover-image.png",
+      "alt": "Imagen de portada del artículo sobre codificación agéntica como flujo de trabajo de ingeniería",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Diagrama del flujo de trabajo de codificación agéntica por etapas",
+      "caption": "Diagrama que ilustra las etapas secuenciales del flujo de trabajo propuesto"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#CodificacionAgentica",
+    "#IngenieriaDeSoftware",
+    "#FlujosDeTrabajoIA",
+    "#DevOps"
+  ],
+  "fullArticle": "La codificación agéntica impulsada por modelos de IA se ha convertido en una herramienta popular para acelerar el desarrollo de software, pero la mayoría de profesionales la utilizan de forma improvisada, basándose en intercambios de prompts sin estructura que solo funcionan para cambios menores. Este enfoque se vuelve completamente inviable cuando las tareas involucran decisiones de arquitectura, diseño de pruebas, revisiones de código o gestión de pull requests, donde la trazabilidad y la repetibilidad son esenciales. El autor del artículo propone un cambio de paradigma: tratar la codificación agéntica como un flujo de trabajo de ingeniería formal, alineado con las buenas prácticas tradicionales de la disciplina.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Frevolugame.com%2Fp%2Ffrom-prompts-to-pipelines-how-i-use-agentic-coding-as-an-engineering-workflow%2Fcover-image.png]\n\nLa herramienta po8rewq/agentic-skills es el eje de esta propuesta, ya que organiza todo el proceso en seis etapas secuenciales: definición de requisitos, diseño de arquitectura, implementación, verificaciones, revisión y creación de pull requests. Cada fase genera artefactos inspeccionables que permiten validar el trabajo, retomar la tarea en cualquier momento sin necesidad de reconstruir el contexto mental de conversaciones anteriores y mantener un registro completo de las decisiones tomadas. Lo más innovador no es solo que cuente con una interfaz de línea de comandos, sino que separa la lógica de orquestación centralizada de los elementos específicos de cada proyecto, de forma que cada repositorio mantiene sus propios comandos, contexto y reglas de operación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEste enfoque convierte la codificación agéntica de una herramienta experimental y dispersa en un proceso sostenible, alineado con los estándares de la ingeniería de software moderna. A largo plazo, permite a los equipos escalar el uso de modelos de IA en el desarrollo sin perder trazabilidad, control de calidad ni capacidad de auditoría, al tiempo que reduce la carga cognitiva de los desarrolladores, que pueden centrarse en evaluar resultados concretos en lugar de gestionar largas conversaciones con prompts.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T21:46:16.171Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/revolugame/from-prompts-to-pipelines-how-i-use-agentic-coding-as-an-engineering-workflow"
+    },
+    {
+      "title": "Repositorio de agentic-skills en GitHub",
+      "url": "https://github.com/po8rewq/agentic-skills"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Etapas del flujo de trabajo",
+      "value": "6 (requisitos, arquitectura, implementación, verificaciones, revisión, pull request)"
+    },
+    {
+      "label": "Componentes separados del sistema",
+      "value": "Lógica de orquestación centralizada y elementos específicos por proyecto"
+    },
+    {
+      "label": "Naturaleza del repositorio de la herramienta",
+      "value": "Pequeño y opinionado"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

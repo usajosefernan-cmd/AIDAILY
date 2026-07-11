@@ -1,0 +1,76 @@
+{
+  "id": "050a875bbe82b83cf51343c652dee2c44fafba4ae4db7294c0fa1b4b50468d65",
+  "title": "TeamLab desvelado: el secreto del bosque de luces que te sigue y cómo armar tu propia versión DIY por menos de 15 euros",
+  "summary": "El artículo desglosa los principios tecnológicos detrás de las instalaciones interactivas de TeamLab en Tokio, que detectan la posición de los visitantes para modificar luces y flores en tiempo real. Explica el uso de sensores infrarrojos y cámaras de profundidad, y propone una versión DIY accesible con Arduino y sensores ultrasónicos por un costo muy bajo.",
+  "url": "https://dev.to/_0c004e5fde78250aee362/teamlab-na-pian-hui-gen-zhu-ni-zou-de-hua-hai-yuan-li-chai-jie-diy-4lll",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T03:24:40.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftn3ak8eka6vglulqzpip.png",
+  "imageAlt": "TeamLab desvelado: el secreto del bosque de luces que te sigue y cómo armar tu propia versión DIY por menos de 15 euros",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo desglosa los principios tecnológicos detrás de las instalaciones interactivas de TeamLab en Tokio, que detectan la posición de los visitantes para modificar luces y flores en tiempo real. Explica el uso de sensores infrarrojos y cámaras de profundidad, y propone una versión DIY accesible con Arduino y sensores ultrasónicos por un costo muy bajo.",
+  "keyPoints": [
+    "Las instalaciones de TeamLab emplean sensores infrarrojos y cámaras de profundidad para detectar la posición de los visitantes en tiempo real.",
+    "Cada uno de los 100 a 500 elementos interactivos calcula su distancia al usuario para ajustar brillo, color o estado de forma individual.",
+    "La respuesta lumínica sigue una curva temporal: encendido gradual de 0.5 segundos, mantenimiento y apagado lento de 2 segundos.",
+    "Una versión DIY se puede construir con una placa Arduino y un sensor ultrasónico HC-SR04 por un costo aproximado de 300 unidades monetarias locales."
+  ],
+  "whyMatters": "Esta tecnología no es un simple truco de entretenimiento: sienta las bases para una nueva generación de espacios públicos inmersivos que responden a la presencia humana de forma orgánica. La democratización de sus principios mediante componentes accesibles permite que creadores independientes y pequeñas empresas experimenten con arte interactivo sin inversiones millonarias. A futuro, esta convergencia entre sensórica, software y diseño colectivo redefine la relación entre el usuario y el entorno, abriendo posibilidades en museos, retail, urbanismo y eventos en vivo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftn3ak8eka6vglulqzpip.png",
+      "alt": "Imagen de portada del artículo que muestra una instalación interactiva de TeamLab con luces que reaccionan a la presencia humana",
+      "caption": "Portada del artículo original en Dev.to que ilustra una de las instalaciones de TeamLab con luces interactivas"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TeamLab",
+    "#ArteInteractivo",
+    "#DIYArduino",
+    "#TecnologiaCreativa"
+  ],
+  "fullArticle": "Las instalaciones del colectivo TeamLab en el centro de Tokio, especialmente en la zona de Odaiba, han cautivado a millones de visitantes con experiencias inmersivas donde la luz y la naturaleza digital reaccionan a cada movimiento. Obras como 'El bosque de luces que responde' y 'Coexistencia de flores y personas' transforman galerías enteras en ecosistemas sensibles: al acercarse, las lámparas se encienden progresivamente y los pétalos digitales se abren bajo los pies del espectador, para apagarse o marchitarse cuando este se aleja. Este efecto, que parece magia pura, se sustenta en principios de ingeniería y sensórica que el artículo desglosa con rigor.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftn3ak8eka6vglulqzpip.png]\nEl sistema de detección combina dos tecnologías principales. Por un lado, los sensores infrarrojos enterrados en el suelo detectan la interrupción de un haz de luz al pasar una persona, lo que confirma presencia pero no su dirección exacta. Por otro, las cámaras de profundidad —como las de la familia Intel RealSense o el antiguo Kinect de Xbox— emiten patrones de luz infrarroja y miden el tiempo de retorno de cada punto, generando un 'mapa de profundidad' en tiempo real que permite localizar con precisión la posición y el desplazamiento de cada visitante.\nLa lógica de respuesta es clave para la experiencia orgánica. Cuando el sistema detecta a una persona, los elementos cercanos inician un encendido gradual de 0.5 segundos; si el usuario se mantiene en la zona, conservan su brillo; al alejarse, inician un apagado lento de 2 segundos. Este timing, aparentemente simple, es el que genera la sensación de que el bosque 'respira'. Además, cada uno de los 100 a 500 elementos (luces, flores, puntos de luz) calcula de forma independiente su distancia al usuario, ajustando su intensidad o color de manera individual. La suma de estas pequeñas variaciones crea una coreografía colectiva que nunca se repite.\nLo más interesante del análisis es que esta magia no requiere presupuestos millonarios. El autor propone una versión DIY funcional con una placa Arduino y un sensor ultrasónico HC-SR04, componente que cuesta alrededor de 60 unidades monetarias locales. El costo total del proyecto ronda las 300 unidades, y todos los materiales se pueden adquirir en plataformas de comercio electrónico como Shopee. Existen decenas de tutoriales en línea con búsquedas como 'Arduino ultrasónico LED', que permiten a cualquier persona, incluso sin conocimientos avanzados de electrónica, construir su propia instalación de luces reactivas. La satisfacción de ver un objeto creado por uno mismo que 'cobra vida' al acercarse es, en sí misma, una pequeña obra de arte.\nEsta democratización de la tecnología interactiva tiene implicaciones profundas. Ya no es necesario acudir a un museo de vanguardia para experimentar con entornos reactivos: cualquier maker, escuela o pequeña empresa puede implementar experiencias similares en sus espacios. A futuro, esta tendencia podría transformar desde escaparates comerciales hasta plazas públicas, convirtiendo la ciudad en un lienzo sensible que responde a sus ciudadanos. TeamLab ha demostrado que el secreto no está en la complejidad, sino en la combinación inteligente de detección, respuesta temporal y reacción colectiva: una fórmula que ya está al alcance de cualquiera.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T03:44:29.081Z",
+  "links": [
+    {
+      "title": "Página oficial de TeamLab",
+      "url": "https://www.teamlab.art/"
+    },
+    {
+      "title": "Guía oficial de Arduino para principiantes",
+      "url": "https://www.arduino.cc/en/Guide"
+    },
+    {
+      "title": "Documentación del sensor ultrasónico HC-SR04",
+      "url": "https://www.electronicshub.org/hc-sr04-ultrasonic-sensor/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo total de componentes DIY",
+      "value": "Aproximadamente 300 unidades monetarias locales"
+    },
+    {
+      "label": "Tiempo de encendido gradual de luces",
+      "value": "0.5 segundos"
+    },
+    {
+      "label": "Tiempo de apagado gradual de luces",
+      "value": "2 segundos"
+    },
+    {
+      "label": "Cantidad de elementos interactivos por instalación",
+      "value": "Entre 100 y 500"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

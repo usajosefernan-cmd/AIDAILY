@@ -1,0 +1,77 @@
+{
+  "id": "101fe04f300d823e0acc384ff5930859c9d4787a930bd2d4d595812f7ee35b54",
+  "title": "HubSpot escala su búsqueda semántica a 20.000 millones de vectores: la ingeniería detrás de la IA empresarial a gran escala",
+  "summary": "HubSpot ha transformado su plataforma de búsqueda semántica interna VaaS hasta gestionar más de 20.000 millones de vectores para 38 equipos, soportando agentes de IA, RAG y deduplicación de contactos, con picos de 100.000 solicitudes de escritura por segundo.",
+  "url": "https://www.infoq.com/news/2026/07/hubspot-semantic-vector-search",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-07-07T08:00:00.000Z",
+  "imageUrl": "https://res.infoq.com/news/2026/07/hubspot-semantic-vector-search/en/resources/1image10-1783111895214.webp",
+  "imageAlt": "HubSpot escala su búsqueda semántica a 20.000 millones de vectores: la ingeniería detrás de la IA empresarial a gran escala",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "HubSpot ha transformado su plataforma de búsqueda semántica interna VaaS hasta gestionar más de 20.000 millones de vectores para 38 equipos, soportando agentes de IA, RAG y deduplicación de contactos, con picos de 100.000 solicitudes de escritura por segundo.",
+  "keyPoints": [
+    "La plataforma VaaS gestiona más de 20.000 millones de vectores distribuidos en 200 índices y 140 clústeres en 5 regiones.",
+    "El tráfico de escritura alcanza picos de 100.000 solicitudes por segundo, con soporte para agentes de IA, RAG y deduplicación de contactos.",
+    "HubSpot migró de Helm a un operador interno de Kubernetes para automatizar la gestión de clústeres, reduciendo el tiempo de despliegue de horas a minutos.",
+    "La elección de Qdrant se debió a su soporte para búsqueda híbrida, reranking ponderado, ejecución on-premise y controles de coste."
+  ],
+  "whyMatters": "Este desarrollo es un referente para la industria sobre cómo escalar sistemas de búsqueda semántica sin sacrificar rendimiento ni control de datos, un requisito indispensable para la adopción masiva de agentes de IA en entornos empresariales. La automatización de la gestión de infraestructura de vectores se convierte en un pilar fundamental a medida que crece la demanda de sistemas RAG y herramientas de IA generativa integradas en flujos de trabajo corporativos. Además, la apuesta por soluciones on-premise con soberanía de datos responde a una demanda creciente de cumplimiento normativo en sectores regulados, posicionando este tipo de arquitecturas como el estándar futuro para la IA empresarial a gran escala.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://res.infoq.com/news/2026/07/hubspot-semantic-vector-search/en/resources/1image10-1783111895214.webp",
+      "alt": "Diagrama de la arquitectura de Vector-as-a-Service (VaaS) de HubSpot",
+      "caption": "Arquitectura del servicio VaaS de HubSpot que gestiona más de 20.000 millones de vectores para múltiples equipos"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#HubSpot",
+    "#BusquedaSemantica",
+    "#Qdrant",
+    "#IAEmpresarial",
+    "#VectoresIA"
+  ],
+  "fullArticle": "HubSpot, el proveedor de software SaaS para gestión de relaciones con clientes, ha desvelado los entresijos de su plataforma de búsqueda semántica interna, un sistema que ha pasado de ser una prueba de concepto a gestionar más de 20.000 millones de vectores utilizados por más de 38 equipos en la compañía. La plataforma, bautizada como VaaS (Vector como Servicio), se apoya sobre el motor de búsqueda de vectores Qdrant y añade capas de control de acceso, generación de embeddings, versionado de datos y recolección de feedback, soportando casos de uso críticos como agentes de IA, sistemas de generación aumentada por recuperación (RAG) y deduplicación de contactos. El crecimiento exponencial del uso de agentes de IA ha elevado la importancia de la calidad de la recuperación de información y la latencia, dos métricas que el equipo de HubSpot ha priorizado en el diseño de la plataforma.\n[MULTIMEDIA: https://res.infoq.com/news/2026/07/hubspot-semantic-vector-search/en/resources/1image10-1783111895214.webp]\nLa elección de Qdrant como motor subyacente no fue casual: HubSpot valoró su capacidad de ejecución on-premise, su soporte para vectores nombrados, búsqueda híbrida, consultas multietapa y reranking ponderado, además de sus funciones de control de costes como la cuantización y el almacenamiento en disco. La gestión interna del motor les ha permitido integrarlo con sus herramientas de trazabilidad, seguimiento de costes, limitación de tasa, escalado y seguridad, manteniendo el control total sobre los datos de los clientes, un requisito indispensable para una empresa que maneja información sensible de millones de usuarios. El despliegue actual supera los 200 índices, 140 clústeres, se distribuye en 5 regiones y 2 entornos, con picos de tráfico de escritura que alcanzan las 100.000 solicitudes por segundo.\nLa escalada de la plataforma no estuvo exenta de desafíos: el equipo inicialmente desplegó la solución con Helm y un número reducido de consumidores, pero la gestión manual se volvió inviable a medida que la flota crecía. Por ello, migraron a un operador interno de Kubernetes, una solución que les permite realizar llamadas a la API, escalar automáticamente según métricas externas y gestionar ciclos de vida complejos y conscientes del estado del sistema. Este cambio introdujo el concepto de 'Traductores', componentes que reconcilian el estado deseado y el estado actual del sistema cada 60 segundos, automatizando la creación y eliminación de clústeres, el movimiento de shards y la recuperación de réplicas, reduciendo la carga operativa del equipo y el tiempo de despliegue de horas a minutos, sin necesidad de clústeres de reserva.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T06:08:00.790Z",
+  "links": [
+    {
+      "title": "Artículo original en InfoQ sobre la escalabilidad de búsqueda semántica de HubSpot",
+      "url": "https://www.infoq.com/news/2026/07/hubspot-semantic-vector-search/"
+    },
+    {
+      "title": "Sitio oficial de Qdrant, motor de búsqueda de vectores utilizado por HubSpot",
+      "url": "https://qdrant.tech/"
+    },
+    {
+      "title": "Documentación oficial de Qdrant sobre mejores prácticas de escalado",
+      "url": "https://qdrant.tech/documentation/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Vectores gestionados",
+      "value": "20.000 millones"
+    },
+    {
+      "label": "Pico de tráfico de escritura",
+      "value": "100.000 solicitudes por segundo"
+    },
+    {
+      "label": "Número de clústeres",
+      "value": "140+"
+    },
+    {
+      "label": "Reducción de tiempo de despliegue",
+      "value": "De horas a minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

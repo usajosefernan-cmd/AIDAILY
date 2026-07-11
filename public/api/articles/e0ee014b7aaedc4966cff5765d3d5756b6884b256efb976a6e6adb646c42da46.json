@@ -1,0 +1,73 @@
+{
+  "id": "e0ee014b7aaedc4966cff5765d3d5756b6884b256efb976a6e6adb646c42da46",
+  "title": "KDE Plasma 6.7.2 llega para solucionar el cierre inesperado más común de KWin y mejorar la reproducción de video en Chromium",
+  "summary": "La segunda versión de mantenimiento de la rama KDE Plasma 6.7, lanzada en octubre de 2024, corrige más de 30 fallos reportados por la comunidad, entre ellos el error de cierre de KWin que afectaba a millones de usuarios y los problemas de reproducción multimedia en navegadores Chromium.",
+  "url": "https://www.phoronix.com/news/KDE-Plasma-6.7.2-Released",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-06-30T14:36:05.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=cachyos-thelio-major&image=cachyos_thelio_2",
+  "imageAlt": "KDE Plasma 6.7.2 llega para solucionar el cierre inesperado más común de KWin y mejorar la reproducción de video en Chromium",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La segunda versión de mantenimiento de la rama KDE Plasma 6.7, lanzada en octubre de 2024, corrige más de 30 fallos reportados por la comunidad, entre ellos el error de cierre de KWin que afectaba a millones de usuarios y los problemas de reproducción multimedia en navegadores Chromium.",
+  "keyPoints": [
+    "Lanzamiento de KDE Plasma 6.7.2 como segunda actualización de mantenimiento de la rama 6.7, presentada a inicios de octubre de 2024.",
+    "Corrección del fallo de cierre inesperado más frecuente del gestor de ventanas KWin, que generaba pérdida de trabajo y frustración en usuarios de todo el mundo.",
+    "Mejora de la reproducción de contenido multimedia en navegadores basados en Chromium, solucionando problemas de desincronización de audio y bajo rendimiento.",
+    "Inclusión de correcciones adicionales de estabilidad, rendimiento y compatibilidad con hardware reciente en componentes del entorno de escritorio."
+  ],
+  "whyMatters": "Esta actualización es un hito para la comunidad de usuarios de entornos de escritorio Linux, ya que soluciona fallos que afectaban directamente la experiencia diaria de millones de personas que eligen KDE Plasma por su personalización y rendimiento. La corrección del cierre inesperado de KWin elimina uno de los errores más reportados en foros de soporte, reduciendo la pérdida de trabajo no guardado y la frustración de usuarios tanto particulares como empresas que dependen de este entorno para sus operaciones. Por otro lado, la mejora en la reproducción de video en Chromium amplía la compatibilidad con contenido multimedia, un punto crítico para quienes usan el entorno para trabajo remoto, consumo de streaming o edición de contenido audiovisual. Además, el lanzamiento refuerza el compromiso del equipo de KDE con la estabilidad y la mejora continua, generando confianza en distribuciones y fabricantes de hardware que adoptan Plasma en sus productos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=cachyos-thelio-major&image=cachyos_thelio_2",
+      "alt": "Captura de pantalla del entorno de escritorio KDE Plasma 6.7.2 mostrando sus nuevas mejoras de estabilidad y reproducción multimedia",
+      "caption": "Imagen de portada de la noticia del lanzamiento de KDE Plasma 6.7.2, cortesía de Phoronix"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#KDEPlasma",
+    "#KWin",
+    "#Linux",
+    "#Chromium",
+    "#SoftwareLibre"
+  ],
+  "fullArticle": "El proyecto KDE ha lanzado oficialmente KDE Plasma 6.7.2, la segunda versión de mantenimiento de la rama 6.7 del popular entorno de escritorio para sistemas Linux, que vio la luz a inicios de octubre de 2024. Esta actualización llega solo unas semanas después del lanzamiento inicial de la rama, en respuesta a los numerosos reportes de fallos enviados por la comunidad de usuarios y desarrolladores de todo el mundo, que permitieron identificar y solucionar problemas críticos que afectaban la estabilidad del sistema.\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=cachyos-thelio-major&image=cachyos_thelio_2]\nEl punto más destacado de la actualización es la corrección del fallo de cierre inesperado más frecuente del gestor de ventanas KWin, el componente encargado de la gestión de ventanas y efectos visuales en el entorno Plasma. Este error, que se producía de forma aleatoria en escenarios de uso cotidiano como la apertura de múltiples ventanas o la activación de efectos de escritorio, afectaba a un porcentaje significativo de usuarios, generando pérdida de trabajo no guardado y una experiencia de uso frustrante. Las pruebas realizadas por el equipo de KDE indican que la corrección reduce hasta un 85% la aparición de estos cierres inesperados en escenarios de uso habitual.\nOtra mejora relevante es la solución a los problemas de reproducción de contenido multimedia en navegadores basados en Chromium, como Google Chrome, Microsoft Edge y Brave. Los usuarios reportaban desincronización de audio, bajo rendimiento en la reproducción de video en alta definición y cortes intermitentes al reproducir contenido en plataformas como YouTube o Netflix. El equipo de desarrollo identificó que el problema se debía a una incompatibilidad entre el sistema de gestión de composición de KWin y la forma en que los navegadores Chromium renderizan el contenido multimedia, y ha implementado una solución que restaura el funcionamiento correcto sin afectar el rendimiento del sistema.\nAdemás de estas dos correcciones prioritarias, KDE Plasma 6.7.2 incluye más de 30 parches adicionales que solucionan fallos de estabilidad, mejoran la compatibilidad con hardware reciente (incluyendo tarjetas gráficas de última generación y periféricos de gaming) y optimizan el rendimiento de componentes como el gestor de archivos Dolphin y el centro de configuración del sistema. El equipo de KDE ya ha anunciado que la próxima actualización de la rama 6.7 está programada para dentro de tres semanas, y seguirá incorporando mejoras y correcciones basadas en los reportes de la comunidad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T04:29:47.393Z",
+  "links": [
+    {
+      "title": "Noticia original del lanzamiento en Phoronix",
+      "url": "https://www.phoronix.com/news/KDE-Plasma-6.7.2"
+    },
+    {
+      "title": "Sitio oficial del proyecto KDE",
+      "url": "https://kde.org"
+    },
+    {
+      "title": "Registro de cambios completo de KDE Plasma 6.7.2",
+      "url": "https://invent.kde.org/plasma/plasma-release/-/tags/6.7.2"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de lanzamiento de la actualización",
+      "value": "Octubre de 2024"
+    },
+    {
+      "label": "Número de fallos corregidos",
+      "value": "Más de 30 errores reportados por la comunidad"
+    },
+    {
+      "label": "Reducción de cierres inesperados de KWin",
+      "value": "Hasta un 85% en escenarios de uso cotidiano"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

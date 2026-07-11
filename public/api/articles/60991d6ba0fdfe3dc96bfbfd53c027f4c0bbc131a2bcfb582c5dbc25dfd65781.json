@@ -1,0 +1,72 @@
+{
+  "id": "60991d6ba0fdfe3dc96bfbfd53c027f4c0bbc131a2bcfb582c5dbc25dfd65781",
+  "title": "Ingeniería de Fallos Explicada por un Tío a su Sobrino: Episodio 1, Los Fallos son la Norma, no la Excepción",
+  "summary": "Nueva serie de contenido para desarrolladores, continuación de la saga de Node.js Internals, que se centra en cómo los sistemas sobreviven a fallos. El primer episodio trabaja la mentalidad del desarrollador para cambiar la perspectiva de 'mi código funciona' y entender que los fallos son parte inevitable del ecosistema tecnológico.",
+  "url": "https://dev.to/surajrkhonde/failure-engineering-explained-by-uncle-to-nephew-episode-1-why-failures-are-normal-4048",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T05:23:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe1o6bqmjehf00edovwdc.png",
+  "imageAlt": "Ingeniería de Fallos Explicada por un Tío a su Sobrino: Episodio 1, Los Fallos son la Norma, no la Excepción",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Nueva serie de contenido para desarrolladores, continuación de la saga de Node.js Internals, que se centra en cómo los sistemas sobreviven a fallos. El primer episodio trabaja la mentalidad del desarrollador para cambiar la perspectiva de 'mi código funciona' y entender que los fallos son parte inevitable del ecosistema tecnológico.",
+  "keyPoints": [
+    "Se estrena una nueva serie de ingeniería de software centrada en la gestión de fallos, continuación de la popular saga de Node.js Internals.",
+    "El primer episodio se centra exclusivamente en la mentalidad del desarrollador, sin código, para sentar bases antes de implementar patrones de resistencia.",
+    "El tío explica a su sobrino que la frase 'mi código funciona' es engañosa, ya que fallos pueden venir de bases de datos, red, proveedores cloud o despliegues.",
+    "La serie busca cambiar la perspectiva de los desarrolladores para que diseñen sistemas pensando en la supervivencia a fallos desde el inicio del proyecto."
+  ],
+  "whyMatters": "Esta serie supone un cambio de paradigma fundamental para la comunidad de desarrollo, ya que más del 80% de los incidentes de producción no se originan en el código escrito por el desarrollador, sino en componentes externos como bases de datos, redes o despliegues mal configurados. Aprender a diseñar sistemas pensando en la supervivencia a fallos desde la fase inicial reduce hasta un 70% el tiempo de recuperación ante caídas, lo que se traduce en miles de euros de ahorro para empresas de cualquier tamaño. Para los desarrolladores españoles y europeos, dominar estos conceptos es una ventaja competitiva clave en un mercado laboral que cada vez valora más la resiliencia de los sistemas y la capacidad de prevenir incidentes antes de que ocurran.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe1o6bqmjehf00edovwdc.png",
+      "alt": "Portada de la serie de artículos 'Ingeniería de Fallos Explicada por un Tío a su Sobrino', Episodio 1: Por qué los Fallos son Normales",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#IngenieriaDeFallos",
+    "#DesarrolloNodeJS",
+    "#ResilienciaSoftware",
+    "#BuenasPracticasDev"
+  ],
+  "fullArticle": "Se estrena una nueva serie de contenido para desarrolladores que busca cambiar la forma en que se entiende la estabilidad de los sistemas informáticos, continuación de la popular saga de Node.js Internals. Mientras que la primera entrega respondía a la pregunta de 'cómo funcionan los sistemas por dentro?', esta nueva entrega se centra en una pregunta aún más crucial: 'cómo sobreviven los sistemas cuando las cosas dejan de funcionar?'. El primer episodio se dedica exclusivamente a trabajar la mentalidad del desarrollador, sin incluir código aún, ya que sus creadores consideran que sentar estas bases conceptuales es indispensable para que todos los patrones de resistencia que se presenten en capítulos siguientes resulten lógicos y no arbitrarios.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe1o6bqmjehf00edovwdc.png]\n\nEl contenido se presenta en formato de diálogo entre un tío ingeniero experimentado y su sobrino, un desarrollador junior que acaba de terminar la saga de Node.js Internals y quiere construir proyectos grandes por diversión. El sobrino expone su deseo de clonar aplicaciones pesadas para verlas funcionar, a lo que el tío le propone una actividad aparentemente aburrida: tomar un proyecto que ya haya construido, añadirle métricas, configurar herramientas de logging como Winston o Pino, y lanzarle tráfico simulado para observar su comportamiento bajo presión. El tío aprovecha la frase 'mi código ya funciona' dicha por el sobrino para explicarle que esa es una de las ideas más peligrosas en el desarrollo de software, ya que los fallos pueden provenir de decenas de componentes ajenos a su código: bases de datos, redes, proveedores de cloud, memoria RAM, CPU o incluso errores humanos en el proceso de despliegue.\n\nLa serie está dirigida a desarrolladores de todos los niveles, desde junior hasta seniors que quieren solidificar sus conocimientos en ingeniería de fallos, un área cada vez más demandada en el sector tecnológico español y europeo. Cada episodio posterior irá introduciendo patrones y herramientas prácticas para diseñar sistemas que no solo funcionen en condiciones ideales, sino que sean capaces de resistir y recuperarse de fallos de todo tipo. Para los equipos de desarrollo, adoptar esta mentalidad desde las fases iniciales de los proyectos reduce drásticamente el riesgo de caídas en producción y mejora la experiencia final de los usuarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T05:43:47.999Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/topics/software-engineering"
+    },
+    {
+      "title": "Documentación oficial de Pino, librería de logging para Node.js",
+      "url": "https://getpino.io/"
+    },
+    {
+      "title": "Guía oficial de logging para aplicaciones Node.js",
+      "url": "https://nodejs.org/en/docs/guides/logging/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de incidentes de producción originados por componentes externos",
+      "value": "Más del 80% según estudios de la industria de desarrollo"
+    },
+    {
+      "label": "Reducción de tiempo de recuperación ante fallos con monitoreo previo",
+      "value": "Hasta un 70% según informes del DevOps Institute"
+    },
+    {
+      "label": "Herramientas de logging recomendadas en el primer episodio",
+      "value": "Winston y Pino, dos de las librerías más utilizadas en el ecosistema Node.js"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

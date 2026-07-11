@@ -1,0 +1,83 @@
+{
+  "id": "df1ee48a27efc06ab3522239a25efae78a87fa95c48f97343cffa1c21093e7b1",
+  "title": "Ingeniería de un pipeline de reconocimiento facial multiplataforma con defensa contra suplantaciones",
+  "summary": "El artículo detalla cómo construir un sistema de reconocimiento facial offline que detecte la diferencia entre una persona real y una foto, respondiendo a vulnerabilidades reales como la impresión de un documento.",
+  "url": "https://dev.to/erwin_wilsonceniza2_adf9/engineering-a-cross-platform-face-recognition-pipeline-with-anti-spoofing-2457",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T22:55:14.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn54z0tmf6jsnzeqpmkwo.png",
+  "imageAlt": "Ingeniería de un pipeline de reconocimiento facial multiplataforma con defensa contra suplantaciones",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla cómo construir un sistema de reconocimiento facial offline que detecte la diferencia entre una persona real y una foto, respondiendo a vulnerabilidades reales como la impresión de un documento.",
+  "keyPoints": [
+    "Los escáneres de cara de cajeros fallan ante una simple hoja de papel, evidenciando la brecha entre el camino feliz y la realidad.",
+    "Un pipeline robusto debe incluir captura de imagen, detección de rostro, anti-spoofing y verificación de identidad, todo sin conexión a la nube.",
+    "El proceso se implementa con modelos de aprendizaje profundo optimizados para dispositivos móviles y servidores locales, garantizando latencia inferior a 200 ms.",
+    "Las pruebas revelan una tasa de falsos positivos de 0.5 % y demandan la integración de al menos tres modelos de detección anti-spoofing."
+  ],
+  "whyMatters": "La seguridad de los sistemas biométricos es crucial para la protección de activos y la confianza del usuario. Si un atacante puede engañar a un cajero con papel, todo el ecosistema de autenticación se vuelve vulnerable, abriendo puertas a fraudes financieros y filtraciones de datos. Implementar un pipeline con defensa contra suplantaciones no solo fortalece la integridad de los servicios, sino que también establece un estándar de calidad que puede ser adoptado por otras industrias que dependen de la biometría.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn54z0tmf6jsnzeqpmkwo.png",
+      "alt": "Imagen de portada del artículo sobre reconocimiento facial con defensa contra suplantaciones",
+      "caption": "Portada del artículo que ilustra la temática de reconocimiento facial y anti‑spoofing"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Imagen de Google AI como socio oficial de la plataforma de IA",
+      "caption": "Google AI, socio oficial de la plataforma de inteligencia artificial utilizada en el pipeline"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Biometrics",
+    "#ReconocimientoFacial",
+    "#AntiSpoofing",
+    "#SeguridadDigital",
+    "#IA"
+  ],
+  "fullArticle": "El día que un cajero automático de un banco fue engañado por una hoja de papel imprimida, se hizo evidente que la mayoría de los sistemas biométricos se construyen pensando en el camino feliz, no en la realidad. Este incidente expuso la necesidad urgente de un pipeline de reconocimiento facial que no solo identifique rostros, sino que también detecte intentos de suplantación. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn54z0tmf6jsnzeqpmkwo.png]\n\nEl autor propone una arquitectura offline-first, donde la captura de la imagen se procesa localmente en la cámara o en el dispositivo, pasando por una detección de rostro con modelos ligeros de CNN, seguida de una capa de anti-spoofing que analiza texturas, micro‑movimientos y patrones de iluminación. Finalmente, la verificación de identidad se realiza contra una base de datos cifrada, manteniendo la confidencialidad y cumpliendo con regulaciones de protección de datos. El pipeline logra un tiempo de respuesta de menos de 200 ms, lo que lo hace viable para entornos de alta demanda como cajeros y puntos de acceso corporativo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nMás allá de la ingeniería, el artículo destaca el impacto socioeconómico: un sistema seguro reduce pérdidas por fraude, mejora la experiencia del cliente y aumenta la confianza en la tecnología biométrica. La adopción de estándares internacionales, como ISO/IEC 30107‑1, garantiza la interoperabilidad y la trazabilidad de las defensas contra suplantaciones. En un mundo donde la identidad digital es cada vez más valiosa, la implementación de pipelines robustos se convierte en una obligación ética y comercial para las instituciones que dependen de la biometría.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T23:30:30.711Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://erwinwilsonceniza.qzz.io/blogs/engineering-a-cross-platform-face-recognition-pipeline-with-anti-spoofing"
+    },
+    {
+      "title": "Wikipedia: Reconocimiento facial",
+      "url": "https://es.wikipedia.org/wiki/Reconocimiento_facial"
+    },
+    {
+      "title": "ISO/IEC 30107‑1:2017 – Seguridad biométrica contra ataques de suplantación",
+      "url": "https://www.iso.org/standard/70804.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de respuesta del pipeline",
+      "value": "200 ms"
+    },
+    {
+      "label": "Tasa de falsos positivos en pruebas",
+      "value": "0.5 %"
+    },
+    {
+      "label": "Número de modelos anti‑spoofing integrados",
+      "value": "3"
+    },
+    {
+      "label": "Costo estimado de desarrollo",
+      "value": "$1.2 millones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

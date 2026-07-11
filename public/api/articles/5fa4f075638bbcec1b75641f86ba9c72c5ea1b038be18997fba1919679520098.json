@@ -1,0 +1,72 @@
+{
+  "id": "5fa4f075638bbcec1b75641f86ba9c72c5ea1b038be18997fba1919679520098",
+  "title": "Lo que nadie me contó sobre las PDAs de Solana hasta que pasé 7 días programando una aplicación descentralizada",
+  "summary": "Un desarrollador relata su experiencia de una semana construyendo un programa de contador en Anchor para Solana, donde descubrió que las Direcciones de Programa Derivadas (PDAs) son un componente indispensable para almacenar datos en la red, explicando su funcionamiento, analogía con bases de datos y proceso de derivación.",
+  "url": "https://dev.to/lymah/what-i-learned-about-pdas-in-a-week-of-building-on-solana-4n51",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T16:37:12.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F11e8ljca5zvgp85tcn98.png",
+  "imageAlt": "Lo que nadie me contó sobre las PDAs de Solana hasta que pasé 7 días programando una aplicación descentralizada",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador relata su experiencia de una semana construyendo un programa de contador en Anchor para Solana, donde descubrió que las Direcciones de Programa Derivadas (PDAs) son un componente indispensable para almacenar datos en la red, explicando su funcionamiento, analogía con bases de datos y proceso de derivación.",
+  "keyPoints": [
+    "Los programas de Solana son inherentemente sin estado, por lo que requieren cuentas dedicadas para almacenar cualquier dato de usuario o configuración del sistema.",
+    "Las PDAs son direcciones deterministas derivadas de semillas conocidas por el programa y su ID, sin necesidad de claves privadas asociadas.",
+    "La analogía con claves primarias de bases de datos relacionales ayuda a entender su función, aunque derivar una PDA no crea cuentas en la cadena.",
+    "El valor bump en la derivación garantiza que la dirección no esté en la curva ed25519, por lo que solo el programa puede firmar por ella."
+  ],
+  "whyMatters": "Las PDAs son un componente fundamental del ecosistema Solana que permite construir aplicaciones descentralizadas seguras y predecibles sin necesidad de gestionar pares de claves para cada cuenta de almacenamiento. Su diseño elimina riesgos de colisión de direcciones y simplifica enormemente la lógica de los programas, reduciendo la complejidad de desarrollo y los puntos de fallo. A medida que el ecosistema Solana crece, dominar el funcionamiento de las PDAs se convierte en una habilidad imprescindible para cualquier desarrollador de blockchain que quiera construir productos escalables y seguros en esta red.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F11e8ljca5zvgp85tcn98.png",
+      "alt": "Imagen de portada del artículo sobre el funcionamiento de las PDAs en Solana",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que explica las Direcciones de Programa Derivadas en Solana"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Solana",
+    "#PDAs",
+    "#Anchor",
+    "#DesarrolloBlockchain"
+  ],
+  "fullArticle": "El autor de este artículo relata su experiencia de una semana desarrollando un programa de contador en Anchor, el framework de programación para Solana, donde descubrió que las Direcciones de Programa Derivadas (conocidas como PDAs por sus siglas en inglés) son un componente sin el cual ninguna de las funcionalidades que implementó habría sido posible: desde asignar una cuenta individual a cada usuario, hasta un singleton de configuración global que controla la creación de nuevos contadores o una instrucción de cierre que devuelve el depósito de renta a la billetera del usuario. Esta guía recoge todo el conocimiento que el autor desearía haber recibido en su primer día de desarrollo en la red, desglosando el funcionamiento de las PDAs de forma clara y accesible para desarrolladores que se inician en el ecosistema de Solana.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F11e8ljca5zvgp85tcn98.png]\nA diferencia de otros entornos de programación tradicionales, los programas de Solana son inherentemente sin estado: no almacenan información por sí mismos, por lo que cualquier dato que necesiten recordar, ya sea la puntuación de un usuario, el saldo de una bóveda o una bandera de configuración global, debe guardarse en una cuenta dedicada a ese fin. El reto radica en que esa cuenta necesita una dirección que el programa pueda localizar de forma predecible en el futuro, sin tener que depender de que el cliente le pase un par de claves generado de forma aleatoria en cada interacción. Las PDAs resuelven exactamente esa necesidad: se trata de direcciones deterministas que se derivan de entradas que el programa ya conoce de antemano, sin necesidad de que exista una clave privada asociada a ellas que pueda ser utilizada para firmar transacciones de forma externa.\nLa analogía que mejor ayuda a entender su funcionamiento es la de una clave primaria de una base de datos relacional: al igual que en PostgreSQL se usa el identificador de usuario como clave primaria para una fila por usuario, sin necesidad de almacenar la clave por separado, en Solana se alimenta al sistema de derivación con un conjunto de semillas (bytes que describen la identidad del elemento que se quiere almacenar) junto con el ID del programa, y se obtiene una dirección determinista. Cada vez que se ejecuta el proceso de derivación con las mismas entradas, se obtiene exactamente la misma dirección, que es precisamente el objetivo de su diseño. La analogía tiene sus límites importantes: derivar una PDA no crea ninguna cuenta en la cadena de bloques, solo calcula una clave pública; la cuenta se crea únicamente cuando el programa ejecuta una instrucción con la restricción init, y ese proceso tiene un coste de renta que paga la entidad que firma la transacción. Además, el ID del programa está integrado de forma irreversible en la derivación: las mismas semillas ejecutadas con un programa diferente generan una dirección completamente distinta, por lo que solo el programa original puede derivar y firmar por sus propias PDAs, eliminando cualquier riesgo de colisiones accidentales o intentos de adivinanza por parte de otros programas.\nEn el programa de contador desarrollado por el autor, la estructura de cuentas usa como semillas la cadena de bytes 'counter' junto con la clave pública del usuario, lo que permite generar una PDA única por cada usuario para almacenar el valor de su contador de forma segura. Bajo el superficie, Anchor ejecuta la función hash SHA256 con las semillas, el ID del programa y un valor bump, comprobando si el resultado se encuentra en la curva elíptica ed25519; si es así, decrementa el bump y vuelve a intentarlo hasta encontrar un resultado fuera de la curva, que se devuelve como la PDA canónica. Que la dirección esté fuera de la curva significa que no existe ninguna clave privada que pueda generar esa dirección pública, por lo que solo el programa puede firmar por ella, garantizando la seguridad de los fondos y datos almacenados en la cuenta. El bump es un byte de un solo valor (entre 0 y 255) que se añade a la entrada del hash; la función findProgramAddressSync empieza por 255 y va decrementando hasta encontrar un resultado fuera de la curva, y Anchor calcula este valor automáticamente y lo almacena en el campo ctx.bumps.counter para que el desarrollador no tenga que gestionarlo manualmente, simplificando enormemente el proceso de desarrollo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T21:30:59.292Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Lo que aprendí sobre PDAs en Solana",
+      "url": "https://dev.to/anchor-lang/what-i-learned-about-pdas-in-a-week-of-building-on-solana-1e5"
+    },
+    {
+      "title": "Documentación oficial de Solana sobre Direcciones de Programa Derivadas",
+      "url": "https://docs.solana.com/developing/programming-model/pdas"
+    },
+    {
+      "title": "Documentación oficial de Anchor, framework de desarrollo para Solana",
+      "url": "https://anchor-lang.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Función hash usada en la derivación de PDAs",
+      "value": "SHA256 con combinación de semillas, ID del programa y valor bump"
+    },
+    {
+      "label": "Rango de valores del bump en la derivación",
+      "value": "0 a 255 (se comprueba de forma descendente desde 255)"
+    },
+    {
+      "label": "Curva elíptica usada para validar la validez de la dirección PDA",
+      "value": "ed25519"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

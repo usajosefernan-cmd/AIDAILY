@@ -1,0 +1,73 @@
+{
+  "id": "b09534e4ca60fb74f02aecaf3dd5c8c61cf36d8c5b1c7f227ed1a7f209c1340d",
+  "title": "El staking de Chainlink no es una granja de rendimientos: es seguridad criptoeconómica con consecuencias reales",
+  "summary": "El artículo desmiente la percepción común de que el staking de Chainlink es solo una forma de obtener rendimientos, explicando que su verdadero propósito es la seguridad criptoeconómica a través de mecanismos de slashing, delegación y alertas que penalizan comportamientos deshonestos en la red.",
+  "url": "https://dev.to/0xramprasad/chainlink-staking-isnt-a-yield-farm-its-cryptoeconomic-security-with-real-consequences-41m2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T10:36:58.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3kcqyo5a35uzdccyxq1a.png",
+  "imageAlt": "El staking de Chainlink no es una granja de rendimientos: es seguridad criptoeconómica con consecuencias reales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo desmiente la percepción común de que el staking de Chainlink es solo una forma de obtener rendimientos, explicando que su verdadero propósito es la seguridad criptoeconómica a través de mecanismos de slashing, delegación y alertas que penalizan comportamientos deshonestos en la red.",
+  "keyPoints": [
+    "El staking v0.2 de Chainlink tiene una capacidad total de 45 millones de LINK, divididos entre stakers comunitarios y operadores de nodos, con roles diferenciados.",
+    "Los operadores de nodos pueden ganar hasta un 7% de rendimiento, pero enfrentan riesgo de slashing de 700 LINK por fallo, mientras que los stakers comunitarios no tienen riesgo de penalización.",
+    "El mecanismo de delegación redirige el 4% de las recompensas base de los stakers comunitarios a los operadores de nodos, alineando incentivos entre ambos grupos.",
+    "El sistema de alertas premia con 7.000 LINK a quien reporte fallos en el feed de ETH/USD, con una ventana de 20 minutos para que los operadores se auto-reporten primero."
+  ],
+  "whyMatters": "Este modelo redefine el staking en el ecosistema cripto, alejándose de las granjas de rendimientos especulativas para centrarse en la seguridad operativa real de servicios críticos como los oráculos de precios. Su implementación sienta un precedente para proyectos de infraestructura blockchain que necesitan garantizar fiabilidad sin depender de terceros, ya que los mecanismos de slashing y alertas crean consecuencias económicas tangibles por negligencia. A largo plazo, podría convertirse en el estándar para servicios de oráculos, elevando los requisitos de seguridad en todo el sector de finanzas descentralizadas y aplicaciones Web3.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3kcqyo5a35uzdccyxq1a.png",
+      "alt": "Imagen de portada del artículo que explica el staking de Chainlink como sistema de seguridad criptoeconómica",
+      "caption": "Portada del artículo original de Dev.to sobre el modelo de staking v0.2 de Chainlink"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Chainlink",
+    "#Staking",
+    "#Criptomonedas",
+    "#Blockchain",
+    "#Oraculos"
+  ],
+  "fullArticle": "Al analizar las publicaciones sobre el staking de Chainlink en Twitter, es común encontrar dos narrativas simplistas: que permite ganar un 4,32% APY en LINK o que la red imprime recompensas para contentar a los holders. Ambas interpretaciones omiten el mecanismo real subyacente: el rendimiento es un efecto secundario, y el producto principal es la seguridad criptoeconómica, que funciona haciendo que los comportamientos deshonestos o negligentes sean tan costosos que los actores racionales no los adoptan. Este artículo, correspondiente al día 11 de la serie de arquitectura de Chainlink de 28 días, desglosa el modelo completo de staking v0.2, incluyendo los dos tipos de stakers, el mecanismo de slashing que le da rigor al sistema, el sistema de alertas y el valor añadido real a la seguridad de la red más allá del simple bloqueo de LINK.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3kcqyo5a35uzdccyxq1a.png]\n\nEl modelo v0.2 cuenta con una capacidad total de 45 millones de LINK, repartidos entre dos grupos con funciones diferenciadas. Los stakers comunitarios, que pueden participar desde 1 LINK hasta un máximo de 15.000 LINK por dirección, tienen asignados 40.875.000 LINK, un cupo que se completó en apenas seis horas cuando se abrió el acceso anticipado en diciembre de 2023. Este grupo obtiene una tasa de recompensa base de alrededor del 4,32% anual, y no enfrenta riesgo de slashing en la configuración actual. Por otro lado, los operadores de nodos, profesionales que dan servicio a los Data Feeds de Chainlink, deben stakear entre 1.000 y 75.000 LINK, y tienen asignados los 4.125.000 LINK restantes. Ellos pueden alcanzar rendimientos de hasta un 7% incluyendo recompensas por delegación, pero sí están expuestos al slashing si no cumplen con los requisitos de rendimiento, ya que este grupo es donde reside realmente el mecanismo de seguridad.\n\nEl mecanismo de delegación que conecta a ambos grupos es clave: el 4% de la tasa base del 4,5% de los stakers comunitarios se redirige como recompensa de delegación a los operadores de nodos, de forma proporcional a su stake, por lo que los stakers comunitarios terminan con un rendimiento neto de alrededor del 4,32%. Esto significa que la comunidad está respaldando económicamente a los operadores de nodos de forma directa, no a la red de forma abstracta. El sistema de slashing está diseñado para ser efectivo: si el feed de ETH/USD (el primer servicio protegido por este staking, por su alta relevancia) permanece caído más de tres horas desde el último reporte válido, se puede emitir una alerta. Los operadores de nodos tienen una ventana prioritaria de 20 minutos para emitir la alerta primero, y si no lo hacen, los stakers comunitarios pueden hacerlo. Una alerta válida conlleva un slashing de 700 LINK por operador y un premio de 7.000 LINK para el alertador. Además, el periodo de desvinculación de 28 días de cooldown más 7 días de ventana de reclamación impide que los operadores eviten el slash al intentar retirar su stake en caso de fallo. Las recompensas se dividen en reclamables en cualquier momento y bloqueadas, con un periodo de vesting de 90 días para las segundas, que se pierden si el staker abandona antes de tiempo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T10:45:17.255Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to sobre el staking de Chainlink",
+      "url": "https://dev.to/chainlink/chainlink-staking-isnt-a-yield-farm-its-cryptoeconomic-security-with-real-consequences-1e9g"
+    },
+    {
+      "title": "Documentación oficial de staking de Chainlink",
+      "url": "https://docs.chain.link/staking"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Capacidad total de staking v0.2",
+      "value": "45.000.000 LINK"
+    },
+    {
+      "label": "Porcentaje de APY base para stakers comunitarios",
+      "value": "4,32%"
+    },
+    {
+      "label": "Penalización por slashing por operador de nodo",
+      "value": "700 LINK"
+    },
+    {
+      "label": "Premio por alerta válida de fallo en el feed",
+      "value": "7.000 LINK"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

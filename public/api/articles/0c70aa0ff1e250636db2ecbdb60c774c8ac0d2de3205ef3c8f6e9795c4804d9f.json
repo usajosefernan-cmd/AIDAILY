@@ -1,0 +1,72 @@
+{
+  "id": "0c70aa0ff1e250636db2ecbdb60c774c8ac0d2de3205ef3c8f6e9795c4804d9f",
+  "title": "Los agentes de correo automático pueden enviar a la gente equivocada, y la solución está en las reglas de Nylas",
+  "summary": "Los desarrolladores de agentes de correo automático enfrentan un riesgo crítico: enviar mensajes a destinatarios no deseados. A diferencia de los filtros de aplicación, Nylas ofrece reglas de envío que bloquean la entrega antes de que el mensaje salga de su servidor. Esta capa adicional protege contra errores de código, reintentos y nuevas rutas de envío.",
+  "url": "https://dev.to/mqasimca/stop-your-agent-emailing-the-wrong-recipients-387e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T17:56:30.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcn2n8xgmh1nnbd1lp7q0.png",
+  "imageAlt": "Los agentes de correo automático pueden enviar a la gente equivocada, y la solución está en las reglas de Nylas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los desarrolladores de agentes de correo automático enfrentan un riesgo crítico: enviar mensajes a destinatarios no deseados. A diferencia de los filtros de aplicación, Nylas ofrece reglas de envío que bloquean la entrega antes de que el mensaje salga de su servidor. Esta capa adicional protege contra errores de código, reintentos y nuevas rutas de envío.",
+  "keyPoints": [
+    "Un agente puede enviar un correo a un dominio incorrecto si el código no valida correctamente el destinatario, generando pérdidas de datos y reputación.",
+    "Las reglas de envío de Nylas actúan antes de que el mensaje llegue al proveedor de correo, devolviendo un código 403 y evitando la entrega.",
+    "Implementar una lista de prohibición a nivel de dominio y una regla de salida ofrece defensa en profundidad, complementando las validaciones de la aplicación.",
+    "El proceso requiere crear una lista, una regla y asociarla a cada cuenta de agente dentro del espacio de trabajo, sin afectar la lógica de envío existente."
+  ],
+  "whyMatters": "El envío accidental de correos sensibles a dominios no autorizados puede resultar en violaciones de privacidad, sanciones regulatorias y daños reputacionales que cuestan millones a las empresas. Al agregar una capa de bloqueo a nivel de servidor, los equipos de desarrollo reducen el riesgo de errores humanos y de código que escapan a los controles internos. Este enfoque no solo protege la información, sino que también fortalece la confianza de clientes y socios, convirtiéndose en una práctica esencial en la era de la automatización de correo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcn2n8xgmh1nnbd1lp7q0.png",
+      "alt": "Imagen que muestra el título del artículo sobre agentes de correo que envían a destinatarios incorrectos",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Nylas",
+    "#EmailAutomation",
+    "#DataLossPrevention",
+    "#DevOps"
+  ],
+  "fullArticle": "El mundo de la automatización de correo electrónico ha avanzado a pasos agigantados, pero un fallo crítico persiste: los agentes pueden enviar mensajes a destinatarios erróneos sin que el equipo de desarrollo lo detecte. Este riesgo se manifiesta cuando un modelo escribe por error un dominio incorrecto, o cuando un reintento de envío omite la capa de validación de la aplicación. El resultado es un mensaje que, una vez en la bandeja del cliente, es casi imposible de retractar.\n\nPara mitigar este riesgo, Nylas introduce reglas de envío que se ejecutan justo después de que el código entrega el mensaje al servicio, pero antes de que el proveedor de correo lo reciba. Si la regla coincide con un destinatario prohibido, el envío se rechaza con un código 403 y el mensaje nunca sale de la infraestructura de Nylas. Este mecanismo funciona como una barrera de prevención de pérdida de datos (DLP) que opera independientemente de las validaciones de la aplicación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcn2n8xgmh1nnbd1lp7q0.png]\n\nEl proceso técnico es sencillo: primero se crea una lista de dominios prohibidos; luego se define una regla de salida que referencia esa lista mediante el operador in_list; finalmente, la regla se añade al arreglo rule_ids del espacio de trabajo, de modo que todas las cuentas de agente la hereden. Esta arquitectura permite a los equipos mantener la lógica de envío original sin cambios, mientras añaden una capa de seguridad que cubre cualquier ruta de código que pueda saltarse el filtro de la aplicación.\n\nLa implementación de esta doble capa de defensa no solo protege la información, sino que también reduce la carga de los equipos de desarrollo, que ya no necesitan revisar exhaustivamente cada ruta de envío. En un entorno donde el tiempo de respuesta y la fiabilidad son críticos, esta solución se posiciona como una práctica recomendada para cualquier organización que dependa de agentes de correo automático.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T18:11:42.643Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/stop-your-agent-emailing-the-wrong-recipients-article"
+    },
+    {
+      "title": "Documentación de Nylas sobre reglas de envío",
+      "url": "https://docs.nylas.com/docs/rules"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Código de error",
+      "value": "403"
+    },
+    {
+      "label": "Tipo de lista",
+      "value": "dominio"
+    },
+    {
+      "label": "Número de reglas por espacio de trabajo",
+      "value": "1"
+    },
+    {
+      "label": "Número de agentes afectados",
+      "value": "Varía según implementación"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

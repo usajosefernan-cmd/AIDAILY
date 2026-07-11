@@ -1,0 +1,77 @@
+{
+  "id": "7a2f4d3bf3ef0de3b09013ab3154cec3bbc0443e3223a1891038c1aeff9066fa",
+  "title": "Descubren puerta trasera oculta en el firmware de varios routers Tenda que permite acceso total de administrador",
+  "summary": "Investigadores hallaron una vulnerabilidad CVE-2026-11405 en múltiples versiones del firmware de routers Tenda que crea una puerta trasera de autenticación, permitiendo a cualquier atacante obtener privilegios de administrador sin credenciales válidas.",
+  "url": "https://kb.cert.org/vuls/id/213560",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-08T00:08:51.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Descubren puerta trasera oculta en el firmware de varios routers Tenda que permite acceso total de administrador",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores hallaron una vulnerabilidad CVE-2026-11405 en múltiples versiones del firmware de routers Tenda que crea una puerta trasera de autenticación, permitiendo a cualquier atacante obtener privilegios de administrador sin credenciales válidas.",
+  "keyPoints": [
+    "Se identificó una puerta trasera de autenticación no documentada en varias versiones del firmware de routers Tenda, identificada como CVE-2026-11405.",
+    "El fallo permite a un atacante omitir la verificación de contraseña y obtener privilegios de administrador usando cualquier nombre de usuario junto con una contraseña secreta almacenada en la configuración.",
+    "Los modelos afectados incluyen versiones específicas como US_FH1201V1.0BR_V1.2.0.14(408)_EN_TD y otras cuatro variantes listadas en el aviso.",
+    "Sin parche disponible, se recomienda desactivar la gestión remota y limitar la exposición de la red local como medidas de mitigación."
+  ],
+  "whyMatters": "Esta vulnerabilidad pone en riesgo la seguridad de hogares y empresas que dependen de los dispositivos Tenda, ya que permite a un atacante tomar control total del router sin necesidad de credenciales válidas. Con acceso administrativo, un agresor podría reconfigurar el tráfico, desviar datos, desactivar firewalls y usar la red como plataforma para ataques más amplios, como botnets o ransomware. Dado que el fabricante no ha respondido y no hay parche, los usuarios deben aplicar mitigaciones inmediatas mientras monitorizan futuras actualizaciones de seguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "Descubren puerta trasera oculta en el firmware de varios routers Tenda que permite acceso total de administrador",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Tenda",
+    "#CVE202611405",
+    "#BackdoorRouter",
+    "#FirmwareSecurity",
+    "#RouterVulnerability"
+  ],
+  "fullArticle": "Varias versiones del firmware de routers Tenda contienen una puerta trasera de autenticación no documentada que permite a un atacante obtener acceso total de administrador al interfaz web de gestión del dispositivo. La falla, registrada como CVE-2026-11405, reside en la función login() del binario /bin/httpd: tras un intento fallido de autenticación basada en MD5, el código consulta un valor alternativo de contraseña almacenado en la configuración del dispositivo mediante GetValue(\"sys.rzadmin.password\") y lo compara en texto plano con la contraseña suministrada por el usuario. Un coincidencia exitosamente otorga el rol de administrador (role=2) y crea una sesión válida, sin que se valide el nombre de usuario proporcionado.\n\nLos modelos afectados son cinco versiones específicas de firmware, incluyendo US_FH1201V1.0BR_V1.2.0.14(408)_EN_TD, US_W15EV1.0br_V15.11.0.5(1068_1567_841)_EN_TDE, US_AC10V1.0re_V15.03.06.46_multi_TDE01, US_AC5V1.0RTL_V15.03.06.48_multi_TDE01 y US_AC6V2.0RTL_V15.03.06.51_multi_T. Con este acceso, un atacante puede reconfigurar el router, alterar la configuración de red, desactivar medidas de seguridad y potencialmente comprometer todos los dispositivos conectados a la red local. Ante la ausencia de respuesta del fabricante y la falta de un parche oficial, los expertos aconsejan desactivar la gestión remota, cambiar la dirección IP predeterminada de la LAN y mantener los dispositivos aislados de internet hasta que se disponga de una solución.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T05:08:59.063Z",
+  "links": [
+    {
+      "title": "Publicación original en Hacker News",
+      "url": "https://news.ycombinator.com/item?id=40567890"
+    },
+    {
+      "title": "Entrada CVE-2026-11405 en la base de datos NVD",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11405"
+    },
+    {
+      "title": "Página de soporte de Tenda para actualizaciones de firmware",
+      "url": "https://www.tenda.com/support/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de versiones afectadas",
+      "value": "5"
+    },
+    {
+      "label": "Identificador CVE",
+      "value": "CVE-2026-11405"
+    },
+    {
+      "label": "Tipo de acceso obtenido",
+      "value": "Privilegio de administrador (role=2)"
+    },
+    {
+      "label": "Fecha de descubrimiento",
+      "value": "26 de septiembre de 2025"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

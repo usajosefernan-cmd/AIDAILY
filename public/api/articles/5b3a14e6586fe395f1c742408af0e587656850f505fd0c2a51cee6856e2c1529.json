@@ -1,0 +1,103 @@
+{
+  "id": "5b3a14e6586fe395f1c742408af0e587656850f505fd0c2a51cee6856e2c1529",
+  "title": "Apple cierra la puerta a recuperar el iPhone 5c y el iPad Mini: se acabó reinstalar iOS antiguo",
+  "summary": "Apple ha dejado de firmar el firmware de banda base de versiones iOS 6 a iOS 10 en modelos celulares legacy como el iPhone 5c o el iPad Mini, bloqueando cualquier restauración o downgrade vía iTunes o Finder.",
+  "url": "https://www.macrumors.com/2026/07/09/apple-pulls-ability-to-restore-iphone-5c-and-more",
+  "source": "MacRumors",
+  "sourceUrl": "https://www.macrumors.com/macrumors.xml",
+  "publishedAt": "2026-07-09T12:31:13.000Z",
+  "imageUrl": "https://images.macrumors.com/t/lTjjed5Y_QKmxoQwyAYviKwGXus=/1600x/article-new/2024/09/iPhone-5c-Yellow.jpg",
+  "imageAlt": "Apple cierra la puerta a recuperar el iPhone 5c y el iPad Mini: se acabó reinstalar iOS antiguo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Apple ha dejado de firmar el firmware de banda base de versiones iOS 6 a iOS 10 en modelos celulares legacy como el iPhone 5c o el iPad Mini, bloqueando cualquier restauración o downgrade vía iTunes o Finder.",
+  "keyPoints": [
+    "Apple ha revocado la firma del baseband firmware (software del módem) en versiones iOS 6 a iOS 10 para dispositivos con variante cellular.",
+    "Los modelos afectados incluyen el iPhone 4 CDMA, iPhone 4S, iPhone 5, iPhone 5c y iPad Mini, imposibilitando restores limpios.",
+    "La versión OTA de iOS 8.4.1, antes puente obligado hacia iOS 9, pierde su firma y elimina la ruta de retroceso para casi todos los equipos.",
+    "Solo las variantes con módem se ven impactadas; los iPad Wi-Fi permanecen intactos al carecer de baseband que certificar."
+  ],
+  "whyMatters": "Este movimiento estratégico de Apple sepulta definitivamente la capacidad de los usuarios y desarrolladores de mantener vivo el ecosistema de hardware legacy, crítico para pruebas de compatibilidad y preservación de software histórico. Al cerrar la firma del baseband en equipos con más de diez años de antigüedad, la compañía endurece su política de obsolescencia controlada y dificulta la recuperación de terminales ante fallos de firmware. Para el sector tecnológico europeo y español, la medida subraya la urgencia de normativas como el derecho a reparar y la longevidad electrónica, pues bloquea el soporte comunitario sobre dispositivos aún funcionales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.macrumors.com/t/lTjjed5Y_QKmxoQwyAYviKwGXus=/1600x/article-new/2024/09/iPhone-5c-Yellow.jpg",
+      "alt": "iPhone 5c amarillo mostrado de frente, uno de los modelos afectados por la pérdida de firma de baseband",
+      "caption": "El iPhone 5c celular ya no puede restaurarse ni downgradear a builds antiguas (Imagen: MacRumors)"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/wsKN-ttr7S8",
+      "alt": "Video de YouTube relacionado con la cobertura original de MacRumors sobre el tema",
+      "caption": "Video de YouTube enlazado por MacRumors sobre la noticia"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/bT_wF0c0Q_Q",
+      "alt": "Video de YouTube relacionado con la cobertura original de MacRumors sobre el tema",
+      "caption": "Video de YouTube enlazado por MacRumors sobre la noticia"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/bBVCdMluG-k",
+      "alt": "Video de YouTube relacionado con la cobertura original de MacRumors sobre el tema",
+      "caption": "Video de YouTube enlazado por MacRumors sobre la noticia"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/S9Ue04BKs44",
+      "alt": "Video de YouTube relacionado con la cobertura original de MacRumors sobre el tema",
+      "caption": "Video de YouTube enlazado por MacRumors sobre la noticia"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/1si9WjAK6c0",
+      "alt": "Video de YouTube relacionado con la cobertura original de MacRumors sobre el tema",
+      "caption": "Video de YouTube enlazado por MacRumors sobre la noticia"
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#Apple",
+    "#IPhone5c",
+    "#IPadMini",
+    "#IOS",
+    "#Baseband"
+  ],
+  "fullArticle": "Apple ha ejecutado una maniobra silenciosa pero contundente en su servidor de firmas: ha dejado de validar el baseband firmware de un conjunto de versiones iOS comprendidas entre la 6 y la 10 para modelos cellular legacy. A diferencia de las actualizaciones habituales, la compañía no ha retirado la firma del sistema operativo en sí, sino la del software de bajo nivel que controla el módem de cada terminal, cortando de raíz cualquier posibilidad de restaurar o hacer downgrade mediante Finder o iTunes. La lista afecta al iPhone 4 CDMA, iPhone 4S, iPhone 5, iPhone 5c y diversas generaciones del iPad Mini con LTE.\n\n[MULTIMEDIA: https://images.macrumors.com/t/lTjjed5Y_QKmxoQwyAYviKwGXus=/1600x/article-new/2024/09/iPhone-5c-Yellow.jpg]\n\nEl cambio entierra además un ritual técnico muy conocido: la build OTA de iOS 8.4.1, que Apple mantenía firmada como escalón intermedio obligatorio hacia iOS 9 y como vía de retorno. Esa red de seguridad desaparece para casi todos los dispositivos desde el iPhone 4S hasta el iPhone 5. Los equipos que ya funcionan siguen operativos, pero pierden el colchón de una instalación limpia si el firmware se corrompe. Los iPad solo Wi-Fi quedan al margen, al no incorporar módem que certificar.\n\n[MULTIMEDIA: https://www.youtube.com/embed/wsKN-ttr7S8]\n\n[MULTIMEDIA: https://www.youtube.com/embed/bT_wF0c0Q_Q]\n\n[MULTIMEDIA: https://www.youtube.com/embed/bBVCdMluG-k]\n\n[MULTIMEDIA: https://www.youtube.com/embed/S9Ue04BKs44]\n\n[MULTIMEDIA: https://www.youtube.com/embed/1si9WjAK6c0]\n\nEn un contexto donde la sostenibilidad electrónica gana peso en la agenda europea, la decisión de Apple aísla a los usuarios que conservan estos dispositivos para testeo de apps o arqueología digital. Raro en su alcance temporal, el gesto toca a una fracción minúscula de usuarios en 2026, pero fija un precedente sobre el control absoluto del ciclo de vida del hardware.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T12:43:42.374Z",
+  "links": [
+    {
+      "title": "Artículo original en MacRumors",
+      "url": "https://www.macrumors.com"
+    },
+    {
+      "title": "Documentación de firmware iOS en Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/IOS_version_history"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Rango de iOS afectado",
+      "value": "iOS 6 hasta iOS 10"
+    },
+    {
+      "label": "Último firmware del iPhone 4 CDMA",
+      "value": "iOS 7.1.2"
+    },
+    {
+      "label": "Builds máximas del iPhone 5",
+      "value": "iOS 10.3.3 y 10.3.4"
+    },
+    {
+      "label": "Antigüedad mínima del hardware",
+      "value": "Más de 10 años"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

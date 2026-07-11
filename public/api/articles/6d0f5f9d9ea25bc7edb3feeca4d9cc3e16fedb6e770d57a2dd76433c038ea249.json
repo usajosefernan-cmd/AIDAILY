@@ -1,0 +1,71 @@
+{
+  "id": "6d0f5f9d9ea25bc7edb3feeca4d9cc3e16fedb6e770d57a2dd76433c038ea249",
+  "title": "Ventanas de respaldo automático en Oracle Cloud: ¿Cómo elegir el momento ideal?",
+  "summary": "Oracle Cloud Infrastructure (OCI) permite configurar la ventana de respaldo automático de bases de datos en 12 slots de dos horas cada uno, siempre en UTC. Si no se selecciona ninguna, el sistema elige aleatoriamente entre medianoche y las 7 am de la zona del recurso.",
+  "url": "https://dev.to/farisdurrani/oci-database-auto-backup-window-time-slots-reference-1mfn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T18:49:57.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv2jvpp888vfgt03yji2g.png",
+  "imageAlt": "Ventanas de respaldo automático en Oracle Cloud: ¿Cómo elegir el momento ideal?",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Oracle Cloud Infrastructure (OCI) permite configurar la ventana de respaldo automático de bases de datos en 12 slots de dos horas cada uno, siempre en UTC. Si no se selecciona ninguna, el sistema elige aleatoriamente entre medianoche y las 7 am de la zona del recurso.",
+  "keyPoints": [
+    "OCI ofrece 12 slots de respaldo, cada uno abarcando dos horas en UTC, para bases de datos en sistemas base o clusters Exadata.",
+    "La selección de un slot, por ejemplo SLOT_TWO, fija el inicio entre las 2 am y las 4 am UTC, garantizando consistencia global.",
+    "Al omitir la opción, OCI elige aleatoriamente un horario entre las 12 am y las 7 am de la zona local del recurso, manteniendo la flexibilidad del cliente.",
+    "Esta configuración es esencial para planificar cargas de trabajo y minimizar el impacto en la disponibilidad."
+  ],
+  "whyMatters": "El control preciso de las ventanas de respaldo es crítico para la continuidad operativa de las empresas que dependen de Oracle Cloud. Al permitir horarios fijos en UTC, los administradores pueden sincronizar los respaldos con períodos de baja actividad, reduciendo la latencia y evitando colisiones con procesos críticos. Además, la capacidad de elegir entre slots o dejar que OCI decida aporta flexibilidad, lo que resulta en una gestión más eficiente de recursos y costos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv2jvpp888vfgt03yji2g.png",
+      "alt": "Captura de pantalla de la configuración de la ventana de respaldo automático en OCI",
+      "caption": "Imagen que muestra la interfaz de configuración de los slots de respaldo automático en Oracle Cloud Infrastructure."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OracleCloud",
+    "#AutoBackup",
+    "#OCI"
+  ],
+  "fullArticle": "Oracle Cloud Infrastructure (OCI) ha introducido una funcionalidad que facilita la planificación de respaldos automáticos para bases de datos, una herramienta imprescindible para las organizaciones que buscan garantizar la disponibilidad y la integridad de sus datos.\n\nEn la práctica, el recurso de base de datos de OCI (oci_database_database) ofrece una opción opcional llamada auto_backup_window. Esta opción permite al administrador elegir entre 12 slots de respaldo, cada uno abarcando un intervalo de dos horas en UTC. Por ejemplo, al seleccionar SLOT_TWO, el respaldo automático se iniciará entre las 2 am y las 4 am UTC, independientemente de la zona horaria local de la base de datos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv2jvpp888vfgt03yji2g.png]\n\nSi el administrador no especifica un slot, OCI elegirá aleatoriamente un horario entre las 12 am y las 7 am de la zona regional de la base de datos. Este comportamiento por defecto asegura que el respaldo se realice en un momento de menor carga, reduciendo el riesgo de interferencia con operaciones críticas.\n\nLa gestión de ventanas de respaldo en UTC también simplifica la coordinación entre equipos distribuidos globalmente, ya que todos los participantes operan con una referencia de tiempo única. Para las empresas que dependen de la continuidad del negocio, esta característica reduce la complejidad de la planificación y mejora la confiabilidad de los datos.\n\nEn conclusión, la capacidad de seleccionar slots de respaldo específicos o dejar que OCI determine el horario adecuado representa un avance significativo en la gestión de datos en la nube. Los administradores pueden aprovechar esta herramienta para optimizar la disponibilidad, minimizar los costos operativos y garantizar la protección de la información crítica.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T19:10:11.345Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Oracle Cloud sobre respaldos automáticos",
+      "url": "https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/db_auto_backup.htm"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Cantidad de slots disponibles",
+      "value": "12"
+    },
+    {
+      "label": "Duración de cada slot",
+      "value": "2 horas"
+    },
+    {
+      "label": "Rango de horarios por defecto",
+      "value": "12 am a 7 am"
+    },
+    {
+      "label": "Zona horaria de los slots",
+      "value": "UTC"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

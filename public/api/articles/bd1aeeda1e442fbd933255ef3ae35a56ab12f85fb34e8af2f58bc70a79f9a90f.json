@@ -1,0 +1,75 @@
+{
+  "id": "bd1aeeda1e442fbd933255ef3ae35a56ab12f85fb34e8af2f58bc70a79f9a90f",
+  "title": "Cómo construí una base de conocimiento personal con Amazon Aurora pgvector y Next.js — Hackathon AWS H0",
+  "summary": "El desarrollador creó ChatScroll, una app que convierte respuestas de IA en 'Scrolls' buscables mediante búsqueda semántica en Amazon Aurora PostgreSQL con pgvector, resolviendo el problema de perder información valiosa.",
+  "url": "https://dev.to/hamzanabdev/how-i-built-a-personal-ai-knowledge-base-with-amazon-aurora-pgvector-and-nextjs-aws-h0-hackathon-19jf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-26T23:25:05.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F94t6xfw81nib3b51wjnk.png",
+  "imageAlt": "Cómo construí una base de conocimiento personal con Amazon Aurora pgvector y Next.js — Hackathon AWS H0",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El desarrollador creó ChatScroll, una app que convierte respuestas de IA en 'Scrolls' buscables mediante búsqueda semántica en Amazon Aurora PostgreSQL con pgvector, resolviendo el problema de perder información valiosa.",
+  "keyPoints": [
+    "ChatScroll permite guardar respuestas de IA como 'Scrolls' con búsqueda semántica, evitando perder datos valiosos",
+    "La app utiliza Amazon Aurora PostgreSQL con pgvector para almacenar embeddings de 3072 dimensiones y búsqueda por similitud coseno",
+    "Separación de bases de datos: Aurora maneja datos estructurados mientras DynamoDB procesa flujos de chat de alta volumen",
+    "Búsqueda híbrida combina pgvector (semántica) y tsvector (texto) para resultados más precisos"
+  ],
+  "whyMatters": "Esta innovación aborda un problema cotidiano de pérdida de información generada por IA, ofreciendo una solución escalable para gestionar conocimiento personal. Su enfoque en búsqueda semántica y arquitectura modular podría revolucionar cómo las personas y empresas almacenan y acceden a datos críticos, marcando un hito en la gestión de inteligencia artificial aplicada.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F94t6xfw81nib3b51wjnk.png",
+      "alt": "Portada del artículo mostrando la interfaz de ChatScroll",
+      "caption": "Interfaz de ChatScroll durante el desarrollo en el hackathon"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Colaboración entre Google AI y Neon como socios tecnológicos",
+      "caption": "Google AI y Neon como socios oficiales en el desarrollo de ChatScroll"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AmazonAurora",
+    "#Pgvector",
+    "#Nextjs",
+    "#HackathonAWS"
+  ],
+  "fullArticle": "Durante el AWS H0 Hackathon, el desarrollador creó ChatScroll, una aplicación que transforma las conversaciones con asistentes de IA en un biblioteca personal de conocimiento. Al guardar respuestas como 'Scrolls', los usuarios pueden organizarlas automáticamente y buscarlas más tarde mediante búsqueda semántica. La clave está en Amazon Aurora PostgreSQL con la extensión pgvector, que almacena embeddings de 3072 dimensiones para comparar significados, no solo palabras clave. Por ejemplo, buscar 'medicamento anticoagulante' encuentra un Scroll sobre warfarin aunque la frase exacta no esté en el título. La arquitectura separa bases de datos: Aurora maneja datos estructurados mientras DynamoDB procesa el flujo de chats en tiempo real. Esta combinación permite búsquedas precisas dentro de categorías específicas, evitando resultados irrelevantes. La app ya está en línea en chatscroll.vercel.app, con una arquitectura detallada en su página de showcase.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T00:13:02.014Z",
+  "links": [
+    {
+      "title": "Sitio oficial de ChatScroll",
+      "url": "https://chatscroll.vercel.app"
+    },
+    {
+      "title": "Desarrollo en AWS H0 Hackathon",
+      "url": "https://chatscroll.vercel.app/aws-showcase"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/..."
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Dimensiones de embeddings",
+      "value": "3072 dimensiones"
+    },
+    {
+      "label": "Tecnologías clave integradas",
+      "value": "pgvector, ltree y tsvector"
+    },
+    {
+      "label": "Capacidad de búsqueda",
+      "value": "Búsqueda semántica y híbrida"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "619d415791786d97f8e326eb6b99dacf96abb29b6a5cc8fa1289793be4396fe8",
+  "title": "Desarrollo dirigido por especificaciones: la respuesta a la productividad engañosa de los asistentes de código AI",
+  "summary": "El artículo de Luca D'Addeo en Dev.to explica cómo el desarrollo dirigido por especificaciones (SDD) con Kiro resuelve el problema de los asistentes de código AI que generan código rápido pero incorrecto, obligando a definir los requisitos antes de escribir cualquier línea de código para producir software de mayor calidad en menos tiempo.",
+  "url": "https://dev.to/luca_daddeo/spec-driven-development-from-zero-to-kiro-49c7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T14:33:08.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa75kw2vwtdrr8ll6ybkc.png",
+  "imageAlt": "Desarrollo dirigido por especificaciones: la respuesta a la productividad engañosa de los asistentes de código AI",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo de Luca D'Addeo en Dev.to explica cómo el desarrollo dirigido por especificaciones (SDD) con Kiro resuelve el problema de los asistentes de código AI que generan código rápido pero incorrecto, obligando a definir los requisitos antes de escribir cualquier línea de código para producir software de mayor calidad en menos tiempo.",
+  "keyPoints": [
+    "Los asistentes de código AI como Copilot y Cursor aceleran la escritura de código pero hacen que los desarrolladores salten la fase de planificación, generando productos incorrectos.",
+    "El desarrollo dirigido por especificaciones (SDD) con Kiro obliga a definir los requisitos del proyecto antes de escribir cualquier línea de código.",
+    "Las especificaciones modernas no son solo documentos estáticos, sino instrucciones ejecutables que guían la generación automática de código completo.",
+    "Kiro ejecuta las tareas definidas en las especificaciones y produce el código final, permitiendo fallar rápido en la fase de diseño, no en la de desarrollo."
+  ],
+  "whyMatters": "Esta metodología representa un cambio de paradigma en el desarrollo de software, ya que combate la falsa productividad que generan las herramientas de AI que priorizan la velocidad sobre la calidad. Su adopción permite reducir costes de corrección de errores en etapas avanzadas del proyecto, que pueden llegar a ser hasta 10 veces más caras que solucionarlas en la fase de planificación. A largo plazo, el SDD con Kiro se posiciona como una solución clave para equipos de desarrollo que buscan escalar la calidad de sus productos sin renunciar a la eficiencia que ofrecen las herramientas de AI.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa75kw2vwtdrr8ll6ybkc.png",
+      "alt": "Portada del artículo sobre desarrollo dirigido por especificaciones con Kiro",
+      "caption": "Imagen de portada del artículo 'Spec-Driven Development: From Zero to Kiro' publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SpecDrivenDevelopment",
+    "#Kiro",
+    "#Copilot",
+    "#Cursor",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "La llegada de asistentes de código basados en inteligencia artificial como GitHub Copilot y Cursor ha revolucionado la forma en que los equipos de desarrollo escriben software, pero también ha generado un efecto secundario peligroso: la falsa productividad. Como explica Luca D'Addeo, instructor autorizado de AWS y autor del artículo original en Dev.to, estas herramientas permiten escribir código hasta 10 veces más rápido, pero a costa de saltarse la fase más crítica del desarrollo: la reflexión previa sobre qué se necesita construir. El resultado es un volumen enorme de código generado en tiempo récord que, en muchos casos, no responde a las necesidades reales del proyecto, generando costes de corrección desproporcionados en etapas avanzadas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa75kw2vwtdrr8ll6ybkc.png]\n\nFrente a este problema, el desarrollo dirigido por especificaciones (Spec-Driven Development, SDD) implementado a través de la herramienta Kiro se presenta como una solución estructurada para recuperar la calidad sin renunciar a la eficiencia. Esta metodología obliga a los equipos a definir de forma detallada y estructurada qué se quiere construir antes de escribir una sola línea de código, trasladando la fase de prueba y error a la etapa de diseño, donde los errores son mucho más baratos de solucionar. A diferencia de las especificaciones tradicionales, que eran documentos estáticos de consulta, las especificaciones modernas que utiliza Kiro son instrucciones ejecutables que la herramienta interpreta para generar el código completo de forma automática.\n\nEl funcionamiento de Kiro se apoya en un flujo de trabajo claro: el equipo define la especificación del requisito, por ejemplo, un endpoint API para gestionar órdenes de usuario, y la herramienta se encarga de ejecutar las tareas definidas, generando el código correspondiente y siguiendo flujos lógicos predefinidos, como la comprobación de caché en Redis antes de acceder a la base de datos para reducir la latencia. Este enfoque no solo reduce el tiempo total de desarrollo, sino que también garantiza que el código generado se ajuste exactamente a los requisitos definidos, eliminando la posibilidad de desviaciones que suelen producirse cuando se escribe código directamente con la ayuda de un asistente de IA sin una guía previa.\n\nA largo plazo, la adopción del desarrollo dirigido por especificaciones con herramientas como Kiro podría redefinir los roles de los desarrolladores, alejándolos de la tarea de escritura mecánica de código para centrarlos en la definición de requisitos, el diseño de arquitecturas y la supervisión de la calidad del producto final. Esta metodología no es un freno a la innovación, sino una forma de canalizar la potencia de la inteligencia artificial para generar software realmente útil, escalable y mantenible, en un sector donde los costes de corrección de errores en etapas avanzadas pueden llegar a ser hasta 15 veces superiores a los de solucionarlos en la fase de planificación.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T14:47:01.048Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Spec-Driven Development: From Zero to Kiro",
+      "url": "https://dev.to/aws/spec-driven-development-from-zero-to-kiro-1b5"
+    },
+    {
+      "title": "Documentación oficial de Kiro",
+      "url": "https://kiro.dev/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Aumento de velocidad de escritura de código con asistentes AI",
+      "value": "Hasta 10 veces más rápido"
+    },
+    {
+      "label": "Coste de corrección de errores en etapa avanzada vs planificación",
+      "value": "Hasta 15 veces superior"
+    },
+    {
+      "label": "Tiempo de lectura del artículo original",
+      "value": "15 minutos"
+    },
+    {
+      "label": "Nivel de dificultad del contenido",
+      "value": "Intermedio"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

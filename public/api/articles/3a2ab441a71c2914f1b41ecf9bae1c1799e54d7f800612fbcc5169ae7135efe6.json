@@ -1,0 +1,69 @@
+{
+  "id": "3a2ab441a71c2914f1b41ecf9bae1c1799e54d7f800612fbcc5169ae7135efe6",
+  "title": "Claude Code sufre un error 400 por un carácter UTF‑16 perdido: la solución que rompe el ciclo",
+  "summary": "En la herramienta Claude Code, una anomalía en la transcripción de sesiones provoca un error 400 cada vez que se intenta continuar la conversación. El problema se origina por un \"surrogate\" aislado que queda grabado en el archivo .jsonl. La corrección consiste en cerrar la sesión, eliminar únicamente esos caracteres inválidos y re‑serializar la línea afectada, lo que permite que la sesión se reanude sin fallos.",
+  "url": "https://dev.to/hexisteme/claude-code-400-no-low-surrogate-in-string-on-every-turn-repairing-a-permanently-broken-dcp",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T00:00:08.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Forc9u20d9stjyorgzcd3.png",
+  "imageAlt": "Claude Code sufre un error 400 por un carácter UTF‑16 perdido: la solución que rompe el ciclo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En la herramienta Claude Code, una anomalía en la transcripción de sesiones provoca un error 400 cada vez que se intenta continuar la conversación. El problema se origina por un \"surrogate\" aislado que queda grabado en el archivo .jsonl. La corrección consiste en cerrar la sesión, eliminar únicamente esos caracteres inválidos y re‑serializar la línea afectada, lo que permite que la sesión se reanude sin fallos.",
+  "keyPoints": [
+    "Un surrogate sin pareja en la transcripción provoca que la API rechace todas las peticiones subsiguientes con un 400 de error.",
+    "La solución consiste en eliminar solo los caracteres entre U+D800 y U+DFFF, preservando emojis y texto válido.",
+    "Se implementa un filtro a nivel de bytes que reduce el tiempo de análisis de 3,4 s a 1,1 s en un conjunto de 174 archivos.",
+    "El proceso se automatiza en el hook SessionStart, pero requiere cerrar la sesión antes de modificar el archivo para evitar sobrescrituras en memoria."
+  ],
+  "whyMatters": "El fallo afecta a desarrolladores que dependen de Claude Code para generar contenidos extensos y ricos en emojis o caracteres no BMP, provocando interrupciones inesperadas y pérdidas de productividad. La solución propuesta no solo corrige el error inmediato, sino que también introduce un mecanismo de limpieza automática que garantiza que futuras sesiones no se bloqueen, mejorando la fiabilidad de la herramienta y la experiencia de los usuarios. En un mercado donde la generación de texto asistida por IA se vuelve cada vez más crítica, garantizar la estabilidad de la infraestructura subyacente es esencial para la adopción masiva y la confianza del cliente.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Forc9u20d9stjyorgzcd3.png",
+      "alt": "Captura de pantalla que muestra el error 400 en la consola de Claude Code",
+      "caption": "Error 400 \"no low surrogate in string\" en la consola de Claude Code"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen ilustrativa de un surrogate de UTF‑16 aislado",
+      "caption": "Representación visual de un surrogate sin pareja"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeCode",
+    "#UTF16",
+    "#IA"
+  ],
+  "fullArticle": "Claude Code, la herramienta de generación de código basada en IA de Anthropic, ha sufrido recientemente un percance que ha dejado a miles de usuarios sin poder continuar sus sesiones. Cada vez que la aplicación intenta enviar un nuevo turno a la API, la respuesta es un error 400 con el mensaje \"no low surrogate in string\", lo que significa que la cadena JSON enviada contiene un carácter UTF‑16 sin pareja. Esta anomalía se origina cuando la herramienta escribe en disco la transcripción de la conversación en un archivo .jsonl; si el contenido se corta justo entre los dos componentes de un surrogate, queda un carácter huérfano que, al ser reenviado, rompe la validación del parser JSON de la API.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Forc9u20d9stjyorgzcd3.png]\n\nEl ingenioso parche consiste en cerrar la sesión problemática, localizar la línea que contiene el surrogate aislado y eliminar únicamente los bytes que caen entre U+D800 y U+DFFF. Dado que un emoji válido (por ejemplo, U+1F9ED) es un único punto de código y nunca se encuentra dentro de ese rango, la operación no afecta a los emojis ni a ningún otro carácter legítimo. Una vez corregida la línea, se vuelve a serializar el objeto JSON y se reanuda la sesión con el comando \"claude --resume\", lo que elimina el error.\n\nPara evitar repetir el proceso manualmente, los autores han desarrollado un filtro a nivel de bytes que detecta la presencia de los surrogates antes de intentar parsear cada línea con json.loads. Este filtro reduce el tiempo de análisis de un conjunto de 174 archivos de 3,4 s a 1,1 s, permitiendo que la corrección se ejecute automáticamente en el hook SessionStart. Sin embargo, el filtro debe ignorar los archivos que están abiertos en memoria, ya que la herramienta sobrescribe cualquier cambio hecho en disco mientras la sesión está activa.\n\nEl incidente subraya la fragilidad de las transcripciones automatizadas cuando se manejan contenidos extensos y ricos en emojis o caracteres no BMP. La solución propuesta no solo corrige el fallo inmediato, sino que también establece un proceso de limpieza preventiva que garantiza que futuras sesiones no se bloqueen, mejorando la fiabilidad del servicio y la confianza de los usuarios que dependen de Claude Code para tareas críticas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T00:04:04.622Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de análisis reducido",
+      "value": "de 3,4 s a 1,1 s en 174 archivos"
+    },
+    {
+      "label": "Número de archivos afectados",
+      "value": "174"
+    },
+    {
+      "label": "Rango de caracteres problemáticos",
+      "value": "U+D800–U+DFFF"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

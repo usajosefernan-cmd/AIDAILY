@@ -1,0 +1,33 @@
+{
+  "aiSummary": "Xiaomi ha presentado HarnessX, un marco que convierte el soporte de agentes de IA en un objeto modular, permitiendo ajustes autónomos mediante aprendizaje por refuerzo. El sistema, llamado AEGIS, optimiza prompts, memoria y flujos de control a partir de trazas de ejecución, logrando mejoras de rendimiento significativas, especialmente en modelos pequeños.",
+  "category": "tecnologia",
+  "fullArticle": "Xiaomi ha introducido HarnessX, un marco que redefine la manera en que los agentes de IA interactúan con su entorno empresarial. Tradicionalmente, el soporte o \"harness\" que conecta un modelo de lenguaje con herramientas externas ha sido estático y creado a mano, lo que obliga a los ingenieros a reescribir código cada vez que cambian el modelo, se añaden nuevas herramientas o se desplaza la aplicación a otro dominio. Este proceso manual se ha convertido en un cuello de botella que limita la rapidez con que las organizaciones pueden innovar.\n\nHarnessX aborda este problema al tratar el harness como un objeto modular y serializable. La arquitectura separa la configuración del modelo del soporte, lo que permite intercambiar, adaptar y evolucionar el scaffolding sin tocar el modelo subyacente. Cada componente funcional—como la gestión de contexto, la memoria, los ecosistemas de herramientas y los flujos de control—se implementa como un \"processor\" que se puede añadir o eliminar sin romper la cadena de ejecución.\n\nEl motor AEGIS, el corazón de HarnessX, convierte la optimización del harness en un problema de aprendizaje por refuerzo. A partir de trazas de ejecución completas, AEGIS sigue un pipeline de cuatro etapas: el Digester comprime las trazas en resúmenes estructurados; el Planner identifica oportunidades de cambio estructural; el Evolver genera ediciones de código y pruebas para garantizar su validez; y el Critic junto con una puerta determinista filtran ediciones que puedan provocar \"reward hacking\", olvido catastrófico o subexploración. Este enfoque evita que el sistema se quede atascado en ajustes menores de prompts y fomenta la búsqueda de configuraciones más robustas.\n\nLas pruebas de laboratorio han demostrado que HarnessX logra un aumento promedio del 14,5 % en rendimiento en 15 combinaciones modelo‑benchmark, y hasta un 44 % en tareas de planificación con el modelo Qwen3.5‑9B. Estos resultados indican que, lejos de depender únicamente del escalado de modelos, la mejora del harness puede ser la vía más eficiente para potenciar agentes de IA, especialmente en entornos con recursos limitados. El lanzamiento de HarnessX posiciona a Xiaomi como un actor clave en la evolución de la IA empresarial, ofreciendo una solución que combina ingeniería de software avanzada con aprendizaje automático autónomo para acelerar la adopción de agentes inteligentes.\n",
+  "hashtags": [
+    "#Xiaomi",
+    "#HarnessX",
+    "#AEGIS",
+    "#Qwen35",
+    "#IA"
+  ],
+  "id": "5b60fc956047eec791a8b3d5a456f3ebac42a95ed0a162c8a9fbe383e39c1f4d",
+  "imageAlt": "Xiaomi lanza HarnessX, la herramienta que reescribe su propio soporte IA en tiempo real",
+  "keyPoints": [
+    "HarnessX transforma el soporte de agentes IA en un objeto modular, permitiendo ajustes autónomos sin tocar el modelo subyacente.",
+    "El motor AEGIS utiliza aprendizaje por refuerzo sobre trazas de ejecución para optimizar prompts, memoria y flujos de control.",
+    "Pruebas reales mostraron un aumento promedio del 14,5 % en rendimiento, alcanzando hasta 44 % en tareas de planificación con Qwen3.5-9B.",
+    "Esta evolución demuestra que escalar el modelo base no es la única vía; los modelos pequeños pueden beneficiarse más de la adaptación del harness."
+  ],
+  "publishedAt": "2026-06-24T18:45:08.000Z",
+  "scrapedAt": "2026-06-24T21:16:05.523Z",
+  "source": "VentureBeat",
+  "sourceUrl": "https://venturebeat.com/feed/",
+  "subcategory": "Startups",
+  "summary": "Xiaomi ha presentado HarnessX, un marco que convierte el soporte de agentes de IA en un objeto modular, permitiendo ajustes autónomos mediante aprendizaje por refuerzo. El sistema, llamado AEGIS, optimiza prompts, memoria y flujos de control a partir de trazas de ejecución, logrando mejoras de rendimiento significativas, especialmente en modelos pequeños.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Xiaomi lanza HarnessX, la herramienta que reescribe su propio soporte IA en tiempo real",
+  "url": "https://venturebeat.com/orchestration/xiaomis-harnessx-rewrites-its-own-ai-scaffolding-mid-task-and-smaller-models-gain-the-most",
+  "whyMatters": "El desarrollo de HarnessX representa un giro decisivo en la forma en que las empresas implementan agentes de IA, ya que elimina la dependencia de ajustes manuales y permite que los sistemas se adapten dinámicamente a entornos cambiantes. Al optimizar el soporte de manera autónoma, las organizaciones pueden reducir costos de desarrollo y acelerar la innovación, lo que tiene implicaciones estratégicas en sectores que dependen de procesos complejos y de larga duración. Este avance también abre la puerta a la democratización de la IA, permitiendo que modelos de menor escala se vuelvan competitivos sin la necesidad de recursos masivos de cómputo."
+}

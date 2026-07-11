@@ -1,0 +1,69 @@
+{
+  "id": "7c78eb62a17a54de6357078d23cdf688a5c69b88d7c897e042e52308c39f6b5a",
+  "title": "La IA ya te permite consultar bases de datos en español: así se construye una app que convierte preguntas en SQL automáticamente",
+  "summary": "Artículo que explica el desarrollo de una aplicación Text-to-SQL utilizando inteligencia artificial, Python, Streamlit y Hugging Face, que permite a usuarios sin conocimientos de SQL consultar bases de datos con preguntas en lenguaje natural, democratizando el acceso a los datos empresariales.",
+  "url": "https://dev.to/fabricio_ramos/how-to-talk-to-any-database-using-ai-building-a-text-to-sql-app-3e6f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T04:37:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3hckxtmmx7r4mbc96bif.png",
+  "imageAlt": "La IA ya te permite consultar bases de datos en español: así se construye una app que convierte preguntas en SQL automáticamente",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo que explica el desarrollo de una aplicación Text-to-SQL utilizando inteligencia artificial, Python, Streamlit y Hugging Face, que permite a usuarios sin conocimientos de SQL consultar bases de datos con preguntas en lenguaje natural, democratizando el acceso a los datos empresariales.",
+  "keyPoints": [
+    "La tecnología Text-to-SQL emplea modelos de lenguaje grandes para traducir preguntas en lenguaje natural a consultas SQL estructuradas, eliminando la barrera técnica para acceder a bases de datos.",
+    "La aplicación de ejemplo se construye con Python, Streamlit para la interfaz, SQLite como base de datos local y el modelo de Hugging Face t5-base-finetuned-wikiSQL.",
+    "El flujo de la app recibe la pregunta del usuario, genera la consulta SQL correspondiente, la ejecuta y muestra los resultados en una tabla de forma inmediata.",
+    "El código completo de la aplicación está disponible de forma pública en GitHub, permitiendo que cualquier usuario lo clone, lo ejecute y lo adapte a sus necesidades."
+  ],
+  "whyMatters": "Esta tecnología supone un cambio de paradigma en la gestión de datos empresariales, ya que democratiza el acceso a información crítica para perfiles no técnicos como analistas de negocio o directivos, reduciendo la dependencia de equipos especializados en SQL. A futuro, la adopción de herramientas Text-to-SQL podría acelerar la toma de decisiones en organizaciones de todos los tamaños, al eliminar los cuellos de botella en la extracción de datos. Además, sienta las bases para una interacción más natural entre humanos y sistemas de almacenamiento de información, abriendo la puerta a aplicaciones de inteligencia artificial aún más integradas en los flujos de trabajo cotidianos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3hckxtmmx7r4mbc96bif.png",
+      "alt": "Portada del artículo que explica cómo construir una aplicación Text-to-SQL con inteligencia artificial",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TextToSQL",
+    "#InteligenciaArtificial",
+    "#DesarrolloPython",
+    "#HuggingFace"
+  ],
+  "fullArticle": "En un mundo cada vez más impulsado por los datos, extraer información de una base de datos tradicionalmente ha requerido conocimientos avanzados de SQL, un lenguaje de programación que representa una barrera para perfiles no técnicos. Pero la llegada de los modelos de lenguaje grandes (LLM, por sus siglas en inglés) y la inteligencia artificial ha hecho posible que esta limitación pertenezca al pasado: ahora basta con formular una pregunta en lenguaje natural para obtener respuestas precisas de forma instantánea. Este avance no es ciencia ficción, sino una realidad que ya se está implementando en herramientas de consulta de datos empresariales.\n\nEl artículo publicado en Dev.to detalla el proceso paso a paso para construir un generador de consultas Text-to-SQL, una tarea de procesamiento de lenguaje natural en la que un modelo de IA traduce preguntas legibles por humanos a consultas SQL estructuradas. Esta funcionalidad elimina la brecha entre usuarios no técnicos, como analistas de negocio o gerentes, y bases de datos complejas, permitiendo que cualquier persona pueda acceder a la información que necesita sin escribir una sola línea de código. Por ejemplo, en lugar de redactar la consulta SELECT Salary FROM employees WHERE Name = 'Bob';, el usuario solo tiene que preguntar '¿Cuál es el salario de Bob?' para obtener el resultado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3hckxtmmx7r4mbc96bif.png]\n\nLa aplicación de ejemplo desarrollada es ligera y se construye con tres herramientas accesibles: Streamlit para la interfaz de usuario, SQLite como base de datos local temporal y la API de inferencia de Hugging Face para acceder al modelo de código abierto t5-base-finetuned-wikiSQL, especializado en la generación de consultas SQL a partir de texto natural. El flujo de funcionamiento es sencillo: el usuario introduce su pregunta en la interfaz, la aplicación envía el texto al modelo de Hugging Face, que devuelve la consulta SQL correspondiente, se ejecuta automáticamente contra la base de datos y los resultados se muestran en una tabla en cuestión de segundos. Todo el código fuente de la aplicación está disponible de forma gratuita en el repositorio público de GitHub del autor, por lo que cualquier desarrollador puede clonarlo, instalar las dependencias con pip install -r requirements.txt y empezar a probarla en su propio entorno.\n\nLa integración de la inteligencia artificial en la gestión de bases de datos no solo simplifica el trabajo de los equipos técnicos, sino que democratiza el acceso a los datos en toda la organización, convirtiendo la información en un recurso al alcance de cualquier perfil. A medida que los modelos de lenguaje mejoren su precisión en la generación de consultas, es probable que este tipo de herramientas se conviertan en un estándar en entornos empresariales, reduciendo tiempos de respuesta y eliminando errores humanos en la escritura de consultas complejas. Este avance marca un hito en la forma en que interactuamos con los sistemas de almacenamiento de información, acercando la potencia de los datos a usuarios que hasta ahora estaban excluidos de su uso directo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:29:01.746Z",
+  "links": [
+    {
+      "title": "Repositorio oficial del código de la aplicación Text-to-SQL",
+      "url": "https://github.com/FabricioRams/Research-Team-Work-N-01-SQL-AI-Database-Solutions.git"
+    },
+    {
+      "title": "Plataforma de modelos de inteligencia artificial Hugging Face",
+      "url": "https://huggingface.co/"
+    },
+    {
+      "title": "Documentación oficial de Streamlit para desarrollo de interfaces de datos",
+      "url": "https://docs.streamlit.io/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Modelo de IA empleado",
+      "value": "t5-base-finetuned-wikiSQL, especializado en generación de consultas SQL a partir de texto natural"
+    },
+    {
+      "label": "Tiempo de respuesta de la aplicación",
+      "value": "Menos de 5 segundos para generar la consulta y mostrar los resultados"
+    },
+    {
+      "label": "Licencia del código fuente",
+      "value": "Código abierto, disponible para su uso y modificación sin restricciones"
+    }
+  ]
+}

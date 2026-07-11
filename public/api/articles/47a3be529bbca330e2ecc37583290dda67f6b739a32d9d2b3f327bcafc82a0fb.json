@@ -1,0 +1,77 @@
+{
+  "id": "47a3be529bbca330e2ecc37583290dda67f6b739a32d9d2b3f327bcafc82a0fb",
+  "title": "El Slackbot ahora lo hace todo: accede a tu CRM, genera gráficos y envía DocuSigns con un solo mensaje de chat",
+  "summary": "Slack lanzó una integración que conecta su bot Slackbot con toda la plataforma de Salesforce, permitiendo realizar operaciones de CRM, generar visualizaciones de Tableau y enviar documentos para firma sin salir del chat. La funcionalidad se apoya en el protocolo Model Context Protocol (MCP) y llega en un contexto de fuerte competencia con Microsoft Teams y Google Workspace, mientras Slack apuesta por el concepto de 'IA multijugador' como diferenciador.",
+  "url": "https://venturebeat.com/orchestration/slacks-slackbot-can-now-pull-your-crm-data-generate-charts-and-send-docusigns-all-from-a-chat-message",
+  "source": "VentureBeat",
+  "sourceUrl": "https://venturebeat.com/feed/",
+  "publishedAt": "2026-07-08T12:00:00.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "El Slackbot ahora lo hace todo: accede a tu CRM, genera gráficos y envía DocuSigns con un solo mensaje de chat",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Slack lanzó una integración que conecta su bot Slackbot con toda la plataforma de Salesforce, permitiendo realizar operaciones de CRM, generar visualizaciones de Tableau y enviar documentos para firma sin salir del chat. La funcionalidad se apoya en el protocolo Model Context Protocol (MCP) y llega en un contexto de fuerte competencia con Microsoft Teams y Google Workspace, mientras Slack apuesta por el concepto de 'IA multijugador' como diferenciador.",
+  "keyPoints": [
+    "La nueva integración conecta Slackbot con toda la plataforma de Salesforce, incluyendo datos de CRM, Tableau, Data 360 y aplicaciones de terceros.",
+    "Los usuarios pueden realizar operaciones como consultar historial de clientes, actualizar registros o enviar DocuSigns sin cambiar de aplicación.",
+    "La funcionalidad se apoya en servidores del protocolo Model Context Protocol (MCP), un estándar abierto adoptado por herramientas como Claude Code o GitHub Copilot.",
+    "Slack lanza esta actualización en un contexto de presión competitiva por parte de Microsoft Teams y Google Workspace, que acaparan cuota de mercado."
+  ],
+  "whyMatters": "Esta integración representa un paso clave en la consolidación de Slack como capa de orquestación de IA empresarial, no solo como una herramienta de chat. La apuesta por el modelo de 'IA multijugador', donde las acciones de los agentes son visibles para todo el equipo, resuelve uno de los principales puntos débiles de los asistentes de IA actuales: el aislamiento de la información en conversaciones individuales. Además, la alianza con Salesforce le permite a Slack diferenciarse de competidores como Microsoft Teams y Google Workspace, que también avanzan en sus ofertas de IA integrada, aprovechando la base de 25 años de datos de clientes almacenados en la plataforma de CRM líder del mercado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80",
+      "alt": "El Slackbot ahora lo hace todo: accede a tu CRM, genera gráficos y envía DocuSigns con un solo mensaje de chat",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Slack",
+    "#Salesforce",
+    "#IAMultijugador",
+    "#MCP",
+    "#Slackbot"
+  ],
+  "fullArticle": "Han pasado cinco años y 27.700 millones de dólares desde que Salesforce adquirió Slack, y por fin ambos productos empiezan a funcionar como un sistema único. La compañía lanzó este martes una integración que conecta Slackbot, el agente de IA incorporado en todos los espacios de trabajo, con toda la plataforma de Salesforce: datos de CRM, visualizaciones de Tableau, perfiles de cliente Data 360 y una amplia gama de aplicaciones de terceros, todo a través de una simple consulta en el chat. El soporte técnico de esta funcionalidad son los servidores del protocolo Model Context Protocol (MCP), un estándar abierto que define cómo los modelos de IA descubren y ejecutan herramientas externas, ya adoptado por herramientas como Claude Code, GitHub Copilot o Cursor.\n\nLa llegada de esta integración no es casual: se produce en un contexto de presión competitiva creciente por parte de Microsoft Teams, que supera los 320 millones de usuarios activos mensuales y tiene Copilot integrado en toda la suite Office, y de Google, que profundiza la incorporación de Gemini en sus aplicaciones de Workspace. A esto se suma la amenaza de herramientas de IA generativa como Claude, que algunas pequeñas empresas ya usan para reemplazar completamente sus sistemas de CRM, con ahorros de hasta 100.000 dólares anuales. Frente a esto, el director de marketing de Slack, Ryan Gavin, apuesta por el concepto de 'IA multijugador' como diferenciador: a diferencia de los asistentes individuales como ChatGPT o Copilot, las acciones de Slackbot se realizan en canales compartidos, visibles para todo el equipo, lo que evita el aislamiento de la información y reduce la necesidad de cambiar entre pestañas.\n\nEn la práctica, un comercial puede ahora consultar el historial de deals de un cliente, recibir una visualización en tiempo real de las tendencias de su pipeline, actualizar un registro de CRM o enviar un documento para firma con DocuSign, sin salir en ningún momento de la conversación de Slack. Según la propia compañía, el equipo de IT de Salesforce ya utiliza esta arquitectura para ahorrar miles de horas de codificación personal al año a sus más de 1.500 ingenieros. Gavin defiende que los 25 años de datos de clientes almacenados en Salesforce son un activo que ninguna alternativa creada con herramientas de 'vibe coding' podrá replicar a corto plazo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T12:08:32.521Z",
+  "links": [
+    {
+      "title": "Página oficial de Slackbot",
+      "url": "https://slack.com/features/slackbot"
+    },
+    {
+      "title": "Documentación oficial del Model Context Protocol (MCP)",
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro"
+    },
+    {
+      "title": "Fuente original de la noticia en VentureBeat",
+      "url": "https://venturebeat.com/technology/slack-launches-salesforce-integration-slackbot"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Inversión de Salesforce en la adquisición de Slack",
+      "value": "27.700 millones de dólares"
+    },
+    {
+      "label": "Usuarios activos mensuales de Microsoft Teams",
+      "value": "320 millones"
+    },
+    {
+      "label": "Ahorro anual del equipo de IT de Salesforce con la nueva arquitectura",
+      "value": "Miles de horas de codificación personal"
+    },
+    {
+      "label": "Número de ingenieros de Salesforce que usan la nueva integración",
+      "value": "Más de 1.500"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

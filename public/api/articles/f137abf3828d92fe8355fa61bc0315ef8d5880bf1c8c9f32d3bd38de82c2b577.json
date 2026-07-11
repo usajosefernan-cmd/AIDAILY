@@ -1,0 +1,69 @@
+{
+  "id": "f137abf3828d92fe8355fa61bc0315ef8d5880bf1c8c9f32d3bd38de82c2b577",
+  "title": "Guía definitiva: Configura Apache como proxy inverso sin errores 502 y con balanceo de carga",
+  "summary": "Guía práctica para configurar Apache HTTP Server como proxy inverso en entornos productivos, evitando errores comunes como 502, 504 y 404, garantizando seguridad, rendimiento y soporte para WebSockets.",
+  "url": "https://dev.to/andrew_wiggins/how-to-configure-apache-as-a-reverse-proxy-with-modproxy-4flf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T09:18:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7tjuirbafpozgtbczdh3.jpg",
+  "imageAlt": "Guía definitiva: Configura Apache como proxy inverso sin errores 502 y con balanceo de carga",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Guía práctica para configurar Apache HTTP Server como proxy inverso en entornos productivos, evitando errores comunes como 502, 504 y 404, garantizando seguridad, rendimiento y soporte para WebSockets.",
+  "keyPoints": [
+    "La configuración básica de ProxyPass en entornos productivos genera errores 502 masivos bajo carga por falta de pool de conexiones TCP.",
+    "Es obligatorio activar los módulos proxy, proxy_http, headers y proxy_balancer, y desactivar ProxyRequests para evitar convertir el servidor en proxy abierto.",
+    "Las reglas de ProxyPass deben mantener la simetría de barras finales en rutas de origen y destino para evitar errores 404 inesperados en las aplicaciones.",
+    "Apache 2.4.47 y versiones superiores soportan WebSockets de forma nativa sin módulos adicionales, pero requieren ajustar el tiempo de expiración de conexión."
+  ],
+  "whyMatters": "Una configuración incorrecta de Apache como proxy inverso puede causar caídas totales del servicio en empresas que dependen de sus aplicaciones web para operaciones diarias, generando pérdidas económicas y daños a la reputación. Además, dejar la directiva ProxyRequests activada expone el servidor a ser usado como relay en ataques cibernéticos, lo que puede acarrear responsabilidades legales y bloqueos de IP por parte de proveedores de internet. Dominar estas buenas prácticas de configuración es esencial para ingenieros de fiabilidad y equipos de DevOps que buscan garantizar la disponibilidad y seguridad de sus infraestructuras en entornos productivos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7tjuirbafpozgtbczdh3.jpg",
+      "alt": "Imagen de portada de la guía de configuración de Apache como proxy inverso",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Apache",
+    "#ProxyInverso",
+    "#DevOps",
+    "#InfraestructuraTI",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "En los despliegues empresariales modernos, Apache HTTP Server se utiliza habitualmente como proxy inverso para terminar conexiones TLS y gestionar la seguridad perimetral, delante de servidores de aplicación como Node.js, Gunicorn de Python o Tomcat de Java. Sin embargo, las guías básicas de configuración que solo recomiendan una regla ProxyPass simple no son válidas para entornos de producción, donde generan errores 502 Bad Gateway masivos y caídas del servicio bajo cargas de tráfico elevadas. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7tjuirbafpozgtbczdh3.jpg]\nPara construir una arquitectura de proxy resistente, es imprescindible activar previamente todos los módulos necesarios: proxy, proxy_http, headers, proxy_balancer y lbmethod_byrequests, ya que la ausencia del módulo headers provoca fallos fatales al intentar configurar cabeceras de proxy. Otro punto crítico es desactivar obligatoriamente la directiva ProxyRequests dentro del bloque VirtualHost: si se deja activada, el servidor se convierte en un proxy abierto que los atacantes usan para enmascarar direcciones IP en ataques DDoS o campañas de spam.\nLa configuración debe incluir también agrupación de conexiones (connection pooling) para reutilizar conexiones TCP abiertas con el backend, evitando el agotamiento de la cola de conexiones en picos de tráfico. Es fundamental mantener la simetría de barras finales en las reglas de ProxyPass: si la ruta de origen termina en /, la ruta de destino también debe terminarlo, para evitar errores 404 por rutas mal formadas. Por último, para soportar WebSockets no se requieren módulos adicionales en versiones de Apache 2.4.47 o superiores, pero es necesario ajustar el tiempo de expiración de conexión por encima del valor por defecto de 60 segundos para evitar desconexiones por inactividad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T09:24:05.135Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/apache/how-to-configure-apache-as-a-reverse-proxy-with-mod-proxy"
+    },
+    {
+      "title": "Documentación oficial de mod_proxy en Apache",
+      "url": "https://httpd.apache.org/docs/current/mod/mod_proxy.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión mínima de Apache para soporte nativo de WebSockets",
+      "value": "2.4.47"
+    },
+    {
+      "label": "Tiempo de expiración por defecto de conexiones en Apache",
+      "value": "60 segundos"
+    },
+    {
+      "label": "Módulos obligatorios para la configuración",
+      "value": "proxy, proxy_http, headers, proxy_balancer, lbmethod_byrequests"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

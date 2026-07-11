@@ -1,0 +1,38 @@
+{
+  "id": "f82a0f53b217b902278a3af0d680f38ae17aa501d4730d6236f15da21eb637eb",
+  "title": "Measure reply-rate analytics for your email agent",
+  "summary": "La mayoría de las demostraciones de \"análisis de correo electrónico\" llegan directamente al píxel abierto. Coloque un GIF transparente de 1x1 en el cuerpo, observe cómo llegan las cargas, llámelo compromiso. Eso funcionó en 2015. Hoy en día, la Protección de Privacidad del Correo de Apple busca previamente cada imagen en el instante en que un mensaje llega a la bandeja de entrada, por lo que una parte de sus \"aperturas\" son...",
+  "url": "https://dev.to/mqasimca/measure-reply-rate-analytics-for-your-email-agent-1052",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T04:59:55.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F13df963faofjzdig2s3x.png",
+  "imageAlt": "Measure reply-rate analytics for your email agent",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La mayoría de las demostraciones de \"análisis de correo electrónico\" llegan directamente al píxel abierto. Coloque un GIF transparente de 1x1 en el cuerpo, observe cómo llegan las cargas, llámelo compromiso. Eso funcionó en 2015. Hoy en día, la Protección de Privacidad del Correo de Apple busca previamente cada imagen en el instante en que un mensaje llega a la bandeja de entrada, por lo que una parte de sus \"aperturas\" son...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F13df963faofjzdig2s3x.png",
+      "alt": "Measure reply-rate analytics for your email agent",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "La mayoría de las demostraciones de \"análisis de correo electrónico\" llegan directamente al píxel abierto. Coloque un GIF transparente de 1x1 en el cuerpo, observe cómo llegan las cargas, llámelo compromiso. Eso funcionó en 2015. Hoy en día, la Protección de Privacidad del Correo de Apple busca previamente cada imagen en el instante en que un mensaje llega a la bandeja de entrada, por lo que una parte de sus \"aperturas\" son el proxy de Apple que calienta un caché, no un ser humano que lee nada. Imágenes proxy de Gmail también. Los portales corporativos los despojan. El número que obtiene es ruido con un intervalo de confianza.\n\nHay una señal justo al lado que nadie puede falsificar o bloquear: ¿respondieron? Una respuesta es un ser humano que decide que vale la pena volver a escribir tu mensaje. Tiene menor volumen que uno abierto y tarda más en llegar, pero es cierto. Y si su remitente es una cuenta de agente de Nylas (un buzón que su agente posee, envía y recibe), la tasa de respuesta es algo que realmente puede calcular, porque cada envío y cada respuesta entrante aterrizan en el mismo plano de datos al que ya tiene acceso de lectura.\n\nEsta publicación es la compilación. Trabajo en Nylas CLI, por lo que los comandos de terminal a continuación son exactamente los que utilizo, y mostraré el HTTP sin formato al lado de cada uno para que pueda conectarlo a cualquier idioma en el que se ejecute su agente.\n\nsen...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T05:25:08.250Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

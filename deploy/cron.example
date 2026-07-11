@@ -1,0 +1,18 @@
+# =====================================================================
+# CONFIGURACIÓN DE CRON DE PRODUCCIÓN PARA AIDAILY
+# =====================================================================
+# Instrucciones de instalación:
+# 1. Conéctate a la VPS por SSH.
+# 2. Ejecuta: crontab -e
+# 3. Pega las siguientes directivas adaptando la ruta del proyecto.
+# =====================================================================
+
+# AIDAILY - Cron Principal (Sincronización y Compilación)
+# Se ejecuta cada 30 minutos de forma automática.
+# Descarga, limpia, procesa con IA, deduplica y compila la web de forma segura.
+*/30 * * * * cd /home/ubuntu/workspace/AIDAILY && /usr/bin/npm run news:sync >> logs/news-sync-cron.log 2>&1
+
+# AIDAILY - Cron de Temas Calientes y Última Hora (cada 2 horas)
+# Se ejecuta cada 2 horas en el minuto 0.
+# Identifica tendencias repetidas en las fuentes y breaking news sin compilar la web entera.
+0 */2 * * * cd /home/ubuntu/workspace/AIDAILY && /usr/bin/npm run news:hot >> logs/hot-topics-cron.log 2>&1

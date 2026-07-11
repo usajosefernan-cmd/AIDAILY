@@ -1,0 +1,79 @@
+{
+  "id": "cec26a23b69ea29a8ebf4f8393059cb93b1e7692224d8c9f696422f751125c4f",
+  "title": "Brecha de datos expone hasta 14,2 millones de credenciales de correo en seis operadores japoneses",
+  "summary": "El operador de telecomunicaciones japonés KDDI Corporation reveló una brecha que pudo haber expuesto las direcciones de correo y contraseñas de hasta 14,2 millones de usuarios de seis proveedores de servicios de internet. El incidente, detectado el 17 de junio, se atribuye a una vulnerabilidad en un software de terceros, y aunque se implementaron medidas defensivas, los usuarios afectados se aconsejan cambiar sus contraseñas y activar la autenticación de dos factores.",
+  "url": "https://www.bleepingcomputer.com/news/security/data-breach-exposes-up-to-142-million-email-logins-at-six-isps/",
+  "source": "BleepingComputer",
+  "sourceUrl": "https://www.bleepingcomputer.com/feed/",
+  "publishedAt": "2026-06-28T14:13:46.000Z",
+  "imageUrl": "https://www.bleepstatic.com/content/hl-images/2026/06/26/KDDI.jpg",
+  "imageAlt": "Brecha de datos expone hasta 14,2 millones de credenciales de correo en seis operadores japoneses",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El operador de telecomunicaciones japonés KDDI Corporation reveló una brecha que pudo haber expuesto las direcciones de correo y contraseñas de hasta 14,2 millones de usuarios de seis proveedores de servicios de internet. El incidente, detectado el 17 de junio, se atribuye a una vulnerabilidad en un software de terceros, y aunque se implementaron medidas defensivas, los usuarios afectados se aconsejan cambiar sus contraseñas y activar la autenticación de dos factores.",
+  "keyPoints": [
+    "La brecha, descubierta el 17 de junio, pudo haber comprometido las credenciales de correo de hasta 14,2 millones de usuarios de seis ISPs japoneses.",
+    "KDDI atribuye el ataque a una vulnerabilidad en un software de terceros que no se especifica, y advierte que algunos datos podrían haber sido expuestos en texto plano.",
+    "La compañía ya ha bloqueado al atacante, implementado defensas y notificado a la Comisión de Protección de Información Personal y al Ministerio de Asuntos Internos y Comunicaciones.",
+    "Los usuarios se aconsejan cambiar contraseñas y habilitar la autenticación de dos factores para mitigar riesgos de suplantación de identidad."
+  ],
+  "whyMatters": "Este incidente subraya la fragilidad de los sistemas de correo corporativo frente a vulnerabilidades de terceros, poniendo en riesgo la privacidad de millones de usuarios. La exposición de credenciales en masa aumenta la probabilidad de ataques de phishing y ransomware, afectando la confianza en los servicios de telecomunicaciones. Para el sector tecnológico, la brecha sirve como alerta sobre la necesidad de auditorías rigurosas de software externo y la adopción de prácticas de cifrado robustas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.bleepstatic.com/content/hl-images/2026/06/26/KDDI.jpg",
+      "alt": "Imagen de la sede de KDDI Corporation en Tokio, Japón",
+      "caption": "La sede de KDDI Corporation, operador de telecomunicaciones que reportó la brecha de datos."
+    },
+    {
+      "type": "image",
+      "url": "https://www.bleepstatic.com/c/t/stop-ai-attacks-970.jpg",
+      "alt": "Gráfico ilustrativo de medidas de ciberseguridad",
+      "caption": "Representación visual de la importancia de la defensa contra ataques cibernéticos en entornos corporativos."
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#KDDI",
+    "#BrechaDeDatos",
+    "#Ciberseguridad",
+    "#ISP",
+    "#Japón"
+  ],
+  "fullArticle": "El operador de telecomunicaciones japonés KDDI Corporation confirmó una brecha de datos que pudo haber expuesto las credenciales de correo electrónico de hasta 14,2 millones de usuarios pertenecientes a seis proveedores de servicios de internet (ISPs). El hallazgo se produjo el 17 de junio, cuando la compañía detectó actividad anómala en uno de sus sistemas de correo. \n\n[MULTIMEDIA: https://www.bleepstatic.com/content/hl-images/2026/06/26/KDDI.jpg]\n\nKDDI atribuyó el ataque a una vulnerabilidad en un software de terceros que utiliza en su infraestructura, aunque no reveló el nombre del producto ni el tipo de cifrado empleado. La empresa advierte que, aunque se han implementado medidas defensivas, existe la posibilidad de que las direcciones de correo y contraseñas hayan sido obtenidas por actores no autorizados. En su comunicado, KDDI señaló que algunas contraseñas se almacenan en forma hasheada o cifrada, lo que dificulta su uso indebido, aunque no especificó el porcentaje de cuentas protegidas de esta manera.\n\nEl operador, que emplea 45.000 empleados y genera ingresos anuales de 32,4 mil millones de dólares, ha notificado a la Comisión de Protección de Información Personal y al Ministerio de Asuntos Internos y Comunicaciones de Japón. Además, está en contacto con los ISPs afectados para implementar medidas de seguridad adicionales y mitigar los riesgos derivados de la exposición.\n\n[MULTIMEDIA: https://www.bleepstatic.com/c/t/stop-ai-attacks-970.jpg]\n\nLos usuarios potencialmente afectados se aconsejan cambiar sus contraseñas de inmediato y, si es posible, habilitar la autenticación de dos factores (2FA) para reforzar la protección de sus cuentas. Este incidente resalta la importancia de la gestión proactiva de vulnerabilidades en software de terceros y la necesidad de políticas de seguridad robustas en la industria de las telecomunicaciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T14:44:50.543Z",
+  "links": [
+    {
+      "title": "BleepingComputer – Informe original sobre la brecha de KDDI",
+      "url": "https://www.bleepingcomputer.com/news/security/kddi-data-breach-exposes-up-to-14-2-million-email-logins-at-six-isp/"
+    },
+    {
+      "title": "Sitio oficial de KDDI Corporation",
+      "url": "https://www.kddi.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Usuarios potencialmente expuestos",
+      "value": "14,2 millones"
+    },
+    {
+      "label": "Fecha de descubrimiento",
+      "value": "17 de junio de 2024"
+    },
+    {
+      "label": "Número de ISPs afectados",
+      "value": "6"
+    },
+    {
+      "label": "Empresa japonesa",
+      "value": "KDDI Corporation"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

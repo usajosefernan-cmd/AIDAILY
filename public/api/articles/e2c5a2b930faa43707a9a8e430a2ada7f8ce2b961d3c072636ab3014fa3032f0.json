@@ -1,0 +1,41 @@
+{
+  "id": "e2c5a2b930faa43707a9a8e430a2ada7f8ce2b961d3c072636ab3014fa3032f0",
+  "title": "Construyendo un modal de búsqueda para un sitio WordPress con acceso restringido",
+  "summary": "El artículo detalla cómo crear una búsqueda en vivo que protege el contenido premium en una plataforma de membresía WordPress, combinando plugins como WooCommerce, LearnDash y Relevanssi para filtrar resultados según el nivel de acceso del usuario.",
+  "url": "https://dev.to/highcenburg/building-a-search-modal-for-a-membership-gated-wordpress-site-b92",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-02T02:36:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frwzx83vvuf8t6yijytoe.png",
+  "imageAlt": "Construyendo un modal de búsqueda para un sitio WordPress con acceso restringido",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla cómo crear una búsqueda en vivo que protege el contenido premium en una plataforma de membresía WordPress, combinando plugins como WooCommerce, LearnDash y Relevanssi para filtrar resultados según el nivel de acceso del usuario.",
+  "keyPoints": [
+    "Se diseñó un modal de búsqueda que muestra resultados en tiempo real y evita filtraciones de contenido premium a usuarios no registrados.",
+    "El enfoque unificado de indexación con Relevanssi garantiza que la búsqueda respete las reglas de acceso en tiempo de consulta.",
+    "Se implementó un mecanismo de debounce de 250 ms y AbortController para evitar sobrecarga y resultados desactualizados.",
+    "La solución se integra en el tema hijo a través de una ruta REST personalizada, evitando dependencias de plugins que podrían fallar."
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frwzx83vvuf8t6yijytoe.png",
+      "alt": "Building a Search Modal for a Membership-Gated WordPress Site",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Most \"add search to WordPress\" tutorials stop at dropping a widget in the header. That's fine until the site has gated content — membership videos, paid courses — and you realize the default search will happily leak the titles of member-only material to logged-out visitors. That's the interesting part of this build, and the part the tutorials skip.\n\nThis is a walkthrough of a live search feature I built for a fitness-membership platform running WordPress, WooCommerce, Divi, LearnDash, and WishList Member. The stack matters, because every one of those plugins had an opinion about how search should behave. The final result: an icon-triggered modal with debounced live results, grouped by content type, access-aware, styled to the brand, and working on mobile.\n\nThe site had four distinct conten...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-02T02:42:35.476Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

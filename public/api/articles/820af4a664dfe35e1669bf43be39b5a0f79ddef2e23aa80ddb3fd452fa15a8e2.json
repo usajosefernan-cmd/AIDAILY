@@ -1,0 +1,72 @@
+{
+  "id": "820af4a664dfe35e1669bf43be39b5a0f79ddef2e23aa80ddb3fd452fa15a8e2",
+  "title": "El mito del 99,9% de uptime: cuánto tiempo de caída esconde realmente y por qué multiplicar SLAs es un error común",
+  "summary": "El artículo desglosa el significado real del porcentaje de uptime del 99,9%, explica cómo calcular el tiempo de inactividad permitido según convenciones de periodo, y advierte sobre el error común de promediar SLAs de dependencias en lugar de multiplicarlos, lo que puede duplicar el tiempo de caída esperado.",
+  "url": "https://dev.to/skojiocommunity/999-uptime-how-much-downtime-is-that-really-plus-combined-sla-3i42",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T10:05:35.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fskojio.com%2Fblog%2Fcovers%2F99-9-uptime-how-much-downtime.jpg",
+  "imageAlt": "El mito del 99,9% de uptime: cuánto tiempo de caída esconde realmente y por qué multiplicar SLAs es un error común",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo desglosa el significado real del porcentaje de uptime del 99,9%, explica cómo calcular el tiempo de inactividad permitido según convenciones de periodo, y advierte sobre el error común de promediar SLAs de dependencias en lugar de multiplicarlos, lo que puede duplicar el tiempo de caída esperado.",
+  "keyPoints": [
+    "El 99,9% de uptime permite aproximadamente 8,76 horas de tiempo de inactividad al año, no un margen insignificante como parece.",
+    "Cada 'nueve' adicional en el porcentaje reduce el tiempo de caída permitido en un factor de diez, siendo el 'cinco nueves' el estándar para infraestructura crítica.",
+    "El uptime combinado de servicios dependientes no se calcula promediando sus SLAs, sino multiplicándolos, lo que aumenta drásticamente el riesgo de caídas.",
+    "Las convenciones de cálculo (año de 365 o 365,25 días, mes de 30,44 o 30 días) alteran los resultados, por lo que es esencial verificar la metodología de cada proveedor."
+  ],
+  "whyMatters": "Comprender la métrica real de uptime es fundamental para empresas que dependen de servicios en la nube, ya que un error en el cálculo de SLA puede derivar en incumplimientos contractuales y pérdidas económicas. La multiplicación de disponibilidades en arquitecturas con dependencias seriales revela vulnerabilidades ocultas que los proveedores no destacan en sus campañas de marketing. Además, estandarizar las convenciones de cálculo permite comparar objetivamente ofertas de diferentes proveedores y evitar sorpresas en los tiempos de inactividad facturados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fskojio.com%2Fblog%2Fcovers%2F99-9-uptime-how-much-downtime.jpg",
+      "alt": "Imagen de portada del artículo sobre el significado real del 99,9% de uptime y el cálculo de SLAs combinados",
+      "caption": "Portada del artículo original de Dev.to que ilustra el concepto de disponibilidad de servicios"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Uptime",
+    "#SLA",
+    "#ArquitecturaDeSoftware",
+    "#Disponibilidad"
+  ],
+  "fullArticle": "El porcentaje de uptime del 99,9% se presenta habitualmente como un estándar de alta disponibilidad, pero su significado real es mucho menos trivial de lo que sugiere la frase. Convertir ese porcentaje en tiempo de inactividad concreto requiere multiplicar el periodo de medición por el porcentaje de caída permitido: en un año de 365 días, eso equivale a aproximadamente 8,76 horas de tiempo fuera de línea, una cifra que puede marcar la diferencia entre una interrupción pasajera y un incidente que requiera un informe postmortem. Cada 'nueve' adicional reduce este margen en un factor de diez, por lo que el 'cinco nueves' (99,999%) —considerado el gold standard para infraestructura crítica como pasarelas de pago o conmutadores telefónicos— deja solo cinco minutos de caída anual, un margen que se reduce aún más al considerar dependencias encadenadas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fskojio.com%2Fblog%2Fcovers%2F99-9-uptime-how-much-downtime.jpg]\n\nEl error más extendido en el cálculo de disponibilidad combinada es promediar los SLAs de servicios dependientes, cuando en realidad deben multiplicarse. Dos servicios con un SLA individual del 99,9% no ofrecen un uptime conjunto del 99,9%, sino del 99,8%, lo que se traduce en 17,5 horas de caída anual, el doble de lo que sugeriría cada SLA por separado. Si se añade un tercer servicio con un SLA del 99,99%, el uptime combinado cae hasta el 99,85%, generando alrededor de 14 horas de inactividad al año, peor que el peor de los eslabones individuales. Esta lógica solo aplica a arquitecturas seriales con dependencias duras: si un componente falla, todo el sistema se cae. En configuraciones redundantes o con failover, el cálculo es diferente, ya que la caída de un solo elemento no afecta al conjunto.\n\nAl comparar proveedores de servicios en la nube, es fundamental no limitarse a la cifra de uptime anunciada, sino convertirla a tiempo de inactividad concreto para el periodo de facturación que corresponda. Una diferencia de 0,04 puntos porcentuales entre un SLA del 99,99% y uno del 99,95% se traduce en 18 minutos adicionales de caída permitida al mes, un margen que puede ser crítico para aplicaciones con requisitos de alta disponibilidad. Además, es imprescindible verificar la convención de cálculo que utiliza cada proveedor —año de 365 o 365,25 días, mes de 30,44 o 30 días—, ya que pequeñas variaciones en estas suposiciones generan resultados dispares que pueden distorsionar la comparativa real entre ofertas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T10:24:16.506Z",
+  "links": [
+    {
+      "title": "Guía oficial de SLA de Amazon Web Services",
+      "url": "https://aws.amazon.com/es/premiumsupport/plans/sla/"
+    },
+    {
+      "title": "Calculadora de disponibilidad y tiempo de inactividad",
+      "url": "https://uptime.is/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Inactividad anual permitida (99,9% SLA)",
+      "value": "8,76 horas"
+    },
+    {
+      "label": "Inactividad anual combinada (dos SLA 99,9%)",
+      "value": "17,5 horas"
+    },
+    {
+      "label": "Inactividad anual permitida (99,999% SLA)",
+      "value": "5 minutos"
+    },
+    {
+      "label": "Diferencia de inactividad mensual (99,99% vs 99,95%)",
+      "value": "18 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

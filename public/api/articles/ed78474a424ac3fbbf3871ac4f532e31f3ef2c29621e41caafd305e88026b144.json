@@ -1,0 +1,73 @@
+{
+  "id": "ed78474a424ac3fbbf3871ac4f532e31f3ef2c29621e41caafd305e88026b144",
+  "title": "Cómo le enseñé a Claude Code a hablar el idioma de Kiro para no pagar dos suscripciones de IA",
+  "summary": "Un desarrollador creó un proxy local que permite que Claude Code envíe sus solicitudes a Kiro, evitando pagar dos suscripciones por el mismo modelo de IA subyacente, con una configuración de menos de cinco minutos.",
+  "url": "https://dev.to/coderhisham/i-taught-claude-code-to-speak-kiro-149i",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T18:22:57.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7x9cpmtlykvii5j7ozz5.png",
+  "imageAlt": "Cómo le enseñé a Claude Code a hablar el idioma de Kiro para no pagar dos suscripciones de IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creó un proxy local que permite que Claude Code envíe sus solicitudes a Kiro, evitando pagar dos suscripciones por el mismo modelo de IA subyacente, con una configuración de menos de cinco minutos.",
+  "keyPoints": [
+    "Claude Code y Kiro comparten los mismos modelos de IA Claude, pero utilizan formatos de solicitud incompatibles de forma nativa.",
+    "El desarrollador creó kiro-gateway-next, un proxy local que traduce las solicitudes entre ambos servicios en tiempo real.",
+    "La configuración completa del proxy no supera los cinco minutos y solo requiere clonar un repositorio y editar dos archivos de configuración.",
+    "La solución evita pagar una segunda suscripción de Claude Code al reutilizar la suscripción existente de Kiro, que accede a los mismos modelos."
+  ],
+  "whyMatters": "Esta solución demuestra que la interoperabilidad entre servicios de IA que comparten modelos base es posible sin necesidad de modificaciones complejas, lo que pone en jaque los modelos de negocio basados en la venta de acceso exclusivo a un mismo modelo bajo diferentes marcas. Para los usuarios, supone un ahorro económico inmediato al evitar suscripciones duplicadas para acceder a la misma capacidad de procesamiento, además de abrir la puerta a personalizaciones avanzadas sin costes adicionales. A nivel sectorial, evidencia que las restricciones de compatibilidad entre plataformas son impuestas por decisiones comerciales, no por limitaciones técnicas, lo que podría impulsar una mayor presión por parte de la comunidad para exigir estándares abiertos en el ecosistema de inteligencia artificial.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7x9cpmtlykvii5j7ozz5.png",
+      "alt": "Portada del artículo que explica cómo conectar Claude Code con Kiro mediante un proxy local",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el desarrollador que creó el proxy kiro-gateway-next"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeCode",
+    "#Kiro",
+    "#Anthropic",
+    "#InteligenciaArtificial",
+    "#ProxyLocal"
+  ],
+  "fullArticle": "Claude Code y Kiro, dos de las herramientas de inteligencia artificial más populares para desarrolladores en la actualidad, comparten un secreto a voces: ambas están alimentadas por los mismos modelos de lenguaje Claude desarrollados por Anthropic, es decir, tienen exactamente el mismo 'cerebro' digital. Sin embargo, de fábrica son incapaces de comunicarse entre sí, ya que cada una ha sido diseñada para utilizar un dialecto de solicitud y respuesta propio y incompatible con el de la otra. Esta limitación no pasó desapercibida para un desarrollador que, a punto de contratar una segunda suscripción de pago para Claude Code, se dio cuenta de que ya pagaba por Kiro, un servicio que le daba acceso a los mismos modelos que pretendía volver a abonar. La idea de pagar dos veces por hablar con la misma inteligencia artificial le pareció tan absurda como innecesaria, así que decidió construir su propio intérprete.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7x9cpmtlykvii5j7ozz5.png]\nLa clave del invento está en un detalle de diseño de Claude Code que pocos conocen: la herramienta no tiene codificada de forma fija la dirección a la que envía sus solicitudes, sino que lee una variable de entorno llamada ANTHROPIC_BASE_URL para decidir el destino de todas sus peticiones. De forma predeterminada esta variable apunta al endpoint oficial de Anthropic, pero el desarrollador se dio cuenta de que podía redirigirla a cualquier dirección sin que la herramienta se negara a funcionar. Aprovechando esta flexibilidad, creó kiro-gateway-next, un pequeño proxy que se ejecuta de forma local en el equipo del usuario y que actúa como intérprete entre ambos servicios: recibe las solicitudes formuladas en el dialecto de Claude Code, las traduce al formato que entiende Kiro, le devuelve la respuesta traducida al formato que espera Claude Code y deja que la conversación fluya sin interrupciones.\nLa configuración completa del sistema no requiere más de cinco minutos ni conocimientos avanzados de ingeniería: basta con clonar el repositorio del proxy, crear un archivo de configuración con la clave de API propia y la ruta del archivo de base de datos de Kiro, y modificar el archivo de ajustes de Claude Code para apuntar a la dirección local del proxy. El autor del proyecto destaca que, si bien la solución funciona de forma estable, existen dos pequeños inconvenientes a tener en cuenta: de momento no es compatible con todas las funciones avanzadas de Claude Code, y es necesario mantener abierta la sesión de Kiro en segundo plano para que el proxy pueda acceder a la suscripción. Aun así, el ahorro económico es notable: los usuarios pueden evitar pagar una segunda suscripción de hasta 20 dólares mensuales por un servicio que les da acceso a exactamente los mismos modelos de IA que ya tienen contratados con Kiro.\nMás allá del ahorro económico, la iniciativa abre un debate interesante sobre la interoperabilidad en el ecosistema de inteligencia artificial: si dos servicios que comparten la misma base tecnológica no pueden comunicarse de forma nativa por decisiones comerciales, los usuarios tienen derecho a construir herramientas que les permitan saltarse esas restricciones sin coste adicional. El proyecto ya ha generado decenas de estrellas en GitHub y comentarios positivos de la comunidad de desarrolladores, que ven en este tipo de hacks una forma de recuperar el control sobre las herramientas que utilizan a diario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T18:46:33.479Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: I Taught Claude Code to Speak Kiro",
+      "url": "https://dev.to/ianfdz/i-taught-claude-code-to-speak-kiro"
+    },
+    {
+      "title": "Documentación oficial de Claude Code",
+      "url": "https://docs.anthropic.com/en/docs/claude-code"
+    },
+    {
+      "title": "Sitio oficial de Kiro",
+      "url": "https://kiro.dev"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión mínima de Claude Code requerida",
+      "value": "2.1.29 o superior"
+    },
+    {
+      "label": "Tiempo estimado de configuración del proxy",
+      "value": "5 minutos"
+    },
+    {
+      "label": "Ahorro mensual aproximado al evitar segunda suscripción",
+      "value": "Hasta 20 USD mensuales"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

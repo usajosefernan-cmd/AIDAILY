@@ -1,0 +1,77 @@
+{
+  "id": "cd7d6795d83c450e0dcf7a5cae8f17478e58f0918fc1c12cb688543b4c20529c",
+  "title": "Despliega código con los servicios CI/CD de AWS: construye una pipeline completa",
+  "summary": "El artículo explica cómo diseñar y gestionar pipelines de integración y entrega continua en AWS, detallando la función de CodePipeline, CodeCommit, CodeBuild, CodeDeploy y SAM, y cómo configurar estrategias de despliegue y rollbacks automáticos.",
+  "url": "https://dev.to/aws-builders/deploy-code-by-using-aws-continuous-integration-and-continuous-delivery-cicd-services-build-5b19",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T00:12:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvxkoqaafa6pwtzy27hxo.png",
+  "imageAlt": "Despliega código con los servicios CI/CD de AWS: construye una pipeline completa",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo diseñar y gestionar pipelines de integración y entrega continua en AWS, detallando la función de CodePipeline, CodeCommit, CodeBuild, CodeDeploy y SAM, y cómo configurar estrategias de despliegue y rollbacks automáticos.",
+  "keyPoints": [
+    "CodePipeline actúa como orquestador, conectando etapas de origen, construcción, prueba y despliegue sin realizar ninguna acción directa.",
+    "CodeBuild utiliza el archivo buildspec.yml para definir fases de compilación, y puede extraer secretos de Parameter Store y Secrets Manager.",
+    "CodeDeploy emplea appspec.yml, con hooks diferentes para Lambda (funciones) y EC2 (scripts), y revierte automáticamente si un hook falla.",
+    "SAM automatiza despliegues Lambda con estrategias de preferencia, alias y alarmas que activan rollbacks y soporta despliegues canary y lineales."
+  ],
+  "whyMatters": "La adopción de pipelines CI/CD en la nube permite a las organizaciones acelerar la entrega de software, reducir errores humanos y garantizar despliegues confiables. Con AWS, los equipos pueden integrar herramientas nativas y configurar políticas de rollback automáticas, lo que disminuye el tiempo de inactividad y mejora la resiliencia. Este enfoque es esencial para la competitividad tecnológica y la innovación continua en el sector de software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvxkoqaafa6pwtzy27hxo.png",
+      "alt": "Imagen que ilustra la arquitectura de una pipeline CI/CD en AWS",
+      "caption": "Diagrama representativo de los componentes clave (CodePipeline, CodeCommit, CodeBuild, CodeDeploy y SAM) en una pipeline de despliegue continuo."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AWSCodePipeline",
+    "#AWSCodeBuild",
+    "#AWSCodeDeploy",
+    "#AWSCodeCommit",
+    "#CICD"
+  ],
+  "fullArticle": "El despliegue de código en entornos de producción ya no es una tarea manual y propensa a errores. Con los servicios de integración y entrega continua (CI/CD) de Amazon Web Services, los desarrolladores pueden automatizar todo el flujo desde el commit hasta la producción. CodePipeline, el orquestador central, conecta etapas de origen, construcción, prueba y despliegue, permitiendo alternar proveedores como GitHub o Jenkins según las necesidades del proyecto.\n\n[Multimedia: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvxkoqaafa6pwtzy27hxo.png]\n\nEl proceso de construcción se gestiona con CodeBuild a través del archivo buildspec.yml, que define fases de compilación y puede extraer credenciales seguras de Parameter Store o Secrets Manager. Para el despliegue, CodeDeploy utiliza appspec.yml; en Lambda, los hooks son funciones que devuelven estados de éxito o fallo, mientras que en EC2 se ejecutan scripts de shell. Si un hook falla, el despliegue se revierte automáticamente, garantizando la estabilidad del entorno.\n\nSAM (Serverless Application Model) simplifica aún más el despliegue de funciones Lambda, publicando versiones automáticas y actualizando alias con estrategias de despliegue canary o lineales. Alarmas configuradas en SAM pueden disparar rollbacks cuando se detectan anomalías, integrándose con API Gateway y variables de etapa para un control fino del tráfico.\n\nEn conjunto, estos servicios ofrecen una solución robusta y escalable que permite a las empresas entregar software de manera más rápida, fiable y segura, alineándose con las mejores prácticas de DevOps y la demanda de innovación continua.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T00:23:47.791Z",
+  "links": [
+    {
+      "title": "Guía oficial de AWS CodePipeline",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"
+    },
+    {
+      "title": "Documentación de AWS SAM para despliegues Lambda",
+      "url": "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de servicios AWS en la pipeline",
+      "value": "4"
+    },
+    {
+      "label": "Fases típicas de una pipeline CI/CD",
+      "value": "4 (Origen, Construcción, Prueba, Despliegue)"
+    },
+    {
+      "label": "Tipos de despliegue soportados por SAM",
+      "value": "Canary y Lineal"
+    },
+    {
+      "label": "Rollback automático en caso de fallo",
+      "value": "Sí, activado por defecto en CodeDeploy"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

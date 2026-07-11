@@ -1,0 +1,91 @@
+{
+  "id": "ced112cbff75cd8cb9d7dc513e2c38f174a0a895b6c4f8b7e5104d61a1e5d1c6",
+  "title": "Creé una API de geolocalización por IP con detección de VPN y puntuación de riesgo por IA: el plan gratuito tiene 5.000 solicitudes mensuales",
+  "summary": "Desarrollador brasileño lanza IP Lookup In, una API REST que combina geolocalización por IP, detección de proxy/VPN y evaluación de riesgo con IA, con plan gratuito de 5.000 solicitudes mensuales sin tarjeta de crédito.",
+  "url": "https://dev.to/logical_features/eu-construi-uma-api-de-geolocalizacao-por-ip-com-deteccao-de-vpn-e-score-de-risco-por-ia-e-o-tier-154h",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T16:24:12.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8z1m78g9migmqi2x964a.png",
+  "imageAlt": "Creé una API de geolocalización por IP con detección de VPN y puntuación de riesgo por IA: el plan gratuito tiene 5.000 solicitudes mensuales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Desarrollador brasileño lanza IP Lookup In, una API REST que combina geolocalización por IP, detección de proxy/VPN y evaluación de riesgo con IA, con plan gratuito de 5.000 solicitudes mensuales sin tarjeta de crédito.",
+  "keyPoints": [
+    "La API devuelve más de 15 campos por solicitud, incluyendo país, ciudad, ISP, huso horario, moneda y detección de proxy/VPN en milisegundos.",
+    "El endpoint de riesgo utiliza inteligencia artificial para cruzar datos del IP y generar una evaluación accionable para sistemas anti-fraude y pagos.",
+    "El plan gratuito no requiere tarjeta de crédito, no expira y permite probar la herramienta sin compromiso antes de escalar.",
+    "Todos los precios se expresan en reales brasileños, evitando conversiones de divisas y simplificando la contratación para desarrolladores locales."
+  ],
+  "whyMatters": "Esta herramienta resuelve una necesidad común en el desarrollo de aplicaciones financieras y de seguridad, donde antes era necesario integrar hasta tres servicios distintos para obtener datos de geolocalización, detección de proxy y evaluación de riesgo. Al unificar todas las funcionalidades en una sola API con precios en moneda local, reduce costos, complejidad de integración y tiempos de respuesta. Su modelo de plan gratuito permanente sin requisitos de pago democratiza el acceso a herramientas de seguridad avanzada para pequeños proyectos y startups, que suelen tener presupuestos limitados para este tipo de servicios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8z1m78g9migmqi2x964a.png",
+      "alt": "Imagen de portada del artículo que anuncia la API de geolocalización por IP con detección de VPN y puntuación de riesgo por IA",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo de Google AI, socio oficial de modelos y plataformas de inteligencia artificial del proyecto",
+      "caption": "Google AI es socio oficial de inteligencia artificial de IP Lookup In"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logotipo de Neon, socio oficial de base de datos del proyecto",
+      "caption": "Neon es socio oficial de bases de datos de IP Lookup In"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logotipo de Algolia, socio oficial de búsqueda del proyecto",
+      "caption": "Algolia es socio oficial de soluciones de búsqueda de IP Lookup In"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IPLookupIn",
+    "#GeolocalizacionIP",
+    "#DeteccionVPN",
+    "#IARiesgo",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "Un desarrollador brasileño lanzó IP Lookup In, una API REST que integra en un solo servicio funcionalidades de geolocalización por IP, detección de proxy y VPN, y evaluación de riesgo basada en inteligencia artificial, eliminando la necesidad de contratar e integrar múltiples herramientas para estos fines. La iniciativa nace de la frustración del creador al probar alternativas populares del mercado, que obligaban a usar tres servicios separados, pagar en dólares y realizar integraciones independientes para obtener los mismos resultados que ofrece esta nueva plataforma en una sola llamada.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8z1m78g9migmqi2x964a.png]\n\nCada solicitud a la API devuelve más de 15 campos en milisegundos, incluyendo país, ciudad, ISP, huso horario, moneda y la identificación automática de si el IP corresponde a un proxy, VPN o nodo de salida de Tor. El endpoint /api/v1/risk va un paso más allá: utiliza modelos de IA para cruzar toda la información disponible del IP y generar una puntuación de riesgo accionable, ideal para pasarelas de pago, sistemas anti-fraude, inicios de sesión seguros y cualquier plataforma que necesite tomar decisiones en tiempo real. Para procesar volúmenes grandes de datos, la API permite enviar listas completas de IPs en una sola solicitud, facilitando el análisis de logs, el enriquecimiento de datos de analítica o la actualización de dashboards en lote.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nUno de los puntos fuertes de IP Lookup In es su modelo de precios transparente, expresado completamente en reales brasileños, sin necesidad de realizar conversiones de divisas. El plan gratuito, que no requiere tarjeta de crédito y nunca expira, ofrece 5.000 solicitudes mensuales, permitiendo a desarrolladores y pequeñas empresas probar la herramienta, integrarla en sus proyectos y evaluar si necesitan escalar a planes de pago según su volumen de uso. La plataforma cuenta con socios oficiales como Google AI, Neon y Algolia, que respaldan su infraestructura y capacidades técnicas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png]\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T16:45:51.322Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Guía de geolocalización por IP en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Geolocalizaci%C3%B3n_IP"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Solicitudes gratuitas mensuales",
+      "value": "5.000 solicitudes al mes"
+    },
+    {
+      "label": "Campos devueltos por solicitud",
+      "value": "Más de 15 campos por llamada"
+    },
+    {
+      "label": "Tiempo de respuesta",
+      "value": "Milisegundos"
+    },
+    {
+      "label": "Moneda de precios",
+      "value": "Reales brasileños (BRL)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

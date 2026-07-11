@@ -1,0 +1,35 @@
+{
+  "aiSummary": "El artículo detalla métodos para probar localmente los webhooks de Shopify, desde pruebas manuales con payloads simulados hasta túneles con Ngrok y relés en la nube, facilitando el desarrollo y depuración sin despliegues constantes.",
+  "category": "tecnologia",
+  "fullArticle": "You're building a Shopify app. Your backend listens on http://localhost:3000/webhooks/orders, but when you trigger an order in your test store, nothing arrives. Shopify can't reach your machine—it sits behind a NAT, firewall, or corporate proxy. You need to test Shopify webhooks locally, but setting up ngrok, exposing secrets, or deploying to staging every time you change webhook logic is friction you don't need.\n\nThis guide walks you through three concrete approaches to test Shopify webhooks locally, from quick manual testing to production-grade inspection.\n\nBefore you wire up a tunnel or relay, manually send a Shopify order webhook payload to your handler. This lets you verify signature validation and payload parsing without waiting for a real order event.\n\nFirst, grab a real Shopify web...",
+  "id": "17cfa175ae274fde4900b8c68f07412dfb244822a0d7ef366e5dfb1ba088e6bc",
+  "imageAlt": "Prueba tus Webhooks de Shopify sin salir de tu máquina",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "keyPoints": [
+    "Prueba manual: envía un payload JSON simulado para validar la lógica de tu manejador sin depender de Shopify.",
+    "Túnel Ngrok: expone tu servidor local a Internet con una URL pública, permitiendo recibir webhooks reales con firma HMAC válida.",
+    "Relé en la nube: captura, almacena y reenviará eventos a tu máquina, ofreciendo inspección, reenvío y modificación de payloads.",
+    "Persistencia y replay: la capa de relé guarda eventos por 48 horas, permitiendo depurar casos extremos sin generar nuevas órdenes."
+  ],
+  "multimedia": [
+    {
+      "alt": "How to Test Shopify Webhooks Locally",
+      "caption": "pic",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png"
+    }
+  ],
+  "publishedAt": "2026-06-26T05:38:13.000Z",
+  "scrapedAt": "2026-06-26T05:42:03.014Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "El artículo detalla métodos para probar localmente los webhooks de Shopify, desde pruebas manuales con payloads simulados hasta túneles con Ngrok y relés en la nube, facilitando el desarrollo y depuración sin despliegues constantes.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Prueba tus Webhooks de Shopify sin salir de tu máquina",
+  "url": "https://dev.to/anonymilyhq/how-to-test-shopify-webhooks-locally-30k3",
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector."
+}

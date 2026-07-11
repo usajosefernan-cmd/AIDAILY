@@ -1,0 +1,77 @@
+{
+  "id": "56c00820fcada3b69d758ef722635be229c09ad20c52d9d856043409dff9f569",
+  "title": "Java News Roundup: Hardwood 1.0, Endive 1.0, Azul Payara, Quarkus, WildFly, LangChain4j y OSSI",
+  "summary": "El panorama Java de junio 2026 se enriquece con lanzamientos de Hardwood y Endive, la edición 7.1.0 de Azul Payara con mejoras de seguridad, la actualización 3.37.0 de Quarkus, la beta 41 de WildFly y la versión 1.17.0 de LangChain4j, además de la iniciativa OSSI para la sostenibilidad del código abierto.",
+  "url": "https://www.infoq.com/news/2026/06/java-news-roundup-jun22-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+  "source": "InfoQ",
+  "sourceUrl": "https://feed.infoq.com/",
+  "publishedAt": "2026-06-29T23:30:00.000Z",
+  "imageUrl": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/document-infrastructure-rust-typst/en/smallimage/ErikSteiger-thumbnail-1782220478687.jpg",
+  "imageAlt": "Java News Roundup: Hardwood 1.0, Endive 1.0, Azul Payara, Quarkus, WildFly, LangChain4j y OSSI",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El panorama Java de junio 2026 se enriquece con lanzamientos de Hardwood y Endive, la edición 7.1.0 de Azul Payara con mejoras de seguridad, la actualización 3.37.0 de Quarkus, la beta 41 de WildFly y la versión 1.17.0 de LangChain4j, además de la iniciativa OSSI para la sostenibilidad del código abierto.",
+  "keyPoints": [
+    "Hardwood 1.0 y Endive 1.0 llegan al estado GA, ofreciendo mejoras de rendimiento y soporte de tipos en Wasm",
+    "Azul Payara 7.1.0 corrige vulnerabilidades CSRF/SSRF y habilita anotaciones @Transactional en repositorios Jakarta Data",
+    "Quarkus 3.37.0 incorpora Hibernate 7.4, una extensión experimental JLink y serializadores Jackson sin reflexión",
+    "WildFly 41 beta añade manejo de transacciones durante apagado y autenticación firmada con Elytron"
+  ],
+  "whyMatters": "Estas actualizaciones consolidan la posición de Java como plataforma robusta y segura para el desarrollo de aplicaciones empresariales. La corrección de vulnerabilidades en Azul Payara y la mejora de la gestión de transacciones en WildFly reducen riesgos críticos, mientras que las nuevas extensiones de Quarkus y LangChain4j amplían la productividad de los desarrolladores. La iniciativa OSSI subraya la necesidad de sostenibilidad en el ecosistema de código abierto, lo que puede influir en la adopción de proyectos y en la colaboración futura.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://imgopt.infoq.com/fit-in/100x100/filters:quality(80)/presentations/document-infrastructure-rust-typst/en/smallimage/ErikSteiger-thumbnail-1782220478687.jpg",
+      "alt": "Java News Roundup: Hardwood 1.0, Endive 1.0, Azul Payara, Quarkus, WildFly, LangChain4j, OSSI",
+      "caption": "Million PDFs: Building a Modern Document Infrastructure with Rust and Typst"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Hardwood",
+    "#AzulPayara",
+    "#Quarkus",
+    "#WildFly",
+    "#OSSI"
+  ],
+  "fullArticle": "El ecosistema Java avanza con una serie de lanzamientos que prometen mejorar el rendimiento, la seguridad y la productividad de los desarrolladores. En la primera parte de la semana, se confirman los lanzamientos GA de Hardwood 1.0 y Endive 1.0. Hardwood, un analizador especializado para archivos Apache Parquet, introduce idempotencia en su método close y permite la configuración del pool de hilos del decodificador, lo que reduce la latencia en entornos de big data. Endive, por su parte, consolida la integración de WasmGC con tipos externref y optimiza las llamadas tail, beneficiando a intérpretes como CPython.\n\nEl 7.1.0 de Azul Payara, disponible en sus ediciones Community, Enterprise y Enterprise Plus, aborda vulnerabilidades críticas de CSRF y SSRF en la consola de administración y la interfaz REST, y añade soporte para la anotación @Transactional de Spring en repositorios Jakarta Data. Este parche no solo fortalece la seguridad de las aplicaciones, sino que también facilita la migración de proyectos de Spring a Payara sin perder funcionalidad.\n\nQuarkus 3.37.0 lleva la productividad al siguiente nivel con la incorporación de Hibernate ORM 7.4, Hibernate Reactive 3.4 y Hibernate Search 8.4, además de una extensión experimental JLink que genera imágenes de ejecución personalizadas. La activación por defecto de serializadores Jackson sin reflexión reduce la huella de memoria y acelera la serialización de objetos.\n\nWildFly 41 beta introduce la capacidad de manejar transacciones durante un apagado ordenado y permite firmar y cifrar peticiones de autenticación mediante Elytron, lo que mejora la resiliencia y la seguridad de los servidores de aplicaciones.\n\nLangChain4j 1.17.0 añade un DebatePlanner para patrones de agente de debate, un OracleChatMemoryStore que integra Oracle como backend de memoria de chat y un callback onUnmappedRawEvent para exponer eventos de streaming no mapeados.\n\nPor último, Asymm Systems lanza Eliya JDK 25.0.3, una distribución OpenJDK que sigue las actualizaciones críticas trimestrales de Oracle y ofrece builds para Linux x86_64 y aarch64.\n\nLa creación de la Open Source Sustainability Initiative (OSSI) por parte de HeroDevs y la Commonhaus Foundation subraya la creciente preocupación por la sostenibilidad del código abierto, fomentando la transparencia y la colaboración entre mantenedores y comunidades.\n\nEn conjunto, estos lanzamientos no solo aportan mejoras técnicas, sino que también reflejan una tendencia hacia entornos más seguros, eficientes y sostenibles en el desarrollo de software Java.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T23:44:44.227Z",
+  "links": [
+    {
+      "title": "InfoQ - Java News Roundup",
+      "url": "https://www.infoq.com/es/java-news-roundup-2026"
+    },
+    {
+      "title": "Documentación Azul Payara 7.1.0",
+      "url": "https://www.azul.com/docs/payara/7.1.0"
+    },
+    {
+      "title": "Guía Quarkus 3.37.0",
+      "url": "https://quarkus.io/guides/3.37.0"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Hardwood",
+      "value": "1.0.0"
+    },
+    {
+      "label": "Versión de Endive",
+      "value": "1.0.0"
+    },
+    {
+      "label": "Número de versiones beta de WildFly",
+      "value": "41"
+    },
+    {
+      "label": "Número de builds early-access de JDK 28",
+      "value": "4"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

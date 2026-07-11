@@ -1,0 +1,82 @@
+{
+  "id": "65e7799b6593d5d591148c54fc6dc14e70dcb7647aaf0736f7fad74f6452d25c",
+  "title": "V.E.L.O.C.I.T.Y.-OS: El sistema operativo de 30 MB que abandona la pila web y desafía a VS Code",
+  "summary": "El proyecto V.E.L.O.C.I.T.Y.-OS presenta un sistema operativo bare-metal de 30 MB que reemplaza la pila web tradicional de VS Code por una arquitectura nativa en Rust, eliminando Electron y reduciendo drásticamente el consumo de recursos y la latencia en operaciones de agentes de IA.",
+  "url": "https://dev.to/unitbuilds_cc/velocity-os-ditching-the-web-stack-the-30mb-standalone-ide-part-3-3ia2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T13:33:05.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fshop5sjl8qpr8a6a06bx.jpeg",
+  "imageAlt": "V.E.L.O.C.I.T.Y.-OS: El sistema operativo de 30 MB que abandona la pila web y desafía a VS Code",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El proyecto V.E.L.O.C.I.T.Y.-OS presenta un sistema operativo bare-metal de 30 MB que reemplaza la pila web tradicional de VS Code por una arquitectura nativa en Rust, eliminando Electron y reduciendo drásticamente el consumo de recursos y la latencia en operaciones de agentes de IA.",
+  "keyPoints": [
+    "El formato binario Neural Document Architecture (NDA) elimina la serialización JSON, reduciendo la latencia de carga de archivos de 846,45 ns a 61,32 ns.",
+    "El IDE personalizado en Rust prescinde de Electron y Chromium, reduciendo su huella de memoria a 30 MB frente a los más de 300 MB de VS Code en reposo.",
+    "El sistema operativo se ejecuta íntegramente en la caché L3 de la CPU, con capacidades de auto-reparación y sin dependencias de la pila web tradicional.",
+    "Incluye un runtime de modelos de IA local que convierte pesos de modelos como BitNet b1.58 directamente al formato NDA, optimizando el rendimiento de agentes."
+  ],
+  "whyMatters": "Este desarrollo supone un punto de inflexión en la optimización de entornos de desarrollo para agentes de inteligencia artificial, al demostrar que es posible prescindir de la pesada pila web heredada de Electron sin renunciar a funcionalidades avanzadas. Su enfoque bare-metal y de cero asignaciones de memoria no solo reduce drásticamente el consumo de recursos, sino que establece un nuevo paradigma para sistemas operativos especializados en cargas de trabajo de IA. A largo plazo, esta arquitectura podría democratizar el acceso a entornos de desarrollo de alto rendimiento para equipos con hardware limitado, además de sentar las bases para sistemas operativos de próxima generación orientados a flujos de trabajo agénticos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fshop5sjl8qpr8a6a06bx.jpeg",
+      "alt": "Portada del artículo de la tercera parte de la serie V.E.L.O.C.I.T.Y.-OS sobre el IDE standalone de 30 MB",
+      "caption": "Imagen de portada de la tercera entrega de la serie sobre V.E.L.O.C.I.T.Y.-OS publicada en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1uj8bdqapgblew0twbjb.png",
+      "alt": "Diagrama comparativo de la arquitectura multiproceso de la extensión de VS Code frente a la arquitectura de proceso único nativa en Rust del IDE de V.E.L.O.C.I.T.Y.-OS",
+      "caption": "Esquema que muestra la reducción de límites de proceso al eliminar las capas de Electron y Chromium"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#VELOCITYOS",
+    "#InteligenciaArtificial",
+    "#DesarrolloDeSoftware",
+    "#RustLang"
+  ],
+  "fullArticle": "El proyecto V.E.L.O.C.I.T.Y.-OS, presentado en una serie de artículos técnicos en Dev.to, plantea una revolución en los entornos de desarrollo para agentes de inteligencia artificial al abandonar por completo la pila web heredada de herramientas como Visual Studio Code. Su creador identificó como principal cuello de botella el entorno de ejecución de la extensión de VS Code, que basado en TypeScript, JSON-RPC y Electron consumía más de 300 MB de RAM incluso en reposo, además de generar latencias inadmisibles en la ruta crítica de procesamiento de agentes al tener que parsear texto JSON en cada operación. La solución propuesta no es una mera optimización, sino un cambio de paradigma: un sistema operativo bare-metal, autocurativo, que se ejecuta íntegramente dentro de la caché L3 de la CPU, con una huella de memoria de apenas 30 MB.\n\nEl primer pilar de esta arquitectura es el Neural Document Architecture (NDA), un formato binario que reemplaza la serialización JSON tradicional para eliminar por completo la necesidad de parseo de texto en la ruta crítica de los agentes. Su implementación en C# y Rust aprovecha las estructuras MemoryMarshal y ReadOnlySpan para mapear archivos .ndf compilados directamente desde búferes de memoria, sin asignaciones en el heap, sin recolección de basura y sin pasos de interpretación de texto. Los resultados de rendimiento son contundentes: la carga de archivos mediante este sistema tarda 61,32 nanosegundos, frente a los 846,45 nanosegundos que requiere el parseo de JSON equivalente, una diferencia que no se califica como optimización, sino como un problema de categoría completamente distinta.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1uj8bdqapgblew0twbjb.png]\n\nEl segundo pilar es el propio entorno de desarrollo, que prescinde por completo de VS Code, Electron y el motor Chromium que lo sustenta. El equipo desarrolló un IDE agéntico ligero escrito en Rust que elimina las fronteras del Extension Host y el WebView de Chromium, logrando ganancias arquitectónicas de rendimiento muy significativas. Este entorno de 30 MB incluye tres funcionalidades core diseñadas específicamente para flujos de trabajo con agentes de IA, y no depende de procesos background masivos para funcionalidades de inteligencia artificial, a diferencia de su contraparte de Microsoft.\n\nEl tercer pilar, y uno de los más innovadores, es el runtime de modelos de IA local integrado, que incluye una capa de destilación que convierte pesos de modelos como BitNet b1.58 directamente al formato NDA sin necesidad de pasos intermedios. A diferencia de las cachés de atención tradicionales que usan tensores en punto flotante FP16, la caché NDA-KV almacena las matrices de clave y valor de atención como tripletas semánticas descompuestas en mapas de bits activos y positivos. Esta estructura aprovecha la Memoria Virtual Compartida de Vulkan (SVM) y permite a la GPU recorrer una lista enlazada criptográficamente encadenada de contenedores NDA, logrando un rendimiento de inferencia muy superior al de los entornos tradicionales. La hoja de ruta del proyecto, que se extiende a 12 partes, promete ampliar las capacidades de este sistema operativo especializado para convertirse en una alternativa viable a los entornos de desarrollo generalistas para casos de uso de IA agéntica.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T14:09:20.483Z",
+  "links": [
+    {
+      "title": "Artículo original de la tercera parte de la serie V.E.L.O.C.I.T.Y.-OS en Dev.to",
+      "url": "https://dev.to/velocity-os/velocity-os-ditching-the-web-stack-the-30mb-standalone-ide-part-3-1h5"
+    },
+    {
+      "title": "Documentación oficial del lenguaje Rust",
+      "url": "https://www.rust-lang.org/es/documentation"
+    },
+    {
+      "title": "Modelo BitNet b1.58 en Hugging Face",
+      "url": "https://huggingface.co/onnx-community/BitNet-b1.58"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Latencia de carga de archivos NDA",
+      "value": "61,32 nanosegundos"
+    },
+    {
+      "label": "Latencia de carga de archivos JSON equivalente",
+      "value": "846,45 nanosegundos"
+    },
+    {
+      "label": "Huella de memoria del IDE V.E.L.O.C.I.T.Y.-OS",
+      "value": "30 MB"
+    },
+    {
+      "label": "Consumo de RAM de VS Code en reposo",
+      "value": "Más de 300 MB"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

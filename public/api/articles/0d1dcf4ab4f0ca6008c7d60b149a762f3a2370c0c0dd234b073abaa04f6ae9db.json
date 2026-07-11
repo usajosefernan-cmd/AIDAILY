@@ -1,0 +1,68 @@
+{
+  "id": "0d1dcf4ab4f0ca6008c7d60b149a762f3a2370c0c0dd234b073abaa04f6ae9db",
+  "title": "SWE-1.7: la nueva IA de Cognition que iguala la inteligencia de GPT-5.5 y Opus a un costo reducido",
+  "summary": "Cognition lanza SWE-1.7, su modelo de IA más avanzado, que alcanza niveles de inteligencia de vanguardia a un costo mucho menor, optimizado para tareas de ingeniería de software de largo plazo y disponible en Devin a 1000 TPS.",
+  "url": "https://cognition.com/blog/swe-1-7",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-08T16:19:36.000Z",
+  "imageUrl": "https://cognition.com/images/swe-1-7/swe-1-7-og.png",
+  "imageAlt": "SWE-1.7: la nueva IA de Cognition que iguala la inteligencia de GPT-5.5 y Opus a un costo reducido",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Cognition lanza SWE-1.7, su modelo de IA más avanzado, que alcanza niveles de inteligencia de vanguardia a un costo mucho menor, optimizado para tareas de ingeniería de software de largo plazo y disponible en Devin a 1000 TPS.",
+  "keyPoints": [
+    "SWE-1.7 es el modelo más capaz de Cognition, con inteligencia de nivel frontera a costo muy inferior, mejorando la curva costo-rendimiento del sector.",
+    "Su entrenamiento incluye mejoras en infraestructura, datos de mayor calidad y nuevas técnicas para tareas de horizonte largo, superando la supuesta barrera del post-entrenamiento.",
+    "Está optimizado específicamente para tareas asíncronas de larga duración, un componente clave para la ingeniería de software de alta calidad.",
+    "Ya está disponible en la plataforma Devin (web, escritorio y CLI) a través de Cerebras, con una velocidad de procesamiento de 1000 tokens por segundo."
+  ],
+  "whyMatters": "Este lanzamiento es estratégico porque reduce drásticamente la barrera de acceso a modelos de inteligencia artificial de nivel frontera para equipos de desarrollo y empresas, al ofrecer rendimiento comparable a modelos de gama alta a un costo muy inferior. Además, desafía la creencia generalizada de que existe un 'techo' en las mejoras obtenidas mediante el entrenamiento por refuerzo post-inicial, demostrando que aún se pueden lograr avances significativos con optimizaciones en el pipeline de entrenamiento. A largo plazo, esto acelerará la adopción de agentes de IA autónomos en flujos de trabajo de ingeniería de software, aumentando la productividad y reduciendo los tiempos de desarrollo en la industria tecnológica global.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cognition.com/images/swe-1-7/swe-1-7-og.png",
+      "alt": "Gráfico promocional de SWE-1.7, el modelo de inteligencia artificial de Cognition que alcanza niveles de vanguardia a costo reducido",
+      "caption": "SWE-1.7: Inteligencia de vanguardia a una fracción del costo, el nuevo modelo lanzado por Cognition"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SWE17",
+    "#CognitionAI",
+    "#EntrenamientoRL",
+    "#DevinIA"
+  ],
+  "fullArticle": "La empresa Cognition ha lanzado oficialmente SWE-1.7, su modelo de inteligencia artificial más avanzado hasta la fecha, que alcanza niveles de inteligencia de vanguardia comparables a GPT-5.5 y Opus, pero a un costo significativamente menor, mejorando la curva de relación costo-rendimiento del sector. Este modelo, entrenado a partir de la base Kimi K2.7 con mejoras sustanciales en su pipeline de aprendizaje por refuerzo (RL), está optimizado específicamente para tareas de ingeniería de software asíncronas de largo plazo, un componente esencial para flujos de trabajo de desarrollo de alta calidad. Ya está disponible en la plataforma Devin, en sus versiones web, escritorio y CLI, a través de Cerebras, con una velocidad de procesamiento de 1000 tokens por segundo.\n\n[MULTIMEDIA: https://cognition.com/images/swe-1-7/swe-1-7-og.png]\n\nEl entrenamiento de SWE-1.7 se benefició de mejoras integrales en infraestructura, mayor estabilidad en el proceso de entrenamiento, datos de mayor calidad y nuevas técnicas diseñadas para tareas de horizonte largo. Entre los avances técnicos más relevantes se encuentra la implementación de top-p sampling con replay de distribución de muestreo, una solución que evita el colapso de entropía y reduce el ruido en los cálculos de gradiente, permitiendo que el modelo mantenga su capacidad de exploración y mejore su rendimiento de forma predecible a escala. Estos logros desafían la idea de que existe un 'techo' en las mejoras obtenidas mediante el post-entrenamiento, demostrando que el aprendizaje por refuerzo puede impulsar las capacidades de los modelos mucho más de lo que se creía anteriormente.\n\nEl lanzamiento de SWE-1.7 representa un hito para la industria del desarrollo de software, ya que reduce drásticamente los costos de acceso a modelos de IA de alta gama, acelerando la adopción de agentes autónomos en flujos de trabajo de ingeniería. Esto no solo aumentará la productividad de los equipos de desarrollo, sino que también abrirá la puerta a avances más rápidos en la automatización de tareas complejas de programación, consolidando a Cognition como un líder en el campo de la ingeniería de software asistida por inteligencia artificial.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T17:06:38.095Z",
+  "links": [
+    {
+      "title": "Publicación oficial de lanzamiento de SWE-1.7 en Cognition",
+      "url": "https://cognition.ai/blog/swe-1-7-launch"
+    },
+    {
+      "title": "Documentación oficial de la plataforma Devin",
+      "url": "https://docs.cognition.ai/devin"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Velocidad de procesamiento",
+      "value": "1000 tokens por segundo (TPS)"
+    },
+    {
+      "label": "Nivel de inteligencia comparable",
+      "value": "GPT-5.5 y Opus"
+    },
+    {
+      "label": "Base de entrenamiento inicial",
+      "value": "Kimi K2.7"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

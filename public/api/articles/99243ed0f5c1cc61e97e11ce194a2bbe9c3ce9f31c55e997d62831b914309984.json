@@ -1,0 +1,72 @@
+{
+  "id": "99243ed0f5c1cc61e97e11ce194a2bbe9c3ce9f31c55e997d62831b914309984",
+  "title": "Optimización HiZ llega al driver Vulkan ANV de Intel para Linux: hasta un 3% más de FPS en juegos",
+  "summary": "Después de dos años en la lista de tareas pendientes, el driver de código abierto ANV de Intel para la API Vulkan en Linux ha fusionado una optimización del plano HiZ que proporciona una mejora de hasta un 3% en la tasa de fotogramas en hardware gráfico integrado y discreto nuevo de Intel, beneficiando a juegos y aplicaciones gráficas en sistemas operativos de código abierto.",
+  "url": "https://www.phoronix.com/news/intel-hiz-plane-optimization",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-10T10:13:27.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=intel_hiz_plane",
+  "imageAlt": "Optimización HiZ llega al driver Vulkan ANV de Intel para Linux: hasta un 3% más de FPS en juegos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Después de dos años en la lista de tareas pendientes, el driver de código abierto ANV de Intel para la API Vulkan en Linux ha fusionado una optimización del plano HiZ que proporciona una mejora de hasta un 3% en la tasa de fotogramas en hardware gráfico integrado y discreto nuevo de Intel, beneficiando a juegos y aplicaciones gráficas en sistemas operativos de código abierto.",
+  "keyPoints": [
+    "La optimización del plano HiZ llevaba dos años en la lista de tareas pendientes del driver ANV de código abierto de Intel sin ser implementada hasta su reciente fusión.",
+    "Esta mejora está orientada a hardware gráfico integrado y discreto de gama nueva de Intel, y se aplica de forma nativa en entornos Linux sin necesidad de configuraciones adicionales.",
+    "Las pruebas iniciales indican una mejora de entre un 2% y un 3% en la tasa de fotogramas en juegos y aplicaciones que usan la API Vulkan.",
+    "La implementación ya está disponible en las versiones estables y de prueba del driver, por lo que los usuarios de Linux con hardware Intel pueden acceder a ella de forma inmediata."
+  ],
+  "whyMatters": "Esta optimización supone un avance significativo para el ecosistema de gaming y desarrollo gráfico en Linux, un sector en crecimiento en España y el resto de Europa, donde cada vez más usuarios y estudios apuestan por sistemas operativos de código abierto. Al mejorar el rendimiento de hardware Intel sin coste adicional, se reduce la brecha de rendimiento entre Linux y otros sistemas operativos para juegos, lo que incentiva la migración de usuarios y el desarrollo de títulos para esta plataforma. A largo plazo, este tipo de mejoras en drivers de código abierto impulsan la adopción de tecnologías gráficas modernas en entornos profesionales y de consumo, fortaleciendo la posición de Linux como alternativa viable en el mercado de sistemas operativos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=intel_hiz_plane",
+      "alt": "Gráfico comparativo de rendimiento que muestra la mejora en la tasa de fotogramas al aplicar la optimización HiZ en el driver ANV de Intel para Linux",
+      "caption": "Imagen de portada de la noticia original publicada en Phoronix que ilustra la implementación de la optimización del plano HiZ en el driver Vulkan ANV de Intel"
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#IntelANV",
+    "#Vulkan",
+    "#OptimizacionHiZ",
+    "#GamingLinux"
+  ],
+  "fullArticle": "Después de permanecer dos años en la lista de tareas pendientes de desarrollo, el equipo de drivers de código abierto de Intel ha fusionado oficialmente la optimización del plano HiZ (Hierarchical Z) en su driver ANV para la API Vulkan en sistemas Linux. Esta técnica de renderizado se encarga de descartar de forma temprana los píxeles que no son visibles en la escena, reduciendo la carga de trabajo de la unidad de procesamiento gráfico (GPU) y liberando recursos para otras tareas de renderizado.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=intel_hiz_plane]\n\nLas pruebas iniciales realizadas por el equipo de desarrollo y por la comunidad de usuarios de Linux muestran que esta optimización proporciona una mejora de entre un 2% y un 3% en la tasa de fotogramas (FPS) en juegos y aplicaciones gráficas que utilizan Vulkan, siempre que se ejecuten en hardware gráfico integrado o discreto de gama nueva de Intel. La implementación ya está disponible en las versiones estables y de prueba del driver, por lo que los usuarios no necesitan realizar configuraciones adicionales para beneficiarse de ella.\n\nEste avance es especialmente relevante para el ecosistema de gaming y desarrollo gráfico en Linux, un sector que crece de forma constante en España y el resto de Europa, donde cada vez más usuarios y estudios independientes eligen sistemas operativos de código abierto por su flexibilidad y coste reducido. Al reducir la brecha de rendimiento entre Linux y otros sistemas operativos como Windows, esta optimización incentiva la migración de usuarios y el desarrollo de nuevos títulos para la plataforma, fortaleciendo la posición de Linux como alternativa viable tanto para consumo como para entornos profesionales de diseño y renderizado gráfico.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T10:25:33.141Z",
+  "links": [
+    {
+      "title": "Noticia original en Phoronix sobre la optimización HiZ en el driver ANV de Intel",
+      "url": "https://www.phoronix.com/news/Intel-ANV-HiZ-Plane-Optimization"
+    },
+    {
+      "title": "Repositorio oficial del driver ANV de Intel en GitHub",
+      "url": "https://github.com/intel/anv"
+    },
+    {
+      "title": "Documentación oficial de la API Vulkan",
+      "url": "https://www.vulkan.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de desarrollo de la optimización",
+      "value": "2 años"
+    },
+    {
+      "label": "Mejora máxima de rendimiento en juegos",
+      "value": "Hasta un 3% de FPS"
+    },
+    {
+      "label": "Hardware compatible",
+      "value": "GPUs integradas y discretas de gama nueva de Intel"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

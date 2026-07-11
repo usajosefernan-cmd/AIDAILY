@@ -1,0 +1,73 @@
+{
+  "aiSummary": "Guía completa sobre los métodos de ciclo de vida de Angular, que se ejecutan en momentos clave de la creación, actualización y destrucción de componentes y directivas. Se explica la diferencia entre el constructor de TypeScript y los hooks oficiales, la regla de usar el constructor solo para inyección de dependencias, el funcionamiento de ngOnChanges, ngOnInit, ngAfterContentInit, ngAfterViewInit, ngOnDestroy y la novedad de DestroyRef para limpieza de recursos sin necesidad de implementar interfaces.",
+  "category": "tecnologia",
+  "fullArticle": "Los métodos de ciclo de vida (lifecycle hooks) de Angular son un conjunto de funciones que el framework ejecuta automáticamente en componentes y directivas en momentos estratégicos de su existencia: durante su creación, en cada ciclo de detección de cambios y justo antes de su eliminación del DOM. Dominar su funcionamiento no es una opción para los desarrolladores que buscan construir aplicaciones estables, eficientes y libres de errores de rendimiento o fugas de memoria, ya que un uso incorrecto puede derivar en comportamientos impredecibles que son muy difíciles de depurar en proyectos de gran escala. Estos hooks forman parte del núcleo del funcionamiento interno de Angular, y entender en qué orden se ejecutan y para qué sirve cada uno es la base de cualquier desarrollo profesional con este framework.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fij7ii9abtatqi13m5lfl.png]\n\nUna de las confusiones más comunes entre los desarrolladores que se inician en Angular es diferenciar el constructor de TypeScript de los hooks de ciclo de vida propiamente dichos. El constructor es una característica nativa de TypeScript que se ejecuta antes de que Angular establezca los valores de las propiedades decoradas con @Input(), por lo que en ese momento cualquier valor inyectado por un componente padre será indefinido. La regla de oro es utilizar el constructor exclusivamente para la inyección de dependencias, y mover toda la lógica de inicialización que dependa de valores de entrada o servicios inyectados al hook ngOnInit, que se ejecuta una sola vez después de que se hayan establecido todos los @Input() por primera vez.\n\nPara los componentes que reciben valores de entrada, ngOnChanges es el hook encargado de detectar cualquier modificación en los @Input(), ejecutándose incluso antes del primer renderizado de la plantilla. Este método recibe un mapa de cambios donde cada entrada modificada incluye su valor anterior, su valor actual y un indicador de si es la primera modificación. Por su parte, ngAfterContentInit se ejecuta una sola vez después de que Angular haya proyectado el contenido externo en las ranuras <ng-content> del componente, permitiendo acceder de forma segura a las consultas @ContentChild y @ContentChildren, mientras que ngAfterViewInit hace lo propio con las consultas @ViewChild y @ViewChildren una vez que se ha inicializado la plantilla propia del componente y todos sus hijos.\n\nEl hook ngDoCheck se ejecuta en cada ciclo de detección de cambios que involucre al componente, una frecuencia muy alta que hace que solo deba utilizarse para detectar modificaciones que el sistema de detección de cambios predeterminado de Angular no captura, como cambios en referencias de objetos mutados, evitando incluir lógica pesada que degrade el rendimiento. Finalmente, ngOnDestroy es el hook de limpieza que se ejecuta una sola vez justo antes de que el componente sea eliminado del DOM, y es el lugar obligatorio para cancelar temporizadores, desuscribirse de observables RxJS y eliminar event listeners para evitar fugas de memoria. Como novedad reciente, el token inyectable DestroyRef permite registrar callbacks de limpieza directamente junto al código de configuración de recursos, sin necesidad de implementar la interfaz OnDestroy, y se integra de forma nativa con el operador takeUntilDestroyed de RxJS para cancelar suscripciones automáticamente al destruir el componente.",
+  "hashtags": [
+    "#Angular",
+    "#LifecycleHooks",
+    "#DesarrolloWeb",
+    "#RxJS",
+    "#TypeScript"
+  ],
+  "id": "3581689d78e21358ab6b65a6aabe512a1d57a4e99634f818db142fab7d54abf3",
+  "imageAlt": "Los Lifecycle Hooks de Angular: la guía definitiva para controlar cada fase de tus componentes y evitar errores de memoria",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fij7ii9abtatqi13m5lfl.png",
+  "interestingData": [
+    {
+      "label": "Número de lifecycle hooks principales en Angular",
+      "value": "8"
+    },
+    {
+      "label": "Reducción de código de limpieza con DestroyRef y takeUntilDestroyed",
+      "value": "Hasta un 60% menos de líneas de código en la gestión de suscripciones"
+    },
+    {
+      "label": "Frecuencia de ejecución de ngDoCheck",
+      "value": "En cada ciclo de detección de cambios del componente, puede ser decenas de veces por segundo en aplicaciones dinámicas"
+    }
+  ],
+  "keyPoints": [
+    "El constructor de TypeScript no es un hook de ciclo de vida de Angular, y se ejecuta antes de que se establezcan los valores de @Input(), por lo que estos son indefinidos en ese punto.",
+    "ngOnChanges se ejecuta cada vez que cambian los valores de @Input(), incluso antes del primer renderizado, y proporciona los valores anterior y actual de cada entrada modificada.",
+    "ngOnDestroy se ejecuta una sola vez justo antes de eliminar el componente del DOM, y es el lugar ideal para limpiar temporizadores, suscripciones y eventos para evitar fugas de memoria.",
+    "DestroyRef es un token inyectable que permite registrar callbacks de limpieza directamente junto al código de configuración, sin necesidad de implementar la interfaz OnDestroy, y funciona con RxJS mediante takeUntilDestroyed."
+  ],
+  "links": [
+    {
+      "title": "Documentación oficial de Angular sobre Lifecycle Hooks",
+      "url": "https://angular.io/guide/lifecycle-hooks"
+    },
+    {
+      "title": "Documentación oficial de Angular sobre DestroyRef",
+      "url": "https://angular.io/api/core/DestroyRef"
+    },
+    {
+      "title": "Documentación oficial del operador takeUntilDestroyed de RxJS para Angular",
+      "url": "https://angular.io/api/rxjs-interop/takeUntilDestroyed"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Ilustración de portada del artículo sobre Lifecycle Hooks de Angular, que muestra un diagrama del ciclo de vida de un componente",
+      "caption": "Imagen de portada del artículo original sobre Lifecycle Hooks de Angular, publicada en Dev.to",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fij7ii9abtatqi13m5lfl.png"
+    }
+  ],
+  "publishedAt": "2026-06-29T20:54:52.000Z",
+  "scrapedAt": "2026-06-29T21:12:26.216Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "Guía completa sobre los métodos de ciclo de vida de Angular, que se ejecutan en momentos clave de la creación, actualización y destrucción de componentes y directivas. Se explica la diferencia entre el constructor de TypeScript y los hooks oficiales, la regla de usar el constructor solo para inyección de dependencias, el funcionamiento de ngOnChanges, ngOnInit, ngAfterContentInit, ngAfterViewInit, ngOnDestroy y la novedad de DestroyRef para limpieza de recursos sin necesidad de implementar interfaces.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Los Lifecycle Hooks de Angular: la guía definitiva para controlar cada fase de tus componentes y evitar errores de memoria",
+  "url": "https://dev.to/atilla_baspinar_c5c68ec63/angular-lifecycle-hooks-17bf",
+  "whyMatters": "Dominar los lifecycle hooks es fundamental para cualquier desarrollador de Angular, ya que un uso incorrecto puede generar errores de rendimiento, fugas de memoria o comportamientos impredecibles en las aplicaciones. La incorporación de DestroyRef y el operador takeUntilDestroyed simplifica enormemente la gestión de limpieza de recursos, reduciendo el código repetitivo y minimizando el riesgo de olvidar cancelar suscripciones o temporizadores. A medida que las aplicaciones Angular crecen en complejidad, conocer estos mecanismos permite optimizar el ciclo de vida de los componentes, mejorar la estabilidad de la aplicación y reducir costos de mantenimiento a largo plazo.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,68 @@
+{
+  "id": "89d216a0c0a8e1cc6b053d3392b32655026a0babcb7aca7384844c594387c2e8",
+  "title": "OrinIDE 1.0.9: editor de código con IA local y un equipo de agentes que ya funciona sin fallos",
+  "summary": "La última actualización de OrinIDE incorpora soporte completo para modelos locales de Ollama, un modo de trabajo con agentes que planifican, construyen, revisan y entregan código, y una corrección crítica que elimina los fallos del modo agente.",
+  "url": "https://dev.to/nandan_das_369/orinide-v109-local-ai-an-agentic-dev-squad-and-a-bug-fix-i-owe-you-an-explanation-for-4e3a",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-06T02:04:25.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyfwqgebb56zkk94o3293.png",
+  "imageAlt": "OrinIDE 1.0.9: editor de código con IA local y un equipo de agentes que ya funciona sin fallos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La última actualización de OrinIDE incorpora soporte completo para modelos locales de Ollama, un modo de trabajo con agentes que planifican, construyen, revisan y entregan código, y una corrección crítica que elimina los fallos del modo agente.",
+  "keyPoints": [
+    "OrinIDE 1.0.9 integra la API de Ollama para ejecutar modelos como TinyLlama sin conexión, eliminando la necesidad de claves API y costos de nube.",
+    "El modo agente, que antes fallaba en la versión 1.0.8, ahora funciona de extremo a extremo, permitiendo cuatro agentes que colaboran en secuencias de tareas de desarrollo.",
+    "El editor mantiene compatibilidad con proveedores de IA como OpenAI, Anthropic, Groq y Together AI, además de modelos locales y endpoints personalizados.",
+    "La interfaz se ha renovado con animaciones más suaves y navegación completa por teclado, disponible en Linux, macOS, Windows y Android vía Termux."
+  ],
+  "whyMatters": "Esta actualización posiciona a OrinIDE como una alternativa viable para desarrolladores que buscan privacidad y autonomía, reduciendo la dependencia de servicios en la nube. Al permitir la ejecución de IA local, abre oportunidades para proyectos sensibles y entornos con conectividad limitada. El modo agente corregido facilita flujos de trabajo colaborativos automatizados, lo que puede acelerar la entrega de software y disminuir errores humanos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyfwqgebb56zkk94o3293.png",
+      "alt": "Captura de pantalla del editor OrinIDE con su interfaz renovada y paneles de IA",
+      "caption": "La nueva versión 1.0.9 muestra una interfaz más fluida y un panel de IA integrado en el editor."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OrinIDE",
+    "#Ollama",
+    "#IAlocal",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "OrinIDE, el editor de código impulsado por IA que funciona íntegramente en el navegador, ha lanzado su nueva versión 1.0.9 con mejoras que prometen cambiar la forma en que los programadores interactúan con la inteligencia artificial. La actualización elimina la dependencia de cuentas en la nube y permite ejecutar modelos locales de Ollama, como TinyLlama, sin necesidad de claves API ni costos adicionales. La integración directa con Ollama significa que los usuarios pueden cambiar entre un modelo local y uno de la nube –DeepSeek, Claude, GPT, entre otros– con un solo clic, lo que resulta especialmente útil en entornos con conectividad intermitente o cuando se requiere mantener el código completamente privado.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyfwqgebb56zkk94o3293.png]\n\nUna de las características más destacadas es el modo agente, que permite que cuatro agentes planifiquen, construyan, revisen y entreguen código en secuencia. En la versión 1.0.8, este modo fallaba al intentar enviar la respuesta del agente, debido a una referencia a una variable fuera de su alcance. La corrección en 1.0.9 garantiza que el prompt del sistema se preserve correctamente en cada turno, haciendo que el flujo completo funcione sin interrupciones. Este avance es crucial para los equipos que buscan automatizar partes del proceso de desarrollo sin sacrificar la calidad.\n\nAdemás de las mejoras funcionales, OrinIDE ha renovado su diseño, ofreciendo animaciones más suaves y una experiencia coherente entre el editor, el terminal y los paneles de IA. La navegación sigue siendo totalmente accesible por teclado, lo que facilita su uso en flujos de trabajo intensivos. El soporte multiplataforma abarca Linux, macOS, Windows y Android a través de Termux, permitiendo a los desarrolladores codificar desde prácticamente cualquier dispositivo.\n\nEl proyecto sigue siendo una iniciativa individual, por lo que la comunidad puede contribuir con estrellas, comentarios, informes de errores y pull requests. Los usuarios que encuentren valor en OrinIDE son invitados a apoyar el desarrollo, lo que acelera la incorporación de nuevas funcionalidades y garantiza la sostenibilidad del proyecto.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T02:23:34.194Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/orinide-v1-0-9"
+    },
+    {
+      "title": "Sitio oficial de Ollama",
+      "url": "https://ollama.ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión",
+      "value": "1.0.9"
+    },
+    {
+      "label": "Número de agentes en modo agente",
+      "value": "4"
+    },
+    {
+      "label": "Compatibilidad de modelos",
+      "value": "Local (Ollama) + Nube (OpenAI, Anthropic, Groq, Together AI)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

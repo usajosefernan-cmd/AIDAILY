@@ -1,0 +1,77 @@
+{
+  "id": "5cee42a5171d9a8ad399ed8ce6c959204d3722e54b61d91613c59932300c70fc",
+  "title": "Construí Pong desde cero en LÖVE y Lua: la serie de dos partes que te enseña a crear tu primer videojuego sin experiencia previa",
+  "summary": "Un desarrollador independiente publica una guía en dos entregas para crear el clásico juego Pong desde cero usando el motor LÖVE2D y el lenguaje Lua, orientada a principiantes sin conocimientos previos de programación de videojuegos.",
+  "url": "https://dev.to/peculiarengineer/i-built-pong-from-scratch-in-love-and-lua-a-two-part-series-8mn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T02:12:12.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftv7cpvirk179wwfs28de.png",
+  "imageAlt": "Construí Pong desde cero en LÖVE y Lua: la serie de dos partes que te enseña a crear tu primer videojuego sin experiencia previa",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador independiente publica una guía en dos entregas para crear el clásico juego Pong desde cero usando el motor LÖVE2D y el lenguaje Lua, orientada a principiantes sin conocimientos previos de programación de videojuegos.",
+  "keyPoints": [
+    "La primera parte implementa el juego completo en dos archivos cortos, con ciclo de juego, colisiones, puntuación, pantalla de título y sonido generado por código sin archivos externos.",
+    "La segunda parte añade un modo un jugador mediante la creación de un oponente controlado por inteligencia artificial dentro del juego.",
+    "La guía está orientada a principiantes sin experiencia previa en desarrollo de videojuegos, usando herramientas de código abierto accesibles para todos.",
+    "Cada artículo incluye enlaces a código funcional y explicaciones detalladas de cada componente, desde lógica básica hasta mecánicas avanzadas."
+  ],
+  "whyMatters": "Esta serie democratiza el acceso al desarrollo de videojuegos, eliminando barreras económicas y técnicas al utilizar herramientas de código abierto y gratuitas como LÖVE y Lua. Al centrarse en un proyecto práctico y reconocible como Pong, permite a los principiantes aprender conceptos fundamentales de la programación creativa de forma aplicada, sin la curva de aprendizaje empinada de motores más complejos. Su impacto radica en fomentar la creación de contenido interactivo entre nuevos desarrolladores, ampliando la diversidad de voces en la industria y sentando bases para proyectos más ambiciosos en el futuro.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftv7cpvirk179wwfs28de.png",
+      "alt": "Portada del artículo que explica cómo construir Pong desde cero en LÖVE y Lua",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el desarrollador independiente"
+    }
+  ],
+  "subcategory": "Videojuegos",
+  "hashtags": [
+    "#DesarrolloDeVideojuegos",
+    "#LVE2D",
+    "#Lua",
+    "#Pong",
+    "#ProgramacionCreativa"
+  ],
+  "fullArticle": "El desarrollador independiente comparte una guía completa en dos entregas para construir el icónico juego Pong desde cero, utilizando el motor de videojuegos LÖVE (también conocido como LÖVE2D) y el lenguaje de programación Lua, una combinación ampliamente utilizada en la comunidad de desarrollo independiente por su simplicidad y potencia. La primera entrega se centra en la implementación base del juego, condensando toda la lógica en solo dos archivos de código: incluye el ciclo de juego principal, el cálculo de delta time para sincronizar movimientos, sistema de colisiones entre la pelota y las paletas, gestión de puntuación, una pantalla de título inicial y generación de sonido directamente por código, sin necesidad de incluir archivos de audio externos en el proyecto final. Este enfoque minimalista permite a los usuarios entender cada componente del juego sin distracciones, ideal para quienes se acercan por primera vez a la programación de videojuegos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ftv7cpvirk179wwfs28de.png]\n\nLa segunda parte de la serie amplía la experiencia añadiendo un modo de un jugador, para lo que el autor implementa un oponente controlado por inteligencia artificial que reacciona a los movimientos de la pelota, ofreciendo un desafío ajustable para el usuario. Cada paso del desarrollo se explica con detalle, desde la lógica de movimiento de la paleta del jugador hasta los algoritmos de decisión del oponente artificial, con código comentado y explicaciones de los conceptos de programación involucrados, como variables, condicionales, bucles y detección de colisiones. El autor destaca que Pong, a pesar de su simplicidad aparente, es un proyecto perfecto para aprender los fundamentos del desarrollo de juegos, ya que incorpora mecánicas esenciales que se utilizan en producciones mucho más complejas.\n\nEl impacto de esta serie va más allá de la mera creación de un clon de un clásico: se trata de una puerta de entrada accesible al mundo del desarrollo de videojuegos, que no requiere conocimientos previos de programación ni inversión en herramientas de pago, ya que tanto LÖVE como Lua son completamente gratuitos y de código abierto. En un sector donde las barreras de entrada pueden ser altas por la complejidad de los motores modernos, este tipo de guías prácticas permiten a entusiastas de todas las edades dar sus primeros pasos en la creación de contenido interactivo, fomentando la diversidad de voces en la industria. Además, el código generado puede servir como base para proyectos personalizados, animando a los usuarios a modificar mecánicas, añadir funcionalidades y experimentar por su cuenta.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T02:18:04.966Z",
+  "links": [
+    {
+      "title": "Parte 1 de la guía: Crear Pong con LÖVE2D y Lua",
+      "url": "https://peculiarengineer.com/blog/make-pong-with-love2d-and-lua/"
+    },
+    {
+      "title": "Parte 2 de la guía: Añadir oponente de IA a Pong con LÖVE2D y Lua",
+      "url": "https://peculiarengineer.com/blog/pong-computer-opponent-love2d-lua/"
+    },
+    {
+      "title": "Sitio oficial del motor de videojuegos LÖVE",
+      "url": "https://love2d.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de archivos de código de la versión base",
+      "value": "2 archivos"
+    },
+    {
+      "label": "Número de entregas de la serie",
+      "value": "2 partes"
+    },
+    {
+      "label": "Herramientas de desarrollo utilizadas",
+      "value": "Motor LÖVE2D y lenguaje Lua, ambos gratuitos y de código abierto"
+    },
+    {
+      "label": "Mecánica añadida en la segunda parte",
+      "value": "Modo un jugador con oponente controlado por inteligencia artificial"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

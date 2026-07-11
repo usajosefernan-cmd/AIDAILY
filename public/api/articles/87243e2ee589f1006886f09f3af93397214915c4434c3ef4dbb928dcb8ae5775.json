@@ -1,0 +1,77 @@
+{
+  "id": "87243e2ee589f1006886f09f3af93397214915c4434c3ef4dbb928dcb8ae5775",
+  "title": "Bloquea la fusión de PRs con vulnerabilidades: la puerta de seguridad CI de Synapse que protege tu código",
+  "summary": "Synapse es un escáner de seguridad open source escrito en Go que se integra en flujos de integración continua (CI) para bloquear automáticamente la fusión de pull requests (PRs) que introducen vulnerabilidades, generando informes detallados y comentarios automáticos en GitHub.",
+  "url": "https://dev.to/aws-builders/block-the-merge-when-a-pr-ships-a-vulnerability-a-ci-security-gate-with-synapse-33bn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T16:07:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flqe79g99btkh1ctjryk3.png",
+  "imageAlt": "Bloquea la fusión de PRs con vulnerabilidades: la puerta de seguridad CI de Synapse que protege tu código",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Synapse es un escáner de seguridad open source escrito en Go que se integra en flujos de integración continua (CI) para bloquear automáticamente la fusión de pull requests (PRs) que introducen vulnerabilidades, generando informes detallados y comentarios automáticos en GitHub.",
+  "keyPoints": [
+    "Synapse es un escáner de seguridad open source escrito en Go que se integra en flujos CI para bloquear fusiones de PRs con vulnerabilidades.",
+    "Funciona como binario estático sin necesidad de servidor ni base de datos, usando fuentes como Syft, Grype y OSV.dev para detectar fallos.",
+    "Genera informes SARIF 2.1.0 compatibles con la pestaña de Code Scanning de GitHub y publica comentarios automáticos en el PR con detalles de remediación.",
+    "Bloquea la fusión si se detectan vulnerabilidades de severidad alta o superior, incluyendo fallos en dependencias, secretos hardcodeados y errores de configuración."
+  ],
+  "whyMatters": "Hasta ahora, la mayoría de las vulnerabilidades se detectaban una vez que el código llegaba a producción, generando costos elevados de remediación y riesgos de exposición de datos. Synapse cambia este paradigma al integrar una puerta de seguridad directamente en el flujo de revisión de código, permitiendo bloquear fallos antes de que se fusionen en la rama principal. Su capa de gobernanza, que incluye una cadena de custodia de resultados y separación de roles para los hallazgos asistidos por IA, lo hace especialmente valioso para equipos que deben cumplir con normativas de seguridad como el RGPD o estándares de la industria, donde es necesario demostrar la veracidad y trazabilidad de los resultados de escaneo. Además, al no requerir infraestructura adicional, es accesible para equipos de todos los tamaños, democratizando el acceso a herramientas de seguridad avanzadas en el ciclo de desarrollo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flqe79g99btkh1ctjryk3.png",
+      "alt": "Diagrama de flujo de la puerta de seguridad CI de Synapse que bloquea la fusión de PRs con vulnerabilidades",
+      "caption": "Imagen de portada del artículo que ilustra el funcionamiento de la puerta de seguridad CI de Synapse"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Synapse",
+    "#SeguridadInformatica",
+    "#DevSecOps",
+    "#CI",
+    "#GitHub"
+  ],
+  "fullArticle": "La mayoría de los equipos de desarrollo coinciden en que una vulnerabilidad que llega a la rama principal es un fallo en el proceso de revisión de código, y el lugar ideal para detectarla es en el pull request, antes de que se autorice la fusión. Synapse, un escáner de seguridad open source escrito en Go, surge como solución para implementar esta 'puerta de seguridad' en flujos de integración continua (CI), bloqueando automáticamente la fusión de PRs que introducen fallos de seguridad. A diferencia de herramientas como Trivy o Grype, que se centran únicamente en la detección de vulnerabilidades, Synapse incluye una capa de gobernanza que garantiza la trazabilidad de los resultados, con una cadena de custodia hash que evita modificaciones encubiertas y separación de roles para los hallazgos asistidos por IA, sin dependencia de modelos de lenguaje grande en los informes finales.[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flqe79g99btkh1ctjryk3.png]\n\nLa herramienta funciona como un binario estático sin necesidad de servidor ni base de datos, con la misma huella de infraestructura que herramientas de escaneo comunes como Trivy. Usa Syft para generar la lista de materiales del software (SBOM), Grype como fuente de detección de vulnerabilidades y, si el runner tiene acceso a internet, también consulta OSV.dev como segunda fuente. Si el entorno está aislado, se puede usar la bandera --offline para funcionar sin conexión. Cuando se ejecuta en el flujo de CI, devuelve un código de salida distinto de cero si detecta cualquier fallo de severidad alta o superior, incluyendo no solo vulnerabilidades de dependencias (SCA) o problemas en código propio (SAST), sino también secretos hardcodeados y errores de configuración en Dockerfiles, Kubernetes, Helm y Terraform. Al añadir la bandera --sarif, genera un informe en formato SARIF 2.1.0 que se sube automáticamente a la pestaña de Code Scanning de GitHub, y publica un comentario en el PR con detalles de la vulnerabilidad y pasos de remediación. La rama se protege mediante las reglas de protección de ramas de GitHub, que usan el estado de la ejecución de Synapse como requisito obligatorio, por lo que cualquier PR que falle el escaneo no se puede fusionar.\n\nPara demostrar su funcionamiento, su creador habilitó un repositorio demo con una rama principal limpia (CI en verde) y un PR que introduce tres fallos deliberados: un Dockerfile que ejecuta procesos como root y descarga un script de una URL externa, una función que usa MD5 para generar tokens y un archivo requirements.txt con versiones antiguas de Django, PyYAML y requests llenas de CVE. Esta implementación práctica permite a cualquier equipo probar la herramienta en un entorno controlado antes de integrarla en sus propios flujos de trabajo, reduciendo la barrera de entrada para adoptar prácticas de seguridad en el ciclo de desarrollo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T16:28:02.976Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Synapse",
+      "url": "https://github.com/synapse-security/synapse"
+    },
+    {
+      "title": "Documentación de GitHub Code Scanning",
+      "url": "https://docs.github.com/es/code-security/code-scanning"
+    },
+    {
+      "title": "Herramienta Syft para generación de SBOM",
+      "url": "https://github.com/anchore/syft"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Severidad mínima para bloquear la fusión",
+      "value": "Alta o superior"
+    },
+    {
+      "label": "Tipos de fallos detectados",
+      "value": "Vulnerabilidades de dependencias, SAST, secretos hardcodeados, errores de configuración en Docker, Kubernetes, Helm y Terraform"
+    },
+    {
+      "label": "Formato de informe generado",
+      "value": "SARIF 2.1.0 compatible con GitHub Code Scanning"
+    },
+    {
+      "label": "Requisitos de infraestructura",
+      "value": "Binario estático sin servidor ni base de datos requeridos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

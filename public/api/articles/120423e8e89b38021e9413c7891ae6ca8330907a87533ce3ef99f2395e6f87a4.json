@@ -1,0 +1,73 @@
+{
+  "id": "120423e8e89b38021e9413c7891ae6ca8330907a87533ce3ef99f2395e6f87a4",
+  "title": "La 'fuga de memoria' en Python que no existía: un error de medición generó falsas alertas en su pipeline de RAG",
+  "summary": "Un desarrollador creía tener una fuga de memoria en su pipeline de RAG para bases de conocimiento, pero descubrió que el problema era el uso de la métrica ru_maxrss, que registra el pico máximo de memoria en lugar del consumo actual, generando alertas falsas.",
+  "url": "https://dev.to/flipslidersand/debugging-a-python-memory-leak-that-was-actually-a-measurement-bug-rumaxrss-vs-vmrss-46c1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T15:24:10.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjsr3c1zdfuqdqjffthdw.png",
+  "imageAlt": "La 'fuga de memoria' en Python que no existía: un error de medición generó falsas alertas en su pipeline de RAG",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creía tener una fuga de memoria en su pipeline de RAG para bases de conocimiento, pero descubrió que el problema era el uso de la métrica ru_maxrss, que registra el pico máximo de memoria en lugar del consumo actual, generando alertas falsas.",
+  "keyPoints": [
+    "El equipo detectó un supuesto crecimiento monótono de memoria en un pipeline de RAG que almacena embeddings en la base de datos Qdrant.",
+    "Las pruebas iniciales con llamadas a gc.collect() y sentencias del no reducían el valor registrado, lo que apuntaba a una fuga de memoria real.",
+    "La causa raíz era el uso de ru_maxrss, métrica que registra el pico máximo histórico de memoria, no el consumo actual del proceso en cada momento.",
+    "Al cambiar a la lectura de VmRSS desde /proc/self/status, los registros mostraron variaciones reales y confirmaron que no había fuga, con un consumo estable de 1,8 GB."
+  ],
+  "whyMatters": "Este caso es fundamental para todos los equipos de ingeniería que desarrollan pipelines de procesamiento de datos y modelos de IA, ya que un error de medición de memoria puede generar decisiones de optimización innecesarias, aumento de costes de infraestructura y retrasos en la entrega de proyectos. En el contexto español, donde muchas pymes y startups están adoptando soluciones de RAG para automatizar procesos, evitar diagnósticos erróneos de consumo de recursos supone un ahorro económico y de tiempo considerable. Además, la difusión de esta solución contribuye a elevar el nivel de buenas prácticas en el monitoreo de aplicaciones Python, un lenguaje ampliamente utilizado en el ecosistema tecnológico europeo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjsr3c1zdfuqdqjffthdw.png",
+      "alt": "Depuración de una 'fuga de memoria' en Python que en realidad era un error de medición: comparación entre ru_maxrss y VmRSS",
+      "caption": "Imagen de portada del artículo original de Dev.to que ilustra el caso del error de medición de memoria en un pipeline de Python"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Python",
+    "#Debugging",
+    "#RAG",
+    "#Qdrant",
+    "#VmRSS"
+  ],
+  "fullArticle": "Un desarrollador que trabajaba en un pipeline de generación de bases de conocimiento RAG (Generación Aumentada por Recuperación) se encontró con un problema que le hizo perder semanas de trabajo de depuración: cada vez que reiniciaba el proceso, los registros de memoria marcaban un crecimiento constante del consumo, sin que ninguna acción de limpieza lograra reducir el valor. El pipeline, encargado de rastrear artículos web, dividirlos en fragmentos, generar embeddings vectoriales y almacenarlos en la base de datos Qdrant, parecía tener una fuga de memoria irreparable, hasta que descubrió que el problema no estaba en el código, sino en la métrica que utilizaba para medir el consumo.\n\nEl error residía en el uso de la métrica ru_maxrss, un valor que registra el pico máximo de memoria residente que ha utilizado el proceso desde su inicio, no el consumo actual en cada momento. Este valor actúa como una marca de agua alta: una vez que el proceso alcanza un pico de consumo, aunque sea durante unos segundos, el valor nunca se reduce, incluso si libera memoria posteriormente. Por lo tanto, utilizarlo para monitorear el consumo en tiempo real genera diagnósticos completamente erróneos, como se muestra en el gráfico de registros iniciales del desarrollador.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjsr3c1zdfuqdqjffthdw.png]\n\nLa solución pasa por leer el valor VmRSS del archivo /proc/self/status en sistemas Linux, que refleja el consumo de memoria residente actual del proceso en cada momento. Tras aplicar el cambio, los registros mostraron variaciones coherentes, confirmando que el consumo se estabilizaba en alrededor de 1,8 GB después de cargar el modelo de embeddings, sin ninguna fuga de memoria. Este caso sirve como recordatorio para la comunidad de desarrolladores de la importancia de elegir las métricas correctas al monitorear aplicaciones, ya que un error de diagnóstico puede derivar en optimizaciones innecesarias, sobrecostes de infraestructura y retrasos en proyectos de inteligencia artificial, un sector en pleno crecimiento en España y Europa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T15:36:06.815Z",
+  "links": [
+    {
+      "title": "Artículo original del caso en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial del archivo proc de Linux (métrica VmRSS)",
+      "url": "https://man7.org/linux/man-pages/man5/proc.5.html"
+    },
+    {
+      "title": "Guía de monitoreo de recursos en Python",
+      "url": "https://docs.python.org/es/3/library/resource.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Consumo de memoria estable tras la corrección",
+      "value": "1,8 GB"
+    },
+    {
+      "label": "Métrica errónea que generó el falso positivo",
+      "value": "ru_maxrss (pico máximo de memoria histórica)"
+    },
+    {
+      "label": "Fuente de la métrica de memoria correcta en Linux",
+      "value": "Archivo /proc/self/status, campo VmRSS"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

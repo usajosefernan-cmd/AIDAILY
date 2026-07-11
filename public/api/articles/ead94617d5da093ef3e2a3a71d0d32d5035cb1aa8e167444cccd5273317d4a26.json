@@ -1,0 +1,78 @@
+{
+  "id": "ead94617d5da093ef3e2a3a71d0d32d5035cb1aa8e167444cccd5273317d4a26",
+  "title": "Angular CRUD 2026: Configura tu primera app fullstack con Spring Boot en menos de 45 minutos",
+  "summary": "El artículo presenta la primera parte de una guía de seis entregas para desarrollar una aplicación CRUD de gestión de contactos usando Angular 19 (con componentes standalone y proveedores funcionales) y Spring Boot, con base de datos H2, dirigida a desarrolladores con conocimientos básicos de TypeScript y REST.",
+  "url": "https://dev.to/alkademy/angular-crud-tutorial-2026-edition-part-1-setup-with-spring-boot-372h",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T23:09:40.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.munonye.com%2Fwp-content%2Fuploads%2F2020%2F05%2FAngular-CRUD-Operations-Featured-Image.jpg",
+  "imageAlt": "Angular CRUD 2026: Configura tu primera app fullstack con Spring Boot en menos de 45 minutos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo presenta la primera parte de una guía de seis entregas para desarrollar una aplicación CRUD de gestión de contactos usando Angular 19 (con componentes standalone y proveedores funcionales) y Spring Boot, con base de datos H2, dirigida a desarrolladores con conocimientos básicos de TypeScript y REST.",
+  "keyPoints": [
+    "La guía está estructurada en 6 partes y su objetivo es construir una aplicación CRUD completa de gestión de contactos (amigos) con stack moderno.",
+    "Se requieren conocimientos previos de Node.js 18+, Angular CLI, Java 17+, TypeScript básico y fundamentos de APIs REST para seguir el tutorial.",
+    "El desarrollo usa Angular 19, que elimina la necesidad de AppModule al incorporar componentes standalone y proveedores funcionales nativos.",
+    "El backend se construye con Spring Boot, incluyendo dependencias de Web, JPA y base de datos en memoria H2 para pruebas rápidas."
+  ],
+  "whyMatters": "Este tutorial es fundamental para desarrolladores que buscan actualizarse a las versiones más recientes de Angular y Spring Boot, eliminando configuraciones obsoletas como los módulos tradicionales. Su enfoque práctico y paso a paso reduce la barrera de entrada para crear aplicaciones fullstack modernas, un perfil muy demandado en el mercado laboral tecnológico actual. Además, al incluir una implementación de referencia en GitHub y una guía completa de seis partes, permite a los profesionales aplicar los conocimientos en proyectos reales de forma inmediata, sin necesidad de invertir horas en investigación de configuraciones iniciales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.munonye.com%2Fwp-content%2Fuploads%2F2020%2F05%2FAngular-CRUD-Operations-Featured-Image.jpg",
+      "alt": "Portada del tutorial de Angular CRUD edición 2026, parte 1: Configuración con Spring Boot",
+      "caption": "Imagen de portada oficial del tutorial publicado por Kindson Munonye en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.munonye.com%2Fwp-content%2Fuploads%2F2020%2F05%2FAngular-CRUD-Operations-Featured-Image.jpg",
+      "alt": "Portada del artículo original del tutorial Angular CRUD 2026 alojado en munonye.com",
+      "caption": "Imagen de cabecera del artículo completo publicado en el sitio web del autor"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Angular19",
+    "#SpringBoot",
+    "#DesarrolloFullstack",
+    "#CRUD"
+  ],
+  "fullArticle": "El reputado ingeniero de software y autor técnico Kindson Munonye ha publicado la primera entrega de su esperada guía de desarrollo fullstack para 2026, un tutorial actualizado que enseña a construir una aplicación CRUD de gestión de contactos desde cero, combinando dos de las tecnologías más utilizadas en el ecosistema empresarial: Angular 19 y Spring Boot. Esta edición renovada elimina las configuraciones obsoletas de versiones anteriores, apostando por las funcionalidades más modernas de ambos frameworks para ofrecer un flujo de desarrollo más ágil y limpio, adaptado a las necesidades de los equipos de desarrollo actuales.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.munonye.com%2Fwp-content%2Fuploads%2F2020%2F05%2FAngular-CRUD-Operations-Featured-Image.jpg]\nEl tutorial está dirigido a profesionales y estudiantes con conocimientos básicos de TypeScript, fundamentos de APIs REST y experiencia previa en entornos de desarrollo Java y JavaScript. Se estima que el tiempo de realización de esta primera parte, dedicada exclusivamente a la configuración inicial del entorno, es de aproximadamente 45 minutos, y sirve como base para las cinco entregas restantes que completarán la aplicación con todas las operaciones CRUD, pruebas y despliegue.\nUna de las principales novedades de esta edición es el uso de componentes standalone y proveedores funcionales en Angular 19, una evolución que elimina la necesidad de definir y configurar el tradicional AppModule, reduciendo la complejidad del código inicial y mejorando la mantenibilidad del proyecto. Por el lado del backend, se utiliza Spring Boot con las dependencias de Web, JPA y la base de datos en memoria H2, una combinación que permite levantar el servidor de API de forma rápida sin necesidad de configurar bases de datos externas en las fases iniciales de desarrollo.\nLa guía completa, junto con el código de referencia alojado en el repositorio product-app-spring-api de GitHub, está disponible de forma gratuita en el sitio web de Munonye, junto con contenido adicional sobre buenas prácticas de desarrollo fullstack. Este tipo de recursos actualizados son especialmente valiosos en un mercado laboral donde la demanda de profesionales capaces de trabajar con stacks modernos tanto en frontend como backend sigue creciendo de forma exponencial, y donde la actualización constante de conocimientos es un requisito indispensable para mantenerse competitivo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T23:43:50.659Z",
+  "links": [
+    {
+      "title": "Guía completa de 6 partes del tutorial Angular CRUD con Spring Boot",
+      "url": "https://munonye.com/angular-crud-spring-boot-rest-api-complete-guide/"
+    },
+    {
+      "title": "Repositorio de referencia del proyecto en GitHub",
+      "url": "https://github.com/munonye/product-app-spring-api"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración estimada de la primera parte",
+      "value": "45 minutos"
+    },
+    {
+      "label": "Número total de partes de la guía",
+      "value": "6 entregas"
+    },
+    {
+      "label": "Versión de Angular utilizada en el tutorial",
+      "value": "Angular 19"
+    },
+    {
+      "label": "Versión mínima de Node.js requerida",
+      "value": "Node.js 18+"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

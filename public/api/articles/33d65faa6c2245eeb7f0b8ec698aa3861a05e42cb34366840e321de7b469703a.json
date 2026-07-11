@@ -1,0 +1,77 @@
+{
+  "id": "33d65faa6c2245eeb7f0b8ec698aa3861a05e42cb34366840e321de7b469703a",
+  "title": "WHOIS se ha vuelto obsoleto en 2026: la solución RDAP que devuelve JSON",
+  "summary": "El protocolo WHOIS, usado durante décadas para consultar datos de dominios, se está volviendo obsoleto tras el mandato de ICANN y la monetización de APIs. RDAP, un protocolo moderno basado en HTTPS y JSON, ofrece una alternativa fiable y estructurada. La solución Apify actor se posiciona como herramienta de transición, combinando RDAP y fallback a WHOIS legacy.",
+  "url": "https://dev.to/nexgendata/whois-is-broken-in-2026-heres-the-rdap-first-drop-in-that-actually-returns-json-55d9",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T23:04:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F489671pfgr82pqy8grk3.png",
+  "imageAlt": "WHOIS se ha vuelto obsoleto en 2026: la solución RDAP que devuelve JSON",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El protocolo WHOIS, usado durante décadas para consultar datos de dominios, se está volviendo obsoleto tras el mandato de ICANN y la monetización de APIs. RDAP, un protocolo moderno basado en HTTPS y JSON, ofrece una alternativa fiable y estructurada. La solución Apify actor se posiciona como herramienta de transición, combinando RDAP y fallback a WHOIS legacy.",
+  "keyPoints": [
+    "Desde 2015, el mandato de ICANN obligó a migrar a RDAP, rompiendo los antiguos puertos 43 de WHOIS y afectando al 30-60% de las consultas.",
+    "Los proveedores de API WHOIS, como WhoisXML, han reducido sus planes gratuitos, forzando a las empresas a pagar hasta cuatro cifras mínimas para volúmenes significativos.",
+    "RDAP ofrece HTTPS, JSON estructurado, códigos de estado HTTP y un esquema de eventos, entidades y enlaces, eliminando la fragmentación de formatos de WHOIS.",
+    "Apify desarrolló un actor que prioriza RDAP y recurre a WHOIS legacy cuando sea necesario, devolviendo un esquema JSON unificado para cualquier TLD."
+  ],
+  "whyMatters": "El despliegue de RDAP no solo mejora la fiabilidad de las consultas de dominios, sino que también reduce la dependencia de soluciones propietarias costosas. Las empresas de inteligencia de dominio, los registradores y los desarrolladores de software deben actualizar sus pipelines para evitar fallos silenciosos que podrían pasar por dominios expirados. Además, la estandarización de datos facilita la integración con sistemas de gestión de identidad y cumplimiento normativo en la era de la regulación de datos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F489671pfgr82pqy8grk3.png",
+      "alt": "Imagen de portada que muestra el título del artículo sobre WHOIS y RDAP",
+      "caption": "Portada del artículo que destaca la transición de WHOIS a RDAP"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#WHOIS",
+    "#RDAP",
+    "#JSON",
+    "#ICANN",
+    "#InternetProtocol"
+  ],
+  "fullArticle": "El protocolo WHOIS, introducido en 1982, ha sido el pilar de la consulta de datos de dominios durante más de cuatro décadas. Su simplicidad—una conexión TCP a puerto 43 y una respuesta de texto sin formato—parece una reliquia en la era de la web estructurada. Sin embargo, la falta de un esquema formal y la fragmentación de formatos han llevado a que las empresas construyan parsers de hasta 2.000 líneas de expresiones regulares para cubrir apenas 40 de los 1.500 TLD existentes.\n\nEn agosto de 2024, ICANN hizo obligatorio el cumplimiento del mandato de RDAP, rompiendo los antiguos puertos 43 de WHOIS y obligando a los registradores a migrar a un protocolo HTTPS que devuelve JSON estructurado. Al mismo tiempo, proveedores como WhoisXML API redujeron sus planes gratuitos, exigiendo tarjetas de crédito para evaluaciones y precios mínimos de cuatro cifras para volúmenes serios. El resultado: entre el 30 % y el 60 % de las consultas que antes funcionaban ahora fallan silenciosamente, con consumidores que interpretan erróneamente la ausencia de una fecha de expiración como “probablemente aún válida”.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F489671pfgr82pqy8grk3.png]\n\nRDAP, estandarizado en los RFC 7480‑7484, ofrece una solución robusta: conexiones HTTPS, respuestas JSON con un esquema definido, códigos de estado HTTP y enlaces a registros de entidad. Un registro bootstrap en data.iana.org/rdap/dns.json indica el servidor RDAP autoritativo para cada TLD, eliminando la incertidumbre de los puertos 43. Con RDAP, las empresas pueden confiar en la consistencia de los datos y en la interoperabilidad con sistemas de cumplimiento y gestión de identidad.\n\nPara facilitar la transición, Apify desarrolló un actor que prioriza RDAP y recurre a WHOIS legacy cuando sea necesario, devolviendo un esquema JSON unificado para cualquier TLD. Este actor permite a los pipelines de inteligencia de dominio continuar funcionando sin interrupciones mientras la migración completa a RDAP se lleva a cabo. En el futuro, la adopción generalizada de RDAP no solo garantizará la fiabilidad de las consultas de dominio, sino que también reducirá la dependencia de soluciones propietarias costosas y mejorará la transparencia del ecosistema de registro de dominios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T23:23:15.991Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "RFC 7480 – Registro de datos de acceso a registros",
+      "url": "https://datatracker.ietf.org/doc/html/rfc7480"
+    },
+    {
+      "title": "Registro de servidores RDAP de IANA",
+      "url": "https://data.iana.org/rdap/dns.json"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Mandato RDAP de ICANN",
+      "value": "Agosto de 2024"
+    },
+    {
+      "label": "Porcentaje de consultas afectadas",
+      "value": "30-60%"
+    },
+    {
+      "label": "Costo mínimo de API WhoisXML",
+      "value": "$10,000 USD"
+    },
+    {
+      "label": "Número de TLDs con RDAP",
+      "value": "1,500"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

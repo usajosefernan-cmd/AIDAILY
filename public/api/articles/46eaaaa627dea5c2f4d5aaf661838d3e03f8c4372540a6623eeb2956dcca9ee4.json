@@ -1,0 +1,73 @@
+{
+  "id": "46eaaaa627dea5c2f4d5aaf661838d3e03f8c4372540a6623eeb2956dcca9ee4",
+  "title": "Etiquetas de formulario accesibles: la regla de oro que todo desarrollador web está ignorando",
+  "summary": "El artículo recopila las prácticas esenciales para implementar etiquetas accesibles en formularios web, explicando su función para usuarios de lectores de pantalla, errores comunes a evitar y su cumplimiento con estándares WCAG y normativa europea.",
+  "url": "https://dev.to/ilknur/accessible-form-labels-5fpl",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T00:00:15.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7kpiqpa7nhmtybdx3fzw.png",
+  "imageAlt": "Etiquetas de formulario accesibles: la regla de oro que todo desarrollador web está ignorando",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo recopila las prácticas esenciales para implementar etiquetas accesibles en formularios web, explicando su función para usuarios de lectores de pantalla, errores comunes a evitar y su cumplimiento con estándares WCAG y normativa europea.",
+  "keyPoints": [
+    "Toda entrada de formulario debe tener una etiqueta visible y programática, vinculada mediante los atributos 'for' e 'id' en HTML para garantizar la accesibilidad para lectores de pantalla.",
+    "Para formularios compactos o barras de búsqueda sin etiqueta visible, se deben usar atributos ARIA como 'aria-label' o 'aria-labelledby' para proporcionar contexto a tecnologías de asistencia.",
+    "El texto de marcador de posición (placeholder) nunca debe sustituir a una etiqueta real, ya que desaparece al escribir y no es anunciado de forma fiable por lectores de pantalla.",
+    "Los campos obligatorios deben marcarse tanto en el código con el atributo 'required' como con texto visible, y un asterisco solo es válido si se acompaña de una leyenda explicativa."
+  ],
+  "whyMatters": "La accesibilidad web no es una opción secundaria, sino un requisito legal y ético en la Unión Europea, donde normativas como la Ley de Accesibilidad Digital obligan a todos los sitios públicos y de servicio público a cumplir con estándares WCAG. Un formulario sin etiquetas correctamente implementadas bloquea por completo a millones de usuarios con discapacidad visual que dependen de lectores de pantalla, generando exclusión digital y posibles sanciones legales para empresas y administraciones. Aplicar estas reglas de etiquetado no solo evita problemas legales, sino que mejora la experiencia de todos los usuarios, incluyendo aquellos que navegan con zoom o en entornos de pantalla pequeña, por lo que su implementación es una inversión con retorno inmediato en alcance y cumplimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7kpiqpa7nhmtybdx3fzw.png",
+      "alt": "Imagen de portada del artículo sobre etiquetas de formulario accesibles",
+      "caption": "Imagen de portada del artículo original de Dev.to sobre accesibilidad en formularios web"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AccesibilidadWeb",
+    "#DesarrolloWeb",
+    "#HTML",
+    "#WCAG",
+    "#TecnologiaInclusiva"
+  ],
+  "fullArticle": "Las etiquetas de formulario son el pilar fundamental de la accesibilidad web, un elemento que muchos desarrolladores subestiman pero que determina si millones de usuarios con discapacidad pueden interactuar con un sitio o no. Cuando una etiqueta no está correctamente implementada, los usuarios que dependen de lectores de pantalla no tienen forma de saber qué información se les solicita en cada campo, bloqueando su acceso a servicios básicos como trámites administrativos, compras online o plataformas de educación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7kpiqpa7nhmtybdx3fzw.png]\n\nEl artículo original, publicado en Dev.to, recopila las reglas básicas que todo profesional del desarrollo web debe aplicar para construir formularios inclusivos, desde la vinculación correcta de etiquetas mediante atributos HTML hasta el uso adecuado de atributos ARIA para casos de diseño compacto. Uno de los errores más extendidos es utilizar el texto de marcador de posición (placeholder) como sustituto de la etiqueta, una práctica que incumple los estándares WCAG y genera una experiencia deficiente: el placeholder desaparece en cuanto el usuario empieza a escribir, no es anunciado de forma fiable por los lectores de pantalla y su contraste suele ser insuficiente para usuarios con baja visión.\n\nPara formularios con campos obligatorios, es necesario marcar esta condición de dos formas: añadiendo el atributo 'required' o el atributo 'aria-required' con el valor 'true' al campo para que la tecnología de asistencia lo anuncie, e incluyendo un texto visible como '(obligatorio)' junto a la etiqueta para usuarios videntes. Un asterisco rojo por sí solo no es suficiente, ya que los lectores de pantalla no lo anuncian de forma consistente y su significado no es claro para todos los usuarios, por lo que si se usa debe acompañarse de una leyenda explicativa en la parte superior del formulario. La disposición de las etiquetas también es clave: deben situarse directamente encima o a la izquierda del campo correspondiente, nunca debajo ni a una distancia excesiva, para que los usuarios que navegan con zoom o en pantallas pequeñas no pierdan el contexto al desplazarse. Para grupos de campos relacionados, como botones de opción o casillas de verificación, es obligatorio usar el elemento <fieldset> con su etiqueta <legend>, ya que sin él el lector de pantalla solo anuncia el nombre del campo sin el contexto del grupo, por ejemplo 'Correo electrónico, botón de opción' sin indicar qué opciones hay disponibles. Estas prácticas no son un añadido opcional, sino un requisito básico para cumplir con la normativa de accesibilidad europea y garantizar que la web sea un espacio inclusivo para todos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T00:24:38.020Z",
+  "links": [
+    {
+      "title": "Artículo original sobre etiquetas de formulario accesibles en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Guía oficial de accesibilidad web WCAG del W3C",
+      "url": "https://www.w3.org/WAI/WCAG21/quickref/"
+    },
+    {
+      "title": "Ley de Accesibilidad Digital de la Unión Europea",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/accessibility-requirements-ict-products-and-services"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de sitios web que no cumplen estándares de accesibilidad en la UE",
+      "value": "Más del 90% (Informe de Accesibilidad Web 2023)"
+    },
+    {
+      "label": "Personas con discapacidad en la UE afectadas por falta de accesibilidad web",
+      "value": "Aproximadamente 135 millones"
+    },
+    {
+      "label": "Multas máximas por incumplimiento de la normativa de accesibilidad",
+      "value": "Hasta el 2% de la facturación anual global"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

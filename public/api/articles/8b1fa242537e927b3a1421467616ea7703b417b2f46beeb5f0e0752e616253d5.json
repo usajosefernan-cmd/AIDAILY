@@ -1,0 +1,71 @@
+{
+  "id": "8b1fa242537e927b3a1421467616ea7703b417b2f46beeb5f0e0752e616253d5",
+  "title": "Bancos que dejan la MFA opcional abren la puerta a robos de $30.000",
+  "summary": "En una alarmante historia, una mujer de 84 años perdió $30.000 cuando los bancos que no exigían autenticación multifactor permitieron a ladrones acceder a sus cuentas. El caso destaca la urgencia de que las instituciones financieras adopten la MFA como estándar para salvaguardar a sus clientes.",
+  "url": "https://www.theregister.com/security/2026/07/05/mfa-optional-banks-leave-safe-doors-and-accounts-wide-open-for-thieves-to-pillage/5266161",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-07-05T15:01:00.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Bancos que dejan la MFA opcional abren la puerta a robos de $30.000",
+  "tags": [
+    "economia",
+    "noticias"
+  ],
+  "aiSummary": "En una alarmante historia, una mujer de 84 años perdió $30.000 cuando los bancos que no exigían autenticación multifactor permitieron a ladrones acceder a sus cuentas. El caso destaca la urgencia de que las instituciones financieras adopten la MFA como estándar para salvaguardar a sus clientes.",
+  "keyPoints": [
+    "La falta de MFA en bancos como Bank of America y Chase permitió a los delincuentes extraer $30.000 de las cuentas de una víctima sin ser detectados.",
+    "La víctima usó la misma contraseña en múltiples cuentas y había sido víctima de una brecha de datos años antes, lo que facilitó el acceso de los ladrones.",
+    "Solo PNC obliga la MFA, mientras que la mayoría de los bancos grandes la ofrecen como opción, generando fricción y riesgo.",
+    "El Consumer Financial Protection Bureau establece un plazo de 60 días para disputar transacciones fraudulentas, pero la recuperación de fondos no está garantizada."
+  ],
+  "whyMatters": "El incidente subraya una brecha crítica en la seguridad bancaria que afecta a millones de consumidores. La ausencia de MFA expone a los clientes a robos masivos, erosionando la confianza en el sistema financiero. Si las instituciones no adoptan medidas robustas, el sector corre el riesgo de convertirse en un objetivo preferido para ciberdelincuentes, con consecuencias económicas y sociales de largo alcance.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&auto=format&fit=crop&q=80",
+      "alt": "Bancos que dejan la MFA opcional abren la puerta a robos de $30.000",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "Mercados",
+  "hashtags": [
+    "#BankOfAmerica",
+    "#GoogleMFA",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "La autenticación multifactor (MFA) se ha convertido en el estándar de oro para proteger cuentas en la era digital, pero en el sector bancario su adopción sigue siendo opcional. En una reciente y alarmante historia, una mujer de 84 años perdió $30.000 cuando los bancos que no exigían MFA permitieron a ladrones acceder a sus cuentas sin ser detectados. El robo se produjo tras la víctima, que usaba la misma contraseña en varias cuentas y había sido víctima de una brecha de datos años antes, ser víctima de una brecha de datos años antes, lo que facilitó el acceso de los delincuentes.\n\nEl caso comenzó cuando la madre recibió una llamada de la entidad que gestiona su plan de jubilación, la cual identificó una transacción sospechosa y le pidió confirmación. Al negar la transacción, el banco protegió la cuenta de jubilación. Sin embargo, los ladrones habían accedido previamente a su cuenta de Gmail y configurado filtros que enviaban cualquier correo del banco a la papelera, evitando que la víctima recibiera alertas. Cuando revisó su cuenta bancaria, descubrió que se habían transferido miles de dólares a cuentas desconocidas, pero el banco no había marcado la actividad como fraudulenta.\n\nMientras algunos bancos, como PNC, obligan la MFA, la mayoría de los grandes actores financieros —Bank of America, Chase, Capital One y Citibank— la ofrecen como opción. Los defensores de la seguridad argumentan que la MFA reduce la conversión y aumenta los tickets de soporte, pero los expertos señalan que la seguridad debe superar la fricción. La falta de MFA no solo expone a los clientes a robos, sino que también crea un ambiente propicio para el fraude masivo.\n\nEl Consumer Financial Protection Bureau establece un plazo de 60 días para disputar transacciones fraudulentas, y los bancos tienen 45 días para investigar. Sin embargo, la recuperación de fondos no está garantizada, especialmente en casos donde el fraude ocurre fuera de los EE. UU. La víctima, afortunada, recuperó los fondos tras semanas de negociaciones, pero el incidente destaca la necesidad urgente de que las instituciones financieras adopten la MFA como norma obligatoria para proteger a sus clientes y mantener la integridad del sistema financiero.",
+  "category": "economia",
+  "scrapedAt": "2026-07-06T03:26:24.749Z",
+  "links": [
+    {
+      "title": "Autenticación de múltiples factores (Wikipedia)",
+      "url": "https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_de_m%C3%ADultiples_factores"
+    },
+    {
+      "title": "Soporte de Google para 2FA",
+      "url": "https://support.google.com/accounts/answer/185839?hl=es"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Monto robado",
+      "value": "$30.000"
+    },
+    {
+      "label": "Plazo de disputa CFpb",
+      "value": "60 días"
+    },
+    {
+      "label": "Bancos con MFA obligatorio",
+      "value": "PNC"
+    },
+    {
+      "label": "Bancos con MFA opcional",
+      "value": "Bank of America, Chase, Capital One, Citibank"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

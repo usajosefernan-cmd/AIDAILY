@@ -1,0 +1,77 @@
+{
+  "id": "25708a0aaf89dfaade8fc45552f82c304d5dc795dc8fec3c3f1dafc427914acf",
+  "title": "Un fallo silencioso en el sitemap bloqueó a Google de indexar mis sitios",
+  "summary": "Un desarrollador descubrió que un error en la generación del sitemap, donde una URL se enviaba como objeto en vez de cadena, impedía que Google indexara seis de ocho sitios. Tras corregirlo y reenviar, las páginas se indexaron en pocos días.",
+  "url": "https://dev.to/gavinbuilds/the-silent-sitemap-bug-that-blocked-google-from-indexing-my-sites-3lhi",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-02T03:10:16.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzsd94f4mskpehktsvqy3.png",
+  "imageAlt": "Un fallo silencioso en el sitemap bloqueó a Google de indexar mis sitios",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador descubrió que un error en la generación del sitemap, donde una URL se enviaba como objeto en vez de cadena, impedía que Google indexara seis de ocho sitios. Tras corregirlo y reenviar, las páginas se indexaron en pocos días.",
+  "keyPoints": [
+    "El sitemap enviado contenía URLs inválidas en forma de objeto, lo que hizo que Google lo ignorara por completo.",
+    "De ocho sitios, solo dos fueron indexados inicialmente; los demás mostraron cero páginas en Google Search Console.",
+    "La corrección y el reenvío del sitemap provocaron que las páginas principales aparecieran en el índice en menos de una semana.",
+    "Un único error de formato puede afectar la visibilidad de todo un sitio web en los motores de búsqueda."
+  ],
+  "whyMatters": "El descubrimiento subraya la fragilidad del proceso de indexación y la necesidad de validación rigurosa de los sitemaps. Para cualquier negocio digital, la visibilidad en buscadores es esencial; un fallo silencioso puede traducirse en pérdida de tráfico, ingresos y reputación. Este caso sirve como alerta para desarrolladores y equipos de SEO, recordándoles que la calidad de los datos enviados a Google es tan importante como su contenido.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzsd94f4mskpehktsvqy3.png",
+      "alt": "Imagen que muestra la portada del artículo sobre el fallo del sitemap",
+      "caption": "Portada del artículo que destaca el error silencioso en el sitemap que bloqueó la indexación en Google"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de la interfaz de Google Search Console mostrando la ausencia de páginas indexadas",
+      "caption": "Pantalla de Google Search Console indicando que seis de ocho sitios no tenían páginas indexadas"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GoogleSEO",
+    "#Sitemap",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "En el competitivo mundo del desarrollo web, la visibilidad en los motores de búsqueda es un factor decisivo. Un programador, al revisar Google Search Console tras un mes de trabajo, se encontró con un panorama inesperado: de sus ocho sitios, solo dos aparecían indexados, mientras que los demás mostraban cero páginas. No había penalizaciones ni banners de error; simplemente, un silencio que indicaba que Google no había podido leer el sitemap.\n\nEl origen del problema era sencillo pero crítico. El script encargado de generar el sitemap mapeaba objetos de página y, en algún punto, una propiedad 'url' se convirtió en un objeto en lugar de una cadena. Como resultado, el archivo XML contenía líneas como 'object Object', que Google interpretó como URLs inválidas y descartó el documento completo. La solución fue tan directa como reveladora: corregir la estructura del sitemap, reenviarlo y solicitar la indexación de las páginas principales. En cuestión de días, las páginas comenzaron a aparecer en los resultados de búsqueda.\n\nEste episodio resalta la importancia de la validación exhaustiva de los sitemaps. Un único error de formato puede suprimir la presencia de un sitio entero en Google, con consecuencias directas en tráfico y posicionamiento. Los equipos de desarrollo y SEO deben implementar pruebas automáticas que verifiquen la integridad del XML antes de su publicación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzsd94f4mskpehktsvqy3.png]\n\nEl caso también demuestra la utilidad de herramientas como Google Search Console para detectar anomalías que de otra forma pasarían desapercibidas. Al abrir el XML raw y revisarlo manualmente, se puede identificar rápidamente la presencia de objetos no válidos y corregirlos antes de que afecten la indexación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-02T03:22:59.260Z",
+  "links": [
+    {
+      "title": "Guía oficial de Google sobre sitemaps",
+      "url": "https://developers.google.com/search/docs/advanced/sitemaps/overview"
+    },
+    {
+      "title": "Documentación de Google Search Console",
+      "url": "https://support.google.com/webmasters/answer/7451184?hl=es"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Sitios indexados inicialmente",
+      "value": "2 de 8"
+    },
+    {
+      "label": "Sitios sin páginas indexadas",
+      "value": "6 de 8"
+    },
+    {
+      "label": "Tiempo para indexar después de corrección",
+      "value": "menos de 7 días"
+    },
+    {
+      "label": "Tipo de error en sitemap",
+      "value": "URL como objeto en vez de cadena"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

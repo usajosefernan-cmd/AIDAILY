@@ -1,0 +1,73 @@
+{
+  "id": "e8f18a70f5e8e7f67e67d8fe318e19792d7c514f4ac22662fc68c432f8856ddc",
+  "title": "El secreto detrás de las puntuaciones RAF en Medicare Advantage: por qué los mismos códigos ICD-10 generan resultados diferentes",
+  "summary": "El artículo explica la cadena completa de cálculo de puntuaciones HCC y RAF para el ajuste de riesgo en Medicare Advantage, detallando por qué los códigos ICD-10 no tienen peso individual, la importancia de las jerarquías de HCC, los términos de interacción y la variación de resultados entre versiones del modelo CMS-HCC.",
+  "url": "https://dev.to/vbc_risk_analytics/how-icd-10-codes-map-to-an-hcc-raf-score-and-why-the-same-code-set-yields-different-scores-25l2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T17:22:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F859h2hjt23prv3hngn27.png",
+  "imageAlt": "El secreto detrás de las puntuaciones RAF en Medicare Advantage: por qué los mismos códigos ICD-10 generan resultados diferentes",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica la cadena completa de cálculo de puntuaciones HCC y RAF para el ajuste de riesgo en Medicare Advantage, detallando por qué los códigos ICD-10 no tienen peso individual, la importancia de las jerarquías de HCC, los términos de interacción y la variación de resultados entre versiones del modelo CMS-HCC.",
+  "keyPoints": [
+    "Los códigos ICD-10 no tienen peso RAF individual; primero se agrupan en Categorías de Condición Jerárquicas (HCC), donde muchos códigos se mapean a un solo HCC.",
+    "Solo se conserva el HCC más grave dentro de cada familia de enfermedades, evitando pagos duplicados por el mismo problema subyacente.",
+    "Los factores demográficos (edad, sexo, inscripción) y los términos de interacción ajustan la puntuación final de forma no aditiva.",
+    "Las versiones V24 y V28 del modelo CMS-HCC usan mapas y coeficientes distintos, por lo que el mismo conjunto de códigos arroja puntuaciones RAF diferentes."
+  ],
+  "whyMatters": "Estas mecánicas son críticas para cualquier organización que desarrolle herramientas de ajuste de riesgo para Medicare Advantage, ya que un error en el cálculo de la puntuación RAF genera sobrepagos o subpagos millonarios. La variación entre versiones del modelo y la necesidad de actualizar anualmente los artefactos de mapeo obliga a los equipos de ingeniería a implementar procesos de validación continua. Ignorar estos detalles puede derivar en incumplimientos normativos, pérdidas económicas y discrepancias en las reconciliaciones de pagos con CMS.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F859h2hjt23prv3hngn27.png",
+      "alt": "Diagrama que muestra el proceso de mapeo de códigos ICD-10 a puntuaciones HCC y RAF para el ajuste de riesgo en Medicare Advantage",
+      "caption": "Imagen de portada del artículo explicativo sobre el cálculo de puntuaciones RAF"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ICD10",
+    "#HCC",
+    "#RAFScore",
+    "#MedicareAdvantage",
+    "#CMShcc"
+  ],
+  "fullArticle": "Cuando se desarrollan plataformas o herramientas vinculadas al ajuste de riesgo de Medicare Advantage, una de las preguntas más recurrentes es cómo los códigos de diagnóstico ICD-10 se transforman en las puntuaciones HCC y RAF que determinan los pagos a las aseguradoras. La respuesta corta suele generar confusiones: los códigos ICD-10-CM no tienen un peso RAF individual, sino que existen varios pasos intermedios que no se pueden omitir, pues saltarse cualquier etapa produce una puntuación errónea.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F859h2hjt23prv3hngn27.png]\n\nEl proceso comienza con el mapeo de cada diagnóstico calificable a una Categoría de Condición Jerárquica (HCC), un agrupamiento clínico donde múltiples códigos ICD-10 se consolidan en un solo HCC, en una relación muchos a uno y con pérdida de información por diseño. Dentro de cada familia de enfermedades, solo se conserva el HCC más grave, ya que las versiones más leves quedan 'atrapadas' para evitar que el modelo pague dos veces por el mismo problema de salud subyacente. A estos valores se suman los factores demográficos (edad, sexo, características de inscripción) y los términos de interacción, que otorgan peso extra a combinaciones específicas de enfermedades sin ser simplemente aditivos.\n\nUn punto que suele romper las reconciliaciones de pagos es que las versiones V24 y V28 del modelo CMS-HCC utilizan mapas y coeficientes distintos, por lo que el mismo conjunto de códigos ICD-10 arroja puntuaciones RAF diferentes según el año de modelo que se utilice. Para realizar el cálculo de forma correcta se necesitan cuatro artefactos alineados al año de pago correspondiente, ya que las tablas se actualizan anualmente con el Anuncio de Tarifas de CMS y una copia almacenada de años anteriores se convierte en un error garantizado. Si necesitas validar tu propia implementación, la herramienta RAF Score Calculator recorre toda la cadena ICD-10 → HCC → RAF con ejemplos prácticos y calcula la puntuación de un miembro bajo ambas versiones del modelo, funcionando como un oráculo de referencia para pruebas unitarias.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T17:43:48.413Z",
+  "links": [
+    {
+      "title": "Calculadora RAF oficial para verificación de implementaciones",
+      "url": "https://rafscorecalculator.com"
+    },
+    {
+      "title": "Documentación oficial de CMS sobre ajuste de riesgo HCC",
+      "url": "https://www.cms.gov/Medicare/Health-Plans/MedicareAdvtgSpecRateStats/Risk-Adjustors"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versiones de modelo CMS-HCC con puntuaciones distintas",
+      "value": "V24 y V28"
+    },
+    {
+      "label": "Número de artefactos requeridos para cálculo correcto",
+      "value": "4"
+    },
+    {
+      "label": "Frecuencia de actualización de tablas de mapeo",
+      "value": "Anual, según el Anuncio de Tarifas de CMS"
+    },
+    {
+      "label": "Tipo de relación entre códigos ICD-10 y HCC",
+      "value": "Muchos a uno, con pérdida de información por diseño"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

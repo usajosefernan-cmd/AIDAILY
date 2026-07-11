@@ -1,0 +1,74 @@
+{
+  "id": "4017bed1c39416324adfab6f4a427c3d9346a78b1a56e43a8b30d79d3852170f",
+  "title": "Wetask lanza su primer release candidate: el runtime unificado que acabará con la fragmentación de componentes backend",
+  "summary": "Se lanza la primera versión candidata pública de Wetask, un runtime desarrollado en Go que unifica en un solo componente las funcionalidades de gestión de tareas distribuidas, programación, caché y failover para equipos de desarrollo.",
+  "url": "https://dev.to/tosiiko/wetask-a-unified-runtime-for-distributed-tasks-scheduling-and-caching-3i2m",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T07:09:54.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb02wgvj9n65qykv7hjrb.png",
+  "imageAlt": "Wetask lanza su primer release candidate: el runtime unificado que acabará con la fragmentación de componentes backend",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se lanza la primera versión candidata pública de Wetask, un runtime desarrollado en Go que unifica en un solo componente las funcionalidades de gestión de tareas distribuidas, programación, caché y failover para equipos de desarrollo.",
+  "keyPoints": [
+    "Wetask v0.1.0-rc.1 es la primera versión candidata pública del runtime, desarrollado en Go, que unifica tareas backend en un solo componente desplegable.",
+    "El proyecto busca reducir la cantidad de componentes independientes que los equipos deben operar para gestionar trabajos en segundo plano, programación, caché y failover.",
+    "Las pruebas previas al lanzamiento incluyeron benchmarks de pipeline gRPC que procesaron casi 9 millones de operaciones de caché mixtas sin errores de cliente, con picos de 753.000 operaciones por segundo.",
+    "Los próximos hitos incluyen un tap de Homebrew dedicado, publicación de contenedores multiarquitectura y validación en entorno de staging de tres nodos."
+  ],
+  "whyMatters": "Esta herramienta responde a una necesidad creciente en los equipos de desarrollo backend europeos y españoles, que actualmente deben operar y mantener múltiples componentes separados para tareas comunes como la ejecución de trabajos en segundo plano, la programación de tareas recurrentes o la gestión de caché, lo que incrementa la complejidad operativa y el riesgo de errores de integración. Al unificar todas estas funcionalidades en un solo runtime desplegable, Wetask reduce la carga de mantenimiento, simplifica las arquitecturas distribuidas y mejora la fiabilidad de los sistemas, lo que supondrá un ahorro de tiempo y recursos para equipos de todos los tamaños, especialmente en entornos de producción que requieren alta disponibilidad. Su enfoque en pruebas rigurosas previas al lanzamiento, incluyendo pruebas de caos y recuperación, garantiza un nivel de fiabilidad adecuado para su uso en pilotos controlados, lo que lo convierte en una alternativa prometedora para optimizar las operaciones backend en proyectos de toda la región.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb02wgvj9n65qykv7hjrb.png",
+      "alt": "Portada del artículo de presentación de Wetask, runtime unificado para tareas distribuidas, programación y caché",
+      "caption": "Imagen de portada del artículo original de lanzamiento de Wetask en la plataforma Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, la comunidad de desarrolladores que publicó el artículo original",
+      "caption": "Logotipo de la plataforma DEV Community, fuente de la noticia sobre el lanzamiento de Wetask"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Wetask",
+    "#GoLang",
+    "#BackendDevelopment",
+    "#DistributedSystems"
+  ],
+  "fullArticle": "El desarrollador de Wetask ha lanzado la primera versión candidata pública de su proyecto, un runtime unificado desarrollado en lenguaje Go que agrupa en un solo componente desplegable las funcionalidades de gestión de tareas distribuidas, programación de trabajos, sistema de caché y mecanismos de failover. Esta herramienta nace con el objetivo de simplificar la arquitectura de los sistemas backend, reduciendo la cantidad de componentes independientes que los equipos de desarrollo deben operar y mantener de forma separada, lo que habitualmente incrementa la complejidad operativa y el riesgo de fallos de integración en entornos de producción.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb02wgvj9n65qykv7hjrb.png]\n\nAntes de este lanzamiento, el equipo responsable realizó una batería exhaustiva de pruebas que incluyeron tests unitarios, de integración, de carrera, de caos, de actualización, de recuperación, de carga y de pipeline directo con clientes gRPC. En las pruebas de rendimiento, el pipeline gRPC procesó 8.991.000 operaciones de caché mixtas sin registrar errores por parte de los clientes, alcanzando un pico de rendimiento de aproximadamente 753.000 operaciones por segundo en entornos de benchmark locales en contenedores. Además, se solucionó y probó mediante regresión un deadlock de orden de bloqueo que afectaba al envío concurrente de tareas duraderas y la espera de resultados, un fallo crítico que podía causar interrupciones en sistemas de producción.\n\nSe trata de una versión candidata controlada, por lo que aún no se considera un lanzamiento de disponibilidad general para entornos empresariales, y el código fuente de la implementación se mantiene privado: el repositorio público solo incluye las versiones compiladas, herramientas de instalación, sumas de verificación SHA-256, licencias y metadatos de paquetes. Los próximos hitos del proyecto incluyen la creación de un tap de Homebrew dedicado, la publicación de imágenes de contenedor multiarquitectura, la validación en un entorno de staging de tres nodos y ejercicios de failover y restauración en vivo, además de la recopilación de feedback de equipos que realicen pilotos controlados en producción, especialmente en regiones europeas como España, donde la demanda de herramientas backend fiables y sencillas de operar está en auge.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T07:23:05.356Z",
+  "links": [
+    {
+      "title": "Release oficial de Wetask v0.1.0-rc.1",
+      "url": "https://github.com/tosiiko/wetask-releases/releases/tag/v0.1.0-rc.1"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Operaciones de caché procesadas sin errores",
+      "value": "8.991.000"
+    },
+    {
+      "label": "Pico de rendimiento en benchmarks",
+      "value": "753.000 operaciones por segundo"
+    },
+    {
+      "label": "Versión lanzada",
+      "value": "v0.1.0-rc.1 (release candidate)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

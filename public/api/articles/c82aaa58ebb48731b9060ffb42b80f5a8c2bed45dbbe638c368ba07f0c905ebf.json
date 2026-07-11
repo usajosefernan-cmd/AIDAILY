@@ -1,0 +1,77 @@
+{
+  "id": "c82aaa58ebb48731b9060ffb42b80f5a8c2bed45dbbe638c368ba07f0c905ebf",
+  "title": "El truco de Postgres para escribir datos a la velocidad de la luz: WAL, buffers compartidos y la ilusión de rendimiento",
+  "summary": "PostgreSQL utiliza una combinación de caché de memoria RAM (Shared Buffers) y un registro de escritura secuencial en disco (WAL) para ofrecer respuestas instantáneas a las consultas de escritura sin renunciar a la durabilidad de los datos, evitando la latencia de las escrituras aleatorias en soportes físicos.",
+  "url": "https://dev.to/vipul07/how-postgres-writes-data-wal-shared-buffers-and-the-illusion-of-speed-1j73",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T09:14:01.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2ex9pwb97dae5y31i70.png",
+  "imageAlt": "El truco de Postgres para escribir datos a la velocidad de la luz: WAL, buffers compartidos y la ilusión de rendimiento",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "PostgreSQL utiliza una combinación de caché de memoria RAM (Shared Buffers) y un registro de escritura secuencial en disco (WAL) para ofrecer respuestas instantáneas a las consultas de escritura sin renunciar a la durabilidad de los datos, evitando la latencia de las escrituras aleatorias en soportes físicos.",
+  "keyPoints": [
+    "Postgres divide las tablas en páginas de 8KB que almacena en la caché de memoria Shared Buffers para acelerar las modificaciones.",
+    "Las páginas modificadas en RAM se marcan como 'Dirty Pages' y se escriben en disco de forma diferida para no ralentizar las consultas.",
+    "El Write-Ahead Log (WAL) registra todas las transacciones de forma secuencial en disco antes de confirmar el éxito de la operación.",
+    "Esta combinación de RAM y escritura secuencial en el WAL elimina la latencia de las escrituras aleatorias en discos físicos."
+  ],
+  "whyMatters": "Este mecanismo es la base sobre la que se construyen millones de aplicaciones en todo el mundo que dependen de PostgreSQL para gestionar sus datos de forma fiable. Entender su funcionamiento no solo permite a los desarrolladores optimizar el rendimiento de sus sistemas, sino que también evita errores de configuración que pueden derivar en pérdidas de datos o cuellos de botella en entornos de alta demanda. A medida que crece la necesidad de procesar transacciones en tiempo real en sectores como las finanzas o el comercio electrónico, conocer estas arquitecturas internas se convierte en una ventaja competitiva para los equipos de ingeniería.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2ex9pwb97dae5y31i70.png",
+      "alt": "Ilustración de portada del artículo que explica el funcionamiento interno de escritura de datos en PostgreSQL",
+      "caption": "Imagen de portada del artículo original de Dev.to sobre la arquitectura de escritura de PostgreSQL"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PostgreSQL",
+    "#WAL",
+    "#BasesDeDatos",
+    "#ArquitecturaDeSoftware",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "Para cualquier desarrollador, ejecutar una consulta como UPDATE users SET status = 'active' WHERE id = 42; y recibir un mensaje de éxito en una fracción de milisegundo parece magia, pero esconde una de las ingenierías más sofisticadas del mundo de las bases de datos relacionales. El problema de fondo es sencillo: los discos duros y SSD son extremadamente lentos para las escrituras aleatorias, es decir, aquellas que deben buscar y modificar datos dispersos en diferentes ubicaciones del soporte físico. Si PostgreSQL tuviera que escribir directamente en el disco cada vez que se ejecuta una consulta de modificación, los sistemas colapsarían bajo cualquier carga de tráfico moderada, convirtiendo las aplicaciones en herramientas inutilizables.\n\nLa solución pasa por combinar dos mecanismos complementarios que engañan al sistema para dar la ilusión de velocidad sin renunciar a la fiabilidad. El primero es Shared Buffers, una caché de memoria RAM que PostgreSQL reserva al iniciarse y que almacena los datos en bloques de 8KB llamados páginas. Cuando se ejecuta una consulta de actualización, el motor calcula la página donde se encuentra el registro a modificar, la carga en memoria y aplica los cambios en nanosegundos, marcándola como 'Dirty Page' para indicar que aún no ha sido escrita en el disco permanente. Esta operación es tan rápida que el usuario recibe la confirmación de éxito de forma instantánea, aunque los datos aún no estén guardados en el soporte físico.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq2ex9pwb97dae5y31i70.png]\n\nEl segundo pilar es el Write-Ahead Log, o WAL, una especie de póliza de seguros que garantiza que ninguna modificación se pierda incluso si se corta la electricidad en el peor momento. Antes de confirmar el éxito de cualquier transacción, PostgreSQL envía los detalles de la operación a un proceso en segundo plano llamado WAL Writer, que escribe los datos de forma secuencial al final del archivo de WAL en el disco. Esta escritura secuencial es mucho más rápida que las escrituras aleatorias, por lo que no ralentiza la respuesta al usuario, pero deja un registro permanente de todos los cambios que se pueden recuperar en caso de fallo.\n\nEsta arquitectura es la razón por la que PostgreSQL es una de las bases de datos más utilizadas en el mundo para aplicaciones de alta demanda, desde sistemas de comercio electrónico hasta plataformas de análisis de datos. No se trata solo de un truco de rendimiento: es un diseño riguroso que equilibra velocidad, durabilidad y consistencia, tres pilares fundamentales para cualquier sistema que gestione información crítica. Entender cómo funciona no es un ejercicio académico: permite a los equipos de ingeniería configurar sus instancias de forma óptima, evitar errores comunes que derivan en pérdidas de datos y aprovechar al máximo el potencial de esta herramienta open source.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T09:23:33.953Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de PostgreSQL sobre configuración de buffers compartidos",
+      "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-SHARED-BUFFERS"
+    },
+    {
+      "title": "Documentación oficial de PostgreSQL sobre Write-Ahead Logging (WAL)",
+      "url": "https://www.postgresql.org/docs/current/wal-intro.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño de página de datos en PostgreSQL",
+      "value": "8 KB por página"
+    },
+    {
+      "label": "Velocidad de modificación de datos en RAM",
+      "value": "Nanosegundos"
+    },
+    {
+      "label": "Tipo de escritura utilizada por el WAL en disco",
+      "value": "Escritura secuencial"
+    },
+    {
+      "label": "Latencia de respuesta de consultas UPDATE simples",
+      "value": "Fracción de milisegundo"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

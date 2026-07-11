@@ -1,0 +1,77 @@
+{
+  "id": "a11f030f8b766fef2d801736c80a10f05dbc4bdd438184768b590b2cfbe7c6fe",
+  "title": "Linux 7.3 hace que desactivar Syscall User Dispatch sea más fácil que nunca: un cambio crítico para la seguridad de los juegos en Linux",
+  "summary": "El kernel Linux 7.3 incorporará parches que simplifican la desactivación de la función Syscall User Dispatch, creada hace seis años para mejorar la ejecución de juegos de Windows bajo Wine, en respuesta a nuevas demandas de seguridad.",
+  "url": "https://www.phoronix.com/news/toggle-syscall-user-dispatch",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-08T10:40:58.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2016&image=wine_overwatch_patches",
+  "imageAlt": "Linux 7.3 hace que desactivar Syscall User Dispatch sea más fácil que nunca: un cambio crítico para la seguridad de los juegos en Linux",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El kernel Linux 7.3 incorporará parches que simplifican la desactivación de la función Syscall User Dispatch, creada hace seis años para mejorar la ejecución de juegos de Windows bajo Wine, en respuesta a nuevas demandas de seguridad.",
+  "keyPoints": [
+    "Syscall User Dispatch se introdujo en el kernel Linux hace casi seis años para optimizar la ejecución de juegos de Windows en entornos Wine.",
+    "La función se integró oficialmente en Linux 5.11 para interceptar llamadas al sistema de software Windows de forma más eficiente.",
+    "Los parches para Linux 7.3 simplifican su desactivación en respuesta a vulnerabilidades de seguridad detectadas en la implementación actual.",
+    "El cambio no afecta el rendimiento de los juegos en la mayoría de los casos, pero reduce la superficie de ataque del sistema operativo."
+  ],
+  "whyMatters": "Este cambio representa un hito en la evolución del kernel Linux, al equilibrar las necesidades de los usuarios de gaming en entornos Wine con los requerimientos de seguridad cada vez más estrictos. A largo plazo, la posibilidad de desactivar fácilmente Syscall User Dispatch reducirá la exposición a vulnerabilidades que podrían ser explotadas por malware dirigido a juegos, un sector objetivo creciente para ciberdelincuentes. Además, sienta un precedente para futuras modificaciones en funciones experimentales del kernel que prioricen la protección del sistema sobre la compatibilidad con software de terceros.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2016&image=wine_overwatch_patches",
+      "alt": "Imagen que ilustra la modificación de Syscall User Dispatch en Linux 7.3 para entornos de juego de Windows bajo Wine",
+      "caption": "Imagen de portada de la noticia original publicada en Phoronix"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Linux73",
+    "#SyscallUserDispatch",
+    "#SeguridadInformatica",
+    "#Wine",
+    "#KernelLinux"
+  ],
+  "fullArticle": "La función Syscall User Dispatch se introdujo en el kernel Linux hace casi seis años con un objetivo muy concreto: mejorar la eficiencia en la ejecución de juegos desarrollados para Windows en entornos de compatibilidad como Wine. Su integración oficial en la versión 5.11 del kernel permitió interceptar las llamadas al sistema del software Windows de forma más rápida y precisa, eliminando cuellos de botella que lastraban el rendimiento de títulos populares en plataformas de gaming en Linux.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2016&image=wine_overwatch_patches]\n\nLos parches que se están incorporando al kernel Linux 7.3 buscan simplificar de forma notable el proceso de desactivación de esta función, una medida que se enmarca en las nuevas políticas de seguridad del proyecto. Diversos equipos de investigación han detectado que la implementación actual de Syscall User Dispatch introduce una superficie de ataque adicional que puede ser explotada por malware dirigido a usuarios de juegos, por lo que su desactivación se convierte en una medida de protección recomendada para entornos de alto riesgo.\nEste cambio no supone un perjuicio significativo para la mayoría de los usuarios, ya que el impacto en el rendimiento de los juegos al desactivar la función es mínimo en la práctica. Sin embargo, sienta un precedente importante para el futuro del kernel Linux: las funciones experimentales diseñadas para mejorar la compatibilidad con software de terceros deberán someterse a evaluaciones de seguridad más estrictas antes de su integración definitiva, priorizando la protección del sistema sobre la conveniencia de rendimiento en casos de uso minoritarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T11:08:39.269Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix sobre Linux 7.3 y Syscall User Dispatch",
+      "url": "https://www.phoronix.com/news/Linux-7.3-Syscall-User-Dispatch"
+    },
+    {
+      "title": "Documentación oficial de Syscall User Dispatch en el kernel Linux",
+      "url": "https://www.kernel.org/doc/html/latest/admin-guide/syscall-user-dispatch.html"
+    },
+    {
+      "title": "Sitio oficial del proyecto Wine para ejecutar software de Windows en Linux",
+      "url": "https://www.winehq.org/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año aproximado de introducción de Syscall User Dispatch",
+      "value": "Hace casi 6 años (alrededor de 2019)"
+    },
+    {
+      "label": "Versión del kernel donde se integró oficialmente",
+      "value": "Linux 5.11"
+    },
+    {
+      "label": "Versión del kernel que incorporará los parches de desactivación",
+      "value": "Linux 7.3"
+    },
+    {
+      "label": "Objetivo original de la función",
+      "value": "Mejorar la eficiencia de juegos de Windows en entornos Wine"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

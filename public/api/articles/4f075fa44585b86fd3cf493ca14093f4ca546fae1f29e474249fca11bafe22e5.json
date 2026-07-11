@@ -1,0 +1,73 @@
+{
+  "id": "4f075fa44585b86fd3cf493ca14093f4ca546fae1f29e474249fca11bafe22e5",
+  "title": "Cómo los archivos de reglas CLAUDE.md y AGENTS.md están homogenizando la generación de código en FastAPI (y por qué tu proyecto los necesita ya)",
+  "summary": "Los agentes de IA como Claude Code y Cursor leen archivos de configuración en la raíz de los proyectos para establecer reglas de generación de código. En proyectos FastAPI, esto soluciona inconsistencias en endpoints e inyección de dependencias. La guía recomienda limitar estos archivos a 50 líneas, priorizar patrones sobre prohibiciones e incluir snippets de código. Su implementación permite estandarizar la calidad del código generado en todo el equipo.",
+  "url": "https://dev.to/_7fb6011b57d383122b5a/2026nian-ban-fastapiezientonidu-sururuhuairuclaudemdagentsmdnoshi-li-toshu-kifang-4b6e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T02:03:43.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fraea6lqhtppeoz2nthox.png",
+  "imageAlt": "Cómo los archivos de reglas CLAUDE.md y AGENTS.md están homogenizando la generación de código en FastAPI (y por qué tu proyecto los necesita ya)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los agentes de IA como Claude Code y Cursor leen archivos de configuración en la raíz de los proyectos para establecer reglas de generación de código. En proyectos FastAPI, esto soluciona inconsistencias en endpoints e inyección de dependencias. La guía recomienda limitar estos archivos a 50 líneas, priorizar patrones sobre prohibiciones e incluir snippets de código. Su implementación permite estandarizar la calidad del código generado en todo el equipo.",
+  "keyPoints": [
+    "Los agentes de IA leen archivos como CLAUDE.md y AGENTS.md para aplicar reglas de generación de código en cada proyecto.",
+    "En FastAPI, estos archivos solucionan problemas de estructuras de endpoints inconsistentes e inyección de dependencias variable.",
+    "Se recomienda limitar el archivo a 50 líneas, escribir patrones en vez de prohibiciones e incluir snippets de código real.",
+    "Los cambios en estos archivos deben revisarse en PRs como si fueran infraestructura como código para controlar su impacto."
+  ],
+  "whyMatters": "La estandarización de la generación de código mediante archivos de reglas representa un cambio de paradigma en el desarrollo de software, especialmente en frameworks con convenciones estrictas como FastAPI. A medida que los equipos adoptan agentes de IA para acelerar la producción, estos archivos funcionan como un contrato de calidad que garantiza coherencia en todo el código base, reduciendo deuda técnica y tiempos de revisión. Su implementación temprana en proyectos permite escalar el desarrollo sin perder uniformidad, convirtiéndose en una práctica indispensable para equipos que buscan productividad sin sacrificar estándares.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fraea6lqhtppeoz2nthox.png",
+      "alt": "Portada del artículo sobre archivos de reglas para agentes de FastAPI en Dev.to",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que explica cómo escribir archivos CLAUDE.md y AGENTS.md para agentes de IA en proyectos FastAPI."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#FastAPI",
+    "#ClaudeCode",
+    "#DesarrolloWeb",
+    "#IA",
+    "#Cursor"
+  ],
+  "fullArticle": "La llegada de agentes de inteligencia artificial como Claude Code y Cursor al flujo de desarrollo de software ha planteado un nuevo desafío: la inconsistencia en el código generado automáticamente. Estas herramientas leen archivos de configuración ubicados en la raíz de los proyectos —como CLAUDE.md, .cursorrules o AGENTS.md— para actuar como system prompt del repositorio, definiendo estilos, patrones y prohibiciones que el agente debe cumplir al generar nuevo código. Sin embargo, sin una guía clara, es común que en frameworks con estructuras rígidas como FastAPI se generen endpoints con diseños completamente diferentes entre sí o implementaciones de inyección de dependencias que varían sin ningún criterio, incrementando la deuda técnica y los tiempos de revisión.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fraea6lqhtppeoz2nthox.png]\n\nLa solución propuesta en la guía de 2026 para FastAPI se basa en archivos de reglas concisos y bien estructurados. Se recomienda limitar cada archivo a un máximo de 50 líneas, ya que los agentes tienden a ignorar contenido excesivo. En lugar de enumerar prohibiciones, es más efectivo escribir patrones positivos: en vez de 'no uses variables globales', indicar 'usa el patrón de dependencias de FastAPI con Depends()'. Incluir un snippet de código real, incluso de una sola línea, aumenta drásticamente la precisión del agente al generar código que se ajuste a las convenciones del proyecto.\n\nLa gestión de estos archivos debe seguir buenas prácticas de desarrollo: no incluir comentarios de cambios como '2026-06: añadida regla de CORS', ya que el control de versiones con git permite rastrear modificaciones mediante diff. Cualquier modificación en el archivo de reglas debe incluirse en un pull request, donde se revise el impacto en el comportamiento del agente como si se tratara de infraestructura como código. Esta aproximación es especialmente efectiva en FastAPI, un framework con múltiples convenciones que se benefician enormemente de la homogenización automática del código generado por IA.\n\nLa guía complementa su explicación con ejemplos prácticos de archivos de reglas para otros entornos populares como Next.js, React, Godot y Express, demostrando que la metodología es aplicable a cualquier stack tecnológico. A medida que la adopción de agentes de IA en desarrollo se generalice, estos archivos de configuración se convertirán en un estándar de facto para mantener la coherencia y calidad del código en equipos de cualquier tamaño.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T02:23:29.473Z",
+  "links": [
+    {
+      "title": "Documentación oficial de FastAPI",
+      "url": "https://fastapi.tiangolo.com/"
+    },
+    {
+      "title": "Claude Code: documentación y guía de uso",
+      "url": "https://claude.ai/code"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Límite máximo de líneas por archivo de reglas",
+      "value": "50 líneas"
+    },
+    {
+      "label": "Año de publicación de la guía",
+      "value": "2026"
+    },
+    {
+      "label": "Frameworks con ejemplos incluidos",
+      "value": "5 (Next.js, React, FastAPI, Godot, Express)"
+    },
+    {
+      "label": "Herramientas de agente de IA compatibles",
+      "value": "Claude Code, Cursor"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

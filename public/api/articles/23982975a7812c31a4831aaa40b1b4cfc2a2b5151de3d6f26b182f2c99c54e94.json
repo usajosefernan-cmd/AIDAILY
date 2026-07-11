@@ -1,0 +1,78 @@
+{
+  "id": "23982975a7812c31a4831aaa40b1b4cfc2a2b5151de3d6f26b182f2c99c54e94",
+  "title": "Cómo Ejecutar Agentes LLM Locales Confiables en una RTX 3090: Un Benchmark que Valora el Consumo de Energía",
+  "summary": "El autor prueba cinco modelos LLM en una RTX 3090, midiendo su precisión, velocidad y coste eléctrico. Descubre que el rendimiento depende más del orquestador que del modelo.",
+  "url": "https://dev.to/sikamikanikobg/how-to-run-reliable-local-llm-agents-on-an-rtx-3090-a-benchmark-5-models-priced-in-watts-15d0",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T06:54:12.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4mg7vtgvkc0jbogs8k1w.png",
+  "imageAlt": "Cómo Ejecutar Agentes LLM Locales Confiables en una RTX 3090: Un Benchmark que Valora el Consumo de Energía",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor prueba cinco modelos LLM en una RTX 3090, midiendo su precisión, velocidad y coste eléctrico. Descubre que el rendimiento depende más del orquestador que del modelo.",
+  "keyPoints": [
+    "El modelo GLM‑4.5‑Air alcanzó 0 % de éxito con Opencode, pero 93 % con un agente LangGraph de 150 líneas",
+    "La herramienta de monitoreo homelab‑monitor permite convertir el consumo de GPU en coste por tarea, revelando que la eficiencia energética es crítica",
+    "El modelo Qwen3‑Coder 30B‑A3B emerge como el ganador de “todo el tiempo” gracias a su integración nativa de llamadas a herramientas",
+    "Con 128 GB de RAM, el modelo de 106 B funciona a 5.7 tokens/seg, ideal para trabajos por lotes sin interacción en tiempo real"
+  ],
+  "whyMatters": "El estudio demuestra que la verdadera ventaja competitiva de los LLM locales no reside únicamente en su tamaño, sino en la arquitectura de orquestación y la gestión energética. Para desarrolladores y empresas que dependen de infraestructuras on‑premise, entender cómo optimizar el consumo de energía y la latencia puede traducirse en ahorros significativos y en una mayor sostenibilidad. Además, la revelación de que un agente ligero supera a un modelo pesado cambia el paradigma de cómo se diseñan y despliegan soluciones de IA a escala.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4mg7vtgvkc0jbogs8k1w.png",
+      "alt": "Imagen de portada del artículo que muestra la RTX 3090 y gráficos de rendimiento",
+      "caption": "Portada del estudio que compara modelos LLM en una RTX 3090"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgqtw55h6nnjo1q76711v.png",
+      "alt": "Comparación de adherencia a herramientas entre Opencode y LangGraph",
+      "caption": "Gráfico que ilustra la diferencia de éxito entre Opencode (0 %) y LangGraph (93 %)"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#RTX3090",
+    "#LLM",
+    "#IAlocal",
+    "#EficienciaEnergética"
+  ],
+  "fullArticle": "El ingeniero de software y entusiasta de la IA publica un exhaustivo benchmark de cinco modelos de lenguaje de gran escala (GLM‑4.5‑Air, Qwen3‑Coder 30B‑A3B, y otros) ejecutados en una única tarjeta gráfica RTX 3090. En el experimento, se le asignan 12 tareas de codificación a través de Opencode, una herramienta de generación de código, y el modelo alcanza un rendimiento del 0 %: no logra editar ni siquiera un archivo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4mg7vtgvkc0jbogs8k1w.png]\n\nSin embargo, al reemplazar Opencode con un agente LangGraph de apenas 150 líneas de código, el mismo modelo logra un 93 % de éxito. El autor concluye que el modelo no era el cuello de botella; el orquestador sí lo era. La métrica clave, la “tool‑adherence”, mide el porcentaje de tareas en las que el modelo llama a una herramienta en lugar de imprimir código directamente en el chat. Este valor se convierte en el factor determinante del rendimiento.\n\nLa investigación va más allá de la precisión: incorpora el coste eléctrico por tarea, calculado con homelab‑monitor, una herramienta de código abierto que convierte el consumo de GPU en un recibo de energía. El análisis revela que, aunque el modelo de 106 B necesita 23 GB de VRAM y 27 GB de RAM extra, funciona a 5.7 tokens por segundo, adecuado para trabajos por lotes sin interacción en tiempo real.\n\nEl autor destaca a Qwen3‑Coder 30B‑A3B como el modelo “ganador de todo el tiempo”, gracias a su capacidad nativa de llamadas a herramientas y a una arquitectura ligera que evita la sobrecarga de compatibilidad con OpenAI. Se recomienda usar RAM como extensión de memoria, no como acelerador de velocidad, y medir la corrección por kilovatio hora.\n\nLa publicación completa, con metodología, gráficos y análisis profundo, está disponible en Medium. El autor invita a los lectores a reproducir los resultados y a compartir sus propios recibos de energía. Con la creciente demanda de IA local, este estudio ofrece una hoja de ruta práctica para optimizar tanto el rendimiento como la sostenibilidad energética.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T07:05:17.806Z",
+  "links": [
+    {
+      "title": "Publicación completa en Medium",
+      "url": "https://medium.com/@arsen.apostolov/local-llm-agents-on-an-rtx-3090-i-benchmarked-5-models-2-frameworks-and-the-orchestrator-f5fd600ca221"
+    },
+    {
+      "title": "Homelab‑monitor – herramienta de código abierto",
+      "url": "https://github.com/homelab-monitor"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión con Opencode",
+      "value": "0 %"
+    },
+    {
+      "label": "Precisión con LangGraph",
+      "value": "93 %"
+    },
+    {
+      "label": "Consumo de VRAM del modelo 106 B",
+      "value": "23 GB"
+    },
+    {
+      "label": "Velocidad de procesamiento",
+      "value": "5.7 tokens/seg"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

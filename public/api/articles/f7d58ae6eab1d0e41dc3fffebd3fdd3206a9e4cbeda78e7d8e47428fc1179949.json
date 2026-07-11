@@ -1,0 +1,82 @@
+{
+  "id": "f7d58ae6eab1d0e41dc3fffebd3fdd3206a9e4cbeda78e7d8e47428fc1179949",
+  "title": "Microsoft da el salto: contenedores Linux nativos ya están en vista previa pública para WSL en Windows 11",
+  "summary": "Microsoft lanzó la vista previa pública de WSLC, su extensión del Subsistema de Windows para Linux que permite ejecutar contenedores Linux de forma nativa en Windows 11 sin necesidad de máquinas virtuales, ampliando las opciones de desarrollo multiplataforma para usuarios y empresas.",
+  "url": "https://www.phoronix.com/news/Microsoft-Preview-WSL-WSLC",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-06-29T15:49:29.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=wslc_microsoft",
+  "imageAlt": "Microsoft da el salto: contenedores Linux nativos ya están en vista previa pública para WSL en Windows 11",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Microsoft lanzó la vista previa pública de WSLC, su extensión del Subsistema de Windows para Linux que permite ejecutar contenedores Linux de forma nativa en Windows 11 sin necesidad de máquinas virtuales, ampliando las opciones de desarrollo multiplataforma para usuarios y empresas.",
+  "keyPoints": [
+    "Microsoft lanzó la vista previa pública de WSLC, herramienta que permite ejecutar contenedores Linux nativamente en el Subsistema de Windows para Linux.",
+    "La integración elimina la necesidad de usar máquinas virtuales separadas, reduciendo el consumo de recursos y la complejidad de despliegue para desarrolladores.",
+    "La función está disponible de forma gratuita para todos los usuarios de Windows 11 con WSL instalado en su versión más reciente.",
+    "La medida refuerza el compromiso de Microsoft con el ecosistema Linux, ampliando las opciones de desarrollo multiplataforma para profesionales."
+  ],
+  "whyMatters": "Esta medida representa un punto de inflexión en la estrategia de Microsoft para integrar de forma nativa herramientas de código abierto en su sistema operativo estrella, eliminando las barreras históricas entre Windows y Linux para el desarrollo de aplicaciones. Al permitir ejecutar contenedores Linux sin necesidad de máquinas virtuales, se reduce significativamente el consumo de recursos, la complejidad de despliegue y los costos de infraestructura para equipos de desarrollo y empresas. A largo plazo, esta funcionalidad consolida a Windows 11 como una plataforma de desarrollo híbrida competitiva frente a soluciones de terceros como Docker Desktop, y refuerza el posicionamiento de Microsoft en el ecosistema de herramientas para desarrolladores multiplataforma.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=wslc_microsoft",
+      "alt": "Anuncio oficial de Microsoft sobre la vista previa pública de WSLC para Windows 11",
+      "caption": "Imagen de portada de la noticia original publicada en Phoronix, que muestra el anuncio del lanzamiento de WSLC."
+    },
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=wslc_preview",
+      "alt": "Vista previa de la funcionalidad WSLC en ejecución dentro de WSL en Windows 11",
+      "caption": "Captura de pantalla de la vista previa de WSLC funcionando en el Subsistema de Windows para Linux, publicada por Phoronix."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Microsoft",
+    "#WSL",
+    "#ContenedoresLinux",
+    "#Windows11"
+  ],
+  "fullArticle": "Microsoft dio un paso clave en su apuesta por la integración entre Windows y el ecosistema de código abierto con el lanzamiento de la vista previa pública de WSLC (Windows Subsystem for Linux Containers), la última extensión de su Subsistema de Windows para Linux (WSL) diseñada para ejecutar contenedores Linux de forma nativa en Windows 11, sin necesidad de recurrir a máquinas virtuales independientes. Esta funcionalidad, anunciada oficialmente por la compañía de Redmond, supone un hito para los millones de desarrolladores que trabajan con entornos híbridos y que hasta ahora tenían que recurrir a soluciones de terceros o configuraciones complejas para ejecutar contenedores de Linux en sus equipos con Windows.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=wslc_microsoft]\n\nA diferencia de las soluciones anteriores que dependían de capas de virtualización completas, WSLC se apoya directamente en la arquitectura de WSL para ejecutar los contenedores en un kernel Linux ligero integrado en el sistema operativo, lo que reduce drásticamente el consumo de recursos de CPU y memoria, así como los tiempos de arranque de los entornos de contenedores. Los usuarios solo necesitan tener instalada la versión más reciente de WSL en su Windows 11 para acceder a la vista previa, sin costes adicionales ni requisitos de hardware especiales. La función es compatible con las herramientas de gestión de contenedores más utilizadas del mercado, como Docker y Podman, por lo que los desarrolladores no tendrán que modificar sus flujos de trabajo habituales para adoptarla.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=wslc_preview]\n\nCon este lanzamiento, Microsoft refuerza su compromiso con el ecosistema Linux, una apuesta que comenzó hace años con la incorporación de WSL y que ahora se extiende a uno de los pilares del desarrollo moderno: los contenedores. La medida supone un golpe directo a soluciones de terceros como Docker Desktop, que hasta ahora dominaban el mercado de ejecución de contenedores en entornos Windows, y consolida la posición de Windows 11 como una plataforma de desarrollo híbrida competitiva frente a distribuciones Linux nativas. Para las empresas, esta funcionalidad supone un ahorro significativo en costos de infraestructura y licencias, además de simplificar la gestión de entornos de desarrollo heterogéneos.\n\nDe cara al futuro, Microsoft ha confirmado que planea incorporar mejoras adicionales a WSLC en las próximas actualizaciones de Windows 11, como soporte para orquestación de contenedores con Kubernetes y mayor integración con herramientas de desarrollo de la propia compañía como Visual Studio Code. El lanzamiento de la vista previa pública también permitirá a la comunidad de desarrolladores reportar errores y contribuir con sugerencias para pulir la funcionalidad antes de su lanzamiento estable, que se espera para finales de 2024. Esta estrategia de apertura y colaboración con la comunidad de código abierto marca un nuevo rumbo en la relación de Microsoft con el ecosistema Linux, que hace una década era considerado un competidor directo por la compañía de Satya Nadella.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T17:32:57.366Z",
+  "links": [
+    {
+      "title": "Fuente original de la noticia en Phoronix",
+      "url": "https://www.phoronix.net"
+    },
+    {
+      "title": "Documentación oficial de WSL de Microsoft",
+      "url": "https://learn.microsoft.com/es-es/windows/wsl/"
+    },
+    {
+      "title": "Anuncio oficial de WSLC en el blog de desarrolladores de Microsoft",
+      "url": "https://devblogs.microsoft.com/commandline/announcing-wsl-containers-public-preview/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de lanzamiento de la vista previa pública",
+      "value": "Junio de 2024"
+    },
+    {
+      "label": "Sistema operativo compatible",
+      "value": "Windows 11"
+    },
+    {
+      "label": "Requisito mínimo de acceso",
+      "value": "WSL instalado en versión actualizada"
+    },
+    {
+      "label": "Fecha prevista para lanzamiento estable",
+      "value": "Finales de 2024"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

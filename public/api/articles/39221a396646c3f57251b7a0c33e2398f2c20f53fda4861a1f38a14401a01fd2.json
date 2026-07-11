@@ -1,0 +1,94 @@
+{
+  "id": "39221a396646c3f57251b7a0c33e2398f2c20f53fda4861a1f38a14401a01fd2",
+  "title": "Las tarjetas de circuito del procesador de E/S del Transbordador Espacial: la ingeniería oculta que conectaba todos los sistemas de la nave",
+  "summary": "Análisis detallado de dos tarjetas de circuito recuperadas del Procesador de Entrada/Salida (IOP) del Transbordador Espacial, que revela su arquitectura multihilo pionera, su sistema de redes redundantes de alta fiabilidad y el uso de la codificación Manchester, una tecnología inventada en 1949 que aún se emplea en dispositivos actuales.",
+  "url": "https://www.righto.com/2026/06/space-shuttle-io-processor-boards.html",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-28T16:16:07.000Z",
+  "imageUrl": "https://static.righto.com/images/shuttle-ioprocessor/gpu-and-iop-w600.jpg",
+  "imageAlt": "Las tarjetas de circuito del procesador de E/S del Transbordador Espacial: la ingeniería oculta que conectaba todos los sistemas de la nave",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Análisis detallado de dos tarjetas de circuito recuperadas del Procesador de Entrada/Salida (IOP) del Transbordador Espacial, que revela su arquitectura multihilo pionera, su sistema de redes redundantes de alta fiabilidad y el uso de la codificación Manchester, una tecnología inventada en 1949 que aún se emplea en dispositivos actuales.",
+  "keyPoints": [
+    "El Transbordador Espacial usaba cinco computadoras de propósito general, cada una con un procesador de 32 bits de 420.000 instrucciones por segundo, construido con chips discretos y memoria de núcleo magnético.",
+    "El Procesador de E/S (IOP) era una computadora programable independiente, más compleja que la CPU principal, con 25 procesadores virtuales que ejecutaban dos conjuntos de instrucciones en un solo núcleo físico.",
+    "Cada tarjeta de interfaz de red del IOP soportaba cuatro conexiones de 1 Mbps, usando codificación Manchester para evitar problemas de componente DC y garantizar la sincronización de la señal.",
+    "Las tarjetas usaban módulos híbridos de IBM con componentes discretos soldados en obleas de cerámica, y cables de puente manuales para reparaciones y actualizaciones en vuelo."
+  ],
+  "whyMatters": "Este análisis no solo rescata un fragmento olvidado de la historia de la computación espacial, sino que demuestra cómo soluciones de ingeniería pioneras de los años 70 siguen siendo relevantes en la actualidad. La arquitectura multihilo del IOP, por ejemplo, anticipó conceptos que hoy son estándar en los procesadores modernos, mientras que la codificación Manchester sigue presente en tecnologías de uso cotidiano como el Ethernet o las etiquetas RFID. Además, el estudio de estos sistemas redundantes y de alta fiabilidad ofrece lecciones valiosas para el diseño de hardware crítico en misiones espaciales actuales y futuras, donde la tolerancia a fallos es una cuestión de vida o muerte.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://static.righto.com/images/shuttle-ioprocessor/gpu-and-iop-w600.jpg",
+      "alt": "Vista de la CPU y el Procesador de Entrada/Salida (IOP) del Transbordador Espacial, modelo AP-101B, en sus cajas de aleación de aluminio de 27 kilos cada una.",
+      "caption": "La CPU (derecha) y el IOP (izquierda) del Transbordador Espacial, modelo AP-101B. Foto cortesía de RR Auction."
+    },
+    {
+      "type": "image",
+      "url": "https://static.righto.com/images/shuttle-ioprocessor/boards-w700.jpg",
+      "alt": "Las dos tarjetas de circuito recuperadas del Procesador de E/S del Transbordador: la página de interfaz de red MIA (arriba) y la página de microcódigo PROM (abajo).",
+      "caption": "Las dos tarjetas de circuito analizadas: la interfaz de red MIA (arriba) y la página de microcódigo PROM (abajo)."
+    },
+    {
+      "type": "image",
+      "url": "https://static.righto.com/images/shuttle-ioprocessor/mia-board-w700.jpg",
+      "alt": "Detalle de la tarjeta de interfaz de red MIA (Multiplexer Interface Adapter) del IOP, con cables de puente marrones que indican reparaciones y modificaciones realizadas después de su fabricación.",
+      "caption": "Tarjeta MIA del IOP, con extensas reparaciones visibles en forma de cables de puente delgados. Foto cortesía del autor del análisis original."
+    },
+    {
+      "type": "image",
+      "url": "https://static.righto.com/images/shuttle-ioprocessor/manchester-w500.jpg",
+      "alt": "Diagrama que ilustra el funcionamiento de la codificación Manchester, usada en las redes del Transbordador Espacial y aún vigente en tecnologías actuales como Ethernet.",
+      "caption": "Diagrama de la codificación Manchester, extraído de la descripción funcional del prototipo del IOP, página 82."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TransbordadorEspacial",
+    "#ProcesadorIOP",
+    "#CodificacionManchester",
+    "#IngenieriaAeroespacial"
+  ],
+  "fullArticle": "Las computadoras de a bordo del Transbordador Espacial fueron durante décadas el cerebro de las misiones más ambiciosas de la NASA, encargadas de controlar motores, monitorear miles de sensores, navegar por el espacio y mostrar información crítica a los astronautas. Construidas antes de la popularización de los microprocesadores comerciales, estas unidades estaban formadas por dos cajas de aleación de aluminio de 27 kilos cada una: una albergaba la CPU, un procesador de 32 bits capaz de ejecutar 420.000 instrucciones por segundo, mientras que la otra contenía el Procesador de Entrada/Salida (IOP, por sus siglas en inglés), el componente que actuaba como enlace entre la unidad central y el resto de sistemas de la nave. A diferencia de lo que podría parecer, el IOP no era un simple periférico, sino una computadora programable independiente, más compleja que la propia CPU principal, con una arquitectura pionera que anticipó conceptos que hoy son estándar en la industria.\n\n[MULTIMEDIA: https://static.righto.com/images/shuttle-ioprocessor/gpu-and-iop-w600.jpg]\n\nLa particularidad más sorprendente del IOP residía en su capacidad para ejecutar 25 procesadores virtuales con dos conjuntos de instrucciones completamente diferentes sobre un único procesador físico, convirtiéndose en uno de los primeros sistemas multihilo de la historia. Recientemente, un ingeniero recuperó dos tarjetas de circuito de este componente, cada una de 23 por 7 centímetros, repletas de chips y componentes miniatura. La tarjeta superior es una interfaz de red, llamada MIA (Multiplexer Interface Adapter) en la terminología de IBM, que proporciona cuatro conexiones de red de 1 Mbps cada una; el IOP incluía seis de estas tarjetas para gestionar sus 24 conexiones totales. La tarjeta inferior, por su parte, almacena el microcódigo del procesador: los bits del código de bajo nivel que define cada instrucción se guardan en filas de chips blancos y dorados, cuyos pequeños fusibles de metal se 'quemaban' para programar cada bit en 1.\n\n[MULTIMEDIA: https://static.righto.com/images/shuttle-ioprocessor/boards-w700.jpg]\n\nEl sistema de redes del Transbordador contaba con 28 buses de datos en total, a los que cada computadora estaba conectada a 24 de ellos, garantizando tanto un alto rendimiento como una redundancia sin precedentes: al menos dos redes conectaban cada computadora con cualquier sistema de la nave, y los sistemas críticos como los controladores de motores o las pantallas CRT estaban conectados a cuatro redes para evitar fallos. La interfaz MIA, además, incorpora circuitos analógicos complejos, entre ellos un módulo híbrido dorado de IBM con 46 patillas, que contiene transistores, resistencias, condensadores y posiblemente dies de circuitos integrados conectados por hilos de bond más finos que un cabello, una solución muy común en aplicaciones aeroespaciales por su fiabilidad y reducido tamaño. Junto a este módulo se encuentran componentes discretos como resistencias, condensadores de vidrio, inductores y pequeños transformadores que aislan la computadora de la red, filtran interferencias electromagnéticas y adaptan impedancias para garantizar la integridad de la señal.\n\n[MULTIMEDIA: https://static.righto.com/images/shuttle-ioprocessor/mia-board-w700.jpg]\n\nUno de los elementos más interesantes de estas tarjetas es el uso de la codificación Manchester, un sistema inventado en 1949 por el equipo de Frederic Williams en la Universidad de Manchester, reconocido como un hito de la IEEE. Esta técnica, que reemplaza cada bit 0 por una secuencia 'bajo-alto' y cada bit 1 por 'alto-bajo', resuelve dos problemas fundamentales de la transmisión binaria sin codificar: por un lado, permite contar los bits enviados incluso en largas secuencias de valores iguales, y por otro elimina el componente de corriente continua (DC) de la señal, que causaría distorsiones al transmitirse por transformadores o almacenarse en medios magnéticos. Esta misma codificación se usa hoy en día en discos floppy, mandos a distancia, Ethernet y etiquetas RFID, demostrando la vigencia de soluciones de ingeniería desarrolladas hace más de 70 años.\n\n[MULTIMEDIA: https://static.righto.com/images/shuttle-ioprocessor/manchester-w500.jpg]\n\nEl estudio de estas tarjetas no solo es un ejercicio de nostalgia tecnológica, sino que ofrece lecciones valiosas para el diseño de hardware crítico en misiones espaciales actuales y futuras. La redundancia extrema de los sistemas de red del Transbordador, por ejemplo, es un modelo a seguir para cualquier sistema donde un fallo pueda tener consecuencias catastróficas, mientras que la arquitectura multihilo del IOP anticipó tendencias que solo se popularizaron décadas después en la industria informática. Además, el uso de módulos híbridos y componentes discretos de alta fiabilidad, en lugar de circuitos integrados comerciales, recuerda que en entornos extremos la robustez suele ser más importante que la miniaturización o el coste.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T17:06:01.139Z",
+  "links": [
+    {
+      "title": "Artículo original del análisis de las tarjetas del IOP del Transbordador Espacial",
+      "url": "https://www.righto.com/2024/03/space-shuttle-io-processor.html"
+    },
+    {
+      "title": "Información oficial de la NASA sobre el sistema de computadoras del Transbordador",
+      "url": "https://www.nasa.gov/mission_pages/shuttle/flyout/computer_system.html"
+    },
+    {
+      "title": "Documentación de la codificación Manchester en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Codificación_Manchester"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Instrucciones por segundo de la CPU del Transbordador",
+      "value": "420.000 instrucciones por segundo"
+    },
+    {
+      "label": "Número de procesadores virtuales del IOP",
+      "value": "25 procesadores virtuales"
+    },
+    {
+      "label": "Conexiones por tarjeta de interfaz MIA",
+      "value": "4 redes de 1 Mbps por tarjeta"
+    },
+    {
+      "label": "Año de invención de la codificación Manchester",
+      "value": "1949"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

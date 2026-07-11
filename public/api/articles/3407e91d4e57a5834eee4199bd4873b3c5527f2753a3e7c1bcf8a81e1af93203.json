@@ -1,0 +1,78 @@
+{
+  "id": "3407e91d4e57a5834eee4199bd4873b3c5527f2753a3e7c1bcf8a81e1af93203",
+  "title": "Deja de memorizar sintaxis de JSONPath: esta herramienta genera expresiones automáticas solo con describir lo que necesitas",
+  "summary": "JSONPath Assistant de FormatList es una herramienta 100% basada en navegador que genera expresiones JSONPath válidas a partir de descripciones en lenguaje natural, sin necesidad de memorizar sintaxis compleja ni enviar datos a servidores externos. Incluye reintentos automáticos si la primera consulta no devuelve resultados, ejemplos precargados y herramientas complementarias para verificar rutas y explicar sintaxis desconocida.",
+  "url": "https://dev.to/hito_x_6cebe8e1c528573a2f/describe-your-json-query-in-english-get-jsonpath-instantly-4m9p",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T09:44:56.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwwvrc064adecggm2v1t3.png",
+  "imageAlt": "Deja de memorizar sintaxis de JSONPath: esta herramienta genera expresiones automáticas solo con describir lo que necesitas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "JSONPath Assistant de FormatList es una herramienta 100% basada en navegador que genera expresiones JSONPath válidas a partir de descripciones en lenguaje natural, sin necesidad de memorizar sintaxis compleja ni enviar datos a servidores externos. Incluye reintentos automáticos si la primera consulta no devuelve resultados, ejemplos precargados y herramientas complementarias para verificar rutas y explicar sintaxis desconocida.",
+  "keyPoints": [
+    "La herramienta genera expresiones JSONPath válidas a partir de descripciones en lenguaje natural, eliminando la necesidad de memorizar sintaxis compleja de filtros y rutas.",
+    "Todo el procesamiento se ejecuta de forma local en el navegador del usuario, sin envío de datos a servidores externos, APIs ni modelos de IA en la nube.",
+    "Si la primera consulta no devuelve resultados, el sistema reintenta automáticamente con variaciones más simples hasta encontrar las coincidencias buscadas.",
+    "Incluye ejemplos precargados de un clic, además de herramientas complementarias para verificar rutas en el árbol JSON y explicar sintaxis desconocida."
+  ],
+  "whyMatters": "Para los equipos de desarrollo que trabajan con APIs y documentos JSON a diario, esta herramienta elimina una curva de aprendizaje innecesaria, reduce errores de sintaxis y ahorra horas de consulta de documentación. Al procesarse de forma local sin envío de datos a terceros, elimina riesgos de filtración de información sensible en entornos empresariales o con datos de clientes. Su enfoque basado en reglas, sin dependencia de modelos de IA externos, garantiza consistencia y velocidad, convirtiéndola en un recurso imprescindible para mejorar la productividad en proyectos de manipulación de datos estructurados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwwvrc064adecggm2v1t3.png",
+      "alt": "Portada del artículo sobre JSONPath Assistant de FormatList",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo oficial de la comunidad DEV para desarrolladores",
+      "caption": "Logotipo de DEV Community, la plataforma de publicación donde se difundió la noticia original"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#JSONPath",
+    "#HerramientasParaDesarrolladores",
+    "#FormatList",
+    "#ProcesamientoJSON"
+  ],
+  "fullArticle": "Para cualquier desarrollador que trabaje con APIs y documentos JSON a diario, la sintaxis de JSONPath es uno de esos pequeños dolores de cabeza que se repiten constantemente: ¿era $[?(@.age > 18)] para filtrar por edad mayor a 18? ¿O $..users[?(@.active)] para obtener solo los usuarios activos? Memorizar estas estructuras, con sus filtros, comodines y rutas anidadas, supone una curva de aprendizaje innecesaria que resta productividad. Ahora, la herramienta JSONPath Assistant de la plataforma FormatList llega para solucionar este problema de forma sencilla: solo tienes que pegar tu documento JSON, describir en lenguaje natural lo que necesitas extraer, y la herramienta genera automáticamente una expresión JSONPath validada, además de mostrarte los resultados directamente en el navegador.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwwvrc064adecggm2v1t3.png]\nEl funcionamiento es extremadamente intuitivo: no requiere crear una cuenta, no pide una API key y, lo más importante, no envía ninguno de tus datos a servidores externos, ya que todo el procesamiento se ejecuta de forma local en tu navegador. Si la primera consulta no devuelve coincidencias, el sistema reintenta automáticamente con variaciones más simples de la expresión hasta encontrar los resultados que buscas, sin que tengas que modificar nada manualmente. Para que los usuarios puedan probar su funcionamiento antes de subir sus propios documentos, la herramienta incluye ejemplos precargados de un clic que permiten cargar JSON de prueba, pulsar el botón de generar y ver cómo funciona en segundos.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\nA pesar de llevar la etiqueta de 'IA', la herramienta no utiliza ningún modelo de lenguaje grande ni envía datos a servicios de inteligencia artificial externos: su funcionamiento se basa en coincidencia de patrones con reglas contra la estructura de tu JSON, por lo que analiza los nombres de los campos que tengas (usuarios, productos, pedidos o cualquier clave personalizada) y construye rutas que se adaptan a tu esquema específico. Esto garantiza que incluso documentos con información sensible, como registros de clientes, datos financieros o información de salud, nunca salen de tu equipo, eliminando cualquier riesgo de filtración o acceso no autorizado a terceros.\nEl ecosistema de FormatList complementa esta herramienta con dos utilidades adicionales orientadas a JSONPath: el Finder, que permite verificar rutas en el árbol JSON de forma visual haciendo clic en los nodos, y el Explainer, que explica sintaxis de JSONPath desconocidas para que los desarrolladores puedan entender y modificar las expresiones generadas. Además, se puede combinar con el JSON Formatter de la misma plataforma para dar formato a documentos JSON minificados, o con Repair ChatGPT JSON para arreglar documentos generados por modelos de IA que estén mal formados antes de procesarlos. Con esta herramienta, el tiempo que antes pasabas consultando documentación de JSONPath se reduce de minutos a segundos, lo que supone un ahorro considerable para equipos de desarrollo que manejan volúmenes altos de datos estructurados a diario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T10:07:29.509Z",
+  "links": [
+    {
+      "title": "Artículo original de JSONPath Assistant en Dev.to",
+      "url": "https://dev.to/formatlist/describe-your-json-query-in-english-get-jsonpath-instantly"
+    },
+    {
+      "title": "Sitio oficial de FormatList con herramientas para JSON",
+      "url": "https://formatlist.com"
+    },
+    {
+      "title": "Documentación oficial de JSONPath",
+      "url": "https://jsonpath.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción de tiempo para generar expresiones",
+      "value": "De 5 minutos de consulta de documentación a 5 segundos"
+    },
+    {
+      "label": "Herramientas JSONPath integradas en FormatList",
+      "value": "3 (Assistant, Finder, Explainer)"
+    },
+    {
+      "label": "Requisitos de uso de la herramienta",
+      "value": "Ninguno: no requiere cuenta, API key ni envío de datos a servidores"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

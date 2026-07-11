@@ -1,0 +1,76 @@
+{
+  "id": "9eaffff7e309958b79dbbca1d8a93b381f9225b9a1e6e657158f63e686e012d8",
+  "title": "ChowkChakra: la app de tráfico que conecta ciudadanos y autoridades con DynamoDB y Vercel",
+  "summary": "En el marco del H0 Hackathon, un desarrollador creó ChowkChakra, una plataforma que permite a los usuarios reportar problemas de tráfico en tiempo real, que luego son gestionados por las autoridades y verificados por los mismos ciudadanos, todo ello gracias a la arquitectura de alto rendimiento de Amazon DynamoDB y la rapidez de Vercel.",
+  "url": "https://dev.to/omkar598/how-i-built-a-civic-traffic-app-on-dynamodb-vercel-chowkchakra-h0hackathon-3oon",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T19:18:59.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi8k5q2pxas8v8ou5f2dh.png",
+  "imageAlt": "ChowkChakra: la app de tráfico que conecta ciudadanos y autoridades con DynamoDB y Vercel",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En el marco del H0 Hackathon, un desarrollador creó ChowkChakra, una plataforma que permite a los usuarios reportar problemas de tráfico en tiempo real, que luego son gestionados por las autoridades y verificados por los mismos ciudadanos, todo ello gracias a la arquitectura de alto rendimiento de Amazon DynamoDB y la rapidez de Vercel.",
+  "keyPoints": [
+    "ChowkChakra facilita la comunicación entre usuarios y autoridades mediante un sistema de reportes instantáneos y verificaciones en tiempo real",
+    "La arquitectura de DynamoDB permite lecturas en milisegundos y escrituras sin joins, garantizando alta disponibilidad y escalabilidad",
+    "Los incidentes se clasifican por tipo con SLA específicos: accidentes 1h, fallas de semáforo 2h, congestión 4h",
+    "La transacción de resolución es atómica, asegurando coherencia entre estado activo, histórico y contador de incidentes"
+  ],
+  "whyMatters": "La solución demuestra cómo la combinación de bases de datos NoSQL y plataformas de despliegue modernas puede resolver problemas de infraestructura urbana que tradicionalmente han sido ineficientes. Al cerrar la brecha de comunicación entre ciudadanos y autoridades, se promueve la transparencia y la respuesta proactiva, reduciendo tiempos de inactividad y mejorando la calidad de vida urbana. Este enfoque puede escalar a otras ciudades, convirtiéndose en un modelo replicable para la gestión inteligente de tráfico.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi8k5q2pxas8v8ou5f2dh.png",
+      "alt": "Imagen de portada de la aplicación ChowkChakra",
+      "caption": "Portada de la publicación que presenta la app de tráfico basada en DynamoDB y Vercel"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ChowkChakra",
+    "#DynamoDB",
+    "#Vercel",
+    "#Hackathon"
+  ],
+  "fullArticle": "La ciudad de Pune, India, enfrenta un problema de tráfico que va más allá de la congestión: la falta de canales de comunicación efectivos entre los ciudadanos y las autoridades.\n\nPara abordar esta brecha, el desarrollador de la entrada de Dev.to creó ChowkChakra, una aplicación que permite a los usuarios reportar incidentes como semáforos atascados, baches o inundaciones en tiempo real, y que las autoridades puedan gestionar estos reportes a través de un centro de mando.\n\nLa arquitectura se fundamenta en Amazon DynamoDB, que ofrece lecturas en milisegundos y escrituras sin joins, ideal para un sistema de alta escritura y lecturas basadas en claves. Se separa la tabla de incidentes activos de la histórica, evitando escaneos completos y manteniendo la tabla activa ligera. Los incidentes tienen SLA definidos: accidentes 1h, fallas de semáforo 2h y congestión 4h, y el cálculo de penalizaciones se realiza al leer, eliminando la necesidad de trabajos cron.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fi8k5q2pxas8v8ou5f2dh.png]\n\nLa transacción de resolución es atómica: si cualquiera de los tres pasos (marcar como resuelto, actualizar contador y archivar) falla, la operación completa se revierte, garantizando coherencia.\n\nEl proyecto no solo resuelve un problema local, sino que ofrece un modelo replicable para ciudades que buscan integrar tecnología de bases de datos modernas y despliegues serverless para mejorar la gestión del tráfico y la participación ciudadana.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T19:47:55.675Z",
+  "links": [
+    {
+      "title": "Publicación original en Dev.to",
+      "url": "https://dev.to/author/chowkchakra-h0hackathon"
+    },
+    {
+      "title": "Documentación de Amazon DynamoDB",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+    },
+    {
+      "title": "Guía rápida de Vercel",
+      "url": "https://vercel.com/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de respuesta de lecturas",
+      "value": "< 10 ms"
+    },
+    {
+      "label": "SLA de accidentes",
+      "value": "1 hora"
+    },
+    {
+      "label": "SLA de señal de tráfico",
+      "value": "2 horas"
+    },
+    {
+      "label": "SLA de congestión",
+      "value": "4 horas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,89 @@
+{
+  "id": "08d69b0ae2d0205d0bbe4d887b33497e77e5bab43ad7478cb5c9752a37b72d8d",
+  "title": "Cómo demostrar que un agente de IA generó un resultado: x402 y anclaje en NEAR",
+  "summary": "Un nuevo servicio de notarización, AOTrust, permite a los desarrolladores de IA registrar de forma criptográfica la existencia de cualquier salida generada, con un coste de solo 0,01 USDC. La solución combina pagos inline con x402, firmas Ed25519 y anclaje en la cadena NEAR mediante árboles Merkle.",
+  "url": "https://dev.to/gitsergecrypto/how-to-prove-an-ai-agent-output-existed-x402-near-anchoring-in-practice-2ede",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T20:35:22.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkrkt7w274m5jxn8pu6yo.png",
+  "imageAlt": "Cómo demostrar que un agente de IA generó un resultado: x402 y anclaje en NEAR",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un nuevo servicio de notarización, AOTrust, permite a los desarrolladores de IA registrar de forma criptográfica la existencia de cualquier salida generada, con un coste de solo 0,01 USDC. La solución combina pagos inline con x402, firmas Ed25519 y anclaje en la cadena NEAR mediante árboles Merkle.",
+  "keyPoints": [
+    "AOTrust ofrece notarizaciones de hash por 0,01 USDC usando el protocolo x402 en Base L2.",
+    "El proceso completo, desde la firma hasta la solicitud, dura entre 2 y 5 segundos sin necesidad de polling.",
+    "Los registros de Provenance Data Record (PDR) tienen 239 bytes y se pueden verificar localmente con Ed25519.",
+    "Cada 16 minutos, los PDR se agrupan en un árbol Merkle cuyo raíz se ancla en la cadena NEAR, añadiendo una capa de timestamp independiente."
+  ],
+  "whyMatters": "La fiabilidad de los resultados de IA es cada vez más crítica en sectores como la finanza, la medicina y la auditoría. Con AOTrust, las organizaciones pueden demostrar de forma inmutable que un informe o código fue generado en un momento concreto, reduciendo riesgos de fraude y aumentando la confianza del cliente. Además, el bajo coste y la facilidad de integración hacen que la trazabilidad criptográfica sea accesible incluso para startups.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkrkt7w274m5jxn8pu6yo.png",
+      "alt": "Portada del artículo sobre notarización de IA",
+      "caption": "Imagen que ilustra el concepto de notarización de resultados de IA con x402 y NEAR."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logo de Google AI como socio oficial",
+      "caption": "Google AI aparece como socio oficial del proyecto, reforzando su credibilidad tecnológica."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de DEV Community",
+      "caption": "La comunidad de desarrolladores DEV Community respalda el proyecto, destacando su relevancia en la comunidad."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#X402",
+    "#NEAR",
+    "#AOTrust",
+    "#Ed25519",
+    "#Merkle"
+  ],
+  "fullArticle": "El auge de los agentes de IA ha traído consigo una nueva preocupación: la trazabilidad de sus salidas. Cuando un modelo genera un informe financiero, un código de revisión o un resumen médico, un tercero puede cuestionar la autenticidad del documento, la fecha de creación o la integridad del contenido. Los registros tradicionales, como los logs o Git, son mutables y pueden ser alterados o borrados, por lo que no garantizan una prueba firme.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkrkt7w274m5jxn8pu6yo.png]\n\nPara resolver este problema, el servicio AOTrust introduce un flujo de notarización basado en el protocolo x402 de Base L2. Cuando un desarrollador envía la solicitud, la API devuelve un código HTTP 402 (Payment Required) en formato x402. El cliente firma un mensaje EIP-3009 con su wallet Base y envía el pago junto con la petición, todo en una sola llamada. El coste es fijo: 10 000 micro‑USDC, es decir, 0,01 USDC. No hay suscripciones ni créditos prepagados, lo que simplifica la experiencia.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nEl núcleo de la solución es el Provenance Data Record (PDR). El hash del artefacto se envía al notario, que genera una firma Ed25519 de 64 bytes. El PDR ocupa solo 239 bytes y se puede verificar localmente sin contactar al servidor, garantizando la integridad criptográfica. Cada 16 minutos, el notario agrupa los PDR en un árbol Merkle y ancla la raíz en la cadena NEAR, añadiendo un sello de tiempo independiente basado en el consenso de la red. Así, la prueba de existencia combina una firma inmediata con un timestamp on‑chain fiable.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEl impacto de esta tecnología es amplio. En finanzas, las firmas digitales pueden respaldar la auditoría de estados financieros generados por IA. En la medicina, los resúmenes clínicos pueden ser verificados de forma instantánea. Además, el bajo coste y la rapidez del proceso hacen que la trazabilidad criptográfica sea viable incluso para pequeñas empresas, democratizando la confianza en la era de la IA generativa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T20:43:05.129Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article-title"
+    },
+    {
+      "title": "Documentación oficial de Base L2",
+      "url": "https://docs.base.org"
+    },
+    {
+      "title": "Sitio oficial de NEAR Protocol",
+      "url": "https://near.org"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo de notarización",
+      "value": "$0,01 USDC"
+    },
+    {
+      "label": "Tamaño del PDR",
+      "value": "239 bytes"
+    },
+    {
+      "label": "Intervalo de anclaje",
+      "value": "16 minutos"
+    },
+    {
+      "label": "Algoritmo de firma",
+      "value": "Ed25519"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

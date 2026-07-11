@@ -1,0 +1,74 @@
+{
+  "id": "b38c17b34814219425ae6a105832649a5be851c66913460e5cdb5a5cc72ccddc",
+  "title": "Validación de formularios sin Formik ni React Hook Form: trata tus reglas como lógica de dominio",
+  "summary": "El artículo explica cómo mover la lógica de validación de formularios React de librerías externas a clases de dominio, reduciendo duplicaciones, mejorando rendimiento y facilitando pruebas y mantenibilidad.",
+  "url": "https://dev.to/chacaponquin/form-validation-without-formik-or-react-hook-form-treat-your-rules-as-domain-logic-2j8e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T00:16:50.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqj0tugv1qa8td4duxpl4.jpeg",
+  "imageAlt": "Validación de formularios sin Formik ni React Hook Form: trata tus reglas como lógica de dominio",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo mover la lógica de validación de formularios React de librerías externas a clases de dominio, reduciendo duplicaciones, mejorando rendimiento y facilitando pruebas y mantenibilidad.",
+  "keyPoints": [
+    "Las librerías de formularios dispersan la regla de negocio, generando duplicaciones y dificultando su reutilización.",
+    "El rendimiento se ve afectado por sus subscripciones y ciclos de vida, especialmente en formularios con más de 10 campos.",
+    "Al tratar la validación como lógica de dominio, se obtiene un código más limpio, testeable y listo para migrar al backend."
+  ],
+  "whyMatters": "En el desarrollo de aplicaciones web modernas, la calidad del código y la eficiencia son críticos para la escalabilidad y la rapidez de lanzamiento. Al centralizar la lógica de validación en el dominio, los equipos reducen los errores de duplicación y aumentan la velocidad de pruebas, lo que se traduce en entregas más rápidas y menos deuda técnica. Además, esta práctica facilita la migración de validaciones al servidor, garantizando consistencia entre cliente y backend.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqj0tugv1qa8td4duxpl4.jpeg",
+      "alt": "Imagen de portada del artículo sobre validación de formularios sin librerías externas",
+      "caption": "Imagen de portada que ilustra el tema de la validación de formularios en React sin depender de librerías como Formik o React Hook Form"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#React",
+    "#ValidacionDeFormularios",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "En el desarrollo con React, la tentación de usar librerías como Formik o React Hook Form es enorme: basta con instalarla, añadir un esquema de Zod o Yup y en diez minutos el formulario parece funcionar. Sin embargo, la verdadera falla aparece meses después, cuando la misma regla de negocio –por ejemplo, \"17 caracteres, los últimos 5 numéricos\" para un VIN– se necesita en múltiples contextos: creación, edición y importación desde Excel. Cada vez que se copia la regla, se introduce una variación sutil y, al final, no existe un único lugar donde se defina lo que constituye un VIN válido.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqj0tugv1qa8td4duxpl4.jpeg]\n\nEl uso de librerías de formularios conlleva tres costes invisibles: la dispersión del código limpio, el rendimiento y la dependencia del ciclo de vida de la librería, y la trampa de la conveniencia que dificulta pruebas unitarias o la migración al backend. Estas librerías están diseñadas para conectar inputs con el estado, no para decidir qué es válido. Cuando delegamos esa responsabilidad a ellas, la lógica de dominio se filtra hacia la capa de presentación, generando duplicaciones y dificultando su reutilización.\n\nLa solución propuesta es simple pero poderosa: tratar cada campo inválido como una regla de dominio, no como estado de UI. Una regla es un objeto puro que, sin estado ni dependencias de React, recibe los datos necesarios a través de su constructor y devuelve una lista de errores. Si la lista está vacía, el campo es válido. Esta separación permite que el componente se limite a renderizar y disparar eventos, mientras que la lógica de validación permanece en el dominio, testeable, traducible y lista para pasar al servidor sin reescribirla.\n\nEl autor presenta un contrato de cuatro líneas, reglas como clases y composición sin herencia complicada. Al consumir estas reglas desde un componente con un simple useState, se logra un código más limpio y mantenible, con la posibilidad de probar la lógica de validación sin montar componentes, de traducirla a múltiples idiomas sin ensuciar el esquema y de migrarla al backend cuando sea necesario.\n\nEn síntesis, al mover la validación al dominio se obtienen beneficios tangibles: reducción de duplicaciones, mejora del rendimiento, mayor testabilidad y una base de código más coherente y escalable.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T00:43:54.458Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de React Hook Form",
+      "url": "https://react-hook-form.com/"
+    },
+    {
+      "title": "Guía de Zod para validación de esquemas",
+      "url": "https://zod.dev/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de campos en formulario típico",
+      "value": "15"
+    },
+    {
+      "label": "Tiempo de desarrollo con librerías",
+      "value": "10 minutos"
+    },
+    {
+      "label": "Número de duplicaciones de la regla de VIN",
+      "value": "3"
+    },
+    {
+      "label": "Costo de mantenimiento a largo plazo",
+      "value": "Elevado"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

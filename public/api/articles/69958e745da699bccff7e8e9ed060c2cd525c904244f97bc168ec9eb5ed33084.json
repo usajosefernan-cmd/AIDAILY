@@ -1,0 +1,73 @@
+{
+  "id": "69958e745da699bccff7e8e9ed060c2cd525c904244f97bc168ec9eb5ed33084",
+  "title": "IA en tu Radeon 780M: la guía definitiva para ejecutar modelos de inteligencia artificial en tu GPU integrada sin tarjeta dedicada",
+  "summary": "Guía práctica paso a paso para instalar librerías de inteligencia artificial en GPUs Radeon 780M y toda la familia gfx110X, con requisitos previos, comandos diferenciados para Linux y Windows, y opción de usar herramientas como ComfyUI para creación generativa sin necesidad de escribir código.",
+  "url": "https://dev.to/hizar_radeon_780m/ai-on-ardeon-780m-d1i",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T18:31:37.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7qcam09frwp6n5jeelve.png",
+  "imageAlt": "IA en tu Radeon 780M: la guía definitiva para ejecutar modelos de inteligencia artificial en tu GPU integrada sin tarjeta dedicada",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Guía práctica paso a paso para instalar librerías de inteligencia artificial en GPUs Radeon 780M y toda la familia gfx110X, con requisitos previos, comandos diferenciados para Linux y Windows, y opción de usar herramientas como ComfyUI para creación generativa sin necesidad de escribir código.",
+  "keyPoints": [
+    "La guía está diseñada para GPUs Radeon 780M y toda la familia gfx110X, con compatibilidad confirmada para sistemas Linux y Windows.",
+    "Requiere un mínimo de 16 GB de RAM, 5 GB de espacio libre en disco y conexión a internet de alta velocidad para descargar los paquetes de ROCm.",
+    "Es imprescindible configurar el búfer UMA en la BIOS al 50 % de la RAM total del sistema para garantizar el rendimiento de los modelos de IA.",
+    "Incluye pasos diferenciados para Linux (con soporte completo de Tritón y Flax) y Windows (sin soporte para estas librerías)."
+  ],
+  "whyMatters": "Esta guía democratiza el acceso a la ejecución de modelos de inteligencia artificial en hardware integrado de gama media, eliminando la necesidad de invertir en costosas tarjetas gráficas dedicadas para usuarios que quieren experimentar con IA sin grandes desembolsos. Aprovechar la Radeon 780M, una GPU integrada en procesadores AMD Ryzen de última generación, abre posibilidades para desarrolladores aficionados, estudiantes y pequeños creadores que no cuentan con presupuestos para equipos de gama alta. Además, la opción de usar herramientas como ComfyUI en este hardware reduce la barrera de entrada para la creación de contenido generativo, impulsando la adopción de la IA en sectores donde el costo de infraestructura suele ser un obstáculo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7qcam09frwp6n5jeelve.png",
+      "alt": "Portada de la guía para instalar IA en Radeon 780M",
+      "caption": "Imagen de portada del artículo original de Dev.to que explica cómo ejecutar modelos de IA en la GPU integrada Radeon 780M"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Radeon780M",
+    "#AMD",
+    "#InteligenciaArtificial",
+    "#GuiaIA",
+    "#ROCm"
+  ],
+  "fullArticle": "La comunidad de desarrolladores de Dev.to ha publicado una guía paso a paso que permite ejecutar modelos de inteligencia artificial en la GPU integrada Radeon 780M, un hardware presente en los procesadores AMD Ryzen 7000 series de gama media, sin necesidad de invertir en tarjetas gráficas dedicadas de alto costo. El documento, dirigido tanto a usuarios de Linux como de Windows, desglosa los requisitos previos, los comandos de instalación y las consideraciones de rendimiento para aprovechar al máximo las capacidades de aceleración de esta GPU de arquitectura gfx110X, que hasta ahora había sido subutilizada en tareas de IA por la falta de documentación accesible.\n\nEntre los requisitos obligatorios se encuentra una memoria RAM de al menos 16 GB, que debe configurarse en la BIOS para asignar la mitad de su capacidad al búfer UMA, un parámetro que determina la cantidad de memoria compartida entre la CPU y la GPU integrada. También es necesaria una conexión a internet de alta velocidad, ya que los paquetes de instalación incluyen todas las dependencias de ROCm, el framework de computación acelerada de AMD, que superan los 5 GB de peso. Los usuarios de Linux, preferiblemente Fedora o distribuciones basadas en RHEL, contarán con soporte completo para librerías como Tritón y Flax, mientras que los usuarios de Windows solo podrán ejecutar modelos compatibles con PyTorch, ya que estas dos librerías no tienen soporte oficial para el sistema operativo de Microsoft.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7qcam09frwp6n5jeelve.png]\n\nEl proceso de instalación se divide en bloques de comandos diferenciados para cada sistema operativo, marcados con una 'w' para Windows y una 'l' para Linux, y comienza con la creación de un entorno virtual de Python para evitar conflictos con dependencias del sistema. Una vez finalizada la instalación de los paquetes base, los usuarios pueden optar por escribir su propio código de IA o instalar herramientas de interfaz gráfica como ComfyUI, una plataforma de creación de contenido generativo que permite ejecutar modelos de Stable Diffusion y otras arquitecturas sin necesidad de escribir líneas de código. La guía advierte que el proceso de descarga e instalación puede tardar varios minutos y que es normal que la terminal parezca congelada durante la instalación de ROCm, por lo que se recomienda no interrumpir el proceso.\n\nEsta iniciativa supone un punto de inflexión para la democratización de la inteligencia artificial, ya que permite a millones de usuarios con equipos de gama media acceder a herramientas de desarrollo y creación generativa que hasta ahora estaban reservadas para quienes podían permitirse tarjetas gráficas dedicadas de más de 500 euros. La Radeon 780M, con sus 12 unidades de cómputo y soporte de aceleración por hardware, ofrece un rendimiento suficiente para ejecutar modelos pequeños y medianos de lenguaje y generación de imágenes, lo que la convierte en una opción ideal para estudiantes, desarrolladores aficionados y pequeños creadores de contenido. A medida que AMD mejore el soporte de ROCm para GPUs integradas, es probable que veamos una adopción masiva de este tipo de soluciones en los próximos años, reduciendo la brecha digital en el acceso a herramientas de inteligencia artificial.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T20:51:34.784Z",
+  "links": [
+    {
+      "title": "Documentación oficial de ROCm para desarrolladores de AMD",
+      "url": "https://rocm.docs.amd.com"
+    },
+    {
+      "title": "Página oficial de AMD sobre procesadores Ryzen con gráficos Radeon 780M",
+      "url": "https://www.amd.com/es/products/processors/ryzen.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Memoria RAM mínima requerida",
+      "value": "16 GB"
+    },
+    {
+      "label": "Espacio libre mínimo en disco",
+      "value": "5 GB"
+    },
+    {
+      "label": "Arquitectura de GPU compatible",
+      "value": "gfx110X"
+    },
+    {
+      "label": "Porcentaje de RAM a asignar al búfer UMA",
+      "value": "50 %"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

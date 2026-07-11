@@ -1,0 +1,87 @@
+{
+  "id": "ec50cca354ba17c28a1c6942779fcb19b8c112424e3797fd47d0050e556dc051",
+  "title": "Flipper Zero vuelve a la pista: el firmware oficial retoma su desarrollo con nuevas reglas",
+  "summary": "El equipo de Flipper Zero ha decidido reactivar el desarrollo de su firmware tras la reacción de la comunidad. Se han asignado recursos para mantener el firmware, aceptar contribuciones y establecer un proceso de votación en GitHub Discussions.",
+  "url": "https://blog.flipper.net/future-of-flipper-zero-development/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-05T18:22:00.000Z",
+  "imageUrl": "https://blog.flipper.net/content/images/size/w1200/2026/07/Flipper-Zero-Development.jpg",
+  "imageAlt": "Flipper Zero vuelve a la pista: el firmware oficial retoma su desarrollo con nuevas reglas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El equipo de Flipper Zero ha decidido reactivar el desarrollo de su firmware tras la reacción de la comunidad. Se han asignado recursos para mantener el firmware, aceptar contribuciones y establecer un proceso de votación en GitHub Discussions.",
+  "keyPoints": [
+    "El firmware de Flipper Zero, limitado a 700 KB de flash, se mantiene gracias a una arquitectura de apps dinámicas cargadas desde microSD.",
+    "El equipo ha pasado de la producción de hardware a la gestión de la infraestructura del firmware, enfocándose en el mantenimiento y corrección de errores críticos.",
+    "Las peticiones de la comunidad ahora se canalizan a GitHub Discussions, donde los usuarios votan las características que realmente importan.",
+    "Con más de un millón de usuarios, la comunicación directa se volvió imposible, lo que impulsó la adopción de un modelo abierto y participativo."
+  ],
+  "whyMatters": "El regreso del desarrollo oficial del firmware de Flipper Zero representa un hito para la comunidad de hacking ético y makers. Al establecer un proceso de votación y pruebas de integración, el proyecto garantiza una evolución más sostenible y alineada con las necesidades reales de sus usuarios. Además, la transición a un modelo de colaboración abierta puede inspirar a otros proyectos de hardware abierto a adoptar prácticas similares, fortaleciendo la innovación colectiva en el sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://blog.flipper.net/content/images/size/w1200/2026/07/Flipper-Zero-Development.jpg",
+      "alt": "Portada del artículo sobre el futuro del desarrollo de Flipper Zero",
+      "caption": "Imagen de portada que muestra el logo de Flipper Zero y el título del artículo."
+    },
+    {
+      "type": "image",
+      "url": "https://blog.flipper.net/content/images/2026/06/Flipper-Zero-voting-on-features.png",
+      "alt": "Gráfico de votación de características en GitHub Discussions",
+      "caption": "Representación visual de cómo los usuarios votan las características que desean en el firmware."
+    },
+    {
+      "type": "image",
+      "url": "https://blog.flipper.net/content/images/2026/06/Flipper-Zero-Good-vs-Bad-feature-request--1-.png",
+      "alt": "Comparación entre buenas y malas peticiones de características",
+      "caption": "Ilustración que distingue las solicitudes útiles de las que no aportan valor al proyecto."
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#FlipperZero",
+    "#FirmwareOpenSource",
+    "#HackingEthico"
+  ],
+  "fullArticle": "El lanzamiento de Flipper Zero en Kickstarter generó una ola de apoyo que, junto con la presión de los críticos, definió el rumbo del proyecto. A pesar de los contratiempos de la post‑COVID y de la escasez de componentes, el equipo logró entregar el dispositivo y, sobre todo, una base de firmware funcional. \n\nSin embargo, la memoria flash de 700 KB del hardware limitó la expansión de nuevas funciones. La solución fue una arquitectura de apps dinámicas que se cargan desde una tarjeta microSD, permitiendo mover funcionalidades del firmware a aplicaciones externas. Esta innovación dio origen a la versión estable 1.0, lanzada en 2024 junto con un catálogo de aplicaciones.\n\n[MULTIMEDIA: https://blog.flipper.net/content/images/size/w1200/2026/07/Flipper-Zero-Development.jpg]\n\nCon la base establecida, el equipo decidió cambiar su enfoque: mantener la infraestructura y corregir errores críticos, mientras se concentra en el desarrollo de nuevos dispositivos. Paralelamente, la comunidad de usuarios, que ya superó el millón, demandaba una forma más organizada de participar en la evolución del firmware.\n\n[MULTIMEDIA: https://blog.flipper.net/content/images/2026/06/Flipper-Zero-voting-on-features.png]\n\nPara responder, las peticiones de la comunidad se trasladaron a GitHub Discussions, donde los usuarios pueden votar las características que consideran prioritarias. Se establecieron nuevas reglas de pull request y pruebas de integración obligatorias, buscando mayor calidad y colaboración.\n\n[MULTIMEDIA: https://blog.flipper.net/content/images/2026/06/Flipper-Zero-Good-vs-Bad-feature-request--1-.png]\n\nEl equipo agradece a todos los que apoyaron la campaña de Kickstarter en 2020, afirmando que sin ese respaldo el proyecto no habría existido. Hoy, con una comunidad activa y un proceso de desarrollo más transparente, Flipper Zero se posiciona como un referente en hardware hacking y desarrollo abierto.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T03:05:55.560Z",
+  "links": [
+    {
+      "title": "Sitio oficial de Flipper Zero",
+      "url": "https://flipperzero.one"
+    },
+    {
+      "title": "GitHub Discussions de Flipper Zero",
+      "url": "https://github.com/flipperdevices/flipperzero-apps/discussions"
+    },
+    {
+      "title": "Kickstarter de Flipper Zero",
+      "url": "https://www.kickstarter.com/projects/flipperdevices/flipper-zero-1"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Memoria flash del firmware",
+      "value": "700 KB"
+    },
+    {
+      "label": "Usuarios totales",
+      "value": "1 millón"
+    },
+    {
+      "label": "Versión estable 1.0",
+      "value": "2024"
+    },
+    {
+      "label": "Fecha de lanzamiento Kickstarter",
+      "value": "2019"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

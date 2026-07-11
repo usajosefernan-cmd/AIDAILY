@@ -1,0 +1,83 @@
+{
+  "id": "f0b4194f51bf1c27421b15fa39f22ad32897f3ad6a44e86e551e513faca8f243",
+  "title": "Así creé en un fin de semana un rastreador de ballenas en tiempo real para Polymarket",
+  "summary": "Un desarrollador creó WhaleTrack, una herramienta de código abierto que rastrea en tiempo real las operaciones de los principales traders de Polymarket, el mercado de predicción que ya mueve 3.600 millones de dólares en volumen.",
+  "url": "https://dev.to/manpreet_brar_264e408885a/how-i-built-a-real-time-whale-tracker-for-polymarket-in-a-weekend-130e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T17:23:10.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvjfnv6ajhgdc08o1moxk.png",
+  "imageAlt": "Así creé en un fin de semana un rastreador de ballenas en tiempo real para Polymarket",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creó WhaleTrack, una herramienta de código abierto que rastrea en tiempo real las operaciones de los principales traders de Polymarket, el mercado de predicción que ya mueve 3.600 millones de dólares en volumen.",
+  "keyPoints": [
+    "Polymarket, el mercado de predicción líder, alcanzó los 3.600 millones de dólares en volumen de operaciones, lo que impulsó la creación de la herramienta.",
+    "WhaleTrack rastrea a los 10 principales traders (ballenas) del mercado, mostrando su actividad reciente, tamaño de operaciones en USDC y tasa de acierto.",
+    "La herramienta se construyó en un fin de semana con JavaScript vainilla, una función serverless en Vercel y la API pública de Polymarket, sin necesidad de autenticación.",
+    "Incluye una alerta automática para operaciones superiores a 5.000 dólares realizadas en los últimos 10 minutos por los traders más grandes."
+  ],
+  "whyMatters": "Esta herramienta democratiza el acceso a información que antes solo estaba disponible para traders experimentados, permitiendo a pequeños inversores seguir los movimientos del 'dinero inteligente' en los mercados de predicción. Su desarrollo en código abierto y con tecnologías accesibles sienta un precedente para la creación de herramientas de análisis rápido en sectores financieros emergentes. A medida que los mercados de predicción crecen, herramientas como WhaleTrack se volverán esenciales para reducir la asimetría de información y mejorar la transparencia de un ecosistema aún poco regulado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvjfnv6ajhgdc08o1moxk.png",
+      "alt": "Portada del artículo que explica la creación de WhaleTrack, el rastreador de ballenas para Polymarket",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el creador de WhaleTrack"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, la plataforma donde se publicó el artículo original",
+      "caption": "Logotipo de DEV Community, la comunidad de desarrolladores donde se compartió el proyecto WhaleTrack"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#WhaleTrack",
+    "#Polymarket",
+    "#MercadosDePrediccion",
+    "#DesarrolloWeb",
+    "#CriptoFinanzas"
+  ],
+  "fullArticle": "Los mercados de predicción se han convertido en uno de los ecosistemas financieros de mayor crecimiento en los últimos años, con un volumen de operaciones que ya supera los 3.600 millones de dólares a nivel global. Sin embargo, hasta ahora los inversores minoristas carecían de herramientas para seguir en tiempo real los movimientos de los traders más grandes, conocidos como 'ballenas', cuyas apuestas suelen marcar tendencias en estos mercados. Esta brecha de información fue lo que motivó a un desarrollador a crear WhaleTrack, una herramienta de código abierto que rastrea la actividad de los principales operadores de Polymarket, la plataforma de mercados de predicción más popular del mundo, en tan solo un fin de semana.\n\nLa herramienta se construyó con un stack técnico minimalista pero muy eficiente: un frontend desarrollado en JavaScript vainilla, sin frameworks adicionales para garantizar la máxima velocidad de carga; una función serverless alojada en Vercel que actúa como proxy para evitar problemas de CORS al consultar la API pública de Polymarket, que no requiere autenticación para acceder a sus datos. El resultado es una plataforma ligera que se actualiza cada 60 segundos para mostrar la actividad más reciente de los traders más rentables del mercado.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fvjfnv6ajhgdc08o1moxk.png]\n\nEl funcionamiento de WhaleTrack se basa en cuatro pasos clave. En primer lugar, consulta el endpoint público de leaderboard de Polymarket para identificar a los 10 traders con mayor rentabilidad histórica, cuyas direcciones de wallet conforman la lista de 'ballenas' a seguir. En segundo lugar, extrae su actividad reciente de operaciones, incluyendo el nombre del mercado, el tamaño de la apuesta en USDC y la fecha y hora de la transacción. El paso más complejo fue el cálculo de la tasa de acierto de cada trader, que se logra analizando el estado de sus posiciones: aquellas con el marcador 'redeemable' en verdadero corresponden a mercados resueltos a su favor, mientras que las posiciones con valor actual cero y 'redeemable' falso son apuestas perdidas. Con estos datos, la herramienta calcula el porcentaje de aciertos de cada ballena de forma precisa.\n\nLa funcionalidad más popular entre los usuarios es el banner de alerta de operaciones grandes, que se activa cada vez que se detecta una apuesta superior a 5.000 dólares realizada por alguna de las ballenas en los últimos 10 minutos. Esta alerta se ordena por tamaño de operación, de mayor a menor, para que los inversores puedan identificar rápidamente los movimientos más relevantes del 'dinero inteligente'. El desarrollador ha liberado el código de la herramienta de forma abierta, por lo que cualquier usuario puede consultarlo, modificarlo o desplegar su propia versión sin costo alguno.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T17:45:52.637Z",
+  "links": [
+    {
+      "title": "Artículo original del creador de WhaleTrack en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de la API de datos de Polymarket",
+      "url": "https://docs.polymarket.com/"
+    },
+    {
+      "title": "Sitio oficial de Polymarket",
+      "url": "https://polymarket.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Volumen total de mercados de predicción",
+      "value": "3.600 millones de dólares"
+    },
+    {
+      "label": "Número de ballenas rastreadas por WhaleTrack",
+      "value": "10 principales traders"
+    },
+    {
+      "label": "Umbral de alerta de operaciones grandes",
+      "value": "5.000 dólares en los últimos 10 minutos"
+    },
+    {
+      "label": "Frecuencia de actualización de datos",
+      "value": "Cada 60 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

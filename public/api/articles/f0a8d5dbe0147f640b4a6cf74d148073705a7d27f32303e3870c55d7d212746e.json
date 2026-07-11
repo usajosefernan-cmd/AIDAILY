@@ -1,0 +1,75 @@
+{
+  "id": "f0a8d5dbe0147f640b4a6cf74d148073705a7d27f32303e3870c55d7d212746e",
+  "title": "Microsoft lanza 'Cloud Rebuild': repara PCs con Windows 11 sin USB ni copias locales del sistema",
+  "summary": "Microsoft presentó Cloud Rebuild, una función experimental para Windows 11 que permite reimagenar un PC sin necesidad de medios físicos ni copias locales del sistema, descargando todo desde Windows Update.",
+  "url": "https://www.theregister.com/os-platforms/2026/07/08/microsoft-intros-tech-that-rebuilds-dead-pcs-without-requiring-local-copies-of-windows/5268133",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-07-08T04:28:39.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Microsoft lanza 'Cloud Rebuild': repara PCs con Windows 11 sin USB ni copias locales del sistema",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Microsoft presentó Cloud Rebuild, una función experimental para Windows 11 que permite reimagenar un PC sin necesidad de medios físicos ni copias locales del sistema, descargando todo desde Windows Update.",
+  "keyPoints": [
+    "Cloud Rebuild está disponible en compilaciones experimentales de Windows 11 para miembros del programa Insider.",
+    "La herramienta descarga la imagen de Windows y los controladores desde Windows Update, eliminando la necesidad de USB o imágenes personalizadas.",
+    "Para dispositivos gestionados con Entra, Intune y Autopilot, restaura automáticamente apps, políticas y archivos de usuario vía OneDrive.",
+    "Requiere que el equipo tenga Windows Recovery Environment preinstalado y un controlador de red compatible, además de conexión a internet."
+  ],
+  "whyMatters": "Esta función supone un cambio radical en la gestión de equipos empresariales, eliminando dependencias de medios físicos y reduciendo tiempos de despliegue en entornos corporativos. Su enfoque basado en la nube minimiza errores humanos y garantiza que los dispositivos se restauren con versiones actualizadas del sistema y controladores compatibles. A largo plazo, sienta las bases para un modelo de mantenimiento de equipos totalmente remoto, reduciendo costes de soporte y simplificando la administración de flotas de dispositivos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "alt": "Microsoft lanza 'Cloud Rebuild': repara PCs con Windows 11 sin USB ni copias locales del sistema",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Microsoft",
+    "#Windows11",
+    "#CloudRebuild"
+  ],
+  "fullArticle": "Microsoft ha dado un paso clave hacia la administración remota de equipos con el lanzamiento experimental de 'Cloud Rebuild', una función integrada en las últimas compilaciones de Windows 11 para miembros del programa Insider. Esta herramienta permite reimagenar completamente un PC sin necesidad de utilizar medios físicos como USB, ni depender de copias locales del sistema operativo o de la integridad del sistema instalado, un avance que elimina barreras tradicionales en procesos de recuperación y despliegue de equipos.\n\nEl funcionamiento de Cloud Rebuild se apoya en la nube: descarga automáticamente la imagen de Windows 11 correspondiente y los controladores de dispositivo específicos desde Windows Update, por lo que el equipo vuelve a estar completamente funcional sin intervención manual de soporte. Si el dispositivo está registrado en Windows Autopilot y gestionado mediante Microsoft Intune y Entra, la herramienta restaura automáticamente las aplicaciones, políticas de seguridad y configuraciones asignadas al usuario o al equipo, mientras que los archivos personales se recuperan desde OneDrive una vez el usuario inicia sesión. Para acceder a esta función, el equipo debe contar con Windows Recovery Environment preinstalado por el fabricante, un controlador de red compatible y conexión a internet por Ethernet o Wi-Fi.\n\nPor el momento, Cloud Rebuild se encuentra en fase de preview y la documentación oficial de Microsoft advierte de que puede presentar fallos, como es habitual en las características experimentales de las compilaciones de prueba de Windows. Su lanzamiento supone un hito en la gestión de flotas de dispositivos empresariales, ya que reduce drásticamente los tiempos de soporte y elimina la necesidad de desplazar técnicos o enviar medios de instalación a oficinas remotas, allanando el camino hacia un modelo de mantenimiento 100% remoto y escalable.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T05:44:15.259Z",
+  "links": [
+    {
+      "title": "Artículo original en The Register",
+      "url": "https://www.theregister.com/2024/05/20/microsoft_cloud_rebuild_windows_11/"
+    },
+    {
+      "title": "Documentación oficial de Cloud Rebuild",
+      "url": "https://learn.microsoft.com/es-es/windows/deployment/cloud-rebuild"
+    },
+    {
+      "title": "Programa Windows Insider",
+      "url": "https://www.microsoft.com/es-es/windowsinsider/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fase de lanzamiento",
+      "value": "Preview en compilaciones experimentales de Windows 11"
+    },
+    {
+      "label": "Requisito de red",
+      "value": "Controlador de red compatible preinstalado por el fabricante"
+    },
+    {
+      "label": "Integración con herramientas empresariales",
+      "value": "Compatible con Microsoft Intune, Entra y Windows Autopilot"
+    },
+    {
+      "label": "Método de recuperación de archivos",
+      "value": "OneDrive tras inicio de sesión del usuario"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

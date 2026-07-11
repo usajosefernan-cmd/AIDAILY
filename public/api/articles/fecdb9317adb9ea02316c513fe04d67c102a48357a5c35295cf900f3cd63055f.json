@@ -1,0 +1,45 @@
+{
+  "aiSummary": "Las decisiones de ingeniería se toman en sesiones de IA, pero al cerrar la pestaña se pierden, dejando a los equipos sin un historial de razonamientos ni documentación de procesos.",
+  "category": "tecnologia",
+  "fullArticle": "En el mundo del desarrollo de software, el historial de commits ha sido tradicionalmente la fuente de referencia para entender la evolución de un proyecto. Sin embargo, la realidad es que la mayoría de las decisiones críticas se toman en conversaciones con asistentes de inteligencia artificial, como Claude o Codex, y se pierden cuando el navegador se cierra. Estas sesiones de IA capturan cada intento, cada fallo y cada referencia documental, creando un registro mucho más rico que el simple mensaje de commit.\n\nEl problema surge porque ese registro vive únicamente en el entorno local del desarrollador. Cuando se cierra la pestaña, el historial se borra junto con la sesión, dejando a los equipos sin una trazabilidad de los razonamientos que llevaron a cada decisión. Esto significa que, cuando un nuevo miembro se une, solo recibe las conclusiones finales y no el proceso que las generó. La falta de contexto puede conducir a la repetición de errores y a una menor calidad del código.\n\nLa solución propuesta es simple pero poderosa: detener el hábito de eliminar las sesiones de IA. Al conservar estas conversaciones, los equipos obtienen una fuente de conocimiento inmutable que facilita la auditoría, el aprendizaje y la continuidad operativa. Además, al integrar estos registros en sistemas de documentación automatizados, se evita la sobrecarga de crear manualmente documentación extensa.\n\nEn última instancia, el valor de preservar las sesiones de IA radica en su capacidad para transformar la forma en que las organizaciones gestionan el conocimiento técnico. Al convertir cada interacción con la IA en un archivo histórico, se crea una base de conocimiento que evoluciona junto con el código, garantizando que la experiencia colectiva se mantenga viva incluso cuando cambian los integrantes del equipo.",
+  "hashtags": [
+    "#IA",
+    "#IngenieríaDeSoftware",
+    "#OpenAI"
+  ],
+  "id": "fecdb9317adb9ea02316c513fe04d67c102a48357a5c35295cf900f3cd63055f",
+  "imageAlt": "El verdadero registro de ingeniería de tu equipo se pierde cada día: las sesiones de IA que borras",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9i5ntsjyolbx1rihcimw.png",
+  "keyPoints": [
+    "Las decisiones de ingeniería se toman en sesiones de IA, pero se pierden al cerrar la pestaña, dejando a los equipos sin historial de razonamientos.",
+    "Una sesión de IA registra cada intento, fallo y referencia documental, ofreciendo un contexto completo que supera la pérdida de información en commits tradicionales.",
+    "El problema radica en que las sesiones viven solo en el navegador local; al salir de la sesión, el conocimiento se desvanece junto con el código."
+  ],
+  "multimedia": [
+    {
+      "alt": "Imagen que ilustra la pérdida de registros de decisiones de ingeniería al cerrar sesiones de IA",
+      "caption": "Portada del artículo: la pérdida de decisiones de ingeniería al cerrar sesiones de IA",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9i5ntsjyolbx1rihcimw.png"
+    },
+    {
+      "alt": "Captura de pantalla de una sesión de IA mostrando intentos y fallos durante el desarrollo",
+      "caption": "Ejemplo de una sesión de IA que registra intentos y fallos",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png"
+    }
+  ],
+  "publishedAt": "2026-06-26T05:46:50.000Z",
+  "scrapedAt": "2026-06-26T06:02:33.841Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "Las decisiones de ingeniería se toman en sesiones de IA, pero al cerrar la pestaña se pierden, dejando a los equipos sin un historial de razonamientos ni documentación de procesos.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "El verdadero registro de ingeniería de tu equipo se pierde cada día: las sesiones de IA que borras",
+  "url": "https://dev.to/y_hank_asklear/your-teams-real-engineering-record-is-the-ai-sessions-you-delete-every-day-4487",
+  "whyMatters": "El olvido de los procesos de toma de decisiones impide que los equipos comprendan por qué se eligieron ciertas soluciones, afectando la continuidad y la calidad del software. Sin un registro fiable, los nuevos integrantes dependen únicamente de conclusiones, lo que aumenta el riesgo de repetir errores y dificulta la innovación. Preservar estas sesiones garantizaría una cultura de aprendizaje constante y una mayor resiliencia frente a la rotación de personal."
+}

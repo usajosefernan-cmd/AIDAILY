@@ -1,0 +1,76 @@
+{
+  "id": "b927c7efa93b1856cd8ea1df514cc52e63dc3577e20ab86f1d3e8f76b751af35",
+  "title": "Tarifa plana por llamada: la solución para que tus automatizaciones de IA no se disparen de presupuesto",
+  "summary": "Se presenta Modelis, una pasarela compatible con OpenAI que aplica tarifa plana por llamada para tareas de resumen, clasificación y extracción de datos en automatizaciones de n8n y Make, evitando picos de coste por tokens en trabajos de salida corta.",
+  "url": "https://dev.to/chenxiao5580cmd/a-flat-per-call-endpoint-for-summarize-classify-extract-in-your-n8n-and-make-automations-548h",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T13:00:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmrv8qsk4svet0lo8e928.png",
+  "imageAlt": "Tarifa plana por llamada: la solución para que tus automatizaciones de IA no se disparen de presupuesto",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se presenta Modelis, una pasarela compatible con OpenAI que aplica tarifa plana por llamada para tareas de resumen, clasificación y extracción de datos en automatizaciones de n8n y Make, evitando picos de coste por tokens en trabajos de salida corta.",
+  "keyPoints": [
+    "Las automatizaciones que procesan texto a gran escala sufren picos de coste impredecibles por la facturación por token de los modelos LLM.",
+    "Modelis es una pasarela compatible con OpenAI que enruta cada solicitud al modelo más adecuado y cobra una tarifa plana por llamada con salida limitada a 1024 tokens.",
+    "Su integración en n8n y Make es sencilla mediante un nodo de solicitud HTTP o un adaptador de código abierto que usa la URL http://127.0.0.1:8787/v1.",
+    "Esta solución solo es válida para tareas de salida corta como resúmenes, etiquetado o extracción de campos; para generación de textos largos se requiere un modelo de alta salida."
+  ],
+  "whyMatters": "Esta supone un cambio de paradigma para equipos de automatización y pequeñas empresas que dependen de flujos de procesamiento de texto a gran escala, ya que elimina la incertidumbre presupuestaria asociada a la facturación por token, un dolor recurrente en proyectos de IA productiva. Al fijar un coste por llamada independientemente del tamaño de la entrada, se democratiza el acceso a herramientas de clasificación y extracción sin necesidad de realizar estimaciones de consumo complejas. Además, su compatibilidad con plataformas de automatización populares como n8n y Make reduce la fricción de adopción, permitiendo implementar esta solución en flujos existentes en cuestión de minutos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmrv8qsk4svet0lo8e928.png",
+      "alt": "Portada del artículo que presenta el endpoint de tarifa plana por llamada para automatizaciones de IA",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Modelis",
+    "#AutomatizacionesN8n",
+    "#TarifaPlanaIA",
+    "#OpenAICompatible"
+  ],
+  "fullArticle": "Cualquier equipo que ejecute automatizaciones de procesamiento de texto a gran escala conoce de primera mano el dolor de los picos de facturación impredecibles: un lote de entradas largas en un paso de modelo de lenguaje grande (LLM) puede disparar el coste mensual de la noche a la mañana, convirtiendo la planificación presupuestaria en una adivinanza. Esta problemática es especialmente acusada en tareas de salida acotada, como resúmenes de documentos, clasificación de contenidos o extracción de campos estructurados, donde el resultado final es siempre corto y predecible, pero se sigue pagando por cada token procesado de entrada y salida. Para solucionarlo, un desarrollador ha presentado una solución que adapta la facturación a la naturaleza de estos flujos de trabajo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fmrv8qsk4svet0lo8e928.png]\n\nLa herramienta en cuestión se llama Modelis, una pasarela compatible con la API de OpenAI que enruta automáticamente cada solicitud al modelo de lenguaje más adecuado para la tarea, pero con un modelo de facturación radicalmente distinto: un precio fijo por llamada, independientemente del tamaño de la entrada, siempre que la salida no supere los 1024 tokens. Este límite de salida no es una limitación para los casos de uso a los que está destinada, ya que las tareas de resumen, clasificación o extracción de campos generan resultados de longitud muy reducida. De esta forma, los equipos pueden saber de antemano el coste de cada ejecución de su flujo de automatización, sin sorpresas en la factura mensual sin importar si procesan entradas de 100 o 10.000 tokens.\n\nLa integración de Modelis en plataformas de automatización como n8n y Make es especialmente sencilla. Para quienes usan el nodo de solicitud HTTP genérico, basta con apuntar a la endpoint estándar de chat completions de la pasarela, con el modelo 'modelis-auto' como parámetro. Para quienes prefieren usar el nodo nativo de OpenAI, existe un adaptador de código abierto que se ejecuta junto al runner del flujo de trabajo, redirigiendo las solicitudes a la URL local http://127.0.0.1:8787/v1 sin necesidad de modificar la configuración de autenticación. Esta flexibilidad permite implementar la solución en flujos existentes en menos de 10 minutos, sin necesidad de reescribir lógicas de procesamiento.\n\nEs importante tener en cuenta que esta solución no está diseñada para tareas de generación de texto largo, como redacción de artículos completos, generación de código extenso o creación de documentos enteros, ya que el límite de 1024 tokens de salida truncará el resultado. Para esos casos de uso, se recomienda seguir utilizando modelos de alta capacidad de salida con facturación por token. El desarrollador de la herramienta ha animado a la comunidad a probarla en sus flujos de automatización y compartir feedback sobre qué tareas de extracción y clasificación gestiona correctamente el sistema de enrutamiento automático, con el objetivo de mejorar la precisión del modelo en escenarios de uso real.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T13:25:35.111Z",
+  "links": [
+    {
+      "title": "Artículo original sobre el endpoint de tarifa plana para automatizaciones",
+      "url": "https://dev.to/modelis/a-flat-per-call-endpoint-for-summarize-classify-extract-in-your-n8n-and-make-automations"
+    },
+    {
+      "title": "Documentación oficial de n8n para nodos de solicitud HTTP",
+      "url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/"
+    },
+    {
+      "title": "Guía de Make para integraciones con APIs externas",
+      "url": "https://www.make.com/es/help/integrations/custom-api"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Límite de salida de tokens por llamada",
+      "value": "1024 tokens"
+    },
+    {
+      "label": "Modelo de facturación",
+      "value": "Tarifa plana por llamada, sin coste por token de entrada"
+    },
+    {
+      "label": "Tiempo estimado de integración en flujos existentes",
+      "value": "Menos de 10 minutos"
+    },
+    {
+      "label": "Plataformas de automatización compatibles",
+      "value": "n8n, Make y cualquier herramienta compatible con API de OpenAI"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

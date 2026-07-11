@@ -1,0 +1,73 @@
+{
+  "id": "644cec570d2778e54ab921290fff2ebe4bf6aff45cf9767bca1035271c052eb4",
+  "title": "El motivo técnico por el que fallan todas las apps de bloqueo de Windows y cómo lo solucionó un chico de 13 años",
+  "summary": "La mayoría de apps de bloqueo para Windows operan solo a nivel de aplicación, por lo que el sistema operativo subyacente sigue activo y permite su cierre o bypass. Un joven desarrollador indio de 13 años creó ATLOCK, una herramienta que usa hooks de teclado de bajo nivel y bloqueo de archivos a nivel de sistema para evitar estos fallos, con más de 123 descargas sin presupuesto de marketing.",
+  "url": "https://dev.to/akhourianmolkumar/the-technical-reason-every-windows-lock-app-fails-and-how-i-fixed-it-at-13-2j0n",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T10:49:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frr4lsp3en0hxn6yfvwdu.png",
+  "imageAlt": "El motivo técnico por el que fallan todas las apps de bloqueo de Windows y cómo lo solucionó un chico de 13 años",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La mayoría de apps de bloqueo para Windows operan solo a nivel de aplicación, por lo que el sistema operativo subyacente sigue activo y permite su cierre o bypass. Un joven desarrollador indio de 13 años creó ATLOCK, una herramienta que usa hooks de teclado de bajo nivel y bloqueo de archivos a nivel de sistema para evitar estos fallos, con más de 123 descargas sin presupuesto de marketing.",
+  "keyPoints": [
+    "Las apps de bloqueo convencionales operan solo a nivel de aplicación, por lo que el sistema operativo subyacente sigue activo y permite su cierre o bypass.",
+    "El desarrollador usó un hook de teclado de bajo nivel de Windows para interceptar pulsaciones antes de que las apps las procesen, evitando la apertura de Task Manager.",
+    "Implementó bloqueo a nivel de sistema de archivos con Listas de Control de Acceso de Windows, impidiendo incluso a administradores modificar los archivos protegidos.",
+    "El proyecto ATLOCK fue creado por un joven de 13 años en India sin presupuesto de marketing y ya supera las 123 descargas reales."
+  ],
+  "whyMatters": "Esta solución aborda una vulnerabilidad crítica en la seguridad de equipos Windows que afecta a usuarios domésticos y empresariales que confían en apps de bloqueo para proteger su información confidencial. Al operar a nivel de kernel y sistema de archivos, elimina los métodos de bypass más comunes que usan desde usuarios no autorizados hasta malware para acceder a equipos bloqueados. El caso demuestra que soluciones de seguridad innovadoras pueden surgir de desarrolladores jóvenes sin recursos, abriendo la puerta a herramientas de ciberseguridad accesibles y más robustas para el mercado global.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frr4lsp3en0hxn6yfvwdu.png",
+      "alt": "Imagen de portada del artículo sobre la solución de bloqueo de Windows ATLOCK desarrollada por un joven de 13 años",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to por el desarrollador Anmol Kumar Akhouri"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ATLOCK",
+    "#SeguridadWindows",
+    "#Ciberseguridad",
+    "#DesarrolladorJoven",
+    "#AkhouriSystems"
+  ],
+  "fullArticle": "La mayoría de las aplicaciones de bloqueo de pantalla para Windows disponibles en el mercado comparten una falla de diseño crítica: operan exclusivamente a nivel de aplicación, por lo que el sistema operativo subyacente sigue ejecutándose sin restricciones. Esto permite a usuarios no autorizados abrir el Administrador de Tareas, finalizar el proceso de la app de bloqueo o reiniciar el Explorador de Windows para desbloquear el equipo de forma sencilla, dejando expuesta toda la información almacenada en el dispositivo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frr4lsp3en0hxn6yfvwdu.png]\n\nUn joven desarrollador de 13 años originario de India, Anmol Kumar Akhouri, ha creado una solución que elimina estos vectores de bypass al operar en capas más profundas de Windows. Su herramienta, bautizada como ATLOCK, utiliza un hook de teclado de bajo nivel proporcionado por el sistema operativo que intercepta todas las pulsaciones de teclas antes de que cualquier aplicación las procese, por lo que si se intenta abrir el Administrador de Tareas, este se cierra automáticamente en menos de un segundo. Además, implementa un bloqueo de archivos a nivel de sistema de archivos mediante Listas de Control de Acceso (ACL) de Windows, una medida que impide incluso a los administradores del equipo modificar o eliminar los archivos protegidos, bloqueando también el uso de herramientas como Process Hacker o el reinicio del Explorador.\n\nEl proyecto, desarrollado de forma independiente por Akhouri bajo el sello de Akhouri Systems, ya supera las 123 descargas reales sin haber contado con ningún presupuesto de marketing, y su código está disponible de forma gratuita en GitHub para que la comunidad de ciberseguridad pueda revisarlo y mejorarlo. Este caso demuestra que las soluciones de seguridad innovadoras no dependen de grandes presupuestos, sino de un conocimiento profundo de la arquitectura de los sistemas operativos, y abre la puerta a herramientas de protección de equipos más accesibles para usuarios domésticos y pequeñas empresas en todo el mundo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T11:06:18.413Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de ATLOCK en GitHub",
+      "url": "https://github.com/Akhouri-Anmol-Kumar/ATLOCK"
+    },
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/akhouri-anmol-kumar/the-technical-reason-every-windows-lock-app-fails-and-how-i-fixed-it-at-13-4b2l"
+    },
+    {
+      "title": "Documentación oficial de Microsoft sobre Listas de Control de Acceso",
+      "url": "https://learn.microsoft.com/es-es/windows/win32/secauthz/access-control-lists"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Edad del desarrollador",
+      "value": "13 años"
+    },
+    {
+      "label": "Descargas reales sin presupuesto de marketing",
+      "value": "123+"
+    },
+    {
+      "label": "Tiempo de bloqueo de Task Manager",
+      "value": "Menos de 1 segundo"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

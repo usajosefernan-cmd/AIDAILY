@@ -1,0 +1,38 @@
+{
+  "id": "3ed565d89f77a35fcb585d0c2e398ac0b432faa1b6a84e10178797b0c6969e46",
+  "title": "Breaking the Abstraction Tax: Mastering Custom C++ Operations for High-Performance Edge AI on Android",
+  "summary": "En el ecosistema moderno de Android, nos hemos acostumbrado a la increíble productividad de Kotlin y la seguridad de JVM. Para la lógica de aplicación estándar, la abstracción proporcionada por Android Runtime (ART) es un regalo. Pero a medida que entramos en la era de Edge AI, donde los modelos de lenguaje grande (LLM) como G...",
+  "url": "https://dev.to/programmingcentral/breaking-the-abstraction-tax-mastering-custom-c-operations-for-high-performance-edge-ai-on-51g1",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T20:00:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw5rn1bdj7z2q1n2mkci5.png",
+  "imageAlt": "Breaking the Abstraction Tax: Mastering Custom C++ Operations for High-Performance Edge AI on Android",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En el ecosistema moderno de Android, nos hemos acostumbrado a la increíble productividad de Kotlin y la seguridad de JVM. Para la lógica de aplicación estándar, la abstracción proporcionada por Android Runtime (ART) es un regalo. Pero a medida que entramos en la era de Edge AI, donde los modelos de lenguaje grande (LLM) como G...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw5rn1bdj7z2q1n2mkci5.png",
+      "alt": "Breaking the Abstraction Tax: Mastering Custom C++ Operations for High-Performance Edge AI on Android",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "En el ecosistema moderno de Android, nos hemos acostumbrado a la increíble productividad de Kotlin y la seguridad de JVM. Para la lógica de aplicación estándar, la abstracción proporcionada por Android Runtime (ART) es un regalo. Pero a medida que entramos en la era de Edge AI, donde los modelos de lenguaje grande (LLM, por sus siglas en inglés) como Gemini Nano se ejecutan directamente en el dispositivo, esa misma abstracción se convierte en un inconveniente.\n\nCuando se realizan miles de millones de operaciones de punto flotante por segundo para generar el siguiente token en una respuesta de chat, el \"impuesto de abstracción\" ya no es un gasto menor; es una amenaza existencial para el rendimiento de su aplicación. Para crear experiencias de IA verdaderamente receptivas y de baja latencia, los desarrolladores deben aprender a salir del montón administrado y dominar el arte de las operaciones personalizadas de C++ a través del Native Development Kit (NDK).\n\nEl desafío principal de Edge AI no es solo la complejidad matemática de la red neuronal; es el movimiento de datos.\n\nEn una aplicación estándar de Android, los datos se encuentran en el montón administrado. Está sujeto a los caprichos del recolector de basura (GC), que puede mover objetos para compactar la memoria. Sin embargo, los modelos de IA requieren un tipo diferente de entorno: exigen bloques contiguos de memoria,...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T20:22:21.412Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

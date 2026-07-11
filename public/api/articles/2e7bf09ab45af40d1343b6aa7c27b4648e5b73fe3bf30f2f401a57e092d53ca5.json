@@ -1,0 +1,69 @@
+{
+  "id": "2e7bf09ab45af40d1343b6aa7c27b4648e5b73fe3bf30f2f401a57e092d53ca5",
+  "title": "El MAX20151R: el regulador de voltaje ultra silencioso que domina de 40 V a 500 mA",
+  "summary": "Maxim Integrated ha lanzado el MAX20151R, un regulador lineal con entrada de 40 V, salida de 500 mA y ruido de 6,5 µV RMS, ideal para sistemas de alta precisión en entornos industriales y automotrices.",
+  "url": "https://dev.to/hknova/max20151r-the-40v-500ma-ultra-low-noise-ldo-that-silences-power-rails-3nic",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T03:17:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9bdt5pbmu8e5w98taejs.png",
+  "imageAlt": "El MAX20151R: el regulador de voltaje ultra silencioso que domina de 40 V a 500 mA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Maxim Integrated ha lanzado el MAX20151R, un regulador lineal con entrada de 40 V, salida de 500 mA y ruido de 6,5 µV RMS, ideal para sistemas de alta precisión en entornos industriales y automotrices.",
+  "keyPoints": [
+    "El MAX20151R ofrece 40 V de rango de entrada, permitiendo alimentarlo directamente desde rieles industriales o de vehículos sin pre‑regulación.",
+    "Su salida de 500 mA supera a la mayoría de los LDOs de bajo ruido, lo que permite alimentar MCU, ADC y PLLs desde una sola fuente silenciosa.",
+    "Con 6,5 µV RMS de ruido (10 Hz–100 kHz) y la posibilidad de reducirlo al 4 µV con un condensador externo, cumple con los más exigentes requisitos de SNR.",
+    "La protección integral contra voltajes reversos hasta –40 V y la alta tolerancia a picos de 40 V lo hacen apto para entornos automotrices ISO 7637‑2 sin diodos TVS externos."
+  ],
+  "whyMatters": "El MAX20151R representa un avance crucial para la fabricación de equipos de medición, comunicaciones y automoción que requieren rieles de potencia estables y silenciosos. Al eliminar la necesidad de convertidores buck y filtros pesados, los ingenieros pueden reducir costos, espacio y consumo energético, al tiempo que garantizan la integridad de las señales analógicas críticas. En un mercado donde la precisión y la fiabilidad son diferenciadores, este regulador abre nuevas posibilidades de diseño para sistemas híbridos y de alta densidad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9bdt5pbmu8e5w98taejs.png",
+      "alt": "Imagen del regulador MAX20151R mostrando su carcasa y conexiones",
+      "caption": "Regulador MAX20151R: la solución de bajo ruido con entrada de 40 V y salida de 500 mA."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MAX20151R",
+    "#LDO",
+    "#Electrónica",
+    "#Ingeniería"
+  ],
+  "fullArticle": "Maxim Integrated ha presentado el MAX20151R, un regulador lineal (LDO) que combina una entrada de 40 V, una salida de 500 mA y un ruido de 6,5 µV RMS en el rango de 10 Hz a 100 kHz. Este conjunto de características lo posiciona como la solución definitiva para aplicaciones de precisión donde la estabilidad de la referencia y la pureza de la señal son esenciales.\n\nEl diseño permite alimentarlo directamente desde rieles industriales de 12 V o 24 V, baterías automotrices o buses de 40 V sin necesidad de un pre‑regulador. La protección contra voltajes reversos hasta –40 V y la tolerancia a picos de hasta 40 V de entrada lo hacen apto para cumplir normas ISO 7637‑2 sin diodos TVS externos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9bdt5pbmu8e5w98taejs.png]\n\nCon 500 mA de salida, el MAX20151R puede alimentar de manera fiable una cadena de señal analógica completa: microcontrolador, ADC de 24 bits, PLL de RF y varios amplificadores operacionales, todo desde una única fuente silenciosa. Su arquitectura interna, que combina una referencia de banda ancha de bajo ruido, un amplificador de error de alta ganancia y un transistor de paso con bajo flicker, garantiza que el ruido no aumente con la carga.\n\nEn comparación con otros LDOs de bajo ruido, como el LT3045 de Analog Devices o el TPS7A47 de Texas Instruments, el MAX20151R destaca por su amplio rango de entrada y su robusta protección. Mientras el LT3045 es la opción preferida cuando la entrada es inferior a 20 V y el ruido absoluto es crítico, el TPS7A47 sobresale en aplicaciones que demandan hasta 1 A de corriente. El MAX20151R, por su parte, ofrece la combinación única de corriente de 500 mA, rango de entrada de 40 V y ruido inferior a 7 µV RMS, lo que lo convierte en la elección natural para sistemas industriales y automotrices.\n\nEn síntesis, el MAX20151R elimina la complejidad de las etapas de conversión de potencia, reduce el consumo y el espacio, y garantiza la integridad de las señales analógicas en entornos ruidosos. Su adopción permitirá a los ingenieros diseñar sistemas más compactos, eficientes y confiables, marcando un hito en la evolución de los reguladores de potencia de precisión.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:43:10.630Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article-max20151r"
+    },
+    {
+      "title": "Página oficial de Maxim Integrated sobre MAX20151R",
+      "url": "https://www.maximintegrated.com/en/products/power/switching-regulators/MAX20151R.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Corriente de salida",
+      "value": "500 mA"
+    },
+    {
+      "label": "Rango de entrada",
+      "value": "40 V"
+    },
+    {
+      "label": "Ruido de salida",
+      "value": "6,5 µV RMS (10 Hz–100 kHz)"
+    },
+    {
+      "label": "Caída de tensión mínima",
+      "value": "350 mV"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "2d15f985e099f028ae2b169e3c67340f792ad41dd29a8e15c824c50a2a14b02d",
+  "title": "La guía definitiva para verificar firmas de webhooks de HubSpot: por qué la v3 es la única que debes usar",
+  "summary": "El artículo desglosa los tres esquemas de firma de webhooks de HubSpot (v1, v2 y v3), explica los errores más comunes al implementar la validación, recomienda el uso de la versión v3 y presenta EventDock como solución para evitar la pérdida de eventos por caídas del servicio.",
+  "url": "https://dev.to/eventdock/how-to-verify-hubspot-webhook-signatures-v1-v2-and-the-v3-you-should-actually-use-5e2p",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T11:14:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe2qdmfl6ni573er8s6o7.png",
+  "imageAlt": "La guía definitiva para verificar firmas de webhooks de HubSpot: por qué la v3 es la única que debes usar",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo desglosa los tres esquemas de firma de webhooks de HubSpot (v1, v2 y v3), explica los errores más comunes al implementar la validación, recomienda el uso de la versión v3 y presenta EventDock como solución para evitar la pérdida de eventos por caídas del servicio.",
+  "keyPoints": [
+    "HubSpot cuenta con tres versiones de firma de webhooks (v1, v2 y v3) que no son intercambiables, por lo que es imprescindible identificar la versión que envía cada solicitud.",
+    "La versión v3, recomendada oficialmente, calcula la firma a partir de la concatenación del método HTTP, la URI completa, el cuerpo en bruto y la marca de tiempo.",
+    "Los errores más frecuentes en la validación surgen de analizar el cuerpo antes de verificar la firma o de usar la cadena de texto incorrecta para el hash.",
+    "EventDock actúa como intermediario entre HubSpot y la aplicación, almacena los eventos y evita la pérdida de datos por caídas temporales del servicio."
+  ],
+  "whyMatters": "La correcta validación de webhooks de HubSpot es crítica para garantizar la integridad de los datos sincronizados entre la plataforma y las aplicaciones empresariales, evitando accesos no autorizados o procesamiento de información falsa. La pérdida de eventos como creaciones de ofertas o cambios en contactos puede generar fallos en automatizaciones de ventas y marketing, con impacto directo en los ingresos de las empresas. Además, la adopción de soluciones intermediarias como EventDock permite garantizar la entrega exacta de eventos incluso durante mantenimientos o caídas del servicio, reduciendo riesgos operativos y asegurando la continuidad de los flujos de trabajo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe2qdmfl6ni573er8s6o7.png",
+      "alt": "Imagen de portada del artículo sobre verificación de firmas de webhooks de HubSpot",
+      "caption": "Imagen de portada del artículo original de Dev.to que explica los esquemas de firma de webhooks de HubSpot"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#HubSpot",
+    "#Webhooks",
+    "#DesarrolloWeb",
+    "#CiberseguridadAplicada"
+  ],
+  "fullArticle": "HubSpot ha desarrollado a lo largo de los años tres esquemas diferentes de firma para sus webhooks, todos con nombres de cabecera muy similares. La mayoría de los errores de validación que se producen en entornos reales se deben a que los equipos implementan la versión v1 cuando la plataforma envía solicitudes con la v3, o a que se hashea la cadena de texto incorrecta. Este análisis desglosa cada una de las versiones, explica el método de verificación de la v3 que recomienda oficialmente HubSpot en la actualidad y detalla los errores más frecuentes al manejar el cuerpo de la solicitud que hacen que todas las peticiones parezcan inválidas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fe2qdmfl6ni573er8s6o7.png]\n\nLa versión v3, la única que se recomienda adoptar, calcula la firma a partir de la concatenación, en orden exacto, del método HTTP, la URI completa, el cuerpo de la solicitud en bruto y la marca de tiempo, rechazando cualquier petición con más de cinco minutos de antigüedad para bloquear ataques de repetición. Uno de los errores más extendidos es analizar el cuerpo de la solicitud antes de verificar la firma, lo que impide acceder a los bytes originales necesarios para el cálculo, especialmente en frameworks como Next.js o Cloudflare Workers que consumen el flujo de datos al parsearlo. Para evitar la pérdida de eventos por caídas temporales del servicio, soluciones intermediarias como EventDock se encargan de verificar la firma, almacenar el evento y reenviarlo a la aplicación una vez que se recupera, garantizando la entrega exacta incluso durante mantenimientos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T11:30:45.355Z",
+  "links": [
+    {
+      "title": "Guía oficial de HubSpot para verificar firmas de webhooks",
+      "url": "https://developers.hubspot.com/docs/api/webhooks/verify-webhook-signatures"
+    },
+    {
+      "title": "Sitio web de EventDock, solución para gestión de webhooks",
+      "url": "https://eventdock.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Ventana de antigüedad máxima aceptada para firmas v3",
+      "value": "5 minutos"
+    },
+    {
+      "label": "Período máximo de reintentos de entrega de webhooks por parte de HubSpot",
+      "value": "Varios días"
+    },
+    {
+      "label": "Disponibilidad de plan gratuito de EventDock",
+      "value": "Sí, con captura de todos los eventos de HubSpot"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

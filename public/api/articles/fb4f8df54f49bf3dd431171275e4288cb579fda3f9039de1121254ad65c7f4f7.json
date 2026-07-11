@@ -1,0 +1,73 @@
+{
+  "id": "fb4f8df54f49bf3dd431171275e4288cb579fda3f9039de1121254ad65c7f4f7",
+  "title": "Esta IA entrenada con PyTorch y ResNet-50 adivina quién pintó un cuadro solo con verlo",
+  "summary": "El artículo detalla el desarrollo de un sistema de atribución automática de artistas mediante aprendizaje profundo, que utiliza transfer learning con un modelo ResNet-50 preentrenado en PyTorch para clasificar pinturas por su creador, explicando el proceso de entrenamiento, inferencia y ventajas de esta aproximación.",
+  "url": "https://dev.to/ghazy001/building-an-artist-attribution-model-with-pytorch-and-resnet-50-2pde",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T22:21:53.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7cspm34z55zs2iyx2loz.png",
+  "imageAlt": "Esta IA entrenada con PyTorch y ResNet-50 adivina quién pintó un cuadro solo con verlo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla el desarrollo de un sistema de atribución automática de artistas mediante aprendizaje profundo, que utiliza transfer learning con un modelo ResNet-50 preentrenado en PyTorch para clasificar pinturas por su creador, explicando el proceso de entrenamiento, inferencia y ventajas de esta aproximación.",
+  "keyPoints": [
+    "El sistema de atribución de artistas se construyó con transfer learning, reutilizando el modelo ResNet-50 preentrenado en PyTorch para reducir costes computacionales.",
+    "La arquitectura ResNet-50, previamente entrenada en ImageNet, aporta patrones visuales previos que se adaptan a la clasificación de obras pictóricas.",
+    "El proyecto incluye funcionalidades para ejecutarse localmente o en entornos de notebook en la nube, facilitando su uso por investigadores y desarrolladores.",
+    "El dataset de entrenamiento no se incluye en el repositorio por su tamaño, y requiere una estructura de carpetas donde cada nombre corresponde a un artista."
+  ],
+  "whyMatters": "Este proyecto supone un avance accesible en visión por computador aplicada al patrimonio cultural, democratizando el uso de herramientas de IA para la atribución de obras de arte sin necesidad de grandes inversiones en infraestructura. Su enfoque de transfer learning reduce drásticamente la barrera de entrada para investigadores y entidades dedicadas a la autenticación de pinturas, que hasta ahora dependían de métodos manuales costosos y lentos. A futuro, este tipo de modelos podrían integrarse en sistemas de catalogación de museos o plataformas de detección de falsificaciones, transformando la forma en que se gestiona y valida el legado artístico histórico.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7cspm34z55zs2iyx2loz.png",
+      "alt": "Imagen de portada del artículo sobre el modelo de atribución de artistas con PyTorch y ResNet-50",
+      "caption": "Portada del artículo original de Dev.to que explica el desarrollo del sistema de identificación de autores de pinturas mediante inteligencia artificial"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PyTorch",
+    "#ResNet50",
+    "#InteligenciaArtificial",
+    "#AtribucionDeArte",
+    "#VisionPorComputador"
+  ],
+  "fullArticle": "La pregunta de si una inteligencia artificial puede identificar al autor de una pintura solo con analizar su imagen es el punto de partida de un proyecto de desarrollo open source publicado en Dev.to, que busca construir un sistema de atribución automática de artistas mediante técnicas de aprendizaje profundo. El objetivo principal no es solo crear un modelo funcional, sino servir como guía práctica para desarrolladores y entusiastas de la visión por computador que quieran adentrarse en la clasificación de imágenes personalizadas, sin necesidad de construir una red neuronal convolucional desde cero. La solución se apoya en dos herramientas ampliamente extendidas en el ecosistema de IA: el framework de desarrollo PyTorch y la arquitectura de red neuronal ResNet-50, elegida por su equilibrio entre rendimiento y coste computacional.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7cspm34z55zs2iyx2loz.png]\nEn lugar de entrenar un modelo desde cero, lo que requeriría un volumen masivo de datos de pinturas y una potencia de cálculo muy elevada, el equipo de desarrollo optó por la técnica de transfer learning, reutilizando los pesos de un modelo ResNet-50 preentrenado en el conjunto de datos ImageNet. Esta decisión no solo reduce drásticamente el tiempo de entrenamiento, sino que aprovecha los patrones visuales que la red ya aprendió para detectar bordes, texturas, formas y composiciones, conocimientos que se adaptan perfectamente a la tarea de distinguir entre estilos de diferentes artistas. El modelo final se ajusta finamente (fine-tuning) con un dataset de pinturas etiquetadas por autor, de forma que aprende a asociar las características visuales propias de cada creador con su identidad.\nEl proyecto incluye funcionalidades que lo hacen flexible y accesible: puede ejecutarse tanto en entornos locales como en notebooks en la nube, sin necesidad de configuraciones complejas. El dataset de entrenamiento no se incluye directamente en el repositorio público debido a su elevado tamaño, pero se especifica una estructura de carpetas obligatoria para su funcionamiento: cada carpeta debe llevar el nombre de un artista, y dentro de ella se almacenan todas las pinturas de ese creador. Esta estructura es compatible con las herramientas de carga de datos de PyTorch, que usan los nombres de las carpetas como etiquetas de clase de forma automática, simplificando el proceso de preparación de datos.\nMás allá de la demostración técnica, el proyecto supone una herramienta de gran valor para el ámbito del patrimonio cultural y la autenticación de obras de arte. Museos, casas de subastas y investigadores dedicados a la catalogación de pinturas podrían adoptar este tipo de sistemas para agilizar la identificación de autores de obras desconocidas o para detectar falsificaciones con mayor rapidez. Las lecciones aprendidas durante su desarrollo, recogidas en el artículo original, destacan la importancia de la elección de la arquitectura del modelo y la correcta preparación del dataset para obtener resultados fiables, además de subrayar cómo el transfer learning hace que proyectos de IA avanzada sean accesibles para equipos con recursos limitados.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:45:07.107Z",
+  "links": [
+    {
+      "title": "Guía oficial de transfer learning de PyTorch",
+      "url": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html"
+    },
+    {
+      "title": "Página del modelo ResNet-50 preentrenado en el zoo de modelos de PyTorch",
+      "url": "https://pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Arquitectura del modelo base",
+      "value": "ResNet-50 preentrenado en ImageNet"
+    },
+    {
+      "label": "Técnica de optimización utilizada",
+      "value": "Transfer learning (ajuste fino)"
+    },
+    {
+      "label": "Requisito de estructura del dataset",
+      "value": "Carpetas con nombre de artista como etiqueta de clase"
+    },
+    {
+      "label": "Entornos de ejecución soportados",
+      "value": "Local y notebooks en la nube"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

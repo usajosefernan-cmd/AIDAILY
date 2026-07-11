@@ -1,0 +1,74 @@
+{
+  "id": "811a7eb08725d3196a3afd6143a7d70473726a265e25be7f91928968320c86b7",
+  "title": "Adiós a los programas de conversión pesados: Format Factory procesa lotes de audio y vídeo desde tu navegador",
+  "summary": "Format Factory es una herramienta de conversión de audio y vídeo basada en navegador que elimina la necesidad de instalaciones, permitiendo procesar lotes de archivos con una configuración compartida y control individual por cada elemento de la cola.",
+  "url": "https://dev.to/gregzeng95/batch-audio-and-video-conversion-in-your-browser-5534",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T06:47:51.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbfxz0ii07od2zcjdsz76.png",
+  "imageAlt": "Adiós a los programas de conversión pesados: Format Factory procesa lotes de audio y vídeo desde tu navegador",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Format Factory es una herramienta de conversión de audio y vídeo basada en navegador que elimina la necesidad de instalaciones, permitiendo procesar lotes de archivos con una configuración compartida y control individual por cada elemento de la cola.",
+  "keyPoints": [
+    "Format Factory es una herramienta de conversión de audio y vídeo basada en navegador, sin necesidad de instalar programas adicionales en el equipo.",
+    "Su flujo de trabajo está orientado a lotes: se configuran las opciones de salida una sola vez para procesar múltiples archivos de forma simultánea.",
+    "Permite aplicar ajustes personalizados a archivos individuales dentro de la cola de procesamiento sin reconfigurar todo el lote completo.",
+    "Soporta los formatos de entrada más habituales para tareas como compresión de vídeo, extracción de audio o adaptación de archivos para reproducción."
+  ],
+  "whyMatters": "Esta herramienta supone un avance significativo para usuarios que necesitan realizar conversiones de audio y vídeo de forma habitual, ya que elimina la necesidad de instalar software especializado pesado y consume recursos exclusivamente del servidor, no del equipo local. Su enfoque por lotes reduce drásticamente el tiempo dedicado a tareas repetitivas, lo que la convierte en una solución ideal para creadores de contenido, periodistas o equipos de producción que manejen grandes volúmenes de archivos. Además, al funcionar directamente en el navegador, es accesible desde cualquier dispositivo con conexión a internet, sin importar el sistema operativo que se utilice, lo que democratiza el acceso a herramientas de procesamiento multimedia avanzadas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbfxz0ii07od2zcjdsz76.png",
+      "alt": "Portada del artículo sobre Format Factory, herramienta de conversión de audio y vídeo por lotes en navegador",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to que presenta la herramienta Format Factory"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Interfaz de la herramienta Format Factory para conversión de audio y vídeo por lotes",
+      "caption": "Captura de la interfaz de Format Factory, la herramienta web de procesamiento multimedia por lotes"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#FormatFactory",
+    "#ConversionAudioVideo",
+    "#HerramientasWeb",
+    "#ProcesamientoMultimedia"
+  ],
+  "fullArticle": "La conversión de archivos de audio y vídeo es una tarea habitual para creadores de contenido, periodistas o usuarios que manejan material multimedia de forma regular, pero se convierte en una frustración cuando hay que procesar múltiples archivos de forma individual: elegir el formato de salida, ajustar la calidad, esperar el resultado y repetir todo el proceso para cada archivo. Esta problemática es exactamente la que resuelve Format Factory, una herramienta de procesamiento multimedia basada en navegador diseñada para trabajar con lotes de archivos, eliminando la necesidad de instalaciones y configuraciones repetitivas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbfxz0ii07od2zcjdsz76.png]\n\nEl funcionamiento de la herramienta es sencillo y está orientado a la productividad: el usuario selecciona el tipo de tarea que necesita realizar (compresión de vídeo, extracción de audio, conversión de formato, etc.), configura las opciones de salida una sola vez y añade todos los archivos compatibles a la cola de procesamiento. A diferencia de los programas de escritorio tradicionales, Format Factory no requiere descargar instaladores ni ocupar espacio en el disco duro, y permite mantener el control de cada archivo de forma individual: si uno de los elementos de la cola necesita una configuración diferente, se puede aplicar un ajuste específico sin rehacer todo el lote, y en caso de error, se muestra el aviso en la fila correspondiente para poder reintentar solo ese archivo o descargar el resultado de los procesados correctamente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLa herramienta soporta los formatos de entrada más habituales del mercado, por lo que cubre necesidades muy variadas: desde comprimir un archivo MP4 para reducir su peso antes de subirlo a redes sociales, hasta extraer la pista de audio de un vídeo en formato MOV para guardarla como MP3, o adaptar un archivo de grabación a un formato compatible con el dispositivo de reproducción que se vaya a utilizar. Al funcionar completamente en el navegador, es accesible desde cualquier equipo con conexión a internet, sin importar si se utiliza Windows, macOS, Linux o incluso un dispositivo móvil, lo que la convierte en una solución versátil para usuarios con conocimientos técnicos básicos y para profesionales que necesitan una herramienta rápida y sin complicaciones para sus flujos de trabajo diarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T07:04:44.587Z",
+  "links": [
+    {
+      "title": "Artículo original sobre Format Factory en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Guía de formatos de archivo multimedia de la Unión Internacional de Telecomunicaciones",
+      "url": "https://www.itu.int/es/mediacentre/Pages/formatos-multimedia.aspx"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Configuraciones por lote",
+      "value": "1 configuración compartida para todos los archivos de la cola de procesamiento"
+    },
+    {
+      "label": "Requisitos de instalación",
+      "value": "Ninguno, funciona completamente en el navegador sin descargas"
+    },
+    {
+      "label": "Formatos compatibles",
+      "value": "Soporta los formatos de audio y vídeo más habituales del mercado, incluyendo MOV, MP4 y MP3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

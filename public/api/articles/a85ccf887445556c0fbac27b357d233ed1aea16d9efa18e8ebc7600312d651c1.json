@@ -1,0 +1,77 @@
+{
+  "id": "a85ccf887445556c0fbac27b357d233ed1aea16d9efa18e8ebc7600312d651c1",
+  "title": "Cómo Estructurar Terraform en Databricks AWS: Terragrunt, Módulos YAML y GitOps Sin Locuras",
+  "summary": "Artículo final de una serie de seis partes que detalla la arquitectura de Terraform para una plataforma AI en Databricks y AWS, usando Terragrunt, módulos YAML y Atlantis para GitOps, con énfasis en escalabilidad y prevención de errores.",
+  "url": "https://dev.to/javaking1129/databricks-on-aws-6-how-we-structure-the-terraform-terragrunt-yaml-driven-modules-and-4959",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T01:08:38.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3mt1zervmppc9tybi4ru.png",
+  "imageAlt": "Cómo Estructurar Terraform en Databricks AWS: Terragrunt, Módulos YAML y GitOps Sin Locuras",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Artículo final de una serie de seis partes que detalla la arquitectura de Terraform para una plataforma AI en Databricks y AWS, usando Terragrunt, módulos YAML y Atlantis para GitOps, con énfasis en escalabilidad y prevención de errores.",
+  "keyPoints": [
+    "Se utilizan módulos Terraform reutilizables en una carpeta _modules/ y árboles por entorno (dev, prd) para evitar duplicación.",
+    "Los ingenieros editan solo archivos YAML; Terragrunt decodifica y aplica prefijos de entorno automáticamente para prevenir colisiones.",
+    "Se generan provider overrides dinámicamente por workspace, inyectando el host correcto en tiempo de plan.",
+    "Dos errores comunes: el orden de aplicación de módulos y la confusión entre los providers account-level (mws) y workspace-scoped."
+  ],
+  "whyMatters": "Esta arquitectura permite escalar despliegues de Databricks multi-workspace sin sprawl de código, reduciendo errores humanos y acelerando revisiones. La automatización de nomenclatura y la separación de concerns son claves para equipos que buscan operaciones fiables en AWS. Además, el enfoque GitOps con Atlantis mejora la trazabilidad y colaboración, esencial en entornos empresariales regulados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3mt1zervmppc9tybi4ru.png",
+      "alt": "Diagrama de arquitectura de Terraform con Terragrunt y módulos YAML para Databricks en AWS",
+      "caption": "Imagen de portada del artículo que ilustra la estructura del repositorio y el flujo GitOps."
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Databricks",
+    "#Terraform",
+    "#Terragrunt",
+    "#AWS",
+    "#GitOps"
+  ],
+  "fullArticle": "En la sexta y última entrega de esta serie, se revela la 'plomería' que sostiene una plataforma de IA desplegada sobre Databricks y AWS. Tras cubrir workspaces, RBAC, cómputo, red y PrivateLink, este artículo se adentra en la organización del repositorio de Terraform, los patrones de Terragrunt y las trampas que pueden arruinar un plan limpio desde el primer día. La solución combina módulos reutilizables y árboles por entorno, permitiendo añadir nuevos workspaces simplemente creando carpetas, sin tocar código HCL.\n\nEl corazón del diseño es una biblioteca plana de módulos en _modules/, cada uno dedicado a un concepto de recurso. Estos módulos son agnósticos al entorno; la lógica de qué ejecutar y con qué valores reside en árboles separados (dev/, prd/). Cada carpeta hoja contiene un YAML con el estado deseado y un terragrunt.hcl que lo decodifica, inyecta un prefijo de entorno (ej. dev_ip_cpu_small) y pasa los valores al módulo. Esta convención elimina la necesidad de que los humanos escriban Terraform o Terragrunt, reduciendo drásticamente los errores de nomenclatura. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3mt1zervmppc9tybi4ru.png]\n\nUn desafío particular de Databricks es que cada workspace tiene su propio host API. Para resolverlo, se generan provider overrides automáticamente: un workspace.hcl define una clave, y common_vars.yaml la mapea al host correspondiente. Terragrunt crea un provider_override.tf en vuelo, dirigiendo el módulo al endpoint correcto. Es fundamental no mezclar los providers: los recursos a nivel de cuenta (workspace, grupos, metastore) usan el alias mws, mientras que los recursos internos del workspace usan el provider con el host inyectado. Confundirlos genera errores de autenticación crípticos. Con esta base, Atlantis ejecuta planes y despliegues de forma consistente, convirtiendo el GitOps en una realidad robusta.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T01:23:16.236Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/databricks-on-aws-6-how-we-structure-the-terraform-terragrunt-yaml-driven-modules-and-atlantis-gitops-1e5"
+    },
+    {
+      "title": "Documentación oficial de Terragrunt",
+      "url": "https://terragrunt.gruntwork.io/docs/"
+    },
+    {
+      "title": "Guía de proveedores de Databricks para Terraform",
+      "url": "https://docs.databricks.com/dev-tools/terraform/index.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Partes de la serie",
+      "value": "6"
+    },
+    {
+      "label": "Entornos de despliegue",
+      "value": "2 (dev, prd)"
+    },
+    {
+      "label": "Providers de Databricks utilizados",
+      "value": "2 (mws, workspace-scoped)"
+    },
+    {
+      "label": "Errores comunes identificados",
+      "value": "2 (orden de módulos, mezcla de providers)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

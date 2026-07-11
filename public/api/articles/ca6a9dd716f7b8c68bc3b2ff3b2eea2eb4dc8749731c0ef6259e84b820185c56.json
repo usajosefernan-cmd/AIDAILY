@@ -1,0 +1,72 @@
+{
+  "id": "ca6a9dd716f7b8c68bc3b2ff3b2eea2eb4dc8749731c0ef6259e84b820185c56",
+  "title": "Un test de coeficiente intelectual adaptativo impulsado por IA revoluciona la evaluación cognitiva",
+  "summary": "El autor presenta IQ Platform, una herramienta de evaluación cognitiva totalmente adaptativa que ajusta la dificultad según la edad, educación y ocupación del usuario, emplea un modelo de regresión ML y recuerda las preguntas previas, superando las limitaciones de los tests tradicionales.",
+  "url": "https://dev.to/om_prakash_50d70268c48f1b/i-built-an-ml-powered-adaptive-iq-test-in-nextjs-14-heres-exactly-how-it-works-iaj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T10:32:45.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3hbjvaze2kvft7jishqo.png",
+  "imageAlt": "Un test de coeficiente intelectual adaptativo impulsado por IA revoluciona la evaluación cognitiva",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor presenta IQ Platform, una herramienta de evaluación cognitiva totalmente adaptativa que ajusta la dificultad según la edad, educación y ocupación del usuario, emplea un modelo de regresión ML y recuerda las preguntas previas, superando las limitaciones de los tests tradicionales.",
+  "keyPoints": [
+    "Los tests de IQ tradicionales no se adaptan, provocando memorización y pérdida de validez tras varias repeticiones.",
+    "IQ Platform calibra la dificultad entre 1 y 5 según edad, educación y ocupación, ofreciendo una experiencia personalizada.",
+    "La plataforma funciona completamente en el cliente, sin autenticación ni base de datos, lo que mejora la privacidad y la velocidad.",
+    "El algoritmo utiliza un modelo de regresión ML multivariado y mantiene un historial de preguntas vistas entre sesiones."
+  ],
+  "whyMatters": "La adaptación dinámica de los tests de IQ permite una medición más precisa y justa de las capacidades cognitivas, reduciendo sesgos y la posibilidad de que los usuarios memoricen respuestas. Este enfoque abre la puerta a evaluaciones personalizadas en educación y selección de personal, y plantea nuevas oportunidades para el desarrollo de herramientas de aprendizaje adaptativo. Además, al operar sin backend, protege la privacidad del usuario y reduce la dependencia de infraestructuras costosas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3hbjvaze2kvft7jishqo.png",
+      "alt": "Imagen de portada del artículo",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InteligenciaArtificial",
+    "#MachineLearning",
+    "#NextJS",
+    "#EvaluaciónCognitiva"
+  ],
+  "fullArticle": "El mundo de las pruebas de coeficiente intelectual ha estado marcado por la frustración de los usuarios: los tests tradicionales presentan las mismas 20 preguntas a cualquier persona, sin importar su edad o nivel educativo, y no recuerdan las respuestas previas, lo que lleva a la memorización y a la pérdida de significado de la puntuación tras unas pocas repeticiones. \n\nPara contrarrestar esta situación, el autor lanzó IQ Platform, una herramienta gratuita y totalmente adaptativa que calibra la dificultad de cada pregunta en función de la edad, la formación académica y la ocupación del evaluado. El sistema emplea un modelo de regresión de aprendizaje automático multivariado y mantiene un registro de las preguntas ya vistas entre sesiones, garantizando así una experiencia personalizada y libre de repetición. \n\nLa plataforma se construyó con Next.js y TypeScript, y se ejecuta íntegramente en el cliente, sin necesidad de autenticación, base de datos ni API de backend, lo que reduce la latencia y mejora la privacidad. Su banco de preguntas abarca seis dominios cognitivos—lógico, numérico, patrón, verbal, artístico y general—y cada ítem lleva una puntuación de dificultad de 1 a 5, además de etiquetas opcionales de edad mínima/máxima y temática. \n\nCuando el usuario completa su perfil, el sistema calcula un objetivo de dificultad basado en tres parámetros y muestra un panel en tiempo real que indica el nivel de desafío, por ejemplo, \"Nivel avanzado – preguntas exigentes que requieren razonamiento profundo\". La función isStem() identifica ocupaciones STEM y aumenta la frecuencia de preguntas numéricas, de patrones y lógicas, mientras que las ocupaciones artísticas o lingüísticas priorizan las preguntas verbales, lo que demuestra cómo la plataforma adapta el contenido a la trayectoria profesional del usuario. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3hbjvaze2kvft7jishqo.png]\n\nEl enfoque adaptativo de IQ Platform no solo mejora la precisión de la medición cognitiva, sino que también abre nuevas posibilidades para la educación personalizada, la selección de talento y la investigación psicométrica. Al eliminar la dependencia de servidores y proteger la información personal, la herramienta representa un avance significativo en la democratización de la evaluación inteligente.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T10:43:19.744Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/3hbjvaze2kvft7jishqo"
+    },
+    {
+      "title": "Wikipedia: Prueba de coeficiente intelectual",
+      "url": "https://es.wikipedia.org/wiki/Prueba_de_coeficiente_intelectual"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Dominios cognitivos cubiertos",
+      "value": "6"
+    },
+    {
+      "label": "Rango de dificultad",
+      "value": "1-5"
+    },
+    {
+      "label": "Edad objetivo",
+      "value": "14-35 años"
+    },
+    {
+      "label": "Número de repeticiones recomendadas",
+      "value": "3"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

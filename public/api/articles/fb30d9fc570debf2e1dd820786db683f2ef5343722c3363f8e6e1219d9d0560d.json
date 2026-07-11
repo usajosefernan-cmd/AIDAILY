@@ -1,0 +1,84 @@
+{
+  "id": "fb30d9fc570debf2e1dd820786db683f2ef5343722c3363f8e6e1219d9d0560d",
+  "title": "Lazy Summer Protocol sufre un exploit que drena 6 millones de dólares de sus vaults de USDC",
+  "summary": "Un atacante robó más de 6 millones de dólares de dos vaults de USDC del protocolo Lazy Summer en Ethereum, inflando el precio de las participaciones mediante préstamos flash. El equipo pausó todos los vaults y estableció límites de depósito en cero como medida de precaución.",
+  "url": "https://www.bankless.com/read/news/lazy-summer-protocol-drained-of-6m-in-vault-price-exploit",
+  "source": "Bankless",
+  "sourceUrl": "https://www.bankless.com/feed",
+  "publishedAt": "2026-07-07T17:49:42.000Z",
+  "imageUrl": "https://cdn.bankless.com/openGraph/lazy-summer-protocol-drained-of-6m-in-vault-price-exploit-1783446595.png",
+  "imageAlt": "Lazy Summer Protocol sufre un exploit que drena 6 millones de dólares de sus vaults de USDC",
+  "tags": [
+    "economia",
+    "noticias"
+  ],
+  "aiSummary": "Un atacante robó más de 6 millones de dólares de dos vaults de USDC del protocolo Lazy Summer en Ethereum, inflando el precio de las participaciones mediante préstamos flash. El equipo pausó todos los vaults y estableció límites de depósito en cero como medida de precaución.",
+  "keyPoints": [
+    "El atacante utilizó préstamos flash para inflar artificialmente el precio de las participaciones de los vaults de USDC de Lazy Summer en Ethereum.",
+    "El monto sustraído supera los 6 millones de dólares, obtenidos al canjear las participaciones sobrevaluadas por el capital de otros depositantes.",
+    "El equipo del protocolo confirmó el incidente y pausó de forma inmediata todos los vaults, además de establecer límites de depósito en cero.",
+    "La medida busca evitar que nuevos usuarios interactúen con el protocolo mientras se completa la evaluación del ataque."
+  ],
+  "whyMatters": "Este incidente evidencia vulnerabilidades críticas en los mecanismos de cálculo de precios de los vaults DeFi, expuestos a manipulaciones mediante préstamos flash, un vector de ataque cada vez más común en el ecosistema cripto. La pérdida de 6 millones de dólares no solo perjudica a los depositantes directos del protocolo, sino que también erosiona la confianza en las finanzas descentralizadas, un sector que aún lucha por lograr adopción masiva. A futuro, este suceso impulsará a los equipos de desarrollo a implementar medidas de seguridad más robustas, como límites estrictos a los préstamos flash o sistemas de detección de manipulación de precios, además de recordar a los usuarios la importancia de verificar la seguridad de los protocolos antes de depositar fondos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn.bankless.com/openGraph/lazy-summer-protocol-drained-of-6m-in-vault-price-exploit-1783446595.png",
+      "alt": "Imagen de portada del artículo sobre el exploit de Lazy Summer Protocol",
+      "caption": "Imagen de portada del artículo de Bankless que informa sobre el robo de 6 millones de dólares a Lazy Summer Protocol"
+    },
+    {
+      "type": "twitter",
+      "url": "https://x.com/summerfinance_/status/2074214443261509721?ref_src=twsrc%5Etfw&ref=bankless.ghost.io",
+      "alt": "Tweet oficial de Lazy Summer Protocol confirmando el exploit de seguridad",
+      "caption": "Tweet publicado por la cuenta oficial de Lazy Summer Protocol en el que confirma el incidente y las medidas de precaución adoptadas"
+    },
+    {
+      "type": "image",
+      "url": "https://cdn.bankless.com/posts/full/2026-07-08/lazy-summer-protocol-drained-of-6m-in-vault-price-exploit-featured-image-6a4d3647fd511b0001bd0844.png",
+      "alt": "Imagen destacada del artículo sobre el exploit de Lazy Summer Protocol",
+      "caption": "Imagen destacada del artículo de Bankless que detalla el ataque al protocolo DeFi"
+    }
+  ],
+  "subcategory": "Finanzas",
+  "hashtags": [
+    "#LazySummerProtocol",
+    "#DeFi",
+    "#Ethereum",
+    "#Criptomonedas"
+  ],
+  "fullArticle": "Un atacante logró sustraer más de 6 millones de dólares en USDC de dos vaults del protocolo Lazy Summer en la red Ethereum, según el post-mortem publicado por el propio equipo del proyecto. El método utilizado consistió en realizar transacciones de préstamos flash para inflar artificialmente el precio de las participaciones de los vaults, para posteriormente canjearlas por el capital de los demás depositantes sin sufrir pérdidas en el proceso.\n\n[MULTIMEDIA: https://cdn.bankless.com/openGraph/lazy-summer-protocol-drained-of-6m-in-vault-price-exploit-1783446595.png]\n\nComo medida de precaución inmediata, los administradores del protocolo (conocidos como Guardians) pausaron todos los vaults de Lazy Summer y establecieron un límite de depósito de cero en todas las redes en las que opera el proyecto, para evitar que nuevos usuarios depositen fondos mientras se completa la evaluación del incidente. El equipo confirmó que ya se encuentra trabajando en identificar al responsable y evaluar las posibilidades de recuperar los fondos sustraídos.\n\n[MULTIMEDIA: https://x.com/summerfinance_/status/2074214443261509721?ref_src=twsrc%5Etfw&ref=bankless.ghost.io]\n\nEste incidente se suma a la larga lista de exploits que afectan al ecosistema DeFi, donde las vulnerabilidades en los mecanismos de cálculo de precios y los préstamos flash son un vector de ataque recurrente. La pérdida millonaria no solo perjudica a los depositantes directos del protocolo, sino que también genera desconfianza en un sector que aún lucha por ganar adopción masiva, y que requiere de medidas de seguridad mucho más estrictas para evitar sucesos similares en el futuro.\n\n[MULTIMEDIA: https://cdn.bankless.com/posts/full/2026-07-08/lazy-summer-protocol-drained-of-6m-in-vault-price-exploit-featured-image-6a4d3647fd511b0001bd0844.png]",
+  "category": "economia",
+  "scrapedAt": "2026-07-08T04:50:39.032Z",
+  "links": [
+    {
+      "title": "Artículo original de Bankless sobre el exploit de Lazy Summer Protocol",
+      "url": "https://bankless.com/lazy-summer-protocol-drained-of-6m-in-vault-price-exploit"
+    },
+    {
+      "title": "Perfil oficial de Lazy Summer Protocol en X",
+      "url": "https://x.com/summerfinance_"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Monto sustraído",
+      "value": "6 millones de dólares en USDC"
+    },
+    {
+      "label": "Red afectada",
+      "value": "Ethereum"
+    },
+    {
+      "label": "Vaults afectados",
+      "value": "2"
+    },
+    {
+      "label": "Método de ataque",
+      "value": "Préstamos flash para inflar precio de participaciones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

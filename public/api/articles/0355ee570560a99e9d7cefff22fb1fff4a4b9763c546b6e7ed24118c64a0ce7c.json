@@ -1,0 +1,76 @@
+{
+  "id": "0355ee570560a99e9d7cefff22fb1fff4a4b9763c546b6e7ed24118c64a0ce7c",
+  "title": "Construye sistemas multi-Agent 100% gobernables con el modelo de cinco dimensiones de FROST: tutorial de código paso a paso",
+  "summary": "FROST es un framework open source lanzado en 2026 que resuelve la falta de gobernanza en sistemas multi-Agent de producción mediante un modelo meta de cinco dimensiones, sin dependencias externas y con componentes teóricos y de ingeniería para implementar soluciones escalables y trazables.",
+  "url": "https://dev.to/llimage/yong-frost-wu-wei-yuan-mo-xing-gou-jian-ke-zhi-li-de-duo-agent-xi-tong-cong-ling-dao-de-dai-ma-jiao-cheng-5f42",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T03:23:58.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv7en9ckfmqglo0139oth.png",
+  "imageAlt": "Construye sistemas multi-Agent 100% gobernables con el modelo de cinco dimensiones de FROST: tutorial de código paso a paso",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "FROST es un framework open source lanzado en 2026 que resuelve la falta de gobernanza en sistemas multi-Agent de producción mediante un modelo meta de cinco dimensiones, sin dependencias externas y con componentes teóricos y de ingeniería para implementar soluciones escalables y trazables.",
+  "keyPoints": [
+    "FROST es un framework open source diseñado específicamente para solucionar la falta de gobernanza en sistemas multi-Agent de producción.",
+    "Su modelo meta de cinco dimensiones (Armory, TaskRegistry, EventCatalog, PlatformRegistry, Strategist) resuelve problemas clave de orquestación, control y monitoreo.",
+    "La versión 4.0 no requiere dependencias externas, solo usa la biblioteca estándar de Python para maximizar la portabilidad y reducir vulnerabilidades.",
+    "El proyecto se compone de FROST, el marco teórico de gobernanza, y FROST-SOP, la plataforma de ingeniería para implementar soluciones en entornos reales."
+  ],
+  "whyMatters": "La gobernanza de los sistemas multi-Agent es uno de los principales obstáculos para su adopción masiva en entornos empresariales, ya que la mayoría de los frameworks actuales se centran solo en la funcionalidad sin ofrecer controles de auditoría, gestión de costos o detección de anomalías. FROST resuelve esta carencia con un modelo estructurado que permite a los equipos de ingeniería escalar sus sistemas de Agent de forma segura y trazable, reduciendo riesgos de fallos en producción y facilitando el cumplimiento de normativas como el AI Act de la Unión Europea. Para el ecosistema tecnológico español y europeo, esta herramienta supone una ventaja competitiva para desarrollar soluciones de IA autónoma alineadas con los requisitos de transparencia y responsabilidad que marcan las nuevas regulaciones comunitarias.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv7en9ckfmqglo0139oth.png",
+      "alt": "Imagen de portada del tutorial de FROST para construir sistemas multi-Agent gobernables",
+      "caption": "Portada del artículo oficial del FROST Team publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#FROSTFramework",
+    "#MultiAgent",
+    "#GobernanzaIA",
+    "#PythonOpenSource"
+  ],
+  "fullArticle": "En 2026, el ecosistema de frameworks para sistemas de Agent autónomos está en plena ebullición, con opciones como LangChain, CrewAI y AutoGen que destacan por su facilidad de uso para prototipos, pero que comparten una carencia crítica: la falta de capacidades de gobernanza para entornos de producción. Cuando un sistema de Agent pasa de ser una demostración a gestionar procesos empresariales reales, la ausencia de controles de auditoría, gestión de costos y detección de anomalías se convierte en un riesgo insostenible. FROST (Fractal Runtime of Orchestrated Skills & Tasks) llega para solucionar este problema con su modelo meta de cinco dimensiones, diseñado exclusivamente para habilitar la gobernanza completa de sistemas multi-Agent escalables.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv7en9ckfmqglo0139oth.png]\n\nLa versión 4.0 de FROST se estructura en cinco módulos core que resuelven cada uno de los puntos débiles de los sistemas de Agent actuales: Armory gestiona el catálogo de capacidades de los Agent con metadatos, filtros por etiquetas y estimación de costos por ejecución; TaskRegistry transforma la orquestación de tareas de listas lineales a grafos DAG (Directed Acyclic Graph) para gestionar dependencias complejas; EventCatalog actúa como centro de conciencia situacional del sistema, registrando eventos estructurados con tipo, origen, marca de tiempo y carga útil para su análisis; PlatformRegistry centraliza la gestión de todas las integraciones con servicios externos, desde APIs de LLM hasta bases de datos; y Strategist, el módulo de inteligencia, detecta patrones anómalos como incumplimientos repetidos de un Agent para activar mecanismos de auto-curación. Una de las principales fortalezas de FROST es su filosofía de cero dependencias externas: todo el core del framework funciona exclusivamente con la biblioteca estándar de Python, lo que reduce la superficie de ataque y facilita su implementación en entornos regulados.\n\nEl proyecto se divide en dos componentes complementarios: FROST, el marco teórico que define los principios del modelo de gobernanza, y FROST-SOP, la plataforma de ingeniería que permite implementar estas ideas en proyectos reales, ambos con repositorios públicos en Gitee para la colaboración de la comunidad. Esta herramienta supone un avance clave para la adopción de sistemas de Agent autónomos en sectores regulados como el financiero, el sanitario o la administración pública, donde la trazabilidad y el cumplimiento normativo son obligatorios. Con el AI Act de la Unión Europea en fase de implementación, FROST se posiciona como una solución estratégica para empresas españolas y europeas que buscan desplegar soluciones de IA autónoma sin renunciar al control y la transparencia que exigen las nuevas normativas comunitarias.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T04:03:40.860Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de FROST en Gitee",
+      "url": "https://gitee.com/frost-team/frost"
+    },
+    {
+      "title": "Repositorio de FROST-SOP en Gitee",
+      "url": "https://gitee.com/frost-team/frost-sop"
+    },
+    {
+      "title": "Artículo original del tutorial en Dev.to",
+      "url": "https://dev.to/frost-team/construye-sistemas-multi-agent-con-el-modelo-meta-de-cinco-dimensiones-de-frost"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de lanzamiento de FROST V4.0",
+      "value": "2026"
+    },
+    {
+      "label": "Número de dimensiones del modelo meta de FROST",
+      "value": "5"
+    },
+    {
+      "label": "Dependencias externas requeridas por el core de FROST",
+      "value": "Ninguna, solo biblioteca estándar de Python"
+    },
+    {
+      "label": "Número de módulos core de FROST V4.0",
+      "value": "5"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

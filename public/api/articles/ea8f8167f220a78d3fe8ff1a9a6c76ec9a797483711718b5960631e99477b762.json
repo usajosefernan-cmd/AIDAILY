@@ -1,0 +1,74 @@
+{
+  "aiSummary": "DESIGN.md es un formato innovador que combina tokens de diseño legibles por máquinas y prosa legible por humanos en un solo archivo, permitiendo a los agentes de IA ejecutar tareas de diseño con precisión y contexto.",
+  "category": "tecnologia",
+  "fullArticle": "En el ecosistema del diseño digital y la inteligencia artificial, un nuevo formato está ganando tracción: DESIGN.md. Este archivo único busca resolver una de las grandes brechas entre diseñadores humanos y agentes de IA, combinando en un solo lugar tanto los datos numéricos exactos como la justificación humana detrás de cada decisión de diseño. Su estructura simple pero poderosa promete transformar cómo se comunican los sistemas de diseño en entornos automatizados.\n\nLa primera parte de un DESIGN.md es el front matter en YAML, delimitado por tres guiones al inicio y al final. Aquí se almacenan los tokens de diseño: colores en valores hexadecimales, familias tipográficas, escalas de espaciado, radios de borde y definiciones de componentes. Esta sección es legible por máquinas y proporciona a los agentes de IA los valores precisos que necesitan para generar interfaces consistentes sin lugar a interpretaciones erróneas.\n\nDebajo del front matter se encuentra el cuerpo en markdown, donde los diseñadores explican el 'porqué' de cada elección. Por ejemplo, un token de color '#007bff' puede ser descrito como el 'color principal de interacción, prohibido su uso decorativo'. Esta capa de contexto semántico es crucial: sin ella, el agente carece de las reglas que rigen la aplicación de los valores, lo que puede derivar en diseños incoherentes.\n\nAunque el front matter es técnicamente opcional, en la práctica es el corazón del formato; prescindir de él reduce DESIGN.md a un simple documento de texto, perdiendo su valor como puente entre humanos y máquinas. Para facilitar su adopción, existen recursos como la hoja de trucos de inicio rápido y la guía completa, que profundizan en el esquema de tokens, la integración con herramientas como Tailwind y la accesibilidad.\n\nLa pregunta que queda en el aire es cómo los equipos equilibrarán la documentación de tokens con la justificación en sus propios sistemas. DESIGN.md no es solo un formato de archivo; es una declaración de intenciones sobre cómo la IA debe entender y aplicar el diseño. Su éxito dependerá de la voluntad de la industria para adoptar un estándar que priorice tanto la precisión como el significado.",
+  "hashtags": [
+    "#DESIGNmd",
+    "#SistemasDeDiseño",
+    "#AgentesIA",
+    "#TokensDeDiseño",
+    "#IA"
+  ],
+  "id": "ea8f8167f220a78d3fe8ff1a9a6c76ec9a797483711718b5960631e99477b762",
+  "imageAlt": "DESIGN.md: La anatomía de un formato que une tokens y prosa para los agentes de IA",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsp9cs52wgmev8i2gztbp.png",
+  "interestingData": [
+    {
+      "label": "Partes del formato",
+      "value": "2"
+    },
+    {
+      "label": "Categorías de tokens",
+      "value": "5"
+    },
+    {
+      "label": "Recursos complementarios",
+      "value": "2"
+    },
+    {
+      "label": "Delimitador de front matter",
+      "value": "3 guiones"
+    }
+  ],
+  "keyPoints": [
+    "DESIGN.md fusiona front matter YAML con tokens de diseño y cuerpo markdown con justificación, creando un puente entre máquinas y humanos.",
+    "Los tokens proporcionan valores exactos de colores, tipografía, espaciado y más, que los agentes pueden aplicar directamente en sus operaciones.",
+    "La prosa explica el significado y reglas de uso, como que un color específico solo debe emplearse para interacciones, nunca de forma decorativa.",
+    "Aunque el front matter es opcional en teoría, en la práctica es el corazón del formato, ya que sin él se pierden los valores precisos."
+  ],
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Guía completa de DESIGN.md",
+      "url": "https://dev.to/designmd-complete-guide"
+    },
+    {
+      "title": "Hoja de trucos de DESIGN.md",
+      "url": "https://dev.to/designmd-quickstart"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Imagen de portada del artículo que ilustra la anatomía de DESIGN.md, mostrando la combinación de tokens y prosa",
+      "caption": "Portada del artículo que representa visualmente la estructura de DESIGN.md y su aplicación en sistemas de diseño para IA",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsp9cs52wgmev8i2gztbp.png"
+    }
+  ],
+  "publishedAt": "2026-06-27T08:18:39.000Z",
+  "scrapedAt": "2026-06-27T08:32:51.167Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ia/general",
+  "summary": "DESIGN.md es un formato innovador que combina tokens de diseño legibles por máquinas y prosa legible por humanos en un solo archivo, permitiendo a los agentes de IA ejecutar tareas de diseño con precisión y contexto.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "DESIGN.md: La anatomía de un formato que une tokens y prosa para los agentes de IA",
+  "url": "https://dev.to/promptmaster/designmd-anatomy-how-tokens-and-prose-work-together-1ie5",
+  "whyMatters": "Este formato no es una mera convención de documentación; es un paso fundamental hacia la integración efectiva de la inteligencia artificial en los flujos de trabajo de diseño. Al proporcionar a los agentes tanto datos numéricos como contexto semántico, DESIGN.md elimina la ambigüedad y reduce drásticamente los errores en la implementación de sistemas de diseño. Su adopción masiva podría estandarizar la manera en que los equipos de producto y los modelos de IA colaboran, acelerando la creación de interfaces coherentes y accesibles a escala."
+}

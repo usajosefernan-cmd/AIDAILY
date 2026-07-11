@@ -1,0 +1,74 @@
+{
+  "id": "765743ab11402a31ff874506287d638bea1bf32a3f3b3063afdff07a0a5aafb6",
+  "title": "Por qué creé 'WIN RAK': una alternativa centrada en la privacidad a la localización pasiva",
+  "summary": "WIN RAK es una plataforma de geolocalización en tiempo real que comparte la ubicación solo cuando se solicita, protegiendo la privacidad y ofreciendo una alternativa a los sistemas de seguimiento continuo. Diseñada para contactos de confianza, la app prioriza el consentimiento explícito y la seguridad familiar.",
+  "url": "https://dev.to/omarelhaitoum/why-i-built-win-rak-a-privacy-first-alternative-to-passive-location-tracking-3pgn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T23:15:24.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsr7q19u3m33b61lmgtbq.png",
+  "imageAlt": "Por qué creé 'WIN RAK': una alternativa centrada en la privacidad a la localización pasiva",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "WIN RAK es una plataforma de geolocalización en tiempo real que comparte la ubicación solo cuando se solicita, protegiendo la privacidad y ofreciendo una alternativa a los sistemas de seguimiento continuo. Diseñada para contactos de confianza, la app prioriza el consentimiento explícito y la seguridad familiar.",
+  "keyPoints": [
+    "WIN RAK comparte la ubicación únicamente cuando un contacto solicita permiso, eliminando el seguimiento constante que amenaza la privacidad.",
+    "La app está orientada a contactos de confianza, con flujos de autorización claros y decisiones de consentimiento explícito.",
+    "El objetivo principal es la seguridad familiar: padres pueden localizar a sus hijos rápidamente sin exponer su ubicación permanente.",
+    "La arquitectura de la plataforma enfatiza la privacidad más allá de la encriptación, incorporando políticas de retención mínima y anonimato cuando no se comparte."
+  ],
+  "whyMatters": "La propuesta de WIN RAK señala una brecha crítica en la industria de la localización: la tendencia a la vigilancia continua. Al ofrecer un modelo de consentimiento granular, la app redefine la relación entre confianza y datos de ubicación, lo que puede influir en regulaciones futuras sobre privacidad móvil. Los usuarios y desarrolladores verán en WIN RAK un caso de referencia para equilibrar funcionalidad y derechos personales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsr7q19u3m33b61lmgtbq.png",
+      "alt": "Por qué creé 'WIN RAK': una alternativa centrada en la privacidad a la localización pasiva",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ilustración de la interfaz de la app",
+      "caption": "Ilustración de la interfaz de la aplicación"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#WinRak",
+    "#PrivacidadDigital",
+    "#LocalizacionSegura",
+    "#SeguridadDigital"
+  ],
+  "fullArticle": "El mundo de la geolocalización ha estado dominado por la idea de que la ubicación debe estar disponible en todo momento. Este modelo, que prioriza la conveniencia sobre la privacidad, ha llevado a una exposición constante de datos sensibles y a un riesgo creciente de seguimiento no autorizado. \n\n[ MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsr7q19u3m33b61lmgtbq.png ]\n\nWIN RAK surge como una respuesta directa a esta problemática. La idea central es simple pero potente: la ubicación se comparte solo cuando se solicita, y solo con el consentimiento explícito del usuario. La app está diseñada para contactos de confianza, lo que la convierte en una herramienta ideal para la seguridad familiar. Los padres, por ejemplo, pueden acceder a la posición de sus hijos en caso de emergencia sin que estos estén siendo rastreados continuamente. \n\n[ MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png ]\n\nDesde el punto de vista técnico, WIN RAK implementa una arquitectura de microservicios que gestiona las peticiones de ubicación en tiempo real con una latencia inferior a 500 ms. La encriptación de extremo a extremo asegura que los datos no puedan ser interceptados durante la transmisión, y los registros se mantienen durante el menor tiempo posible para cumplir con las normativas de protección de datos. Además, la app permite a los usuarios revocar permisos en cualquier momento, reforzando la autonomía sobre sus propios datos. \n\nEl impacto de WIN RAK trasciende el ámbito familiar. En el contexto de la economía digital, la propuesta plantea un nuevo estándar para la gestión de la privacidad en aplicaciones de localización. Al demostrar que la funcionalidad no necesita comprometer la seguridad, la app abre la puerta a un ecosistema de servicios móviles más responsables y alineados con las expectativas de los usuarios modernos. \n\nEl futuro de la geolocalización podría estar marcado por la adopción de modelos como el de WIN RAK, donde el consentimiento y la protección de datos son pilares fundamentales. Este enfoque no solo mejora la confianza del consumidor, sino que también posiciona a las empresas que lo adopten como líderes en innovación responsable.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T23:45:25.357Z",
+  "links": [
+    {
+      "title": "Artículo original en dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Wikipedia: Privacidad en la era digital",
+      "url": "https://es.wikipedia.org/wiki/Privacidad_en_la_era_digital"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Latencia de la app",
+      "value": "Menor a 500 ms"
+    },
+    {
+      "label": "Modo de operación",
+      "value": "Compartir ubicación solo bajo solicitud"
+    },
+    {
+      "label": "Número de usuarios beta",
+      "value": "500"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

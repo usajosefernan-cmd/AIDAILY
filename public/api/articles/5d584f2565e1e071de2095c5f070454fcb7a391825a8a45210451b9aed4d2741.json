@@ -1,0 +1,68 @@
+{
+  "id": "5d584f2565e1e071de2095c5f070454fcb7a391825a8a45210451b9aed4d2741",
+  "title": "Lesson 1 - TDD with AI: getting tests that hold up when the agent writes them",
+  "summary": "Un desarrollador experimentado en pruebas unitarias compartió su experiencia al usar un agente de IA para generar tests TDD: inicialmente las pruebas pasaban, pero cada cambio de código rompía cientos de tests frágiles generados por el agente, que mockeaba todo y verificaba llamadas en lugar de comportamiento. La solución pasa por modificar las instrucciones al agente y usar factories compartidas para construir objetos reales, logrando pruebas resistentes a cambios.",
+  "url": "https://dev.to/smukker/lesson-1-tdd-with-ai-getting-tests-that-hold-up-when-the-agent-writes-them-1he",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T19:43:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9bbd8uswcengi08z48y0.png",
+  "imageAlt": "Lesson 1 - TDD with AI: getting tests that hold up when the agent writes them",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador experimentado en pruebas unitarias compartió su experiencia al usar un agente de IA para generar tests TDD: inicialmente las pruebas pasaban, pero cada cambio de código rompía cientos de tests frágiles generados por el agente, que mockeaba todo y verificaba llamadas en lugar de comportamiento. La solución pasa por modificar las instrucciones al agente y usar factories compartidas para construir objetos reales, logrando pruebas resistentes a cambios.",
+  "keyPoints": [
+    "Un desarrollador delegó la escritura de pruebas unitarias TDD a un agente de IA, obteniendo inicialmente una suite de tests que pasaba todas las verificaciones.",
+    "Tras modificar un modelo de datos, cientos de pruebas se rompieron sin relación con el cambio, generando una carga de mantenimiento insostenible.",
+    "El agente mockeaba todos los objetos internos y escribía pruebas que verificaban llamadas entre funciones, no el comportamiento real del código.",
+    "La solución se basa en factories compartidas para objetos reales y modificar las instrucciones al agente para priorizar pruebas resistentes a cambios."
+  ],
+  "whyMatters": "Esta experiencia tiene un impacto directo en la productividad de los equipos de desarrollo de software en España y Europa, donde la adopción de agentes de IA para tareas de programación crece de forma exponencial. Si no se establecen pautas claras para la generación de pruebas, las empresas pueden acabar invirtiendo recursos importantes en suites de tests frágiles que generan falsa seguridad y aumentan el costo de mantenimiento a largo plazo. Las soluciones propuestas son aplicables de forma inmediata a cualquier equipo que use TDD con herramientas de IA, permitiendo evitar errores comunes que pueden suponer pérdidas de cientos de horas de trabajo en ajustes innecesarios de pruebas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9bbd8uswcengi08z48y0.png",
+      "alt": "Imagen de portada del artículo sobre TDD con IA y pruebas unitarias frágiles",
+      "caption": "Imagen de portada del artículo original publicado en DEV Community"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#TDD",
+    "#DesarrolloDeSoftware",
+    "#IAenDesarrollo",
+    "#PruebasUnitarias"
+  ],
+  "fullArticle": "Un desarrollador con años de experiencia en pruebas unitarias decidió dejar que un agente de IA escribiera toda la suite de tests mientras construía nuevas funcionalidades bajo la metodología TDD. Al principio, el resultado parecía ideal: todas las pruebas pasaban, las verificaciones manuales salían bien y el agente podía hacer commits sin supervisión. Pero la realidad se reveló semanas después, cuando un simple cambio en un modelo de datos rompió cientos de pruebas distribuidas por toda la suite, incluso aquellas que no tenían ninguna relación con la modificación realizada.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9bbd8uswcengi08z48y0.png]\n\nEl problema no era el cambio en sí, sino la fragilidad de las pruebas generadas por el agente. Como explica el autor, una prueba unitaria solo aporta valor cuando detecta errores tras modificar el código, no en el momento de escribirla. Pero el agente había mockeado casi todos los objetos internos del sistema, definiendo la estructura de cada entidad de forma manual en cada prueba, de modo que cualquier modificación en un campo o tipo de dato obligaba a actualizar cientos de archivos de test. Además, muchas de las pruebas no verificaban el comportamiento real del código, sino solo que ciertas funciones se llamaran con argumentos específicos, por lo que se rompían incluso cuando el resultado final del código no cambiaba tras un refactor.\n\nLa solución no pasó solo por ajustes técnicos, sino por cambiar la forma de dar instrucciones al agente de IA. El autor implementó una factory compartida para construir objetos reales del sistema, de forma que un cambio en un modelo solo requiriera modificar un único archivo en lugar de cientos de pruebas. También eliminó los mocks de objetos internos, usando una base de datos de prueba real para el código que accede a datos, y modificó las indicaciones al agente para que priorice pruebas que verifiquen resultados finales, no llamadas entre funciones. Además, borró decenas de pruebas que solo verificaban el comportamiento de mocks sin aportar valor real, reduciendo el tamaño de la suite y haciendo que el número de cobertura fuera más honesto.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T20:02:22.066Z",
+  "links": [
+    {
+      "title": "Artículo original en DEV Community",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Guía de TDD y pruebas unitarias de Martin Fowler",
+      "url": "https://martinfowler.com/bliki/TestDrivenDevelopment.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Pruebas rotas por cambio de modelo",
+      "value": "Cientos de pruebas en toda la suite"
+    },
+    {
+      "label": "Tiempo de ajustes repetitivos",
+      "value": "Semanas de trabajo tras cada modificación"
+    },
+    {
+      "label": "Reducción de pruebas innecesarias",
+      "value": "Eliminación de decenas de tests sin valor real"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

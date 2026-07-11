@@ -1,0 +1,38 @@
+{
+  "id": "185239b9f975cd94d13ef37b954744c4be15408588ebec125956a5598dcf1bb5",
+  "title": "Run Docker Compose as a Linux Service with systemd",
+  "summary": "Docker Compose on a Linux server should start on boot, stop cleanly on shutdown, and survive reboots without manual intervention.\n\nDocker Compose is not Kubernetes, and that is fine for the workloads this guide targets. For many real systems, a Compose project on a single Linux host is the right amo...",
+  "url": "https://dev.to/rosgluk/run-docker-compose-as-a-linux-service-with-systemd-2g8e",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T11:37:13.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhea0safxatr31i73f2at.png",
+  "imageAlt": "Run Docker Compose as a Linux Service with systemd",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Docker Compose on a Linux server should start on boot, stop cleanly on shutdown, and survive reboots without manual intervention.\n\nDocker Compose is not Kubernetes, and that is fine for the workloads this guide targets. For many real systems, a Compose project on a single Linux host is the right amo...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhea0safxatr31i73f2at.png",
+      "alt": "Run Docker Compose as a Linux Service with systemd",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Docker Compose on a Linux server should start on boot, stop cleanly on shutdown, and survive reboots without manual intervention.\n\nDocker Compose is not Kubernetes, and that is fine for the workloads this guide targets. For many real systems, a Compose project on a single Linux host is the right amount of infrastructure — simple, readable, easy to back up, and good enough for internal tools, side projects, self-hosted services, staging environments, small production apps, and developer infrastructure.\n\nThe missing piece is usually service management. Running this manually is not enough:\n\nA single command starts the stack, but it does not document how the stack should start on boot, stop during shutdown, reload after changes, write logs, recover from failures, or get updated safely. That is...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T11:43:33.925Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

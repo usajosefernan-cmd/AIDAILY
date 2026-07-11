@@ -1,0 +1,67 @@
+{
+  "id": "cf73e6acad58262edd6858bab91edc00b7b766c2faf1fb57b30dcb3defb4fd88",
+  "title": "Crea un Rastreador de Vuelos en Vivo con Feather RP2350 este Fin de Semana",
+  "summary": "Construye un rastreador de vuelos de escritorio con Feather RP2350 y sigue aviones en tiempo real. Descubre cómo hacerlo con un pequeño presupuesto.",
+  "url": "https://dev.to/circuitrocks/build-a-live-flight-tracker-on-the-feather-rp2350-this-weekend-2j5f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T22:08:35.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+  "imageAlt": "Crea un Rastreador de Vuelos en Vivo con Feather RP2350 este Fin de Semana",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Construye un rastreador de vuelos de escritorio con Feather RP2350 y sigue aviones en tiempo real. Descubre cómo hacerlo con un pequeño presupuesto.",
+  "keyPoints": [
+    "El rastreador utiliza señales ADS-B para triangular la posición de los aviones y mostrarlos en una pantalla táctil.",
+    "Se necesita una antena pequeña y un dongle SDR sintonizado a la banda de 1090 MHz para recibir los datos de ADS-B.",
+    "El proyecto es una excelente manera de introducirse en el seguimiento de aviones y la radio definida por software."
+  ],
+  "whyMatters": "Este proyecto permite a los entusiastas de la aviación y los makers seguir los vuelos en tiempo real con un dispositivo portátil y económico. Además, es una excelente oportunidad para aprender sobre la tecnología ADS-B y cómo se utiliza en la navegación aérea.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Rastreador de vuelos Feather RP2350",
+      "caption": "El rastreador de vuelos casero construido con Feather RP2350 y pantalla táctil."
+    }
+  ],
+  "subcategory": "gadgets",
+  "hashtags": [
+    "#FeatherRP2350",
+    "#ADS-B",
+    "#Aviacion",
+    "#RastreadorDeVuelos"
+  ],
+  "fullArticle": "Si eres un aficionado a la aviación y te gusta experimentar con proyectos electrónicos, este rastreador de vuelos en vivo es perfecto para ti. Utilizando la placa Feather RP2350 y una pantalla táctil FeatherWing de 3.5 pulgadas, podrás seguir los aviones en tiempo real desde tu escritorio.\n\nEl rastreador capta las señales ADS-B que los aviones emiten en la banda de 1090 MHz y las decodifica para obtener la matrícula, altitud y posición de cada aeronave. Luego, los datos se muestran en una pantalla colorida junto con un indicador de tránsito lunar que avisa cuando un avión está a punto de cruzar la cara de la Luna.\n\nPara construir el rastreador, necesitarás una antena pequeña, un dongle SDR y algo de soldadura para conectar los headers a la RP2350. El costo total del proyecto es de unos pocos miles de pesos, lo que lo hace accesible para la mayoría de los aficionados.\n\nSi te interesa explorar el mundo de la aviación y la tecnología de una manera práctica, este rastreador de vuelos casero es una excelente manera de empezar.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T00:26:10.394Z",
+  "links": [
+    {
+      "title": "Tutorial completo en Adafruit",
+      "url": "https://www.adafruit.com/"
+    },
+    {
+      "title": "Comprar Feather RP2350",
+      "url": "https://www.circuit.rocks/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Frecuencia ADS-B",
+      "value": "1090 MHz"
+    },
+    {
+      "label": "Tamaño de pantalla",
+      "value": "3.5 pulgadas"
+    },
+    {
+      "label": "Presupuesto estimado",
+      "value": "Unos pocos miles de pesos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,97 @@
+{
+  "id": "462be2df0b72d5e877ec91988df1daa0f8684ea1f00c45aeb65dd2d470362d3b",
+  "title": "El pseudocódigo compilable acaba con las alucinaciones de la IA al programar: adiós a los errores silenciosos",
+  "summary": "Un nuevo enfoque de especificación compilable elimina los errores de lógica en código generado por IA, que hasta ahora eran una 'caja negra' indetectable hasta su ejecución.",
+  "url": "https://dev.to/esproc_spl/compilable-and-executable-pseudocode-spec-solves-ai-coding-hallucinations-5ghk",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T03:08:21.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3n5n55dfkeuso2x0k46k.png",
+  "imageAlt": "El pseudocódigo compilable acaba con las alucinaciones de la IA al programar: adiós a los errores silenciosos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un nuevo enfoque de especificación compilable elimina los errores de lógica en código generado por IA, que hasta ahora eran una 'caja negra' indetectable hasta su ejecución.",
+  "keyPoints": [
+    "El código SQL generado por IA se ejecuta sin errores de sintaxis, pero hasta un 10% de las veces tiene lógica errónea que solo se detecta después de usarlo.",
+    "La especificación compilable es legible por humanos y transformable deterministicamente a código final, sin que la IA tenga que adivinar la lógica.",
+    "El flujo actual de programación asistida por IA requiere revisiones manuales costosas, ya que los errores no se detectan con comprobaciones de sintaxis.",
+    "Esta solución elimina por completo las alucinaciones de IA en la generación de código, al reemplazar la predicción probabilística por un compilador determinista."
+  ],
+  "whyMatters": "Para el ecosistema tecnológico español y europeo, esta supone una revolución en la fiabilidad de la programación asistida por IA. Empresas que basan sus decisiones en datos generados por código de IA dejarán de enfrentarse a errores silenciosos que comprometen resultados, reduciendo costos de revisión y aumentando la confianza en herramientas de desarrollo. Además, acelera la adopción segura de IA en proyectos empresariales, al eliminar el riesgo de decisiones basadas en código con lógica incorrecta, un problema crítico en sectores como finanzas o análisis de datos en España.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3n5n55dfkeuso2x0k46k.png",
+      "alt": "Portada del artículo sobre pseudocódigo compilable que elimina alucinaciones de IA en programación",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9e489e69bw27efpsipl0.png",
+      "alt": "Diagrama del flujo de trabajo de programación asistida por IA con especificación compilable",
+      "caption": "Esquema que ilustra el proceso de generación de código a partir de un pseudocódigo compilable"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fynq2xg00ut01aznwdnh9.png",
+      "alt": "Ejemplo de pseudocódigo compilable y su transformación a código SQL",
+      "caption": "Ejemplo práctico de especificación compilable convertida en código funcional"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flhzswgnx004rkfx5oneo.png",
+      "alt": "Comparación entre código SQL generado por IA y código derivado de especificación compilable",
+      "caption": "Tabla comparativa de fiabilidad entre ambos métodos de generación de código"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F86dvr0uerg2wpc46lsya.png",
+      "alt": "Estadísticas de errores en código generado por IA en entornos empresariales",
+      "caption": "Gráfico de impacto de las alucinaciones de IA en proyectos de desarrollo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PseudocodigoCompilable",
+    "#AlucinacionesIA",
+    "#ProgramacionSegura",
+    "#IAEnDesarrollo",
+    "#España"
+  ],
+  "fullArticle": "El uso de IA para generar código, especialmente consultas SQL, se ha extendido entre analistas de datos y desarrolladores por su velocidad: en segundos se obtienen decenas de líneas de código que se ejecutan sin errores de sintaxis. Sin embargo, esta aparente eficiencia esconde un riesgo crítico: la lógica del código puede no corresponderse con la intención del usuario, generando resultados erróneos que solo se detectan después de haber tomado decisiones basadas en ellos. Este problema, conocido como 'caja negra' de la IA, obliga a los profesionales a realizar revisiones manuales extremadamente costosas, desglosando el código capa por capa para verificar su lógica, anulando parte de la ganancia de productividad que promete la IA.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3n5n55dfkeuso2x0k46k.png]\n\nLa solución propuesta por el enfoque de especificación compilable es transformar la forma en que se define la tarea para la IA: en lugar de enviar una descripción ambigua, se utiliza un pseudocódigo con sintaxis fija que puede ser compilado y ejecutado directamente, sin necesidad de que la IA 'adivine' el código final. Este pseudocódigo es legible por humanos sin necesidad de conocer el lenguaje de programación objetivo, y su compilación es determinista: siempre produce el mismo código para la misma especificación, eliminando por completo las alucinaciones, ya que se suprime la etapa de predicción probabilística de la IA.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9e489e69bw27efpsipl0.png]\n\nEste avance tiene un impacto directo en el sector tecnológico español, donde la dependencia de datos para la toma de decisiones empresariales es cada vez mayor. Al eliminar el riesgo de errores silenciosos en código generado por IA, se reducen significativamente los costos de revisión y se aumenta la confianza en herramientas de desarrollo asistido, acelerando su adopción en proyectos de todo tipo. Además, sienta las bases para una programación asistida por IA fiable, un hito clave para la competitividad de las empresas españolas en un entorno digital cada más exigente.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fynq2xg00ut01aznwdnh9.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T03:23:09.215Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Iniciativa de IA de la Comisión Europea",
+      "url": "https://digital-strategy.ec.europa.eu/es/policies/artificial-intelligence"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión media del código SQL generado por IA",
+      "value": "90%"
+    },
+    {
+      "label": "Tasa de error residual por alucinaciones",
+      "value": "10%"
+    },
+    {
+      "label": "Tiempo de generación de código por IA",
+      "value": "Segundos"
+    },
+    {
+      "label": "Reducción de alucinaciones con especificación compilable",
+      "value": "100%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

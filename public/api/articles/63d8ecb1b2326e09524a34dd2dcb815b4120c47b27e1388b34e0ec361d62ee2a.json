@@ -1,0 +1,69 @@
+{
+  "id": "63d8ecb1b2326e09524a34dd2dcb815b4120c47b27e1388b34e0ec361d62ee2a",
+  "title": "Refactorización sin tests: el 'olor a código' que puede arruinar tu proyecto en producción",
+  "summary": "Los code smells son señales de problemas de diseño que no son bugs, pero indican que el código será difícil de modificar y propenso a errores. El artículo explica que todo refactor debe preservar el comportamiento existente, por lo que es imprescindible contar con tests que validen los cambios. Se analizan los tres modos de fallo más comunes al refactorizar, las buenas prácticas para evitar regresiones y la importancia de priorizar los smells que afectan a código que se modifica con frecuencia, ignorando los que están en zonas estables del proyecto.",
+  "url": "https://dev.to/nguoidungai/refactoring-code-smell-m01",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T14:52:30.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsichl1msachizeemhti9.png",
+  "imageAlt": "Refactorización sin tests: el 'olor a código' que puede arruinar tu proyecto en producción",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los code smells son señales de problemas de diseño que no son bugs, pero indican que el código será difícil de modificar y propenso a errores. El artículo explica que todo refactor debe preservar el comportamiento existente, por lo que es imprescindible contar con tests que validen los cambios. Se analizan los tres modos de fallo más comunes al refactorizar, las buenas prácticas para evitar regresiones y la importancia de priorizar los smells que afectan a código que se modifica con frecuencia, ignorando los que están en zonas estables del proyecto.",
+  "keyPoints": [
+    "Los code smells son señales superficiales de problemas de diseño profundos, no bugs, pero indican que el código será difícil de modificar y propenso a errores.",
+    "Todo refactor debe preservar el comportamiento existente, por lo que es imprescindible contar con tests que validen que no se introducen cambios no deseados.",
+    "Mezclar refactor y nuevas funcionalidades en un mismo PR complica la revisión, dificulta la detección de errores y rastrea la causa de los bugs.",
+    "No todos los code smells merecen ser eliminados: priorizar los que aparecen en código que se modifica con frecuencia, ignorando los que están en zonas estables del proyecto."
+  ],
+  "whyMatters": "Esta guía práctica sobre refactorización y detección de code smells es fundamental para equipos de desarrollo que buscan reducir la deuda técnica sin introducir errores en producción. Aplica reglas claras para evitar los modos de fallo más comunes, como refactorizar sin tests o mezclar cambios de estructura con nuevas funcionalidades, lo que puede generar costosos tiempos de depuración y retrasos en entregas. Implementar estas buenas prácticas permite mantener la mantenibilidad del código a largo plazo, reducir el riesgo de regresiones y acelerar la incorporación de nuevas características sin comprometer la estabilidad del producto.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsichl1msachizeemhti9.png",
+      "alt": "Imagen de portada del artículo sobre refactorización y code smells",
+      "caption": "Portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Refactorizacion",
+    "#CodeSmells",
+    "#DesarrolloSoftware",
+    "#IngenieriaDeSoftware",
+    "#CalidadDeCodigo"
+  ],
+  "fullArticle": "Los code smells, o 'olores a código', son señales superficiales que delatan problemas de diseño profundos en un proyecto de software. No se trata de bugs funcionales, sino de patrones que indican que el código será difícil de modificar, propenso a errores y costoso de mantener a largo plazo. La regla de oro de la refactorización es que se trata de un cambio de estructura que no altera el comportamiento existente del software, por lo que contar con tests que validen ese comportamiento es una condición indispensable para evitar desastres. Sin una red de seguridad de tests, cualquier modificación se convierte en una apuesta en la que no hay forma de saber si se ha alterado una funcionalidad sin querer.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsichl1msachizeemhti9.png]\n\nExisten tres modos de fallo que los equipos de desarrollo deben evitar a toda costa al abordar una refactorización. El primero es realizar cambios sin tests de protección: una modificación en una función compleja puede alterar una condición de borde o un orden de procesamiento sin que el equipo se dé cuenta, y el bug solo aparecerá en producción una semana después, cuando ya es difícil rastrear el commit que lo causó. El segundo error es mezclar cambios de estructura (refactor) con cambios de comportamiento (nuevas funcionalidades) en un mismo pull request: esta combinación hace que la revisión sea casi imposible, ya que no se puede distinguir si un error proviene de la reestructuración o de la nueva feature. El tercer fallo es perseguir la eliminación de code smells sin criterio de valor: no todos los olores merecen ser eliminados, ya que abstraer código duplicado pequeño en zonas estables del proyecto o convertir un magic number claro en una constante puede generar acoplamientos incorrectos y aumentar la complejidad en vez de reducirla.\n\nPara realizar una refactorización segura y efectiva, se deben seguir una serie de buenas prácticas probadas. En primer lugar, si el código que se va a modificar no cuenta con tests, es obligatorio escribir characterization tests antes de tocarlo: estos tests capturan el comportamiento actual del software, incluso si se trata de conductas que parecen 'erróneas', para que cualquier cambio posterior pueda ser validado. En segundo lugar, los cambios deben realizarse en pasos muy pequeños, ejecutando los tests después de cada modificación para confirmar que el comportamiento se mantiene intacto. En tercer lugar, es fundamental separar los pull requests de refactor de los de nuevas funcionalidades: el primero debe contener solo cambios de estructura con tests verdes, mientras que el segundo se enfoca en agregar comportamiento nuevo. Por último, se debe priorizar la eliminación de code smells en el código que se modifica con frecuencia y que tiene mayor complejidad, ignorando los olores que se encuentran en zonas estables del proyecto que rara vez se tocan.\n\nUn ejemplo práctico de aplicación de estas reglas es abordar una función legacy sin tests, como una calculatePrice con múltiples condiciones y magic numbers que el equipo evita modificar por miedo a romperla. El primer paso es escribir characterization tests que capturen el resultado actual para un conjunto representativo de entradas, incluyendo condiciones de borde. A continuación, se refactoriza paso a paso: primero se extraen los magic numbers a constantes con nombres significativos, luego se extraen bloques de código repetidos a métodos independientes, y finalmente se agrupan los parámetros primitivos que siempre se usan juntos en un parameter object, ejecutando los tests después de cada cambio. Si en algún paso un test falla, se identifica de inmediato la modificación que causó la regresión, sin tener que revisar todo el código modificado. Incluso se puede realizar un ejercicio educativo: modificar intencionalmente una condición de borde para ver cómo el test detecta el error de forma inmediata.\n\nAplicar estas buenas prácticas de refactorización no es un fin en sí mismo, sino una inversión en la mantenibilidad del software a largo plazo. Un código limpio, sin smells innecesarios, es más fácil de modificar, reduce la probabilidad de errores al incorporar nuevas funcionalidades y acelera los tiempos de entrega. El costo de la refactorización —tiempo, riesgo de regresiones si no se siguen las reglas, posibilidad de crear abstracciones incorrectas— se ve ampliamente compensado por la reducción de la deuda técnica y la capacidad de responder a cambios de requisitos de forma ágil. La clave es no dejarse llevar por la moda de 'limpiar código' sin criterio, sino aplicar la refactorización de forma estratégica, siempre protegida por tests y orientada a facilitar los cambios que el equipo tendrá que realizar en el futuro.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T15:08:32.451Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Guía oficial de refactorización de Martin Fowler",
+      "url": "https://refactoring.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Modos de fallo comunes al refactorizar",
+      "value": "3"
+    },
+    {
+      "label": "Pasos recomendados para un refactor seguro",
+      "value": "4"
+    },
+    {
+      "label": "Tiempo medio para detectar una regresión sin tests",
+      "value": "1 semana"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

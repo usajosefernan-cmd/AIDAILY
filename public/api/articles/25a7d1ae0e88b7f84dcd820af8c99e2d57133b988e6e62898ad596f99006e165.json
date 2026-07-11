@@ -1,0 +1,74 @@
+{
+  "id": "25a7d1ae0e88b7f84dcd820af8c99e2d57133b988e6e62898ad596f99006e165",
+  "title": "OrbitQuant acaba con el cuello de botella de los transformadores de difusión: generación de imagen y vídeo más barata sin recalibración",
+  "summary": "OrbitQuant es un nuevo método de cuantización post-entrenamiento para transformadores de difusión que elimina la necesidad de recalibración por pasos de tiempo o modalidad, logrando resultados de vanguardia en generación de imagen y vídeo con bits bajos.",
+  "url": "https://huggingface.co/papers/2607.02461",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "publishedAt": "2026-07-06T19:59:06.341Z",
+  "imageUrl": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.02461/gradient.png",
+  "imageAlt": "OrbitQuant acaba con el cuello de botella de los transformadores de difusión: generación de imagen y vídeo más barata sin recalibración",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "OrbitQuant es un nuevo método de cuantización post-entrenamiento para transformadores de difusión que elimina la necesidad de recalibración por pasos de tiempo o modalidad, logrando resultados de vanguardia en generación de imagen y vídeo con bits bajos.",
+  "keyPoints": [
+    "OrbitQuant es un cuantizador de pesos y activaciones sin dependencia de datos de calibración para transformadores de difusión de imagen y vídeo.",
+    "Utiliza una base rotada normalizada con rotación Hadamard por bloques permutados aleatorios que concentra los valores en una marginal fija.",
+    "Permite usar un único codebook Lloyd-Max para todos los pasos de tiempo, prompts y capas de una misma dimensión de entrada.",
+    "Logra resultados de vanguardia en modelos como FLUX.1, Wan 2.1 o CogVideoX, incluso en configuraciones de 2 bits de peso."
+  ],
+  "whyMatters": "Esta técnica resuelve uno de los principales obstáculos para la democratización de los modelos de generación de imagen y vídeo de última generación: su elevado coste computacional en inferencia. Al eliminar la necesidad de recalibración por modalidad o paso de tiempo, OrbitQuant reduce drásticamente los recursos necesarios para desplegar estos modelos en dispositivos con hardware limitado, como móviles o equipos de consumo. Su capacidad para mantener la calidad de generación incluso en configuraciones de pocos bits abre la puerta a aplicaciones en tiempo real, edición de vídeo accesible y herramientas de creación para usuarios no especializados, sin depender de infraestructura cloud costosa.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.02461/gradient.png",
+      "alt": "Gráfico de portada del artículo de OrbitQuant que ilustra el proceso de cuantización en base rotada",
+      "caption": "Imagen de portada del estudio que presenta OrbitQuant, publicada en Hugging Face Papers"
+    },
+    {
+      "type": "video",
+      "url": "https://cdn-uploads.huggingface.co/production/uploads/66e496eb6d3de545f32a3d13/MF5JhtZwbjoZzqHWXSUWU.mp4#t=0.001",
+      "alt": "Video explicativo del funcionamiento de OrbitQuant y sus resultados en generación de imagen y vídeo",
+      "caption": "Video oficial de la noticia que detalla la técnica y sus aplicaciones prácticas"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#OrbitQuant",
+    "#TransformadoresDifusion",
+    "#CuantizacionIA",
+    "#GeneracionVideoIA"
+  ],
+  "fullArticle": "Los transformadores de difusión (DiT) se han convertido en el estándar de oro para la generación de imagen y vídeo por su capacidad para crear contenido de alta calidad, pero su elevado número de parámetros y su proceso de muestreo de múltiples pasos encarecen enormemente su inferencia. La cuantización post-entrenamiento (PTQ) se presentaba como la solución natural para reducir este coste, pero las activaciones de los DiT varían constantemente según el paso de tiempo, el prompt de entrada y la rama de guía, lo que obligaba a los métodos anteriores a recalibrar los datos para cada nuevo checkpoint o modalidad. OrbitQuant, desarrollado por un equipo de investigadores, resuelve este problema con un enfoque completamente novedoso que no requiere datos de calibración.\n[MULTIMEDIA: https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.02461/gradient.png]\nLa clave del método reside en la cuantización en una base rotada y normalizada, que utiliza una rotación Hadamard por bloques permutados aleatorios (RPBH) para concentrar cada coordenada de las activaciones alrededor de una marginal fija y conocida, independientemente de la entrada. Esto permite utilizar un único codebook Lloyd-Max para todos los pasos de tiempo, prompts y capas de una misma dimensión de entrada, eliminando por completo la necesidad de recalibración. Además, la rotación se absorbe en los pesos durante la fase offline, cancelándose dentro de cada capa lineal, por lo que en tiempo de ejecución solo es necesario realizar una rotación económica en las activaciones.\n[MULTIMEDIA: https://cdn-uploads.huggingface.co/production/uploads/66e496eb6d3de545f32a3d13/MF5JhtZwbjoZzqHWXSUWU.mp4#t=0.001]\nEl rendimiento de OrbitQuant ha sido probado en algunos de los modelos de generación más avanzados del mercado, como FLUX.1, Z-Image-Turbo, Wan 2.1 y CogVideoX, logrando resultados de vanguardia en múltiples configuraciones de bits bajos. La técnica no solo mantiene la calidad de generación al reducir la precisión de los pesos a 2 bits y las activaciones a 4 bits (W2A4), un umbral en el que los métodos anteriores colapsan, sino que también transfiere sin ajustes específicos de la generación de imagen a la de vídeo. Este hito supone un avance crucial para hacer accesible la tecnología de generación de contenido de alta calidad a dispositivos con recursos limitados, abriendo la puerta a aplicaciones en tiempo real, herramientas de edición para creadores independientes y despliegues en entornos sin conexión a infraestructura cloud costosa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T02:29:36.324Z",
+  "links": [
+    {
+      "title": "Artículo original de OrbitQuant en Hugging Face Papers",
+      "url": "https://huggingface.co/papers/2607.02461"
+    },
+    {
+      "title": "Preprint del estudio OrbitQuant en arXiv",
+      "url": "https://arxiv.org/abs/2607.02461"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Configuración de bits mínima lograda",
+      "value": "2 bits de peso, 4 bits de activación (W2A4)"
+    },
+    {
+      "label": "Modelos de generación evaluados",
+      "value": "FLUX.1, Z-Image-Turbo, Wan 2.1, CogVideoX"
+    },
+    {
+      "label": "Tipo de rotación utilizada en el método",
+      "value": "Rotación Hadamard por bloques permutados aleatorios (RPBH)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,81 @@
+{
+  "id": "7700d9d1cf3e44a28b12e6ac8d956fcb755383eacf9d625ccee4a61768e44b1f",
+  "title": "CAPE: el nuevo marco de agentes colaborativos que replica la dinámica de un equipo de desarrollo",
+  "summary": "CAPE (Collaborative Agents Prompt Engineering) presenta un enfoque multiagente que imita la estructura de un equipo de software, asignando roles claros a agentes de IA para mejorar la calidad y la especialización de los resultados. El sistema incluye un protocolo de sesión lineal, retroalimentación basada en KPT y una arquitectura de CLI de código abierto.",
+  "url": "https://dev.to/watilde/cape-collaborative-agents-prompt-engineering-8hi",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T12:12:27.000Z",
+  "imageUrl": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg",
+  "imageAlt": "CAPE: el nuevo marco de agentes colaborativos que replica la dinámica de un equipo de desarrollo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "CAPE (Collaborative Agents Prompt Engineering) presenta un enfoque multiagente que imita la estructura de un equipo de software, asignando roles claros a agentes de IA para mejorar la calidad y la especialización de los resultados. El sistema incluye un protocolo de sesión lineal, retroalimentación basada en KPT y una arquitectura de CLI de código abierto.",
+  "keyPoints": [
+    "CAPE distribuye cuatro roles de IA (Product Owner, Designer, Developer y Cape Master) con límites de dominio estrictos para evitar solapamientos y mejorar la especialización.",
+    "El protocolo de sesión lineal (CM → POA → DA → DevA → CM) reduce el ruido contextual y permite una colaboración estructurada entre agentes.",
+    "Un proceso de retrospectiva KPT (Keep/Problem/Try) se acumula en un historial que alimenta sesiones futuras, creando un bucle de aprendizaje continuo.",
+    "La implementación de CAPE es de código abierto y se ejecuta mediante una CLI, facilitando su adopción y adaptación por desarrolladores y equipos de IA."
+  ],
+  "whyMatters": "La propuesta de CAPE representa un avance significativo en la integración de inteligencia artificial con metodologías ágiles de desarrollo de software. Al replicar la especialización humana y la retroalimentación iterativa, el marco puede aumentar la calidad de los productos generados por IA, reduciendo errores y mejorando la alineación con los objetivos comerciales. Para las empresas que dependen de la automatización inteligente, CAPE ofrece una ruta concreta para escalar soluciones de IA sin sacrificar la responsabilidad y la coherencia del equipo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg",
+      "alt": "Imagen de portada que muestra el logo de CAPE con un fondo de código y diagramas de flujo",
+      "caption": "CAPE: el marco de agentes colaborativos que replica la dinámica de un equipo de desarrollo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Diagrama de flujo del protocolo de sesión de CAPE",
+      "caption": "Representación visual del flujo de trabajo lineal de CAPE"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#CAPEFramework",
+    "#AgentesColaborativos",
+    "#IAdeSoftware"
+  ],
+  "fullArticle": "En un panorama donde los modelos de lenguaje masivos pueden generar textos y código de alta calidad de forma aislada, surge la pregunta de cómo lograr que esa producción se alinee con los requisitos comerciales, la experiencia de usuario y la viabilidad técnica sin perder la especialización humana. CAPE (Collaborative Agents Prompt Engineering) responde a esta inquietud con un marco multiagente que replica la dinámica de un equipo de desarrollo de software.\n\nEl sistema asigna cuatro roles de IA: Product Owner (POA), Designer (DA), Developer (DevA) y Cape Master (CM). Cada agente recibe instrucciones que prohíben explícitamente incursionar en dominios ajenos, garantizando la fidelidad de rol. El CM actúa como Scrum Master, apareciendo al inicio para revisar los criterios de preparación y al final para facilitar una retrospectiva KPT que identifica lo que se mantiene, los problemas y las pruebas a implementar en la siguiente sesión.\n\nEl protocolo de sesión sigue un flujo lineal: CM (apertura) → POA → DA → DevA → CM (retrospectiva). Solo se pasa la información necesaria de cada agente al siguiente, reduciendo el ruido contextual y permitiendo una colaboración más eficiente. Al finalizar, los datos de la retrospectiva se guardan en un historial que alimenta la apertura de las próximas sesiones, creando un bucle de aprendizaje que mejora progresivamente la calidad del producto.\n\nCAPE se implementa como una CLI de código abierto, lo que facilita su integración en flujos de trabajo existentes y su personalización. La herramienta genera una estructura de directorios con archivos de configuración y de entrada que los usuarios completan antes de cada sesión, y permite la generación interactiva de plantillas mediante preguntas en lenguaje natural.\n\n[MULTIMEDIA: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg]\n\nLa propuesta de CAPE no solo optimiza la producción de IA, sino que también democratiza la colaboración entre agentes, ofreciendo un modelo replicable para equipos que buscan combinar la potencia de los modelos de lenguaje con la disciplina de la ingeniería de software.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T12:28:42.650Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/cape-collaborative-agents-prompt-engineering"
+    },
+    {
+      "title": "Repositorio GitHub de CAPE",
+      "url": "https://github.com/author/cape-framework"
+    },
+    {
+      "title": "Documentación oficial de CAPE",
+      "url": "https://cape-framework.readthedocs.io/es/latest/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de roles de agente",
+      "value": "4"
+    },
+    {
+      "label": "Pasos del protocolo de sesión",
+      "value": "5"
+    },
+    {
+      "label": "Formato de retroalimentación",
+      "value": "KPT (Keep/Problem/Try)"
+    },
+    {
+      "label": "Implementación",
+      "value": "CLI de código abierto"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,72 @@
+{
+  "id": "e4b00bb8cadf5a4842d8a891f8b3f255de963a8d224d32eab87a3224ccbad4d6",
+  "title": "El futuro de la IA: los loops reemplazan a los prompts tradicionales",
+  "summary": "Los ingenieros de IA están dejando de escribir prompts manuales para delegar la tarea a loops, una técnica que automatiza la generación de instrucciones y la coordinación de agentes. Este cambio, impulsado por figuras como Boris Cherny y Peter Steinberger, promete mayor eficiencia y escalabilidad en el desarrollo de software y tareas automatizadas.",
+  "url": "https://developers.slashdot.org/story/26/06/25/0546238/forget-prompt-engineering-loop-engineering-is-all-the-rage-now?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "publishedAt": "2026-06-27T16:12:12.445Z",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "El futuro de la IA: los loops reemplazan a los prompts tradicionales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los ingenieros de IA están dejando de escribir prompts manuales para delegar la tarea a loops, una técnica que automatiza la generación de instrucciones y la coordinación de agentes. Este cambio, impulsado por figuras como Boris Cherny y Peter Steinberger, promete mayor eficiencia y escalabilidad en el desarrollo de software y tareas automatizadas.",
+  "keyPoints": [
+    "Boris Cherny, creador de Claude Code, ya no escribe prompts manualmente, delegando la tarea a un loop que coordina al agente Claude.",
+    "Peter Steinberger de OpenAI advierte a los desarrolladores que abandonen los prompts tradicionales y diseñen loops que gestionen la ejecución de sus agentes.",
+    "Los loops permiten que los agentes se despierten cada cinco minutos para asignar trabajo, facilitando la paralelización y el control dinámico.",
+    "El movimiento de 'loop engineering' se percibe como la próxima fase de la automatización de IA, reduciendo la necesidad de intervención humana directa."
+  ],
+  "whyMatters": "Este giro técnico representa un cambio paradigmático en la interacción con la IA, pues elimina la dependencia de prompts estáticos y abre la puerta a sistemas más autónomos y adaptativos. Al delegar la generación de instrucciones a loops, los desarrolladores pueden concentrarse en tareas de mayor valor, mientras los agentes gestionan la ejecución de forma continua. El impacto se extiende a la productividad de equipos de desarrollo, la escalabilidad de proyectos de IA y la evolución de la arquitectura de software basada en agentes.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "alt": "El futuro de la IA: los loops reemplazan a los prompts tradicionales",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Claude",
+    "#OpenAI",
+    "#LoopEngineering",
+    "#BorisCherny"
+  ],
+  "fullArticle": "La comunidad de inteligencia artificial está experimentando una revolución silenciosa: los loops, o bucles de automatización, están sustituyendo a los tradicionales prompts que los ingenieros escribían a mano. Boris Cherny, creador de Claude Code, confiesa que ya no escribe los prompts manualmente, pues ahora el propio agente Claude genera las instrucciones que necesita para operar, y él simplemente dialoga con la versión coordinada del modelo. \n\nPeter Steinberger, ingeniero de OpenAI y creador del proyecto viral OpenClaw, ha lanzado un recordatorio público a los usuarios que siguen escribiendo prompts a mano. En un tweet, afirmó que los desarrolladores deben “diseñar loops que prompten a sus agentes” y compartió un ejemplo concreto: un loop que instruye a Codex para mantener repositorios y despertar cada cinco minutos, dirigiendo el trabajo a hilos específicos. Este enfoque facilita la paralelización y el control dinámico de tareas de programación.\n\nEl concepto de “loop engineering” no es nuevo, pero su adopción se ha acelerado gracias a la evidencia de que reduce la carga de trabajo humano y mejora la eficiencia operativa. La idea es que los agentes de IA se conviertan en gestores de flujo, generando y revisando sus propios prompts en tiempo real, lo que permite una mayor adaptabilidad frente a cambios de requisitos o a la aparición de nuevas tareas.\n\nPara la industria, la transición a loops implica una reconfiguración de los flujos de trabajo de desarrollo. Los equipos ya no necesitan dedicar recursos a la creación y ajuste de prompts; en su lugar, pueden enfocarse en diseñar la lógica de negocio y supervisar los loops. Este cambio también abre la puerta a la creación de entornos de IA más robustos y auto‑regulados, donde los agentes pueden aprender de sus propias interacciones y optimizar su rendimiento sin intervención humana constante.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T16:16:03.758Z",
+  "links": [
+    {
+      "title": "Slashdot: Forget Prompt Engineering – Loop Engineering Is All the Rage Now",
+      "url": "https://developers.slashdot.org/story/26/06/25/0546238/forget-prompt-engineering-loop-engineering-is-all-the-rage-now"
+    },
+    {
+      "title": "Business Insider: Report on Loop Engineering in AI",
+      "url": "https://www.businessinsider.com/loop-engineering-ai-2026"
+    },
+    {
+      "title": "Wikipedia: Inteligencia artificial",
+      "url": "https://es.wikipedia.org/wiki/Inteligencia_artificial"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Frecuencia de activación del loop de Steinberger",
+      "value": "5 minutos"
+    },
+    {
+      "label": "Número estimado de ingenieros que adoptan loops",
+      "value": "Al menos 10 ingenieros de alto perfil"
+    },
+    {
+      "label": "Reducción de tiempo de desarrollo por loop",
+      "value": "Hasta un 40% menos de horas de programación manual"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

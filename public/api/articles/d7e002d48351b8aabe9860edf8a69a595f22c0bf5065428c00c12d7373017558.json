@@ -1,0 +1,75 @@
+{
+  "id": "d7e002d48351b8aabe9860edf8a69a595f22c0bf5065428c00c12d7373017558",
+  "title": "GLM 5.2 no es gratis: ni mi Spark de 4 000 USD lo ejecuta",
+  "summary": "El modelo de lenguaje GLM 5.2, aunque libre bajo licencia MIT, requiere recursos de hardware que la mayoría de usuarios no poseen. Su despliegue práctico implica inversiones que superan los 10 000 USD, y su coste operativo puede alcanzar hasta un millón de dólares en servidores de alto rendimiento.",
+  "url": "https://dev.to/cristiantalasanchez/glm-52-isnt-free-not-even-my-us4000-spark-can-run-it-3464",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T20:30:55.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcristiantala.com%2Fimg%2Fmodelos-ia-open-source-gratis-mito%2Fglm-5-2-open-source-gratis-hardware-synthwave.jpg",
+  "imageAlt": "GLM 5.2 no es gratis: ni mi Spark de 4 000 USD lo ejecuta",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El modelo de lenguaje GLM 5.2, aunque libre bajo licencia MIT, requiere recursos de hardware que la mayoría de usuarios no poseen. Su despliegue práctico implica inversiones que superan los 10 000 USD, y su coste operativo puede alcanzar hasta un millón de dólares en servidores de alto rendimiento.",
+  "keyPoints": [
+    "GLM 5.2, con 750 billones de parámetros, necesita al menos 240 GB de memoria RAM, cifra que excede la capacidad de la máquina Spark de 128 GB.",
+    "La versión comprimida a 2‑bit permite ejecutarlo en un Mac de 10 000 USD, pero la velocidad se reduce a 3‑6 tokens por segundo, insuficiente para interacción en tiempo real.",
+    "Para operar a plena precisión, se requieren dos o tres servidores DGX, con un coste aproximado de un millón de dólares, sin incluir gastos de energía ni mantenimiento.",
+    "El modelo abierto no elimina el gasto; simplemente transfiere el coste de cómputo al usuario final, que debe decidir entre hardware propio o API de terceros."
+  ],
+  "whyMatters": "Esta realidad recalibra la percepción popular de que la IA open‑source es automáticamente accesible. El alto coste de hardware crea una brecha entre investigadores y desarrolladores independientes, consolidando el dominio de grandes corporaciones que ya poseen infraestructuras de alto rendimiento. Para la comunidad tecnológica, entender que 'libre' no equivale a 'gratis' es esencial para planificar inversiones, colaboraciones y estrategias de despliegue.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcristiantala.com%2Fimg%2Fmodelos-ia-open-source-gratis-mito%2Fglm-5-2-open-source-gratis-hardware-synthwave.jpg",
+      "alt": "Imagen de portada que muestra la arquitectura de GLM 5.2 superpuesta a un fondo futurista de hardware",
+      "caption": "Portada ilustrativa del artículo, resaltando la imposibilidad de ejecutar GLM 5.2 en hardware convencional"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GLM52",
+    "#IAOpenSource",
+    "#HardwareInteligenciaArtificial"
+  ],
+  "fullArticle": "El reciente lanzamiento de GLM 5.2 ha sacado a la luz una paradoja que muchos en la comunidad de IA han estado ignorando: la disponibilidad de pesos bajo licencia MIT no garantiza su ejecución práctica. A pesar de que el modelo sea libre para descargar, su arquitectura de 750 billones de parámetros exige una memoria mínima de 240 GB, cifra que sobrepasa la capacidad de la máquina Spark de 4 000 USD con 128 GB. Esta brecha de hardware convierte la promesa de libertad en un reto técnico y financiero.\n\nPara los que buscan una solución más asequible, la compresión a 2‑bit permite que el modelo se ejecute en un Mac de 10 000 USD, pero la velocidad se reduce a entre 3 y 6 tokens por segundo, lo que hace que el usuario escriba más rápido que el modelo. Si el objetivo es una interacción fluida, el coste se dispara: se requieren dos o tres servidores DGX, con un gasto estimado de un millón de dólares, sin contar la factura eléctrica ni el mantenimiento.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fcristiantala.com%2Fimg%2Fmodelos-ia-open-source-gratis-mito%2Fglm-5-2-open-source-gratis-hardware-synthwave.jpg]\n\nEsta situación revela que la apertura de los modelos no elimina el coste de cómputo; simplemente transfiere la responsabilidad al usuario. En la práctica, muchos optan por servicios de API de terceros, pagando por tokens en lugar de por servidores, mientras que otros, como el autor del artículo, utilizan modelos más pequeños que se adaptan a su hardware y los despliegan en tareas donde la velocidad no es crítica. La lección es clara: la democratización de la IA depende tanto de la disponibilidad de código como de la accesibilidad de la infraestructura necesaria para ejecutarlo.\n\nEl debate no termina aquí. Cada vez que un nuevo modelo open‑source compite con los cerrados, la comunidad se enfrenta a la misma pregunta: ¿cuánto estamos dispuestos a invertir en hardware para lograr la independencia tecnológica? La respuesta tendrá implicaciones profundas para la innovación, la competitividad y la distribución del poder en el ecosistema de la IA.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:40:20.619Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/glm-5-2-isnt-free-not-even-my-4000-spark-can-run-it"
+    },
+    {
+      "title": "Página oficial de GLM 5.2",
+      "url": "https://glm-5-2.com"
+    },
+    {
+      "title": "Especificaciones de NVIDIA DGX",
+      "url": "https://www.nvidia.com/en-us/data-center/dgx/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Parámetros",
+      "value": "750 billones"
+    },
+    {
+      "label": "Memoria mínima requerida",
+      "value": "240 GB"
+    },
+    {
+      "label": "Costo aproximado de Mac comprimido",
+      "value": "10 000 USD"
+    },
+    {
+      "label": "Costo de servidores DGX",
+      "value": "1 millón USD (2‑3 servidores)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

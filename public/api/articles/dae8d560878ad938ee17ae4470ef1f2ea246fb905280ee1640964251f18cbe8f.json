@@ -1,0 +1,95 @@
+{
+  "id": "dae8d560878ad938ee17ae4470ef1f2ea246fb905280ee1640964251f18cbe8f",
+  "title": "El patrón de comando: la técnica que transforma peticiones en objetos y desacopla comportamientos",
+  "summary": "El patrón de comando, un clásico de la programación orientada a objetos, permite encapsular solicitudes como objetos, facilitando la parametrización, la cola, el registro y la reversibilidad de operaciones. Este enfoque modular mejora la mantenibilidad, la extensibilidad y la testabilidad de los sistemas.",
+  "url": "https://dev.to/tianxin/ming-ling-mo-shi-shen-du-zhi-nan-feng-zhuang-qing-qiu-yu-jie-ou-xing-wei-de-yi-zhu-1jl7",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-03T01:05:25.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6zqx8kw4xq5wi14fndyr.png",
+  "imageAlt": "El patrón de comando: la técnica que transforma peticiones en objetos y desacopla comportamientos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El patrón de comando, un clásico de la programación orientada a objetos, permite encapsular solicitudes como objetos, facilitando la parametrización, la cola, el registro y la reversibilidad de operaciones. Este enfoque modular mejora la mantenibilidad, la extensibilidad y la testabilidad de los sistemas.",
+  "keyPoints": [
+    "El patrón de comando convierte cada solicitud en un objeto, lo que permite parametrizar clientes con diferentes peticiones.",
+    "Facilita la creación de colas y registros de operaciones, ideal para sistemas que requieren auditoría o historial de acciones.",
+    "Permite implementar operaciones revertibles, lo que es esencial para transacciones y sistemas que necesitan rollback.",
+    "Se integra fácilmente con otros patrones, como el invoker y el receiver, creando arquitecturas limpias y desacopladas."
+  ],
+  "whyMatters": "Implementar el patrón de comando no solo mejora la legibilidad y mantenibilidad del código, sino que también habilita funcionalidades críticas como la reversión de acciones y la auditoría en tiempo real. En entornos empresariales donde la robustez y la trazabilidad son imperativas, esta técnica reduce el riesgo de errores y acelera la integración de nuevas funcionalidades, posicionándose como una herramienta estratégica para desarrolladores y arquitectos de software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6zqx8kw4xq5wi14fndyr.png",
+      "alt": "Ilustración que muestra la arquitectura del patrón de comando con objetos de solicitud, invocador y receptor",
+      "caption": "Diagrama conceptual del patrón de comando en acción"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ejemplo de código en JavaScript que implementa un comando simple",
+      "caption": "Fragmento de código que ilustra la encapsulación de una petición como objeto"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Captura de pantalla de una cola de comandos en un sistema de backend",
+      "caption": "Vista de la cola de comandos en un entorno de producción"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Diagrama de flujo que muestra la reversión de un comando",
+      "caption": "Proceso de rollback de una operación mediante el patrón de comando"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de DEV Community, comunidad de desarrolladores",
+      "caption": "Plataforma donde se comparte el artículo original"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PatronComando",
+    "#DiseñoSoftware",
+    "#ProgramacionOrientadaObjetos"
+  ],
+  "fullArticle": "El patrón de comando, una joya del repertorio de patrones de diseño de comportamiento, ofrece una solución elegante a uno de los problemas más recurrentes en el desarrollo de software: la gestión de solicitudes y la separación de responsabilidades. Al encapsular una petición como un objeto, se logra que el cliente no conozca los detalles de la ejecución, sino que delegue la lógica en un objeto que puede ser parametrizado, almacenado o revertido.\n\nEsta estructura permite, por ejemplo, crear una cola de comandos que se ejecutan de forma asíncrona, lo que resulta invaluable en sistemas de procesamiento por lotes o en interfaces que requieren respuestas rápidas sin bloquear la UI. Además, la capacidad de registrar cada comando facilita la auditoría y la trazabilidad, requisitos cada vez más exigidos por regulaciones como GDPR o ISO 27001.\n\nEl patrón también se presta a la implementación de operaciones revertibles. Al registrar el estado previo dentro del objeto comando, un sistema puede deshacer cambios con la misma facilidad con la que los aplica, algo esencial en transacciones bancarias, edición de documentos colaborativos o cualquier aplicación donde la integridad de los datos es crítica.\n\n[ MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6zqx8kw4xq5wi14fndyr.png ]\n\nAl integrar el patrón de comando con otros patrones como el invoker, que actúa como intermediario, y el receiver, que ejecuta la lógica real, se obtiene una arquitectura modular que facilita la prueba unitaria y la extensión futura. Los equipos de desarrollo pueden añadir nuevos comandos sin tocar el código existente, cumpliendo con el principio de abierto/cerrado de la SOLID.\n\nEn conclusión, el patrón de comando no es solo una técnica de diseño; es una estrategia que potencia la escalabilidad, la mantenibilidad y la resiliencia de los sistemas modernos. Su adopción puede marcar la diferencia entre un código que fracasará bajo presión y uno que evoluciona sin contratiempos.\n",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T01:28:02.240Z",
+  "links": [
+    {
+      "title": "Documentación oficial de patrones de diseño SOLID",
+      "url": "https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o"
+    },
+    {
+      "title": "Guía práctica de patrones de comando en Java",
+      "url": "https://www.baeldung.com/java-command-pattern"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de patrones de diseño",
+      "value": "23"
+    },
+    {
+      "label": "Popularidad del patrón de comando",
+      "value": "Alta"
+    },
+    {
+      "label": "Aplicaciones típicas",
+      "value": "Interfaces de usuario, sistemas de cola, transacciones"
+    },
+    {
+      "label": "Tiempo de ejecución de un comando promedio",
+      "value": "Microsegundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

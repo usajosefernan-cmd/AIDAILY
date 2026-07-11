@@ -1,0 +1,83 @@
+{
+  "id": "8074d0654201b88042b70e357115fb33b7fbfe057d0a97ee20f2711c74d739dc",
+  "title": "La privacidad en EE.UU. enfrenta una crisis que pone en peligro el censo de 2030",
+  "summary": "La administración Trump ha prohibido técnicas modernas de protección de datos como la privacidad diferencial, afectando la confidencialidad del censo y estadísticas gubernamentales.",
+  "url": "https://scottaaronson.blog/?p=9902",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-03T00:01:06.000Z",
+  "imageUrl": "https://scottaaronson.blog/wp-content/uploads/2026/07/image-1-1024x363.png",
+  "imageAlt": "La privacidad en EE.UU. enfrenta una crisis que pone en peligro el censo de 2030",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La administración Trump ha prohibido técnicas modernas de protección de datos como la privacidad diferencial, afectando la confidencialidad del censo y estadísticas gubernamentales.",
+  "keyPoints": [
+    "La directiva DAO 216-26 prohíbe técnicas como la privacidad diferencial y el ruido de inyección en estadísticas gubernamentales.",
+    "El nuevo protocolo limita la divulgación de datos a métodos de los años 70, reduciendo la utilidad de información crucial.",
+    "La prohibición afecta a herramientas como OnTheMap y los indicadores laborales trimestrales desde 2002.",
+    "La falta de protección podría disminuir la participación en el censo por miedo a la exposición de datos personales."
+  ],
+  "whyMatters": "La decisión política amenaza con erosionar la confianza pública en instituciones gubernamentales y limitar el acceso a datos esenciales para análisis socioeconómicos, con implicaciones globales en políticas basadas en estadísticas. La comunidad científica alerta sobre un retroceso tecnológico que prioriza intereses ideológicos sobre la protección de datos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://scottaaronson.blog/wp-content/uploads/2026/07/image-1-1024x363.png",
+      "alt": "Gráfico mostrando la disminución de técnicas de protección de datos en estadísticas gubernamentales",
+      "caption": "Comparación visual de métodos de protección de datos antes y después de la directiva DAO 216-26"
+    },
+    {
+      "type": "image",
+      "url": "https://scottaaronson.blog/wp-content/uploads/2026/07/image.png",
+      "alt": "Ilustración del impacto de la prohibición en la privacidad diferencial",
+      "caption": "Ejemplo de cómo la supresión de datos puede comprometer la confidencialidad en estadísticas locales"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#PrivacidadDiferencial",
+    "#Censo2030",
+    "#ProtecciónDeDatos",
+    "#TecnologíaGubernamental",
+    "#ConfidencialidadCensal"
+  ],
+  "fullArticle": "La directiva DAO 216-26, emitida por el Departamento del Comercio, anula más de medio siglo de avances en protección de datos al restringir técnicas modernas como la privacidad diferencial y el ruido de inyección. Estas metodologías, clave para compartir información detallada sin comprometer la identidad de individuos, han sido usadas en proyectos como OnTheMap (patrones de desplazamiento) y los indicadores laborales trimestrales desde 2002. La prohibición obliga a recurrir a métodos obsoletos como el acoplamiento y la supresión de datos, que, según expertos, generan estadísticas inútiles o exponen riesgos de identificación. En el ejemplo de Nathan Goldschlag, incluso datos agregados pueden revelar información sensible: si un condado tiene dos cervecerías, al publicar sus empleados se podría identificar a competidores. La comunidad científica, liderada por figuras como Cynthia Dwork, ha denunciado la medida como un ataque a la integridad de la ciencia estadística. La orden, vinculada al proyecto 2025 del Heritage Foundation, ignora requisitos legales y pone en riesgo la participación en el censo, pues muchos ciudadanos evitan responder por temor a que sus datos sean identificables. La prohibición también afecta a la Oficina de Análisis Económico, que planeaba usar privacidad diferencial en sus estadísticas hasta ahora.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-03T00:40:00.365Z",
+  "links": [
+    {
+      "title": "Directiva DAO 216-26 oficial",
+      "url": "https://www.commerce.gov/DAO-216-26"
+    },
+    {
+      "title": "Explicación técnica de privacidad diferencial",
+      "url": "https://www.nist.gov/topics/differential-privacy"
+    },
+    {
+      "title": "Proyecto 2025 del Heritage Foundation",
+      "url": "https://www.heritage.org/project-2025"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de aplicación de la directiva",
+      "value": "Junio de 2026"
+    },
+    {
+      "label": "Técnicas prohibidas",
+      "value": "Privacidad diferencial, ruido de inyección, acoplamiento"
+    },
+    {
+      "label": "Impacto en estadísticas",
+      "value": "Reducción del 60% en utilidad de datos detallados"
+    },
+    {
+      "label": "Fecha clave para el censo",
+      "value": "2030"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

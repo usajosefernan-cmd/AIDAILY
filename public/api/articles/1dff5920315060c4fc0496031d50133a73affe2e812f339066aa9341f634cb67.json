@@ -1,0 +1,42 @@
+{
+  "aiSummary": "Investigadores jordaníes demostraron que una BESS con control grid‑forming mejora significativamente la estabilidad de una planta solar de 100 MW, ofreciendo soporte rápido de frecuencia y tensión ante fallos y variaciones de carga.",
+  "category": "medioambiente",
+  "fullArticle": "En un mundo donde la energía solar se expande a velocidades sin precedentes, la estabilidad de la red se ha convertido en el mayor desafío técnico. Un equipo de investigadores de la Universidad Yarmouk y la Universidad Al‑Ahliyya de Amán ha demostrado que una batería de almacenamiento de energía (BESS) equipada con control grid‑forming puede ser la pieza clave para superar esta dificultad. El estudio, publicado en Scientific Reports, evaluó un sistema de 100 MW de fotovoltaico (PV) combinado con una BESS de 35 MW/60 MWh, conectada a una red de 4,16 kV y a la red de transmisión de 230 kV a través de transformadores de 4,16/24,9 kV y 24,9/230 kV respectivamente.\n\nEl control grid‑forming, basado en una máquina síncrona virtual (VSM), permite que la BESS emule las características de un generador síncrono, ofreciendo inercia sintética, regulación de tensión y soporte de frecuencia. Los investigadores sometieron al sistema a escenarios de operación extremos: desconexión de la red, reducción del 50 % en la producción solar, aumento del 45 % en la carga, fallos temporales y permanentes de tres fases, y variaciones de la relación de cortocircuito (SCR) entre 0,42 y 4,5. Los resultados fueron contundentes: durante la caída del 50 % de la generación, la frecuencia se mantuvo dentro de 0,8–1,0 Hz y se estabilizó en 0,5 s; tras un aumento de carga, la frecuencia se desplazó a 1,3–1,5 Hz pero se recuperó en menos de 0,4 s.\n\nEn el peor de los casos, un fallo permanente de tres fases provocó una caída de tensión a 0,7–0,8 pu, pero la BESS logró mantener la estabilidad sin interrumpir el suministro. Estas mejoras superan las expectativas iniciales y subrayan el potencial de la tecnología grid‑forming para redes con alta penetración renovable.\n\nMás allá de los números, el estudio abre la puerta a la coordinación de múltiples recursos grid‑forming en sistemas renovables a gran escala, a la optimización de parámetros de control según la fuerza de la red y a la integración con otras fuentes como la eólica. Para los operadores de energía, la adopción de BESS con control grid‑forming podría reducir costos de infraestructura, mejorar la calidad del suministro y acelerar la transición energética.\n\nEl trabajo de Alhmoud y sus colegas no solo aporta datos científicos, sino que también plantea una hoja de ruta para la implementación práctica de soluciones de almacenamiento inteligente, marcando un hito en la evolución de la red eléctrica del siglo XXI.",
+  "hashtags": [
+    "#BESS",
+    "#PV",
+    "#GridForming",
+    "#Jordan",
+    "#ScientificReports"
+  ],
+  "id": "1dff5920315060c4fc0496031d50133a73affe2e812f339066aa9341f634cb67",
+  "imageAlt": "Batería inteligente con control de forma de red revoluciona la estabilidad de plantas solares a gran escala",
+  "imageUrl": "https://www.pv-magazine.com/wp-content/uploads/2024/05/Lior-Kahana_350x350.png",
+  "keyPoints": [
+    "Una BESS de 35 MW/60 MWh con control VSM redujo la desviación de frecuencia a menos de 1 Hz durante una caída del 50 % en la producción solar.",
+    "El sistema mantuvo la tensión en el punto de interconexión por encima de 0,7 pu incluso tras un fallo permanente de tres fases.",
+    "El estudio cubrió SCR entre 0,42 y 4,5, demostrando que la tecnología grid‑forming es eficaz tanto en redes débiles como fuertes.",
+    "Los resultados, publicados en Scientific Reports, ofrecen evidencia cuantitativa para la transición a sistemas dominados por inversores con alta penetración renovable."
+  ],
+  "multimedia": [
+    {
+      "alt": "Grid-forming BESS to enhance stability in utility-scale PV",
+      "caption": "Lior Kahana",
+      "type": "image",
+      "url": "https://www.pv-magazine.com/wp-content/uploads/2024/05/Lior-Kahana_350x350.png"
+    }
+  ],
+  "publishedAt": "2026-06-24T12:17:17.000Z",
+  "scrapedAt": "2026-06-24T22:05:16.059Z",
+  "source": "PV Magazine",
+  "sourceUrl": "https://www.pv-magazine.com/feed/",
+  "subcategory": "Energias renovables",
+  "summary": "Investigadores jordaníes demostraron que una BESS con control grid‑forming mejora significativamente la estabilidad de una planta solar de 100 MW, ofreciendo soporte rápido de frecuencia y tensión ante fallos y variaciones de carga.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Batería inteligente con control de forma de red revoluciona la estabilidad de plantas solares a gran escala",
+  "url": "https://www.pv-magazine.com/2026/06/24/grid-forming-bess-to-enhance-stability-in-utility-scale-pv/",
+  "whyMatters": "El control grid‑forming de baterías representa un avance crítico para la integración de energías renovables de gran escala, mitigando la volatilidad de la generación solar y reduciendo la dependencia de sistemas de respaldo convencionales. Al proporcionar respuesta instantánea a fallos y fluctuaciones, mejora la resiliencia de la red y facilita la expansión de la capacidad solar sin comprometer la calidad del suministro. Para los operadores de redes y los reguladores, estos hallazgos abren la puerta a nuevas normativas y modelos de negocio que favorecen la sostenibilidad energética a nivel global."
+}

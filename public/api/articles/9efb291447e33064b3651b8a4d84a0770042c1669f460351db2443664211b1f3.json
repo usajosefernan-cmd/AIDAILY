@@ -1,0 +1,38 @@
+{
+  "id": "9efb291447e33064b3651b8a4d84a0770042c1669f460351db2443664211b1f3",
+  "title": "The Agent That Couldn't Rewrite Its Own History (Once We Made That True)",
+  "summary": "Quinto de una serie sobre la construcción de un organismo autónomo de IA que opere una infraestructura real de múltiples inquilinos bajo un modelo de seguridad constitucional. La parte 1 eran dos puertas, la parte 2 el muro, la parte 3 la defensa en capas, la parte 4 el gobernador y la confesión. Éste compensa el punto más feo de la confesión.\n\nI...",
+  "url": "https://dev.to/artemmatviychuk/the-agent-that-couldnt-rewrite-its-own-history-once-we-made-that-true-3i5c",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T19:21:23.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F438zwswhrkk0pne5i4d5.png",
+  "imageAlt": "The Agent That Couldn't Rewrite Its Own History (Once We Made That True)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Quinto de una serie sobre la construcción de un organismo autónomo de IA que opere una infraestructura real de múltiples inquilinos bajo un modelo de seguridad constitucional. La parte 1 eran dos puertas, la parte 2 el muro, la parte 3 la defensa en capas, la parte 4 el gobernador y la confesión. Éste compensa el punto más feo de la confesión.\n\nI...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F438zwswhrkk0pne5i4d5.png",
+      "alt": "The Agent That Couldn't Rewrite Its Own History (Once We Made That True)",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Quinto de una serie sobre la construcción de un organismo autónomo de IA que opere una infraestructura real de múltiples inquilinos bajo un modelo de seguridad constitucional. La parte 1 eran dos puertas, la parte 2 el muro, la parte 3 la defensa en capas, la parte 4 el gobernador y la confesión. Éste compensa el punto más feo de la confesión.\n\nEn la primera parte escribí una frase de la que estaba orgulloso: cada decisión se escribe en un registro de solo anexo como una cadena hash; el agente no puede reescribir su propia historia.\n\nCuando audité el sistema frente a sus propias afirmaciones, esa frase fue la que más me avergonzó. No porque la cadena hash no existiera. Existió. Simplemente no significaba nada todavía.\n\nTres hallazgos, en orden ascendente de malestar.\n\nLa cadena tenía dos redactores. La conciencia, la puerta de acción de la primera parte, escribió registros encadenados adecuadamente: cada entrada llevaba el hash de la anterior. Pero un segundo componente, el que ejecuta acciones externas, añadió sus propios registros al mismo archivo en un formato diferente, sin ningún campo de cadena. Cada una de sus entradas era una ruptura en la prueba de manipulación. El registro parecía de sólo anexar; se verificó como queso suizo.\n\nLos escritores no tenían candado. Dos procesos podrían leer el mismo \"último hash\" y...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T19:42:30.036Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

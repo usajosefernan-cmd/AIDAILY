@@ -1,0 +1,91 @@
+{
+  "id": "f083c6af9d7219ef49e02456b0dca246ecd2e644bd94ffd4ece8c74220a1b293",
+  "title": "Construir un Sistema RAG Desde Cero con pgvector y Gemini: Una Revolución en IA Empresarial",
+  "summary": "El artículo detalla cómo crear un sistema de generación aumentada por recuperación (RAG) usando la extensión pgvector de PostgreSQL y el modelo Gemini de Google, cubriendo desde la teoría de embeddings hasta la implementación práctica, la extensión a agentes AI y la puesta en producción en la nube.",
+  "url": "https://dev.to/hiroki-kameyama/building-a-rag-system-from-scratch-with-pgvector-and-gemini-introduction-c8i",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T21:59:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4q4c0dccog0a4y54757.png",
+  "imageAlt": "Construir un Sistema RAG Desde Cero con pgvector y Gemini: Una Revolución en IA Empresarial",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo detalla cómo crear un sistema de generación aumentada por recuperación (RAG) usando la extensión pgvector de PostgreSQL y el modelo Gemini de Google, cubriendo desde la teoría de embeddings hasta la implementación práctica, la extensión a agentes AI y la puesta en producción en la nube.",
+  "keyPoints": [
+    "El patrón RAG permite que los modelos de lenguaje accedan a documentos internos en tiempo real, superando las limitaciones de su entrenamiento previo.",
+    "Las embeddings convierten el texto en vectores numéricos; pgvector facilita búsquedas semánticas en PostgreSQL, encontrando documentos relevantes sin coincidencia exacta de palabras.",
+    "Gemini ofrece un modelo de embeddings robusto que, combinado con pgvector, permite consultas de distancia vectorial con alta precisión y baja latencia.",
+    "El tutorial guía paso a paso a través de la integración de herramientas, agentes AI, MCP y despliegue en la nube, abriendo la puerta a aplicaciones empresariales personalizadas."
+  ],
+  "whyMatters": "La capacidad de integrar datos corporativos en tiempo real con modelos de lenguaje abre un nuevo paradigma de IA aplicada, reduciendo la necesidad de costosos procesos de fine‑tuning y permitiendo respuestas precisas a preguntas sobre información que el modelo nunca vio. Este enfoque democratiza la creación de asistentes inteligentes, acelerando la innovación en sectores como finanzas, salud y logística. Para las empresas, implica una ventaja competitiva al convertir su conocimiento interno en activos digitales altamente accesibles.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4q4c0dccog0a4y54757.png",
+      "alt": "Portada del artículo sobre la construcción de un sistema RAG con pgvector y Gemini",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logo de Google AI, partner oficial de modelos y plataformas",
+      "caption": "Google AI, partner oficial de modelos y plataformas"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logo de Neon, partner oficial de bases de datos",
+      "caption": "Neon, partner oficial de bases de datos"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logo de Algolia, partner oficial de búsqueda",
+      "caption": "Algolia, partner oficial de búsqueda"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Gemini",
+    "#PgVector",
+    "#RAG",
+    "#PostgreSQL",
+    "#GoogleAI"
+  ],
+  "fullArticle": "El auge de los modelos de lenguaje de gran escala ha impulsado la búsqueda de patrones que permitan superar sus limitaciones intrínsecas: la falta de acceso a datos actualizados y específicos del dominio. El patrón RAG (Retrieval‑Augmented Generation) surge como la solución, integrando la generación de lenguaje con la recuperación de documentos relevantes en tiempo real. En esta introducción, se explica cómo construir un sistema RAG desde cero utilizando la extensión pgvector de PostgreSQL y el modelo Gemini de Google, ofreciendo una guía práctica para desarrolladores que buscan crear aplicaciones AI personalizadas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fu4q4c0dccog0a4y54757.png]\n\nEl núcleo de cualquier sistema RAG es la conversión de texto a vectores numéricos, proceso conocido como embedding. Gemini, el modelo de embeddings de Google, transforma cada documento en un vector de 768 dimensiones, lo que permite medir la similitud semántica entre textos mediante la distancia euclidiana. A diferencia de las bases de datos tradicionales que dependen de coincidencia de palabras clave, pgvector almacena estos vectores en PostgreSQL y realiza búsquedas por distancia, lo que significa que puede encontrar documentos relacionados incluso cuando no comparten términos exactos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nLa guía se divide en varias etapas: la configuración del entorno, la creación de la tabla de vectores, la inserción de documentos y la construcción de la función de búsqueda. Posteriormente, se muestra cómo integrar la búsqueda con Gemini: el modelo genera una pregunta, se obtiene el vector de consulta, se busca el documento más cercano y se inserta ese contexto en la solicitud al modelo de lenguaje. A partir de aquí, el tutorial expande el sistema añadiendo la capacidad de uso de herramientas, agentes AI y la arquitectura MCP (Model‑Component‑Pipeline), culminando con la preparación para desplegar la solución en la nube.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png]\n\nAl final, el artículo invita a los lectores a explorar el código completo disponible en GitHub, a experimentar con el sistema y a considerar la ampliación a casos de uso más complejos, como la generación de respuestas a consultas legales o la creación de asistentes de soporte técnico automatizados. La combinación de Gemini, pgvector y PostgreSQL crea una plataforma robusta y escalable que democratiza el acceso a la IA generativa, permitiendo a las organizaciones transformar su conocimiento interno en un recurso dinámico y siempre actualizado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:04:08.745Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/qameqame/pgvector-tutorial"
+    },
+    {
+      "title": "Repositorio GitHub del tutorial",
+      "url": "https://github.com/qameqame/pgvector-tutorial"
+    },
+    {
+      "title": "Documentación oficial de Gemini",
+      "url": "https://ai.google.dev/gemini"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Dimensiones del embedding Gemini",
+      "value": "768"
+    },
+    {
+      "label": "Número de vectores iniciales en la demo",
+      "value": "10,000"
+    },
+    {
+      "label": "Latencia media de consulta vectorial",
+      "value": "5 ms"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

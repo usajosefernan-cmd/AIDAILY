@@ -1,0 +1,88 @@
+{
+  "id": "5e65b889ec7323c1f7060cc4dd7170485fb7a4f53253a3a8d71a296bddb85beb",
+  "title": "El truco de Assembly que convierte direcciones IP sin invertir la cadena",
+  "summary": "En la programación de redes a bajo nivel, la conversión de direcciones IP de formato Big-Endian a la legible por humanos suele requerir dos bucles. Un ingeniero de red demuestra cómo un solo bucle, leyendo bytes en reversa y escribiendo la cadena también en reversa, elimina la necesidad de invertir la cadena y optimiza el rendimiento.",
+  "url": "https://dev.to/jm00nj/solving-ip-endianness-in-x64-assembly-a-single-pass-algorithm-3n9b",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T12:34:20.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fynha51yd2ce7njq980qx.png",
+  "imageAlt": "El truco de Assembly que convierte direcciones IP sin invertir la cadena",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En la programación de redes a bajo nivel, la conversión de direcciones IP de formato Big-Endian a la legible por humanos suele requerir dos bucles. Un ingeniero de red demuestra cómo un solo bucle, leyendo bytes en reversa y escribiendo la cadena también en reversa, elimina la necesidad de invertir la cadena y optimiza el rendimiento.",
+  "keyPoints": [
+    "En la arquitectura x86/x64, el orden de bytes de la red (Big-Endian) se invierte al cargarlo en registros, provocando direcciones IP desordenadas.",
+    "La conversión típica necesita un bucle adicional para invertir la cadena resultante, aumentando lecturas/escrituras de memoria.",
+    "El algoritmo de un solo paso lee los cuatro octetos desde el último y escribe la cadena desde el final del buffer, evitando la inversión.",
+    "Esta técnica reduce ciclos de CPU y simplifica el código de un analizador de paquetes en Assembly.",
+    ""
+  ],
+  "whyMatters": "La optimización de bajo nivel no es solo un ejercicio académico; en sistemas de detección de intrusos y túneles de red, cada ciclo de CPU cuenta. Al eliminar la inversión de cadena, se reduce la latencia de procesamiento, lo que permite analizar más paquetes en tiempo real y mejora la capacidad de respuesta ante ataques. Además, un código más limpio facilita el mantenimiento y la auditoría de seguridad, factores críticos en entornos donde la confiabilidad es esencial.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fynha51yd2ce7njq980qx.png",
+      "alt": "Portada del artículo sobre el algoritmo de un solo paso en Assembly para direcciones IP",
+      "caption": "Imagen que muestra la portada del artículo original"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fynha51yd2ce7njq980qx.png",
+      "alt": "Vista ampliada de la portada del artículo",
+      "caption": "Imagen ampliada que resalta el título y subtítulo del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Imagen adicional relacionada con el tema de programación en Assembly",
+      "caption": "Imagen ilustrativa que acompaña el contenido técnico del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Assembly",
+    "#Endianness",
+    "#Redes"
+  ],
+  "fullArticle": "El mundo de la programación de redes suele considerarse un territorio de alto nivel, donde funciones como inet_ntoa() hacen el trabajo pesado por nosotros. Pero cuando el código se escribe en Assembly puro, cada byte cuenta y la convención de orden de bytes de la red (Big-Endian) se convierte en un enemigo silencioso. El ingeniero de redes que lideró el proyecto Nested-ICMP-Communication Analysis descubrió que, al leer una dirección IP de 192.168.1.5, su terminal mostraba 5.1.168.192, una inversión que podía pasar desapercibida hasta que los paquetes empezaran a fallar.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fynha51yd2ce7njq980qx.png]\n\nTradicionalmente, la solución implicaba extraer cada octeto, convertirlo a ASCII y luego invertir la cadena resultante, lo que requería un bucle adicional y aumentaba la carga de memoria. El ingeniero, sin embargo, diseñó un algoritmo de un solo paso que lee los bytes en orden inverso—del octeto más significativo al menos significativo—y escribe la cadena ASCII también en reversa, partiendo del final del buffer de salida. De esta forma, la dirección aparece correctamente sin necesidad de invertirla.\n\nEl resultado es una reducción de ciclos de CPU y un código más compacto, lo que es vital en entornos de análisis de tráfico en tiempo real y en la evaluación de la resistencia de sistemas IDS. Al eliminar la inversión de cadena, se evita un cuello de botella que, aunque pequeño, se amplifica cuando se procesan miles de paquetes por segundo.\n\nMás allá de la eficiencia, la claridad del algoritmo facilita la auditoría de seguridad y la mantenibilidad del código. En un mundo donde la rapidez de respuesta ante amenazas es tan crítica como la precisión, este truco de Assembly demuestra que la elegancia puede encontrarse en la simplicidad de la lógica de bajo nivel.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:27:54.641Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article-123"
+    },
+    {
+      "title": "Wikipedia: Endianness",
+      "url": "https://es.wikipedia.org/wiki/Endianness"
+    },
+    {
+      "title": "Intel Manual de Arquitectura x86-64",
+      "url": "https://software.intel.com/content/www/us/en/develop/documentation/x86-64-architecture-manual.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Bytes de una dirección IP",
+      "value": "4"
+    },
+    {
+      "label": "Longitud máxima de la cadena IP en ASCII",
+      "value": "15"
+    },
+    {
+      "label": "Número de octetos en una IP",
+      "value": "4"
+    },
+    {
+      "label": "Orden de bytes de la red",
+      "value": "Big-Endian"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

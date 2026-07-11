@@ -1,0 +1,42 @@
+{
+  "aiSummary": "Block-GTQ introduce un método de asignación de bits adaptativo que considera la estructura de RoPE, mejorando la precisión de la atención y el rendimiento en tareas de lenguaje.",
+  "category": "tecnologia",
+  "fullArticle": "En el mundo de los modelos de lenguaje de gran escala, la eficiencia de la caché de claves y valores (KV-cache) es crucial para escalar el contexto sin sacrificar la precisión. La técnica de RoPE (Rotary Positional Encoding) añade una dependencia posicional a cada vector de clave, lo que convierte la cuantización de la caché en un problema de asignación de bits por bloques de frecuencia. Tradicionalmente, los cuantizadores de bajo bit tratan cada clave como un vector plano, perdiendo la sensibilidad de los bloques de alta energía.\n\nBlock-GTQ rompe con esa práctica al calcular un puntaje de energía libre por bloque RoPE y asignar bits enteros de forma greedy según la ganancia marginal. Este enfoque RoPE-aware permite que los bloques que influyen más en los logits de atención reciban más bits, reduciendo el error de cuantización donde más importa. La implementación se basa en TurboQuant-MSE, pero con una capa adicional de adaptación de energía.\n\nLos resultados son contundentes. Con presupuestos de bits idénticos, Block-GTQ reduce el MAE de logits de atención entre un 32 % y un 80 % frente a la cuantización uniforme, y gana todas las comparaciones de capa. En modelos como Llama‑3.1‑8B‑Instruct, el rendimiento en tareas de comprensión y razonamiento sube de 70.6 a 97.4 puntos de NIAH, y de 36.87 a 53.31 en LongBench‑EN. En pruebas de AIME 2024/2025 con DeepSeek‑R1‑Distill‑Qwen‑7B, Block‑GTQ alcanza puntuaciones casi idénticas a fp16 incluso sin buffer de claves recientes.\n\nAdemás, la ruta de caché empaquetada de Block‑GTQ logra una compresión de 3.24× con calidad comparable a fp16, reduciendo el consumo de memoria de 56.31 GB a 19.85 GB y acelerando 1.34× sobre FlashAttention2 en contexto de 128 K. Esta mejora abre la puerta a ejecutar modelos de mayor contexto en GPUs con memoria limitada y a reducir costes operativos. En definitiva, Block‑GTQ representa un avance significativo en la ingeniería de IA, permitiendo modelos más grandes, rápidos y económicos sin sacrificar la calidad.",
+  "hashtags": [
+    "#BlockGTQ",
+    "#RoPE",
+    "#KVCache",
+    "#Llama3",
+    "#Qwen25"
+  ],
+  "id": "da9d33ad3bae53aeefe5789f225e3c62791487be5c39a6270dc08f7bf6e91a7a",
+  "imageAlt": "Asignación de Bits Consciente de RoPE para la Cuantización de la Cache KV",
+  "imageUrl": "https://cdn-uploads.huggingface.co/production/uploads/6418554a0956be7233a1023e/p5S-Ul410wKIWXCT-C96A.png",
+  "keyPoints": [
+    "Block-GTQ adapta la asignación de bits a bloques de frecuencia RoPE, asignando más bits a bloques de alta energía y reduciendo errores de cuantización.",
+    "Con presupuestos de bits idénticos, Block-GTQ reduce el MAE de logits de atención en un 32-80% frente a la cuantización uniforme, mejorando la precisión.",
+    "En modelos de lenguaje como Llama-3.1-8B-Instruct, la técnica eleva el rendimiento de tareas de comprensión de hasta un 38% y de razonamiento de 45 puntos.",
+    "La ruta de caché empaquetada logra una compresión 3.24× con calidad comparable a fp16, reduciendo el consumo de memoria de 56.31 GB a 19.85 GB y acelerando 1.34×."
+  ],
+  "multimedia": [
+    {
+      "alt": "RoPE-Aware Bit Allocation for KV-Cache Quantization",
+      "caption": "Screenshot 2026-06-25 at 10.27.33",
+      "type": "image",
+      "url": "https://cdn-uploads.huggingface.co/production/uploads/6418554a0956be7233a1023e/p5S-Ul410wKIWXCT-C96A.png"
+    }
+  ],
+  "publishedAt": "2026-06-25T02:30:26.069Z",
+  "scrapedAt": "2026-06-25T02:44:30.463Z",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "subcategory": "ia/general",
+  "summary": "Block-GTQ introduce un método de asignación de bits adaptativo que considera la estructura de RoPE, mejorando la precisión de la atención y el rendimiento en tareas de lenguaje.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Asignación de Bits Consciente de RoPE para la Cuantización de la Cache KV",
+  "url": "https://huggingface.co/papers/2606.24033",
+  "whyMatters": "La innovación de Block-GTQ redefine la forma en que los modelos de lenguaje escalan su contexto, permitiendo que los bloques de mayor impacto posicional reciban más recursos de precisión. Esta optimización no solo mejora la exactitud de la atención, sino que también reduce la huella de memoria y acelera la inferencia, factores críticos en entornos de producción y en dispositivos con recursos limitados. Al acercarse al rendimiento de fp16 sin requerir hardware de alta gama, Block-GTQ abre la puerta a despliegues más accesibles y sostenibles de inteligencia artificial avanzada."
+}

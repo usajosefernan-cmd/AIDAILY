@@ -1,0 +1,65 @@
+{
+  "id": "c3256c2e7270716ad1bf62ffe7ec3fbd5860d6dd283cc4c4b358be17f80982e0",
+  "title": "Construyendo un Terminal Personalizado desde Cero: Devlog #1",
+  "summary": "Un desarrollador comparte su experiencia creando un terminal personalizado similar a bash desde cero, utilizando C++ y evitando bibliotecas estándar para un desafío de programación a bajo nivel",
+  "url": "https://dev.to/suleyman_sade/building-a-custom-terminal-from-scratch-devlog-1-14j2",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T00:59:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpjeos629ly3s1rgq21v9.png",
+  "imageAlt": "Construyendo un Terminal Personalizado desde Cero: Devlog #1",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador comparte su experiencia creando un terminal personalizado similar a bash desde cero, utilizando C++ y evitando bibliotecas estándar para un desafío de programación a bajo nivel",
+  "keyPoints": [
+    "El desarrollador elige C++ para su proyecto por su uso común en sistemas de bajo nivel",
+    "Se enfrenta al desafío de manejar cadenas de caracteres y punteros a char sin utilizar bibliotecas estándar de C++",
+    "Crea una estructura de matriz de caracteres con funciones para expandir, eliminar y inicializar para manejar mejor los datos",
+    "Opta por evitar bibliotecas modernas como <filesystem> y prefiere <dirent.h> y <unistd.h> para una exposición más profunda a los sistemas de bajo nivel"
+  ],
+  "whyMatters": "Este proyecto es importante porque muestra cómo los desarrolladores pueden profundizar en la programación de bajo nivel, lo que es esencial para comprender cómo funcionan los sistemas informáticos. Al evitar bibliotecas estándar y optar por enfoques más manuales, el desarrollador puede obtener una comprensión más profunda de los mecanismos subyacentes. Esto no solo mejora sus habilidades como programador, sino que también puede conducir a la creación de software más eficiente y personalizado. Además, este enfoque puede inspirar a otros a explorar y aprender sobre programación de sistemas, lo que puede tener un impacto positivo en la comunidad de desarrollo de software. En el contexto de la industria tecnológica, donde la innovación y la optimización son clave, proyectos como este demuestran la importancia de la experimentación y el aprendizaje continuo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpjeos629ly3s1rgq21v9.png",
+      "alt": "Imagen de portada del artículo sobre construir un terminal personalizado",
+      "caption": "Imagen que muestra el resultado final del proyecto de terminal personalizado"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxxsyvxeiryut6eoyz3wc.png",
+      "alt": "Captura de pantalla del proyecto de terminal personalizado",
+      "caption": "Captura de pantalla que muestra la funcionalidad del terminal personalizado"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DesarrolloDeSoftware",
+    "#ProgramacionDeBajoNivel",
+    "#CPlusPlus"
+  ],
+  "fullArticle": "Recientemente, un desarrollador ha compartido su experiencia en la creación de un terminal personalizado desde cero, similar a bash, utilizando el lenguaje de programación C++. Este proyecto surge del deseo de explorar y aprender sobre programación de bajo nivel, una habilidad esencial para cualquier desarrollador que busque entender cómo funcionan los sistemas informáticos a nivel fundamental. El desarrollador optó por C++ debido a su uso extendido en sistemas de bajo nivel y, lo que es más interesante, decidió evitar el uso de bibliotecas estándar de C++ para manejar cadenas de caracteres y otros datos, eligiendo en su lugar manejar punteros a char de manera manual. Esto no solo presentó desafíos técnicos, sino que también requirió una comprensión profunda de cómo se almacenan y se manipulan los datos en la memoria. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpjeos629ly3s1rgq21v9.png] Para abordar estos desafíos, el desarrollador creó una estructura de matriz de caracteres con funciones personalizadas para expandir, eliminar e inicializar, lo que mejoró significativamente la gestión de los datos en el proyecto. Además, optó por utilizar bibliotecas como <dirent.h> y <unistd.h> en lugar de <filesystem> para obtener una exposición más directa a los sistemas de archivos y directorios, lo que enriqueció su comprensión de los mecanismos subyacentes. Este enfoque no solo ha permitido al desarrollador crear un terminal personalizado con funcionalidades como cambiar de directorio y mostrar el directorio actual, sino que también ha profundizado su conocimiento en programación de sistemas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T01:22:49.358Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Lenguaje de programación utilizado",
+      "value": "C++"
+    },
+    {
+      "label": "Bibliotecas utilizadas",
+      "value": "<dirent.h> y <unistd.h>"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

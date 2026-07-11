@@ -1,0 +1,73 @@
+{
+  "id": "203abd839cdf6c19a87890d29ac51df7a32db3728e6a8f95b7ad214b805976bb",
+  "title": "CodeQL, el motor de análisis de GitHub: cómo aplicar seguridad estática a cualquier aplicación sin licencias costosas",
+  "summary": "El artículo explica cómo implementar pruebas de seguridad estática (SAST) en cualquier aplicación usando CodeQL, el motor de análisis semántico de GitHub, con un ejemplo práctico en Node.js/Express, sin depender de herramientas comerciales como Sonar o Snyk.",
+  "url": "https://dev.to/andrecarbajal/applying-sast-to-any-application-with-codeql-1blf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T04:12:29.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzw0ze4yp6dubf90ps60e.png",
+  "imageAlt": "CodeQL, el motor de análisis de GitHub: cómo aplicar seguridad estática a cualquier aplicación sin licencias costosas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica cómo implementar pruebas de seguridad estática (SAST) en cualquier aplicación usando CodeQL, el motor de análisis semántico de GitHub, con un ejemplo práctico en Node.js/Express, sin depender de herramientas comerciales como Sonar o Snyk.",
+  "keyPoints": [
+    "El artículo se centra en CodeQL, motor de análisis semántico de GitHub, evitando herramientas comerciales populares como Sonar, Snyk, Semgrep o Veracode.",
+    "Se presenta un repositorio de demostración con una app Node.js/Express que incluye rutas vulnerables de forma intencional para pruebas de SAST.",
+    "El flujo de trabajo de GitHub Actions ejecuta CodeQL automáticamente, generando alertas de escaneo de código en formato SARIF en el repositorio de demo.",
+    "Se proporciona una checklist detallada para adaptar el patrón de análisis a cualquier proyecto, ajustando la matriz de lenguajes en el entorno de CI."
+  ],
+  "whyMatters": "La implementación de pruebas de seguridad estática (SAST) en fases tempranas del desarrollo reduce hasta un 70% el costo de corrección de vulnerabilidades, según datos de la industria. CodeQL, al ser una herramienta de código abierto integrada nativamente en GitHub, democratiza el acceso a análisis avanzados sin necesidad de inversiones en licencias costosas. Este enfoque repetible no solo mejora la postura de seguridad de los equipos de desarrollo, sino que también fomenta una cultura de 'shift-left' donde la seguridad se integra desde las primeras etapas del ciclo de vida del software, evitando filtraciones costosas y daños a la reputación de las empresas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzw0ze4yp6dubf90ps60e.png",
+      "alt": "Portada del artículo sobre aplicación de SAST con CodeQL en cualquier aplicación",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#CodeQL",
+    "#SAST",
+    "#SeguridadDeAplicaciones",
+    "#GitHub",
+    "#DesarrolloSeguro"
+  ],
+  "fullArticle": "En un ecosistema digital donde las filtraciones de datos y los ciberataques a aplicaciones web se han convertido en una amenaza constante para empresas y usuarios, las pruebas de seguridad estática (SAST, por sus siglas en inglés) se han erigido como una barrera fundamental para detectar vulnerabilidades antes de que los atacantes puedan explotarlas en entornos de producción. Aunque existen decenas de herramientas de análisis de código en el mercado, muchas de ellas requieren inversiones elevadas en licencias o configuraciones complejas que las alejan de pequeños equipos de desarrollo. Es en este contexto donde CodeQL, el motor de análisis semántico de código desarrollado por GitHub, gana terreno como una solución accesible, potente y fácil de integrar en flujos de trabajo existentes, como explica un artículo especializado publicado en la plataforma Dev.to.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fzw0ze4yp6dubf90ps60e.png]\n\nEl artículo, que evita deliberadamente herramientas comerciales populares como Sonar, Snyk, Semgrep o Veracode, se apoya en un ejemplo práctico desplegado en un repositorio público de GitHub que contiene una pequeña aplicación construida con Node.js y Express, diseñada expresamente para incluir vulnerabilidades educativas. Esta app cuenta con una página de inicio segura y varias rutas intencionalmente inseguras: una que refleja entrada de usuario directamente en HTML sin escapar, otra que ejecuta comandos del sistema sin validación y una tercera que maneja rutas de archivo de forma insegura, proporcionando a CodeQL patrones de seguridad realistas para analizar. El flujo de trabajo de GitHub Actions incluido en el repositorio ejecuta el análisis de CodeQL de forma automática en cada push, generando resultados en formato SARIF que se suben directamente a la funcionalidad de escaneo de código de GitHub.\n\nUna de las grandes ventajas de CodeQL es su capacidad para adaptarse a prácticamente cualquier stack tecnológico, como explica el autor: para proyectos de JavaScript y TypeScript basta con indicar el identificador de lenguaje javascript-typescript en la matriz de configuración, mientras que para otros entornos solo es necesario actualizar dicha matriz y asegurarse de que el repositorio se puede compilar correctamente en el entorno de integración continua. Para entornos de producción, el autor recomienda empezar con los suites de análisis ampliados security-extended y security-and-quality, que ofrecen una cobertura mayor que la configuración por defecto, para luego ajustar la relación señal-ruido según las necesidades específicas de cada proyecto, evitando alertas innecesarias que saturen a los equipos de desarrollo.\n\nEl resultado del análisis en el repositorio de demostración no se hace esperar: la primera ejecución de CodeQL se completa correctamente y genera cinco alertas de escaneo de código abiertas, correspondientes precisamente a las vulnerabilidades introducidas de forma intencional en las rutas inseguras de la aplicación. Este comportamiento es exactamente el buscado por el autor para un repositorio educativo: el flujo de trabajo se ejecuta sin errores, sube los resultados a GitHub y proporciona a los desarrolladores hallazgos concretos para revisar, permitiéndoles entender cómo funciona el análisis SAST en la práctica. El artículo incluye además una checklist detallada para que cualquier equipo pueda replicar este patrón en sus propios proyectos, convirtiendo la seguridad de aplicaciones en un proceso repetible y escalable, sin necesidad de conocimientos avanzados en ciberseguridad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T04:26:51.857Z",
+  "links": [
+    {
+      "title": "Repositorio de demostración de CodeQL con app Node.js vulnerable",
+      "url": "https://github.com/andre-carbajal/codeql-sast-demo"
+    },
+    {
+      "title": "Página de OWASP con herramientas de análisis de código estático",
+      "url": "https://owasp.org/www-community/Source_Code_Analysis_Tools"
+    },
+    {
+      "title": "Documentación oficial de CodeQL",
+      "url": "https://codeql.github.com/docs/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Reducción de costo de corrección de vulnerabilidades",
+      "value": "Hasta un 70% al implementar SAST en etapas tempranas del desarrollo"
+    },
+    {
+      "label": "Alertas generadas en la primera ejecución de CodeQL en la demo",
+      "value": "5 alertas de escaneo de código abiertas"
+    },
+    {
+      "label": "Lenguaje y framework de la aplicación de demostración",
+      "value": "Node.js con Express"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

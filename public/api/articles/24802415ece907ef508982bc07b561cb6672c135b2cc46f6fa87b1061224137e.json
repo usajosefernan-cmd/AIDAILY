@@ -1,0 +1,77 @@
+{
+  "id": "24802415ece907ef508982bc07b561cb6672c135b2cc46f6fa87b1061224137e",
+  "title": "Por qué tus capturas de pantalla salen mal: la guía de viewport que todo desarrollador necesita",
+  "summary": "La guía explica la importancia de configurar correctamente el viewport al automatizar capturas de pantalla, detalla los errores comunes por valores por defecto de herramientas como Puppeteer o Playwright, y ofrece recomendaciones adaptadas a cada caso de uso: pruebas de regresión visual, previsualizaciones sociales y generación de PDFs.",
+  "url": "https://dev.to/webmox/a-developer-guide-to-viewport-sizes-for-screenshots-4aek",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T10:35:46.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft07r0tgfr0g2087msfkr.png",
+  "imageAlt": "Por qué tus capturas de pantalla salen mal: la guía de viewport que todo desarrollador necesita",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La guía explica la importancia de configurar correctamente el viewport al automatizar capturas de pantalla, detalla los errores comunes por valores por defecto de herramientas como Puppeteer o Playwright, y ofrece recomendaciones adaptadas a cada caso de uso: pruebas de regresión visual, previsualizaciones sociales y generación de PDFs.",
+  "keyPoints": [
+    "El viewport por defecto de Chromium en modo headless es 800x600 píxeles, muy distinto al de navegadores locales, generando discrepancias en capturas automatizadas.",
+    "Para pruebas de regresión visual, se recomienda usar los viewports más usados por tu base de usuarios, obtenidos de analíticas, como 1366x768 o 1920x1080.",
+    "Las imágenes de previsualización social requieren un viewport exacto de 1200x630 píxeles para evitar recortes no deseados en herramientas como og:image.",
+    "Al generar capturas de página completa, la altura del viewport se ignora, lo que afecta elementos sticky, imágenes con carga diferida o animaciones por desplazamiento."
+  ],
+  "whyMatters": "Esta guía resuelve un error recurrente en los flujos de automatización de desarrollo que genera costes importantes de tiempo y recursos al depurar capturas de pantalla fallidas en entornos de integración continua. Al ajustar correctamente el viewport según el caso de uso, los equipos reducen errores en despliegues, garantizan que las previsualizaciones sociales se muestren de forma consistente y evitan problemas de renderizado que solo aparecen en dispositivos reales. Además, al conocer las diferencias entre herramientas como Puppeteer y Playwright, los desarrolladores pueden optimizar sus pipelines de trabajo y elegir la solución que mejor se adapte a sus necesidades específicas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft07r0tgfr0g2087msfkr.png",
+      "alt": "Portada de la guía para desarrolladores sobre tamaños de viewport para capturas de pantalla",
+      "caption": "Imagen de portada del artículo original de Dev.to sobre configuración de viewport para capturas automatizadas"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DesarrolloWeb",
+    "#PruebasDeSoftware",
+    "#Puppeteer",
+    "#Playwright",
+    "#Viewport"
+  ],
+  "fullArticle": "Los desarrolladores suelen subestimar la configuración del viewport hasta que las capturas de pantalla automatizadas empiezan a fallar sin una explicación aparente, como explica la guía publicada en Dev.to. Los valores por defecto de herramientas como el Chromium en modo headless (800x600 píxeles) o Puppeteer difieren mucho de los de los navegadores locales, generando discrepancias que solo se detectan en entornos de integración continua y que pueden tardar horas en depurar. Para evitar estos errores, es fundamental adaptar el viewport al caso de uso: para pruebas de regresión visual se recomienda usar los tamaños más utilizados por la base de usuarios, extraídos de analíticas, mientras que para previsualizaciones sociales el tamaño debe ser exactamente 1200x630 píxeles para evitar recortes no deseados.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ft07r0tgfr0g2087msfkr.png]\n\nAdemás, ajustar solo el ancho del viewport no es suficiente: es necesario configurar también la relación de píxeles del dispositivo (DPR) y el agente de usuario para emular correctamente dispositivos móviles como el iPhone, que cuenta con un DPR de 3. Otro error muy común es asumir que al hacer una captura de página completa la altura del viewport se respeta, cuando en realidad se extiende para cubrir todo el contenido desplazable, lo que puede causar problemas con elementos fijos, imágenes con carga diferida o animaciones activadas por desplazamiento. La recomendación final es evitar probar en todos los dispositivos posibles y centrarse en los puntos de ruptura de tu propio CSS, que son donde se producen los cambios de diseño que generan errores.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T10:48:14.835Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Puppeteer sobre configuración de viewport",
+      "url": "https://pptr.dev/api/puppeteer.page.setviewport"
+    },
+    {
+      "title": "Documentación oficial de Playwright sobre descriptores de dispositivo",
+      "url": "https://playwright.dev/docs/emulators"
+    },
+    {
+      "title": "Guía de MDN sobre viewport en desarrollo web",
+      "url": "https://developer.mozilla.org/es/docs/Glossary/Viewport"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Viewport por defecto de Chromium en modo headless",
+      "value": "800x600 píxeles"
+    },
+    {
+      "label": "Viewport por defecto de Playwright",
+      "value": "1280x720 píxeles"
+    },
+    {
+      "label": "Tamaño recomendado para previsualizaciones sociales",
+      "value": "1200x630 píxeles exactos"
+    },
+    {
+      "label": "Relación de píxeles de un iPhone",
+      "value": "3 (DPR)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

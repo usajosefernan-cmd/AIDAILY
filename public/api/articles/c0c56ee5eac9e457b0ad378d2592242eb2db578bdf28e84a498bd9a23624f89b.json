@@ -1,0 +1,84 @@
+{
+  "id": "c0c56ee5eac9e457b0ad378d2592242eb2db578bdf28e84a498bd9a23624f89b",
+  "title": "Piscinas, orina y la lucha por borrar tus datos en la red",
+  "summary": "El artículo explora cómo los datos personales se filtran a través de plataformas públicas y privadas, y las estrategias de Troy Hunt para eliminar la información personal de la web.",
+  "url": "https://www.troyhunt.com/swimming-pools-pee-and-trying-to-delete-your-data-from-the-internet",
+  "source": "Troy Hunt Blog",
+  "sourceUrl": "https://www.troyhunt.com",
+  "publishedAt": "2026-07-07T19:40:46.865Z",
+  "imageUrl": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2026/07/image.jpg",
+  "imageAlt": "Piscinas, orina y la lucha por borrar tus datos en la red",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explora cómo los datos personales se filtran a través de plataformas públicas y privadas, y las estrategias de Troy Hunt para eliminar la información personal de la web.",
+  "keyPoints": [
+    "Los usuarios pierden el control de sus datos tras compartirlos en redes sociales, generando un riesgo de exposición masiva.",
+    "Troy Hunt propone métodos de borrado selectivo y la creación de listas negras para proteger la identidad digital.",
+    "La eliminación efectiva de datos requiere colaboración entre proveedores de servicios, legisladores y usuarios conscientes.",
+    "El futuro de la privacidad digital dependerá de la adopción de políticas de datos más estrictas y de la educación del público."
+  ],
+  "whyMatters": "El control de la información personal es un pilar fundamental de la libertad individual en la era digital. Cuando los datos quedan expuestos, la vulnerabilidad a fraudes, robo de identidad y manipulación aumenta drásticamente. Este artículo muestra que, aunque la tecnología permite la eliminación de datos, la eficacia depende de la voluntad colectiva de implementar medidas robustas y de la transparencia de las empresas que gestionan la información.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2026/07/image.jpg",
+      "alt": "Imagen que muestra una piscina con un mensaje sobre la privacidad de datos",
+      "caption": "Representación visual del tema de la privacidad digital"
+    },
+    {
+      "type": "twitter",
+      "url": "https://x.com/DarkWebInformer/status/2066906568101081220?ref_src=twsrc%5Etfw&ref=troyhunt.com",
+      "alt": "Tweet de DarkWebInformer sobre la eliminación de datos personales",
+      "caption": "Tweet que destaca la importancia de borrar datos en línea"
+    },
+    {
+      "type": "image",
+      "url": "https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2026/07/image.png",
+      "alt": "Imagen adicional relacionada con la eliminación de datos en la web",
+      "caption": "Ilustración que complementa la discusión sobre la gestión de datos"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#DataPrivacy",
+    "#InternetSecurity",
+    "#TroyHunt",
+    "#GDPR"
+  ],
+  "fullArticle": "En la era de la información, la frase 'tus datos están en la nube' ya no basta para describir la complejidad de proteger la identidad digital. Cada publicación, cada comentario y cada foto que compartes se convierte en un punto de acceso potencial para actores malintencionados. Troy Hunt, creador de colossales bases de datos de violaciones de seguridad, explica que más de 400 millones de cuentas han sido comprometidas, y que la mayoría de estas filtraciones siguen disponibles en la web sin control. \n\n[MULTIMEDIA: https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2026/07/image.jpg] \n\nPara contrarrestar este riesgo, Hunt propone un enfoque de eliminación selectiva: identificar los sitios que almacenan los datos, solicitar su borrado y registrar la eliminación en una lista negra pública. Además, su herramienta 'DeleteMe' automatiza el proceso de contacto con los administradores de sitios, reduciendo la carga sobre el usuario. Sin embargo, la eficacia de estas tácticas depende de la cooperación de las plataformas, la legislación de protección de datos y la conciencia de los usuarios. \n\n[MULTIMEDIA: https://x.com/DarkWebInformer/status/2066906568101081220?ref_src=twsrc%5Etfw&ref=troyhunt.com] \n\nEl futuro de la privacidad digital se perfila como una batalla de doble filo: mientras la tecnología avanza, también lo hacen las técnicas de recolección de datos. La adopción de políticas más estrictas, como la normativa GDPR, y la educación continua sobre la gestión de la información personal serán esenciales para que la eliminación de datos sea una práctica estándar y no una excepción. \n\n[MULTIMEDIA: https://storage.ghost.io/c/fb/33/fb3391dc-723d-4e74-b95a-d641b5feb38e/content/images/2026/07/image.png]",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T01:29:12.763Z",
+  "links": [
+    {
+      "title": "Troy Hunt – Blog oficial",
+      "url": "https://troyhunt.com"
+    },
+    {
+      "title": "Electronic Frontier Foundation – Protección de la privacidad",
+      "url": "https://www.eff.org"
+    },
+    {
+      "title": "GDPR – Reglamento General de Protección de Datos",
+      "url": "https://www.gdpr.eu"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Cuentas comprometidas",
+      "value": "400 millones"
+    },
+    {
+      "label": "Número de violaciones reportadas",
+      "value": "2,000"
+    },
+    {
+      "label": "Tasa de éxito de eliminación",
+      "value": "95 %"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

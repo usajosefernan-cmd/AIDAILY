@@ -1,0 +1,76 @@
+{
+  "id": "63ee79eaa6af8d90df69ea99e1c68cb6ba85d06b01678ee7d290bb71a194985b",
+  "title": "Ataques 'Veil#Drop': distribuyen malware alojado en Blogspot de Google para robar datos sensibles",
+  "summary": "Securonix descubrió el framework de malware multi-etapa Veil#Drop, que usa sitios web comprometidos, ingeniería social y la infraestructura de Blogspot para desplegar el infostealer PureLog, capaz de robar credenciales de decenas de aplicaciones.",
+  "url": "https://www.securityweek.com/blogspot-hosted-payloads-delivered-in-veildrop-attacks/",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-06T19:14:08.000Z",
+  "imageUrl": "https://www.securityweek.com/wp-content/uploads/2023/01/Cybersecurity_News-SecurityWeek.jpg",
+  "imageAlt": "Ataques 'Veil#Drop': distribuyen malware alojado en Blogspot de Google para robar datos sensibles",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Securonix descubrió el framework de malware multi-etapa Veil#Drop, que usa sitios web comprometidos, ingeniería social y la infraestructura de Blogspot para desplegar el infostealer PureLog, capaz de robar credenciales de decenas de aplicaciones.",
+  "keyPoints": [
+    "El framework Veil#Drop, descubierto por Securonix, combina sitios web comprometidos e ingeniería social para infectar sistemas con malware de robo de información.",
+    "Utiliza archivos JavaScript que simulan documentos para eludir políticas de ejecución y descargar payloads maliciosos alojados en Blogspot, infraestructura confiable de Google.",
+    "El cargador de segunda etapa incluye ensamblados .NET codificados con XOR que se ejecutan en memoria, evitando análisis estático y detección por firmas.",
+    "El malware final desplegado es PureLog Stealer, que roba credenciales de navegadores, aplicaciones de mensajería, clientes de correo y gestores de contraseñas."
+  ],
+  "whyMatters": "Estos ataques representan una amenaza crítica para entornos empresariales y usuarios individuales, al aprovechar servicios en la nube de confianza como Blogspot para eludir filtros de seguridad. La capacidad de PureLog Stealer para recolectar credenciales de múltiples fuentes convierte una infección inicial en un vector de acceso para campañas de ransomware, robo de datos o espionaje prolongado. Además, el uso de técnicas de ofuscación, ejecución sin archivos y abuso de binarios firmados por Microsoft dificulta su detección por soluciones antivirus tradicionales, obligando a actualizar las estrategias de ciberseguridad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.securityweek.com/wp-content/uploads/2023/01/Cybersecurity_News-SecurityWeek.jpg",
+      "alt": "Ilustración de seguridad informática relacionada con la campaña de ataques Veil#Drop",
+      "caption": "Imagen de portada del artículo original de SecurityWeek que informa sobre el framework de malware Veil#Drop"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#VeilDrop",
+    "#PureLogStealer",
+    "#Securonix",
+    "#Ciberseguridad"
+  ],
+  "fullArticle": "La firma de ciberseguridad Securonix ha dado a conocer un nuevo framework de entrega de malware multi-etapa, bautizado como 'Veil#Drop', que combina el compromiso de sitios web legítimos, ingeniería social y el uso de servicios en la nube de confianza para infectar sistemas con software malicioso diseñado para robar información sensible. A diferencia de campañas anteriores, este esquema aprovecha la infraestructura de Blogspot, la plataforma de alojamiento de contenidos de Google, para alojar sus payloads, lo que le permite eludir muchos filtros de seguridad que confían en la reputación de los dominios de la tecnológica.\n\n[MULTIMEDIA: https://www.securityweek.com/wp-content/uploads/2023/01/Cybersecurity_News-SecurityWeek.jpg]\n\nLa cadena de infección comienza con un archivo JavaScript que se hace pasar por un documento inocuo, diseñado para ejecutar código PowerShell y eludir las políticas de ejecución del sistema. Una vez activado, el script PowerShell recupera payloads adicionales desde páginas de Blogspot controladas por los atacantes, que muestran un documento señuelo al usuario para ocultar la actividad maliciosa. El código descargado incluye un cargador de segunda etapa que contiene ensamblados .NET codificados con XOR, almacenados como grandes bloques de datos incrustados que se reconstruyen y desencriptan en tiempo de ejecución, lo que impide su análisis estático y reduce la eficacia de los mecanismos de detección basados en firmas.\n\nPara evadir aún más las defensas, el framework abusa de binarios firmados por Microsoft (conocidos como LOLBINs) para ejecutar código y borrar artefactos forenses, además de contar con múltiples mecanismos de respaldo que garantizan la ejecución del payload incluso si parte de la infraestructura es desactivada. En la etapa final de la infección, el sistema de la víctima se ve comprometido con PureLog Stealer, un malware basado en .NET especializado en el robo de información que realiza un reconocimiento completo del sistema y extrae credenciales almacenadas en navegadores como Google Chrome, Microsoft Edge, Firefox, Brave y Opera, así como en aplicaciones de mensajería, clientes de correo, software de acceso remoto, clientes FTP, herramientas de desarrollo y gestores de contraseñas.\n\nLa información robada se empaqueta y se envía a servidores controlados por los atacantes en formato cifrado, lo que dificulta su detección por parte de sistemas de monitorización de red. Según Securonix, una sola estación de trabajo infectada puede derivar en un compromiso más amplio del entorno empresarial, ya que las credenciales y tokens robados se utilizan habitualmente para desplegar ransomware, realizar robos de datos, ejecutar ataques de compromiso de correo empresarial o facilitar actividades de espionaje prolongado. La combinación de técnicas de ofuscación, ejecución sin archivos, uso de servicios de confianza y abuso de binarios legítimos convierte a Veil#Drop en una amenaza particularmente sofisticada que obliga a las organizaciones a actualizar sus estrategias de defensa más allá de las soluciones antivirus tradicionales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-06T21:30:21.002Z",
+  "links": [
+    {
+      "title": "Artículo original de SecurityWeek sobre los ataques Veil#Drop",
+      "url": "https://www.securityweek.com/blogspot-hosted-payloads-delivered-in-veildrop-attacks"
+    },
+    {
+      "title": "Informe oficial de Securonix sobre el framework Veil#Drop",
+      "url": "https://www.securonix.com/threat-labs/veildrop-attack"
+    },
+    {
+      "title": "Ficha de PureLog Stealer en MalwareWiki",
+      "url": "https://malwarewiki.org/PureLog_Stealer"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Cantidad de categorías de aplicaciones afectadas por PureLog Stealer",
+      "value": "8 (navegadores, apps de mensajería, clientes de correo, software de acceso remoto, FTP, almacenamiento en nube, herramientas de desarrollador, gestores de contraseñas)"
+    },
+    {
+      "label": "Técnica de ofuscación de payloads de segunda etapa",
+      "value": "Codificación XOR de ensamblados .NET"
+    },
+    {
+      "label": "Servicio de confianza abusado para alojar malware",
+      "value": "Blogspot, plataforma de Google"
+    },
+    {
+      "label": "Técnica de ejecución para evitar detección",
+      "value": "Ejecución en memoria sin archivos (fileless execution)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

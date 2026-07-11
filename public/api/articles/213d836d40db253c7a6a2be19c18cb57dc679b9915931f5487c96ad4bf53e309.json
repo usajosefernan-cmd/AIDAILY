@@ -1,0 +1,72 @@
+{
+  "id": "213d836d40db253c7a6a2be19c18cb57dc679b9915931f5487c96ad4bf53e309",
+  "title": "How to detect coordinated Solana launches your bundle checker misses",
+  "summary": "Los equipos que ejecutan lanzamientos coordinados de tokens en Solana han perfeccionado técnicas para evadir los detectores de bundles tradicionales, financiando billeteras frescas con anticipación y comprando fuera del bloque de creación. Este artículo explica dos métodos de detección accesibles con llamadas RPC estándar, además de herramientas automatizadas como Cabal-Hunter para identificar estos patrones fraudulentos.",
+  "url": "https://dev.to/paulf280ui/how-to-detect-coordinated-solana-launches-your-bundle-checker-misses-2c5g",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T22:25:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsc7qk8n7pcmtxp9f4013.png",
+  "imageAlt": "How to detect coordinated Solana launches your bundle checker misses",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los equipos que ejecutan lanzamientos coordinados de tokens en Solana han perfeccionado técnicas para evadir los detectores de bundles tradicionales, financiando billeteras frescas con anticipación y comprando fuera del bloque de creación. Este artículo explica dos métodos de detección accesibles con llamadas RPC estándar, además de herramientas automatizadas como Cabal-Hunter para identificar estos patrones fraudulentos.",
+  "keyPoints": [
+    "Los equipos de lanzamiento coordinado financian entre 5 y 15 billeteras frescas días antes del lanzamiento, usando intermediarios o retiros de exchanges para no dejar rastro de la billetera del deployer.",
+    "Evitan comprar en el bloque de creación del token, esperando segundos o minutos para mezclarse con traders reales y no activar los detectores de compras en el mismo bloque.",
+    "Los detectores tradicionales no captan este patrón, pero se puede rastrear el grafo de financiación de las billeteras mediante llamadas RPC estándar sin necesidad de herramientas especializadas.",
+    "Un análisis de lanzamientos en pump.fun reveló que esta técnica generó más de 15.000 SOL de ganancia realizada en más de 15.000 lanzamientos, por lo que es el estándar de evasión actual."
+  ],
+  "whyMatters": "Para traders, desarrolladores de bots de trading y auditores de tokens en el ecosistema Solana, esta técnica de evasión supone una amenaza creciente que genera pérdidas millonarias a inversores minoristas que caen en pumps y dumps coordinados sin detectar. La mayoría de las herramientas de escaneo actuales no están diseñadas para identificar estos patrones, por lo que los usuarios que confíen únicamente en verificadores de bundles tradicionales están expuestos a un riesgo muy alto de estafa. La buena noticia es que toda la información necesaria para detectar estos cabales está disponible en datos públicos de la blockchain, por lo que no hay excusa para no implementar estas medidas de protección en los escáneres de tokens.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsc7qk8n7pcmtxp9f4013.png",
+      "alt": "Ilustración de portada del artículo sobre detección de lanzamientos coordinados de tokens en Solana",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Solana",
+    "#PumpFun",
+    "#CabalHunter",
+    "#Blockchain"
+  ],
+  "fullArticle": "Los lanzamientos coordinados de tokens en Solana, conocidos como 'cabales', han evolucionado para evadir los detectores de bundles tradicionales como Trench Radar, herramientas que buscan compras agrupadas en el bloque de creación del token mediante paquetes de Jito. Los equipos maliciosos ahora financian entre 5 y 15 billeteras frescas días antes del lanzamiento, a través de intermediarios o retiros de exchanges, sin usar la billetera principal del deployer, y compran segundos o minutos después del bloque de creación para mezclarse con traders reales. Esta técnica deja un mapa de billeteras limpio y un 0% en todos los detectores de compras en el mismo bloque, por lo que pasa desapercibida para la mayoría de los escáneres actuales. Un análisis de lanzamientos en la plataforma pump.fun reveló que esta estrategia generó más de 15.000 SOL de ganancia realizada en más de 15.000 lanzamientos, confirmando que no se trata de un caso aislado sino del estándar de evasión utilizado en la actualidad.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsc7qk8n7pcmtxp9f4013.png]\nExisten dos métodos de detección accesibles con llamadas RPC estándar, sin necesidad de invertir en herramientas especializadas. El primero es el rastreo del grafo de financiación: se recorren los ingresos de SOL de cada comprador temprano hacia atrás en el tiempo, agrupando las billeteras que comparten la misma fuente de financiación, descartando las direcciones de exchanges que tienen un alto volumen de transacciones para evitar falsos positivos. El segundo método, que la mayoría de los escáneres omiten por un error de timing, es el análisis de los primeros compradores: se extraen los compradores de las transacciones más antiguas del token, sin importar si aún mantienen saldo, ya que los francotiradores venden sus tokens inmediatamente después del lanzamiento y desaparecen de las listas de principales tenedores. Para tokens activos este proceso requiere presupuestar recursos, ya que el historial de firmas puede tener miles de entradas, por lo que es recomendable degradar el análisis de forma gradual para no colapsar el escáner.\nYa existen soluciones automatizadas como Cabal-Hunter, que integra ambos métodos de detección además de monitoreo de dumps coordinados en tiempo real y el historial de lanzamientos del deployer, devolviendo las transacciones de evidencia que se pueden verificar en exploradores de bloques como Solscan. Para desarrolladores de agentes de IA, la herramienta ofrece un servidor MCP que se puede instalar con un solo comando para integrar la detección de riesgo de cabales en cualquier flujo de trabajo. Aunque estas soluciones listas para usar son accesibles, los equipos que construyen sus propios escáneres deben implementar estos dos rastros de forma prioritaria, ya que el lanzamiento sin bundle es el patrón que define el ecosistema de tokens en Solana en 2026, y la mayoría de las herramientas del mercado aún no lo detectan.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T23:40:58.662Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/cabal-hunter/how-to-detect-coordinated-solana-launches-your-bundle-checker-misses-1h9p"
+    },
+    {
+      "title": "Documentación oficial de la API RPC de Solana",
+      "url": "https://docs.solana.com/api/overview"
+    },
+    {
+      "title": "Sitio oficial de Cabal-Hunter",
+      "url": "https://cabal-hunter.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Ganancia total de equipos de lanzamiento coordinado",
+      "value": "Más de 15.000 SOL en ganancia realizada"
+    },
+    {
+      "label": "Número de lanzamientos analizados con la técnica de evasión",
+      "value": "Más de 15.000 lanzamientos en pump.fun"
+    },
+    {
+      "label": "Cantidad de billeteras financiadas por operación",
+      "value": "Entre 5 y 15 billeteras frescas por lanzamiento"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

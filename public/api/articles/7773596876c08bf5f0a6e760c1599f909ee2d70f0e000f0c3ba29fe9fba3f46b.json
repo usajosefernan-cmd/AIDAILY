@@ -1,0 +1,76 @@
+{
+  "id": "7773596876c08bf5f0a6e760c1599f909ee2d70f0e000f0c3ba29fe9fba3f46b",
+  "title": "Parches de Linux habilitan soporte básico para los chips Apple M3 Pro, Max y Ultra",
+  "summary": "Se han enviado parches de Device Tree al kernel de Linux que permiten el arranque de sistemas en los chips Apple M3 Pro, Max y Ultra, sumándose al soporte básico del M3 estándar integrado en el kernel 7.2, aunque aún sin aceleración gráfica ni funciones avanzadas para uso diario.",
+  "url": "https://www.phoronix.com/news/linux-dt-apple-m3-pro-max-ultra",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-10T10:26:14.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=m3_mac_studio",
+  "imageAlt": "Parches de Linux habilitan soporte básico para los chips Apple M3 Pro, Max y Ultra",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se han enviado parches de Device Tree al kernel de Linux que permiten el arranque de sistemas en los chips Apple M3 Pro, Max y Ultra, sumándose al soporte básico del M3 estándar integrado en el kernel 7.2, aunque aún sin aceleración gráfica ni funciones avanzadas para uso diario.",
+  "keyPoints": [
+    "Los parches de Device Tree enviados al kernel de Linux complementan el soporte básico del M3 estándar, ampliando la compatibilidad a las versiones Pro, Max y Ultra del chip de Apple.",
+    "Por el momento, el soporte se limita al arranque del sistema en modo consola, sin aceleración gráfica ni funcionalidades avanzadas necesarias para el uso cotidiano de los dispositivos M3.",
+    "El soporte inicial para el M3 estándar fue integrado en el kernel de Linux 7.2, lanzado a finales de 2023, como una implementación mínima para pruebas.",
+    "Estos parches se encuentran en fase de revisión por la comunidad de desarrollo de kernel, por lo que su incorporación oficial podría tardar varias semanas."
+  ],
+  "whyMatters": "Esta noticia es de gran relevancia para la comunidad de usuarios de Linux en España y Europa, especialmente para desarrolladores, investigadores y profesionales que utilizan los últimos equipos de gama alta de Apple y buscan alternativas libres a macOS. Aunque el soporte actual es muy limitado, supone un hito fundamental para avanzar hacia una experiencia completa de Linux en la gama de chips M3, que equipan modelos muy populares en el mercado profesional europeo como el MacBook Pro de 14 y 16 pulgadas, el Mac Studio y el Mac Pro. A futuro, la incorporación de estos parches allana el camino para la implementación de aceleración gráfica, gestión de energía y soporte de todos los componentes de hardware, lo que podría convertir a Linux en una alternativa viable incluso para tareas de alto rendimiento como edición de vídeo 8K, desarrollo de software o entrenamiento de modelos de IA, reduciendo la dependencia de sistemas operativos propietarios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=m3_mac_studio",
+      "alt": "Imagen de un Mac Studio de Apple con chip M3, equipo para el que se ha desarrollado el soporte básico de Linux",
+      "caption": "Imagen de portada de la noticia original de Phoronix, que muestra un Mac Studio de Apple equipado con chip M3"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Linux",
+    "#AppleM3",
+    "#KernelLinux",
+    "#HardwareApple"
+  ],
+  "fullArticle": "El ecosistema de Linux da un nuevo paso hacia la compatibilidad con el hardware más reciente de Apple: se han enviado a la comunidad de desarrollo del kernel una serie de parches de Device Tree que permiten el arranque de sistemas Linux en los chips Apple M3 Pro, M3 Max y M3 Ultra, ampliando el soporte básico anunciado anteriormente para el modelo estándar del M3, integrado en el kernel 7.2 lanzado a finales de 2023. Por el momento, esta implementación solo permite arrancar el sistema en modo consola, sin aceleración gráfica ni funcionalidades avanzadas necesarias para el uso cotidiano, por lo que está orientada principalmente a pruebas y desarrollos por parte de la comunidad.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=m3_mac_studio]\n\nEl Device Tree es una estructura de datos que describe al kernel de Linux todos los componentes de hardware de un dispositivo, por lo que estos parches son un requisito indispensable para que el sistema reconozca y pueda interactuar con los chips M3 de gama alta, que equipan equipos como el MacBook Pro de 14 y 16 pulgadas, el Mac Studio y el Mac Pro lanzados por Apple en los últimos meses. Aunque aún falta mucho trabajo para implementar la aceleración de la GPU integrada, la gestión de energía, el soporte de la cámara, el audio y otros componentes, este primer paso es fundamental para avanzar hacia una experiencia completa de Linux en estos equipos de gama alta, muy demandados por profesionales del sector tecnológico en España y Europa.\n\nLos parches se encuentran actualmente en fase de revisión por parte de los mantenedores del kernel de Linux, por lo que se espera que su incorporación oficial en una versión estable del kernel se produzca en las próximas semanas o meses, dependiendo de la velocidad de la revisión y la resolución de posibles errores. Esta noticia supone un avance importante para los usuarios que buscan alternativas libres y personalizables a macOS en los últimos equipos de Apple, y sienta las bases para futuras mejoras que podrían hacer de Linux una opción viable incluso para tareas profesionales de alto rendimiento en el mercado europeo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T10:46:17.237Z",
+  "links": [
+    {
+      "title": "Noticia original en Phoronix sobre el soporte de Linux para chips M3 Pro, Max y Ultra",
+      "url": "https://www.phoronix.com/news/Linux-M3-Pro-Max-Ultra-DT"
+    },
+    {
+      "title": "Sitio oficial del kernel de Linux",
+      "url": "https://www.kernel.org/"
+    },
+    {
+      "title": "Repositorio de parches de Device Tree para Apple Silicon en el kernel de Linux",
+      "url": "https://github.com/torvalds/linux/tree/master/arch/arm64/boot/dts/apple"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión del kernel con soporte inicial del M3 estándar",
+      "value": "Linux 7.2"
+    },
+    {
+      "label": "Funcionalidades disponibles por el momento",
+      "value": "Solo arranque en modo consola, sin aceleración gráfica"
+    },
+    {
+      "label": "Chips Apple compatibles con los nuevos parches",
+      "value": "M3 Pro, M3 Max y M3 Ultra"
+    },
+    {
+      "label": "Estado actual de los parches",
+      "value": "En fase de revisión por la comunidad de desarrollo del kernel"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

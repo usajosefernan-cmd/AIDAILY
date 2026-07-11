@@ -1,0 +1,66 @@
+{
+  "id": "cf773e96591b8f2749196c93c97e86b457c9bae225195c16daaa352f44e6a3f2",
+  "title": "Los desarrolladores crearon una columna de 'fallo' a propósito y atraparon al propio bot que la activaba",
+  "summary": "Al automatizar el envío de solicitudes de empleo, el equipo detectó que los bots no leían la confirmación de la plataforma, lo que provocaba que errores posteriores se marcara como fallos. Con un nuevo control, los errores posteriores ya no generan un fallo definitivo, sino una revisión humana.",
+  "url": "https://dev.to/whateverneveranywhere/we-built-a-failed-column-on-purpose-then-caught-our-own-agent-triggering-it-3gpl",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-01T12:36:52.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F383oo34taep5t566zoxp.png",
+  "imageAlt": "Los desarrolladores crearon una columna de 'fallo' a propósito y atraparon al propio bot que la activaba",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Al automatizar el envío de solicitudes de empleo, el equipo detectó que los bots no leían la confirmación de la plataforma, lo que provocaba que errores posteriores se marcara como fallos. Con un nuevo control, los errores posteriores ya no generan un fallo definitivo, sino una revisión humana.",
+  "keyPoints": [
+    "Los bots de auto‑postulación suelen enviar la solicitud y no leer la respuesta, lo que oculta los errores reales.",
+    "El equipo añadió una columna de estado ‘failed’ para visibilizar los envíos que no llegaron.",
+    "Un error de red a medio segundo tras el clic hacía que un envío válido se marcara como fallado.",
+    "La solución introduce el control submitClickIssued, convirtiendo los fallos posteriores en ‘requires_human_review’ para evitar falsos negativos."
+  ],
+  "whyMatters": "Este ajuste mejora la fiabilidad de las herramientas de reclutamiento automatizado, reduciendo la pérdida de candidatos valiosos por errores de red. Al diferenciar entre fallos reales y errores transitorios, las empresas obtienen datos más precisos sobre la efectividad de sus procesos de contratación. La transparencia en los estados de aplicación también fortalece la confianza entre candidatos y empleadores, un factor crítico en la era digital.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F383oo34taep5t566zoxp.png",
+      "alt": "Bot de auto‑postulación marcando una solicitud como fallida tras un error de red",
+      "caption": "Imagen que muestra la columna ‘failed’ en la interfaz de la herramienta de auto‑postulación"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Captura de pantalla del código que implementa submitClickIssued",
+      "caption": "Fragmento de código que evita que errores posteriores marquen una solicitud como fallida"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AutoApply",
+    "#Greenhouse",
+    "#DevOps",
+    "#HiringTech"
+  ],
+  "fullArticle": "El auge de los bots de auto‑postulación ha simplificado el envío masivo de CVs, pero muchos de ellos terminan en una caja negra: llenan el formulario y lo envían sin leer la confirmación que la plataforma devuelve. Este comportamiento, que no detecta si la solicitud realmente llegó, genera un estado de ‘aplicado’ aunque el proceso haya fallado.\\n\\nPara abordar esta brecha, el equipo de desarrollo añadió una columna de estado explícita llamada ‘failed’. Esta columna no solo señala los envíos que no llegaron, sino que también permite que la herramienta sea honesta sobre sus errores. En una prueba reciente, un agente de auto‑postulación de Greenhouse envió correctamente una solicitud, pero un pequeño error de red a medio segundo provocó que el sistema marcara la aplicación como fallida. Al leer la respuesta, la herramienta reconoció el fallo y la columna ‘failed’ se activó.\\n\\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F383oo34taep5t566zoxp.png]\\n\\nLa solución definitiva se implementó en el archivo submitter.ts mediante un nuevo filtro llamado submitClickIssued. Con este control, una vez que el bot hace clic en enviar, cualquier error posterior ya no se interpreta como un fallo total; en su lugar, la solicitud pasa a un estado de ‘requires_human_review’, indicando que probablemente llegó pero necesita confirmación manual. Así, un error de red después del clic no engaña al sistema, y el equipo puede revisar sólo los casos que realmente requieren atención.\\n\\nAunque la actualización no incluye nuevas funcionalidades visibles, su impacto es profundo: garantiza que la herramienta nunca falle sin motivo real y que los reclutadores tengan datos fiables sobre cada envío. Esta mejora de la fiabilidad es la verdadera victoria, pues reduce la pérdida de talento y aumenta la transparencia en el proceso de contratación automatizado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T12:44:29.033Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article/383oo34taep5t566zoxp"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de error tras envío",
+      "value": "0,5 segundos"
+    },
+    {
+      "label": "Número de estados de aplicación",
+      "value": "3 (aplicado, fallido, revisión humana)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

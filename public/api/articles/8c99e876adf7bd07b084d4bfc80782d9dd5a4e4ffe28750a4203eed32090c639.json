@@ -1,0 +1,73 @@
+{
+  "id": "8c99e876adf7bd07b084d4bfc80782d9dd5a4e4ffe28750a4203eed32090c639",
+  "title": "Sentinel: el escáner de secretos ultrarrápido sin regex que deja atrás a Gitleaks y TruffleHog",
+  "summary": "Un desarrollador creó Sentinel, un escáner de secretos open source escrito en Go que resuelve los problemas de backtracking catastrófico y falsos positivos de herramientas convencionales como Gitleaks y TruffleHog. En pruebas con una carga de 15MB y más de 100 señuelos, procesó los datos en 1,5 segundos con una relación señal-ruido del 100%. El proyecto se distribuye bajo licencia AGPL-3.0 y busca colaboración comunitaria.",
+  "url": "https://dev.to/muslimkh09/i-built-sentinel-a-blazing-fast-regex-free-secret-scanner-in-go-3amm",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T02:55:34.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fftf3stvo2dcv90cxz5nj.png",
+  "imageAlt": "Sentinel: el escáner de secretos ultrarrápido sin regex que deja atrás a Gitleaks y TruffleHog",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creó Sentinel, un escáner de secretos open source escrito en Go que resuelve los problemas de backtracking catastrófico y falsos positivos de herramientas convencionales como Gitleaks y TruffleHog. En pruebas con una carga de 15MB y más de 100 señuelos, procesó los datos en 1,5 segundos con una relación señal-ruido del 100%. El proyecto se distribuye bajo licencia AGPL-3.0 y busca colaboración comunitaria.",
+  "keyPoints": [
+    "Los escáneres de secretos tradicionales como Gitleaks sufren backtracking catastrófico con archivos minificados grandes, congelando pipelines de CI/CD durante horas.",
+    "Sentinel, desarrollado en Go, procesó una carga de prueba de 15MB con más de 100 señuelos estructurales en solo 1,5 segundos.",
+    "La herramienta alcanzó una relación señal-ruido del 100% en las pruebas, eliminando completamente los falsos positivos comunes en herramientas convencionales.",
+    "El proyecto se distribuye bajo licencia AGPL-3.0 y el creador invita a la comunidad a probarlo, revisar su código y enviar feedback."
+  ],
+  "whyMatters": "Los cuellos de botella en los pipelines de CI/CD generan retrasos costosos y reducen la productividad de los equipos de desarrollo, un problema que afecta a miles de empresas en todo el mundo. La eliminación de falsos positivos en la detección de secretos supone un ahorro de horas de trabajo manual en revisiones, además de reducir el riesgo de filtrar credenciales por error. La arquitectura sin expresiones regulares de Sentinel supone una innovación relevante en el sector de la seguridad de código, y su naturaleza open source democratiza el acceso a herramientas de alto rendimiento que hasta ahora estaban reservadas a grandes empresas con presupuestos elevados.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fftf3stvo2dcv90cxz5nj.png",
+      "alt": "Portada del artículo de Dev.to que anuncia el lanzamiento de Sentinel, escáner de secretos ultrarrápido escrito en Go",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to sobre el desarrollo de Sentinel"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Sentinel",
+    "#Gitleaks",
+    "#TruffleHog",
+    "#SeguridadEnCodigo",
+    "#GoLang"
+  ],
+  "fullArticle": "Los equipos de desarrollo que trabajan con pipelines de integración y despliegue continuo (CI/CD) de gran volumen conocen de primera mano uno de los fallos más frustrantes de los escáneres de secretos convencionales: el llamado 'backtracking catastrófico'. Cuando un archivo de código minificado de gran tamaño, como un paquete JavaScript de producción, se introduce en el flujo de trabajo, el motor de expresiones regulares de herramientas como Gitleaks o TruffleHog se bloquea, congelando todo el proceso durante minutos o incluso horas, generando retrasos costosos y frustración en los equipos de ingeniería.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fftf3stvo2dcv90cxz5nj.png]\nHartgo de estos cuellos de botella y de los falsos positivos que obligan a revisiones manuales interminables, un desarrollador decidió reescribir desde cero la arquitectura de este tipo de herramientas, dando como resultado Sentinel, un escáner de secretos previo al commit de grado empresarial escrito en Go, que prescinde completamente de expresiones regulares para evitar los problemas de rendimiento asociados a esta tecnología.\nPara validar su rendimiento, el creador diseñó una 'carga de destrucción' de 15MB compuesta por cadenas minificadas y más de 100 señuelos estructurales en formato UPPER_SNAKE_CASE, una combinación que hace colapsar a cualquier escáner convencional. Sentinel procesó esta carga en aproximadamente 1,5 segundos, con una relación señal-ruido del 100%, es decir, sin generar ni un solo falso positivo, un hito en el sector de la seguridad de código.\nEl proyecto se distribuye bajo la licencia AGPL-3.0, lo que permite a cualquier usuario acceder a su código, modificarlo y contribuir a su desarrollo sin restricciones comerciales. El creador ha invitado a la comunidad de desarrolladores a probar la herramienta, revisar su código y enviar feedback para mejorarlo, abriendo la puerta a una nueva generación de herramientas de seguridad de código más accesibles y eficientes para equipos de todos los tamaños.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T03:24:11.114Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Sentinel en GitHub",
+      "url": "https://github.com/sentinel-cli/sentinel"
+    },
+    {
+      "title": "Información oficial sobre la licencia AGPL-3.0",
+      "url": "https://www.gnu.org/licenses/agpl-3.0.es.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de procesamiento de la carga de prueba",
+      "value": "1,5 segundos"
+    },
+    {
+      "label": "Tamaño de la carga de prueba de estrés",
+      "value": "15 MB"
+    },
+    {
+      "label": "Número de señuelos estructurales en la prueba",
+      "value": "más de 100"
+    },
+    {
+      "label": "Relación señal-ruido obtenida en las pruebas",
+      "value": "100%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,83 @@
+{
+  "id": "d265293b2e7b256b22cf2ff50121e4c42507d89df368206eba53a03fee1accf6",
+  "title": "Descubren tres vulnerabilidades críticas en AirDrop que permiten desactivar servicios de Apple sin intervención del usuario",
+  "summary": "Investigadores de seguridad hallaron tres fallos en AirDrop que afectan a iPhone y Mac, permitiendo a atacantes desactivar servicios como AirPlay y Handoff de forma remota sin necesidad de acceso físico ni interacción del usuario. Apple ya corrigió una de las vulnerabilidades y trabaja en las otras dos, mientras los usuarios pueden mitigar el riesgo cambiando la configuración de recepción de archivos.",
+  "url": "https://9to5mac.com/2026/06/30/three-airdrop-vulnerabilities-discovered-with-apple-working-on-a-full-fix/",
+  "source": "9to5Mac",
+  "sourceUrl": "https://9to5mac.com/feed/",
+  "publishedAt": "2026-06-30T11:53:17.000Z",
+  "imageUrl": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2025/06/Apple-could-remove-AirDrop-from-EU-iPhones-as-legal-battle-heats-up.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+  "imageAlt": "Descubren tres vulnerabilidades críticas en AirDrop que permiten desactivar servicios de Apple sin intervención del usuario",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores de seguridad hallaron tres fallos en AirDrop que afectan a iPhone y Mac, permitiendo a atacantes desactivar servicios como AirPlay y Handoff de forma remota sin necesidad de acceso físico ni interacción del usuario. Apple ya corrigió una de las vulnerabilidades y trabaja en las otras dos, mientras los usuarios pueden mitigar el riesgo cambiando la configuración de recepción de archivos.",
+  "keyPoints": [
+    "Tres vulnerabilidades en AirDrop afectan a iPhone y Mac, permitiendo desactivar servicios como AirPlay y Handoff sin acceso físico al dispositivo.",
+    "El ataque requiere solo un portátil con Wi-Fi a entre 10 y 30 metros, sin necesidad de emparejamiento ni red compartida.",
+    "Apple ya solucionó una de las vulnerabilidades, asignada un CVE, mientras las otras dos siguen en proceso de corrección coordinada.",
+    "Los servicios afectados se reactivan automáticamente al detener el ataque, sin riesgo de robo de datos del usuario."
+  ],
+  "whyMatters": "Estas vulnerabilidades exponen una falla estructural en los protocolos de proximidad de Apple y Google, que priorizan la experiencia de usuario fluida sobre la seguridad preautenticación. Su relevancia radica en que afectan servicios ampliamente utilizados en entornos laborales y públicos, donde un atacante podría interrumpir flujos de trabajo críticos sin dejar rastro. Además, la coincidencia de fallos similares en plataformas distintas revela un patrón de ingeniería común que obliga a repensar los diseños de conectividad inalámbrica en la industria.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2025/06/Apple-could-remove-AirDrop-from-EU-iPhones-as-legal-battle-heats-up.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "alt": "Ilustración de la noticia sobre vulnerabilidades de AirDrop",
+      "caption": "Imagen de portada del artículo original de 9to5Mac"
+    },
+    {
+      "type": "image",
+      "url": "https://9to5mac.com/wp-content/uploads/sites/6/2025/06/Apple-could-remove-AirDrop-from-EU-iPhones-as-legal-battle-heats-up.jpg?quality=82&strip=all&w=1600",
+      "alt": "Dos iPhones intercambiando datos mediante AirDrop",
+      "caption": "Imagen que muestra el funcionamiento normal de AirDrop entre dos dispositivos Apple"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#AirDrop",
+    "#Apple",
+    "#Ciberseguridad",
+    "#Vulnerabilidades",
+    "#Mac"
+  ],
+  "fullArticle": "Un equipo de investigadores de seguridad ha identificado tres vulnerabilidades críticas en el protocolo AirDrop de Apple, que afectan tanto a dispositivos iPhone como a Mac, además de detectarse fallos similares en el sistema Quick Share de Android. Los fallos permiten a un atacante desactivar de forma remota servicios integrados como AirPlay, Handoff, Portapapeles universal y la Cámara de Continuidad, sin necesidad de acceso físico al equipo ni de interacción por parte del usuario. A diferencia de otros ataques de ciberseguridad, esta vulnerabilidad no permite el robo de datos, pero sí genera una interrupción total de la conectividad entre dispositivos Apple mientras el ataque se mantenga activo.\n\n[MULTIMEDIA: https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2025/06/Apple-could-remove-AirDrop-from-EU-iPhones-as-legal-battle-heats-up.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1]\n\nEl método de ataque es sorprendentemente sencillo: solo requiere un portátil con capacidad Wi-Fi y ubicarse a una distancia de entre 10 y 30 metros del dispositivo objetivo, sin necesidad de emparejamiento previo, intercambio de contactos ni pertenencia a la misma red. Cuando el dispositivo objetivo está configurado para recibir archivos de 'Todos', las fases tempranas del protocolo responden a la solicitud maliciosa incluso antes de que aparezca cualquier aviso de confirmación en la pantalla del usuario. Una sola solicitud a una ruta no reconocida en el código de enrutamiento de peticiones web de AirDrop activa una llamada fatalError en Swift que aborta todo el proceso, dejando inoperativos todos los servicios vinculados de forma simultánea. Si la solicitud se envía en un bucle cada pocos segundos, la interrupción se mantiene de forma indefinida hasta que se detiene el ataque.\n\nEl investigador de seguridad Arash Ebrahim, responsable del hallazgo, señaló que este tipo de vulnerabilidades son inherentes a los protocolos de proximidad diseñados para ofrecer una experiencia de usuario sin fricciones. 'Los servicios están diseñados para funcionar de forma fluida, lo que obliga a los demonios con privilegios a procesar entradas controladas por el atacante antes de que se realice cualquier autenticación o aprobación por parte del usuario, lo que genera una superficie de ataque preautenticación muy amplia', explicó. Ebrahim agregó que la coincidencia de fallos similares en plataformas de Apple y Google, a pesar de no compartir código, refleja desafíos de ingeniería comunes en el desarrollo de protocolos de conectividad inalámbrica de proximidad.\n\nHasta el momento, Apple ya ha solucionado una de las tres vulnerabilidades, a la que se le asignó un identificador CVE, aunque la advisory correspondiente aún no se ha publicado de forma pública para evitar que los atacantes exploten el fallo antes de que los usuarios actualicen sus dispositivos. Las otras dos vulnerabilidades siguen en proceso de divulgación coordinada con Apple y Google, sin asignación de CVE pública por el momento. Los usuarios pueden mitigar el riesgo mientras se lanzan las actualizaciones cambiando la configuración de AirDrop a la opción 'Solo contactos' o 'Desactivado', lo que evita que el dispositivo responda a solicitudes de desconocidos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T11:58:56.525Z",
+  "links": [
+    {
+      "title": "Artículo original de 9to5Mac sobre las vulnerabilidades de AirDrop",
+      "url": "https://9to5mac.com/2025/06/12/three-airdrop-vulnerabilities-discovered-apple-working-on-fix/"
+    },
+    {
+      "title": "Reporte de HelpNetSecurity sobre el hallazgo de seguridad",
+      "url": "https://www.helpnetsecurity.com/2025/06/12/airdrop-vulnerabilities/"
+    },
+    {
+      "title": "Centro de seguridad de productos Apple",
+      "url": "https://support.apple.com/es-es/102119"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Distancia máxima del ataque",
+      "value": "30 metros"
+    },
+    {
+      "label": "Vulnerabilidades corregidas por Apple",
+      "value": "1 de 3"
+    },
+    {
+      "label": "Servicios afectados",
+      "value": "AirDrop, AirPlay, Handoff, Portapapeles universal, Cámara de Continuidad"
+    },
+    {
+      "label": "Intervalo de envío de solicitudes maliciosas",
+      "value": "Cada 2 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

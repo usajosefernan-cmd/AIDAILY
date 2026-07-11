@@ -1,0 +1,77 @@
+{
+  "id": "f4d86ae976cb5b4ef3f22abe7c67e57aca7d70645c34d516c96d208a088548b8",
+  "title": "Cuando las copias de seguridad no bastan: la urgencia de una recuperación real ante desastres",
+  "summary": "El artículo revela que la brecha entre tener copias de seguridad y recuperarse de un desastre es mayor de lo que muchos equipos de TI imaginan. Los ataques de ransomware atacan primero la infraestructura de respaldo, dejando los sistemas sin un punto limpio de restauración. El mercado de DRaaS crece rápidamente, ofreciendo una réplica en la nube que se activa en minutos y protege contra la pérdida de datos y la dependencia de procesos manuales.",
+  "url": "https://www.theregister.com/storage/2026/07/01/when-backups-arent-enough-the-case-for-real-disaster-recovery/5264668",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-07-01T15:00:00.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Cuando las copias de seguridad no bastan: la urgencia de una recuperación real ante desastres",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo revela que la brecha entre tener copias de seguridad y recuperarse de un desastre es mayor de lo que muchos equipos de TI imaginan. Los ataques de ransomware atacan primero la infraestructura de respaldo, dejando los sistemas sin un punto limpio de restauración. El mercado de DRaaS crece rápidamente, ofreciendo una réplica en la nube que se activa en minutos y protege contra la pérdida de datos y la dependencia de procesos manuales.",
+  "keyPoints": [
+    "El 76% de las organizaciones necesitan más de 100 días para recuperarse de un ciberataque, incluso cuando creen que sus respaldos están intactos.",
+    "Para las empresas de 20 a 100 empleados, el 57% reporta costos de inactividad superiores a 100.000 USD por hora, con un día de inactividad que puede costar 55.000 USD a un SMB de 10 millones de ingresos anuales.",
+    "El mercado global de Disaster Recovery as a Service alcanzó 18.89 bn USD en 2025 y se proyecta a 83.15 bn USD para 2034, reflejando la transición de la copia de seguridad tradicional a soluciones en la nube.",
+    "Las soluciones DRaaS mantienen una réplica en vivo y actualizada, con almacenamiento inmutable y failover automático, reduciendo el tiempo de recuperación a minutos en lugar de días."
+  ],
+  "whyMatters": "La brecha entre respaldo y recuperación real amenaza la continuidad operativa de millones de empresas. Si un ransomware compromete la infraestructura de respaldo, la pérdida de datos y la inactividad pueden costar cientos de miles de dólares por hora, poniendo en riesgo la viabilidad de negocios pequeños y medianos. La adopción de DRaaS no solo protege contra ataques modernos, sino que también redefine la estrategia de resiliencia empresarial y obliga a las organizaciones a revisar sus métricas de RTO y RPO con una perspectiva realista.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+      "alt": "Cuando las copias de seguridad no bastan: la urgencia de una recuperación real ante desastres",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Backup",
+    "#DRaaS",
+    "#Ransomware",
+    "#IBM",
+    "#CoveData"
+  ],
+  "fullArticle": "El escenario de la ciberseguridad ha cambiado drásticamente. Mientras que las copias de seguridad tradicionales fueron diseñadas para proteger contra fallos de hardware o borrados accidentales, los ataques de ransomware modernos atacan primero la propia infraestructura de respaldo, dejando a las organizaciones sin un punto limpio de restauración. \n\nUn estudio del IBM Cost of a Data Breach Report 2025 revela que el 76 % de las organizaciones necesitan más de 100 días para recuperarse de un ciberataque, incluso cuando creen que sus respaldos están intactos. Esto se traduce en pérdidas económicas enormes: el 57 % de las empresas con entre 20 y 100 empleados reportan costos de inactividad superiores a 100 000 USD por hora, y un día de inactividad puede costar 55 000 USD a un SMB con 10 millones de ingresos anuales. \n\nAnte esta realidad, el mercado de Disaster Recovery as a Service (DRaaS) se ha disparado. Con un valor de 18.89 bn USD en 2025, se proyecta alcanzar 83.15 bn USD para 2034. La propuesta de valor de DRaaS es clara: mantener una réplica en vivo y actualizada en la nube, con almacenamiento inmutable y failover automático, reduciendo el tiempo de recuperación a minutos en lugar de días. \n\nCove Data Protection, por ejemplo, ofrece una solución nativa en la nube que elimina la dependencia de dispositivos locales y la necesidad de personalización masiva. Con pruebas de failover automatizadas y una interfaz unificada, la plataforma está diseñada para el entorno moderno, donde la resiliencia es tan crítica como la innovación. \n\nPara las organizaciones, la decisión no es solo técnica, sino estratégica. Adoptar DRaaS significa cambiar la mentalidad de “solo respaldar” a “recuperar rápidamente”, lo que puede ser la diferencia entre cerrar una empresa y seguir operando en la era digital.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T15:03:16.393Z",
+  "links": [
+    {
+      "title": "IBM Cost of a Data Breach Report 2025",
+      "url": "https://www.ibm.com/security/data-breach"
+    },
+    {
+      "title": "Informe de mercado DRaaS 2025‑2034",
+      "url": "https://www.marketsandmarkets.com/PressReleases/disaster-recovery-as-a-service.asp"
+    },
+    {
+      "title": "Cove Data Protection – Solución DRaaS",
+      "url": "https://www.covedataprotection.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de recuperación promedio tras ciberataque",
+      "value": "Más de 100 días"
+    },
+    {
+      "label": "Valor del mercado DRaaS 2025",
+      "value": "$18.89 bn USD"
+    },
+    {
+      "label": "Proyección de mercado DRaaS 2034",
+      "value": "$83.15 bn USD"
+    },
+    {
+      "label": "Costo de inactividad por hora (empresas 20‑100 empleados)",
+      "value": "Más de $100 000"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

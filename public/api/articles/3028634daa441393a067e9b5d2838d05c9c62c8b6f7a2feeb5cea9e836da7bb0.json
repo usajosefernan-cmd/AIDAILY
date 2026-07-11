@@ -1,0 +1,76 @@
+{
+  "id": "3028634daa441393a067e9b5d2838d05c9c62c8b6f7a2feeb5cea9e836da7bb0",
+  "title": "De código fuente a binario: ¿Qué hace realmente GCC? Parte 2",
+  "summary": "El artículo explica el funcionamiento interno del compilador GCC en arquitecturas x86 de 64 bits, centrándose en los mecanismos de retorno de funciones, la gestión de memoria de pila y las medidas de seguridad como la instrucción endbr64 de la tecnología CET.",
+  "url": "https://dev.to/ddupard/from-source-code-to-binary-what-does-gcc-actually-do-part-2-4lhp",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T22:32:40.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frygg4z37j8lujguzagdi.png",
+  "imageAlt": "De código fuente a binario: ¿Qué hace realmente GCC? Parte 2",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica el funcionamiento interno del compilador GCC en arquitecturas x86 de 64 bits, centrándose en los mecanismos de retorno de funciones, la gestión de memoria de pila y las medidas de seguridad como la instrucción endbr64 de la tecnología CET.",
+  "keyPoints": [
+    "GCC utiliza el registro RAX/EAX para retornar valores pequeños, mientras que estructuras grandes usan un puntero oculto pasado por el registro RDI.",
+    "La pila se gestiona mediante el registro RSP, con instrucciones push y pop que modifican su valor para almacenar datos locales de funciones.",
+    "La instrucción endbr64 es un checkpoint de seguridad de la tecnología CET de Intel y AMD que previene ataques de programación orientada a saltos.",
+    "GCC asigna espacio en la pila restando bytes al registro RSP, por ejemplo 0x40 (64 bytes) para variables locales de la función."
+  ],
+  "whyMatters": "Entender el funcionamiento interno de GCC es fundamental para desarrolladores que buscan optimizar el rendimiento de sus aplicaciones en sistemas Linux y entornos de baja latencia. La implementación de medidas de seguridad como endbr64 refuerza la protección contra vulnerabilidades críticas que explotan la desviación del flujo de control, un vector de ataque muy común en software malicioso. Además, conocer los mecanismos de retorno de funciones y asignación de pila permite depurar errores complejos y escribir código más eficiente, especialmente en proyectos de sistemas operativos, controladores y aplicaciones de alto rendimiento.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frygg4z37j8lujguzagdi.png",
+      "alt": "Portada del artículo 'De código fuente a binario: ¿Qué hace realmente GCC? Parte 2'",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#GCC",
+    "#Compiladores",
+    "#SeguridadInformatica",
+    "#ArquitecturaX86"
+  ],
+  "fullArticle": "En la segunda parte de su análisis sobre el funcionamiento del compilador GCC, el autor profundiza en los mecanismos de retorno de funciones y la gestión de memoria de pila en arquitecturas x86 de 64 bits. Tras explicar en la entrega anterior la convención System V AMD64 para el paso de parámetros, ahora desglosa cómo se asigna espacio en la pila para variables locales y las distintas formas en que una función devuelve su resultado. El artículo utiliza ejemplos de código compilado con GCC y desensamblado con objdump para ilustrar cada concepto de forma práctica.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Frygg4z37j8lujguzagdi.png]\n\nUno de los puntos clave es la instrucción endbr64, un checkpoint de seguridad integrado en los procesadores Intel y AMD modernos como parte de la tecnología Control-flow Enforcement Technology (CET). Esta medida hardware impide ataques de programación orientada a saltos (JOP), en los que los atacantes redirigen el flujo de ejecución a fragmentos de código legítimos para realizar acciones no autorizadas. Además, el artículo explica los tres mecanismos principales de retorno de valores: el uso de registros como RAX o EAX para resultados pequeños, el puntero oculto pasado por RDI para estructuras de gran tamaño, y la combinación de múltiples registros para valores de punto flotante.\n\nTambién se detalla cómo GCC calcula el espacio necesario para variables locales, restando bytes al registro RSP para reservar memoria en la pila, y cómo las instrucciones push y pop modifican este registro para guardar y recuperar datos. Este conocimiento es especialmente relevante para desarrolladores de software de sistemas, que deben entender el comportamiento a bajo nivel del compilador para optimizar el rendimiento y evitar errores de corrupción de memoria. La inclusión de medidas de seguridad como endbr64 demuestra la evolución de los procesadores para mitigar vulnerabilidades a nivel hardware, un aspecto cada vez más crítico en un entorno de amenazas creciente. El artículo promete profundizar en estos temas en futuras entregas, ofreciendo una visión completa del proceso de compilación de GCC.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T23:04:29.603Z",
+  "links": [
+    {
+      "title": "Documentación oficial de GCC",
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/"
+    },
+    {
+      "title": "Información sobre Control-flow Enforcement Technology (CET) de Intel",
+      "url": "https://www.intel.com/content/www/us/en/developer/articles/technical/control-flow-enforcement-technology.html"
+    },
+    {
+      "title": "Comunidad de desarrolladores Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tamaño de espacio asignado en pila en el ejemplo",
+      "value": "64 bytes (0x40)"
+    },
+    {
+      "label": "Tecnología de seguridad utilizada por endbr64",
+      "value": "Control-flow Enforcement Technology (CET)"
+    },
+    {
+      "label": "Registro usado para puntero oculto en retorno de estructuras grandes",
+      "value": "RDI"
+    },
+    {
+      "label": "Registro principal para retorno de valores pequeños",
+      "value": "RAX/EAX"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

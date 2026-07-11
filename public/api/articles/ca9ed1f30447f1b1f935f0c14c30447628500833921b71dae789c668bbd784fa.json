@@ -1,0 +1,41 @@
+{
+  "id": "ca9ed1f30447f1b1f935f0c14c30447628500833921b71dae789c668bbd784fa",
+  "title": "Videollamadas 1:1 en 180 líneas de backend a $0.20 por sesión: la solución ligera que necesitas",
+  "summary": "Un ingeniero muestra cómo construir una videollamada uno a uno con FastAPI, SQLAlchemy y el SDK de AWS Chime en solo 180 líneas de código, manteniendo costos por sesión en $0.20 y sin depender de SaaS ni de la complejidad de WebRTC.",
+  "url": "https://dev.to/aws-builders/videollamadas-11-en-180-lineas-de-backend-a-020-por-sesion-no-necesitas-mas-35he",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T22:59:55.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9c1i7map9qpnhys0phz4.png",
+  "imageAlt": "Videollamadas 1:1 en 180 líneas de backend a $0.20 por sesión: la solución ligera que necesitas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un ingeniero muestra cómo construir una videollamada uno a uno con FastAPI, SQLAlchemy y el SDK de AWS Chime en solo 180 líneas de código, manteniendo costos por sesión en $0.20 y sin depender de SaaS ni de la complejidad de WebRTC.",
+  "keyPoints": [
+    "Con un SDK administrado, el backend solo gestiona reuniones y tokens, evitando la señalización y servidores STUN/TURN.",
+    "El enfoque idempotente evita duplicados: una llamada se crea una sola vez y los invitados se generan de forma segura.",
+    "El coste por sesión se mantiene en $0.20, gracias a la eficiencia del modelo de datos y al uso de tokens por usuario.",
+    "La solución se implementa en 180 líneas de código, demostrando que la simplicidad y la rentabilidad pueden coexistir."
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9c1i7map9qpnhys0phz4.png",
+      "alt": "Videollamadas 1:1 en ~180 líneas de backend a $0.20 por sesión, no necesitas más",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "No necesitas un SaaS de video para poner a dos personas en una llamada. Con un plano de medios administrado (aquí AWS Chime SDK, pero la forma se generaliza), el lado del servidor de una videollamada 1:1 es una reunión, dos tokens de ingreso, y un interruptor de apagado. Este post construye exactamente eso, una llamada host↔guest con grabación, sobre FastAPI + SQLAlchemy + un cliente de React, y mantiene la cuenta predecible.\n\nEl instinto es o (a) pagar un SaaS de video por asiento, o (b) cablear WebRTC desde cero. Los dos están complicados para una función 1:1 simple.\n\n(a) es exagerado y costo recurrente. (b) significa ser dueño de la\nseñalización, de los servidores STUN/TURN, de un SFU para cualquier cosa más allá de peer-to-peer, de la negociación de códecs, y de la resiliencia de red: ...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:24:50.187Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

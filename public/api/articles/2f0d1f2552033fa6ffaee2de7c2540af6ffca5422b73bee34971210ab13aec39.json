@@ -1,0 +1,77 @@
+{
+  "id": "2f0d1f2552033fa6ffaee2de7c2540af6ffca5422b73bee34971210ab13aec39",
+  "title": "Mundial 2026: El formato de 48 equipos genera una pesadilla estadística de la que nadie habla",
+  "summary": "El nuevo formato de 3 equipos por grupo del Mundial 2026 crea incentivos perversos en la diferencia de gol que alteran las estrategias de los equipos: las victorias por la mínima o los empates sin riesgo aumentan la probabilidad de clasificación más que las goleadas, según análisis de las primeras jornadas y simulaciones de Montecarlo.",
+  "url": "https://dev.to/edgelab/world-cup-2026-the-48-team-format-just-created-a-statistical-nightmare-and-nobodys-talking-3de8",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T20:00:16.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7bfevw92mq7bomgmut6e.png",
+  "imageAlt": "Mundial 2026: El formato de 48 equipos genera una pesadilla estadística de la que nadie habla",
+  "tags": [
+    "deportes",
+    "noticias"
+  ],
+  "aiSummary": "El nuevo formato de 3 equipos por grupo del Mundial 2026 crea incentivos perversos en la diferencia de gol que alteran las estrategias de los equipos: las victorias por la mínima o los empates sin riesgo aumentan la probabilidad de clasificación más que las goleadas, según análisis de las primeras jornadas y simulaciones de Montecarlo.",
+  "keyPoints": [
+    "El formato de 16 grupos de 3 equipos del Mundial 2026 genera incentivos asimétricos que premian resultados conservadores sobre las goleadas.",
+    "Un segundo puesto con 3 puntos puede quedar eliminado, mientras un tercero con 4 puntos tiene casi asegurada la clasificación a octavos de final.",
+    "Simulaciones de Montecarlo con 10.000 iteraciones muestran que jugar para maximizar la probabilidad de clasificación no equivale a ganar todos los partidos.",
+    "Victorias por la mínima o empates sin riesgo en la diferencia de gol son estrategias más efectivas que las goleadas para avanzar de fase."
+  ],
+  "whyMatters": "Este hallazgo redefine por completo la estrategia de los equipos en la fase de grupos del Mundial 2026, ya que altera los incentivos tradicionales del juego. Los seleccionadores y cuerpos técnicos deberán adaptar sus planteamientos para priorizar la probabilidad de clasificación sobre la búsqueda de victorias abultadas, lo que modificará la dinámica del torneo. Además, los aficionados deben esperar un fútbol más conservador y menos goleador que en ediciones anteriores, con un aumento probable de empates y resultados ajustados que cambiarán la experiencia del espectáculo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7bfevw92mq7bomgmut6e.png",
+      "alt": "Portada del artículo sobre el impacto estadístico del formato de 48 equipos del Mundial 2026",
+      "caption": "Imagen de portada del artículo que analiza la pesadilla estadística generada por el nuevo formato del Mundial 2026"
+    }
+  ],
+  "subcategory": "futbol/laliga",
+  "hashtags": [
+    "#Mundial2026",
+    "#FIFA",
+    "#Futbol",
+    "#Formato48Equipos",
+    "#EstadisticasDeportivas"
+  ],
+  "fullArticle": "El nuevo formato de 48 equipos del Mundial 2026, estructurado en 16 grupos de 3 selecciones, ha generado una paradoja estadística que amenaza con modificar por completo la dinámica de la fase de grupos del torneo, y que hasta ahora había pasado desapercibida para la mayoría de analistas y aficionados. A diferencia de las ediciones anteriores con grupos de 4 equipos, donde el segundo puesto casi garantizaba la clasificación a octavos de final, en esta nueva estructura un tercer clasificado con 4 puntos puede avanzar de fase, mientras un segundo con solo 3 puntos puede quedar eliminado. Esta asimetría en los criterios de desempate genera incentivos perversos que premian la prudencia en la diferencia de gol por encima de las goleadas, alterando las estrategias óptimas de los equipos desde el primer partido.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F7bfevw92mq7bomgmut6e.png]\n\nLas primeras jornadas de la fase de clasificación ya muestran señales claras de este cambio de paradigma. Selecciones como España o Japón, que golearon 4-0 a sus rivales en sus debuts, podrían estar cometiendo un error estratégico al exponerse a escenarios de desempate que podrían evitarse con victorias por la mínima. Por el contrario, combinaciones como el 1-0 de Canadá sobre Sudáfrica o el 0-0 de Colombia con Portugal se perfilan como movimientos maestros de gestión de riesgo: obtienen los mismos puntos que una goleada, pero sin exponerse a una diferencia de gol que podría volverse en su contra en caso de empate a puntos con otros equipos del grupo. Este comportamiento no es casual: los equipos más inteligentes ya están jugando para maximizar su probabilidad de clasificación, no para ganar cada partido por la mayor cantidad de goles posible.\n\nUn análisis detallado de los primeros 7 partidos del torneo, complementado con simulaciones de Montecarlo de 10.000 iteraciones basadas en ratings Elo y modelos de goles esperados (xG) de Opta, confirma que la estrategia conservadora se correlaciona con una mayor tasa de clasificación, incluso controlando por la fuerza de cada selección. En grupos equilibrados, como el D que enfrenta a Portugal, Colombia y Argelia, las probabilidades de avance de los tres equipos son casi idénticas, lo que significa que una victoria por 3-1 de Argelia podría dejarlos eliminados si sufren una derrota ajustada en el siguiente partido, mientras un 1-0 los mantiene en una posición de ventaja. Esta dinámica invierte la lógica tradicional del fútbol: ahora, arriesgar para aumentar la diferencia de gol puede ser contraproducente, mientras que la prudencia en el marcador protege de escenarios de desempate impredecibles.\n\nLas implicaciones de este hallazgo van más allá de la estrategia deportiva: modificará la experiencia del espectáculo para los aficionados, que deberán acostumbrarse a un fútbol menos goleador y con más empates que en cualquier edición anterior del Mundial. Los cuerpos técnicos de las selecciones deberán replantear sus planes de entrenamiento para incluir la gestión de la diferencia de gol como un elemento central de la fase de grupos, y los analistas deportivos tendrán que actualizar sus modelos de predicción para incorporar esta variable que antes era marginal. Si bien es cierto que una muestra de 7 partidos es pequeña, la lógica del formato es innegable: los incentivos están definidos desde el primer silbatazo, y los equipos que se adapten primero a esta nueva realidad tendrán una ventaja competitiva decisiva sobre los que sigan jugando como si estuvieran en grupos de 4 equipos.",
+  "category": "deportes",
+  "scrapedAt": "2026-06-29T20:30:51.751Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Sistema de clasificación Elo de selecciones",
+      "url": "https://eloratings.net"
+    },
+    {
+      "title": "Sitio oficial del Mundial 2026 de la FIFA",
+      "url": "https://www.fifa.com/es/tournaments/mens/worldcup/2026"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Equipos participantes en el Mundial 2026",
+      "value": "48 selecciones"
+    },
+    {
+      "label": "Estructura de la fase de grupos",
+      "value": "16 grupos de 3 equipos cada uno"
+    },
+    {
+      "label": "Iteraciones de la simulación de Montecarlo realizada",
+      "value": "10.000 iteraciones"
+    },
+    {
+      "label": "Partidos analizados en la primera jornada",
+      "value": "7 partidos disputados el 27 y 28 de junio"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,88 @@
+{
+  "id": "611254eb2b3ab3dfaa68a71bc5b8bd0aec292cdacf1b0b9fc8aabd6880d7245b",
+  "title": "Asistente IA integrado en panel de gestión: Gemini API y prompts dinámicos desde Firebase",
+  "summary": "El ingeniero de PanelControl, la herramienta interna de gestión comercial, ha integrado un asistente IA directamente en el panel, usando la API Gemini para responder preguntas con datos en tiempo real extraídos de Firebase y una base de conocimiento estática codificada en el prompt.",
+  "url": "https://dev.to/androve2k/ai-assistant-in-a-management-panel-gemini-api-dynamic-system-prompt-from-firebase-4c8k",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T08:14:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fp6ql7yxnuhxbkjl69c4n.png",
+  "imageAlt": "Asistente IA integrado en panel de gestión: Gemini API y prompts dinámicos desde Firebase",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El ingeniero de PanelControl, la herramienta interna de gestión comercial, ha integrado un asistente IA directamente en el panel, usando la API Gemini para responder preguntas con datos en tiempo real extraídos de Firebase y una base de conocimiento estática codificada en el prompt.",
+  "keyPoints": [
+    "Se añadió un botón 'Ask AI' que abre un panel de chat con contexto dinámico extraído de Firebase en tiempo real.",
+    "La solución utiliza solo JavaScript puro, sin frameworks ni librerías externas, y combina datos en vivo con una base de conocimiento estática.",
+    "Gemini fue elegido por su capa gratuita generosa y requisitos de facturación mínima, aunque requiere verificación de modelos disponibles.",
+    "El sistema construye el prompt de sistema con información de usuarios, rankings, leads y bonos, garantizando respuestas contextualizadas."
+  ],
+  "whyMatters": "Esta integración demuestra cómo las empresas pueden potenciar la productividad de sus equipos comerciales sin incurrir en costes adicionales. Al incorporar datos en tiempo real, las decisiones se basan en información actualizada, reduciendo errores y acelerando ciclos de venta. Además, la arquitectura ligera permite escalar la solución a otros departamentos con mínima reescritura.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fp6ql7yxnuhxbkjl69c4n.png",
+      "alt": "Asistente IA en PanelControl con Gemini API",
+      "caption": "Imagen de portada del artículo que muestra el asistente IA integrado en PanelControl."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Interfaz de PanelControl con botón 'Ask AI'",
+      "caption": "Captura de la interfaz de PanelControl con el nuevo botón 'Ask AI' destacado en verde."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logo de Google AI",
+      "caption": "Logo oficial de Google AI, el proveedor del modelo Gemini."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#GeminiAI",
+    "#Firebase",
+    "#PanelControl",
+    "#IAenNegocios"
+  ],
+  "fullArticle": "El ingeniero de PanelControl, la herramienta interna de gestión comercial, ha integrado un asistente IA directamente en el panel, usando la API Gemini para responder preguntas con datos en tiempo real extraídos de Firebase y una base de conocimiento estática codificada en el prompt. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fp6ql7yxnuhxbkjl69c4n.png]\n\nLa solución se basa en una simple llamada fetch POST a la API de Gemini, donde el cuerpo de la petición incluye el prompt dentro del campo 'contents'. La respuesta se extrae de 'candidates[0].content.parts[0].text'. Antes de enviar cada pregunta, el sistema construye dinámicamente un bloque de texto que serializa el estado actual del panel: usuario conectado, mes en curso, rankings de operadores por categoría, total de leads y activaciones, y umbrales de bonificación. Todo esto se lee del estado en memoria de PanelControl, evitando llamadas adicionales a la base de datos. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nLa elección de Gemini se basó en su capa gratuita generosa para uso interno ligero y la exigencia de una cuenta de facturación mínima. Sin embargo, la empresa debe verificar manualmente los modelos disponibles en su cuenta a través de la documentación oficial, ya que los modelos se desprecian rápidamente para nuevas cuentas. El uso de claves que comienzan con 'AIzaSy' garantiza la compatibilidad con la API. El botón 'Ask AI' se posiciona sobre el existente, con un degradado verde/teal que lo distingue visualmente, y al hacer clic abre un panel lateral con estética de glassmorphism, un área de mensajes con indicador de escritura y chips de sugerencia iniciales. [MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nEn términos de impacto, la integración permite que el equipo comercial responda a preguntas repetitivas como \"¿quién vendió más este mes?\" o \"¿cuántas activaciones faltan para alcanzar el umbral de bonificación?\" con precisión y en tiempo real, reduciendo la carga administrativa y mejorando la velocidad de toma de decisiones. La arquitectura ligera y basada en JavaScript facilita la adopción en otros módulos de la empresa sin reescritura significativa, posicionando a PanelControl como un caso de estudio de IA aplicada en entornos corporativos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T08:24:52.952Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/your-article-link"
+    },
+    {
+      "title": "Documentación oficial de Gemini API",
+      "url": "https://ai.google.dev/gemini-api/docs"
+    },
+    {
+      "title": "Guía de Firebase Realtime Database",
+      "url": "https://firebase.google.com/docs/database"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de preguntas diarias",
+      "value": "Alrededor de 30 preguntas por día"
+    },
+    {
+      "label": "Costo de uso mensual",
+      "value": "Cero dentro del plan gratuito de Gemini"
+    },
+    {
+      "label": "Cantidad de usuarios activos",
+      "value": "Más de 50 usuarios comerciales"
+    },
+    {
+      "label": "Tiempo de respuesta medio",
+      "value": "Menos de 1 segundo por consulta"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

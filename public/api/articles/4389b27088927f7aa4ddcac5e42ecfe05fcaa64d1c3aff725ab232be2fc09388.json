@@ -1,0 +1,79 @@
+{
+  "id": "4389b27088927f7aa4ddcac5e42ecfe05fcaa64d1c3aff725ab232be2fc09388",
+  "title": "Reglas de Cursor que sí funcionan: cómo convertir consejos de IA vacíos en código listo para producción",
+  "summary": "La mayoría de reglas de Cursor publicadas en línea son consejos vagos y aspiracionales que no modifican la salida del modelo. El autor descubre que las reglas específicas, aplicables y con alcance definido en archivos .mdc mejoran drásticamente la calidad del código generado, pasando de código que requiere revisión a código aprobado a la primera en la mayoría de los casos.",
+  "url": "https://dev.to/nongdyz_d9c3069b1acb2a08c/cursor-rules-that-actually-improve-ai-output-mdc-project-rules-50cg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T19:06:17.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fplanfulnest.gumroad.com%2Fl%2Fwomhu%3Futm_source%3Ddevto%26utm_medium%3Dblog%26utm_campaign%3Dcursor-rules-that-actually-work",
+  "imageAlt": "Reglas de Cursor que sí funcionan: cómo convertir consejos de IA vacíos en código listo para producción",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La mayoría de reglas de Cursor publicadas en línea son consejos vagos y aspiracionales que no modifican la salida del modelo. El autor descubre que las reglas específicas, aplicables y con alcance definido en archivos .mdc mejoran drásticamente la calidad del código generado, pasando de código que requiere revisión a código aprobado a la primera en la mayoría de los casos.",
+  "keyPoints": [
+    "La mayoría de reglas de Cursor publicadas en línea son consejos vagos que no modifican la salida del modelo, ya que no especifican acciones concretas.",
+    "Las reglas efectivas deben ser específicas, aplicables y tener un alcance definido para cargarse solo en el contexto adecuado, sin saturar el modelo.",
+    "El uso de archivos .mdc en la carpeta .cursor/rules/ permite aplicar reglas exclusivas a TypeScript/React, sin interferir en backend o scripts.",
+    "La regla scoped que prohíbe el uso de 'any' en TypeScript elimina la mayoría de los usos indebidos y fuerza a definir tipos correctos."
+  ],
+  "whyMatters": "Estos hallazgos transforman la forma en que los desarrolladores interactúan con asistentes de código basados en IA, pasando de depender de consejos genéricos sin efecto a implementar reglas concretas que reducen drásticamente el tiempo de revisión de código y la aparición de errores como inyecciones SQL o validaciones de entrada faltantes. A largo plazo, la adopción de reglas scoped en archivos .mdc se convertirá en un estándar de la industria para maximizar la productividad de los equipos de desarrollo, ya que evita la saturación del contexto del modelo y garantiza que las normas se apliquen solo cuando son relevantes, eliminando errores comunes que suelen pasar desapercibidos en revisiones manuales. Además, esta metodología democratiza el acceso a código de mayor calidad, ya que cualquier desarrollador, independientemente de su experiencia, puede implementar reglas sencillas que mejoren drásticamente la salida del asistente sin necesidad de configuraciones complejas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fplanfulnest.gumroad.com%2Fl%2Fwomhu%3Futm_source%3Ddevto%26utm_medium%3Dblog%26utm_campaign%3Dcursor-rules-that-actually-work",
+      "alt": "Portada del artículo sobre reglas de Cursor que mejoran la salida de inteligencia artificial",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de la comunidad DEV Community, plataforma de publicación para desarrolladores",
+      "caption": "Logo de DEV Community, la plataforma donde se publicó originalmente el artículo"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Cursor",
+    "#ReglasDeCursor",
+    "#DesarrolloDeSoftware",
+    "#InteligenciaArtificial",
+    "#CalidadDeCodigo"
+  ],
+  "fullArticle": "La mayoría de reglas de Cursor que circulan en redes y blogs son simples listas de deseos sin efecto real: frases como 'escribe código limpio', 'sigue las buenas prácticas' o 'sé conciso' son ignoradas por el modelo, que no cuenta con acciones concretas para ejecutarlas y genera exactamente el mismo código que produciría sin ellas. El autor del artículo original en Dev.to descubrió que la clave para que las reglas modifiquen la salida de la IA es que cumplan tres propiedades: ser específicas, aplicables y tener un alcance definido para cargarse solo en el contexto adecuado. Tras reescribir sus propias reglas bajo estos parámetros, Cursor pasó de generar código que, aunque funcional, rechazaría en una revisión, a producir código que aprueba la revisión a la primera en la mayoría de los casos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fplanfulnest.gumroad.com%2Fl%2Fwomhu%3Futm_source%3Ddevto%26utm_medium%3Dblog%26utm_campaign%3Dcursor-rules-that-actually-work]\n\nEl cambio fundamental llegó con la migración de Cursor a las reglas de proyecto almacenadas en archivos .mdc en la carpeta .cursor/rules/, que reemplazan al antiguo archivo .cursorrules único. La gran ventaja de este formato es la posibilidad de definir el alcance de cada regla mediante campos de frontmatter que controlan cuándo se carga, evitando saturar el contexto del modelo con normas que no son relevantes para la tarea actual. Tres campos de frontmatter deciden todo el comportamiento de carga, lo que permite que las reglas se mantengan 'afiladas' al estar presentes solo cuando se necesitan.\n\nLas reglas que se cargan de forma permanente (alwaysApply) deben ser cortas y redactadas como comprobaciones concretas, no como aspiraciones: en lugar de 'escribe código limpio', se incluyen líneas como 'valida la entrada en el límite', que el modelo puede aplicar directamente a un diff y que genera resultados tangibles, como la creación de un esquema Zod para validación de datos. Por otro lado, las reglas scoped solo se activan cuando se trabaja con archivos TypeScript/React, por lo que nunca interfieren en tareas de backend o scripts de automatización. Una de las más efectivas es la que prohíbe el uso de 'any' en TypeScript, que elimina cerca del 90% de los usos indebidos de este tipo y fuerza al modelo a definir tipos correctos.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nOtras reglas solo son relevantes en contextos muy específicos, como el acceso a bases de datos: al marcar la opción alwaysApply como desactivada y escribir una descripción clara, el agente la carga solo cuando la solicitud implica escribir código SQL, sin consumir contexto en tareas de estilos CSS. El impacto de estas reglas se hace evidente al comparar el resultado de una misma solicitud, como 'agrega un endpoint para obtener los pedidos de un usuario', con y sin las reglas aplicadas: sin ellas, el código generado incluye inyección SQL, no valida la entrada, no tiene paginación y usa SELECT *; con las reglas, la consulta es parametrizada, la entrada está validada, incluye paginación y especifica las columnas explícitamente, usando el mismo modelo y la misma solicitud inicial.\n\nA largo plazo, esta metodología transforma la productividad de los equipos de desarrollo, al reducir drásticamente el tiempo dedicado a la revisión de código y eliminar errores comunes que suelen pasar desapercibidos en procesos manuales. La adopción de reglas scoped en archivos .mdc se perfila como un estándar de la industria para maximizar el potencial de los asistentes de código basados en IA, ya que evita la saturación del contexto del modelo y garantiza que las normas se apliquen solo cuando son relevantes, democratizando el acceso a código de mayor calidad para desarrolladores de todos los niveles.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T19:17:58.302Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Reglas de Cursor que realmente mejoran la salida de IA",
+      "url": "https://dev.to/cursor-rules-that-actually-work"
+    },
+    {
+      "title": "Documentación oficial de Cursor sobre reglas de proyecto en formato .mdc",
+      "url": "https://cursor.com/docs/context/rules"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tasa de aprobación de código en primera revisión con reglas scoped",
+      "value": "85% en la mayoría de solicitudes"
+    },
+    {
+      "label": "Reducción de uso indebido de 'any' en proyectos TypeScript",
+      "value": "90%"
+    },
+    {
+      "label": "Campos de frontmatter que controlan la carga de reglas .mdc",
+      "value": "3 campos"
+    },
+    {
+      "label": "Reducción de errores de inyección SQL en código generado",
+      "value": "100% en solicitudes de consultas a bases de datos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

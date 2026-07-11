@@ -1,0 +1,73 @@
+{
+  "id": "2248f8e754ae9f283ce287f4a4475c3b1b91b53fe78a0151b54afb46d62c4592",
+  "title": "Creé una IA que diseña infraestructura MLOps (sin dejar que genere YAML)",
+  "summary": "Un desarrollador creó una herramienta de IA que asiste en la toma de decisiones arquitectónicas para proyectos de machine learning, generando planos de infraestructura deterministas y reproducibles sin depender de la generación de código por parte del LLM.",
+  "url": "https://dev.to/upshivam786/i-built-an-ai-that-designs-mlops-infrastructure-without-letting-ai-generate-yaml-5akh",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T04:46:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fs1cqmd9fuhhtz3p1udhe.png",
+  "imageAlt": "Creé una IA que diseña infraestructura MLOps (sin dejar que genere YAML)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador creó una herramienta de IA que asiste en la toma de decisiones arquitectónicas para proyectos de machine learning, generando planos de infraestructura deterministas y reproducibles sin depender de la generación de código por parte del LLM.",
+  "keyPoints": [
+    "La herramienta resuelve preguntas clave como el proveedor cloud, base de datos, caché y monitoreo, simplificando la fase de diseño.",
+    "Genera un blueprint estructurado que incluye razonamiento arquitectónico, puntuación, diagramas Mermaid y manifiestos para Docker Compose, Kubernetes y Cloud Run.",
+    "Utiliza tres capas separadas: una lógica determinista para definir servicios y redes, y plantillas Jinja2 para generar archivos reproducibles.",
+    "Proporciona informes de seguridad, estimación de costos y un paquete ZIP descargable con toda la configuración."
+  ],
+  "whyMatters": "Esta innovación reduce la complejidad y el riesgo de errores en la implementación de infraestructura para proyectos de IA, acelerando los tiempos de despliegue. Al garantizar reproducibilidad y determinismo, mejora la fiabilidad de los sistemas en producción. Para equipos de DevOps y arquitectos, supone una ventaja competitiva al automatizar decisiones técnicas sin sacrificar control.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fs1cqmd9fuhhtz3p1udhe.png",
+      "alt": "Portada del artículo sobre IA que diseña infraestructura MLOps",
+      "caption": "Imagen de portada del artículo original en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MLOps",
+    "#InteligenciaArtificial",
+    "#DevOps",
+    "#Kubernetes",
+    "#CloudRun"
+  ],
+  "fullArticle": "Desarrollar la arquitectura de infraestructura para un proyecto de inteligencia artificial suele ser más complicado que escribir el propio modelo, con decisiones críticas sobre el proveedor cloud, la base de datos o la estrategia de despliegue. Para abordar este problema, un ingeniero creó una herramienta de IA que, a partir de entradas de alto nivel como el framework de la aplicación, el presupuesto o los requisitos de alta disponibilidad, genera un blueprint de despliegue estructurado y determinista.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fs1cqmd9fuhhtz3p1udhe.png]\n\nA diferencia de los enfoques que dejan que un LLM genere código directamente, este sistema separa la lógica de infraestructura en tres capas: una capa determinista que define servicios, redes y almacenamiento; otra que evalúa la arquitectura y asigna una puntuación; y una tercera que usa plantillas Jinja2 para producir manifiestos de Docker Compose, Kubernetes, Cloud Run y flujos de GitHub Actions. El resultado es un paquete completo que incluye diagramas Mermaid, recomendaciones de monitoreo, informes de seguridad y estimación de costos, todo reproducible y listo para descargar. Este enfoque elimina la variabilidad y los errores comunes en la generación automática de código, ofreciendo a los equipos una base sólida y confiable para sus despliegues de MLOps.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T05:04:17.175Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de Kubernetes",
+      "url": "https://kubernetes.io/docs/home/"
+    },
+    {
+      "title": "Documentación de Jinja2",
+      "url": "https://jinja.palletsprojects.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Parámetros de entrada",
+      "value": "10 campos de alto nivel"
+    },
+    {
+      "label": "Capas de diseño",
+      "value": "3 capas separadas"
+    },
+    {
+      "label": "Artefactos generados",
+      "value": "4 tipos de manifiestos y reportes"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

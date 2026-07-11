@@ -1,0 +1,86 @@
+{
+  "id": "0bd97e9a216eb90715bdca1a6f57184c5e3c22635207d4c90cdabd4e75a282d5",
+  "title": "Cuando un sitio web estático no basta: Creando una plataforma de inteligencia de código abierto",
+  "summary": "El artículo relata el desafío de mantener actualizada la información de organizaciones de código abierto en crecimiento, donde los sitios web estáticos se quedan obsoletos rápidamente. El equipo de WebiU 2.0 descubrió que no solo necesitaba un rediseño de interfaz, sino una overhaul completa de la lógica del sistema para reflejar la actividad real de la comunidad en tiempo real, con integración de datos automática desde repositorios como GitHub.",
+  "url": "https://dev.to/tarunya/when-a-static-website-isnt-enough-building-an-open-source-intelligence-platform-5e5o",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T09:15:26.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa6wtaiwu0khdy11txiiv.png",
+  "imageAlt": "Cuando un sitio web estático no basta: Creando una plataforma de inteligencia de código abierto",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo relata el desafío de mantener actualizada la información de organizaciones de código abierto en crecimiento, donde los sitios web estáticos se quedan obsoletos rápidamente. El equipo de WebiU 2.0 descubrió que no solo necesitaba un rediseño de interfaz, sino una overhaul completa de la lógica del sistema para reflejar la actividad real de la comunidad en tiempo real, con integración de datos automática desde repositorios como GitHub.",
+  "keyPoints": [
+    "Las organizaciones de código abierto crecen de forma orgánica, con cambios diarios en repositorios, contribuidores y proyectos nuevos.",
+    "Los sitios web estáticos no pueden actualizarse de forma automática para reflejar estos cambios en tiempo real.",
+    "El equipo de WebiU rediseñó toda la lógica del sistema en la versión 2.0, no solo la interfaz.",
+    "La nueva plataforma integra inteligencia para sincronizar datos automáticamente desde GitHub y otros repositorios."
+  ],
+  "whyMatters": "Esta solución es estratégica para el ecosistema tecnológico español y europeo, donde el código abierto juega un papel cada vez más relevante en la innovación y la transformación digital. Las plataformas que no reflejan información actualizada generan desconfianza entre contribuidores, empresas inversoras y usuarios, lo que puede frenar el crecimiento de proyectos con potencial. WebiU 2.0 sienta un precedente al demostrar que es posible escalar la gestión de información de comunidades de código abierto sin perder rigor ni transparencia, un modelo que otras organizaciones pueden adoptar para mejorar su competitividad.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa6wtaiwu0khdy11txiiv.png",
+      "alt": "Portada del artículo sobre la creación de una plataforma de inteligencia de código abierto",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Fgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logo de Google AI, socio oficial de inteligencia artificial del proyecto WebiU",
+      "caption": "Google AI, socio oficial de inteligencia artificial de la plataforma"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Fgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logo de Neon, socio oficial de bases de datos del proyecto WebiU",
+      "caption": "Neon, socio oficial de bases de datos de la plataforma"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Fgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logo de Algolia, socio oficial de búsqueda del proyecto WebiU",
+      "caption": "Algolia, socio oficial de búsqueda de la plataforma"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#WebiU",
+    "#CódigoAbierto",
+    "#InteligenciaDeProyectos",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "Las organizaciones de código abierto crecen de forma orgánica y a menudo impredecible: los repositorios se expanden, los contribuidores llegan y desaparecen, y nuevos proyectos surgen de la nada cada día. Este ritmo de cambio constante es un desafío para las plataformas que deben reflejar la realidad del ecosistema, ya que los sitios web estáticos no pueden actualizarse solos para seguir el paso. Cuando el equipo de WebiU se embarcó en la versión 2.0 de su plataforma, creía que solo se trataba de un rediseño de la interfaz, pero pronto descubrió que era necesario rediseñar toda la lógica del sistema para que se alineara con la dinámica real del código abierto.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fa6wtaiwu0khdy11txiiv.png]\n\nEl principal problema era que cada cambio en los repositorios, cada nuevo contribuidor o cada proyecto emergente debía reflejarse manualmente en el sitio, un proceso insostenible a medida que la comunidad crecía. Esta falta de sincronización generaba desconfianza entre usuarios y colaboradores, ya que la información publicada no correspondía con el estado real de los proyectos. Para solucionarlo, la nueva versión de WebiU integra sistemas de inteligencia que recopilan y actualizan datos automáticamente desde plataformas como GitHub, eliminando la necesidad de intervención manual.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Fgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Fgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png]\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Fgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png]\n\nEl proyecto cuenta con el apoyo de socios estratégicos como Google AI, Neon y Algolia, que aportan capacidades de inteligencia artificial, almacenamiento escalable y búsqueda avanzada. Esta solución no solo beneficia a WebiU, sino que sienta un precedente para otras organizaciones de código abierto en España y Europa que necesitan escalar sin perder la conexión con su comunidad. En un contexto donde la transparencia y la actualización constante son clave para atraer contribuidores e inversiones, las plataformas de inteligencia integrada se perfilan como una herramienta indispensable para el ecosistema tecnológico regional.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T09:27:14.376Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/webiu/when-a-static-website-isnt-enough-building-an-open-source-intelligence-platform"
+    },
+    {
+      "title": "Sitio oficial de WebiU",
+      "url": "https://webiu.dev"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de la plataforma rediseñada",
+      "value": "WebiU 2.0"
+    },
+    {
+      "label": "Frecuencia de cambios en la actividad de GitHub",
+      "value": "Cambios diarios"
+    },
+    {
+      "label": "Número de socios oficiales del proyecto",
+      "value": "3 (Google AI, Neon, Algolia)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

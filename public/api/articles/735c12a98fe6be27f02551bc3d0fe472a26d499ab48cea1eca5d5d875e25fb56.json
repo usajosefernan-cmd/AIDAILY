@@ -1,0 +1,76 @@
+{
+  "id": "735c12a98fe6be27f02551bc3d0fe472a26d499ab48cea1eca5d5d875e25fb56",
+  "title": "Mageia 10: la distribución Linux que se niega a abandonar el soporte para equipos de 32 bits en un mundo dominado por los 64 bits",
+  "summary": "Mageia 10, distribución derivada de Mandriva que celebra 15 años desde su lanzamiento, se posiciona como una de las pocas opciones activas con soporte oficial para arquitecturas x86 de 32 bits, incluyendo el kernel 6.18, herramientas de gestión de paquetes RPM y Flatpak preinstalado, ideal para equipos antiguos o necesidades de compatibilidad específica.",
+  "url": "https://www.theregister.com/os-platforms/2026/06/29/mageia-10-keeps-the-32-bit-linux-flame-alive/5263856",
+  "source": "The Register",
+  "sourceUrl": "https://www.theregister.com/headlines.rss",
+  "publishedAt": "2026-06-29T17:32:36.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Mageia 10: la distribución Linux que se niega a abandonar el soporte para equipos de 32 bits en un mundo dominado por los 64 bits",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Mageia 10, distribución derivada de Mandriva que celebra 15 años desde su lanzamiento, se posiciona como una de las pocas opciones activas con soporte oficial para arquitecturas x86 de 32 bits, incluyendo el kernel 6.18, herramientas de gestión de paquetes RPM y Flatpak preinstalado, ideal para equipos antiguos o necesidades de compatibilidad específica.",
+  "keyPoints": [
+    "Mageia 10 celebra 15 años desde su lanzamiento inicial en junio de 2011, como fork de Mandriva, manteniendo la herencia de la distribución pionera en facilitar el uso de Linux con el escritorio KDE.",
+    "Es una de las pocas distribuciones activas que sigue ofreciendo soporte oficial para arquitecturas x86 de 32 bits, frente a la tendencia general del sector a abandonar esta tecnología.",
+    "Incluye el kernel 6.18, dos sistemas de gestión de paquetes RPM (urpmi y DNF), Flatpak preinstalado y nueve entornos de escritorio más 16 gestores de ventana opcionales en su instalador clásico.",
+    "Su edición Xfce para 32 bits consume solo 633 MB de RAM en reposo, convirtiéndola en una opción ligera y funcional para equipos antiguos o con hardware específico de 32 bits."
+  ],
+  "whyMatters": "En un ecosistema de distribuciones Linux donde la mayoría de proyectos grandes han abandonado el soporte para arquitecturas de 32 bits, Mageia cubre un nicho de usuarios imprescindible: personas con equipos antiguos que no pueden actualizar su hardware, profesionales que necesitan ejecutar software o controlar dispositivos específicos que solo funcionan en 32 bits, y proyectos de preservación digital que requieren mantener sistemas operativos compatibles con hardware legacy. Su existencia evita que el soporte para esta arquitectura desaparezca completamente del ecosistema de software libre, garantizando opciones accesibles para usuarios con necesidades especiales o limitaciones económicas. Además, su enfoque en la facilidad de uso y su amplia documentación la hacen accesible incluso para usuarios con conocimientos básicos, algo poco común en distribuciones de nicho orientadas a hardware antiguo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "Mageia 10: la distribución Linux que se niega a abandonar el soporte para equipos de 32 bits en un mundo dominado por los 64 bits",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Mageia10",
+    "#Linux32bits",
+    "#DistribucionLinux",
+    "#SoporteLegacy"
+  ],
+  "fullArticle": "Mageia 10 acaba de ver la luz marcando un hito muy especial: 15 años transcurridos desde el lanzamiento de su primera versión en junio de 2011, cuando un grupo de desarrolladores decidió crear un fork de Mandriva para preservar la esencia de la distribución pionera en acercar Linux a los usuarios comunes, después de los problemas internos que atravesó el proyecto original. Su característica más diferenciadora, y que la convierte en una rareza en el panorama actual, es el mantenimiento del soporte oficial para arquitecturas x86 de 32 bits, un segmento que la mayoría de distribuciones, incluso las de nicho, han terminado por abandonar en los últimos años para centrarse en los 64 bits.\n\nLa nueva versión incluye el kernel 6.18, herramientas de gestión de paquetes RPM propias y ajenas: el clásico urpmi de Mageia, DNF de Fedora, la interfaz gráfica Rpmdrake y la opcional dnfdragora. Al tratarse de una distribución basada en RPM, es compatible con paquetes de otras distros del mismo ecosistema como Fedora, openSUSE o RHEL, aunque los desarrolladores advierten que es posible que algunos paquetes no se instalen o funcionen correctamente por las diferencias entre distribuciones. Viene con Flatpak preinstalado, aunque sin aplicaciones de este tipo instaladas por defecto, una herramienta que será de gran ayuda para los usuarios de 32 bits que no encuentren paquetes nativos para su arquitectura, aunque cabe destacar que muy pocos Flatpaks soportan aún 32 bits. El instalador clásico permite elegir entre nueve entornos de escritorio y 16 gestores de ventana, mientras que las imágenes live solo están disponibles en 64 bits para GNOME y KDE Plasma, y en ambas arquitecturas para la edición Xfce.\n\nLa experiencia de uso de Mageia 10 destaca por su orientación a usuarios que buscan una alternativa a las distribuciones mainstream como Debian o Fedora, sin renunciar a la facilidad de uso. Su pantalla de bienvenida es muy completa, permitiendo instalar aplicaciones adicionales, cambiar repositorios y configurar aspectos básicos del sistema sin complicaciones, complementada por el Centro de Control Mageia que permite gestionar casi cualquier aspecto del sistema sin necesidad de recurrir a la línea de comandos. La distribución cuenta con una wiki oficial muy extensa con documentación para todo tipo de usuarios. En pruebas realizadas en una máquina virtual de 32 bits, la edición Xfce consume solo 633 MB de RAM en reposo, una cifra muy baja para los estándares actuales, y ocupa 7,8 GB de espacio en disco, mientras que la edición KDE Plasma con el nuevo Plasma 6,5,5 (con opción de X11 o Wayland) eleva el consumo de RAM a 1,7 GB en reposo. El sistema usa systemd, aunque se mantiene ligero, y por defecto no tiene sudo configurado, manteniendo un toque clásico en la gestión de cuentas de usuario y root.\n\nLa historia de Mageia se separa de la de OpenMandriva en 2011, antes del cierre de la empresa detrás de Mandriva, y aunque ambas distribuciones siguen siendo muy similares, los equipos de desarrollo no han logrado unificar sus esfuerzos, algo que muchos usuarios del ecosistema lamentan. En un mundo cada vez más orientado a los 64 bits, el soporte de 32 bits de Mageia se convierte en un activo cada vez más valioso para usuarios con equipos antiguos, necesidades de compatibilidad con hardware específico o proyectos que requieren mantener sistemas operativos que funcionen en arquitecturas legacy. Se trata sin duda de una de las mejores opciones disponibles hoy en día para quienes necesitan un sistema operativo Linux actualizado, funcional y con soporte para 32 bits.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T18:12:32.339Z",
+  "links": [
+    {
+      "title": "Sitio oficial de Mageia",
+      "url": "https://www.mageia.org/es/"
+    },
+    {
+      "title": "Wiki oficial de documentación de Mageia",
+      "url": "https://wiki.mageia.org/es/"
+    },
+    {
+      "title": "Notas de lanzamiento de Mageia 10",
+      "url": "https://wiki.mageia.org/es/Release_notes_for_Mageia_10"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Años desde el lanzamiento inicial de Mageia",
+      "value": "15 años (lanzamiento en junio de 2011)"
+    },
+    {
+      "label": "Consumo de RAM en reposo de Xfce 32 bits",
+      "value": "633 MB"
+    },
+    {
+      "label": "Versión del kernel incluida",
+      "value": "6.18"
+    },
+    {
+      "label": "Espacio en disco ocupado por la instalación",
+      "value": "7,8 GB"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

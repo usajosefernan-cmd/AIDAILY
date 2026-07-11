@@ -1,0 +1,38 @@
+{
+  "id": "218c868ccf37b308ae2ccde8520a288a5ccc52d06509637837bd20a6b90e54a4",
+  "title": "Your Loom App Quietly Became a Thread Pool Again: A Field Guide to Virtual Thread Pinning",
+  "summary": "El incidente que me enseñó a respetar los inmovilizadores parecía nada. Un servicio recién migrado a subprocesos virtuales, una prueba de carga que se estancó en aproximadamente 420 solicitudes por segundo sin importar cuánto tráfico le lanzamos, CPU al 9%, cero errores, cero advertencias, nada en los registros. La máquina tiene...",
+  "url": "https://dev.to/maschiojv/your-loom-app-quietly-became-a-thread-pool-again-a-field-guide-to-virtual-thread-pinning-2a3f",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T21:54:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgzpi99ov9ytia3teub93.png",
+  "imageAlt": "Your Loom App Quietly Became a Thread Pool Again: A Field Guide to Virtual Thread Pinning",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El incidente que me enseñó a respetar los inmovilizadores parecía nada. Un servicio recién migrado a subprocesos virtuales, una prueba de carga que se estancó en aproximadamente 420 solicitudes por segundo sin importar cuánto tráfico le lanzamos, CPU al 9%, cero errores, cero advertencias, nada en los registros. La máquina tiene...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgzpi99ov9ytia3teub93.png",
+      "alt": "Your Loom App Quietly Became a Thread Pool Again: A Field Guide to Virtual Thread Pinning",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "El incidente que me enseñó a respetar los inmovilizadores parecía nada. Un servicio recién migrado a subprocesos virtuales, una prueba de carga que se estancó en aproximadamente 420 solicitudes por segundo sin importar cuánto tráfico le lanzamos, CPU al 9%, cero errores, cero advertencias, nada en los registros. La máquina tenía 8 núcleos y la llamada HTTP descendente en la ruta activa tardó aproximadamente 19 ms. Haz la aritmética: 8 × (1000/19) ≈ 421.\n\nEl servicio que se suponía escalaría a millones de subprocesos virtuales atendía exactamente una solicitud por núcleo de CPU. Loom nos había devuelto silenciosamente un grupo de subprocesos limitado y el código parecía perfectamente inocente. Ese modo de falla tiene un nombre, fijación, y esta es la guía de campo que desearía haber tenido esa noche: qué es, las dos (y sólo dos) cosas que lo causan, qué cambió el JDK 24 y cómo detectarlo antes de que lo haga su gráfico de rendimiento.\n\nUn hilo virtual no posee un hilo del sistema operativo. Se ejecuta en un pequeño grupo de subprocesos de plataforma llamados subprocesos portadores; concretamente, los trabajadores de un ForkJoinPool dedicado que viven en un grupo de subprocesos llamado CarrierThreads, con un paralelismo predeterminado igual a Runtime.availableProcessors(). Cuando un hilo virtual se bloquea (en E/S, un bloqueo, una cola), no...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T22:05:36.563Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

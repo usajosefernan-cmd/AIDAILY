@@ -1,0 +1,79 @@
+{
+  "aiSummary": "Resumen de las principales amenazas de seguridad de la semana del 22 al 28 de junio: campaña de phishing con extensión de Chrome maliciosa, fallo crítico en FFmpeg, estafas de renovación de software falsas y actualizaciones de seguridad críticas para navegadores.",
+  "category": "tecnologia",
+  "fullArticle": "La semana del 22 al 28 de junio de 2023 estuvo marcada por una serie de amenazas de seguridad de alto impacto que afectan a usuarios particulares y empresas por igual, según el informe semanal de Malwarebytes Labs. Los investigadores detectaron campañas de phishing sofisticadas, vulnerabilidades críticas en herramientas de uso masivo y una ola de estafas de renovación de software que buscan robar información sensible de los usuarios.\n[MULTIMEDIA: https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/11/Week_in_Security.jpg]\nUna de las amenazas más preocupantes de la semana es una campaña de phishing que distribuye una extensión maliciosa para el navegador Google Chrome. Esta extensión, una vez instalada por el usuario tras caer en la trampa de un enlace fraudulento, secuestra las sesiones de navegación y permite a los atacantes acceder a datos personales, credenciales de acceso y otra información confidencial, afectando principalmente a dispositivos con sistema operativo Windows.\n[MULTIMEDIA: https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/11/Chrome-1200.png?w=300]\nPor otro lado, un equipo de investigadores de ciberseguridad identificó un fallo crítico en FFmpeg, la popular herramienta de procesamiento de video de código abierto utilizada por millones de usuarios y plataformas en todo el mundo. Esta vulnerabilidad permite a los atacantes ejecutar código remoto en sistemas vulnerables simplemente haciendo que el usuario abra un archivo de video malicioso, lo que representa un riesgo considerable para cualquier dispositivo que utilice esta herramienta para reproducir o editar contenido audiovisual.\nAdemás, se detectó una oleada de estafas de renovación de software falsas, en las que los atacantes envían correos electrónicos o notificaciones que simulan ser avisos de cobro por una suscripción a un servicio de software. Algunas de estas estafas incluso suplantan la identidad de Malwarebytes para ganarse la confianza de los usuarios y lograr que faciliten sus datos de pago o acceso a sus dispositivos.\nPara mitigar estos riesgos, Google lanzó una actualización de seguridad crítica para Chrome que corrige múltiples vulnerabilidades que podrían ser explotadas por atacantes, por lo que se recomienda a todos los usuarios instalar la última versión del navegador de inmediato. Por otro lado, el caso de una red de élite que fue hackeada tras dejar expuestos los datos personales de sus miembros recuerda la importancia de implementar medidas de seguridad proactivas, como el cifrado de conexiones y la verificación de la autenticidad de los avisos de renovación de servicios.",
+  "hashtags": [
+    "#PhishingChrome",
+    "#FalloFFmpeg",
+    "#EstafasRenovacion",
+    "#SeguridadInformatica",
+    "#Malwarebytes"
+  ],
+  "id": "3455065c4082d6daeee63406887dffb6a944d4ca845f0c997ac66b24be011e2f",
+  "imageAlt": "Semana de seguridad (22-28 de junio): extensión maliciosa de Chrome, fallo crítico en FFmpeg y ola de estafas de renovación falsa",
+  "imageUrl": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/11/Week_in_Security.jpg",
+  "interestingData": [
+    {
+      "label": "Periodo analizado en el resumen de seguridad",
+      "value": "22 al 28 de junio de 2023"
+    },
+    {
+      "label": "Sistemas afectados por la campaña de phishing con extensión de Chrome",
+      "value": "Dispositivos con sistema operativo Windows"
+    },
+    {
+      "label": "Tipo de vulnerabilidad detectada en FFmpeg",
+      "value": "Ejecución remota de código a través de archivos de video maliciosos"
+    }
+  ],
+  "keyPoints": [
+    "Campaña de phishing distribuye extensión maliciosa para Chrome que secuestra sesiones de navegador y compromete dispositivos con Windows.",
+    "Investigadores detectan fallo crítico en FFmpeg que permite a atacantes usar archivos de video maliciosos para comprometer sistemas vulnerables.",
+    "Estafadores envían avisos falsos de renovación de software, algunos suplantando la identidad de Malwarebytes, para robar datos de usuarios.",
+    "Se lanzan actualizaciones de seguridad críticas para Chrome que corrigen múltiples vulnerabilidades explotables por atacantes."
+  ],
+  "links": [
+    {
+      "title": "Artículo original 'A week in security' de Malwarebytes Labs",
+      "url": "https://www.malwarebytes.com/blog/a-week-in-security-june-22-june-28"
+    },
+    {
+      "title": "Centro de amenazas de Malwarebytes",
+      "url": "https://www.malwarebytes.com/threat-center"
+    },
+    {
+      "title": "Página de actualizaciones de seguridad de Google Chrome",
+      "url": "https://support.google.com/chrome/answer/95414"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Imagen de portada del resumen de seguridad semanal de Malwarebytes correspondiente a la semana del 22 al 28 de junio",
+      "caption": "Créditos: Malwarebytes Labs",
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/11/Week_in_Security.jpg"
+    },
+    {
+      "alt": "Logotipo oficial del navegador Google Chrome",
+      "caption": "Créditos: Google",
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/11/Chrome-1200.png?w=300"
+    }
+  ],
+  "publishedAt": "2026-06-29T07:01:00.000Z",
+  "scrapedAt": "2026-06-29T14:47:03.359Z",
+  "source": "Malwarebytes Labs",
+  "sourceUrl": "https://www.malwarebytes.com/blog/feed",
+  "subcategory": "ciberseguridad",
+  "summary": "Resumen de las principales amenazas de seguridad de la semana del 22 al 28 de junio: campaña de phishing con extensión de Chrome maliciosa, fallo crítico en FFmpeg, estafas de renovación de software falsas y actualizaciones de seguridad críticas para navegadores.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Semana de seguridad (22-28 de junio): extensión maliciosa de Chrome, fallo crítico en FFmpeg y ola de estafas de renovación falsa",
+  "url": "https://www.malwarebytes.com/blog/news/2026/06/a-week-in-security-june-22-june-28",
+  "whyMatters": "Estas amenazas demuestran la creciente sofisticación de los ataques de phishing y la explotación de vulnerabilidades en software de uso masivo, como navegadores y herramientas de procesamiento de video. Los usuarios y empresas deben priorizar la actualización de sus sistemas y la verificación de la autenticidad de los avisos de renovación para evitar robos de datos y acceso no autorizado a sus dispositivos. Además, la exposición de datos personales en redes de élite resalta la importancia de implementar medidas de seguridad proactivas para proteger la información sensible.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

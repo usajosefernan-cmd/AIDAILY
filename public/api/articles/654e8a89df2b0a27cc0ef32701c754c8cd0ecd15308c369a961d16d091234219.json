@@ -1,0 +1,76 @@
+{
+  "id": "654e8a89df2b0a27cc0ef32701c754c8cd0ecd15308c369a961d16d091234219",
+  "title": "Azure AI Search en 2026: Cómo crear pipelines RAG que no fallen en producción",
+  "summary": "El artículo analiza las limitaciones de los pipelines RAG convencionales en entornos de producción y explica cómo Azure AI Search, con su motor de búsqueda híbrida y Semantic Ranker, soluciona estos fallos, además de presentar las novedades de 2026 y los dos patrones de implementación disponibles.",
+  "url": "https://dev.to/carlosjcastrog/azure-ai-search-in-2026-how-to-build-a-rag-pipeline-43h8",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-10T23:15:53.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Femigaxudk9waqsipvpu7.png",
+  "imageAlt": "Azure AI Search en 2026: Cómo crear pipelines RAG que no fallen en producción",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo analiza las limitaciones de los pipelines RAG convencionales en entornos de producción y explica cómo Azure AI Search, con su motor de búsqueda híbrida y Semantic Ranker, soluciona estos fallos, además de presentar las novedades de 2026 y los dos patrones de implementación disponibles.",
+  "keyPoints": [
+    "Los pipelines RAG convencionales fallan en producción porque la búsqueda vectorial no prioriza documentos con términos técnicos específicos como códigos de error o acrónimos.",
+    "Azure AI Search combina tres motores de búsqueda: BM25 para términos exactos, HNSW para vectores y Semantic Ranker para reordenar por relevancia semántica real.",
+    "La búsqueda híbrida usa Reciprocal Rank Fusion para combinar resultados de los dos motores, superando el rendimiento de cualquiera de forma individual en contenido empresarial.",
+    "En 2026, el servicio ofrece dos patrones de pipeline RAG: el clásico, totalmente disponible, y el de recuperación agentica para casos de uso más complejos."
+  ],
+  "whyMatters": "Esta guía es fundamental para equipos de desarrollo e ingenieros de IA que implementan soluciones RAG en entornos empresariales, ya que soluciona fallos comunes que generan resultados imprecisos en asistentes inteligentes y sistemas de búsqueda interna. Las novedades de Azure AI Search en 2026, incluyendo la integración con Azure AI Foundry y el patrón de recuperación agentica, permiten reducir costes de mantenimiento y mejorar la experiencia de usuario final en sectores como la banca, la administración pública o el soporte técnico en España y Europa. Dominar estas técnicas se ha convertido en un requisito indispensable para garantizar la fiabilidad de las aplicaciones de IA generativa en producción, evitando errores que pueden suponer pérdidas económicas o de reputación para las organizaciones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Femigaxudk9waqsipvpu7.png",
+      "alt": "Imagen de portada del artículo sobre Azure AI Search y construcción de pipelines RAG en 2026",
+      "caption": "Imagen de portada del artículo original de Dev.to que explica las novedades de Azure AI Search para pipelines RAG"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AzureAISearch",
+    "#RAG",
+    "#InteligenciaArtificial",
+    "#MicrosoftAzure"
+  ],
+  "fullArticle": "La mayoría de los tutoriales sobre pipelines RAG (Generación Aumentada por Recuperación) disponibles en internet repiten un patrón aparentemente sencillo: dividir un documento en fragmentos, generar embeddings, almacenarlos en una base de datos vectorial y buscar los vectores más cercanos a la consulta del usuario para enviarlos al modelo de lenguaje. Este enfoque funciona en entornos de prueba, pero falla de formas imprevistas en producción, como cuando un usuario busca un error de red específico como 'SNAT error en network configuration': la búsqueda vectorial devuelve documentos conceptualmente relacionados con redes y NAT, pero no el documento que contiene el término 'SNAT' repetido, que una búsqueda por palabras clave habría encontrado de inmediato. Azure AI Search nace precisamente para solucionar este tipo de problemas, y en 2026 el servicio ha sufrido cambios tan importantes que gran parte de la documentación anterior ha quedado obsoleta. El servicio, que pasó de llamarse Azure Search a Azure Cognitive Search y desde noviembre de 2023 Azure AI Search, se integra ahora en el portal de Azure AI Foundry bajo el nombre Foundry IQ, sin ser un servicio separado: se trata de la misma herramienta vista desde la plataforma de agentes de Microsoft.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Femigaxudk9waqsipvpu7.png]\n\nInternamente, el servicio combina tres tecnologías de búsqueda complementarias: el motor de texto completo usa el algoritmo BM25, el mismo que emplean los motores de búsqueda tradicionales, que puntúa los documentos por frecuencia de términos y frecuencia inversa de documentos en el corpus; el motor vectorial usa HNSW (Hierarchical Navigable Small World) para búsquedas aproximadas de vecinos más cercanos en embeddings; y el Semantic Ranker es un modelo cross-encoder basado en transformadores, adaptado de Microsoft Bing, que reordena los resultados de los otros dos motores en función de la relevancia semántica real. La búsqueda híbrida ejecuta ambas consultas en paralelo y fusiona los resultados mediante Reciprocal Rank Fusion (RRF), un método que combina listas de clasificación sin necesidad de que las puntuaciones de ambos sistemas estén en la misma escala, penalizando los resultados que aparecen muy bajos en cualquiera de las dos listas, superando de forma consistente al uso de un solo motor especialmente para contenido empresarial que mezcla texto descriptivo con identificadores específicos. El Semantic Ranker procesa los 50 primeros resultados para reordenarlos, capturando relaciones sutiles como negaciones o dependencias contextuales que la similitud vectorial no detecta, y genera resúmenes y respuestas literales extraídas del índice, no generadas por el modelo. Su uso tiene un coste adicional, por lo que se recomienda habilitarlo solo para consultas de usuario final donde la precisión es crítica, omitiéndolo en búsquedas en segundo plano o procesamiento por lotes.\n\nDesde 2026, Azure AI Search ofrece dos patrones diferenciados para construir pipelines RAG: el patrón RAG clásico, disponible de forma general, donde el equipo controla todo el flujo desde la generación de la consulta hasta el envío de los resultados más relevantes como contexto al LLM; y la recuperación agentica, orientada a casos de uso más complejos que requieren mayor autonomía en el proceso de recuperación. Para empresas españolas y europeas que implementan asistentes de inteligencia artificial generativa para soporte técnico, búsqueda de documentación interna o atención al cliente, dominar estas funcionalidades es clave para evitar errores que generen frustración en los usuarios o pérdidas económicas, garantizando respuestas precisas incluso cuando las consultas incluyen términos técnicos muy específicos o códigos de error concretos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-10T23:54:56.657Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Azure AI Search en 2026, cómo construir un pipeline RAG",
+      "url": "https://dev.to/azure/azure-ai-search-in-2026-how-to-build-a-rag-pipeline-4a6e"
+    },
+    {
+      "title": "Documentación oficial de Azure AI Search en Microsoft Learn (español)",
+      "url": "https://learn.microsoft.com/es-es/azure/search/"
+    },
+    {
+      "title": "Guía de Azure AI Foundry en Microsoft Learn (español)",
+      "url": "https://learn.microsoft.com/es-es/azure/ai-foundry/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de presentación de Foundry IQ como nombre de Azure AI Search",
+      "value": "2026"
+    },
+    {
+      "label": "Número de motores de búsqueda integrados en el servicio",
+      "value": "3 (BM25, HNSW y Semantic Ranker)"
+    },
+    {
+      "label": "Número máximo de resultados que procesa el Semantic Ranker por consulta",
+      "value": "50 resultados superiores"
+    },
+    {
+      "label": "Algoritmo de fusión de resultados de búsqueda híbrida",
+      "value": "Reciprocal Rank Fusion (RRF)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

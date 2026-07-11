@@ -1,0 +1,76 @@
+{
+  "id": "a9849c1423a49bc8fb442082ef1045aee880dfddbbfe0887a7135705a926a485",
+  "title": "4 errores ocultos en la infraestructura de AWS que pueden hackear tu cuenta (y cómo solucionarlos con Terraform)",
+  "summary": "El artículo expone cuatro configuraciones por defecto en AWS que, si no se corrigen, pueden exponer tu cuenta a ataques masivos. Se ofrece una guía práctica con ejemplos en Terraform para mitigar cada riesgo.",
+  "url": "https://dev.to/dhruv_malaviya_cdcc71e595/4-aws-infrastructure-gotchas-that-will-get-your-account-hacked-and-how-to-fix-them-in-terraform-3jm5",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T13:03:23.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgyklmwnd5r0ma8ywi1w7.png",
+  "imageAlt": "4 errores ocultos en la infraestructura de AWS que pueden hackear tu cuenta (y cómo solucionarlos con Terraform)",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo expone cuatro configuraciones por defecto en AWS que, si no se corrigen, pueden exponer tu cuenta a ataques masivos. Se ofrece una guía práctica con ejemplos en Terraform para mitigar cada riesgo.",
+  "keyPoints": [
+    "Permisos wildcard (*) en IAM: una única vulnerabilidad puede borrar tu cuenta; la solución es codificar acciones y recursos específicos.",
+    "Bloqueo explícito de acceso público a buckets S3 evita que bots descubran y descarguen tus archivos; se implementa con aws_s3_bucket_public_access_block.",
+    "Abrir puertos de bases de datos a 0.0.0.0/0 expone tus servicios a ataques automatizados; la recomendación es mantenerlas en subredes privadas y usar SG de servidor.",
+    "Generar claves de acceso estáticas para CI/CD crea un riesgo permanente; usar federación OIDC con GitHub Actions permite tokens temporales y seguros."
+  ],
+  "whyMatters": "Las configuraciones por defecto de AWS son la puerta de entrada más frecuente a brechas de seguridad. Un solo error puede generar miles de dólares en cargos inesperados y comprometer datos críticos. Adoptar las prácticas recomendadas no solo protege la infraestructura, sino que también reduce costos operativos y mejora la confianza de clientes y socios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgyklmwnd5r0ma8ywi1w7.png",
+      "alt": "Portada del artículo sobre errores de AWS y Terraform",
+      "caption": "Imagen que ilustra los cuatro errores críticos en la configuración de AWS que pueden comprometer tu cuenta"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AWS",
+    "#Terraform",
+    "#SeguridadEnLaNube",
+    "#CICD"
+  ],
+  "fullArticle": "Un desarrollador típico lanza un módulo de Terraform el viernes por la tarde y, al abrir la facturación el lunes, descubre una factura de 14.000 USD por un clúster de minería de Monero creado accidentalmente. El problema no es un exploit sofisticado, sino configuraciones por defecto que, si se dejan sin revisar, abren puertas a atacantes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgyklmwnd5r0ma8ywi1w7.png]\n\nEl primer riesgo es el uso de permisos wildcard (*) en IAM. Cuando un rol permite cualquier acción sobre cualquier recurso, un solo fallo de seguridad puede borrar toda la cuenta. La solución práctica es codificar explícitamente las acciones y los ARNs de recursos en Terraform, como por ejemplo: Action = [\"dynamodb:GetItem\", \"dynamodb:Query\"].\n\nEl segundo punto crítico es la exposición de buckets S3. Los escáneres automatizados enumeran millones de nombres de buckets por hora; si no se bloquea el acceso público, los archivos subidos pueden ser descubiertos y descargados sin restricciones. Terraform permite añadir un recurso aws_s3_bucket_public_access_block que impide cualquier acceso público.\n\nEl tercer error es abrir puertos de bases de datos (5432, 3306) a 0.0.0.0/0. Este simple ajuste abre la puerta a ataques de fuerza bruta en minutos. La práctica recomendada es mantener las bases en subredes privadas y permitir el acceso únicamente desde el grupo de seguridad del servidor de la aplicación. Si se necesita acceso local, se sugiere usar el reenvío de puertos de AWS SSM.\n\nFinalmente, el cuarto riesgo proviene de generar claves de acceso estáticas para CI/CD. En lugar de crear usuarios de IAM con claves permanentes, se recomienda utilizar federación OIDC con GitHub Actions. De esta forma, cada ejecución asume un rol temporal con tokens que expiran inmediatamente después del despliegue.\n\nPara evitar estos errores antes de hacer commit, se puede ejecutar un escáner de código abierto en la terminal que detecte automáticamente estos problemas. La combinación de buenas prácticas y herramientas automatizadas es la defensa más efectiva contra los ataques que aprovechan configuraciones por defecto.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:43:02.344Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/4-aws-infrastructure-gotchas-that-will-get-your-account-hacked-and-how-to-fix-them-in-terraform"
+    },
+    {
+      "title": "Documentación oficial de Terraform: aws_s3_bucket_public_access_block",
+      "url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block"
+    },
+    {
+      "title": "Mejores prácticas de IAM de AWS",
+      "url": "https://aws.amazon.com/es/iam/best-practices/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Costo de factura inesperada",
+      "value": "14,000 USD"
+    },
+    {
+      "label": "Número de configuraciones críticas",
+      "value": "4"
+    },
+    {
+      "label": "Exposición de puertos a 0.0.0.0/0",
+      "value": "1 puerto por base de datos"
+    },
+    {
+      "label": "Duración de tokens OIDC",
+      "value": "15 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

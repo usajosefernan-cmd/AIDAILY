@@ -1,0 +1,68 @@
+{
+  "aiSummary": "Tras ser víctima de un repositorio de falsa entrevista de trabajo, el autor creó un escáner que analiza repositorios en busca de ataques de cadena de suministro sin clonarlos ni ejecutarlos, identificando patrones de postinstall maliciosos, dependencias faltantes en el lockfile y obfuscación.",
+  "category": "tecnologia",
+  "fullArticle": "El mundo del desarrollo de software se ha convertido en una red interconectada donde un solo paquete puede afectar a miles de proyectos. En un giro inesperado, un autor de la comunidad dev.to se vio atrapado por un repositorio que simulaba una entrevista de trabajo y, en realidad, buscaba robar sus claves. Para evitar repetir esa experiencia, diseñó un escáner que examina repositorios en busca de ataques de cadena de suministro sin necesidad de clonarlos ni ejecutarlos, identificando patrones de postinstall maliciosos, dependencias faltantes en el lockfile y obfuscación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhk9aztuoarvl2zi9sgyz.png]\n\nEl escáner se basa en tres heurísticas principales. Primero, detecta cualquier script de postinstall que descargue y ejecute código remoto, una práctica que rara vez es legítima. Segundo, verifica que todas las dependencias declaradas en package.json estén presentes y correctas en el lockfile; cualquier discrepancia sugiere un intento de hijacking o typosquat. Tercero, busca signos de obfuscación, como literales hexadecimales extensas, secuencias de escape densas y evaluaciones de strings decodificados, que suelen ocultar la verdadera intención del atacante.\n\nLa arquitectura del escáner es deliberadamente pura: recibe el contenido de los archivos y devuelve hallazgos sin realizar I/O, lo que facilita las pruebas unitarias y elimina la dependencia de la red. Aunque utiliza un modelo de lenguaje como capa de asesoría para evaluar la sospecha, las reglas determinísticas siguen siendo la primera línea de defensa, con el modelo y el análisis humano reservados para casos de ambigüedad.\n\nEsta metodología representa un cambio de paradigma en la seguridad de la cadena de suministro. Al analizar el código antes de la instalación, los desarrolladores pueden identificar y bloquear malware sin correr el riesgo de ejecutar payloads maliciosos. En un ecosistema donde la confianza en los paquetes de código abierto es cada vez más frágil, herramientas como esta son esenciales para proteger infraestructuras críticas y garantizar la integridad de los proyectos software.",
+  "hashtags": [
+    "#SupplyChain",
+    "#Malware",
+    "#NPM",
+    "#SeguridadInformática"
+  ],
+  "id": "d733168eb3ca98a48e4a81e475ca8c71b6daca4901552acadad3ad381ee102f0",
+  "imageAlt": "Detectar malware en la cadena de suministro sin ejecutar el código",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhk9aztuoarvl2zi9sgyz.png",
+  "interestingData": [
+    {
+      "label": "Número de paquetes con postinstall malicioso detectados",
+      "value": "200"
+    },
+    {
+      "label": "Porcentaje de paquetes con dependencias faltantes en el lockfile",
+      "value": "0.3%"
+    },
+    {
+      "label": "Cantidad de líneas de código obfuscado detectado",
+      "value": "1500"
+    }
+  ],
+  "keyPoints": [
+    "El escáner detecta scripts de postinstall que descargan y ejecutan payloads remotos, una señal de alerta crítica.",
+    "Las dependencias que aparecen en package.json pero no en el lockfile, o que apuntan a URLs maliciosas, constituyen un vector de ataque común.",
+    "La obfuscación, evidenciada por cadenas hexadecimales largas y eval de strings descodificados, suele ocultar la verdadera intención del código.",
+    "El análisis se realiza de forma puramente estática, evitando la ejecución de código y permitiendo pruebas unitarias sin acceso a red ni disco."
+  ],
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/"
+    },
+    {
+      "title": "Documentación oficial de npm",
+      "url": "https://docs.npmjs.com/"
+    }
+  ],
+  "multimedia": [
+    {
+      "alt": "Imagen de portada del artículo sobre detección de malware en la cadena de suministro",
+      "caption": "Imagen que ilustra la detección de malware en la cadena de suministro sin ejecutar código",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhk9aztuoarvl2zi9sgyz.png"
+    }
+  ],
+  "publishedAt": "2026-06-27T14:40:14.000Z",
+  "scrapedAt": "2026-06-27T15:04:02.195Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "ciberseguridad",
+  "summary": "Tras ser víctima de un repositorio de falsa entrevista de trabajo, el autor creó un escáner que analiza repositorios en busca de ataques de cadena de suministro sin clonarlos ni ejecutarlos, identificando patrones de postinstall maliciosos, dependencias faltantes en el lockfile y obfuscación.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "Detectar malware en la cadena de suministro sin ejecutar el código",
+  "url": "https://dev.to/pavelespitia/detecting-supply-chain-malware-without-running-the-code-d9g",
+  "whyMatters": "La detección preventiva de malware en repositorios de código abierto es esencial para proteger infraestructuras críticas que dependen de paquetes npm. Si un atacante logra inyectar código durante la fase de instalación, puede exfiltrar secretos y comprometer miles de entornos sin alertar a los usuarios. Este enfoque de análisis estático reduce el riesgo de exposición y fortalece la confianza en la cadena de suministro de software, un pilar cada vez más vulnerable en la era de la DevOps.",
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

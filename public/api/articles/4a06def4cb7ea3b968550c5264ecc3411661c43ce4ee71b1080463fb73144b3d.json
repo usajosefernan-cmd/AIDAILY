@@ -1,0 +1,74 @@
+{
+  "id": "4a06def4cb7ea3b968550c5264ecc3411661c43ce4ee71b1080463fb73144b3d",
+  "title": "Cómo dejé de reconstruir las mismas funciones de React desde cero con Claude Code",
+  "summary": "El autor describe cómo la herramienta de IA Claude Code, al no conocer las convenciones propias de cada proyecto, genera código genérico y poco útil. Presenta un sistema de habilidades que permite personalizar la generación y evitar repetir tareas.",
+  "url": "https://dev.to/ajsquared/how-i-stopped-rebuilding-the-same-react-features-from-scratch-using-claude-code-skills-3m4c",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T13:29:04.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffpfhxya0rfbvsykrwqi6.png",
+  "imageAlt": "Cómo dejé de reconstruir las mismas funciones de React desde cero con Claude Code",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor describe cómo la herramienta de IA Claude Code, al no conocer las convenciones propias de cada proyecto, genera código genérico y poco útil. Presenta un sistema de habilidades que permite personalizar la generación y evitar repetir tareas.",
+  "keyPoints": [
+    "Claude Code produce formularios de login de 30 líneas sin validaciones ni manejo de errores, obligando a los desarrolladores a reescribirlos.",
+    "El problema no es la calidad de la IA, sino su desconocimiento de las convenciones de cada base de código, lo que genera boilerplate ineficiente.",
+    "Al crear un archivo SKILL.md con instrucciones estructuradas, Claude activa automáticamente la habilidad adecuada sin prompts adicionales.",
+    "El autor ha definido ocho habilidades basadas en código SaaS real, cubriendo flujos de autenticación, formularios multi‑paso, tablas paginadas, notificaciones, páginas de detalle, landing pages, y mejores prácticas con Supabase."
+  ],
+  "whyMatters": "La automatización del desarrollo de componentes repetitivos puede acelerar la entrega de software, reducir errores humanos y estandarizar prácticas de calidad. Con un sistema de habilidades, los equipos pueden integrar IA de forma coherente con sus flujos internos, ahorrando tiempo y costes de desarrollo. Además, demuestra cómo la IA puede adaptarse a entornos corporativos, lo cual es clave para la adopción masiva de herramientas de generación de código.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffpfhxya0rfbvsykrwqi6.png",
+      "alt": "Imagen de portada del artículo sobre Claude Code",
+      "caption": "Portada del artículo que muestra la temática de automatizar código con Claude"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Google AI - Socio oficial de modelos y plataforma de IA",
+      "caption": "Google AI presenta su colaboración oficial con Claude Code"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ClaudeAI",
+    "#React",
+    "#CodeAutomation",
+    "#IA"
+  ],
+  "fullArticle": "El proceso típico de iniciar un nuevo repositorio comienza con la autenticación: un login, registro, OTP y demás flujos esenciales. Cuando el autor pidió a Claude Code que generara esa capa, la respuesta fue un formulario de login de 30 líneas sin validaciones ni manejo de errores, simplemente boilerplate genérico. \n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffpfhxya0rfbvsykrwqi6.png]\n\nEl problema no radica en la capacidad de Claude para escribir código, sino en su falta de conocimiento de las convenciones internas de cada proyecto. Cada ingeniero senior aporta un conjunto de patrones de autenticación, validación y arquitectura que la IA no conoce a menos que se le indique. Para solucionar esto, Claude Code introduce un sistema de habilidades: el desarrollador crea un archivo SKILL.md con instrucciones estructuradas y lo coloca en el proyecto. Cuando se describe lo que se quiere construir, la IA activa automáticamente la habilidad correcta sin necesidad de prompts adicionales.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nEl autor ha definido ocho habilidades basadas en código SaaS real: un paquete completo de flujo de autenticación, un asistente de formularios multi‑paso, tablas paginadas con búsqueda y carga, un sistema de notificaciones en tiempo real, una página de detalle estilo Airbnb, una landing page SaaS, y prácticas de React con Supabase. Al instalar estas habilidades y simplemente describir el componente deseado, Claude genera un flujo de producción listo para usar, eliminando la necesidad de reescribir boilerplate.\n\nEsta metodología demuestra cómo la IA puede integrarse de forma coherente con las prácticas de desarrollo existentes, ofreciendo un ahorro de tiempo significativo y reduciendo la fricción entre la generación automática y la calidad de código corporativa.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T20:42:41.896Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/how-i-stopped-rebuilding-the-same-react-features-from-scratch-using-claude-code-skills"
+    },
+    {
+      "title": "Sitio oficial de Claude AI",
+      "url": "https://claude.ai"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de habilidades creadas",
+      "value": "8"
+    },
+    {
+      "label": "Tamaño típico del código generado",
+      "value": "30 líneas"
+    },
+    {
+      "label": "Origen del código de referencia",
+      "value": "Códigos SaaS reales"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

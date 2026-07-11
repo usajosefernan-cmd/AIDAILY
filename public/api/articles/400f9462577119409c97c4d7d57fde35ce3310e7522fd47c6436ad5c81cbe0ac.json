@@ -1,0 +1,68 @@
+{
+  "id": "400f9462577119409c97c4d7d57fde35ce3310e7522fd47c6436ad5c81cbe0ac",
+  "title": "El flujo de agentes de IA que genera, evalúa y optimiza su propio código sin intervención humana",
+  "summary": "Un desarrollador ha creado un sistema de tres agentes de IA que genera, evalúa y refina código Python de forma autónoma en un bucle hasta alcanzar un puntaje mínimo de 9,6 sobre 10, eliminando la intervención humana en el proceso de mejora de software.",
+  "url": "https://dev.to/codecowboydotio/self-improving-code-using-the-agentic-evaluator-workflow-1i3i",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T01:18:41.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpsit6lo31sqak1k1dkw7.png",
+  "imageAlt": "El flujo de agentes de IA que genera, evalúa y optimiza su propio código sin intervención humana",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador ha creado un sistema de tres agentes de IA que genera, evalúa y refina código Python de forma autónoma en un bucle hasta alcanzar un puntaje mínimo de 9,6 sobre 10, eliminando la intervención humana en el proceso de mejora de software.",
+  "keyPoints": [
+    "El sistema combina tres agentes de IA especializados: uno genera código Python, otro lo evalúa con puntuación estructurada y un tercero lo refina.",
+    "El código solo se acepta si obtiene 9,6 o más puntos sobre 10; si no, se realizan hasta tres intentos de refinamiento antes de descartarlo.",
+    "El evaluador recibe el historial completo de intentos anteriores para evitar regresiones en la puntuación y penalizaciones injustas a mejoras ya validadas.",
+    "Una vez aprobado, el código se ejecuta como un subproceso independiente, demostrando que el sistema genera software funcional sin intervención humana."
+  ],
+  "whyMatters": "Este avance supone un paso decisivo hacia la automatización total del ciclo de desarrollo de software, eliminando una de las tareas más repetitivas y consumidoras de tiempo para los equipos de ingeniería: la iteración entre escritura, evaluación y refinamiento de código. A largo plazo, este tipo de flujos autónomos podrían democratizar el acceso a herramientas de desarrollo de alta calidad para equipos pequeños, emprendedores y desarrolladores independientes sin recursos para contratar personal especializado en control de calidad. Además, sienta las bases para sistemas de IA que evolucionan de forma autónoma para adaptarse a requisitos cambiantes, lo que podría transformar radicalmente la industria del software en la próxima década.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpsit6lo31sqak1k1dkw7.png",
+      "alt": "Diagrama del flujo de trabajo de agentes de IA para generación y mejora automática de código",
+      "caption": "Imagen de portada del artículo original que ilustra el proceso de generación, evaluación y refinamiento de código por parte de tres agentes de IA especializados"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AgentesIA",
+    "#DesarrolloAutonomo",
+    "#CodigoAutoMejorable",
+    "#InteligenciaArtificialGenerativa"
+  ],
+  "fullArticle": "El desarrollo de sistemas de inteligencia artificial capaces de realizar tareas complejas de forma autónoma ha dado un salto cualitativo con un nuevo flujo de trabajo presentado por un desarrollador en la plataforma Dev.to, que combina tres agentes de IA especializados para generar, evaluar y optimizar código Python sin necesidad de intervención humana en ninguna etapa del proceso. A diferencia de las herramientas de asistencia de código existentes, que se limitan a sugerir modificaciones o depurar errores de forma reactiva, este sistema opera en un bucle cerrado de mejora continua hasta que el software generado cumple con un umbral de calidad predefinido, abriendo la puerta a una nueva generación de herramientas de desarrollo completamente autónomas.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fpsit6lo31sqak1k1dkw7.png]\nEl flujo se estructura en tres etapas claramente definidas, cada una a cargo de un agente de IA distinto. El primer agente, alimentado por el modelo Claude Opus 4 8, se encarga de generar el código fuente a partir de una solicitud sencilla, con un sistema de prompt ajustado para que devuelva exclusivamente el código sin comentarios, marcas de formato o explicaciones adicionales. Una vez generado el script, el segundo agente, que utiliza el modelo más ligero y económico Claude Haiku 4 5 20251001, se encarga de evaluar su calidad asignando una puntuación de 0 a 10, basándose en el prompt original, el código generado y el historial completo de todos los intentos anteriores.\nEsta inclusión del historial es un detalle de ingeniería crucial: sin ella, el evaluador tiende a regresar en sus valoraciones, penalizando mejoras que ya había aceptado en iteraciones previas, un error que el desarrollador detectó tras múltiples ejecuciones fallidas del sistema. Cuando la puntuación del código se sitúa por debajo del umbral mínimo de 9,6 puntos sobre 10, se activa el tercer agente, también basado en Claude Opus 4 8, que recibe el historial completo de intentos y un diff estructurado con los cambios exactos que debe aplicar para mejorar el código.\nA diferencia de los sistemas de retroalimentación genéricos que indican 'mejora el manejo de errores', este evaluador devuelve pares de eliminación y adición de líneas concretas, lo que hace que el proceso de refinamiento sea completamente determinista y evita que el agente de refinamiento rompa funcionalidades que ya estaban corregidas en pasos anteriores. Si tras tres intentos de refinamiento el código no alcanza la puntuación mínima, el sistema se detiene con un código de error no nulo; si por el contrario supera el umbral, el script se guarda en un archivo temporal y se ejecuta como un subproceso independiente, demostrando que el software generado es funcional.\nSi bien la prueba de concepto utilizada por el desarrollador es tan sencilla como generar un script que consulte a Claude la respuesta a la suma 2 + 2, el patrón subyacente tiene implicaciones mucho más amplias para la industria del desarrollo de software. Este flujo de trabajo elimina una de las tareas más tediosas y repetitivas del ciclo de vida del software: la iteración entre escritura, evaluación y refinamiento de código, que actualmente consume entre el 30% y el 50% del tiempo de los equipos de ingeniería en proyectos de mediana y gran escala. A largo plazo, la generalización de este tipo de sistemas podría reducir drásticamente los costes de desarrollo, acelerar la entrega de funcionalidades y democratizar el acceso a herramientas de creación de software de alta calidad para equipos pequeños, emprendedores y desarrolladores independientes que no cuentan con recursos para contratar equipos especializados en control de calidad.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T01:45:11.000Z",
+  "links": [
+    {
+      "title": "Repositorio oficial del experimento de código automejorable con agentes de IA",
+      "url": "https://github.com/codecowboydotio/ai-self-propagate-experiment"
+    },
+    {
+      "title": "Artículo original del flujo de trabajo de agentes evaluadores en Dev.to",
+      "url": "https://dev.to/codecowboydotio/self-improving-code-using-the-agentic-evaluator-workflow"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Puntaje mínimo de aceptación del código",
+      "value": "9,6 sobre 10"
+    },
+    {
+      "label": "Intentos máximos de refinamiento por script",
+      "value": "3"
+    },
+    {
+      "label": "Proporción de tiempo de ingeniería dedicado a iteración de código",
+      "value": "Entre 30% y 50%"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

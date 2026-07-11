@@ -1,0 +1,71 @@
+{
+  "id": "5aeba3d999f3a04c277f2d8140c0774bb1fef84e0594f8e52e7f5705f076bebe",
+  "title": "Por qué sigo eligiendo NGINX sobre cualquier otra opción",
+  "summary": "El autor detalla por qué, tras una prueba de carga de 2.500 peticiones por segundo, NGINX resultó ser la solución más robusta, segura y rentable frente a alternativas como Caddy o Traefik.",
+  "url": "https://dev.to/mishansavy/why-i-still-use-nginx-over-everything-else-24hj",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T16:10:32.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjettogcvahau20u2guyb.png",
+  "imageAlt": "Por qué sigo eligiendo NGINX sobre cualquier otra opción",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El autor detalla por qué, tras una prueba de carga de 2.500 peticiones por segundo, NGINX resultó ser la solución más robusta, segura y rentable frente a alternativas como Caddy o Traefik.",
+  "keyPoints": [
+    "Un VPS Hostinger con 2 vCPU y 8 GB de RAM soportó 2.500 req/s sin errores, con un p99 de 308 ms.",
+    "NGINX rechaza peticiones maliciosas antes de que lleguen a Node.js, evitando ciclos de evento, consultas a BD y asignaciones de memoria.",
+    "El uso de proxy_cache_lock evita el problema de ‘thundering herd’, manteniendo el rendimiento durante picos de tráfico.",
+    "La configuración mínima y la ausencia de escalado automático reducen costos y complejidad operativa."
+  ],
+  "whyMatters": "El rendimiento y la seguridad de los servicios web dependen cada vez más de la correcta configuración del servidor proxy. Este caso demuestra que una solución tradicional como NGINX, cuando se optimiza adecuadamente, puede superar a alternativas modernas que prometen simplicidad, pero que en entornos de producción exigentes requieren migraciones costosas o despliegues adicionales. Para desarrolladores y administradores, elegir la herramienta correcta no solo garantiza disponibilidad, sino también una gestión de costes más predecible y una mayor resiliencia ante ataques de denegación de servicio.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjettogcvahau20u2guyb.png",
+      "alt": "Imagen que ilustra la arquitectura de NGINX en un VPS",
+      "caption": "Arquitectura de NGINX: un único servidor proxy que protege los contenedores internos y gestiona el tráfico externo."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#NGINX",
+    "#Caddy",
+    "#Cloudflare"
+  ],
+  "fullArticle": "El ingeniero de software comparte su experiencia tras desplegar un sistema de producción en un único VPS Hostinger KVM2, equipado con 2 vCPU y 8 GB de RAM. La demanda esperada era de 1 000 peticiones por minuto, pero la prueba de carga alcanzó 2 500 req/s sin errores ni timeouts, con un p99 de 308 ms.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjettogcvahau20u2guyb.png]\n\nEl autor explica que, en lugar de exponer cada contenedor directamente a Internet, confió todo el tráfico a NGINX. Esta decisión elimina una clase entera de vulnerabilidades, ya que los contenedores solo escuchan en localhost. Además, NGINX rechaza peticiones de rate‑limit antes de que lleguen a la capa Node.js, evitando la carga de un hilo de trabajo por cada solicitud rechazada.\n\nCuando la carga pico, cientos de usuarios llegan simultáneamente a la misma URL. Sin caché, cada petición recorre Next.js → Node.js → PostgreSQL. Con proxy_cache_lock habilitado, solo una solicitud se envía al upstream cuando la caché expira; las demás esperan y luego se sirven desde la caché, mitigando el famoso problema de \"thundering herd\".\n\nEl sistema opera bajo un solo dominio, con el frontend en el puerto 3001 y el backend en el 5001, ambos invisibles al público y servidos a través del mismo vhost de NGINX. La compresión gzip está habilitada y los activos estáticos, con nombres de archivo hasheados, se cachean en el navegador y en Cloudflare por un año, eliminando peticiones repetidas.\n\nEl autor reconoce que Caddy destaca por su HTTPS automático y configuración minimalista, pero subraya que su servidor ya gestionaba WordPress, MariaDB y PM2 con certificados existentes; migrar a Caddy implicaría mover todo o correr dos proxies. Traefik, por otro lado, es ideal cuando los servicios cambian dinámicamente, algo que no ocurre en un VPS fijo.\n\nEn conclusión, la elección de NGINX se basa en su robustez, bajo coste de operación y la capacidad de manejar picos de tráfico sin escalar ni incurrir en facturas de nube.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T16:17:17.872Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/jettogcvahau20u2guyb"
+    },
+    {
+      "title": "Documentación oficial de NGINX",
+      "url": "https://nginx.org/en/docs/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Requisitos de tráfico",
+      "value": "1 000 peticiones/minuto"
+    },
+    {
+      "label": "Pruebas de carga",
+      "value": "2 500 peticiones/segundo"
+    },
+    {
+      "label": "p99 latencia",
+      "value": "308 ms"
+    },
+    {
+      "label": "Recursos del VPS",
+      "value": "2 vCPU, 8 GB RAM"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

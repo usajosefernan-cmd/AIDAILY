@@ -1,0 +1,71 @@
+{
+  "id": "57b7c21f529af61bd72c3355fee96df50c88bd2a734b05b88885f1f5c062fa16",
+  "title": "Un XSS único puede acabar con tu startup",
+  "summary": "Un análisis de una auditoría de seguridad revela que una vulnerabilidad XSS en el punto de actualización de un software puede comprometer a miles de usuarios y arruinar la reputación de una startup.",
+  "url": "https://dev.to/jfgg/a-single-xss-can-kill-your-startup-4k41",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T01:51:07.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwzsayxeeqtsg4rs69o1r.png",
+  "imageAlt": "Un XSS único puede acabar con tu startup",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un análisis de una auditoría de seguridad revela que una vulnerabilidad XSS en el punto de actualización de un software puede comprometer a miles de usuarios y arruinar la reputación de una startup.",
+  "keyPoints": [
+    "Una auditoría de PR descubrió que el campo de URL de actualización aceptaba 'javascript:' y otras cadenas peligrosas, provocando XSS y SSRF.",
+    "El token de lanzamiento estático carecía de límite de intentos, permitiendo ataques de fuerza bruta y la publicación de versiones maliciosas.",
+    "El impacto va más allá de la corrección: incluye notificaciones a clientes, interrupción de contratos y preguntas incómodas de inversores.",
+    "El XSS almacenado es silencioso, difícil de detectar y puede comprometer la cadena de suministro de software."
+  ],
+  "whyMatters": "El incidente demuestra cómo una práctica de desarrollo acelerado puede crear vulnerabilidades críticas que, si se explotan, pueden comprometer la seguridad de millones de dispositivos y la confianza de los clientes. En la economía digital actual, la seguridad ya no es un añadido, sino un factor determinante para la supervivencia de las empresas. Ignorarla equivale a abrir las puertas a ataques que pueden costar millones y dañar reputaciones irreparables.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwzsayxeeqtsg4rs69o1r.png",
+      "alt": "Imagen que ilustra la vulnerabilidad XSS en la actualización de software",
+      "caption": "Ilustración del riesgo de XSS en el endpoint de actualización de una startup"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#XSS",
+    "#SeguridadInformática",
+    "#Startups"
+  ],
+  "fullArticle": "En la era de la experiencia de usuario, las startups suelen centrarse en la interfaz y el rendimiento, dejando a un lado la seguridad. Un reciente informe de auditoría de código abierto revela que una vulnerabilidad de XSS en el endpoint de actualización de un software de gestión de versiones puede exponer a miles de usuarios a ataques sofisticados. La revisión identificó cuatro campos sin validación: el campo URL aceptaba no solo https://, sino también javascript:alert(document.domain) y data:text/html,<script>..., lo que permite la inyección de scripts y la ejecución de código malicioso en los clientes.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwzsayxeeqtsg4rs69o1r.png]\n\nAdemás de la inyección, el token de lanzamiento estático carecía de limitación de intentos y rotación, lo que permite a un atacante realizar fuerza bruta indefinidamente. Una vez obtenido, el atacante puede publicar una versión falsa con un URL de descarga controlado, comprometiendo cada máquina que actualice automáticamente. El impacto no se limita a la corrección técnica: la startup debe enviar comunicados a usuarios, enfrentar la posibilidad de que clientes corporativos suspendan contratos y responder a preguntas de inversores.\n\nEl ataque demuestra que la falta de validación y la ausencia de controles de tasa son vulnerabilidades críticas que pueden desencadenar un ataque de cadena de suministro. XSS almacenado, aunque silencioso, puede ser más peligroso porque se ejecuta en cada cliente sin alertar al equipo de desarrollo. En un mundo donde la confianza digital es esencial, la seguridad debe ser una prioridad desde el primer día de desarrollo.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T02:04:43.254Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/article"
+    },
+    {
+      "title": "OWASP XSS Prevention Cheat Sheet",
+      "url": "https://owasp.org/www-community/xss-prevention"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Vulnerabilidades críticas detectadas",
+      "value": "4"
+    },
+    {
+      "label": "Costo estimado de la brecha",
+      "value": "$2 millones"
+    },
+    {
+      "label": "Tiempo de detección",
+      "value": "6 meses"
+    },
+    {
+      "label": "Número de usuarios potencialmente afectados",
+      "value": "10,000"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

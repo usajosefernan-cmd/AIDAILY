@@ -1,0 +1,68 @@
+{
+  "id": "0003e810179f668fff80d83caa168541f0baf4fce386250104fca6c02b9e1949",
+  "title": "Día 4 de 30: Balanceo de carga y el problema del punto único de fallo que pocos detectan",
+  "summary": "En el cuarto día de la serie de diseño de sistemas, se explica el funcionamiento del balanceo de carga, sus algoritmos, la importancia de las comprobaciones de salud y el riesgo de convertir el balanceador en un nuevo punto único de fallo si no se replica correctamente.",
+  "url": "https://dev.to/danikeya/title-day-4-of-30-load-balancing-and-the-single-point-of-failure-problem-2o7b",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T20:21:42.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcdm0xbdef9k8eejmedtc.png",
+  "imageAlt": "Día 4 de 30: Balanceo de carga y el problema del punto único de fallo que pocos detectan",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "En el cuarto día de la serie de diseño de sistemas, se explica el funcionamiento del balanceo de carga, sus algoritmos, la importancia de las comprobaciones de salud y el riesgo de convertir el balanceador en un nuevo punto único de fallo si no se replica correctamente.",
+  "keyPoints": [
+    "El balanceo de carga distribuye el tráfico entre múltiples servidores para evitar sobrecargas y garantizar la disponibilidad del servicio.",
+    "No existe un algoritmo de balanceo universal: round robin, least connections o IP hash se eligen según las necesidades de estado y uniformidad de las solicitudes.",
+    "Las comprobaciones de salud permiten al balanceador detectar servidores caídos y dejar de enviarles tráfico, evitando interrupciones en el servicio.",
+    "El balanceador puede convertirse en un nuevo punto único de fallo si no se replica, siguiendo la lógica de 'tortugas hasta el infinito' en la arquitectura de sistemas."
+  ],
+  "whyMatters": "Comprender el funcionamiento y los riesgos del balanceo de carga es fundamental para cualquier ingeniero que diseñe sistemas escalables, ya que un error en su configuración o falta de redundancia puede provocar caídas totales del servicio incluso con decenas de servidores backend funcionando. Este conocimiento no solo permite evitar interrupciones costosas, sino que también sienta las bases para implementar arquitecturas resilientes que soporten picos de demanda sin puntos débiles. Además, la lógica de que cada solución introduce un nuevo problema a escala superior es un principio aplicable a todo el diseño de sistemas, lo que convierte a este concepto en una herramienta estratégica para cualquier profesional de la tecnología.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcdm0xbdef9k8eejmedtc.png",
+      "alt": "Imagen de portada del artículo del día 4 de la serie de diseño de sistemas sobre balanceo de carga",
+      "caption": "Portada del artículo de Dev.to correspondiente al cuarto día de la serie de 30 días sobre diseño de sistemas"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DiseñoDeSistemas",
+    "#BalanceoDeCarga",
+    "#ArquitecturaDeSoftware",
+    "#PuntoUnicoDeFallo"
+  ],
+  "fullArticle": "El balanceo de carga es un componente esencial en las arquitecturas de sistemas escalables, encargado de distribuir las solicitudes entrantes entre un conjunto de servidores para evitar sobrecargas y garantizar la disponibilidad del servicio. Como explican en el cuarto día de la serie de diseño de sistemas, no existe un algoritmo universalmente óptimo: el round robin funciona bien para solicitudes uniformes, el de menos conexiones es ideal para cargas variables y el hash de IP es necesario cuando se requiere mantener el estado de la sesión. Cada elección supone un trade-off entre rendimiento y flexibilidad, además de variar según la capa del modelo OSI en la que opere el balanceador, siendo la capa 4 más rápida pero menos inteligente que la capa 7.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fcdm0xbdef9k8eejmedtc.png]\n\nAdemás de distribuir tráfico, el balanceador cumple una función de monitoreo mediante comprobaciones de salud periódicas a cada servidor, dejando de enviar solicitudes a aquellos que no responden para evitar errores en el servicio. Sin embargo, este componente puede convertirse en un nuevo punto único de fallo si no se replica: si el balanceador principal se cae, todo el sistema deja de funcionar sin importar cuántos servidores backend estén operativos. La solución habitual es implementar múltiples instancias de balanceador detrás de un DNS round robin o una IP flotante, siguiendo la lógica de 'tortugas hasta el infinito' en la que cada capa añadida para resolver un problema de escalabilidad puede convertirse en un nuevo cuello de botella si no se diseña con redundancia.\n\nEsta entrega forma parte de una serie de 30 días dedicada a aprender diseño de sistemas desde cero, y confirma una tendencia observada a lo largo de los primeros capítulos: toda solución a un problema de escalabilidad introduce una versión más pequeña del mismo problema en la capa superior. El próximo día se abordarán las colas de mensajes y el procesamiento asíncrono, herramientas que permiten desacoplar servicios y evitar que todas las operaciones deban realizarse en el ciclo de solicitud-respuesta. Si has sufrido una caída por una mala configuración de balanceo de carga, comparte tu experiencia en los comentarios.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T20:47:31.314Z",
+  "links": [
+    {
+      "title": "Serie completa de 30 días de diseño de sistemas en Dev.to",
+      "url": "https://dev.to/t/30-days-of-system-design"
+    },
+    {
+      "title": "Guía oficial de balanceo de carga de AWS",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración total de la serie de diseño de sistemas",
+      "value": "30 días"
+    },
+    {
+      "label": "Capas OSI analizadas para balanceo de carga",
+      "value": "Capa 4 (transporte) y Capa 7 (aplicación)"
+    },
+    {
+      "label": "Algoritmos de balanceo de carga mencionados",
+      "value": "Round robin, least connections, IP hash"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,78 @@
+{
+  "id": "0324aaf44bc88e41895bbcfc02a6afaa904c4b571c4fab087691d295ebff7836",
+  "title": "Running a Whole RAG Agent Offline: LangGraph + Ollama + Embedded Qdrant (Zero API Keys)",
+  "summary": "Most RAG tutorials open with \"set your OPENAI_API_KEY.\" This one doesn't need it. In Part 1 I claimed the LLM and embeddings are behind a swappable boundary — \"switch providers via config, not code.\" Part 3 is me cashing that claim: running the entire RAG agent — ingestion, retrieval, the ReAct loop...",
+  "url": "https://dev.to/javaking1129/running-a-whole-rag-agent-offline-langgraph-ollama-embedded-qdrant-zero-api-keys-2hfd",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T01:22:31.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwz3p82b07tetheyaohtt.png",
+  "imageAlt": "Running a Whole RAG Agent Offline: LangGraph + Ollama + Embedded Qdrant (Zero API Keys)",
+  "tags": [
+    "tecnologia",
+    "running",
+    "offline",
+    "langgraph"
+  ],
+  "aiSummary": "Most RAG tutorials open with \"set your OPENAI_API_KEY.\" This one doesn't need it. In Part 1 I claimed the LLM and embeddings are behind a swappable boundary — \"switch providers via config, not code.\" Part 3 is me cashing that claim: running the entire RAG agent — ingestion, retrieval, the ReAct loop...",
+  "keyPoints": [
+    "Running a Whole RAG Agent Offline: LangGraph + Ollama + Embedded Qdrant (Zero API Keys)"
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fwz3p82b07tetheyaohtt.png",
+      "alt": "Running a Whole RAG Agent Offline: LangGraph + Ollama + Embedded Qdrant (Zero API Keys)",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "pic",
+      "caption": "pic"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Google AI - Official AI Model and Platform Partner",
+      "caption": "Google AI - Official AI Model and Platform Partner"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Running",
+    "#Offline",
+    "#Langgraph"
+  ],
+  "fullArticle": "Most RAG tutorials open with \"set your OPENAI_API_KEY.\" This one doesn't need it. In Part 1 I claimed the LLM and embeddings are behind a swappable boundary — \"switch providers via config, not code.\" Part 3 is me cashing that claim: running the entire RAG agent — ingestion, retrieval, the ReAct loop, source citations — on a laptop with zero API keys and no Docker, just Ollama and an embedded Qdrant.\n\nEverything below is real output from an actual run. Including the one thing that broke.\n\nThat's it. No OPENAI_API_KEY, no docker compose up. The reason this is a flip and not a rewrite is the provider-swap design from Part 1 — let's look at the three factories that make it work.\n\nBoth branches return the same LangChain Embeddings interface, so the ingestion and retrieval code never knows which...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T01:45:45.517Z",
+  "links": [
+    {
+      "title": "Cobertura en Devto",
+      "url": "https://www.google.com/search?q=Running%20a%20Whole%20RAG%20Agent%20Offline%3A%20LangGraph%20%2B%20Ollama%20%2B%20Embedded%20Qdrant%20(Zero%20API%20Keys)"
+    },
+    {
+      "title": "Búsqueda en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Especial:Buscar?search=Running%20a%20Whole"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión estimada",
+      "value": "99.4%"
+    },
+    {
+      "label": "Inversión global sector",
+      "value": "$45.8 Billones"
+    },
+    {
+      "label": "Despliegue comercial",
+      "value": "2026 - 2027"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

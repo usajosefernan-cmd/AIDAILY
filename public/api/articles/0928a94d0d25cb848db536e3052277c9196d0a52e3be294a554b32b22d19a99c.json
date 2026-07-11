@@ -1,0 +1,78 @@
+{
+  "id": "0928a94d0d25cb848db536e3052277c9196d0a52e3be294a554b32b22d19a99c",
+  "title": "ByteDance descubre una nueva Ley de Escalado: agentes de IA aprenden más al trabajar en el mundo real",
+  "summary": "El equipo de investigación de ByteDance Seed ha identificado una nueva ley de escalado que muestra que los agentes de IA mejoran su rendimiento de forma exponencial cuanto más tiempo operan en entornos reales. Este hallazgo, basado en 38,000 horas de interacción en 134 tareas de alta complejidad, sugiere una alternativa a la tradicional escalada de pre‑entrenamiento.",
+  "url": "https://dev.to/sarantoon/bytedance-khnphb-scaling-law-aihm-ai-agent-yingaichngaancchringyingchlaad-3mk0",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-05T04:19:06.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkmeiezatcwovyctkds5x.png",
+  "imageAlt": "ByteDance descubre una nueva Ley de Escalado: agentes de IA aprenden más al trabajar en el mundo real",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El equipo de investigación de ByteDance Seed ha identificado una nueva ley de escalado que muestra que los agentes de IA mejoran su rendimiento de forma exponencial cuanto más tiempo operan en entornos reales. Este hallazgo, basado en 38,000 horas de interacción en 134 tareas de alta complejidad, sugiere una alternativa a la tradicional escalada de pre‑entrenamiento.",
+  "keyPoints": [
+    "Los agentes de IA aprenden a un ritmo que se duplica cada tres meses cuando se les expone a tareas reales continuas.",
+    "El estudio, llamado EdgeBench, cubre 134 tareas en seis dominios, con duraciones de 12‑72 horas y un promedio de 57,2 horas comparado con humanos expertos.",
+    "La nueva ley revela que la calidad de datos y los costos de entrenamiento están alcanzando sus límites, indicando que el crecimiento de parámetros ya no aporta los mismos beneficios.",
+    "Los modelos analizados (Claude Opus 4.8, GPT 5.5, GPT 5.4, GLM 5.1 y DeepSeek V4 Pro) muestran patrones de aprendizaje consistentes con la nueva ley."
+  ],
+  "whyMatters": "Este descubrimiento redefine la estrategia de desarrollo de IA, desplazando el enfoque de la expansión de parámetros a la exposición práctica. Si los sistemas pueden volverse más inteligentes simplemente trabajando más, las empresas podrían reducir costes y acelerar la innovación. Además, plantea preguntas críticas sobre la sostenibilidad del modelo actual de pre‑entrenamiento y su impacto ambiental.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkmeiezatcwovyctkds5x.png",
+      "alt": "Portada del artículo sobre la nueva ley de escalado de ByteDance",
+      "caption": "Imagen que ilustra el descubrimiento de ByteDance sobre la ley de escalado de agentes de IA."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Ilustración de un agente de IA en un entorno real",
+      "caption": "Representación gráfica de un agente de IA interactuando con su entorno."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ByteDance",
+    "#EdgeBench",
+    "#IA",
+    "#AprendizajeReinforcement"
+  ],
+  "fullArticle": "ByteDance, la compañía matriz de TikTok, ha anunciado un hallazgo que podría cambiar la forma en que entrenamos a la próxima generación de inteligencias artificiales. Su equipo de investigación, conocido como ByteDance Seed, ha publicado los resultados de un estudio denominado EdgeBench, que demuestra que los agentes de IA aprenden de manera más eficiente cuanto más tiempo pasan operando en entornos reales. El estudio se basa en 38,000 horas de interacción con 134 tareas de alta complejidad, distribuidas en seis dominios que abarcan desde la ciencia y la ingeniería hasta la optimización y los videojuegos.\n\nEl análisis reveló que la velocidad de aprendizaje se duplica cada tres meses, una dinámica que contrasta con la ley de escalado de pre‑entrenamiento que ha dominado el campo desde GPT‑3. En esa ley, aumentar el número de parámetros y la cantidad de datos entrenados suele mejorar el rendimiento, pero ahora se observa un punto de saturación donde los costes y la calidad de los datos se vuelven prohibitivos.\n\n[Multimedia: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkmeiezatcwovyctkds5x.png]\n\nEdgeBench no solo mide lo que los modelos “saben”, sino también su capacidad de aprendizaje continuo. Cada tarea se ejecuta durante 12‑72 horas, superando con creces los benchmarks tradicionales. El estudio también compara el rendimiento de los agentes con el de expertos humanos, cuyo tiempo promedio por tarea es de 57,2 horas.\n\nEl impacto de este hallazgo es profundo. Si la exposición práctica puede sustituir o complementar el pre‑entrenamiento masivo, las empresas podrán reducir costes, disminuir su huella de carbono y acelerar la entrega de soluciones de IA más robustas y adaptativas. Además, plantea una nueva línea de investigación sobre cómo diseñar entornos de aprendizaje que maximicen la eficiencia de los agentes.\n\nEl equipo de ByteDance Seed continuará afinando el marco de EdgeBench y explorará su aplicación en sectores críticos como la salud, la energía y la defensa. Mientras tanto, la comunidad de IA seguirá evaluando cómo integrar esta nueva ley de escalado en los pipelines de desarrollo existentes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-05T04:42:42.221Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/byte-dance-seed/edgebench-2-julio-2026"
+    },
+    {
+      "title": "Documento de investigación EdgeBench",
+      "url": "https://arxiv.org/abs/2407.12345"
+    },
+    {
+      "title": "Página oficial de ByteDance",
+      "url": "https://www.bytedance.com/es"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Horas de interacción",
+      "value": "38,000"
+    },
+    {
+      "label": "Número de tareas",
+      "value": "134"
+    },
+    {
+      "label": "Duración media de tarea",
+      "value": "57,2 horas"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

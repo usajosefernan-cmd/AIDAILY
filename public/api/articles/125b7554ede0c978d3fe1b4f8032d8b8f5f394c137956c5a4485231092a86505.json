@@ -1,0 +1,71 @@
+{
+  "id": "125b7554ede0c978d3fe1b4f8032d8b8f5f394c137956c5a4485231092a86505",
+  "title": "El misterio de las obras invisibles del Art Institute of Chicago: ¿Por qué 200 visitas marcan la diferencia?",
+  "summary": "El Art Institute of Chicago ha introducido en su API un campo llamado has_not_been_viewed_much que identifica las piezas que han sido vistas menos de 200 veces desde el 1 de enero de 2010. Este indicador revela un segmento de la colección que permanece prácticamente desconocido para el público en línea, planteando interrogantes sobre la visibilidad y la estrategia de difusión del museo.",
+  "url": "https://iamwillwang.com/notes/has-not-been-viewed-much/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-07-05T23:49:00.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "El misterio de las obras invisibles del Art Institute of Chicago: ¿Por qué 200 visitas marcan la diferencia?",
+  "tags": [
+    "cultura",
+    "noticias"
+  ],
+  "aiSummary": "El Art Institute of Chicago ha introducido en su API un campo llamado has_not_been_viewed_much que identifica las piezas que han sido vistas menos de 200 veces desde el 1 de enero de 2010. Este indicador revela un segmento de la colección que permanece prácticamente desconocido para el público en línea, planteando interrogantes sobre la visibilidad y la estrategia de difusión del museo.",
+  "keyPoints": [
+    "La API del museo incluye un flag booleano que marca las obras con menos de 200 visitas desde 2010.",
+    "El umbral de 200 visualizaciones se estableció como criterio de 'poca exposición' en la plataforma digital.",
+    "El número exacto de piezas con este flag no se publica, pero se estima que representa una fracción significativa de la colección.",
+    "El descubrimiento invita a los curadores y al público a explorar obras que podrían estar ocultas en la vasta base de datos del museo."
+  ],
+  "whyMatters": "El hecho de que el Art Institute of Chicago esté publicando datos tan específicos sobre la exposición de sus obras abre un debate sobre la transparencia y la accesibilidad cultural en la era digital. Al identificar piezas que han sido prácticamente ignoradas, el museo puede replantear su estrategia de exhibición y promoción, lo que a su vez puede influir en la percepción pública y en la financiación de futuras adquisiciones. Para los investigadores y aficionados al arte, este dato ofrece una oportunidad única para descubrir gemas ocultas y desafiar la narrativa dominante de la colección.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80",
+      "alt": "El misterio de las obras invisibles del Art Institute of Chicago: ¿Por qué 200 visitas marcan la diferencia?",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "Arte",
+  "hashtags": [
+    "#ArtInstituteChicago",
+    "#API",
+    "#ObrasOcultas"
+  ],
+  "fullArticle": "El Art Institute of Chicago, uno de los museos más emblemáticos de Estados Unidos, ha revelado un detalle inesperado de su API pública: un campo llamado has_not_been_viewed_much que señala las piezas que han sido vistas menos de 200 veces desde el 1 de enero de 2010. Este indicador, que parece una curiosidad técnica, en realidad abre una ventana a un segmento de su colección que ha permanecido prácticamente invisible para el público en línea.\n\nLa lógica detrás del umbral es simple pero reveladora. Al establecer 200 visitas como límite, el museo ha creado una métrica que distingue entre obras de alto tráfico y aquellas que, por cualquier razón, no han captado la atención de los visitantes digitales. Esta distinción no solo es útil para la gestión interna, sino que también puede servir como base para futuras campañas de curaduría y marketing.\n\nPara los aficionados al arte, la noticia es un llamado a la exploración. Si bien el museo es conocido por piezas como el 'American Gothic' o la 'Starry Night', la existencia de un conjunto de obras etiquetadas como 'pocas vistas' sugiere que hay tesoros menos conocidos esperando ser descubiertos. Este fenómeno plantea preguntas sobre la selección de obras para exhibiciones en línea, la accesibilidad de la información y la forma en que los museos priorizan su contenido digital.\n\nEn última instancia, el descubrimiento de este flag no epifanía, sino que invita a una reflexión más profunda sobre la relación entre la tecnología, la gestión museística y la experiencia del visitante. Al poner en evidencia las piezas que han quedado en la sombra, el Art Institute of Chicago ofrece una oportunidad para reimaginar la narrativa de su colección y, quizá, para dar nueva vida a obras que han pasado desapercibidas durante décadas.",
+  "category": "cultura",
+  "scrapedAt": "2026-07-06T01:06:31.780Z",
+  "links": [
+    {
+      "title": "Sitio oficial del Art Institute of Chicago",
+      "url": "https://www.artic.edu/"
+    },
+    {
+      "title": "Documentación de la API del Art Institute of Chicago",
+      "url": "https://api.artic.edu/"
+    },
+    {
+      "title": "Instituto de Arte de Chicago en Wikipedia (español)",
+      "url": "https://es.wikipedia.org/wiki/Instituto_de_Arte_de_Chicago"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Umbral de visualizaciones",
+      "value": "200 visualizaciones"
+    },
+    {
+      "label": "Fecha de corte",
+      "value": "1 de enero de 2010"
+    },
+    {
+      "label": "Año de lanzamiento de la API",
+      "value": "2019"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

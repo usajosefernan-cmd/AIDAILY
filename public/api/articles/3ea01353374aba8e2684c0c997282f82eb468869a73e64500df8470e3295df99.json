@@ -1,0 +1,67 @@
+{
+  "id": "3ea01353374aba8e2684c0c997282f82eb468869a73e64500df8470e3295df99",
+  "title": "Red Hat lanza /etc/tunables.conf en glibc para ajustes globales del sistema",
+  "summary": "Red Hat ha introducido una nueva infraestructura de tunables a nivel de sistema en la biblioteca glibc, permitiendo configurar parámetros globales mediante el archivo /etc/tunables.conf. Esta innovación facilita la personalización del comportamiento del sistema operativo sin tocar el código fuente, ofreciendo mayor flexibilidad y control a los administradores.",
+  "url": "https://www.phoronix.com/news/Glibc-System-Tunables",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-07-01T13:32:03.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=tunables_conf_1",
+  "imageAlt": "Red Hat lanza /etc/tunables.conf en glibc para ajustes globales del sistema",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Red Hat ha introducido una nueva infraestructura de tunables a nivel de sistema en la biblioteca glibc, permitiendo configurar parámetros globales mediante el archivo /etc/tunables.conf. Esta innovación facilita la personalización del comportamiento del sistema operativo sin tocar el código fuente, ofreciendo mayor flexibilidad y control a los administradores.",
+  "keyPoints": [
+    "Red Hat integra tunables globales en glibc, permitiendo ajustes a nivel de sistema vía /etc/tunables.conf.",
+    "El nuevo archivo permite configurar más de 120 parámetros que afectan rendimiento, seguridad y comportamiento del kernel.",
+    "La actualización se incluye ya en la versión 2.36 de glibc, disponible en distribuciones Linux basadas en Red Hat.",
+    "Los administradores pueden optimizar recursos y políticas sin recompilar la biblioteca, reduciendo tiempo de despliegue."
+  ],
+  "whyMatters": "Esta mejora representa un salto significativo en la gestión de sistemas Linux, pues centraliza la configuración de parámetros críticos en un solo archivo accesible a nivel de usuario root. Los operadores podrán ajustar el rendimiento de sus servidores y la seguridad del kernel sin tocar el código base, lo que reduce los riesgos de errores y acelera la implementación de políticas corporativas. Además, la compatibilidad con versiones actuales de glibc garantiza una transición suave para infraestructuras existentes, posicionando a Red Hat como pionero en la evolución de la administración de sistemas.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=tunables_conf_1",
+      "alt": "Configuración de tunables en glibc",
+      "caption": "Imagen que muestra la introducción de /etc/tunables.conf en la biblioteca glibc de Red Hat."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#RedHat",
+    "#Glibc",
+    "#TunablesConf"
+  ],
+  "fullArticle": "Red Hat ha anunciado la incorporación de una nueva infraestructura de tunables a nivel de sistema dentro de la biblioteca GNU C Library (glibc). Este avance permite a los administradores de sistemas especificar ajustes globales mediante el archivo /etc/tunables.conf, un recurso que centraliza la configuración de parámetros que antes requerían modificaciones manuales en el código fuente.\n\nEl archivo /etc/tunables.conf introduce más de 120 parámetros que pueden afectar el rendimiento, la seguridad y el comportamiento del kernel. Con esta herramienta, los operadores pueden optimizar la asignación de recursos, controlar la política de memoria y ajustar el comportamiento de la red sin la necesidad de recompilar glibc ni reiniciar el sistema. La actualización se incluye en la versión 2.36 de glibc y ya está disponible en las principales distribuciones Linux basadas en Red Hat.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=tunables_conf_1]\n\nLa implementación de tunables globales representa un avance estratégico para la administración de infraestructuras críticas. Al permitir ajustes finos sin tocar el código, se reducen los riesgos de incompatibilidades y se acelera la adopción de nuevas políticas de seguridad. Este cambio también abre la puerta a futuras extensiones, donde otros componentes del sistema podrían exponer configuraciones de manera similar, fomentando un ecosistema más modular y adaptable.\n\nEn un contexto donde la eficiencia operativa y la rapidez de respuesta a amenazas son clave, la introducción de /etc/tunables.conf posiciona a Red Hat como líder en soluciones de gestión de sistemas. Los usuarios que ya utilizan glibc 2.36 podrán aprovechar esta funcionalidad con mínima configuración, mientras que los desarrolladores de software podrán integrar sus propias opciones de tunables en sus aplicaciones sin sacrificar la estabilidad del sistema.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T13:38:13.692Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix",
+      "url": "https://www.phoronix.com/scan.php?page=news_item&px=glibc-tunables-config"
+    },
+    {
+      "title": "Documentación oficial de glibc sobre tunables",
+      "url": "https://www.gnu.org/software/libc/manual/html_node/Tunables.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de glibc que incluye la funcionalidad",
+      "value": "2.36"
+    },
+    {
+      "label": "Número de parámetros de tunables disponibles",
+      "value": "120"
+    },
+    {
+      "label": "Fecha de lanzamiento",
+      "value": "15 de marzo de 2024"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

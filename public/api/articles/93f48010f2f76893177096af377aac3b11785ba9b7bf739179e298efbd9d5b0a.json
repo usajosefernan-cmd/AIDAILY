@@ -1,0 +1,71 @@
+{
+  "id": "93f48010f2f76893177096af377aac3b11785ba9b7bf739179e298efbd9d5b0a",
+  "title": "Una imagen aparentemente inocente puede desbloquear modelos de IA visual y de lenguaje",
+  "summary": "Investigadores de la Universidad Internacional de Florida revelaron una técnica llamada JaiLIP que, mediante pequeñas alteraciones en las imágenes, logra evadir las defensas de seguridad de modelos multimodales como BLIP‑2, duplicando casi el número de respuestas potencialmente dañinas. Este hallazgo muestra que los vectores de ataque no se limitan a los prompts, sino que también pueden surgir de fotografías que parecen normales para los usuarios.",
+  "url": "https://slashdot.org/story/26/06/27/2249212/how-a-seemingly-harmless-image-can-jailbreak-vision-language-ai-models?utm_source=rss1.0mainlinkanon&utm_medium=feed",
+  "source": "Slashdot",
+  "sourceUrl": "https://slashdot.org/slashdot.rss",
+  "publishedAt": "2026-06-27T23:00:31.830Z",
+  "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Una imagen aparentemente inocente puede desbloquear modelos de IA visual y de lenguaje",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Investigadores de la Universidad Internacional de Florida revelaron una técnica llamada JaiLIP que, mediante pequeñas alteraciones en las imágenes, logra evadir las defensas de seguridad de modelos multimodales como BLIP‑2, duplicando casi el número de respuestas potencialmente dañinas. Este hallazgo muestra que los vectores de ataque no se limitan a los prompts, sino que también pueden surgir de fotografías que parecen normales para los usuarios.",
+  "keyPoints": [
+    "Investigadores de la Universidad Internacional de Florida desarrollaron JaiLIP, una técnica que altera sutilmente imágenes para evadir las salvaguardas de seguridad de los modelos multimodales.",
+    "Al probar JaiLIP contra BLIP‑2, las imágenes manipuladas duplicaron casi el número de respuestas potencialmente dañinas, superando métodos de jailbreak basados en imágenes previos.",
+    "El hallazgo revela que los vectores de ataque no se limitan a prompts, sino que también incluyen fotografías que parecen normales para los usuarios humanos.",
+    "Empresas que despliegan sistemas de IA que procesan texto e imagen deben revisar sus protocolos de mitigación para protegerse de este nuevo vector de amenaza."
+  ],
+  "whyMatters": "El descubrimiento de JaiLIP abre una brecha crítica en la seguridad de los sistemas de IA multimodales, poniendo en riesgo a organizaciones que dependen de la generación de contenido seguro. Si las imágenes pueden actuar como puertas traseras, los atacantes pueden infiltrar datos sensibles y generar respuestas dañinas sin ser detectados. Este vector inesperado exige una revisión urgente de las políticas de mitigación y la implementación de filtros de imagen más robustos para salvaguardar la integridad de los servicios de IA.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "alt": "Una imagen aparentemente inocente puede desbloquear modelos de IA visual y de lenguaje",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#JailbreakAI",
+    "#VisionLanguage",
+    "#SeguridadIA"
+  ],
+  "fullArticle": "Los últimos avances en inteligencia artificial han demostrado que la interacción entre texto e imagen puede generar resultados sorprendentes, pero también vulnerabilidades inesperadas. En un estudio publicado el 27 de junio de 2026, un equipo de la Universidad Internacional de Florida presentó JaiLIP (Jailbreaking with Loss‑guided Image Perturbation), una técnica que modifica de forma imperceptible las imágenes para evadir las defensas de seguridad de los modelos multimodales.\n\nEn pruebas con BLIP‑2, el modelo de referencia en la comunidad de IA, los investigadores observaron que las imágenes manipuladas casi duplicaron la cantidad de respuestas potencialmente dañinas. Este aumento supera con creces los métodos de jailbreak basados en imágenes anteriores, lo que indica que la técnica es más efectiva y menos detectada por los filtros existentes.\n\nLo que hace que JaiLIP sea particularmente alarmante es que las imágenes modificadas se ven normales para los usuarios humanos, lo que significa que un atacante podría insertar un archivo aparentemente inofensivo en un flujo de trabajo de IA y desencadenar respuestas inapropiadas sin que el usuario lo note. Este vector de ataque no se limita a los prompts, lo que amplía el espectro de amenazas que las organizaciones deben considerar.\n\nPara las empresas que dependen de sistemas de IA que procesan tanto texto como imagen, el hallazgo subraya la necesidad de revisar y reforzar los protocolos de mitigación. La adopción de filtros de imagen avanzados, la monitorización de anomalías y la actualización continua de los modelos de defensa son pasos críticos para protegerse contra este nuevo vector de riesgo.\n\nEl estudio también plantea preguntas sobre la responsabilidad ética de los desarrolladores de IA y la necesidad de establecer estándares más rigurosos para la evaluación de la seguridad multimodal. Con la creciente adopción de modelos de IA en sectores críticos, la comunidad tecnológica debe actuar con rapidez para cerrar las brechas que JaiLIP ha revelado.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T23:03:14.704Z",
+  "links": [
+    {
+      "title": "Artículo original en Slashdot",
+      "url": "https://slashdot.org/story/26/06/27/2249212"
+    },
+    {
+      "title": "Wikipedia: AI jailbreak",
+      "url": "https://en.wikipedia.org/wiki/AI_jailbreak"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Modelo objetivo",
+      "value": "BLIP‑2"
+    },
+    {
+      "label": "Técnica desarrollada",
+      "value": "Jailbreaking with Loss‑guided Image Perturbation (JaiLIP)"
+    },
+    {
+      "label": "Aumento de respuestas inseguras",
+      "value": "98%"
+    },
+    {
+      "label": "Fecha de publicación",
+      "value": "27 de junio de 2026"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

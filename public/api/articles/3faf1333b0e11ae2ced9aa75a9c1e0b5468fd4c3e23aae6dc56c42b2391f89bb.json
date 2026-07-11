@@ -1,0 +1,64 @@
+{
+  "id": "3faf1333b0e11ae2ced9aa75a9c1e0b5468fd4c3e23aae6dc56c42b2391f89bb",
+  "title": "El agente evolutivo: Cómo Jean2 aprende entre sesiones y elimina la amnesia de la IA",
+  "summary": "Jean2 es un agente de IA para programación que aprende de forma persistente mediante archivos en disco, sin reentrenamiento ni embeddings, acumulando conocimiento entre sesiones.",
+  "url": "https://dev.to/danielbilek/the-evolving-agent-how-jean2-learns-across-sessions-2m98",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T21:12:44.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq4qgkt77jonkpau0325u.png",
+  "imageAlt": "El agente evolutivo: Cómo Jean2 aprende entre sesiones y elimina la amnesia de la IA",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Jean2 es un agente de IA para programación que aprende de forma persistente mediante archivos en disco, sin reentrenamiento ni embeddings, acumulando conocimiento entre sesiones.",
+  "keyPoints": [
+    "El autor acumula dos años de experiencia con principales agentes de IA como Cursor, Copilot y Codex, todos con el problema común de perder contexto al cerrar sesión.",
+    "Jean2 implementa cuatro capas de conocimiento persistentes que se activan opcionalmente, evitando el reinicio de información en cada nueva sesión.",
+    "La memoria se almacena en archivos Markdown (MEMORY.md y USER.md) dentro del directorio del workspace, sin bases de datos vectoriales ni pipelines de embedding.",
+    "El agente escribe y lee sus propios archivos de memoria, aprendiendo de correcciones y preferencias del usuario para evolucionar su especialización."
+  ],
+  "whyMatters": "Esta aproximación redefine la interacción con asistentes de código, pasando de herramientas reactivas a agentes proactivos que recuerdan y se adaptan. Implica un cambio en la productividad de los desarrolladores, reduciendo la repetición de instrucciones y mejorando la continuidad de proyectos. A futuro, sentará las bases para agentes de IA más autónomos y personalizables en entornos de trabajo colaborativo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq4qgkt77jonkpau0325u.png",
+      "alt": "Portada del artículo 'El agente evolutivo: Cómo Jean2 aprende entre sesiones'",
+      "caption": "Imagen de portada del artículo original en Dev.to que ilustra el concepto de agente de IA que aprende entre sesiones."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Jean2",
+    "#AgentesIA",
+    "#DesarrolloDeSoftware",
+    "#IA"
+  ],
+  "fullArticle": "Durante dos años, el autor ha trabajado con los principales agentes de IA para programación, como Cursor, Copilot, Codex y OpenCode. Aunque generan código útil, todos comparten un fallo crítico: al cerrar la sesión, el agente pierde toda la memoria y debe ser reentrenado desde cero en cada interacción. Esto obliga a repetir una y otra vez las mismas instrucciones: 'usamos pnpm, no npm', 'la base de datos es SQLite, no Postgres', 'no toques la carpeta de migraciones'. Jean2 surge como respuesta a este problema, ofreciendo una memoria persistente que evoluciona con el uso.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq4qgkt77jonkpau0325u.png]\n\nLa clave de Jean2 reside en sus cuatro capas de conocimiento opcionales, que se activan desde la configuración del workspace. La memoria de workspace se almacena en dos archivos Markdown: MEMORY.md para conocimientos compartidos del proyecto y USER.md para preferencias personales. Por otro lado, la memoria del agente, ubicada en su directorio personal, registra su especialización y evolución profesional, viajando con él por todos los proyectos. A diferencia de otros sistemas, no utiliza bases de datos vectoriales ni embeddings, sino simples archivos en disco que el propio agente lee y escribe.\n\nEsta aproximación cambia radicalmente la dinámica de trabajo, transformando al agente en un colaborador que aprende de sus errores y se adapta al estilo del usuario. Al reducir la necesidad de repetir instrucciones, se incrementa la productividad y se minimizan los errores por desconocimiento del contexto. A futuro, esta arquitectura podría sentar las bases para agentes de IA verdaderamente autónomos, capaces de acumular experiencia a lo largo de su vida útil sin intervención humana constante.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T21:31:01.369Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Años de experiencia del autor con agentes de IA",
+      "value": "2 años"
+    },
+    {
+      "label": "Número de capas de conocimiento persistentes",
+      "value": "4"
+    },
+    {
+      "label": "Archivos de memoria utilizados",
+      "value": "2 (MEMORY.md y USER.md)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

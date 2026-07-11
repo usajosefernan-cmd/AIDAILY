@@ -1,0 +1,83 @@
+{
+  "id": "3aff135068130122951dcd84622023294fae5ad326467562d5d0feb079a6b42d",
+  "title": "Vandalizan sitios web del Ejército de EE.UU. con consignas pro kurdas e insultos a Trump",
+  "summary": "Varios subdominios del Ejército de Estados Unidos fueron objeto de una campaña de secuestro de errores 404 que mostró mensajes de apoyo a Kurdistán e insultos al presidente Donald Trump y al embajador Tom Barrack. Los sitios afectados, pertenecientes a laboratorios de innovación y de inteligencia artificial del Ejército, fueron tomados offline mientras se investiga el incidente.",
+  "url": "https://cyberscoop.com/us-army-websites-defaced-404-hijacking-kurdistan/",
+  "source": "CyberScoop",
+  "sourceUrl": "https://cyberscoop.com/feed/",
+  "publishedAt": "2026-07-06T17:50:25.000Z",
+  "imageUrl": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/Free-Kurdistan-blurred.png?w=1024",
+  "imageAlt": "Vandalizan sitios web del Ejército de EE.UU. con consignas pro kurdas e insultos a Trump",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Varios subdominios del Ejército de Estados Unidos fueron objeto de una campaña de secuestro de errores 404 que mostró mensajes de apoyo a Kurdistán e insultos al presidente Donald Trump y al embajador Tom Barrack. Los sitios afectados, pertenecientes a laboratorios de innovación y de inteligencia artificial del Ejército, fueron tomados offline mientras se investiga el incidente.",
+  "keyPoints": [
+    "Dos subdominios del Ejército de EE.UU. (oil.army.mil y ai2c.army.mil) fueron vandalizados mediante secuestro de páginas de error 404.",
+    "Los mensajes incluían consignas de apoyo a Kurdistán, insultos a Donald Trump y al embajador Tom Barrack, y la firma 'Kurdish sr was here'.",
+    "Los sitios afectados alojan el Laboratorio de Innovación Abierta del Ejército y el Centro de Integración de Inteligencia Artificial, creados en 2020 y 2019 respectivamente.",
+    "El ataque fue detectado por un investigador de ciberseguridad independiente, y el Ejército confirmó que los sitios estaban alojados en una plataforma de terceros heredada."
+  ],
+  "whyMatters": "Este incidente evidencia vulnerabilidades críticas en la seguridad de infraestructuras digitales de entidades estatales de alto nivel, incluso en sistemas alojados en plataformas de terceros no conectadas a la red empresarial principal. La capacidad de los atacantes para modificar páginas de error sin alterar el resto del contenido del sitio demuestra técnicas de ocultación avanzadas que pueden pasar desapercibidas durante largos periodos. Además, el componente político del ataque, con mensajes alineados con demandas del movimiento kurdo, abre la puerta a un aumento de ciberataques con motivaciones geopolíticas contra objetivos militares estadounidenses en los próximos meses.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/Free-Kurdistan-blurred.png?w=1024",
+      "alt": "Captura de pantalla de la página de error 404 del subdominio oil.army.mil del Ejército de EE.UU. vandalizada con mensajes pro kurdos e insultos a Donald Trump y Tom Barrack",
+      "caption": "Captura de la página de error 404 de oil.army.mil, perteneciente al Laboratorio de Innovación Abierta del Ejército, con mensajes de apoyo a Kurdistán e insultos a figuras políticas estadounidenses. (Fuente: sitio web del Ejército de EE.UU.)"
+    },
+    {
+      "type": "image",
+      "url": "https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/Free-Kurdistan-white-blur.png?w=1024",
+      "alt": "Captura de pantalla de la página de error 404 del subdominio ai2c.army.mil del Ejército de EE.UU. vandalizada con mensajes pro kurdos e insultos a Donald Trump y Tom Barrack",
+      "caption": "Captura de la página de error 404 de ai2c.army.mil, perteneciente al Centro de Integración de Inteligencia Artificial del Ejército, con la firma 'Kurdish sr was here' e insultos a figuras políticas. (Fuente: sitio web del Ejército de EE.UU.)"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Ciberseguridad",
+    "#EjércitoEEUU",
+    "#Kurdistan",
+    "#DonaldTrump",
+    "#AtaqueInformatico"
+  ],
+  "fullArticle": "La madrugada del pasado lunes, varios subdominios del Ejército de Estados Unidos sufrieron un ataque de defacement (vandalismo web) mediante una técnica de secuestro de páginas de error 404, que permitió a los atacantes mostrar mensajes políticos sin alterar el resto del contenido de los sitios. Los dominios afectados, oil.army.mil y ai2c.army.mil, pertenecientes al Laboratorio de Innovación Abierta del Ejército y al Centro de Integración de Inteligencia Artificial respectivamente, mostraron a los visitantes consignas de apoyo a la independencia de Kurdistán, insultos contra el presidente Donald Trump y el embajador estadounidense en Turquía Tom Barrack, además de la firma 'Kurdish sr was here'. El incidente fue detectado inicialmente por el investigador de ciberseguridad independiente Ronald Lovelace, quien notificó tanto a las autoridades del Ejército como al medio CyberScoop.\n[MULTIMEDIA: https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/Free-Kurdistan-blurred.png?w=1024]\nLa técnica utilizada, conocida como secuestro de errores 404, se basa en explotar fallos en el sistema de manejo de errores de un sitio web, generalmente mediante la compromisión de un plugin, un sistema de gestión de contenido o una configuración de servidor. A diferencia de ataques que buscan acceder a las páginas principales del sitio, este método permite a los atacantes modificar únicamente el contenido que se muestra cuando se accede a una página no existente, lo que dificulta su detección, ya que el resto del portal funciona con normalidad. Lovelace confirmó que ambos sitios afectados funcionan sobre infraestructura de WordPress y servicios en la nube de Microsoft, y señaló que la capacidad de editar las páginas de error en múltiples subdominios sugiere que el acceso de los atacantes es más profundo de lo que inicialmente se pensaba.\n[MULTIMEDIA: https://cyberscoop.com/wp-content/uploads/sites/3/2026/07/Free-Kurdistan-white-blur.png?w=1024]\nTras la notificación, el Ejército de Estados Unidos tomó offline los sitios afectados y confirmó que se trataba de una plataforma de terceros heredada, no conectada a la red empresarial principal de la institución. Un portavoz del Ejército, el mayor Sean Minton, declaró que los equipos técnicos tomaron medidas inmediatas para mitigar el incidente, que las páginas afectadas han sido aseguradas, y que la investigación por parte de los equipos de ciberinvestigación sigue en curso. Aún se desconoce el alcance total del ataque: no está claro cuánto tiempo estuvieron comprometidos los subdominios, si hay otros sitios afectados, ni el método exacto que utilizaron los atacantes para obtener acceso a las páginas de error.\nLos mensajes pro kurdos se enmarcan en el histórico conflicto por la independencia del pueblo kurdo, un grupo étnico de más de 30 millones de personas repartido entre Turquía, Irak, Irán y Siria, cuyas demandas de autodeterminación han sido ignoradas durante décadas por la comunidad internacional. El ataque se produce después de que Trump y Barrack recibieran críticas de la comunidad kurda a principios de año por aparentemente apoyar una campaña militar del gobierno sirio para recuperar el control de territorios de mayoría kurda. No es la primera vez que sitios web del Ejército estadounidense son vandalizados por hacktivistas extranjeros: en 2015, el Ejército Sirio Electrónico logró defacear la página principal del Ejército y el sitio del Mando Estratégico de Estados Unidos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-07T00:10:40.398Z",
+  "links": [
+    {
+      "title": "Noticia original en CyberScoop",
+      "url": "https://cyberscoop.com/army-websites-defacement-pro-kurdish-trump/"
+    },
+    {
+      "title": "Sitio oficial del Ejército de Estados Unidos",
+      "url": "https://www.army.mil/"
+    },
+    {
+      "title": "Información sobre el pueblo kurdo en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Pueblo_kurdo"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Subdominios del Ejército afectados",
+      "value": "2 (oil.army.mil y ai2c.army.mil)"
+    },
+    {
+      "label": "Año de creación del Laboratorio de Innovación Abierta",
+      "value": "2020"
+    },
+    {
+      "label": "Población kurda estimada en la región de Kurdistán",
+      "value": "Más de 30 millones de personas"
+    },
+    {
+      "label": "Año del último ataque masivo a sitios web del Ejército de EE.UU.",
+      "value": "2015"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

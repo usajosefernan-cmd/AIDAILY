@@ -1,0 +1,42 @@
+{
+  "aiSummary": "Ollama ha ampliado su biblioteca para incluir modelos chinos como Kimi‑K2.5, GLM‑5, MiniMax y DeepSeek, ofreciendo la promesa de ejecutar estos sistemas en GPUs locales sin exponer datos. Sin embargo, la comunidad de desarrolladores ha señalado que la localización implica desafíos técnicos, costes de hardware y limitaciones de rendimiento que pueden superar los beneficios de privacidad y ahorro a gran escala.",
+  "category": "tecnologia",
+  "fullArticle": "Ollama, la plataforma de modelos de código abierto, acaba de anunciar la incorporación de cuatro modelos chinos de gran escala: Kimi‑K2.5, GLM‑5, MiniMax y DeepSeek. La promesa es clara: ejecutar estos sistemas en tu propia GPU, evitando que los datos salgan de tu infraestructura y reduciendo la dependencia de APIs externas. La noticia llega en un momento en que la competencia entre los gigantes de la IA se intensifica, y el acceso local parece ofrecer una ventaja estratégica.\n\nSin embargo, la comunidad de desarrolladores no ha estado de acuerdo con la narrativa optimista. El hilo de discusión en V2EX revela que la documentación china suele retrasarse entre seis y doce meses con respecto a la versión en inglés, obligando a los equipos a traducir manualmente referencias de API y a dedicar horas extras. Además, la cuantización de 4‑bits que funciona bien para modelos de 8 B parámetros, como Llama 3, provoca una degradación notable en modelos de 70 B, lo que exige configuraciones de Q5 o incluso FP16 para tareas de redacción técnica en chino. El estilo de prompt de Kimi‑K2.5 también difiere del occidental, requiriendo reescritura de hasta el 40 % de los prompts existentes para mantener la eficacia.\n\nEl mayor desafío, según los participantes, es el hardware. Para igualar la latencia y precisión de los APIs hospedados, la infraestructura local necesita GPUs de alto rendimiento, como el H100, con un coste superior a 8 000 USD. En contraste, la opción de usar la API en la nube puede resultar más rentable a menos de 10 M tokens diarios, y la calidad se mantiene sin la necesidad de un equipo de última generación. Así, la localización se convierte en una solución “2 AM” para problemas específicos, pero no en un reemplazo general de los servicios en la nube.\n\nEn última instancia, la noticia subraya una brecha entre la promesa de privacidad y la realidad de la infraestructura. Las empresas que manejan datos sensibles pueden encontrar en la ejecución local una ventaja, pero el coste de hardware y la caída de rendimiento podrían frenar la adopción masiva. A medida que los modelos chinos evolucionan a un ritmo acelerado, las organizaciones occidentales deberán decidir si invertir en equipos de última generación o continuar confiando en servicios en la nube, lo que afectará la competitividad y la innovación en inteligencia artificial.",
+  "hashtags": [
+    "#Ollama",
+    "#Kimi",
+    "#DeepSeek",
+    "#GLM",
+    "#IAChinesa"
+  ],
+  "id": "d842634e2c17c032a963a5f443e24a1dfcae925d3c88b64ae7c7d1288253f1d5",
+  "imageAlt": "El soporte de modelos chinos en Ollama es real — pero correr Kimi y DeepSeek localmente tiene un costo oculto",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fuckf2vugeuqd2cd47afy.png",
+  "keyPoints": [
+    "La documentación china suele retrasarse 6‑12 meses respecto a la versión en inglés, obligando a traductores a dedicar horas extras para integrar los modelos.",
+    "La cuantización de 4‑bits, adecuada para Llama 3, degrada la calidad de modelos de 70 B parámetros; se requieren Q5 o FP16 para tareas técnicas en chino.",
+    "El estilo de prompt de Kimi‑K2.5 difiere del occidental, requiriendo reescritura de hasta el 40 % de los prompts para mantener la eficacia.",
+    "La infraestructura local necesita GPUs de alto rendimiento (H100) para igualar la latencia y precisión de los APIs hospedados, costando más de 8 000 USD."
+  ],
+  "multimedia": [
+    {
+      "alt": "Logotipo de Ollama sobre fondo de código con texto 'Ollama's Chinese Model Support Is Real — But Running Kimi and DeepSeek Locally Has a Hidden Cost'",
+      "caption": "Portada del artículo que destaca la expansión de Ollama hacia modelos chinos.",
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fuckf2vugeuqd2cd47afy.png"
+    }
+  ],
+  "publishedAt": "2026-06-26T05:15:26.000Z",
+  "scrapedAt": "2026-06-26T05:22:05.628Z",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "subcategory": "software",
+  "summary": "Ollama ha ampliado su biblioteca para incluir modelos chinos como Kimi‑K2.5, GLM‑5, MiniMax y DeepSeek, ofreciendo la promesa de ejecutar estos sistemas en GPUs locales sin exponer datos. Sin embargo, la comunidad de desarrolladores ha señalado que la localización implica desafíos técnicos, costes de hardware y limitaciones de rendimiento que pueden superar los beneficios de privacidad y ahorro a gran escala.",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "title": "El soporte de modelos chinos en Ollama es real — pero correr Kimi y DeepSeek localmente tiene un costo oculto",
+  "url": "https://dev.to/xu_xu_b2179aa8fc958d531d1/ollamas-chinese-model-support-is-real-but-running-kimi-and-deepseek-locally-has-a-hidden-cost-1e8n",
+  "whyMatters": "El debate sobre la ejecución local de modelos chinos revela una brecha entre la promesa de privacidad y la realidad de la infraestructura. Para empresas que manejan datos sensibles, la opción local puede ser imprescindible, pero el gasto en hardware y la caída de rendimiento pueden frenar la adopción masiva. A medida que la velocidad de evolución de los modelos chinos acelera, las organizaciones occidentales deberán decidir si invertir en equipos de última generación o continuar confiando en servicios en la nube, lo que afectará la competitividad y la innovación en inteligencia artificial."
+}

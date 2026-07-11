@@ -1,0 +1,77 @@
+{
+  "id": "d7cb476fc4f422df941458b83de468678a2ab4766471da6251579994806443ee",
+  "title": "El error de diseño que desdibuja tu marca: por qué aclarar colores en RGB genera gris y la solución con HSL",
+  "summary": "El artículo explica por qué el método habitual de ajustar los canales RGB para generar variantes claras y oscuras de un color de marca produce tonos grises y apagados, presenta el modelo HSL como alternativa para mantener el matiz original y recomienda OKLCH para lograr transiciones visuales perceptualmente uniformes en sistemas de diseño.",
+  "url": "https://dev.to/sgbp/why-lightening-a-hex-color-in-rgb-gives-you-grey-and-the-hsl-fix-41p0",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T04:33:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqick7jgq1r2rltim6743.png",
+  "imageAlt": "El error de diseño que desdibuja tu marca: por qué aclarar colores en RGB genera gris y la solución con HSL",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica por qué el método habitual de ajustar los canales RGB para generar variantes claras y oscuras de un color de marca produce tonos grises y apagados, presenta el modelo HSL como alternativa para mantener el matiz original y recomienda OKLCH para lograr transiciones visuales perceptualmente uniformes en sistemas de diseño.",
+  "keyPoints": [
+    "Modificar los canales RGB para aclarar u oscurecer un color de marca reduce la diferencia entre ellos, desaturando el tono y generando gris en lugar del matiz original.",
+    "El modelo RGB es un sistema de hardware que no distingue entre matiz y luminosidad, por lo que ajustar la claridad altera inevitablemente la saturación del color.",
+    "HSL separa el color en matiz, saturación y luminosidad, permitiendo ajustar la claridad sin modificar el tono original para generar escalas coherentes.",
+    "OKLCH es un espacio de color más reciente que garantiza pasos perceptualmente iguales, ideal para sistemas de diseño que requieren transiciones visuales uniformes."
+  ],
+  "whyMatters": "La correcta gestión de escalas de color es un pilar fundamental para la coherencia visual de cualquier sistema de diseño, especialmente para marcas que buscan mantener una identidad sólida en todos sus puntos de contacto. El error de utilizar ajustes RGB para generar tintes y sombras no solo genera resultados visualmente inconsistentes que afectan la experiencia de usuario, sino que también implica retrabajos costosos para equipos de diseño y desarrollo. Dominar alternativas como HSL u OKLCH no solo resuelve este problema, sino que también mejora la accesibilidad y garantiza que la percepción del color sea uniforme en diferentes dispositivos y condiciones de luz, un aspecto cada vez más valorado en el mercado europeo y español.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqick7jgq1r2rltim6743.png",
+      "alt": "Comparación de escalas de color generadas con RGB y HSL, mostrando cómo el método RGB genera tonos grises y apagados mientras HSL mantiene el matiz original",
+      "caption": "Imagen de portada del artículo original que ilustra el problema de desaturación al modificar canales RGB"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#DiseñoWeb",
+    "#SistemasDeDiseño",
+    "#ColoresCSS",
+    "#DesarrolloFrontend",
+    "#OKLCH"
+  ],
+  "fullArticle": "En el desarrollo de sistemas de diseño, generar escalas de color coherentes a partir de un tono de marca es una tarea habitual que suele resolverse de forma errónea al modificar los canales RGB para obtener tintes más claros y sombras más oscuras. Este enfoque, aunque intuitivo, produce resultados indeseados: al acercar los valores de los tres canales a 255 para aclarar el color, la diferencia entre ellos se reduce, desaturando el tono y generando un gris en lugar de un matiz más claro del color original. Lo mismo ocurre al oscurecer: los canales colapsan hacia cero, generando un negro apagado en lugar de una sombra rica en matiz.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fqick7jgq1r2rltim6743.png]\n\nLa raíz del problema está en que RGB es un modelo de hardware que describe la emisión de luz de los fósforos de una pantalla, sin tener en cuenta la percepción humana del color: no es posible ajustar la luminosidad sin alterar el matiz y la saturación. La solución más extendida es utilizar el modelo HSL, que separa el color en tres componentes independientes: matiz (H), saturación (S) y luminosidad (L). Al convertir el color de marca a HSL, es posible ajustar el valor de L para obtener tintes y sombras manteniendo intactos H y S, generando una escala que preserva la identidad cromática de la marca. Sin embargo, HSL tiene una limitación: la percepción humana de la luminosidad no es lineal, por lo que pasos iguales en el valor de L no se perciben como cambios iguales. Para solucionar esto, surge OKLCH, un espacio de color diseñado para que pasos numéricos iguales se traduzcan en cambios visuales iguales, ideal para sistemas de diseño que buscan coherencia perceptual. Actualmente, OKLCH es compatible con todos los navegadores modernos, por lo que es una opción cada vez más recomendada para proyectos nuevos. Para facilitar este trabajo, existen herramientas generadoras de paletas que permiten obtener escalas completas a partir de un valor hexadecimal y exportarlas directamente como variables CSS, reduciendo el tiempo de desarrollo y evitando errores comunes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T05:05:31.628Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to: Por qué aclarar un color hexadecimal en RGB genera gris y la solución con HSL",
+      "url": "https://dev.to/why-lightening-a-hex-color-in-rgb-gives-you-grey-and-the-hsl-fix"
+    },
+    {
+      "title": "Documentación de MDN sobre el valor de color HSL en CSS",
+      "url": "https://developer.mozilla.org/es/docs/Web/CSS/color_value/hsl()"
+    },
+    {
+      "title": "Documentación de MDN sobre el espacio de color OKLCH en CSS",
+      "url": "https://developer.mozilla.org/es/docs/Web/CSS/color_value/oklch()"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Variantes de color necesarias en un sistema de diseño",
+      "value": "Aproximadamente 9 (tintes para hover, sombras para estados presionados, tonos intermedios para bordes)"
+    },
+    {
+      "label": "Causa de la desaturación al aclarar colores en RGB",
+      "value": "Los tres canales convergen hacia 255, reduciendo la diferencia entre ellos y eliminando el matiz"
+    },
+    {
+      "label": "Ventaja principal de OKLCH sobre HSL",
+      "value": "Genera pasos de luminosidad perceptualmente iguales, evitando que cambios numéricos iguales se perciban de forma distinta"
+    },
+    {
+      "label": "Compatibilidad de OKLCH en navegadores",
+      "value": "Soportado en todos los navegadores modernos actuales"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

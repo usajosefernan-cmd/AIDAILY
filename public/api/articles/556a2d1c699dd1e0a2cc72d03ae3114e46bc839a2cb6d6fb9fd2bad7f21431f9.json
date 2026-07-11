@@ -1,0 +1,77 @@
+{
+  "id": "556a2d1c699dd1e0a2cc72d03ae3114e46bc839a2cb6d6fb9fd2bad7f21431f9",
+  "title": "Desarrollando Ekehi: cómo una semana de revisiones de código y una nueva página de envíos mejoraron las convenciones del equipo",
+  "summary": "Resumen de la semana del 27 de junio de 2026 en el desarrollo del proyecto Ekehi: el autor revisó pull requests de compañeros para la sección de recursos, lanzó la página de envíos y solucionó errores de navegación y renderizado en producción.",
+  "url": "https://dev.to/aj1732/building-ekehi-my-week-in-reviews-and-a-new-submissions-page-2mdn",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T18:02:09.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdl6jwrcctkteai9fw9f8.png",
+  "imageAlt": "Desarrollando Ekehi: cómo una semana de revisiones de código y una nueva página de envíos mejoraron las convenciones del equipo",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Resumen de la semana del 27 de junio de 2026 en el desarrollo del proyecto Ekehi: el autor revisó pull requests de compañeros para la sección de recursos, lanzó la página de envíos y solucionó errores de navegación y renderizado en producción.",
+  "keyPoints": [
+    "El equipo completó las páginas de detalle de la sección de recursos de Ekehi, requiriendo múltiples revisiones de código para alinearse con las convenciones del proyecto.",
+    "La revisión de tres implementaciones del mismo patrón de fetch de datos permitió estandarizar el uso de capas de API, manejo de errores y estados de carga.",
+    "Se lanzó la página de envíos (#148) con un diseño adaptado a Figma, además de solucionar el problema de visibilidad de la barra de navegación en páginas distintas al inicio.",
+    "Se corrigió un error de renderizado de SVGs en la página de colaboradores que solo aparecía en la compilación de producción, no en el entorno de desarrollo."
+  ],
+  "whyMatters": "Esta semana de trabajo en Ekehi evidencia la importancia de las revisiones de código como herramienta de estandarización en equipos de desarrollo frontend, más allá de la simple detección de errores. La solución de problemas que solo aparecen en producción, como el fallo de los SVGs o la invisibilidad de la barra de navegación, recuerda que las pruebas en entornos locales no son suficientes para garantizar la calidad de un producto. Además, la implementación de la página de envíos y la corrección de la navegación mejoran la experiencia de usuario final y la mantenibilidad del código a largo plazo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdl6jwrcctkteai9fw9f8.png",
+      "alt": "Portada del artículo sobre el desarrollo del proyecto Ekehi en Dev.to",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Ekehi",
+    "#ReactJS",
+    "#TanStackRouter",
+    "#DesarrolloFrontend",
+    "#RevisionDeCodigo"
+  ],
+  "fullArticle": "La semana que terminó el 27 de junio de 2026 marcó un hito en el desarrollo del proyecto Ekehi, una aplicación frontend construida con React y TanStack Router, donde el trabajo se dividió en dos ejes principales: la revisión de pull requests de compañeros de equipo para la sección de recursos y el lanzamiento de la nueva página de envíos, un issue largamente esperado que se cerró exitosamente al final de la semana.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fdl6jwrcctkteai9fw9f8.png]\nLa mayor parte del esfuerzo del equipo se centró en finalizar las páginas de detalle de la sección de recursos, por lo que una parte significativa de la semana se dedicó a revisar el código ajeno, una práctica que resultó más valiosa de lo esperado. Al analizar tres implementaciones distintas del mismo patrón (páginas de guía, formación y plantillas), que compartían la lógica de fetch de un registro por ID y el manejo de estados de carga, error y vacío, se hicieron evidentes las convenciones del proyecto: la separación de archivos types.ts, service.ts y query.ts, el uso del wrapper makeRequest y el manejo centralizado de ApiError. Estas convenciones fueron utilizadas por el propio autor un día después para construir su propia página, demostrando el valor de las revisiones amplias antes de escribir código nuevo.\nEl foco de las revisiones se centró en garantizar estados de carga y error consistentes, evitar llamadas a fetch o localStorage fuera de la capa de API compartida y asegurar un markup accesible. La página de colaboradores, por su parte, requirió un enfoque distinto, centrado en la responsividad y el comportamiento en diferentes breakpoints, al tratarse de un componente más orientado al diseño que a la obtención de datos. El issue propio del autor, la página de envíos (#148), se cerró el mismo día de su lanzamiento, con un diseño adaptado a Figma que reemplazó tres cajas separadas por una tarjeta redondeada única con divisores entre secciones y campos suavizados.\nDurante las pruebas de la nueva página se detectó un fallo crítico en la barra de navegación, que era invisible en todas las páginas excepto la de inicio, al estar diseñada con texto y logo blancos en modo superpuesto absoluto para el hero oscuro de la landing page. La solución pasó por hacer la barra de navegación consciente de la ruta: en la página de inicio mantiene su tratamiento transparente y blanco sobre el hero, mientras que en el resto de páginas se muestra como una barra sólida con logo y enlaces oscuros, estado activo en púrpura y botón de registro relleno, ocupando espacio en el layout en lugar de flotar sobre el contenido. Este cambio requirió además actualizar las pruebas existentes de la barra de navegación para contemplar la nueva lógica basada en rutas.\nA principios de semana también se cerró el issue #157, que solucionaba un fallo en la renderización de los SVGs de fondo de las tarjetas de la página de colaboradores en la compilación de producción. El error solo aparecía después de construir y desplegar la aplicación, un caso clásico de activos que se resuelven correctamente en el servidor de desarrollo pero no en el bundle de producción. La corrección se basó en rastrear la forma en que se referenciaban estos SVGs y ajustarla para que se rendericen tanto en el entorno local como en la versión desplegada, una lección que refuerza que 'funciona en desarrollo' no es equivalente a 'funciona en la compilación', y que el bundle de producción es la única fuente de verdad que importa para los usuarios finales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T21:09:20.111Z",
+  "links": [
+    {
+      "title": "Documentación oficial de React",
+      "url": "https://react.dev/"
+    },
+    {
+      "title": "Documentación oficial de TanStack Router",
+      "url": "https://tanstack.com/router/latest"
+    },
+    {
+      "title": "Fuente original del artículo en Dev.to",
+      "url": "https://dev.to/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Fecha de la semana de trabajo",
+      "value": "27 de junio de 2026"
+    },
+    {
+      "label": "Páginas de detalle revisadas",
+      "value": "3 (guía, formación, plantillas)"
+    },
+    {
+      "label": "Issues cerrados en la semana",
+      "value": "3 (#148, #156, #157)"
+    },
+    {
+      "label": "Tecnologías principales del proyecto",
+      "value": "React, TanStack Router"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

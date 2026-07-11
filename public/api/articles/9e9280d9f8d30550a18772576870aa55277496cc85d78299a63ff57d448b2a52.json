@@ -1,0 +1,67 @@
+{
+  "id": "9e9280d9f8d30550a18772576870aa55277496cc85d78299a63ff57d448b2a52",
+  "title": "WildCity: El dataset que permite a la IA navegar por ciudades enteras como un humano",
+  "summary": "WildCity es un dataset multimodal a escala de ciudad que permite a los sistemas de IA desarrollar representaciones espaciales comparables a la cognición humana, con aplicaciones en navegación, simulación y gemelos digitales urbanos.",
+  "url": "https://huggingface.co/papers/2607.06838",
+  "source": "Hugging Face Papers",
+  "sourceUrl": "https://huggingface.co/papers",
+  "publishedAt": "2026-07-09T02:20:23.857Z",
+  "imageUrl": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.06838/gradient.png",
+  "imageAlt": "WildCity: El dataset que permite a la IA navegar por ciudades enteras como un humano",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "WildCity es un dataset multimodal a escala de ciudad que permite a los sistemas de IA desarrollar representaciones espaciales comparables a la cognición humana, con aplicaciones en navegación, simulación y gemelos digitales urbanos.",
+  "keyPoints": [
+    "WildCity reúne 18 trayectorias de 83,7 km de media, recorridas por flotas autónomas en entornos urbanos complejos.",
+    "Incluye desafíos reales de percepción en entornos naturales: objetos dinámicos, variaciones de iluminación y poses de cámara imperfectas.",
+    "Proporciona una línea base de reconstrucción urbana y un simulador cerrado para pruebas de sistemas de IA.",
+    "Aborda retos clave en el camino hacia gemelos digitales urbanos: escalabilidad, extrapolación y gestión de incertidumbre para simulaciones realistas."
+  ],
+  "whyMatters": "Este proyecto marca un hito hacia la IA capaz de percibir y razonar a escala metropolitana, un salto necesario para la conducción autónoma, la planificación urbana y los gemelos digitales. Para España y Europa, supone una oportunidad de liderar en la creación de estándares y herramientas que transformen ciudades inteligentes, mejorando la movilidad y la sostenibilidad. A largo plazo, WildCity podría sentar las bases para sistemas de navegación urbana tan intuitivos como la mente humana, con aplicaciones en turismo, logística y respuesta a emergencias.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.06838/gradient.png",
+      "alt": "Portada del artículo de WildCity mostrando un mapa urbano en gradiente de colores",
+      "caption": "Imagen de portada del artículo científico sobre WildCity"
+    },
+    {
+      "type": "video",
+      "url": "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/TUod0jR6CPCo6jeU950Xl.mp4#t=0.001",
+      "alt": "Video promocional de WildCity con ejemplos de trayectorias autónomas en ciudad",
+      "caption": "Video original de presentación del dataset WildCity"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#WildCity",
+    "#IAUrbana",
+    "#GemelosDigitales",
+    "#NavegacionAutonoma",
+    "#CiudadesInteligentes"
+  ],
+  "fullArticle": "WildCity es un ambicioso proyecto que presenta el primer dataset multimodal a escala de ciudad para el entrenamiento de sistemas de inteligencia artificial en navegación y representación espacial urbana. A diferencia de los conjuntos de datos limitados a interiores o zonas reducidas, WildCity captura la complejidad del mundo real mediante 18 trayectorias completas, cada una con una longitud media de 83,7 kilómetros, recorridas por flotas de vehículos autónomos en metrópolis diversas. Este esfuerzo permite a los investigadores abordar el reto de construir representaciones espaciales comparables a los mapas mentales humanos, que abarcan decenas de kilómetros cuadrados.\n\n[MULTIMEDIA: https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.06838/gradient.png]\n\nEl dataset preserva los desafíos inherentes a la percepción en entornos naturales: objetos dinámicos, cambios de iluminación y poses de cámara imperfectas, lo que lo convierte en un banco de pruebas robusto para algoritmos de reconstrucción y simulación. Los autores han desarrollado además una línea base de reconstrucción urbana adaptada y han transformado los entornos reconstruidos en un simulador cerrado, facilitando la validación de modelos en bucle cerrado. Este trabajo también analiza sistemáticamente los obstáculos para lograr gemelos digitales urbanos listos para simulación, destacando la escalabilidad, la extrapolación y la gestión de la incertidumbre como pilares fundamentales.\n\n[MULTIMEDIA: https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/TUod0jR6CPCo6jeU950Xl.mp4#t=0.001]\n\nA largo plazo, WildCity no solo impulsará la investigación en renderizado a escala urbana, sino que allanará el camino hacia una IA que pueda percibir, recordar y razonar sobre el espacio con una capacidad cercana a la cognición humana. Para ciudades europeas como Madrid o Barcelona, el dataset ofrece una herramienta sin precedentes para desarrollar aplicaciones de movilidad autónoma, planificación urbana y gestión de emergencias, consolidando el liderazgo continental en inteligencia artificial espacial.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T02:22:39.451Z",
+  "links": [
+    {
+      "title": "Página oficial del proyecto WildCity",
+      "url": "https://han-xiangyu.github.io/Wild-City/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de trayectorias",
+      "value": "18"
+    },
+    {
+      "label": "Longitud media por trayectoria",
+      "value": "83,7 km"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

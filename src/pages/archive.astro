@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { fetchAllNews, groupByDate } from '../lib/sources';
+
+const allItems = await fetchAllNews();
+const byDate = groupByDate(allItems);
+const dates = Array.from(byDate.keys()).sort((a, b) => b.localeCompare(a));
+---
+
+<Layout title="Archivo — IA Daily" description="Histórico completo de IA Daily. Noticias de IA por fecha con imágenes y multimedia.">
+  <div class="date-badge">Archivo Histórico</div>
+  <h1>Archivo de Noticias IA</h1>
+  <p class="lead">{dates.length} días disponibles. Cada día artículos de fuentes especializadas en IA con imágenes y multimedia.</p>
+
+  <div class="news-grid" role="list" aria-label="Días del archivo">
+    {dates.map(date => {
+      const dayItems = byDate.get(date) || [];
+      return (
+        <article class="news-card" role="listitem">
+          <header class="news-card-header">
+            <div class="news-meta">
+              <span class="news-source">IA Daily</span>
+              <time dateTime={date}>{new Date(date).toLocaleDateString('es-ES', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</time>
+            </div>
+            <h2 class="news-title">Edición del {new Date(date).toLocaleDateString('es-ES', { day: 'numeric', month: 'long' })}</h2>
+          </header>
+          <div class="news-card-body">
+            <p class="news-summary">{dayItems.length} artículos de {dayItems.map(i => i.source).filter((v, i, a) => a.indexOf(v) === i).join(', ')}.</p>
+            <div class="news-tags" style="justify-content: center; margin-top: 1rem;">
+              {dayItems.slice(0, 4).map(i => <span class="tag">{i.source}</span>)}
+              {dayItems.length > 4 && <span class="tag">+{dayItems.length - 4} más</span>}
+            </div>
+          </div>
+          <footer class="news-footer">
+            <a href={`/ia-daily/${date}/`} class="btn btn-primary">Ver edición completa</a>
+          </footer>
+        </article>
+      );
+    })}
+  </div>
+</Layout>

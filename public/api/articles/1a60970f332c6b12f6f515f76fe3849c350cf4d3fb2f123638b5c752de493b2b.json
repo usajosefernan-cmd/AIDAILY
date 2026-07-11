@@ -1,0 +1,74 @@
+{
+  "id": "1a60970f332c6b12f6f515f76fe3849c350cf4d3fb2f123638b5c752de493b2b",
+  "title": "El 12,7% de tus dispositivos no tiene agente de seguridad: por qué eso hace fracasar a tus sistemas autónomos",
+  "summary": "Un estudio de Axonius y el Instituto Ponemon revela que el 12,7% de los dispositivos en inventarios empresariales medianos carecen de agente de seguridad, generando puntos ciegos que los sistemas de respuesta autónoma no detectan. Tres informes recientes confirman que la mayoría de las organizaciones no tienen datos fiables para desplegar agentes de seguridad autónomos, lo que aumenta el riesgo de incidentes no gestionados a velocidad de máquina.",
+  "url": "https://venturebeat.com/security/autonomous-security-agents-need-complete-data-heres-how-to-check-if-yours-is-ready",
+  "source": "VentureBeat",
+  "sourceUrl": "https://venturebeat.com/feed/",
+  "publishedAt": "2026-06-26T17:32:42.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "El 12,7% de tus dispositivos no tiene agente de seguridad: por qué eso hace fracasar a tus sistemas autónomos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un estudio de Axonius y el Instituto Ponemon revela que el 12,7% de los dispositivos en inventarios empresariales medianos carecen de agente de seguridad, generando puntos ciegos que los sistemas de respuesta autónoma no detectan. Tres informes recientes confirman que la mayoría de las organizaciones no tienen datos fiables para desplegar agentes de seguridad autónomos, lo que aumenta el riesgo de incidentes no gestionados a velocidad de máquina.",
+  "keyPoints": [
+    "El estudio de Axonius y Ponemon encuestó a 662 profesionales y halló que el 12,7% de dispositivos en inventarios medianos carecen de agente de seguridad.",
+    "El 88% de las empresas ya sufrió incidentes relacionados con agentes de IA, y solo el 14,4% los despliega con aprobación de seguridad completa.",
+    "El 52% de los profesionales permitiría que agentes autónomos actúen solos, pese a que el 63% reconoce que sus datos carecen de información clave.",
+    "Las organizaciones con inventarios desactualizados dejan de media 37.000 endpoints sin parchear ni supervisión, según datos de más de 900 clientes de Axonius."
+  ],
+  "whyMatters": "Este gap de visibilidad no es un problema meramente técnico, sino un riesgo estratégico que se amplifica con la llegada de los sistemas de seguridad autónomos que operan a velocidad de máquina. A diferencia de los analistas humanos, que dudan de cifras de cobertura incompletas, estos agentes toman los datos como verdades absolutas, dejando activos sin protección expuestos a ataques que se ejecutan en menos de 90 segundos en entornos reales. Ignorar este problema no solo incrementa la probabilidad de brechas graves, sino que hace inviable cualquier programa de gobernanza de IA o cumplimiento normativo a largo plazo, ya que se basa en datos incompletos que distorsionan la toma de decisiones.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&auto=format&fit=crop&q=80",
+      "alt": "El 12,7% de tus dispositivos no tiene agente de seguridad: por qué eso hace fracasar a tus sistemas autónomos",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Ciberseguridad",
+    "#AgentesAutonomos",
+    "#Axonius",
+    "#PonemonInstitute",
+    "#EDR"
+  ],
+  "fullArticle": "Durante años, los equipos de operaciones de seguridad (SOC) han convivido con un punto ciego estructural en sus infraestructuras: los agentes de seguridad instalados en los endpoints no pueden reportar su propia ausencia, lo que genera inventarios incompletos que ninguna herramienta de gestión detecta de forma automática. Un informe elaborado en 2026 por Axonius en colaboración con el Instituto Ponemon, basado en encuestas a 662 profesionales de TI y seguridad, ha cuantificado por primera vez la magnitud de este gap: en inventarios medianos de 298.000 dispositivos, el 12,7% de los equipos carecen del agente de seguridad esperado. Esta cifra no solo revela una falla de visibilidad generalizada, sino que se convierte en un riesgo crítico ahora que los proveedores de seguridad están desplegando agentes autónomos de investigación y remediación en entornos de producción.\n\nEl problema va mucho más allá de los endpoints sin agente: registros obsoletos de bases de datos de gestión de configuración (CMDB), instalaciones de software no aprobadas por los equipos de compras como workspaces de Claude Enterprise, identidades y tokens de API generados por empleados sin supervisión, quedan totalmente fuera del alcance de la telemetría de los endpoints. Como resultado, los porcentajes de cobertura que muestran los paneles de los sistemas de detección y respuesta extendida (XDR) son estructuralmente incompletos, ya que el mecanismo de reporte no puede ver lo que no cubre. Mientras un analista humano puede dudar de un porcentaje de cobertura del 98%, un agente autónomo lo toma como una verdad absoluta y actúa a velocidad de máquina, dejando activos vulnerables sin protección ni supervisión.\n\nLas consecuencias de este gap son cuantificables: datos de más de 900 clientes de Axonius muestran que el promedio de los CISOs solo conoce el 50% de los activos que existen en su red, lo que deja decenas de miles de dispositivos fuera de todo ciclo de parcheo, política de seguridad y regla de detección. Casos como el de TransUnion, que pasó de un 70% a un 99% de cobertura de endpoints tras una verificación fuera de banda, o Western Union, que consolidó datos de 38 herramientas para reducir a la mitad su carga de trabajo manual y alcanzar el 99% de cobertura, demuestran que el problema es solucionable, pero requiere inversión en herramientas de visibilidad independientes. Incluso casos extremos como el de Lumen, que descubrió 1,1 millones de activos cuando su CMDB solo registraba 17.000, evidencian la magnitud de la 'materia oscura' que existe en la mayoría de las redes empresariales.\n\nTres enfoques compiten actualmente para cerrar esta brecha de visibilidad, cada uno con sus propias limitaciones: las capas de integración dedicadas, que usan adaptadores API bidireccionales para mantener un inventario siempre actualizado (Axonius cuenta con más de 1.400 adaptadores, incluido uno para Anthropic lanzado en junio de 2026 que detecta instalaciones de Claude Enterprise no aprobadas); la inteligencia nativa de plataformas EDR y XDR, que profundiza en el contexto de los activos dentro del alcance del agente, pero no puede ver más allá de su propio footprint; y la modernización de las CMDB, que requiere reconciliación continua contra al menos tres fuentes de telemetría independientes, un proceso que solo el 13% de las organizaciones realiza a diario, según el informe de Axonius y Ponemon. Como advierte Joe Diamond, CEO de Axonius, la llegada de modelos de razonamiento avanzado como Mythos de Anthropic hará que cualquier activo desconocido sea mucho más riesgoso en el futuro: 'Si no entiendes qué es el 50% de tu entorno desde una perspectiva de endpoint tradicional, creer que puedes implementar gobernanza granular de IA de la noche a la mañana hará que tu programa fracase. Este cambio es tan grande, si no más, que la llegada de internet'.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T18:09:00.925Z",
+  "links": [
+    {
+      "title": "Informe de actionabilidad 2026 de Axonius y Instituto Ponemon",
+      "url": "https://www.axonius.com/resources/analyst-report/the-actionability-report-axonius-ponemon-institute"
+    },
+    {
+      "title": "Resumen de RSAC 2026 por Axonius",
+      "url": "https://www.axonius.com/blog/rsac-2026-recap"
+    },
+    {
+      "title": "Marco de confianza para agentes de IA de la Cloud Security Alliance",
+      "url": "https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de dispositivos sin agente de seguridad en inventarios medianos",
+      "value": "12,7%"
+    },
+    {
+      "label": "Porcentaje de empresas que sufrieron incidentes relacionados con agentes de IA",
+      "value": "88%"
+    },
+    {
+      "label": "Proporción de endpoints no gestionados por organización",
+      "value": "37.000 por organización"
+    },
+    {
+      "label": "Tiempo de ataque a vulnerabilidades en redes honeypot de Azure",
+      "value": "Menos de 90 segundos"
+    }
+  ]
+}

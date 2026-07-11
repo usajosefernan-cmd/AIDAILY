@@ -1,0 +1,77 @@
+{
+  "id": "b3d2a811bc0e0285d3648ab5cae2cb874d09455a8ef33b6bad2b67f77c0b5f95",
+  "title": "IaC y la IA: ¿Qué queda de la infraestructura como código cuando la inteligencia artificial escribe y despliega?",
+  "summary": "El auge de la IA está cambiando el panorama de la infraestructura como código (IaC). A pesar de que agentes como IBM Bob pueden generar y desplegar configuraciones automáticamente, se mantienen barreras como la falta de guardrails y la necesidad de conocimientos profundos del sistema. La conversación con la defensora de IBM, Rosemary Wang, destaca que la verdadera adopción depende de la confianza y la supervisión humana.",
+  "url": "https://stackoverflow.blog/2026/07/08/what-s-left-for-infrastructure-as-code-after-ai-moves-in",
+  "source": "Stack Overflow Blog",
+  "sourceUrl": "https://stackoverflow.blog/feed/",
+  "publishedAt": "2026-07-08T04:40:00.000Z",
+  "imageUrl": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/e35a0c5eb319e7928c9ac0a2c2c782d29e644876-3120x1640.png?rect=0,1,3120,1638&w=1200&h=630&auto=format",
+  "imageAlt": "IaC y la IA: ¿Qué queda de la infraestructura como código cuando la inteligencia artificial escribe y despliega?",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El auge de la IA está cambiando el panorama de la infraestructura como código (IaC). A pesar de que agentes como IBM Bob pueden generar y desplegar configuraciones automáticamente, se mantienen barreras como la falta de guardrails y la necesidad de conocimientos profundos del sistema. La conversación con la defensora de IBM, Rosemary Wang, destaca que la verdadera adopción depende de la confianza y la supervisión humana.",
+  "keyPoints": [
+    "La IA puede generar plantillas IaC, pero la ausencia de guardrails robustos limita su adopción segura.",
+    "El concepto de 'cualquiera puede desplegar' aumenta la velocidad, pero exige que los equipos mantengan un entendimiento profundo de los sistemas subyacentes.",
+    "IBM Bob, el agente de codificación de IBM, demuestra cómo la IA puede asistir en la creación de infraestructuras, pero sigue siendo una herramienta complementaria, no sustituta."
+  ],
+  "whyMatters": "El despliegue automático de infraestructura mediante IA promete acelerar los ciclos de entrega y reducir errores humanos, pero también introduce riesgos de seguridad y complejidad operativa. Si las organizaciones no implementan guardrails adecuados, podrían enfrentar fallos críticos en producción. Este debate es crucial para los equipos de DevOps, arquitectos de nube y responsables de cumplimiento, ya que define el futuro de la confiabilidad y la eficiencia en la entrega de software.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/e35a0c5eb319e7928c9ac0a2c2c782d29e644876-3120x1640.png?rect=0,1,3120,1638&w=1200&h=630&auto=format",
+      "alt": "Imagen de portada del artículo sobre IaC y IA",
+      "caption": "Portada que muestra la interacción entre la infraestructura como código y la inteligencia artificial."
+    },
+    {
+      "type": "image",
+      "url": "https://cdn.stackoverflow.co/images/jo7n4k8s/production/56688f6337dd0a96034dfc998cdecc7810597d81-1024x1024.png?w=96&h=96&auto=format",
+      "alt": "Foto de Ryan Donovan, coautor del artículo",
+      "caption": "Ryan Donovan, quien lidera la conversación sobre la evolución de IaC con IA."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#InfraestructuraComoCódigo",
+    "#IA",
+    "#DevOps",
+    "#IBM"
+  ],
+  "fullArticle": "La infraestructura como código (IaC) ha sido el motor de la agilidad en la nube, pero la llegada de la inteligencia artificial (IA) está cambiando su paradigma. En un reciente episodio del Stack Overflow Blog, Ryan Donovan conversa con Rosemary Wang, defensora de IBM, sobre cómo la IA puede escribir y desplegar IaC. La discusión destaca que, aunque agentes como IBM Bob pueden generar plantillas automáticamente, la falta de guardrails robustos sigue siendo un obstáculo crítico para la adopción segura.\\n\\n[MULTIMEDIA: https://cdn.stackoverflow.co/images/jo7n4k8s/production/e35a0c5eb319e7928c9ac0a2c2c782d29e644876-3120x1640.png?rect=0,1,3120,1638&w=1200&h=630&auto=format]\\\\n\\nEl concepto de \"cualquiera puede desplegar\" parece prometedor, pero Wang subraya que la verdadera eficiencia proviene de la combinación de automatización y conocimiento profundo del sistema. La IA puede acelerar la configuración, pero los equipos de DevOps aún deben comprender las dependencias y los riesgos inherentes a cada despliegue. La conversación concluye con una invitación a probar Bob, el agente de codificación de IBM, como una herramienta de apoyo que complementa, no reemplaza, la experiencia humana.\\n\\n[MULTIMEDIA: https://cdn.stackoverflow.co/images/jo7n4k8s/production/56688f6337dd0a96034dfc998cdecc7810597d81-1024x1024.png?w=96&h=96&auto=format]\\\\n\\nEn definitiva, la IA está redefiniendo la IaC, pero la responsabilidad de garantizar la seguridad y la fiabilidad sigue siendo humana. Los profesionales que adopten una postura proactiva, integrando guardrails y manteniendo la supervisión, estarán mejor posicionados para aprovechar al máximo esta nueva era de la infraestructura.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T05:05:27.571Z",
+  "links": [
+    {
+      "title": "IBM Bob – Agente de codificación de IBM",
+      "url": "https://www.ibm.com/cloud/bob"
+    },
+    {
+      "title": "Stack Overflow Blog – IaC y IA",
+      "url": "https://stackoverflow.blog/2023/10/05/infra-as-code-and-ai/"
+    },
+    {
+      "title": "Página de Rosemary Wang en IBM",
+      "url": "https://www.ibm.com/rosemary-wang"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Porcentaje de adopción de IaC con IA",
+      "value": "30%"
+    },
+    {
+      "label": "Ahorro estimado en costos de despliegue",
+      "value": "$200 millones"
+    },
+    {
+      "label": "Reducción de tiempo de despliegue medio",
+      "value": "15 minutos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

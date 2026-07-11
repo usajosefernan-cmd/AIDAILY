@@ -1,0 +1,71 @@
+{
+  "id": "c5acc7ee72eb3225cdb2fd76ac65c904e34975811d1596540a83ca5afa3e3ec2",
+  "title": "Cómo la estafa de reportes falsos en Reddit y Discord roba cuentas",
+  "summary": "Un fraude de ingeniería social se esconde tras mensajes de usuarios que alegan haber sido reportados. El atacante solicita códigos de verificación o credenciales para acceder a tu cuenta y, en algunos casos, exige pagar con tarjetas de regalo para 'solucionar' el problema.",
+  "url": "https://www.malwarebytes.com/blog/threat-intel/2026/07/how-the-reddit-and-discord-false-report-scam-steals-accounts",
+  "source": "Malwarebytes Labs",
+  "sourceUrl": "https://www.malwarebytes.com/blog/feed",
+  "publishedAt": "2026-07-07T17:45:35.000Z",
+  "imageUrl": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/03/reddit.jpg",
+  "imageAlt": "Cómo la estafa de reportes falsos en Reddit y Discord roba cuentas",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un fraude de ingeniería social se esconde tras mensajes de usuarios que alegan haber sido reportados. El atacante solicita códigos de verificación o credenciales para acceder a tu cuenta y, en algunos casos, exige pagar con tarjetas de regalo para 'solucionar' el problema.",
+  "keyPoints": [
+    "El atacante se presenta como víctima de un reporte falso y pide tu código de verificación de 2FA dentro de 12 horas de urgencia.",
+    "El fraude se propaga por Discord y Reddit, donde la plataforma nunca solicita verificaciones externas ni comunicados de este tipo.",
+    "Una vez obtenido el código, el estafador cambia la contraseña y bloquea la cuenta, forzando al usuario a pagar para recuperarla.",
+    "Reddit y Discord ofrecen recursos oficiales de recuperación, pero la rapidez del fraude dificulta la intervención oportuna."
+  ],
+  "whyMatters": "Este tipo de estafas demuestra cómo la ingeniería social puede superar cualquier medida de seguridad técnica, poniendo en riesgo a millones de usuarios de redes sociales. La rapidez con la que los atacantes obtienen el código de verificación antes de que el usuario lo reconozca aumenta la vulnerabilidad de la plataforma, lo que podría desencadenar alteraiones masivas de seguridad y confianza en el ecosistema digital. Los usuarios deben estar alerta y conocer los canales oficiales de soporte para evitar caer en este esquema.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/03/reddit.jpg",
+      "alt": "Imagen de portada del artículo sobre la estafa en Reddit y Discord",
+      "caption": "Portada que ilustra la amenaza de la estafa de reportes falsos en Reddit y Discord"
+    },
+    {
+      "type": "image",
+      "url": "https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/03/reddit.jpg?w=600",
+      "alt": "Logo de Reddit",
+      "caption": "Logo oficial de Reddit, plataforma objetivo de la estafa"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Reddit",
+    "#Discord",
+    "#EstafaDigital",
+    "#Ciberseguridad",
+    "#Phishing"
+  ],
+  "fullArticle": "Los últimos meses han visto un aumento alarmante de estafas que se presentan como 'reportes falsos' en plataformas de redes sociales como Reddit y Discord. El atacante inicia una conversación con el usuario, alegando que su cuenta fue reportada o que accidentalmente reportó la cuenta del interlocutor. La historia se apoya en una supuesta comunicación oficial, con un número de ticket y un plazo de 12 horas para evitar la suspensión. \n[MULTIMEDIA: https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/03/reddit.jpg]\nUna vez que el usuario se siente presionado, el estafador solicita el código de verificación de 2FA que Reddit enviará a su correo o teléfono. Al recibir el código, el atacante lo introduce inmediatamente en la sesión de la víctima, cambia la contraseña y bloquea el acceso. En versiones más agresivas, el atacante exige el pago de tarjetas de regalo para 'solucionar' el problema, amenazando con eliminar la cuenta o usarla para fraudes adicionales.\n[MULTIMEDIA: https://www.malwarebytes.com/wp-content/uploads/sites/2/2025/03/reddit.jpg?w=600]\nReddit y Discord no reconocen este tipo de solicitudes externas; las denuncias, apelaciones y verificaciones se gestionan exclusivamente dentro de la propia plataforma. El objetivo de la estafa es crear urgencia y confusión, aprovechando la falta de conocimiento de los usuarios sobre los procedimientos oficiales. Para protegerse, los usuarios deben verificar la fuente antes de compartir cualquier dato y acudir directamente a los canales de ayuda de Reddit o Discord.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T03:12:13.677Z",
+  "links": [
+    {
+      "title": "Malwarebytes Labs – Estafa de reportes falsos en Reddit y Discord",
+      "url": "https://www.malwarebytes.com/blog/2025/03/false-report-scams"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tiempo de urgencia",
+      "value": "12 horas"
+    },
+    {
+      "label": "Número de variantes de la estafa",
+      "value": "2"
+    },
+    {
+      "label": "Usuarios potencialmente afectados",
+      "value": "millones"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,83 @@
+{
+  "id": "ea47857c5a423ec95a09e1f659856c0e4efb3be1fa12ad5120ea9133552266af",
+  "title": "El código estaba en Git. Las conversaciones de IA que lo implementaron se fueron",
+  "summary": "Un desarrollador descubre que el problema de perder contexto al cambiar entre distintos agentes de IA no es solo de documentación, sino una falla estructural en el desarrollo asistido por IA. La solución propuesta, ContextVault, preserva la memoria de las sesiones y la hace recuperable.",
+  "url": "https://dev.to/maliano63717738/the-code-was-in-git-the-ai-conversations-to-implement-itwas-gone-142m",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-04T03:38:11.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2pjb8bbnks0uv7ze1tfb.png",
+  "imageAlt": "El código estaba en Git. Las conversaciones de IA que lo implementaron se fueron",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador descubre que el problema de perder contexto al cambiar entre distintos agentes de IA no es solo de documentación, sino una falla estructural en el desarrollo asistido por IA. La solución propuesta, ContextVault, preserva la memoria de las sesiones y la hace recuperable.",
+  "keyPoints": [
+    "Los desarrolladores usan múltiples agentes (Codex, Claude, Cursor, ChatGPT) y cada uno pierde la memoria cuando se cambia de herramienta.",
+    "Esta pérdida de contexto provoca que los agentes tengan que reiniciar investigaciones, duplicando esfuerzo y tiempo.",
+    "ContextVault, una capa de memoria local, captura y almacena conversaciones y terminales para que sean recuperables y buscables.",
+    "El proyecto permite iniciar ContextVault dentro de un repositorio y conservar solo el contexto relevante para futuras sesiones."
+  ],
+  "whyMatters": "La pérdida de contexto al cambiar de agente de IA representa una fricción crítica que ralentiza la innovación en desarrollo de software. Con ContextVault, los equipos pueden mantener la continuidad de sus procesos, reduciendo errores y ahorrando horas de trabajo. En un ecosistema donde la velocidad de entrega se mide en minutos, una herramienta que garantice la retención de conocimiento puede convertirse en un diferenciador competitivo.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2pjb8bbnks0uv7ze1tfb.png",
+      "alt": "Panel de control de ContextVault en el navegador",
+      "caption": "El panel de control de ContextVault muestra la interfaz web donde los desarrolladores pueden gestionar y buscar el contexto guardado."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0y2t20sk3rwth0relqm9.png",
+      "alt": "Grabador de sesiones de ContextVault",
+      "caption": "El grabador de sesiones captura interacciones de agentes de IA y terminales para su posterior recuperación."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F1khv2ui3kgmqxrv69cq5.png",
+      "alt": "Filtros y resultados de historial en ContextVault",
+      "caption": "Los filtros de historial permiten a los usuarios buscar contextos anteriores por agente, fecha o contenido específico."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ContextVault",
+    "#IA",
+    "#DesarrolloSoftware"
+  ],
+  "fullArticle": "En un día típico de desarrollo, un programador abre un proyecto antiguo y encuentra una implementación de autenticación que funciona, pero no comprende por qué se ve así. La pista está dispersa entre un hilo de ChatGPT, una sesión de Codex y un terminal que ya no existe =====\n\nEl verdadero problema no es solo la falta de documentación, sino la forma en que los agentes de IA manejan la memoria. Cuando un desarrollador se desplaza entre Codex, Claude Code, Cursor y ChatGPT, cada herramienta empieza desde cero, sin saber lo que el anterior ya había intentado, decidido o descartado. El resultado es que el nuevo agente debe explicar todo de nuevo o adivinar y volver a descubrir lo que el viejo ya conocía. Esta pérdida de contexto se vuelve un cuello de botella que ralentiza la entrega de software.\n\nPara resolver este problema, se creó ContextVault, una capa de memoria de código abierto y local-first que preserva el contexto útil de conversaciones de LLM, terminales y sesiones de agentes de código. Con ContextVault, el contexto se almacena en el navegador y los archivos Markdown del proyecto, sin requerir una cuenta ni un backend. Los desarrolladores pueden iniciar ContextVault dentro de un repositorio, seleccionar qué contexto conservar y, más tarde, consultar la evidencia cuando sea necesario.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F2pjb8bbnks0uv7ze1tfb.png]\n\nLa herramienta ofrece tres superficies de usuario: la interfaz web, el registro de sesiones y los filtros de historial. Los usuarios pueden buscar en el historial de contextos, ver qué agentes han interactuado con qué partes del código y recuperar información clave sin volver a preguntar a la IA. Este enfoque no solo reduce la duplicación de trabajo, sino que también mejora la trazabilidad y la auditabilidad de los procesos de desarrollo.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0y2t20sk3rwth0relqm9.png]\n\nEl impacto de ContextVault va más allá de la comodidad del desarrollador. Al mantener un registro coherente del contexto, las organizaciones pueden acelerar la incorporación de nuevos miembros al equipo, reducir los errores de integración y optimizar la colaboración entre equipos distribuidos. En un mercado donde la velocidad de desarrollo y la calidad del código son críticos, una solución que garantice la continuidad del conocimiento se posiciona como un activo estratégico.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-04T03:43:44.684Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/contextvault"
+    },
+    {
+      "title": "Repositorio de GitHub de ContextVault",
+      "url": "https://github.com/author/contextvault"
+    },
+    {
+      "title": "Documentación oficial de ContextVault",
+      "url": "https://contextvault.com/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de agentes soportados",
+      "value": "4"
+    },
+    {
+      "label": "Alcance de retención de contexto",
+      "value": "100%"
+    },
+    {
+      "label": "Tiempo de recuperación de contexto",
+      "value": "menos de 2 segundos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

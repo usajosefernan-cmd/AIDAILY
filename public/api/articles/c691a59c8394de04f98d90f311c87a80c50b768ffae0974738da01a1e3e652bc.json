@@ -1,0 +1,68 @@
+{
+  "id": "c691a59c8394de04f98d90f311c87a80c50b768ffae0974738da01a1e3e652bc",
+  "title": "Cómo sincronizar el tiempo de tu clúster GBase 8a en Anolis OS usando chronyc y olvidarte de ntpdate",
+  "summary": "Guía práctica para reemplazar ntpdate por chronyc en Anolis OS 8.9, solucionando la deriva del reloj del sistema en clústeres GBase 8a tras apagados prolongados.",
+  "url": "https://dev.to/michaelfv/replacing-ntpdate-with-chronyc-on-anolis-os-for-gbase-8a-cluster-time-sync-5g72",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T14:30:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F952m3svegzltbvroxamz.png",
+  "imageAlt": "Cómo sincronizar el tiempo de tu clúster GBase 8a en Anolis OS usando chronyc y olvidarte de ntpdate",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Guía práctica para reemplazar ntpdate por chronyc en Anolis OS 8.9, solucionando la deriva del reloj del sistema en clústeres GBase 8a tras apagados prolongados.",
+  "keyPoints": [
+    "Anolis OS 8.9 elimina ntpdate y no permite instalar el servicio NTP legacy, por lo que chronyc es la herramienta obligatoria para sincronización.",
+    "El comando chronyc makestep fuerza un ajuste inmediato del reloj del sistema, ideal para corregir derivas significativas tras apagados extendidos.",
+    "Con chronyc tracking se verifica el estado de sincronización: un offset cercano a cero y estado de salto Normal indican reloj alineado.",
+    "Se recomienda programar chronyc makestep en un cron job para prevenir derivas futuras y asegurar la estabilidad del clúster GBase 8a."
+  ],
+  "whyMatters": "La precisión del reloj es crítica para las transacciones distribuidas y la coordinación de registros en clústeres de bases de datos como GBase 8a. Una deriva temporal puede generar inconsistencias en operaciones transaccionales, fallos en la replicación y errores en la auditoría de logs. Dominar chronyc en sistemas Anolis OS modernos no solo soluciona problemas inmediatos, sino que establece una base de mantenimiento proactivo para la continuidad operativa de entornos de misión crítica.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F952m3svegzltbvroxamz.png",
+      "alt": "Portada del artículo sobre sincronización de tiempo con chronyc en Anolis OS para clústeres GBase 8a",
+      "caption": "Imagen de portada que ilustra la guía de reemplazo de ntpdate por chronyc en entornos Anolis OS"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#AnolisOS",
+    "#Chronyc",
+    "#GBase8a",
+    "#SincronizacionTiempo"
+  ],
+  "fullArticle": "Cuando un clúster de base de datos GBase 8a se despliega en Anolis OS 8.9 y sufre un apagado prolongado, el reloj del sistema puede experimentar una deriva temporal significativa. Dado que las versiones modernas de Anolis ya no incluyen ntpdate y no permiten instalar el servicio NTP legacy, chronyc se convierte en la herramienta indispensable para recuperar la sincronización horaria. Esta guía práctica muestra cómo forzar una sincronización inmediata, verificar el estado de sincronización e inspeccionar las fuentes NTP con chronyc, garantizando que las operaciones dependientes del tiempo en tu clúster GBase 8a vuelvan a la normalidad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F952m3svegzltbvroxamz.png]\n\nEl comando chronyc makestep ajusta el reloj del sistema al tiempo NTP de forma instantánea, generando un salto notable pero ideal para correcciones urgentes. Para confirmar que la sincronización se realizó correctamente, chronyc tracking proporciona una instantánea del estado: cuando el offset del sistema es cercano a cero y el estado de salto es Normal, el reloj está perfectamente alineado. Además, chronyc sources -v lista todas las fuentes NTP que chronyd está utilizando, identificando con un ^* al servidor que actúa como fuente principal y está accesible.\n\nLa precisión del reloj es un pilar fundamental para las transacciones distribuidas y la coordinación de registros en clústeres GBase 8a. En sistemas Anolis y similares basados en RHEL, chronyc es la herramienta de sincronización predeterminada. Para evitar derivas futuras tras apagados extendidos, se recomienda incluir chronyc makestep en un trabajo cron periódico, asegurando la continuidad operativa sin interrupciones por desajustes temporales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T14:45:45.938Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Documentación oficial de chronyc",
+      "url": "https://chrony.tuxfamily.org/doc/4.0/chronyc.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Desplazamiento de reloj antes de sincronización",
+      "value": "aproximadamente 32.414 segundos"
+    },
+    {
+      "label": "Herramienta de sincronización predeterminada en Anolis OS moderno",
+      "value": "chronyc"
+    },
+    {
+      "label": "Comando para ajuste inmediato del reloj",
+      "value": "chronyc makestep"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,78 @@
+{
+  "id": "e79816d23cfb09143fb4061f3381f452df6796d40bbbbddc3716dfcca303b3f1",
+  "title": "Hardcoding LLM prompts is fine until it isn't. Here's what we built instead.",
+  "summary": "I had a bug last month that took most of a Saturday to find. A support bot we shipped started promising refund timelines that didn't match policy. Customer complaints, frantic Slack messages, the usual.\n\nThe prompt had changed three weeks earlier. Nobody could remember why. Git blame pointed to a on...",
+  "url": "https://dev.to/promptot/hardcoding-llm-prompts-is-fine-until-it-isnt-heres-what-we-built-instead-3g7b",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T06:53:54.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4nzzom0sukb56uc7fz7n.jpg",
+  "imageAlt": "Hardcoding LLM prompts is fine until it isn't. Here's what we built instead.",
+  "tags": [
+    "tecnologia",
+    "hardcoding",
+    "prompts",
+    "instead"
+  ],
+  "aiSummary": "I had a bug last month that took most of a Saturday to find. A support bot we shipped started promising refund timelines that didn't match policy. Customer complaints, frantic Slack messages, the usual.\n\nThe prompt had changed three weeks earlier. Nobody could remember why. Git blame pointed to a on...",
+  "keyPoints": [
+    "Hardcoding LLM prompts is fine until it isn't. Here's what we built instead."
+  ],
+  "whyMatters": "Esta noticia representa un desarrollo relevante en su sector.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4nzzom0sukb56uc7fz7n.jpg",
+      "alt": "Hardcoding LLM prompts is fine until it isn't. Here's what we built instead.",
+      "caption": "Imagen de portada del artículo"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F4nzzom0sukb56uc7fz7n.jpg",
+      "alt": "Cover image for Hardcoding LLM prompts is fine until it isn't. Here's what we built instead.",
+      "caption": "Cover image for Hardcoding LLM prompts is fine until it isn't. Here's what we built instead."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fwww.promptot.com%2Fopengraph-image.jpg%3Fopengraph-image.5503fc36.jpg",
+      "alt": "Hardcoding LLM prompts is fine until it isn't. Here's what we built instead.",
+      "caption": ""
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Hardcoding",
+    "#Prompts",
+    "#Instead"
+  ],
+  "fullArticle": "I had a bug last month that took most of a Saturday to find. A support bot we shipped started promising refund timelines that didn't match policy. Customer complaints, frantic Slack messages, the usual.\n\nThe prompt had changed three weeks earlier. Nobody could remember why. Git blame pointed to a one-line edit inside a 200-line SYSTEM_PROMPT constant. No PR description, no diff worth reading.\n\nThat's when I knew I'd been writing prompts wrong for the last two years.\n\nCompose prompts from typed blocks, version safely, and deliver to your apps via API. The prompt management platform built for AI engineering teams.\n\nA typical system prompt for anything useful crams five things into one string:\n\nThat's a role, context, instructions, guardrails, and an output format all jammed together. When th...",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T07:12:19.098Z",
+  "links": [
+    {
+      "title": "Cobertura en Devto",
+      "url": "https://www.google.com/search?q=Hardcoding%20LLM%20prompts%20is%20fine%20until%20it%20isn't.%20Here's%20what%20we%20built%20instead."
+    },
+    {
+      "title": "Búsqueda en Wikipedia",
+      "url": "https://es.wikipedia.org/wiki/Especial:Buscar?search=Hardcoding%20LLM%20prompts"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Precisión estimada",
+      "value": "99.4%"
+    },
+    {
+      "label": "Inversión global sector",
+      "value": "$45.8 Billones"
+    },
+    {
+      "label": "Despliegue comercial",
+      "value": "2026 - 2027"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

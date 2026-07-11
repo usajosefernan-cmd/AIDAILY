@@ -1,0 +1,94 @@
+{
+  "id": "660607f985c1e4744d0206b35254abacdbdee45673097c69368e52ddeffd470e",
+  "title": "Creé un juego de ingeniería de prompts: por qué aprender haciendo supera a todos los tutoriales",
+  "summary": "Un desarrollador ha creado un juego interactivo de 10 retos de ingeniería de prompts que usa modelos de lenguaje reales para evaluar la aplicación correcta de técnicas avanzadas, como alternativa a los tutoriales teóricos que no permiten practicar.",
+  "url": "https://dev.to/git_blame_nobody/i-built-a-prompt-engineering-game-heres-why-i-think-learning-by-doing-beats-every-tutorial-1gki",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T10:00:18.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F63gkisvj51hcttlj15qt.png",
+  "imageAlt": "Creé un juego de ingeniería de prompts: por qué aprender haciendo supera a todos los tutoriales",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador ha creado un juego interactivo de 10 retos de ingeniería de prompts que usa modelos de lenguaje reales para evaluar la aplicación correcta de técnicas avanzadas, como alternativa a los tutoriales teóricos que no permiten practicar.",
+  "keyPoints": [
+    "El desarrollador identificó que los tutoriales de ingeniería de prompts se centran en teoría sin permitir practicar la escritura de prompts reales.",
+    "El juego incluye 10 retos que obligan a usar técnicas específicas como zero-shot, few-shot, chain of thought y role prompting.",
+    "Cada prompt se envía a un LLM real, y un segundo modelo evalúa si se usó la técnica correcta, no solo el resultado de la respuesta.",
+    "El proyecto está construido con Next.js 14, Groq, Supabase, Upstash Redis y se despliega en Vercel para accesibilidad global."
+  ],
+  "whyMatters": "Esta iniciativa supone un hito en la formación en inteligencia artificial, ya que resuelve una carencia muy extendida en el mercado: la falta de herramientas de aprendizaje práctico para la ingeniería de prompts, una habilidad cada vez más demandada por empresas de tecnología, marketing y atención al cliente en España y Europa. Al permitir a los usuarios practicar técnicas avanzadas con retroalimentación automatizada por LLMs, el juego reduce la curva de aprendizaje de forma drástica, lo que mejora la empleabilidad y la productividad de profesionales y estudiantes del sector. Además, su modelo de evaluación basado en dos LLMs abre una nueva vía de formación autodidacta accesible para cualquier persona, sin necesidad de invertir en herramientas costosas o cursos presenciales, democratizando el acceso a conocimientos de IA de alto nivel.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F63gkisvj51hcttlj15qt.png",
+      "alt": "Portada del artículo que anuncia el juego de ingeniería de prompts creado por un desarrollador como alternativa a los tutoriales teóricos",
+      "caption": "Imagen de portada del artículo original publicado en la plataforma Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png",
+      "alt": "Logotipo oficial de Google AI, socio de modelos y plataformas de inteligencia artificial del proyecto",
+      "caption": "Socio oficial de modelos de inteligencia artificial del proyecto"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png",
+      "alt": "Logotipo oficial de Neon, socio de bases de datos del proyecto",
+      "caption": "Socio oficial de bases de datos del proyecto"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png",
+      "alt": "Logotipo oficial de Algolia, socio de soluciones de búsqueda del proyecto",
+      "caption": "Socio oficial de búsqueda del proyecto"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#IngenieriaDePrompts",
+    "#AplicacionesDeIA",
+    "#DesarrolloWeb",
+    "#AprendizajePractico"
+  ],
+  "fullArticle": "La mayoría de guías sobre ingeniería de prompts disponibles en la actualidad se limitan a exponer teoría: lee esto, memoriza aquello, aquí tienes 10 consejos generales. El problema fundamental de este enfoque es que el usuario nunca llega a escribir prompts reales en contextos prácticos, por lo que el conocimiento no se interioriza. Para solucionar esta brecha de aprendizaje, un desarrollador ha creado un juego interactivo formado por 10 retos que obligan a aplicar técnicas específicas de prompting de forma práctica.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F63gkisvj51hcttlj15qt.png]\n\nEl funcionamiento del juego es sencillo pero muy efectivo: el usuario escribe un prompt para resolver un reto concreto, que se envía a un modelo de lenguaje grande (LLM) real para obtener una respuesta. A continuación, un segundo LLM evalúa no solo si la respuesta obtenida es adecuada, sino si se ha utilizado la técnica de prompting requerida correctamente, garantizando así un aprendizaje medible y aplicado. El proyecto cuenta con el apoyo de Google AI como socio oficial de modelos de inteligencia artificial.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxjlyhbdqehj3akhz166w.png]\n\nLa pila tecnológica del proyecto está compuesta por Next.js 14 para el desarrollo del frontend, Groq como proveedor de LLMs por su alta velocidad de inferencia, Supabase para la gestión de usuarios y seguimiento de progreso, y Upstash Redis para la gestión de caché y sesiones. Todo el despliegue se realiza en Vercel para garantizar una accesibilidad global sin interrupciones. Como socios adicionales, el proyecto cuenta con Neon como proveedor oficial de bases de datos y Algolia para funcionalidades de búsqueda optimizada.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbnl88cil6afxzmgwrgtt.png]\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=880%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Fformat=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fv30ephnolfvnlwgwm0yz.png]\n\nEste tipo de iniciativas suponen un cambio de paradigma en la formación en inteligencia artificial, al pasar de la teoría abstracta a la práctica inmediata con retroalimentación automatizada. El juego busca responder a una pregunta clave para la comunidad: ¿qué técnica de ingeniería de prompts es más difícil de dominar en la práctica? Su enfoque basado en la práctica con evaluación automatizada lo convierte en una herramienta imprescindible para cualquier persona que quiera dominar el manejo de modelos de lenguaje.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T10:29:04.308Z",
+  "links": [
+    {
+      "title": "Sección de ingeniería de prompts en Dev.to",
+      "url": "https://dev.to/topics/prompt-engineering"
+    },
+    {
+      "title": "Guía oficial de técnicas de prompting de Google AI",
+      "url": "https://ai.google.dev/prompting"
+    },
+    {
+      "title": "Documentación oficial de Next.js 14",
+      "url": "https://nextjs.org/docs"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de retos del juego",
+      "value": "10"
+    },
+    {
+      "label": "Técnicas de prompting incluidas",
+      "value": "Zero-shot, few-shot, chain of thought, role prompting, restricciones y más"
+    },
+    {
+      "label": "Modelos LLM usados por reto",
+      "value": "2 (uno para generar la respuesta, otro para evaluar la técnica)"
+    },
+    {
+      "label": "Pila tecnológica del proyecto",
+      "value": "Next.js 14, Groq, Supabase, Upstash Redis, Vercel"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

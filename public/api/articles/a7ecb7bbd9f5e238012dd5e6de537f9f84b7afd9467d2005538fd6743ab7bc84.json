@@ -1,0 +1,69 @@
+{
+  "id": "a7ecb7bbd9f5e238012dd5e6de537f9f84b7afd9467d2005538fd6743ab7bc84",
+  "title": "El problema de los asientos de autobús: cuando un viaje cotidiano se convierte en un reto algorítmico",
+  "summary": "Un desarrollador convierte una situación cotidiana en un autobús en un problema algorítmico para calcular la disposición óptima de asientos entre adultos y niños, demostrando que la lógica de programación está presente en cualquier escenario de la vida diaria.",
+  "url": "https://dev.to/buildwithsomnath/seeing-code-in-the-real-world-the-bus-seating-problem-31aa",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T10:19:10.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff2mf5aatsagl55rf8jwe.png",
+  "imageAlt": "El problema de los asientos de autobús: cuando un viaje cotidiano se convierte en un reto algorítmico",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un desarrollador convierte una situación cotidiana en un autobús en un problema algorítmico para calcular la disposición óptima de asientos entre adultos y niños, demostrando que la lógica de programación está presente en cualquier escenario de la vida diaria.",
+  "keyPoints": [
+    "Un desarrollador observó a una familia en un autobús donde un niño quedó solo, lo que le inspiró a crear un problema algorítmico de disposición de asientos.",
+    "El reto consiste en determinar si es posible sentar a n adultos y m niños en un autobús con asientos dobles, cumpliendo restricciones de seguridad básicas.",
+    "La solución se publicó en un repositorio de GitHub con plantillas para resolver el problema de forma rápida y reutilizable.",
+    "El ejemplo demuestra cómo la lógica de programación se aplica a situaciones cotidianas sin necesidad de contextos técnicos complejos."
+  ],
+  "whyMatters": "Este tipo de ejercicios son fundamentales para acercar la algoritmia a personas sin formación técnica, demostrando que los conceptos de programación no son exclusivos de entornos laborales. A largo plazo, fomenta el pensamiento lógico en la población general y ayuda a normalizar el uso de la resolución de problemas estructurados en la vida diaria. Además, sirve como material didáctico para docentes que buscan ejemplos prácticos y cercanos para enseñar conceptos de ciencias de la computación en niveles básicos.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff2mf5aatsagl55rf8jwe.png",
+      "alt": "Portada del artículo que ilustra el problema de los asientos de autobús como reto algorítmico",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ProblemaAlgoritmico",
+    "#DesarrolloSofware",
+    "#GitHub",
+    "#PensamientoLogico",
+    "#AlgoritmosCotidianos"
+  ],
+  "fullArticle": "La rutina de un viaje en autobús puede parecer el escenario menos probable para encontrar un reto de programación, pero para el desarrollador Somnath, una observación casual se convirtió en la semilla de un ejercicio algorítmico con aplicaciones didácticas. Mientras observaba a una familia subir al vehículo, se percató de que un niño terminó sentado solo, a pesar de que había suficientes plazas disponibles para todo el grupo. Esa pequeña anomalía activó su centro de lógica profesional, y no tardó en darse cuenta de que existía una forma matemática de organizar a los ocupantes para evitar situaciones de riesgo o incomodidad.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ff2mf5aatsagl55rf8jwe.png]\n\nEl resultado de esa reflexión es 'El problema de los asientos de autobús', un ejercicio de programación que plantea un escenario sencillo pero con múltiples capas de complejidad: un autobús vacío con asientos dobles, un grupo compuesto por n adultos (padres o tutores) y m niños, y la necesidad de garantizar que ningún menor quede sentado sin supervisión. Las reglas base establecen que cada asiento doble puede alojar a dos personas, y que los niños deben ir acompañados por al menos un adulto en el mismo asiento, una restricción que convierte a la disposición de ocupantes en un problema de optimización combinatoria. El objetivo final es determinar, a partir de los valores de n y m, si existe una combinación válida para sentar a todo el grupo sin incumplir las normas de seguridad.\n\nLa solución al reto está disponible de forma pública en un repositorio de GitHub, donde el autor ha compartido no solo el código de referencia, sino también plantillas reutilizables para que otros desarrolladores o docentes puedan adaptar el ejercicio a sus necesidades. Esta aproximación de llevar problemas cotidianos al ámbito de la programación no es nueva, pero se ha convertido en una herramienta cada vez más popular para enseñar pensamiento computacional a personas sin formación técnica, ya que elimina la barrera de los conceptos abstractos al apoyarse en situaciones que el usuario reconoce de su vida diaria.\n\nMás allá de ser un simple ejercicio de lógica, este tipo de iniciativas demuestran que la algoritmia no se limita a servidores o aplicaciones complejas, sino que está presente en cada decisión que tomamos para organizar espacios, recursos o personas. Al convertir un viaje en autobús en un problema de programación, el autor invita a reflexionar sobre la cantidad de procesos estructurados que pasan desapercibidos en la vida cotidiana, y a la vez ofrece una puerta de entrada amigable para quienes quieren dar sus primeros pasos en el mundo del desarrollo de software.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T22:51:18.629Z",
+  "links": [
+    {
+      "title": "Repositorio de soluciones al problema de los asientos de autobús",
+      "url": "https://github.com/buildwithsomnath/everyday-algorithms"
+    },
+    {
+      "title": "Artículo original 'Seeing Code in the Real World: The Bus Seating Problem' en Dev.to",
+      "url": "https://dev.to/buildwithsomnath/seeing-code-in-the-real-world-the-bus-seating-problem"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Capacidad por asiento en el autobús del problema",
+      "value": "2 personas por asiento doble"
+    },
+    {
+      "label": "Restricción de seguridad para niños",
+      "value": "Deben ir acompañados por un adulto en el mismo asiento"
+    },
+    {
+      "label": "Variables del problema algorítmico",
+      "value": "2: número de adultos (n) y número de niños (m)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

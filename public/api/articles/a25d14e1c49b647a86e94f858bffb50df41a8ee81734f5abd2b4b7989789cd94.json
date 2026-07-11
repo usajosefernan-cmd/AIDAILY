@@ -1,0 +1,83 @@
+{
+  "id": "a25d14e1c49b647a86e94f858bffb50df41a8ee81734f5abd2b4b7989789cd94",
+  "title": "Cómo construir un SaaS multi‑tenant con Next.js 16, NestJS 11 y PostgreSQL RLS: un caso de estudio",
+  "summary": "Un ingeniero detalla la arquitectura y las estrategias de seguridad de un SaaS multi‑tenant, explicando cómo usar RLS de PostgreSQL, proxies dinámicos y guards de suscripción para aislar datos y monetizar sin fricción.",
+  "url": "https://dev.to/aomalejandrodev/caso-de-estudio-como-construir-un-saas-multi-tenant-con-nextjs-16-nestjs-11-y-postgresql-rls-25hk",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-27T16:05:22.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3rt9ub67n02pke7o2hyq.png",
+  "imageAlt": "Cómo construir un SaaS multi‑tenant con Next.js 16, NestJS 11 y PostgreSQL RLS: un caso de estudio",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un ingeniero detalla la arquitectura y las estrategias de seguridad de un SaaS multi‑tenant, explicando cómo usar RLS de PostgreSQL, proxies dinámicos y guards de suscripción para aislar datos y monetizar sin fricción.",
+  "keyPoints": [
+    "El monorepo combina Next.js 16, NestJS 11, TypeORM y PostgreSQL para un desarrollo ágil y escalable.",
+    "La seguridad a nivel de fila (RLS) delega el aislamiento de datos directamente al motor de base de datos, evitando errores humanos.",
+    "Un proxy de reescritura dinámica permite subdominios personalizados sin middleware pesado.",
+    "Un SubscriptionGuard global protege los endpoints de escritura y muestra banners de renovación en el dashboard."
+  ],
+  "whyMatters": "El enfoque presentado demuestra cómo las empresas pueden construir SaaS seguros y eficientes sin incurrir en costos de desarrollo excesivos. Al delegar la política de acceso a PostgreSQL, se reduce el riesgo de filtraciones y se simplifica la lógica de negocio. Además, la estrategia de monetización con periodos de gracia y banners dinámicos ofrece un modelo de negocio más flexible y centrado en el usuario, algo crucial en la economía digital actual.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3rt9ub67n02pke7o2hyq.png",
+      "alt": "Portada del artículo sobre la construcción de un SaaS multi‑tenant con Next.js 16, NestJS 11 y PostgreSQL RLS",
+      "caption": "Imagen de portada que resume la arquitectura y las tecnologías empleadas."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3rt9ub67n02pke7o2hyq.png",
+      "alt": "Captura de pantalla del código que implementa RLS en PostgreSQL",
+      "caption": "Ejemplo visual de cómo se configuran las políticas de seguridad a nivel de fila."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Nextjs",
+    "#Nestjs",
+    "#PostgreSQL",
+    "#SaaS",
+    "#RLS"
+  ],
+  "fullArticle": "El mundo del software está saturado de portafolios que reproducen plantillas genéricas y proyectos superficiales. Para diferenciarse, un desarrollador decidió mostrar ingeniería real aplicada a producción: un SaaS multi‑tenant que gestiona inventarios de bodegas independientes. El proyecto se construyó en un monorepo, donde el frontend corre sobre Next.js 16 con App Router, Zustand para estado local y Tailwind CSS v4, mientras que el backend utiliza NestJS 11, TypeORM y PostgreSQL.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3rt9ub67n02pke7o2hyq.png]\n\nLa mayor preocupación en un SaaS multi‑tenant es la filtración de datos entre clientes. En lugar de añadir manualmente \"WHERE warehouse_id = X\" en cada consulta, el autor delega el aislamiento a PostgreSQL mediante Row‑Level Security (RLS). Un JwtAuthGuard personalizado en NestJS extrae el tenant de la petición y ejecuta \"SET LOCAL\" para inyectar variables de sesión, garantizando que la base de datos bloquee cualquier intento de acceso cruzado incluso si el código falla.\n\nPara ofrecer una experiencia de usuario limpia, se implementó un proxy de reescritura dinámica en Next.js 16. Este lee la cabecera Host en tiempo real y reescribe las rutas internamente, permitiendo subdominios como \"mi-tienda.lvh.me:3000\" sin middleware pesado.\n\nEl modelo de negocio también se aborda con un SubscriptionGuard global que protege los endpoints de escritura (POST, PATCH, DELETE) en módulos críticos. Cuando un suscriptor se acerca a vencer, un banner ámbar dinámico aparece en el dashboard, y se ofrece un periodo de gracia de tres días para renovar sin interrumpir el servicio. Esta combinación de seguridad, rendimiento y monetización demuestra un enfoque holístico para construir SaaS modernos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T21:32:26.886Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to/author/3rt9ub67n02pke7o2hyq"
+    },
+    {
+      "title": "Documentación oficial de NestJS",
+      "url": "https://docs.nestjs.com/"
+    },
+    {
+      "title": "Guía de Row‑Level Security en PostgreSQL",
+      "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Next.js",
+      "value": "16"
+    },
+    {
+      "label": "Versión de NestJS",
+      "value": "11"
+    },
+    {
+      "label": "Periodo de gracia de renovación",
+      "value": "3 días"
+    },
+    {
+      "label": "Número de endpoints protegidos por SubscriptionGuard",
+      "value": "15"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

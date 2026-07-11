@@ -1,0 +1,68 @@
+{
+  "id": "d9aeaf2f72b26ae869df27c14708d403e373b2cc4bca86425b7472aa7b68c21a",
+  "title": "ZLUDA v6 hace correr PhysX con fluidez en GPUs AMD pero pierde financiación comercial",
+  "summary": "El proyecto open‑source ZLUDA, que empezó como soporte CUDA para tarjetas Intel y luego se convirtió en sustituto CUDA para GPUs AMD, ha perdido recientemente su financiación. Aun así, la nueva versión v6 logra ejecutar PhysX eficientemente en GPUs AMD, mientras el equipo se centra en mejorar el soporte de Windows y la compatibilidad con PhysX.",
+  "url": "https://www.phoronix.com/news/ZLUDA-6-Released",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-06-29T10:20:00.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=zluda_physx",
+  "imageAlt": "ZLUDA v6 hace correr PhysX con fluidez en GPUs AMD pero pierde financiación comercial",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El proyecto open‑source ZLUDA, que empezó como soporte CUDA para tarjetas Intel y luego se convirtió en sustituto CUDA para GPUs AMD, ha perdido recientemente su financiación. Aun así, la nueva versión v6 logra ejecutar PhysX eficientemente en GPUs AMD, mientras el equipo se centra en mejorar el soporte de Windows y la compatibilidad con PhysX.",
+  "keyPoints": [
+    "ZLUDA, originado como soporte CUDA para Intel, fue financiado por AMD y ahora vuelve a ser open‑source tras perder fondos",
+    "La versión v6 logra ejecutar PhysX con rendimiento sólido en GPUs AMD, lo que abre posibilidades para juegos y simulaciones",
+    "El proyecto perdió su última financiación de un patrocinador desconocido en 2024, pero sigue activo y orientado a PhysX y soporte Windows",
+    "El equipo de ZLUDA se enfoca ahora en drivers multi‑GPU y mejoras de rendimiento para IA y físicas",
+    ""
+  ],
+  "whyMatters": "El éxito de ZLUDA v6 al ejecutar PhysX en GPUs AMD representa un avance significativo para la comunidad de desarrolladores y usuarios que dependen de soluciones open‑source para gráficos. Con la pérdida de financiación, la continuidad del proyecto depende de la colaboración comunitaria, lo que podría acelerar la adopción de drivers alternativos y reducir la dependencia de proveedores propietarios. Además, la mejora del soporte de Windows y la compatibilidad con PhysX ampliará la gama de aplicaciones y juegos que pueden beneficiarse de GPUs AMD sin incurrir en costos adicionales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=zluda_physx",
+      "alt": "ZLUDA v6 ejecuta PhysX eficientemente en GPUs AMD",
+      "caption": "Imagen que muestra el rendimiento de ZLUDA v6 con PhysX en GPUs AMD"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#ZLUDA",
+    "#PhysX",
+    "#AMD"
+  ],
+  "fullArticle": "El proyecto ZLUDA, que surgió como una solución de reemplazo CUDA para tarjetas gráficas Intel, ha recorrido un camino interesante: tras recibir financiación de AMD durante años, se convirtió en un proyecto open‑source tras la pérdida de fondos. En 2024, el equipo de ZLUDA redirigió su atención a la computación multi‑GPU enfocada en inteligencia artificial, recibiendo apoyo de un patrocinador desconocido. Sin embargo, en la última ronda de financiación, ese patrocinador volvió a retirar su apoyo, dejando al proyecto en una posición de incertidumbre.\n\nA pesar de esta coyuntura financiera, la nueva versión v6 de ZLUDA ha demostrado un rendimiento notable al ejecutar PhysX en GPUs AMD, lo que supone una mejora sustancial para los usuarios que buscan una alternativa libre a los drivers propietarios. La capacidad de ejecutar simulaciones físicas con la misma calidad que los drivers oficiales abre puertas a desarrolladores de juegos y simuladores.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=zluda_physx]\n\nCon el enfoque actual en PhysX y un soporte mejorado de Windows, el equipo de ZLUDA está trabajando para consolidar su posición como una opción viable para la comunidad de desarrolladores que dependen de soluciones de código abierto. El éxito de esta iniciativa dependerá en gran medida de la colaboración de la comunidad y de la capacidad para atraer nuevos patrocinadores o financiamiento de fuentes públicas.\n\nEl futuro de ZLUDA plantea un escenario interesante: si la comunidad logra mantener el proyecto vivo, podría convertirse en un punto de referencia para drivers de GPU alternativos, reduciendo la dependencia de soluciones propietarias y fomentando la innovación en el ecosistema de gráficos de código abierto.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T10:51:53.603Z",
+  "links": [
+    {
+      "title": "Artículo original en Phoronix sobre ZLUDA v6 y PhysX",
+      "url": "https://www.phoronix.com/scan.php?article=zluda-physx"
+    },
+    {
+      "title": "Sitio oficial de AMD",
+      "url": "https://www.amd.com/es"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de ZLUDA",
+      "value": "v6"
+    },
+    {
+      "label": "GPU compatibles",
+      "value": "AMD Radeon RX 6000 y posteriores"
+    },
+    {
+      "label": "Última fecha de financiación",
+      "value": "2024"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

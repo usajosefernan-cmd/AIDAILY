@@ -1,0 +1,72 @@
+{
+  "id": "520120ab846e927dc184e86a23f0fcbd2438bf585a7f8a2374b82bbb93c8988d",
+  "title": "Beam Up: despliega sitios estáticos con un solo comando desde tu terminal",
+  "summary": "Beam Up es una herramienta de línea de comandos de código abierto desarrollada por Rails Designer HQ que unifica el despliegue de sitios estáticos en múltiples proveedores con un solo comando, eliminando configuraciones complejas y soportando servicios como AWS S3, Netlify o Hetzner, además de integración nativa con SSG como Jekyll o Bridgetown.",
+  "url": "https://dev.to/railsdesigner/beam-up-cli-to-deploy-static-sites-2gjo",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T07:30:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffughmouvnidetc5g7x1j.png",
+  "imageAlt": "Beam Up: despliega sitios estáticos con un solo comando desde tu terminal",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Beam Up es una herramienta de línea de comandos de código abierto desarrollada por Rails Designer HQ que unifica el despliegue de sitios estáticos en múltiples proveedores con un solo comando, eliminando configuraciones complejas y soportando servicios como AWS S3, Netlify o Hetzner, además de integración nativa con SSG como Jekyll o Bridgetown.",
+  "keyPoints": [
+    "Beam Up es una herramienta CLI de código abierto creada por Rails Designer HQ para simplificar el despliegue de sitios estáticos en múltiples plataformas.",
+    "Soporta proveedores populares como AWS S3, Netlify, Hetzner, Seal Static, Statichost y transferencias por SFTP para mayor flexibilidad.",
+    "Se integra de forma nativa con generadores de sitios estáticos como Jekyll, Middleman, Bridgetown y el framework Perron, automatizando el proceso completo.",
+    "Su configuración predeterminada despliega automáticamente en Seal Static, creando una cuenta de usuario en la primera ejecución sin pasos adicionales."
+  ],
+  "whyMatters": "Beam Up resuelve una fricción recurrente para desarrolladores que trabajan con sitios estáticos: la necesidad de adaptar sus flujos de despliegue a las particularidades de cada proveedor, lo que suele implicar configuraciones manuales repetitivas y riesgo de errores. Al unificar todo en un solo comando compatible con múltiples plataformas y generadores de sitios, reduce drásticamente el tiempo de operaciones y baja la barrera de entrada para proyectos pequeños o equipos con recursos limitados. Además, al ser un proyecto de código abierto respaldado por Rails Designer HQ, tiene potencial para convertirse en un estándar de facto en el ecosistema de desarrollo web estático, con actualizaciones constantes y soporte comunitario.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffughmouvnidetc5g7x1j.png",
+      "alt": "Captura de pantalla de la interfaz de Beam Up, la herramienta CLI para desplegar sitios estáticos",
+      "caption": "Imagen de portada del artículo oficial de Beam Up publicado en Dev.to"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#BeamUp",
+    "#DespliegueWeb",
+    "#HerramientasDev",
+    "#SitiosEstaticos"
+  ],
+  "fullArticle": "Beam Up llega para solucionar uno de los puntos más frustrantes del desarrollo de sitios web estáticos: la fragmentación de los procesos de despliegue, que obliga a los profesionales a adaptar sus flujos de trabajo a las particularidades de cada proveedor de alojamiento. Desarrollado por el equipo de Rails Designer HQ, esta herramienta de línea de comandos (CLI) de código abierto promete unificar todo el proceso en un solo comando, eliminando configuraciones manuales repetitivas y reduciendo el riesgo de errores humanos en operaciones rutinarias. Su filosofía de diseño se centra en la simplicidad y la compatibilidad multiplataforma, para que los desarrolladores puedan centrarse en crear contenido en lugar de pelear con configuraciones de infraestructura.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffughmouvnidetc5g7x1j.png]\n\nLa lista de proveedores compatibles es amplia y cubre las opciones más utilizadas por la comunidad de desarrollo: desde gigantes del almacenamiento en la nube como AWS S3, hasta plataformas especializadas en sitios estáticos como Netlify, Hetzner, Seal Static y Statichost. Incluso incluye soporte para transferencias por SFTP, una funcionalidad que rescata métodos de despliegue clásicos que aún se utilizan en entornos empresariales con restricciones de seguridad. Además, Beam Up está diseñado para funcionar con cualquier generador de sitios estáticos (SSG) del mercado, incluyendo Jekyll, Middleman y Bridgetown, por lo que se adapta a prácticamente cualquier flujo de trabajo existente.\n\nUna de sus funcionalidades más destacadas es la integración nativa con el framework Perron, para el que fue diseñado inicialmente: con la última versión, los usuarios solo deben ejecutar el comando bin/rails perron:deploy para que el sistema se encargue automáticamente de construir el sitio y desplegarlo en cuestión de segundos. Por defecto, si no se configura ningún proveedor personalizado, el despliegue se realiza automáticamente en Seal Static, que crea una cuenta de usuario de forma automática en la primera ejecución, sin necesidad de trámites previos. También puede integrarse en scripts de Ruby, lo que lo convierte en una opción versátil para equipos que automatizan sus flujos de trabajo de integración y despliegue continuo.\n\nSe trata de un proyecto joven de código abierto, mantenido por Rails Designer HQ, que ya cuenta con el apoyo de la comunidad de desarrolladores y que promete actualizaciones constantes para ampliar su lista de proveedores compatibles y agregar nuevas funcionalidades. Sus creadores invitan a los usuarios a probarlo en sus próximos proyectos de sitios estáticos y a colaborar con el proyecto reportando errores o contribuyendo con código en su repositorio de GitHub. En un ecosistema donde las herramientas de despliegue suelen ser complejas y propietarias, Beam Up se posiciona como una alternativa ligera, transparente y alineada con las necesidades reales de los desarrolladores.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T07:48:47.027Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de Beam Up en GitHub",
+      "url": "https://github.com/railsdesigner/beam_up"
+    },
+    {
+      "title": "Sitio oficial de Seal Static, proveedor predeterminado de Beam Up",
+      "url": "https://sealstatic.com"
+    },
+    {
+      "title": "Documentación oficial de Jekyll, SSG compatible con Beam Up",
+      "url": "https://jekyllrb.com/docs/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de proveedores compatibles",
+      "value": "6 (AWS S3, Seal Static, Hetzner, Netlify, Statichost y SFTP)"
+    },
+    {
+      "label": "Número de SSG compatibles",
+      "value": "3 (Jekyll, Middleman, Bridgetown)"
+    },
+    {
+      "label": "Comando de despliegue integrado para Perron",
+      "value": "bin/rails perron:deploy"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

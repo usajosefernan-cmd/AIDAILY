@@ -1,0 +1,87 @@
+{
+  "id": "12be842648e1c5222c5a294e97d88196eb74164b0e3a472d75f522ed2d168c0f",
+  "title": "AEGIS: El primer sistema de mando de crisis AI de la India con memoria retrospectiva",
+  "summary": "AEGIS es una plataforma de mando de crisis impulsada por IA que integra datos satelitales, alertas sísmicas y sensores en tiempo real, ofreciendo memoria persistente y decisiones tácticas instantáneas. Su visualización holográfica 3D en el navegador permite a los operadores trazar rutas de evacuación y marcar zonas de riesgo sin intervención manual.",
+  "url": "https://dev.to/zubair-03222006/project-aegis-building-indias-first-ai-crisis-command-system-with-hindsight-memory-33m5",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-28T11:35:33.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3h53nyub6uvqy2rxdz4c.png",
+  "imageAlt": "AEGIS: El primer sistema de mando de crisis AI de la India con memoria retrospectiva",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "AEGIS es una plataforma de mando de crisis impulsada por IA que integra datos satelitales, alertas sísmicas y sensores en tiempo real, ofreciendo memoria persistente y decisiones tácticas instantáneas. Su visualización holográfica 3D en el navegador permite a los operadores trazar rutas de evacuación y marcar zonas de riesgo sin intervención manual.",
+  "keyPoints": [
+    "AEGIS combina IA, datos satelitales y sensores para responder a desastres en tiempo real con memoria persistente.",
+    "El sistema visualiza un globo holográfico 3D que muestra rutas de evacuación y zonas críticas en segundos.",
+    "Los operadores pueden introducir eventos (p. ej., terremoto de magnitud 7.2 en Tokio) y el sistema genera automáticamente vectores de evacuación.",
+    "La plataforma está diseñada para escalar a nivel global, integrando alertas de USGS, NASA y otras agencias en un solo tablero."
+  ],
+  "whyMatters": "La capacidad de mantener una memoria operativa y generar respuestas tácticas instantáneas transforma la gestión de desastres, reduciendo la pérdida de vidas y recursos. AEGIS demuestra que la IA puede superar la amnesia probabilística de los sistemas actuales, ofreciendo una solución escalable y adaptable a crisis de cualquier magnitud. Este avance posiciona a la India como líder en tecnología de respuesta a emergencias, con implicaciones económicas y humanitarias que trascienden fronteras.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3h53nyub6uvqy2rxdz4c.png",
+      "alt": "Pantalla principal de AEGIS mostrando un globo holográfico con rutas de evacuación",
+      "caption": "Vista de la interfaz holográfica 3D de AEGIS que visualiza rutas de evacuación en tiempo real."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3h53nyub6uvqy2rxdz4c.png",
+      "alt": "Imagen de portada del artículo sobre AEGIS",
+      "caption": "Imagen de portada que destaca el concepto de memoria retrospectiva en la IA."
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Icono de un sistema de alerta",
+      "caption": "Representación gráfica de la integración de alertas sísmicas y satelitales en AEGIS."
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#AEGIS",
+    "#IA",
+    "#RespuestaaDesastres"
+  ],
+  "fullArticle": "El mundo ha visto cómo los agentes de IA, a pesar de su poder computacional, suelen olvidar lo que han aprendido en segundos, como un pez dorado con GPU. Esto limita su utilidad en situaciones críticas donde la memoria a largo plazo es esencial.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3h53nyub6uvqy2rxdz4c.png]\n\nAEGIS (Artificial Earth Global Intelligence System) rompe con ese patrón al ofrecer una plataforma nativa de IA que actúa como el sistema nervioso de un centro de mando global. Con una visualización holográfica 3D renderizada directamente en el navegador, los operadores pueden ver en tiempo real la evolución de eventos catastróficos y recibir alertas de fuentes como NASA y USGS.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3h53nyub6uvqy2rxdz4c.png]\n\nLa innovación clave es la memoria persistente: cuando se registra un terremoto de magnitud 7.2 en Tokio, AEGIS no solo marca la zona de riesgo en rojo, sino que también dibuja automáticamente vectores de evacuación hacia los refugios más cercanos. Los operadores pueden, con un solo clic, generar rutas de evacuación que se actualizan dinámicamente ante cambios en la situación.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=256,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png]\n\nEsta capacidad de respuesta inmediata reduce el tiempo de decisión de minutos a segundos, lo que puede salvar cientos de vidas y minimizar daños económicos. Además, la arquitectura escalable permite integrar nuevas fuentes de datos y expandirse a nivel global, posicionando a AEGIS como la primera herramienta de su clase en la India y un modelo replicable para otras naciones.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T12:04:57.572Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "NASA – Datos de satélites",
+      "url": "https://nasa.gov"
+    },
+    {
+      "title": "USGS – Alertas sísmicas",
+      "url": "https://usgs.gov"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Memoria persistente",
+      "value": "Hasta 5 años de datos históricos"
+    },
+    {
+      "label": "Número de sensores integrados",
+      "value": "Más de 3,000 sensores globales"
+    },
+    {
+      "label": "Velocidad de respuesta",
+      "value": "Decisiones en menos de 10 segundos"
+    },
+    {
+      "label": "Escalabilidad",
+      "value": "Capaz de manejar 10,000 eventos simultáneos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

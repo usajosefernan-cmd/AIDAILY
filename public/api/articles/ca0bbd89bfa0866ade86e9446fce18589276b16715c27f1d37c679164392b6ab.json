@@ -1,0 +1,83 @@
+{
+  "id": "ca0bbd89bfa0866ade86e9446fce18589276b16715c27f1d37c679164392b6ab",
+  "title": "Creé una Suite de Cálculo de Calorías para Cinta de Correr de Alto Rendimiento con JavaScript Puro",
+  "summary": "Frustrado por las calculadoras online lentas y saturadas de anuncios, el autor desarrolló TreadmillCalc, una herramienta de cálculo de gasto calórico programada enteramente en Vanilla JS para garantizar máxima velocidad, basada en las ecuaciones oficiales del ACSM.",
+  "url": "https://dev.to/farhan_adil1/how-i-built-a-high-performance-treadmill-calorie-core-suite-vanilla-js-aad",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-09T10:23:15.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0uc3tjuoga4av4cxarz5.png",
+  "imageAlt": "Creé una Suite de Cálculo de Calorías para Cinta de Correr de Alto Rendimiento con JavaScript Puro",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Frustrado por las calculadoras online lentas y saturadas de anuncios, el autor desarrolló TreadmillCalc, una herramienta de cálculo de gasto calórico programada enteramente en Vanilla JS para garantizar máxima velocidad, basada en las ecuaciones oficiales del ACSM.",
+  "keyPoints": [
+    "El autor creó TreadmillCalc como alternativa a las calculadoras de calorías online lentas y llenas de anuncios intrusivos.",
+    "La suite se desarrolló enteramente en Vanilla JS para evitar el peso de frameworks y lograr una interactividad instantánea.",
+    "Los cálculos se basan en las ecuaciones metabólicas oficiales del Colegio Americano de Medicina Deportiva (ACSM) para garantizar precisión científica.",
+    "Los usuarios solo deben ingresar peso, velocidad, duración del ejercicio y porcentaje de inclinación para obtener su gasto calórico."
+  ],
+  "whyMatters": "Este proyecto demuestra que no es necesario recurrir a frameworks pesados para crear herramientas web de alto rendimiento, lo que supone un referente para desarrolladores que buscan optimizar la velocidad de sus aplicaciones sin renunciar a funcionalidades avanzadas. Por otro lado, ofrece a los usuarios de cintas de correr una herramienta precisa, sin publicidad y con respaldo científico para calcular su gasto calórico, a diferencia de las opciones comerciales habituales que suelen incluir datos poco fiables. Además, al ser un proyecto de código abierto, fomenta la innovación en el sector de aplicaciones deportivas, permitiendo a otros desarrolladores crear herramientas similares sin dependencias innecesarias.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0uc3tjuoga4av4cxarz5.png",
+      "alt": "Portada del artículo sobre la creación de la suite de cálculo de calorías para cinta de correr con JavaScript puro",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logotipo de la comunidad de desarrolladores DEV Community",
+      "caption": "Logotipo de la plataforma Dev.to, fuente original del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#JavaScriptPuro",
+    "#CalculadoraDeCalorias",
+    "#ACSM",
+    "#DesarrolloWeb",
+    "#HerramientasDeFitness"
+  ],
+  "fullArticle": "La proliferación de calculadoras de gasto calórico para cintas de correr disponibles en internet se caracteriza por su lentitud de carga y la presencia de decenas de anuncios parpadeantes que entorpecen su uso, incluso en dispositivos móviles. Frustrado por esta situación, un desarrollador decidió crear desde cero TreadmillCalc, una suite de cálculo de alto rendimiento que resuelve estos problemas sin renunciar a la precisión de los resultados. Para garantizar una interactividad instantánea, el autor prescindió de frameworks JavaScript pesados y programó toda la herramienta en Vanilla JS, eliminando tiempos de carga innecesarios y dependencias externas.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0uc3tjuoga4av4cxarz5.png]\n\nEl motor de cálculo de la herramienta utiliza las ecuaciones metabólicas oficiales del Colegio Americano de Medicina Deportiva (ACSM), el estándar científico aceptado internacionalmente para estimar el gasto calórico en actividades de cardio. Los usuarios solo deben introducir cuatro parámetros sencillos: su peso, la velocidad de la cinta, la duración del ejercicio y el porcentaje de inclinación, para obtener un resultado preciso y fiable en tiempo real. Al ser un proyecto de código abierto, TreadmillCalc está disponible para que cualquier desarrollador lo utilice, modifique o integre en sus propios proyectos de herramientas de fitness, fomentando la creación de soluciones ligeras y eficientes en el sector.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T10:47:42.199Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to",
+      "url": "https://dev.to"
+    },
+    {
+      "title": "Página oficial del Colegio Americano de Medicina Deportiva (ACSM)",
+      "url": "https://www.acsm.org/"
+    },
+    {
+      "title": "Documentación oficial de JavaScript en MDN",
+      "url": "https://developer.mozilla.org/es/docs/Web/JavaScript"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Tecnología de desarrollo utilizada",
+      "value": "Vanilla JavaScript (sin frameworks externos)"
+    },
+    {
+      "label": "Estándar científico de los cálculos",
+      "value": "Ecuaciones metabólicas del ACSM"
+    },
+    {
+      "label": "Parámetros de entrada requeridos",
+      "value": "Peso, velocidad, duración e inclinación de la cinta"
+    },
+    {
+      "label": "Objetivo de rendimiento",
+      "value": "Interactividad instantánea sin tiempos de carga"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

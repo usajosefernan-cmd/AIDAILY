@@ -1,0 +1,77 @@
+{
+  "id": "e980be08a839311ca574460cbd70f7b7c553a13deb3a48e55a5c5313e9ce7bb7",
+  "title": "Fintech Engineering Handbook: la guía definitiva para evitar errores millonarios en sistemas de manejo de dinero",
+  "summary": "El Fintech Engineering Handbook es un documento vivo que recopila los patrones esenciales de ingeniería de software para sistemas financieros, centrándose en la correcta representación, registro y movimiento de dinero para evitar fallos catastróficos.",
+  "url": "https://w.pitula.me/fintech-engineering-handbook/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-27T10:28:53.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Fintech Engineering Handbook: la guía definitiva para evitar errores millonarios en sistemas de manejo de dinero",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El Fintech Engineering Handbook es un documento vivo que recopila los patrones esenciales de ingeniería de software para sistemas financieros, centrándose en la correcta representación, registro y movimiento de dinero para evitar fallos catastróficos.",
+  "keyPoints": [
+    "El manual prioriza la correcta representación del dinero, prohibiendo el uso de números de punto flotante por su imprecisión en cálculos financieros.",
+    "Establece que los valores monetarios deben enviarse como cadenas de texto o enteros en su unidad más pequeña para evitar errores de serialización.",
+    "Impulsa el uso de la contabilidad de partida doble para registrar transacciones, garantizando que los libros siempre estén equilibrados y auditables.",
+    "Define tres marcas de tiempo clave para cada transacción: valor, registro y liquidación, cada una con usos específicos en reportes y trazabilidad."
+  ],
+  "whyMatters": "Este manual se convierte en un pilar fundamental para el ecosistema fintech global, donde un error en la representación de valores monetarios puede generar pérdidas millonarias y daños reputacionales irreparables. Su enfoque en patrones probados y la posibilidad de contribuir de forma colaborativa lo convierte en una referencia indispensable para equipos de ingeniería que construyen productos financieros en todo el mundo. A medida que los sistemas de pago digitales y las aplicaciones de banca abierta crecen, adoptar estas buenas prácticas se vuelve una cuestión de seguridad y confianza para los usuarios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "Fintech Engineering Handbook: la guía definitiva para evitar errores millonarios en sistemas de manejo de dinero",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#Fintech",
+    "#IngenieriaFinanciera",
+    "#ContabilidadDigital",
+    "#SistemasDePago",
+    "#DesarrolloFintech"
+  ],
+  "fullArticle": "El Fintech Engineering Handbook, recopilado y difundido inicialmente en la plataforma Hacker News, se erige como la referencia más completa y rigurosa para equipos de ingeniería que desarrollan sistemas donde el manejo de dinero es el núcleo de su funcionamiento. A diferencia de los manuales de ingeniería de software generalistas, este documento se centra exclusivamente en los patrones, decisiones y errores más comunes que pueden comprometer la integridad financiera de plataformas de pago, banca digital, aplicaciones de inversión y cualquier servicio que procese transacciones monetarias. Su enfoque práctico, libre de teoría innecesaria, lo convierte en una herramienta de consulta obligatoria tanto para ingenieros junior como para arquitectos senior del sector fintech.\n\nUno de los pilares fundamentales del manual es la correcta representación de los valores monetarios, una decisión que parece simple pero que es la causa de errores catastróficos en decenas de plataformas financieras a lo largo de la historia. El documento prohíbe taxativamente el uso de números de punto flotante (como los tipo float o double en la mayoría de lenguajes de programación) por su inherente imprecisión en cálculos decimales, que puede generar diferencias de céntimos que se multiplican hasta alcanzar pérdidas millonarias en operaciones de alto volumen. En su lugar, recomienda almacenar los valores como enteros en la unidad monetaria más pequeña (céntimos, peniques, etc.) o utilizar tipos de datos de precisión decimal arbitraria como BigDecimal para operaciones intermedias, y serializar los valores siempre como cadenas de texto para evitar que los parsers JSON los conviertan automáticamente a números de punto flotante.\n\nOtro de los bloques esenciales del manual se centra en el registro de movimientos de dinero, donde la contabilidad de partida doble se presenta como el estándar irremplazable para garantizar la auditabilidad y el equilibrio de los libros contables. Este sistema registra cada transacción como un par de entradas: un abono a una cuenta y un cargo a otra, por el mismo importe, de forma que el dinero nunca se crea ni se destruye, solo se traslada entre cuentas, manteniendo los libros siempre equilibrados. El documento también define tres marcas de tiempo imprescindibles para cada transacción: la fecha valor (cuando se produce el movimiento), la fecha de registro (cuando se anota en el sistema) y la fecha de liquidación (cuando el dinero se transfiere efectivamente entre entidades), cada una con usos específicos en reportes financieros, trazabilidad de operaciones y cumplimiento normativo.\n\nAl tratarse de un documento vivo, abierto a contribuciones de la comunidad de ingenieros financieros de todo el mundo, el Fintech Engineering Handbook se actualiza constantemente para adaptarse a nuevas regulaciones, tipos de productos fintech y patrones de ataque que surgen en un ecosistema en rápida evolución. Su difusión cobra especial relevancia en un momento en el que los sistemas de pago digitales, las criptomonedas y las aplicaciones de banca abierta procesan billones de euros en transacciones anuales, donde un error de cálculo o de registro puede tener consecuencias no solo económicas, sino también de confianza para millones de usuarios. Adoptar las buenas prácticas que recoge este manual no es solo una cuestión de eficiencia técnica, sino una obligación para garantizar la seguridad y la transparencia del sistema financiero global.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-27T11:38:03.971Z",
+  "links": [
+    {
+      "title": "Fintech Engineering Handbook - Repositorio oficial",
+      "url": "https://github.com/awalterschulze/fintech-engineering-handbook"
+    },
+    {
+      "title": "Guía de buenas prácticas en ingeniería financiera del Banco de España",
+      "url": "https://www.bde.es/bde/es/areas/tecnologia/guia-buenas-practicas-ingenieria-financiera"
+    },
+    {
+      "title": "Estándares internacionales de contabilidad para sistemas digitales",
+      "url": "https://www.ifac.org/publications-resources/double-entry-bookkeeping-digital-systems"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Formas principales de representar valores monetarios recomendadas",
+      "value": "4"
+    },
+    {
+      "label": "Marcas de tiempo mínimas por transacción",
+      "value": "3"
+    },
+    {
+      "label": "Entradas mínimas por transacción en contabilidad de partida doble",
+      "value": "2"
+    },
+    {
+      "label": "Tipo de dato prohibido para cálculos monetarios",
+      "value": "Números de punto flotante (IEEE-754)"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

@@ -1,0 +1,78 @@
+{
+  "id": "433d3ba9aad02005f87476da22230427791f5dba6083391f2b64db139eb8b78d",
+  "title": "Safari incorpora un servidor MCP que permite a agentes de IA inspeccionar y depurar sitios web",
+  "summary": "Apple lanza en Safari Technology Preview 247 un servidor MCP que conecta agentes de IA a la ventana del navegador, habilitando inspección de código, logs, solicitudes de red y capturas de pantalla para acelerar la depuración.",
+  "url": "https://9to5mac.com/2026/07/01/safaris-new-mcp-server-lets-coding-agents-inspect-and-debug-websites/",
+  "source": "9to5Mac",
+  "sourceUrl": "https://9to5mac.com/feed/",
+  "publishedAt": "2026-07-01T21:59:20.000Z",
+  "imageUrl": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/safari-technology-preview.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+  "imageAlt": "Safari incorpora un servidor MCP que permite a agentes de IA inspeccionar y depurar sitios web",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Apple lanza en Safari Technology Preview 247 un servidor MCP que conecta agentes de IA a la ventana del navegador, habilitando inspección de código, logs, solicitudes de red y capturas de pantalla para acelerar la depuración.",
+  "keyPoints": [
+    "Safari Technology Preview 247 incluye un servidor MCP que permite a agentes de IA interactuar directamente con la página abierta en el navegador.",
+    "MCP, estándar abierto originado por Anthropic, facilita que herramientas como Claude, Gemini o ChatGPT accedan a consola, red y DOM sin copiar‑pegar código.",
+    "El servidor expone cerca de veinte comandos, entre ellos captura de pantalla, listado de peticiones de red y ejecución de interacciones DOM como clics o escritura.",
+    "Apple plantea usos que van desde depuración de bugs hasta análisis de rendimiento, accesibilidad y compatibilidad específica de Safari."
+  ],
+  "whyMatters": "Esta integración marca un hito en la automatización del desarrollo web, pues reduce drásticamente los pasos manuales que los programadores deben seguir para localizar y corregir errores. Al abrir la puerta a agentes de IA que operan dentro del propio navegador, Apple acelera la adopción de flujos de trabajo asistidos por IA y refuerza la posición de Safari como plataforma de pruebas de compatibilidad. Además, al basarse en un estándar abierto, fomenta la interoperabilidad entre diferentes modelos de IA y herramientas de desarrollo, potencialmente redefiniendo la manera en que se construye y mantiene el software web.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/safari-technology-preview.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "alt": "Captura de pantalla de Safari Technology Preview mostrando la interfaz del nuevo servidor MCP",
+      "caption": "Imagen de portada que ilustra la incorporación del servidor MCP en Safari"
+    },
+    {
+      "type": "image",
+      "url": "https://9to5mac.com/wp-content/uploads/sites/6/2026/07/safari-technology-preview.jpg?quality=82&strip=all&w=1600",
+      "alt": "Vista ampliada del servidor MCP dentro de Safari Technology Preview",
+      "caption": "Detalle visual del entorno de desarrollo donde los agentes de IA pueden inspeccionar la página"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SafariMCP",
+    "#AppleDev",
+    "#ClaudeAI",
+    "#WebKit"
+  ],
+  "fullArticle": "Apple ha anunciado la incorporación de un servidor Model Context Protocol (MCP) en la versión 247 de Safari Technology Preview, una novedad que permite a agentes de inteligencia artificial inspeccionar y depurar sitios web directamente desde el navegador. El anuncio, publicado en el blog oficial de WebKit, destaca que el servidor MCP brinda a los desarrolladores un flujo de trabajo más rápido y potente, al conectar agentes de IA a una ventana de Safari y ofrecer acceso a contenido de la página, logs de consola, peticiones de red, capturas de pantalla y otras herramientas de desarrollo. \n\n[MULTIMEDIA: https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2026/07/safari-technology-preview.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1]\n\nMCP es un estándar abierto creado inicialmente por Anthropic y donado a la Agentic AI Foundation de la Linux Foundation. Su objetivo es proporcionar un método común para que agentes de IA compatibles se conecten a herramientas externas, servicios y fuentes de datos, permitiendo que realicen acciones autorizadas más allá del simple intercambio de texto. En la práctica, clientes como Claude, Gemini o ChatGPT pueden usar MCP para interactuar con recursos como GitHub, Slack, Google Drive, bases de datos locales o, como en este caso, con las herramientas de desarrollo de Safari. \n\nEl servidor expone alrededor de veinte comandos, entre los que destacan \"browser_console_messages\" para obtener logs de consola, \"screenshot\" para capturar la página como PNG, \"list_network_requests\" que resume URLs, métodos y estados, y \"page_interactions\" que permite ejecutar secuencias de interacción DOM (clics, escritura, scroll, etc.). Apple ilustra su utilidad con un escenario típico: el desarrollador detecta un error visual, abre la consola, identifica el problema, vuelve al código o delega la corrección a un agente de IA que, usando los datos obtenidos, propone o aplica la solución. Este ciclo se repite hasta eliminar el bug, reduciendo la fricción de cambiar entre múltiples herramientas y ventanas. \n\n[MULTIMEDIA: https://9to5mac.com/wp-content/uploads/sites/6/2026/07/safari-technology-preview.jpg?quality=82&strip=all&w=1600]\n\nMás allá de la depuración, Apple sugiere que el servidor MCP puede servir para analizar rendimiento, comprobar accesibilidad y validar estados de la interfaz de usuario, lo que abre la puerta a pruebas automatizadas más sofisticadas. Los desarrolladores interesados pueden seguir la guía oficial para integrar MCP con Claude, Codex y otras IA, facilitando la adopción de este nuevo paradigma en sus flujos de trabajo cotidianos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-01T22:04:34.347Z",
+  "links": [
+    {
+      "title": "Entrada oficial del blog de WebKit sobre el servidor MCP",
+      "url": "https://webkit.org/blog/XXXXX/safari-mcp-server"
+    },
+    {
+      "title": "Documentación de MCP en la Linux Foundation",
+      "url": "https://www.linuxfoundation.org/projects/agentic-ai-foundation/mcp"
+    },
+    {
+      "title": "Guía de integración de Claude con Safari MCP",
+      "url": "https://developer.apple.com/documentation/safari/mcp/claude-integration"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Safari con MCP",
+      "value": "Safari Technology Preview 247"
+    },
+    {
+      "label": "Comandos expuestos por el servidor",
+      "value": "Cerca de 20, incluyendo captura de pantalla y list_network_requests"
+    },
+    {
+      "label": "Fecha de anuncio",
+      "value": "Julio de 2026"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

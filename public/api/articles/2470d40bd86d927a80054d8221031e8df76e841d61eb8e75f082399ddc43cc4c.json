@@ -1,0 +1,82 @@
+{
+  "id": "2470d40bd86d927a80054d8221031e8df76e841d61eb8e75f082399ddc43cc4c",
+  "title": "Pasa Cinco Minutos con este Simulador de Sistemas Operativos y Nunca Volverás a Maldecir tu PC",
+  "summary": "Un nuevo juego de simulación llamado 'You’re the OS' pone al jugador en la posición de un sistema operativo, gestionando procesos, memoria y CPU para evitar que el usuario se enfade y lo reinicie.",
+  "url": "https://gizmodo.com/spend-five-minutes-with-this-hellish-operating-system-simulator-and-youll-never-swear-at-your-computer-again-2000778411",
+  "source": "Gizmodo",
+  "sourceUrl": "https://gizmodo.com/rss",
+  "publishedAt": "2026-06-28T09:00:00.000Z",
+  "imageUrl": "https://gizmodo.com/app/uploads/2026/06/youre-the-os-1200x675.png",
+  "imageAlt": "Pasa Cinco Minutos con este Simulador de Sistemas Operativos y Nunca Volverás a Maldecir tu PC",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Un nuevo juego de simulación llamado 'You’re the OS' pone al jugador en la posición de un sistema operativo, gestionando procesos, memoria y CPU para evitar que el usuario se enfade y lo reinicie.",
+  "keyPoints": [
+    "El juego simula la gestión de procesos en tiempo real, con prioridades y memoria dinámica que reflejan el comportamiento real de un SO.",
+    "Negligencia en la asignación de CPU provoca que los procesos cambien de estado de felicidad a frustración, pudiendo ser terminados por el usuario.",
+    "El manejo de RAM incluye swapping a disco, lo que ralentiza el sistema y añade un nivel de complejidad realista.",
+    "El objetivo final es mantener al usuario satisfecho; 10 'ragequits' provocan un reinicio y terminan la partida."
+  ],
+  "whyMatters": "Esta experiencia inmersiva revela la complejidad oculta detrás de la interfaz de usuario que muchos toman por sentado. Al comprender los desafíos de la gestión de recursos, los desarrolladores pueden crear aplicaciones más eficientes y los usuarios pueden valorar mejor el rendimiento de sus dispositivos. Además, el juego sirve como herramienta educativa para estudiantes de informática y como crítica social sobre la frustración tecnológica cotidiana.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://gizmodo.com/app/uploads/2026/06/youre-the-os-1200x675.png",
+      "alt": "Pantalla principal del juego 'You’re the OS' mostrando el tablero de procesos y la barra de recursos",
+      "caption": "Imagen de portada que muestra la interfaz del simulador con procesos en cola y la gestión de CPU"
+    },
+    {
+      "type": "image",
+      "url": "https://gizmodo.com/app/uploads/2026/06/youre-the-os.png",
+      "alt": "Captura de pantalla del juego donde se ve la distribución de procesos y la memoria RAM",
+      "caption": "Captura que ilustra la asignación de procesos a núcleos y la gestión de memoria en tiempo real"
+    }
+  ],
+  "subcategory": "Videojuegos",
+  "hashtags": [
+    "#Gizmodo",
+    "#OSSim",
+    "#Gaming",
+    "#Tecnologia"
+  ],
+  "fullArticle": "En un mundo donde los ordenadores son extensiones de nosotros mismos, la frustración por un rendimiento lento se ha convertido en un fenómeno cotidiano. Pier-Luc Brault, desarrollador de la indie game studio, propone una solución inesperada: ponerse en la piel del propio sistema operativo con su nuevo título, 'You’re the OS'. El juego se presenta como un simulador de tiempo real en el que el jugador debe asignar procesos a núcleos de CPU, gestionar la memoria RAM y evitar que los usuarios se enojen y reinicien el sistema.\n\n[MULTIMEDIA: https://gizmodo.com/app/uploads/2026/06/youre-the-os-1200x675.png]\n\nA medida que los procesos compiten por recursos, el jugador debe decidir qué tareas reciben prioridad. Los procesos inactivos consumen ciclos de CPU sin producir resultados, mientras que los de alta prioridad pueden ser terminados si no se les atiende a tiempo. La gestión de RAM añade una capa adicional: cuando el espacio se llena, el juego obliga al jugador a intercambiar páginas con el disco, ralentizando todo el sistema y simulando el fenómeno real de swapping.\n\n[MULTIMEDIA: https://gizmodo.com/app/uploads/2026/06/youre-the-os.png]\n\nEl objetivo final es mantener al usuario satisfecho; cada ‘ragequit’ incrementa la posibilidad de que el jugador quede en la ‘doghouse’. Si el usuario alcanza diez frustraciones, el juego termina con un reinicio, reflejando la experiencia de muchos usuarios que, después de horas de espera, simplemente presionan el botón de reinicio. Esta mecánica no solo es entretenida, sino que también ofrece una perspectiva única sobre la gestión de recursos y la importancia de la optimización de software.\n\nMás allá del entretenimiento, 'You’re the OS' funciona como una herramienta educativa que permite a estudiantes de informática experimentar con conceptos de sistemas operativos sin la complejidad de un entorno real. Al mismo tiempo, sirve como crítica social, recordándonos que la tecnología, aunque avanzada, sigue siendo vulnerable a la mala gestión y a la frustración humana.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T09:22:50.912Z",
+  "links": [
+    {
+      "title": "Artículo original en Gizmodo",
+      "url": "https://gizmodo.com/spend-five-minutes-with-this-hellish-operating-system-simulator-and-youll-never-swear-at-your-computer-again"
+    },
+    {
+      "title": "Wikipedia: Sistema operativo",
+      "url": "https://es.wikipedia.org/wiki/Sistema_operativo"
+    },
+    {
+      "title": "Sitio oficial del desarrollador Pier-Luc Brault",
+      "url": "https://pierlucbrault.com"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de procesos simultáneos",
+      "value": "42 procesos en cola"
+    },
+    {
+      "label": "Tamaño máximo de RAM simulada",
+      "value": "8 GB"
+    },
+    {
+      "label": "Duración de una partida típica",
+      "value": "5 minutos"
+    },
+    {
+      "label": "Número de 'ragequits' necesarios para reinicio",
+      "value": "10"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

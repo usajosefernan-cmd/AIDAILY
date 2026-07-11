@@ -1,0 +1,73 @@
+{
+  "id": "0bf0088ce7c8fe394be3ea7cabc77d62048a0cf3accc21112fd8d0251cc3e880",
+  "title": "Adiós a las consultas lentas de JSON: Apache Iceberg 3.0 lanza el tipo Variant que revoluciona la analítica de datos semiestructurados",
+  "summary": "Apache Iceberg 3.0 introduce el tipo Variant, que combina la flexibilidad del JSON con el rendimiento de columnas tipadas mediante la técnica de 'shredding', solucionando los problemas de lentitud y costes asociados al almacenamiento de datos semiestructurados en entornos analíticos.",
+  "url": "https://dev.to/alexmercedcoder/the-variant-type-in-apache-iceberg-how-shredding-turns-messy-json-into-fast-analytics-5cam",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-08T22:25:57.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsjb0u6dldv76ecqyqb4t.png",
+  "imageAlt": "Adiós a las consultas lentas de JSON: Apache Iceberg 3.0 lanza el tipo Variant que revoluciona la analítica de datos semiestructurados",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Apache Iceberg 3.0 introduce el tipo Variant, que combina la flexibilidad del JSON con el rendimiento de columnas tipadas mediante la técnica de 'shredding', solucionando los problemas de lentitud y costes asociados al almacenamiento de datos semiestructurados en entornos analíticos.",
+  "keyPoints": [
+    "El tipo Variant de Apache Iceberg 3.0 soluciona los problemas de lentitud y costes asociados al almacenamiento de JSON en columnas de texto para analítica.",
+    "La técnica de 'shredding' codifica los valores JSON en binario estándar Parquet, permitiendo acceder a campos específicos sin parsear el documento completo.",
+    "A diferencia del almacenamiento como texto o el aplanamiento de columnas, Variant ofrece flexibilidad en escritura y rendimiento similar a columnas tipadas.",
+    "Su adopción elimina la necesidad de mantener tablas paralelas, reduce gastos de almacenamiento y simplifica las operaciones de ingeniería de datos."
+  ],
+  "whyMatters": "Esta innovación supone un cambio de paradigma para los equipos de datos que gestionan grandes volúmenes de información semiestructurada, ya que elimina la necesidad de implementar soluciones paralelas y costosas para combinar flexibilidad y rendimiento. La reducción de tiempos de consulta y de gastos en almacenamiento en la nube permitirá a las empresas españolas y europeas acelerar sus proyectos de modernización de data lakes, destinando recursos a la generación de valor en lugar de a la gestión de infraestructura. Además, al basarse en el estándar abierto Parquet, garantiza interoperabilidad entre motores de análisis, lo que facilitará su adopción en entornos empresariales y evitará dependencias de proveedores.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsjb0u6dldv76ecqyqb4t.png",
+      "alt": "Ilustración de portada del artículo sobre el tipo Variant en Apache Iceberg",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#ApacheIceberg",
+    "#VariantType",
+    "#Shredding",
+    "#DataEngineering",
+    "#AnalíticaDeDatos"
+  ],
+  "fullArticle": "Todos los ingenieros de datos tienen una historia similar: en su empresa existe una tabla con una columna repleta de cadenas JSON que almacenan desde payloads de aplicaciones móviles hasta lecturas de sensores o salidas de APIs de terceros. Esta columna es la más valiosa, porque guarda la información en su formato original, pero también la más problemática: cada consulta que accede a ella debe leer la cadena completa, parsearla y extraer el campo necesario, multiplicando los tiempos de respuesta y los costes de computación en la nube cuando se trabaja con miles de millones de filas.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fsjb0u6dldv76ecqyqb4t.png]\nLa versión 3.0 de la especificación de formato de tablas Apache Iceberg presenta el tipo Variant para solucionar este problema de raíz, combinando la flexibilidad del JSON con un rendimiento cercano al de las columnas tipadas tradicionales. El secreto de este funcionamiento es la técnica de 'shredding', que codifica los valores semiestructurados en un formato binario basado en el estándar Parquet, de forma que el motor de análisis solo lee los campos necesarios sin tener que procesar el documento completo en cada consulta. A diferencia de las opciones anteriores (almacenar JSON como texto o aplanar los campos en columnas fijas), Variant permite escribir datos con estructuras variables sin penalizar la velocidad de lectura, eliminando la necesidad de mantener tablas duplicadas y migraciones de esquema constantes.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-08T22:44:06.965Z",
+  "links": [
+    {
+      "title": "Documentación oficial de Apache Iceberg",
+      "url": "https://iceberg.apache.org/"
+    },
+    {
+      "title": "Especificación del tipo Variant en Iceberg 3.0",
+      "url": "https://iceberg.apache.org/spec/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Versión de Iceberg que introduce Variant",
+      "value": "3.0"
+    },
+    {
+      "label": "Técnica de procesamiento utilizada",
+      "value": "Shredding"
+    },
+    {
+      "label": "Estándar de codificación adoptado",
+      "value": "Apache Parquet"
+    },
+    {
+      "label": "Tipos de valores soportados por Variant",
+      "value": "Objetos, arrays, strings, booleanos, nulos, fechas, timestamps, binarios y decimales exactos"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

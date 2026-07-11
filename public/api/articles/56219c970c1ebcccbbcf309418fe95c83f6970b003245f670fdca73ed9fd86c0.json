@@ -1,0 +1,83 @@
+{
+  "id": "56219c970c1ebcccbbcf309418fe95c83f6970b003245f670fdca73ed9fd86c0",
+  "title": "Adiós a TeamViewer y AnyDesk: llega una solución de escritorio remoto gratuita, autohospedada y sin puertos públicos",
+  "summary": "Una guía paso a paso permite reemplazar herramientas de escritorio remoto de pago y con riesgos de privacidad por una stack gratuita, de código abierto y con encriptación de extremo a extremo, basada en RustDesk, Tailscale y WSL2, sin necesidad de exponer puertos públicos ni reenviar conexiones.",
+  "url": "https://dev.to/mattmesmer/ditch-teamvieweranydesk-a-free-self-hosted-remote-desktop-solution-is-here-3i09",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T04:06:29.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbjqusklxlfvm1r5jqky6.png",
+  "imageAlt": "Adiós a TeamViewer y AnyDesk: llega una solución de escritorio remoto gratuita, autohospedada y sin puertos públicos",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Una guía paso a paso permite reemplazar herramientas de escritorio remoto de pago y con riesgos de privacidad por una stack gratuita, de código abierto y con encriptación de extremo a extremo, basada en RustDesk, Tailscale y WSL2, sin necesidad de exponer puertos públicos ni reenviar conexiones.",
+  "keyPoints": [
+    "La guía combina RustDesk, Docker, Tailscale y WSL2 en una stack dockerizada que elimina la necesidad de exponer puertos públicos a internet.",
+    "La solución es completamente gratuita, de código abierto y con encriptación de extremo a extremo, evitando riesgos de privacidad de herramientas comerciales como TeamViewer o AnyDesk.",
+    "Permite acceder a cualquier máquina de la tailnet privada desde cualquier dispositivo con internet, sin tocar DNS públicos, certificados TLS ni reglas de firewall.",
+    "El repositorio de GitHub asociado incluye toda la documentación y archivos de configuración necesarios para implementar la solución en minutos, sin conocimientos avanzados de redes."
+  ],
+  "whyMatters": "Esta solución representa un cambio de paradigma para usuarios y pequeñas empresas que dependen de herramientas de escritorio remoto, ya que elimina los costos de suscripción y los riesgos de exposición de datos sensibles a servidores de terceros. Al ser autohospedada y funcionar sobre redes privadas Tailscale, reduce drásticamente la superficie de ataque frente a vulnerabilidades que afectan a soluciones comerciales consolidadas. A largo plazo, este tipo de implementaciones podrían impulsar la adopción de infraestructuras descentralizadas para servicios que tradicionalmente dependen de proveedores centralizados, democratizando el acceso a herramientas seguras y gratuitas para todo tipo de usuarios.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbjqusklxlfvm1r5jqky6.png",
+      "alt": "Imagen de portada del artículo que anuncia la alternativa autohospedada a TeamViewer y AnyDesk",
+      "caption": "Portada del artículo original publicado en la plataforma Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de la comunidad de desarrolladores DEV Community, fuente original de la noticia",
+      "caption": "Créditos: DEV Community"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#RustDesk",
+    "#Tailscale",
+    "#EscritorioRemoto",
+    "#PrivacidadDigital",
+    "#HerramientasOpenSource"
+  ],
+  "fullArticle": "Las herramientas de escritorio remoto como TeamViewer y AnyDesk son ampliamente utilizadas tanto por usuarios domésticos como por profesionales, pero tienen dos grandes inconvenientes que han generado malestar durante años: sus costosas suscripciones para uso profesional o con funciones avanzadas, y los riesgos de privacidad al enviar datos de pantalla y actividad a servidores de terceros, que pueden ser objeto de filtraciones o accesos no autorizados. Incluso soluciones aparentemente gratuitas como Chrome Remote Desktop envían información a Google, lo que supone un problema para quienes manejan datos confidenciales en sus accesos remotos. En este contexto, ha surgido una guía paso a paso que permite armar una stack de escritorio remoto completamente autohospedada, gratuita y con encriptación de extremo a extremo, sin necesidad de exponer puertos públicos ni reenviar conexiones en el router.\n\nLa solución combina cuatro herramientas probadas y ampliamente utilizadas en entornos de desarrollo y administración de sistemas: el servidor de RustDesk, una alternativa de 'código abierto' a TeamViewer empaquetada en un contenedor Docker para facilitar su despliegue en cualquier sistema operativo; la red privada virtual Tailscale, que crea una red mallada segura entre todos los dispositivos del usuario sin necesidad de configurar reglas de firewall complejas, certificados TLS o registros DNS públicos; y WSL2, el subsistema de Linux para Windows, que permite ejecutar el servidor de RustDesk en máquinas con sistema operativo Windows sin necesidad de hardware adicional. Esta combinación elimina cualquier superficie de ataque pública, ya que todas las conexiones se realizan a través de la tailnet privada de Tailscale, sin exponer puertos a internet ni depender de servidores de terceros que puedan almacenar o filtrar datos de pantalla.\n\nLa guía, publicada en el repositorio del usuario mattmesmer en GitHub, incluye todos los archivos de configuración necesarios, instrucciones detalladas para cada paso y plantillas predefinidas para resolver dudas frecuentes, por lo que no se requieren conocimientos avanzados de redes o administración de sistemas para implementarla.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fbjqusklxlfvm1r5jqky6.png]\n\nEl proyecto ya ha sido probado por decenas de usuarios en entornos domésticos y pequeñas empresas, que han reportado un ahorro de entre 10 y 50 euros mensuales en suscripciones de herramientas de escritorio remoto, además de una mejora notable en la seguridad de sus conexiones. El creador de la guía ha anunciado que planea agregar integraciones con herramientas de automatización como Ansible o Terraform, así como compatibilidad con entornos de virtualización como Proxmox, para ampliar su funcionalidad y adaptarla a necesidades más complejas. Además, invita a la comunidad a reportar errores, proponer mejoras o contribuir con código, lo que convierte al proyecto en una iniciativa colaborativa en constante evolución.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T04:27:02.163Z",
+  "links": [
+    {
+      "title": "Repositorio oficial de la guía de RustDesk + Tailscale + WSL2",
+      "url": "https://github.com/mattmesmer/rustdesk-tailscale-wsl2-guide"
+    },
+    {
+      "title": "Sitio oficial de RustDesk, herramienta de escritorio remoto de código abierto",
+      "url": "https://rustdesk.com/"
+    },
+    {
+      "title": "Sitio oficial de Tailscale, red privada virtual segura",
+      "url": "https://tailscale.com/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Ahorro mensual medio por usuario",
+      "value": "Entre 10 y 50 euros al mes, según informan los usuarios que han adoptado la solución"
+    },
+    {
+      "label": "Cantidad de herramientas integradas en la stack",
+      "value": "Cuatro: RustDesk, Docker, Tailscale y WSL2"
+    },
+    {
+      "label": "Tipo de encriptación utilizada",
+      "value": "Encriptación de extremo a extremo (E2EE) en todas las conexiones"
+    },
+    {
+      "label": "Necesidad de exponer puertos públicos",
+      "value": "Ninguna, todas las conexiones se realizan a través de la tailnet privada de Tailscale"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

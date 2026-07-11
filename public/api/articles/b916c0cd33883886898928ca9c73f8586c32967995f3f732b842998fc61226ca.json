@@ -1,0 +1,38 @@
+{
+  "id": "b916c0cd33883886898928ca9c73f8586c32967995f3f732b842998fc61226ca",
+  "title": "Connect Redis, Postgres, and MySQL to Serverless Apps Over HTTPS",
+  "summary": "Los tiempos de ejecución sin servidor y perimetrales son excelentes hasta que su aplicación necesite una conexión de base de datos TCP normal.\n\nCloudflare Workers, Vercel Edge, Deno Deploy y muchos otros tiempos de ejecución HTTP primero no le permiten abrir sockets TCP sin formato directamente. Eso crea una elección incómoda:\n\nZedGi está diseñado para el otro camino: mantenga su...",
+  "url": "https://dev.to/zintrustjs/connect-redis-postgres-and-mysql-to-serverless-apps-over-https-cg",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T07:28:49.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq0dxqngyq4ypgmqf4zyv.png",
+  "imageAlt": "Connect Redis, Postgres, and MySQL to Serverless Apps Over HTTPS",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Los tiempos de ejecución sin servidor y perimetrales son excelentes hasta que su aplicación necesite una conexión de base de datos TCP normal.\n\nCloudflare Workers, Vercel Edge, Deno Deploy y muchos otros tiempos de ejecución HTTP primero no le permiten abrir sockets TCP sin formato directamente. Eso crea una elección incómoda:\n\nZedGi está diseñado para el otro camino: mantenga su...",
+  "keyPoints": [
+    null
+  ],
+  "whyMatters": "Este reporte aborda un desarrollo de alto impacto en el ámbito de tecnologia.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq0dxqngyq4ypgmqf4zyv.png",
+      "alt": "Connect Redis, Postgres, and MySQL to Serverless Apps Over HTTPS",
+      "caption": "Imagen de portada del artículo"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [],
+  "fullArticle": "Los tiempos de ejecución sin servidor y perimetrales son excelentes hasta que su aplicación necesite una conexión de base de datos TCP normal.\n\nCloudflare Workers, Vercel Edge, Deno Deploy y muchos otros tiempos de ejecución HTTP primero no le permiten abrir sockets TCP sin formato directamente. Eso crea una elección incómoda:\n\nZedGi está diseñado para el otro camino: mantenga su propia base de datos Redis, Postgres o MySQL, pero llámela desde cualquier tiempo de ejecución HTTP.\n\nZedGi es un proxy de TCP a HTTP para Redis, Postgres y MySQL.\n\nUsted registra un servicio de base de datos una vez, luego su aplicación envía solicitudes HTTPS firmadas a su punto final ZedGi. ZedGi autentica la solicitud, la enruta a un nodo puente, abre la conexión TCP real, ejecuta el comando o consulta y devuelve JSON.\n\nEso significa que el código que se ejecuta en un tiempo de ejecución perimetral o sin servidor aún puede comunicarse con bases de datos TCP tradicionales sin administrar VPN, puertos de bases de datos públicas o grupos de conexiones de larga duración en su función.\n\nZedGi no es un producto alojado solo en Redis, solo en Postgres o solo en MySQL.\n\nEstá diseñado para equipos que ya tienen una base de datos en algún lugar y desean que sea accesible desde tiempos de ejecución solo HTTP.\n\nSi su tiempo de ejecución puede realizar una solicitud HTTPS, puede llamar a ZedGi.\n\nLas credenciales de la base de datos las proporciona su aplicación en el momento de la llamada....",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T07:43:45.673Z",
+  "links": [],
+  "interestingData": [],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

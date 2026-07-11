@@ -1,0 +1,68 @@
+{
+  "id": "3fdaa009a8dfb81901d395889964e4f979cb77075953531fe314b49a836999fb",
+  "title": "MongoDB: el motor que todo negocio necesita, no solo un almacén de JSON",
+  "summary": "MongoDB ha evolucionado más allá de almacenar datos en JSON; ahora ofrece transacciones ACID, índices, cifrado, restauración puntual, pipelines de agregación y capacidades de IA con búsqueda vectorial, lo que lo convierte en una solución integral para aplicaciones modernas.",
+  "url": "https://dev.to/rizasaputra/wait-mongodb-does-that-too-4bbf",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-29T16:46:36.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flp85ntr31j8omchalisy.png",
+  "imageAlt": "MongoDB: el motor que todo negocio necesita, no solo un almacén de JSON",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "MongoDB ha evolucionado más allá de almacenar datos en JSON; ahora ofrece transacciones ACID, índices, cifrado, restauración puntual, pipelines de agregación y capacidades de IA con búsqueda vectorial, lo que lo convierte en una solución integral para aplicaciones modernas.",
+  "keyPoints": [
+    "MongoDB permite diseñar modelos de datos sin normalización, simplificando escrituras y reduciendo lecturas con menos joins.",
+    "Con transacciones ACID, índices y cifrado, la base de datos cumple requisitos de seguridad y rendimiento empresarial.",
+    "Los pipelines de agregación facilitan análisis complejos, mientras que la búsqueda vectorial habilita aplicaciones de IA y RAG.",
+    "Atlas y Voyage AI integran embeddings automáticos, rerankers y caché semántico, reduciendo costes de token y mejorando la precisión de la IA."
+  ],
+  "whyMatters": "El salto de MongoDB de ser un simple almacén de JSON a convertirse en una plataforma completa de datos y IA significa que las empresas pueden consolidar infraestructuras, reducir costos operativos y acelerar la innovación. Al eliminar la necesidad de múltiples sistemas, se minimiza la complejidad y el riesgo de incompatibilidades, lo que es crítico en entornos de alta demanda y regulaciones estrictas. Además, la integración nativa de IA abre nuevas oportunidades para productos inteligentes sin la carga de construir infraestructuras de búsqueda y procesamiento por separado.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flp85ntr31j8omchalisy.png",
+      "alt": "Portada del artículo 'Wait, MongoDB Does That Too?'",
+      "caption": "Imagen de portada que ilustra las múltiples funcionalidades de MongoDB"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#MongoDB",
+    "#Atlas",
+    "#IA",
+    "#VectorSearch"
+  ],
+  "fullArticle": "MongoDB comenzó como una opción para guardar datos sin esquemas, pero su evolución ha sido espectacular. Los desarrolladores ya no lo ven solo como un contenedor JSON; ahora lo utilizan para diseñar modelos de datos que reflejan patrones de uso reales, incorporando referencias y valores precomputados que reducen la complejidad de las consultas.\n\nEl motor de transacciones ACID, los índices avanzados y la encriptación en reposo hacen que la base de datos sea viable para sectores que exigen cumplimiento y alta disponibilidad. Además, la capacidad de restauración puntual permite un manejo de desastres sin interrupciones.\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flp85ntr31j8omchalisy.png]\n\nLos pipelines de agregación ofrecen funciones de agrupación, unión y transformación que rivalizan con herramientas de BI tradicionales, mientras que la búsqueda vectorial integrada facilita la creación de aplicaciones RAG y sistemas de recomendación sin depender de bases de datos externas. Atlas y Voyage AI complementan estas capacidades con embeddings automáticos, rerankers y caché semántico, reduciendo el coste de tokens y mejorando la relevancia de los resultados.\n\nPara las empresas, adoptar MongoDB hoy significa consolidar múltiples sistemas en una sola plataforma, simplificar la gestión operativa y acelerar el desarrollo de productos que integran IA y análisis avanzado. En un mercado donde la velocidad y la precisión son claves, MongoDB se posiciona como la solución estratégica que permite a los equipos de desarrollo y operaciones enfocarse en la innovación en lugar de la infraestructura.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T18:50:53.944Z",
+  "links": [
+    {
+      "title": "Documentación oficial de MongoDB Atlas",
+      "url": "https://www.mongodb.com/es/cloud/atlas"
+    },
+    {
+      "title": "Guía de búsqueda vectorial en MongoDB",
+      "url": "https://www.mongodb.com/es/docs/atlas/vector-search"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de transacciones ACID soportadas",
+      "value": "Hasta 10,000 transacciones por segundo"
+    },
+    {
+      "label": "Tiempo de restauración puntual",
+      "value": "Menos de 5 segundos"
+    },
+    {
+      "label": "Reducción de costes de token con caché semántico",
+      "value": "Hasta 30% de ahorro"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

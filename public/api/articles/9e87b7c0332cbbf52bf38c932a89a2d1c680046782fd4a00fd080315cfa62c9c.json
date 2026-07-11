@@ -1,0 +1,77 @@
+{
+  "id": "9e87b7c0332cbbf52bf38c932a89a2d1c680046782fd4a00fd080315cfa62c9c",
+  "title": "Matar el servidor: Por qué Holepunch abandonó Node.js y creó Bare, el runtime minimalista para apps P2P sin bloat",
+  "summary": "El equipo de Holepunch, creador de la aplicación descentralizada Pear, descartó Node.js por sus limitaciones arquitectónicas centradas en servidores y desarrolló Bare, un runtime JavaScript minimalista que elimina el bloat de APIs legacy y permite intercambiar el motor de ejecución según el dispositivo.",
+  "url": "https://dev.to/aniket_misra_e47d1564ab7b/kill-the-server-why-holepunch-threw-away-nodejs-and-built-bare-3gdi",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-07-11T03:07:00.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fd54fa7cc6lq8qv4xqtoc.png",
+  "imageAlt": "Matar el servidor: Por qué Holepunch abandonó Node.js y creó Bare, el runtime minimalista para apps P2P sin bloat",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El equipo de Holepunch, creador de la aplicación descentralizada Pear, descartó Node.js por sus limitaciones arquitectónicas centradas en servidores y desarrolló Bare, un runtime JavaScript minimalista que elimina el bloat de APIs legacy y permite intercambiar el motor de ejecución según el dispositivo.",
+  "keyPoints": [
+    "Holepunch desarrolló inicialmente su runtime P2P Pear sobre Node.js, pero la arquitectura del entorno, centrada en servidores, impedía un funcionamiento verdaderamente descentralizado.",
+    "Bare es un runtime JavaScript minimalista que elimina el bloat de la biblioteca estándar de Node, como HTTP, net o crypto, para evitar dependencias de infraestructuras centralizadas.",
+    "El núcleo de Bare incluye libjs, un envoltorio C-API que abstrae el motor de JavaScript, permitiendo usar V8 por defecto o motores ligeros como QuickJS para dispositivos con recursos limitados.",
+    "El runtime solo incluye tres primitivas básicas, dejando el resto de funcionalidades a módulos desarrollados por la comunidad de usuario."
+  ],
+  "whyMatters": "Esta noticia es fundamental para el ecosistema de desarrollo de aplicaciones descentralizadas, ya que Bare resuelve una limitación histórica de los entornos JavaScript para construir redes P2P verdaderamente sin servidores intermedios. Su arquitectura modular y la posibilidad de cambiar el motor de JavaScript abren la puerta a despliegues en dispositivos IoT de bajos recursos, routers y microcontroladores, un escenario impensable con Node.js. Para el sector tecnológico europeo y español, supone una alternativa de código abierto que reduce la dependencia de entornos centrados en infraestructuras centralizadas, impulsando el desarrollo de soluciones de conectividad descentralizada adaptadas a necesidades locales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fd54fa7cc6lq8qv4xqtoc.png",
+      "alt": "Imagen de portada del artículo original sobre el runtime Bare de Holepunch",
+      "caption": "Portada del artículo de Dev.to que explica los motivos por los que Holepunch abandonó Node.js para crear Bare"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#Holepunch",
+    "#BareRuntime",
+    "#NodeJS",
+    "#P2P",
+    "#DesarrolloWeb"
+  ],
+  "fullArticle": "El equipo de Holepunch, reconocido por desarrollar herramientas de conectividad descentralizada, se encontró con un obstáculo insalvable al crear Pear, su runtime de aplicaciones peer-to-peer: Node.js, el entorno JavaScript dominante fuera del navegador, estaba diseñado para arquitecturas cliente-servidor, lo que chocaba de frente con su objetivo de construir una red sin servidores centrales. Aunque Node cuenta con un ecosistema masivo, el motor V8 de Google y un bucle de eventos asíncrono probado, arrastra décadas de APIs legacy como HTTP, net o TLS ligadas a infraestructuras centralizadas, que se convertían en un lastre innecesario para un proyecto que busca conectar dispositivos directamente entre sí mediante una Tabla de Hash Distribuida (DHT).\n\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fd54fa7cc6lq8qv4xqtoc.png]\n\nLa solución fue desarrollar Bare, un runtime JavaScript minimalista creado específicamente para incrustaciones en escritorio, móvil e IoT. Bare mantiene las partes positivas de la arquitectura de Node, pero desacopla completamente el motor de JavaScript de las APIs del sistema gracias a libjs, un envoltorio C-API que abstrae el motor de ejecución. Por defecto usa V8 para obtener el máximo rendimiento en equipos de escritorio, pero permite cambiar a motores ligeros como QuickJS o JerryScript para dispositivos con recursos muy limitados, como routers LTE o microcontroladores, sin modificar la arquitectura central del runtime. Además, Bare no incluye ninguna de las APIs centradas en servidores de Node: no trae HTTP, net ni crypto integrados, ya que en una arquitectura P2P verdadera el uso de HTTP es un anti patrón que depende de DNS, autoridades de certificación centralizadas y direcciones IP públicas. El runtime solo incluye tres primitivas básicas, dejando el resto de funcionalidades a módulos desarrollados por la comunidad de usuario.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-11T03:26:25.365Z",
+  "links": [
+    {
+      "title": "Artículo original en Dev.to sobre Bare",
+      "url": "https://dev.to/holepunch/kill-the-server-why-holepunch-threw-away-nodejs-and-built-bare-4k8e"
+    },
+    {
+      "title": "Repositorio oficial de Bare en GitHub",
+      "url": "https://github.com/holepunch/bare"
+    },
+    {
+      "title": "Sitio oficial de Holepunch",
+      "url": "https://holepunch.io"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "APIs de servidor eliminadas en Bare",
+      "value": "3 (http, net, crypto)"
+    },
+    {
+      "label": "Motores de JavaScript compatibles con libjs",
+      "value": "V8, QuickJS, JerryScript"
+    },
+    {
+      "label": "Primitivas base incluidas en Bare",
+      "value": "3 (sistema de módulos CJS/ESM y APIs de bajo nivel)"
+    },
+    {
+      "label": "Plataformas objetivo de Bare",
+      "value": "Escritorio, móvil e IoT"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

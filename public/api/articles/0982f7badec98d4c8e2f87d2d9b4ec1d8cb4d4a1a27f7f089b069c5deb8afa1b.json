@@ -1,0 +1,76 @@
+{
+  "id": "0982f7badec98d4c8e2f87d2d9b4ec1d8cb4d4a1a27f7f089b069c5deb8afa1b",
+  "title": "Chrome 150 corrige 27 vulnerabilidades de seguridad, 13 de tipo use-after-free",
+  "summary": "La última actualización de Google Chrome, versión 150, soluciona 27 fallos de seguridad, entre ellos 13 errores de tipo use-after-free, dos de ellos de severidad crítica detectados por el propio equipo de Google.",
+  "url": "https://www.securityweek.com/chrome-150-update-patches-27-vulnerabilities",
+  "source": "SecurityWeek",
+  "sourceUrl": "https://feeds.feedburner.com/Securityweek",
+  "publishedAt": "2026-07-09T07:27:59.000Z",
+  "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+  "imageAlt": "Chrome 150 corrige 27 vulnerabilidades de seguridad, 13 de tipo use-after-free",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "La última actualización de Google Chrome, versión 150, soluciona 27 fallos de seguridad, entre ellos 13 errores de tipo use-after-free, dos de ellos de severidad crítica detectados por el propio equipo de Google.",
+  "keyPoints": [
+    "La actualización Chrome 150, lanzada por Google, corrige un total de 27 vulnerabilidades de seguridad identificadas en el navegador.",
+    "Entre los fallos solucionados destacan 13 errores de tipo use-after-free, que pueden ser explotados para ejecutar código malicioso en el equipo del usuario.",
+    "Dos de las vulnerabilidades parcheadas tienen severidad crítica, y fueron detectadas por el propio equipo de seguridad interna de Google.",
+    "Esta actualización de seguridad ya está disponible para todos los usuarios de Chrome en sistemas Windows, macOS, Linux y Android."
+  ],
+  "whyMatters": "Esta actualización es crítica para la seguridad de millones de usuarios en España y Europa, ya que las vulnerabilidades corregidas podrían ser explotadas por ciberdelincuentes para robar datos personales, instalar malware o tomar control de dispositivos sin autorización. Al tratarse de fallos de severidad crítica, su explotación no requiere interacción compleja por parte del usuario, lo que aumenta el riesgo de ataques masivos. Usuarios particulares y empresas deben instalar la actualización de forma inmediata, especialmente en entornos laborales donde se maneja información sensible, para evitar brechas de seguridad con consecuencias económicas y legales.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "alt": "Chrome 150 corrige 27 vulnerabilidades de seguridad, 13 de tipo use-after-free",
+      "caption": "Imagen de portada"
+    }
+  ],
+  "subcategory": "ciberseguridad",
+  "hashtags": [
+    "#Chrome150",
+    "#SeguridadInformatica",
+    "#Ciberataques",
+    "#GoogleChrome"
+  ],
+  "fullArticle": "Google ha lanzado la versión 150 de su navegador Chrome, una actualización de seguridad obligatoria que corrige un total de 27 vulnerabilidades identificadas en el código de la plataforma. Entre los fallos solucionados se encuentran 13 errores de tipo use-after-free, un tipo de fallo de memoria que puede ser explotado por atacantes para ejecutar código malicioso, robar información confidencial o tomar control del dispositivo del usuario sin su consentimiento. Dos de estas vulnerabilidades han sido clasificadas como de severidad crítica, y fueron detectadas por el propio equipo de seguridad interna de Google durante sus procesos de auditoría rutinaria.\n\nLa actualización ya está disponible de forma automática para todos los usuarios de Chrome en sistemas operativos Windows, macOS, Linux y dispositivos Android, por lo que se recomienda instalarla de inmediato para mitigar riesgos. En el caso de usuarios españoles y europeos, la corrección de estos fallos es especialmente relevante, ya que los errores de severidad crítica pueden ser explotados en ataques masivos que afecten a particulares y empresas por igual, poniendo en riesgo datos personales, credenciales de acceso e información empresarial sensible. Las empresas, en particular, deben priorizar la actualización de todos los dispositivos que utilicen Chrome en su entorno laboral para evitar brechas de seguridad que puedan tener consecuencias legales y económicas de gran magnitud.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-07-09T07:43:46.547Z",
+  "links": [
+    {
+      "title": "Artículo original en SecurityWeek sobre la actualización Chrome 150",
+      "url": "https://www.securityweek.com/chrome-150-update-patches-27-vulnerabilities/"
+    },
+    {
+      "title": "Centro de soporte oficial de Google Chrome",
+      "url": "https://support.google.com/chrome/"
+    },
+    {
+      "title": "Portal de reportes de vulnerabilidades de Google",
+      "url": "https://sites.google.com/view/google-security-vulnerabilities/home"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Vulnerabilidades totales parcheadas",
+      "value": "27"
+    },
+    {
+      "label": "Errores use-after-free corregidos",
+      "value": "13"
+    },
+    {
+      "label": "Vulnerabilidades de severidad crítica",
+      "value": "2"
+    },
+    {
+      "label": "Sistemas compatibles con la actualización",
+      "value": "Windows, macOS, Linux, Android"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

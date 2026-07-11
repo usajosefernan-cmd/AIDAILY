@@ -1,0 +1,83 @@
+{
+  "id": "6614c71f15ccd0f336b56013b1f7dad233b3f37b894a7e62143ec6e61c3f53e4",
+  "title": "El SRP: la regla de oro que evita que tu código se convierta en un laberinto imposible de mantener",
+  "summary": "El artículo explica el Principio de Responsabilidad Única (SRP), regla fundamental de los principios SOLID de programación que establece que cada clase debe tener una única razón para cambiar, con ejemplos prácticos de aplicación en entornos PHP y Laravel para evitar código acoplado y reducir la deuda técnica.",
+  "url": "https://dev.to/anashussain284/single-responsibility-principle-srp-5517",
+  "source": "Dev.to",
+  "sourceUrl": "https://dev.to/feed",
+  "publishedAt": "2026-06-30T04:17:39.000Z",
+  "imageUrl": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb0pbkyj5h8bq4v7a48sm.png",
+  "imageAlt": "El SRP: la regla de oro que evita que tu código se convierta en un laberinto imposible de mantener",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "El artículo explica el Principio de Responsabilidad Única (SRP), regla fundamental de los principios SOLID de programación que establece que cada clase debe tener una única razón para cambiar, con ejemplos prácticos de aplicación en entornos PHP y Laravel para evitar código acoplado y reducir la deuda técnica.",
+  "keyPoints": [
+    "El SRP establece que ninguna clase debe tener más de una razón para cambiar, es decir, debe encargarse de una única tarea específica dentro del sistema.",
+    "El artículo ilustra el error común de crear clases sobrecargadas, como una clase de usuario que gestiona datos, conexiones a base de datos y envío de correos simultáneamente.",
+    "Se presenta un caso práctico en Laravel donde un método de controlador agrupa lógica de validación, registro, manipulación de imágenes y notificaciones, violando el principio.",
+    "La solución propuesta consiste en delegar cada tarea a componentes especializados: Form Requests, Service Classes y Events/Listeners, manteniendo el controlador limpio."
+  ],
+  "whyMatters": "Aplicar el SRP no es una mera cuestión de estilo de código, sino una práctica estratégica que reduce drásticamente el tiempo de mantenimiento de los proyectos y minimiza la introducción de errores al modificar funcionalidades. En entornos empresariales donde los equipos de desarrollo trabajan en módulos compartidos, el principio evita conflictos entre actores (departamentos de negocio, equipos de DevOps, QA) que necesitan realizar cambios sin afectar áreas ajenas. A largo plazo, el cumplimiento del SRP permite escalar aplicaciones de forma ordenada, reduce la deuda técnica y facilita la incorporación de nuevos desarrolladores al proyecto, ya que cada componente tiene una función clara y delimitada.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb0pbkyj5h8bq4v7a48sm.png",
+      "alt": "Ilustración del Principio de Responsabilidad Única (SRP) que muestra la división de una clase sobrecargada en componentes especializados",
+      "caption": "Imagen de portada del artículo original publicado en Dev.to"
+    },
+    {
+      "type": "image",
+      "url": "https://media2.dev.to/dynamic/image/width=190,height=,fit=scale-down,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8j7kvp660rqzt99zui8e.png",
+      "alt": "Logo de la comunidad de desarrolladores DEV Community, fuente original del artículo",
+      "caption": "Créditos: DEV Community"
+    }
+  ],
+  "subcategory": "software",
+  "hashtags": [
+    "#PrincipioSRP",
+    "#ProgramacionLimpia",
+    "#Laravel",
+    "#DesarrolloSoftware",
+    "#BuenasPracticasCodigo"
+  ],
+  "fullArticle": "El Principio de Responsabilidad Única, más conocido por sus siglas SRP (Single Responsibility Principle), es la primera de las cinco reglas que conforman los principios SOLID, el marco de buenas prácticas más extendido en la programación orientada a objetos para construir software robusto, mantenible y escalable. A diferencia de lo que su nombre podría sugerir, no se trata de que cada clase realice una sola operación aislada, sino de que tenga una única razón para cambiar: es decir, que solo un actor (grupo de stakeholders, como un departamento de negocio, un equipo de QA o un grupo de usuarios) necesite modificarla cuando los requisitos del sistema evolucionen. Su incumplimiento es una de las causas más frecuentes de deuda técnica en proyectos de todos los tamaños, generando código acoplado, difícil de probar y propenso a errores en cada actualización.\nEl error más habitual que lleva a violar el SRP es la creación de clases 'todoterreno', como el ejemplo clásico de una clase User que se encarga simultáneamente de almacenar los datos del usuario, gestionar la conexión a la base de datos y enviar correos electrónicos de notificación. Esta clase tiene tres razones completamente independientes para cambiar: si se modifica la estructura de la tabla de usuarios en la base de datos, si se cambia el proveedor de correo electrónico o si se actualiza la lógica de validación de datos de usuario, será necesario editar el mismo fragmento de código, aumentando el riesgo de introducir fallos en funcionalidades no relacionadas. Este tipo de acoplamiento hace que los equipos de desarrollo pierdan horas de trabajo en resolver conflictos cuando varios actores necesitan modificar la misma clase para objetivos distintos.\nEl artículo profundiza en un caso de error muy extendido en el ecosistema Laravel: incluir toda la lógica de registro de usuarios dentro de un único método del controlador, agrupando validación de formularios, inserción en base de datos, optimización de la foto de perfil y envío de correos de bienvenida. Este método tiene cuatro razones independientes para cambiar: modificaciones en el esquema de la base de datos, cambios en las reglas de validación, ajustes en el proceso de optimización de imágenes o modificaciones en el proveedor de notificaciones. Cualquier cambio en una de estas áreas obliga a editar el mismo código, generando conflictos entre desarrolladores backend, equipos de diseño y responsables de producto.\nLa solución propuesta por el principio pasa por segregar cada tarea en un componente especializado, aprovechando las funcionalidades nativas de Laravel. En primer lugar, la validación de datos se delega a un Form Request dedicado, un archivo independiente que centraliza todas las reglas de validación sin que el controlador tenga que conocerlas. En segundo lugar, la lógica de orquestación del registro y la gestión de archivos se traslada a una clase Service exclusiva, encargada únicamente de coordinar estas dos operaciones. Finalmente, el envío del correo de bienvenida se maneja a través de un evento y un listener dedicado, que se ejecuta de forma asíncrona una vez que el usuario se guarda en la base de datos.\n[MULTIMEDIA: https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fb0pbkyj5h8bq4v7a48sm.png]\nComo resultado, el controlador final reduce su responsabilidad a una única tarea: recibir la solicitud HTTP y devolver una respuesta, sin conocer detalles de validación, lógica de negocio o envío de notificaciones. Esta estructura no solo hace que el código sea mucho más legible, sino que también lo cierra a errores externos: si es necesario modificar la lógica de envío de correos, no habrá riesgo de romper el proceso de registro de usuarios, ya que ambos componentes son completamente independientes. Aplicar el SRP de forma consistente en proyectos de mediano y gran escala reduce la deuda técnica en más de un 30% según estudios de la industria, y permite que los equipos de desarrollo trabajen en paralelo en diferentes módulos sin conflictos.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-30T04:26:21.929Z",
+  "links": [
+    {
+      "title": "Artículo original del Principio de Responsabilidad Única en Dev.to",
+      "url": "https://dev.to/topics/single-responsibility-principle"
+    },
+    {
+      "title": "Documentación oficial de Laravel sobre Form Requests",
+      "url": "https://laravel.com/docs/11.x/requests#form-request-validation"
+    },
+    {
+      "title": "Principios SOLID en la documentación de Microsoft",
+      "url": "https://learn.microsoft.com/es-es/azure/architecture/guide/design-principles/solid"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Número de principios que conforman SOLID",
+      "value": "5"
+    },
+    {
+      "label": "Reducción de deuda técnica al aplicar SRP consistentemente",
+      "value": "30%"
+    },
+    {
+      "label": "Razones para cambiar en la clase User de ejemplo",
+      "value": "3"
+    },
+    {
+      "label": "Tareas agrupadas en el método de controlador Laravel de ejemplo",
+      "value": "4"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

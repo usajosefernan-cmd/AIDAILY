@@ -1,0 +1,77 @@
+{
+  "id": "c0c762f6534bc056f1033196284ab80601d8a672acfa39331bc6a9637f47a182",
+  "title": "Linux 7.2-rc1 se lanza con soporte para HDMI 2.1 FRL y AMD ISP4: 'Todo parece razonablemente normal'",
+  "summary": "Se ha publicado la primera release candidate de Linux 7.2, cerrando la ventana de fusión de desarrollo e iniciando ocho semanas de pruebas. Incluye soporte nativo para HDMI 2.1 FRL en AMDGPU, AMD ISP4 y mejoras de seguridad CAS, y servirá de base para Fedora 45 y Ubuntu 26.10.",
+  "url": "https://www.phoronix.com/news/Linux-7.2-rc1-Released",
+  "source": "Phoronix",
+  "sourceUrl": "https://www.phoronix.com/rss.php",
+  "publishedAt": "2026-06-28T20:04:19.000Z",
+  "imageUrl": "https://www.phoronix.net/image.php?id=2026&image=linux_72_rc1",
+  "imageAlt": "Linux 7.2-rc1 se lanza con soporte para HDMI 2.1 FRL y AMD ISP4: 'Todo parece razonablemente normal'",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Se ha publicado la primera release candidate de Linux 7.2, cerrando la ventana de fusión de desarrollo e iniciando ocho semanas de pruebas. Incluye soporte nativo para HDMI 2.1 FRL en AMDGPU, AMD ISP4 y mejoras de seguridad CAS, y servirá de base para Fedora 45 y Ubuntu 26.10.",
+  "keyPoints": [
+    "Linux 7.2-rc1 marca el cierre de la ventana de fusión de desarrollo, iniciando un periodo de pruebas de aproximadamente ocho semanas.",
+    "La actualización incorpora soporte nativo para HDMI 2.1 FRL en controladores AMDGPU, mejorando la salida de video de alta tasa de refresco.",
+    "Se añade compatibilidad con el procesador de señal de imagen AMD ISP4, ampliando las capacidades de hardware soportado por el kernel.",
+    "La versión estable de Linux 7.2 servirá de base para distribuciones como Fedora 45 y Ubuntu 26.10."
+  ],
+  "whyMatters": "Este lanzamiento es un hito clave en el ciclo de desarrollo del kernel de Linux, ya que define las funcionalidades que estarán disponibles para millones de usuarios y empresas en la próxima versión estable. La inclusión de soporte para hardware AMD de última generación como HDMI 2.1 FRL e ISP4 garantiza que los usuarios de componentes de esta marca podrán aprovechar al máximo sus capacidades sin necesidad de parches adicionales. Además, al ser la base de distribuciones populares como Fedora 45 y Ubuntu 26.10, su estabilidad y rendimiento repercutirán directamente en la experiencia de usuarios finales, desarrolladores y empresas que dependen de estas plataformas para sus operaciones diarias.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.phoronix.net/image.php?id=2026&image=linux_72_rc1",
+      "alt": "Imagen de portada del lanzamiento de Linux 7.2-rc1, con el texto del titular y la referencia a las novedades de AMD",
+      "caption": "Imagen de portada de la noticia del lanzamiento de Linux 7.2-rc1 publicada en Phoronix"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#LinuxKernel",
+    "#Linux72",
+    "#AMDGPU",
+    "#Fedora45",
+    "#Ubuntu2610"
+  ],
+  "fullArticle": "El equipo de desarrollo del kernel de Linux ha lanzado la primera release candidate de la versión 7.2, marcando el fin de la ventana de fusión de funcionalidades y dando inicio a un periodo de pruebas intensivas de aproximadamente ocho semanas antes del lanzamiento de la versión estable. Este ciclo de desarrollo se mantiene fiel a la hoja de ruta habitual del proyecto, que busca equilibrar la incorporación de novedades técnicas con la estabilidad requerida para su uso en entornos de producción. Según el comunicado oficial, el estado actual del código se describe como 'razonablemente normal', sin alertas de última hora que requieran ajustes urgentes.\n\nEntre las novedades más destacadas de esta release candidate se encuentra la incorporación de soporte nativo para HDMI 2.1 Fixed Rate Link (FRL) en los controladores AMDGPU, una funcionalidad que permite aprovechar al máximo las capacidades de las tarjetas gráficas AMD de última generación en salidas de video de alta resolución y alta tasa de refresco, como las necesarias para gaming en 4K a 120 Hz o contenido de creación profesional. Además, se ha añadido compatibilidad con el procesador de señal de imagen AMD ISP4, un componente presente en muchos sistemas modernos que mejora el procesamiento de imágenes provenientes de cámaras, con aplicaciones en dispositivos portátiles, vehículos y equipos de vigilancia. También se incluyen mejoras en el sistema de seguridad CAS (Control-flow Enforcement Technology) que refuerzan la protección contra vulnerabilidades de tipo desbordamiento de búfer.\n\n[MULTIMEDIA: https://www.phoronix.net/image.php?id=2026&image=linux_72_rc1]\n\nLa versión estable de Linux 7.2 está prevista para finales de octubre de 2024, y servirá como base para algunas de las distribuciones más populares del ecosistema, entre ellas Fedora 45, que se lanzará en octubre de este año, y Ubuntu 26.10, que llegará en 2026. Esto significa que millones de usuarios, desde entusiastas hasta empresas que dependen de estas distribuciones para sus servidores y estaciones de trabajo, se beneficiarán de estas mejoras de hardware y seguridad sin necesidad de realizar modificaciones manuales al kernel. El periodo de pruebas de ocho semanas es crucial para identificar y corregir posibles errores que puedan afectar la estabilidad en escenarios de uso real.\n\nEste lanzamiento también refleja la continua apuesta del proyecto Linux por la compatibilidad con hardware de última generación, un aspecto que históricamente ha sido uno de los puntos débiles del ecosistema de código abierto en comparación con soluciones propietarias. La incorporación temprana de soporte para componentes como el HDMI 2.1 FRL y el ISP4 demuestra la colaboración estrecha entre los desarrolladores del kernel y los fabricantes de hardware, en este caso AMD, para reducir la brecha de soporte y ofrecer una experiencia de usuario cada vez más pulida. A medida que se acerque la fecha de lanzamiento estable, se espera que se publiquen nuevas release candidates con correcciones de errores y optimizaciones adicionales.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-28T20:24:43.712Z",
+  "links": [
+    {
+      "title": "Noticia original del lanzamiento de Linux 7.2-rc1 en Phoronix",
+      "url": "https://www.phoronix.com/news/Linux-7.2-rc1-Released"
+    },
+    {
+      "title": "Sitio oficial del kernel de Linux",
+      "url": "https://www.kernel.org/"
+    },
+    {
+      "title": "Controladores de kernel para hardware AMD",
+      "url": "https://www.amd.com/en/support/kernel"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Duración del periodo de pruebas",
+      "value": "8 semanas"
+    },
+    {
+      "label": "Distribuciones basadas en esta versión",
+      "value": "Fedora 45, Ubuntu 26.10"
+    },
+    {
+      "label": "Funcionalidades de AMD añadidas",
+      "value": "HDMI 2.1 FRL, AMD ISP4, CAS"
+    },
+    {
+      "label": "Fecha prevista de lanzamiento estable",
+      "value": "Finales de octubre de 2024"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}

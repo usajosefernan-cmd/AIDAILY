@@ -1,17 +1,30 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Portal from '../components/Portal.jsx';
+import fs from 'fs';
+import path from 'path';
 
+// Cargar artículos del caché local para inyectarlos en la página (SSR/SSG preliminar)
+let recentArticles = [];
+let totalArticlesCount = 0;
+try {
+  const cachePath = path.resolve('src/data/cache-news.json');
+  if (fs.existsSync(cachePath)) {
+    const cacheContent = fs.readFileSync(cachePath, 'utf-8');
+    const allArts = JSON.parse(cacheContent);
+    if (Array.isArray(allArts)) {
+      totalArticlesCount = allArts.length;
+      // Ordenar por fecha descendente (más nuevos primero) para inyectar noticias actuales
+      allArts.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
+      // Tomar los 200 artículos más nuevos
+      recentArticles = allArts.slice(0, 200);
+    }
+  }
+} catch (e) {
+  console.error("Error cargando caché local en index.astro:", e);
+}
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="AIDAILY — El futuro contado hoy" description="Noticias y análisis tecnológico y científico curados con inteligencia artificial. Estilo premium, mobile-first y en tiempo real.">
+  <Portal client:load recentArticles={recentArticles} totalArticlesCount={totalArticlesCount} />
+</Layout>

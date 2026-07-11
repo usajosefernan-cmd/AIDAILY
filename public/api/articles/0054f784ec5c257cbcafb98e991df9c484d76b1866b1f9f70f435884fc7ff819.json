@@ -1,0 +1,95 @@
+{
+  "id": "0054f784ec5c257cbcafb98e991df9c484d76b1866b1f9f70f435884fc7ff819",
+  "title": "El SA3000, el procesador ‘inmortal’ de Sandia que resiste la radiación nuclear y navega por el espacio",
+  "summary": "Sandia National Labs desarrolló en los años 80 el SA3000, un procesador resistente a la radiación basado en el Intel 8085, diseñado para armas nucleares y misiones espaciales. Con una resistencia de hasta 3 millones de rads, se usó en el misil Trident II y el satélite CRRES, y fue comercializado por Harris en 1990.",
+  "url": "https://www.cpushack.com/2026/06/03/sandia-national-labs-sa3000-8085-cpu/",
+  "source": "Hacker News",
+  "sourceUrl": "https://news.ycombinator.com/rss",
+  "publishedAt": "2026-06-29T10:20:25.000Z",
+  "imageUrl": "https://www.cpushack.com/wp-content/uploads/2026/06/SandiaSA3000B-444102-000-1024x410.jpg",
+  "imageAlt": "El SA3000, el procesador ‘inmortal’ de Sandia que resiste la radiación nuclear y navega por el espacio",
+  "tags": [
+    "tecnologia",
+    "noticias"
+  ],
+  "aiSummary": "Sandia National Labs desarrolló en los años 80 el SA3000, un procesador resistente a la radiación basado en el Intel 8085, diseñado para armas nucleares y misiones espaciales. Con una resistencia de hasta 3 millones de rads, se usó en el misil Trident II y el satélite CRRES, y fue comercializado por Harris en 1990.",
+  "keyPoints": [
+    "Sandia National Labs desarrolló el SA3000 en los años 80 como conversión radhard CMOS del Intel 8085, con 18.000 transistores frente a los 6.500 del original.",
+    "El procesador soporta hasta 3 millones de rads de radiación con solo un 40% de pérdida de rendimiento, muy por encima del objetivo inicial de 100.000 rads.",
+    "Se utilizó en el sistema de guiado del misil nuclear Trident II, así como en el satélite CRRES de 1990 para estudiar efectos de radiación en electrónica.",
+    "Harris comercializó el diseño en 1990 como HS1-80C85RH (grado espacial) y HS9-80C85RH (grado militar), con especificaciones reducidas respecto al original."
+  ],
+  "whyMatters": "Este desarrollo representa un hito en la ingeniería de semiconductores para entornos extremos, ya que demostró que era posible crear procesadores adaptados a misiones de alta radiación sin renunciar a la compatibilidad con arquitecturas existentes. Su legado perdura en los sistemas de disuasión nuclear actuales y en las misiones espaciales profundas, donde la fiabilidad electrónica es un factor crítico para el éxito de las operaciones. Además, sentó las bases para los estándares actuales de componentes radhard que se utilizan en sectores como la defensa, la aeroespacial y las centrales nucleares, donde la exposición a radiación es un riesgo constante.",
+  "multimedia": [
+    {
+      "type": "image",
+      "url": "https://www.cpushack.com/wp-content/uploads/2026/06/SandiaSA3000B-444102-000-1024x410.jpg",
+      "alt": "Procesador Sandia SA3000 en encapsulado cerámico, desarrollado en 1984 como versión resistente a la radiación del Intel 8085",
+      "caption": "Procesador SA3000 de Sandia National Labs, fabricado en 1984. © CPU Shack"
+    },
+    {
+      "type": "image",
+      "url": "https://www.cpushack.com/wp-content/uploads/2026/06/Intel_8085A_die-221x300.jpg",
+      "alt": "Die del procesador Intel 8085 original, base para el desarrollo del SA3000 de Sandia",
+      "caption": "Die del Intel 8085, procesador comercial de 6.500 transistores que sirvió de base para el SA3000. © CPU Shack"
+    },
+    {
+      "type": "image",
+      "url": "https://www.cpushack.com/wp-content/uploads/2026/06/1280px-Trident_II_missile_image-249x300.jpg",
+      "alt": "Misil balístico submarino Trident II, que utiliza el procesador SA3000 en su sistema de guiado de ojivas nucleares",
+      "caption": "Misil Trident II, portador de las ojivas nucleares W88 que integran el SA3000. © US Navy"
+    },
+    {
+      "type": "image",
+      "url": "https://www.cpushack.com/wp-content/uploads/2026/06/HarrisHS1-80C85RH-Q-34371.jpg",
+      "alt": "Versión comercial del SA3000 fabricada por Harris en 1990 para uso espacial y militar",
+      "caption": "Procesador HS1-80C85RH de Harris, versión comercial del diseño de Sandia para mercados espacial y de defensa. © CPU Shack"
+    }
+  ],
+  "subcategory": "ia/general",
+  "hashtags": [
+    "#SandiaNationalLabs",
+    "#SA3000",
+    "#ProcesadorRadHard",
+    "#TridentII",
+    "#HarrisSemiconductor"
+  ],
+  "fullArticle": "En la década de 1970, el Laboratorio Nacional Sandia, con sede en Albuquerque, Nuevo México, inició un proyecto pionero para desarrollar capacidad propia de diseño, fabricación y prueba de circuitos integrados a escala, ante la falta de componentes comerciales resistentes a la radiación para usos militares y espaciales. Mientras que el empaquetado de los chips se subcontrató a empresas como Fairchild y Allied Signal, el equipo de Sandia se encargó de todo el proceso de fabricación, comenzando en 1978 con obleas de 2 pulgadas y un proceso de 10 micras, para luego actualizarse en 1982 a un sistema de 4 pulgadas con features de 2 micras, nodo utilizado para fabricar los circuitos integrados de la sonda espacial Galileo, incluido el procesador 1802 de RCA, adaptado a un proceso resistente a la radiación.\n\n[MULTIMEDIA: https://www.cpushack.com/wp-content/uploads/2026/06/SandiaSA3000B-444102-000-1024x410.jpg]\n\nEl proyecto más ambicioso de Sandia en este ámbito fue la conversión a CMOS resistente a la radiación del procesador Intel 8085, lanzado en 1982, que derivó en el SA3000. A diferencia del 8085 original, que contaba con 6.500 transistores en tecnología HMOS, el SA3000 elevó su conteo a 18.000 transistores al adaptarse a la arquitectura CMOS, con un tamaño de die de entre 228 y 239 milésimas de pulgada, operando entre 4,5 y 11 voltios, y una velocidad máxima de 10 MHz, muy por encima de las versiones comerciales posteriores. Una de las mayores dificultades del desarrollo fue la adaptación del decodificador de instrucciones, una PLA de gran tamaño fácil de implementar en NMOS pero mucho más compleja en CMOS, además de las modificaciones en el sustrato epitaxial n-on-n+ y los anillos de guarda para evitar el latchup por radiación.\n\n[MULTIMEDIA: https://www.cpushack.com/wp-content/uploads/2026/06/Intel_8085A_die-221x300.jpg]\n\nLas prestaciones del SA3000 superaron con creces los objetivos iniciales: mientras el objetivo era resistir 100.000 rads de radiación, el procesador soporta hasta 1 millón de rads con solo un 25% de pérdida de rendimiento, y 3 millones de rads con una caída del 40%, una cifra muy superior a los 1.000 rads que son letales para los seres humanos. Estas características lo convirtieron en el componente elegido para el sistema de programación y cálculo de altitud y fuzing de la ojiva nuclear W88 de 475 kilotones, instalada en los misiles balísticos submarinos Trident II, donde sigue en uso en la actualidad.\n\n[MULTIMEDIA: https://www.cpushack.com/wp-content/uploads/2026/06/1280px-Trident_II_missile_image-249x300.jpg]\n\nAdemás de su uso en sistemas de defensa, el SA3000 fue empleado por Ball Aerospace en un diseño de rastreador estelar para el satélite Combined Release and Radiation Effects Satellite (CRRES), lanzado en 1990 para estudiar los efectos de la radiación de alta intensidad en componentes electrónicos; aunque el satélite sufrió una falla en su batería al año de su lanzamiento, todos los circuitos integrados, incluido el SA3000, funcionaron sin incidencias durante toda la misión. En 1990, la empresa Harris comercializó el diseño del SA3000 en dos versiones: el HS1-80C85RH, de grado espacial con estrictos controles de calidad, y el HS9-80C85RH, de grado militar, ambas con un voltaje de operación de 5 voltios y velocidad máxima de 2 MHz, muy por debajo de las prestaciones del diseño original de Sandia.\n\n[MULTIMEDIA: https://www.cpushack.com/wp-content/uploads/2026/06/HarrisHS1-80C85RH-Q-34371.jpg]\n\nEl desarrollo del SA3000 no estuvo exento de contratiempos: a mediados de la década de 1980, el gobierno estadounidense decidió externalizar la gestión de la fábrica de Sandia a la empresa Allied Signal, que carecía de experiencia en la gestión de instalaciones de fabricación de semiconductores, lo que ralentizó la producción durante varios años. Hoy en día, el SA3000 se conserva como pieza clave en la historia de los semiconductores de uso aeroespacial y defensa, un ejemplo de cómo la ingeniería de propósito específico puede resolver limitaciones que la industria comercial no aborda durante décadas.",
+  "category": "tecnologia",
+  "scrapedAt": "2026-06-29T12:30:07.409Z",
+  "links": [
+    {
+      "title": "Página oficial de Sandia National Laboratories",
+      "url": "https://www.sandia.gov/"
+    },
+    {
+      "title": "Artículo original del CPU Shack sobre el SA3000",
+      "url": "https://www.cpushack.com/sandia-national-labs-sa3000-8085-cpu/"
+    },
+    {
+      "title": "Información oficial del misil Trident II (US Navy)",
+      "url": "https://www.navy.mil/Resources/Fact-Files/Display-FactFiles/Article/2169159/ugm-133-trident-ii-d5/"
+    }
+  ],
+  "interestingData": [
+    {
+      "label": "Año de lanzamiento del SA3000",
+      "value": "1984"
+    },
+    {
+      "label": "Resistencia máxima a radiación del SA3000",
+      "value": "3×10⁶ rads con un 40% de pérdida de rendimiento"
+    },
+    {
+      "label": "Número de circuitos integrados fabricados para la sonda Galileo",
+      "value": "Más de 50.000 unidades"
+    },
+    {
+      "label": "Velocidad máxima del SA3000 original",
+      "value": "10 MHz"
+    }
+  ],
+  "_tokens": {},
+  "_numbers": {},
+  "_trigrams": {}
+}
