@@ -1,0 +1,12 @@
+# ==============================================================================
+# AIDAILY — Configuración Recomendada de Crontab para la VPS (Usuario: ubuntu)
+# Para editar el crontab ejecuta en la terminal de la VPS: crontab -e
+# ==============================================================================
+
+# 1. Pipeline Principal Unificado (Sincronización, Validación, Compilación y Deploy Seguro)
+# Se ejecuta cada 30 minutos. Utiliza 'bash -l -c' para asegurar que se carguen el entorno de Node/NVM de forma nativa.
+*/30 * * * * bash -l -c "cd /home/ubuntu/workspace/AIDAILY && npm run sync" >> /home/ubuntu/workspace/AIDAILY/logs/sync-cron.log 2>&1
+
+# 2. Cron de Hot Topics (Temas de Tendencia de IA/Tecnología)
+# Se ejecuta cada 2 horas de forma puntual.
+0 */2 * * * bash -l -c "cd /home/ubuntu/workspace/AIDAILY && npm run news:hot" >> /home/ubuntu/workspace/AIDAILY/logs/hot-topics-cron.log 2>&1
