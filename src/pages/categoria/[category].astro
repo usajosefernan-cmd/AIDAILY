@@ -1,8 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Portal from '../../components/Portal.jsx';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import fs from 'fs';
+import path from 'path';
+import { DatabaseSync } from 'node:sqlite';
 
 export async function getStaticPaths() {
   const categories = [
@@ -37,33 +38,47 @@ const PORTAL_MAPPING = {
   gastronomia: ['gastronomia', 'recetas', 'restaurantes', 'nutricion', 'vinos', 'cocina']
 };
 
-function normalizeText(text) {
-  if (!text) return '';
-  return String(text).toLowerCase().trim();
-}
+const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
 
 try {
-  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
-  if (existsSync(cachePath)) {
-    const cacheContent = readFileSync(cachePath, 'utf-8');
-    const allArts = JSON.parse(cacheContent);
-    if (Array.isArray(allArts)) {
-      const allowedCats = PORTAL_MAPPING[categoryKey] || [categoryKey];
-      const allowedNormalized = allowedCats.map(normalizeText);
+  if (fs.existsSync(dbPath)) {
+    const db = new DatabaseSync(dbPath);
+    const allowedCats = PORTAL_MAPPING[categoryKey] || [categoryKey];
+    const placeholders = allowedCats.map(() => '?').join(',');
 
-      const filtered = allArts.filter(art => {
-        const artCat = normalizeText(art.category);
-        const artSub = normalizeText(art.subcategory);
-        return allowedNormalized.includes(artCat) || allowedNormalized.includes(artSub);
-      });
+    // Obtener total
+    const countStmt = db.prepare(`
+      SELECT count(*) as total FROM articles 
+      WHERE status = 'publicada' 
+        AND (category IN (${placeholders}) OR subcategory IN (${placeholders}))
+    `);
+    const countRow = countStmt.get(...allowedCats, ...allowedCats) as any;
+    totalArticlesCount = countRow ? countRow.total : 0;
 
-      totalArticlesCount = filtered.length;
-      filtered.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
-      categoryArticles = filtered.slice(0, 200);
-    }
+    // Obtener los últimos 200
+    const selectStmt = db.prepare(`
+      SELECT * FROM articles 
+      WHERE status = 'publicada' 
+        AND (category IN (${placeholders}) OR subcategory IN (${placeholders}))
+      ORDER BY publishedAt DESC 
+      LIMIT 200
+    `);
+    const rows = selectStmt.all(...allowedCats, ...allowedCats) as any[];
+    categoryArticles = rows.map((art) => {
+      return {
+        ...art,
+        tags: art.tags ? JSON.parse(art.tags) : [art.category],
+        tagsSecundarios: art.tagsSecundarios ? JSON.parse(art.tagsSecundarios) : [],
+        keyPoints: art.keyPoints ? JSON.parse(art.keyPoints) : [],
+        multimedia: art.multimedia ? JSON.parse(art.multimedia) : [],
+        hashtags: art.hashtags ? JSON.parse(art.hashtags) : [],
+        links: art.links ? JSON.parse(art.links) : [],
+        interestingData: art.interestingData ? JSON.parse(art.interestingData) : []
+      };
+    });
   }
 } catch (e) {
-  console.error(`Error cargando categoría ${categoryKey} en Astro:`, e);
+  console.error(`Error cargando categoría ${categoryKey} en Astro SSG:`, e);
 }
 
 const categoryTitle = categoryKey.charAt(0).toUpperCase() + categoryKey.slice(1);

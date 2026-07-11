@@ -153,8 +153,10 @@ console.log(`  Fuentes: ${index.sources.length}`);
 console.log(`  Entidades: ${index.entities.length}`);
 
 // 3. Generar base de datos optimizada ligera de artículos (articles-light.json)
+// Se limita a los últimos 500 artículos más recientes para optimizar el rendimiento y velocidad de carga inicial (100KB en lugar de 8MB)
 const LIGHT_OUTPUT_PATH = OUTPUT_PATH.replace('search-index.json', 'articles-light.json');
-const lightArticles = arts.map(a => ({
+const sortedArts = [...arts].sort((a, b) => new Date(b.publishedAt || b.date || 0).getTime() - new Date(a.publishedAt || a.date || 0).getTime());
+const lightArticles = sortedArts.slice(0, 500).map(a => ({
   id: a.id || a.url,
   title: a.title,
   category: a.category,
@@ -167,4 +169,4 @@ const lightArticles = arts.map(a => ({
 }));
 
 fs.writeFileSync(LIGHT_OUTPUT_PATH, JSON.stringify(lightArticles, null, 2));
-console.log(`[articles-light] Generado exitosamente en ${LIGHT_OUTPUT_PATH} con ${lightArticles.length} artículos`);
+console.log(`[articles-light] Generado exitosamente en ${LIGHT_OUTPUT_PATH} con ${lightArticles.length} artículos más recientes`);

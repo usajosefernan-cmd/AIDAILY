@@ -221,14 +221,14 @@ if [ "$SYNC_OK" = "true" ]; then
     update_vps_status 6 "Compilación de Astro" "Generando el build estático de producción (npm run build)..." 20
     
     BUILD_OK=false
-    if run_with_retry "(cd /opt/aidaily && BUILD_ONLY=true PUBLIC_BASE_PATH=/pro/aidaily npm run build) 2>&1 | tee -a '$LOG_FILE'"; then
+    if run_with_retry "(cd /opt/aidaily && SQLITE_DB_PATH=/home/ubuntu/workspace/AIDAILY/data/aidaily.db BUILD_ONLY=true PUBLIC_BASE_PATH=/pro/aidaily npm run build) 2>&1 | tee -a '$LOG_FILE'"; then
         BUILD_OK=true
     else
         log "⚠️ ADVERTENCIA: Falló la compilación inicial de Astro. Iniciando protocolo de auto-reparación (Fase 1: Limpieza de caché)..."
         update_vps_status 6 "Auto-Reparación (Fase 1)" "Limpiando la caché de Astro y Vite para resolver conflictos transitorios..." 30
         rm -rf /opt/aidaily/.astro /opt/aidaily/node_modules/.vite /opt/aidaily/node_modules/.astro
         
-        if run_with_retry "(cd /opt/aidaily && BUILD_ONLY=true PUBLIC_BASE_PATH=/pro/aidaily npm run build) 2>&1 | tee -a '$LOG_FILE'"; then
+        if run_with_retry "(cd /opt/aidaily && SQLITE_DB_PATH=/home/ubuntu/workspace/AIDAILY/data/aidaily.db BUILD_ONLY=true PUBLIC_BASE_PATH=/pro/aidaily npm run build) 2>&1 | tee -a '$LOG_FILE'"; then
             log "✅ Auto-reparación exitosa. Astro compilado con éxito tras limpiar la caché."
             BUILD_OK=true
         else
@@ -236,7 +236,7 @@ if [ "$SYNC_OK" = "true" ]; then
             update_vps_status 6 "Auto-Reparación (Fase 2)" "Reinstalando módulos npm de forma limpia en /opt/aidaily..." 50
             (cd /opt/aidaily && rm -rf node_modules package-lock.json && npm install)
             
-            if run_with_retry "(cd /opt/aidaily && BUILD_ONLY=true PUBLIC_BASE_PATH=/pro/aidaily npm run build) 2>&1 | tee -a '$LOG_FILE'"; then
+            if run_with_retry "(cd /opt/aidaily && SQLITE_DB_PATH=/home/ubuntu/workspace/AIDAILY/data/aidaily.db BUILD_ONLY=true PUBLIC_BASE_PATH=/pro/aidaily npm run build) 2>&1 | tee -a '$LOG_FILE'"; then
                 log "✅ Auto-reparación exitosa. Astro compilado con éxito tras reinstalar dependencias."
                 BUILD_OK=true
             else
@@ -306,35 +306,60 @@ if [ "$SYNC_OK" = "true" ]; then
         fi
         # ------------------------------------------
         
-        log "Sincronizando el build compilado con el workspace de Firebase Hosting..."
+        log "Sincronizando el build estático compilado con el servidor web..."
         if mkdir -p /home/ubuntu/workspace/public/pro/aidaily && rm -rf /home/ubuntu/workspace/public/pro/aidaily/* && cp -r /opt/aidaily/dist/* /home/ubuntu/workspace/public/pro/aidaily/ 2>&1 | tee -a "$LOG_FILE"; then
-            log "Build copiado a /home/ubuntu/workspace/public/pro/aidaily/ con éxito."
+            log "Build estático copiado a /home/ubuntu/workspace/public/pro/aidaily/ con éxito."
             
-            # --- AUTO-REPARAR REDIRECCIÓN DE NGINX PARA AIDAILY ---
-            log "Comprobando y configurando redirecciones de Nginx para /AIDAILY..."
+            # --- DETENER PM2 SSR DE ASTRO ---
+            log "Eliminando procesos SSR residuales de Astro en PM2..."
+            pm2 delete aidaily-ssr 2>/dev/null || true
+            
+            # --- RESTAURAR NGINX ESTÁTICO ORIGINAL ---
+            log "Comprobando y restaurando redirecciones estáticas de Nginx..."
             NGINX_CONF="/etc/nginx/sites-enabled/algotrading"
             if [ -f "$NGINX_CONF" ]; then
+              # Eliminar definición de @astro_ssr si existe
+              sudo sed -i '/location @astro_ssr/,+8d' "$NGINX_CONF" 2>/dev/null
+              
+              # Restaurar bloque location /pro/aidaily/ original
+              sudo sed -i '/location \/pro\/aidaily\/ {/,/}/c\    location /pro/aidaily/ {\n        alias /home/ubuntu/workspace/public/pro/aidaily/;\n        try_files $uri $uri/ /pro/aidaily/index.html;\n    }' "$NGINX_CONF" 2>/dev/null
+              
+              # Configurar la redirección de mayúsculas /AIDAILY si no existe
               if ! grep -q "location = /AIDAILY" "$NGINX_CONF"; then
                 log "Configurando redirecciones de /AIDAILY a /pro/aidaily/ en Nginx..."
                 sudo sed -i '/# IA Daily - Static site/i \    # Redireccion de AIDAILY en mayusculas\n    location = /AIDAILY {\n        return 301 $scheme://$http_host/pro/aidaily/;\n    }\n    location /AIDAILY/ {\n        return 301 $scheme://$http_host/pro/aidaily/;\n    }\n' "$NGINX_CONF"
-                if sudo nginx -t; then
-                  sudo systemctl reload nginx
-                  log "✅ Nginx reconfigurado y reiniciado con éxito."
-                else
-                  log "⚠️ ADVERTENCIA: La sintaxis de Nginx falló tras insertar las reglas. Revirtiendo..."
-                  sudo sed -i '/# Redireccion de AIDAILY/,+6d' "$NGINX_CONF"
-                fi
+              fi
+
+              # Validar y recargar Nginx
+              if sudo nginx -t; then
+                sudo systemctl reload nginx
+                log "✅ Nginx restaurado a estático puro con éxito."
               else
-                log "✅ La redirección de Nginx para /AIDAILY ya está activa."
+                log "⚠️ ADVERTENCIA: La validación de Nginx estático falló."
               fi
             fi
             # ----------------------------------------------------
 
-            # Despliegue de Firebase Hosting omitido; la web se sirve 100% de forma directa y local desde el servidor web de la VPS de Oracle.
-            log "⚠️ Despliegue en Firebase Hosting desactivado para utilizar el servidor directo de la VPS."
-            update_vps_status 8 "Servidor Local VPS" "Compilación copiada al directorio del servidor local. Despliegue completado." 100
+            # --- DESPLIEGUE A FIREBASE HOSTING ---
+            log "Iniciando despliegue de la web estática en Firebase Hosting (pecemi.web.app)..."
+            update_vps_status 8 "Despliegue Firebase" "Subiendo la compilación optimizada a Firebase Hosting..." 10
+            if (cd /home/ubuntu/workspace && firebase deploy --only hosting --non-interactive --project pecemi) 2>&1 | tee -a "$LOG_FILE"; then
+                log "✅ Despliegue en Firebase Hosting completado con éxito."
+                update_vps_status 8 "Servidor Local VPS y Firebase" "Compilación estática copiada en la VPS y desplegada en Firebase Hosting con éxito." 100
+            else
+                log "⚠️ ADVERTENCIA: Falló el despliegue en Firebase Hosting. Intentando usar token alternativo si existe..."
+                if [ -f "/home/ubuntu/workspace/firebase_deploy.sh" ] && grep -q "TOKEN=" "/home/ubuntu/workspace/firebase_deploy.sh"; then
+                    # Extraer el token si está en el script de deploy
+                    FT_TOKEN=$(grep -oP 'TOKEN=\K[^ ]+' "/home/ubuntu/workspace/firebase_deploy.sh" | tr -d '"' | tr -d "'")
+                    if [ -n "$FT_TOKEN" ]; then
+                        log "Reintentando deploy de Firebase usando el token extraído..."
+                        (cd /home/ubuntu/workspace && firebase deploy --only hosting --non-interactive --project pecemi --token "$FT_TOKEN") 2>&1 | tee -a "$LOG_FILE" && log "✅ Despliegue exitoso con token." || log "❌ Falló reintento con token."
+                    fi
+                fi
+                update_vps_status 8 "Servidor Local VPS" "Compilación local correcta en la VPS, pero falló deploy final a Firebase." 100
+            fi
         else
-            log "WARNING: No se pudo copiar el build al workspace de Firebase Hosting."
+            log "WARNING: No se pudo copiar los assets de cliente al workspace del servidor estático."
         fi
     else
         log "WARNING: Falló la compilación de Astro en /opt/aidaily"
@@ -347,12 +372,12 @@ fi
 
 log "=== Sincronización IA Daily finalizada ==="
 
-# Comprobar si todavía quedan elementos en la cola para procesar de forma continua
-echo "Comprobando si quedan noticias pendientes en la cola..."
-PENDING_QUEUE=$(curl -s "https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json")
-if [ -n "$PENDING_QUEUE" ] && [ "$PENDING_QUEUE" != "null" ] && [ "$PENDING_QUEUE" != "{}" ]; then
-    log "🔥 ATENCIÓN: Aún quedan artículos pendientes en la cola. Relaunching in 2 minutes to keep processing..."
-    update_vps_status 9 "Procesamiento Continuo Activo" "Cola con elementos pendientes. Relaunch programado en 2 min." 100
+# Comprobar si todavía quedan elementos en la cola SQLite para procesar de forma continua
+echo "Comprobando si quedan noticias pendientes en la cola de SQLite..."
+PENDING_QUEUE=$(sqlite3 /home/ubuntu/workspace/AIDAILY/data/aidaily.db "SELECT count(*) FROM articles WHERE status = 'pendiente_ia'" 2>/dev/null || echo "0")
+if [ -n "$PENDING_QUEUE" ] && [ "$PENDING_QUEUE" -gt 0 ]; then
+    log "🔥 ATENCIÓN: Aún quedan $PENDING_QUEUE artículos pendientes en la cola de SQLite. Relaunching in 2 minutes to keep processing..."
+    update_vps_status 9 "Procesamiento Continuo Activo" "Cola con $PENDING_QUEUE elementos pendientes. Relaunch programado en 2 min." 100
     # Lanzar la ejecución en segundo plano tras esperar 120s, limpiando el bloqueo anterior antes de iniciar
     (sleep 120 && rm -f /var/tmp/aidaily-sync.lock && /home/ubuntu/.hermes/scripts/aidaily_hermes_cron.sh --force) &
 else

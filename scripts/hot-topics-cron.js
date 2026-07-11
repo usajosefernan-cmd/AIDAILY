@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
+import { DatabaseSync } from 'node:sqlite';
 import { CronLogger } from '../lib/logger.js';
 import { writeJsonAtomic } from '../lib/atomic-write.js';
 import { calculateJaccardSimilarity, cleanTokens, sanitizeUrlForHash } from '../lib/dedupe.js';
@@ -78,25 +79,35 @@ async function main() {
     logger.error('No se pudo cargar el archivo .env', e);
   }
 
-  const newsCachePath = path.resolve('src/data/cache-news.json');
-  if (!fs.existsSync(newsCachePath)) {
-    logger.warn('No existe la caché de noticias src/data/cache-news.json. Abortando.');
-    process.exit(0);
-  }
-
-  // 1. Cargar las noticias recientes de las últimas 48 horas
-  let newsList = [];
+  // 1. Cargar las noticias recientes de las últimas 48 horas desde SQLite
+  let recentNews = [];
   try {
-    const rawContent = fs.readFileSync(newsCachePath, 'utf-8');
-    newsList = JSON.parse(rawContent);
+    const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
+    if (!fs.existsSync(dbPath)) {
+      logger.warn(`No existe la base de datos en ${dbPath}. Abortando.`);
+      process.exit(0);
+    }
+    const db = new DatabaseSync(dbPath);
+    const limitTimeISO = new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString();
+    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada' AND publishedAt > ? ORDER BY publishedAt DESC");
+    const rows = stmt.all();
+    recentNews = rows.map((art) => {
+      return {
+        ...art,
+        tags: art.tags ? JSON.parse(art.tags) : [art.category],
+        tagsSecundarios: art.tagsSecundarios ? JSON.parse(art.tagsSecundarios) : [],
+        keyPoints: art.keyPoints ? JSON.parse(art.keyPoints) : [],
+        multimedia: art.multimedia ? JSON.parse(art.multimedia) : [],
+        hashtags: art.hashtags ? JSON.parse(art.hashtags) : [],
+        links: art.links ? JSON.parse(art.links) : [],
+        interestingData: art.interestingData ? JSON.parse(art.interestingData) : []
+      };
+    });
   } catch (err) {
-    logger.error('Error al leer cache-news.json', err);
+    logger.error('Error al leer de SQLite en hot-topics-cron.js', err);
     process.exit(1);
   }
-
-  const cutoffTime = Date.now() - 48 * 60 * 60 * 1000;
-  const recentNews = newsList.filter(art => new Date(art.publishedAt).getTime() > cutoffTime);
-  logger.log(`Analizando ${recentNews.length} noticias de las últimas 48 horas...`);
+  logger.log(`Analizando ${recentNews.length} noticias de las últimas 48 horas desde SQLite...`);
 
   const breakingNewsList = [];
   const hotTopicsList = [];
@@ -184,32 +195,36 @@ async function main() {
   logger.log(`Escribiendo ${hotTopicsList.length} artículos de tendencia en data/hot-topics.json...`);
   writeJsonAtomic(hotTopicsPath, hotTopicsList, true);
 
-  // Sincronizar también con Firebase RTDB /trending_topics.json para actualizar el orquestador 70/30
+  // Sincronizar localmente en data/trending_topics.json y en Firebase RTDB /trending_topics.json
   if (hotTopicsList.length > 0) {
+    // Extraer las keywords más repetidas del cluster caliente
+    const allText = hotTopicsList.map(a => a.title).join(' ');
+    const tokens = cleanTokens(allText);
+    const keywords = Array.from(tokens).slice(0, 10);
+    
+    const payload = {
+      updatedAt: new Date().toISOString(),
+      topics: [
+        {
+          title: hotTopicsList[0].title,
+          keywords: keywords
+        }
+      ]
+    };
+
+    const trendingLocalPath = path.resolve('data/trending_topics.json');
+    writeJsonAtomic(trendingLocalPath, payload, false);
+    logger.log('Sincronizados trending_topics con data/trending_topics.json local.');
+    
     try {
-      // Extraer las keywords más repetidas del cluster caliente
-      const allText = hotTopicsList.map(a => a.title).join(' ');
-      const tokens = cleanTokens(allText);
-      const keywords = Array.from(tokens).slice(0, 10);
-      
-      const payload = {
-        updatedAt: new Date().toISOString(),
-        topics: [
-          {
-            title: hotTopicsList[0].title,
-            keywords: keywords
-          }
-        ]
-      };
-      
       await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/trending_topics.json', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-      logger.log('Sincronizados trending_topics con Firebase RTDB para priorización 70/30.');
+      logger.log('Sincronizados trending_topics con Firebase RTDB para priorización 70/30 en segundo plano.');
     } catch (e) {
-      logger.warn('No se pudo actualizar trending_topics en Firebase:', e.message);
+      logger.warn('No se pudo actualizar trending_topics en Firebase (no bloqueante):', e.message);
     }
   }
 

@@ -23,13 +23,35 @@ export default function DashboardPanel({ allArticlesData = [], currentConfig = {
   const fetchQueue = async () => {
     setLoadingQueue(true);
     try {
-      const res = await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json');
+      const res = await fetch('/api/queue.json');
       if (res.ok) {
         const data = await res.json();
-        setQueueData(data && typeof data === 'object' ? data : {});
+        if (Array.isArray(data)) {
+          const map = {};
+          data.forEach(item => {
+            map[item.id] = item;
+          });
+          setQueueData(map);
+        } else {
+          setQueueData(data && typeof data === 'object' ? data : {});
+        }
+      } else {
+        const fbRes = await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json');
+        if (fbRes.ok) {
+          const fbData = await fbRes.json();
+          setQueueData(fbData && typeof fbData === 'object' ? fbData : {});
+        }
       }
     } catch (e) {
-      console.error('Error fetching queue:', e);
+      try {
+        const fbRes = await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json');
+        if (fbRes.ok) {
+          const fbData = await fbRes.json();
+          setQueueData(fbData && typeof fbData === 'object' ? fbData : {});
+        }
+      } catch (err) {
+        console.error('Error fetching queue:', err);
+      }
     } finally {
       setLoadingQueue(false);
     }
@@ -42,20 +64,32 @@ export default function DashboardPanel({ allArticlesData = [], currentConfig = {
   }, []);
 
   const handleClearQueue = async () => {
-    if (!window.confirm('⚠️ ¿Estás seguro de que deseas vaciar la cola de espera de la IA? Esto eliminará todos los artículos pendientes de procesar de Firebase.')) {
+    if (!window.confirm('⚠️ ¿Estás seguro de que deseas vaciar la cola de espera de la IA? Esto eliminará todos los artículos pendientes de procesar de SQLite en la VPS.')) {
       return;
     }
     setIsClearingQueue(true);
     try {
-      const res = await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json', {
+      const reqId = "clear_queue_" + Date.now();
+      await fetch(`https://pecemi-default-rtdb.firebaseio.com/vps/bridge_requests/${reqId}.json`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: "run_terminal_command",
+          params: {
+            command: "sqlite3 /home/ubuntu/workspace/AIDAILY/data/aidaily.db \"UPDATE articles SET status = 'descartada' WHERE status = 'pendiente_ia'\" && node /home/ubuntu/workspace/AIDAILY/scripts/news-sync.js --build-only",
+            cwd: "/home/ubuntu/workspace/AIDAILY"
+          },
+          security_token: 'pecemi_secure_gateway_token_2026_xyz',
+          timestamp: Date.now()
+        })
+      });
+
+      await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json', {
         method: 'DELETE'
       });
-      if (res.ok) {
-        setQueueData({});
-        alert('🗑️ Cola de procesamiento vaciada con éxito.');
-      } else {
-        alert('Error al vaciar la cola.');
-      }
+
+      setQueueData({});
+      alert('🗑️ Cola de procesamiento vaciada con éxito en la VPS.');
     } catch (e) {
       alert('Error de conexión: ' + e.message);
     } finally {
@@ -68,18 +102,30 @@ export default function DashboardPanel({ allArticlesData = [], currentConfig = {
       return;
     }
     try {
-      const res = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/queue/${hashId}.json`, {
+      const reqId = "remove_queue_item_" + Date.now();
+      await fetch(`https://pecemi-default-rtdb.firebaseio.com/vps/bridge_requests/${reqId}.json`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: "run_terminal_command",
+          params: {
+            command: `sqlite3 /home/ubuntu/workspace/AIDAILY/data/aidaily.db "UPDATE articles SET status = 'descartada' WHERE id = '${hashId}'" && node /home/ubuntu/workspace/AIDAILY/scripts/news-sync.js --build-only`,
+            cwd: "/home/ubuntu/workspace/AIDAILY"
+          },
+          security_token: 'pecemi_secure_gateway_token_2026_xyz',
+          timestamp: Date.now()
+        })
+      });
+
+      await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/queue/${hashId}.json`, {
         method: 'DELETE'
       });
-      if (res.ok) {
-        setQueueData(prev => {
-          const next = { ...prev };
-          delete next[hashId];
-          return next;
-        });
-      } else {
-        alert('Error al descartar la noticia.');
-      }
+
+      setQueueData(prev => {
+        const next = { ...prev };
+        delete next[hashId];
+        return next;
+      });
     } catch (e) {
       alert('Error de conexión: ' + e.message);
     }

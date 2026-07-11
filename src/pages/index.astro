@@ -3,25 +3,47 @@ import Layout from '../layouts/Layout.astro';
 import Portal from '../components/Portal.jsx';
 import fs from 'fs';
 import path from 'path';
+import { DatabaseSync } from 'node:sqlite';
 
-// Cargar artículos del caché local para inyectarlos en la página (SSR/SSG preliminar)
+// Cargar artículos directamente desde SQLite para inyectarlos en el build inicial (con fallback a JSON)
 let recentArticles = [];
 let totalArticlesCount = 0;
 try {
-  const cachePath = path.resolve('src/data/cache-news.json');
-  if (fs.existsSync(cachePath)) {
-    const cacheContent = fs.readFileSync(cachePath, 'utf-8');
-    const allArts = JSON.parse(cacheContent);
-    if (Array.isArray(allArts)) {
-      totalArticlesCount = allArts.length;
-      // Ordenar por fecha descendente (más nuevos primero) para inyectar noticias actuales
-      allArts.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
-      // Tomar los 200 artículos más nuevos
-      recentArticles = allArts.slice(0, 200);
+  const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
+  
+  if (fs.existsSync(dbPath)) {
+    const db = new DatabaseSync(dbPath);
+    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada' ORDER BY publishedAt DESC");
+    const rows = stmt.all() as any[];
+    totalArticlesCount = rows.length;
+    
+    recentArticles = rows.slice(0, 200).map((art: any) => {
+      return {
+        ...art,
+        tags: art.tags ? JSON.parse(art.tags) : [art.category],
+        tagsSecundarios: art.tagsSecundarios ? JSON.parse(art.tagsSecundarios) : [],
+        keyPoints: art.keyPoints ? JSON.parse(art.keyPoints) : [],
+        multimedia: art.multimedia ? JSON.parse(art.multimedia) : [],
+        hashtags: art.hashtags ? JSON.parse(art.hashtags) : [],
+        links: art.links ? JSON.parse(art.links) : [],
+        interestingData: art.interestingData ? JSON.parse(art.interestingData) : []
+      };
+    });
+    console.log(`[Astro Build] Leídos ${recentArticles.length} artículos (total: ${totalArticlesCount}) de SQLite para la página de inicio.`);
+  } else {
+    const cachePath = path.resolve('src/data/cache-news.json');
+    if (fs.existsSync(cachePath)) {
+      const cacheContent = fs.readFileSync(cachePath, 'utf-8');
+      const allArts = JSON.parse(cacheContent);
+      if (Array.isArray(allArts)) {
+        totalArticlesCount = allArts.length;
+        allArts.sort((a, b) => new Date(b.publishedAt || b.published).getTime() - new Date(a.publishedAt || a.published).getTime());
+        recentArticles = allArts.slice(0, 200);
+      }
     }
   }
 } catch (e) {
-  console.error("Error cargando caché local en index.astro:", e);
+  console.error("Error cargando base de datos SQLite en index.astro:", e);
 }
 ---
 

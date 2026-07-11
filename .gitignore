@@ -37,3 +37,22 @@ free_providers_research.md
 /logs/
 /backups/
 *.lock
+
+# Syncthing conflicts and temp files
+*.sync-conflict-*
+~syncthing~*
+.stfolder/
+.stignore
+
+# Astro dynamic data cache
+src/data/cache-news.json
+src/data/search-index.json
+src/data/articles-light.json
+src/data/hot-topics.json
+src/data/breaking-news.json
+public/api/
+public/pro/aidaily/noticias/
+public/pro/aidaily/api/
+trending_topics.json
+jobs_updated.json
+
