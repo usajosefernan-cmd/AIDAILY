@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview --host 0.0.0.0 --port 4321",
     "fetch": "node scripts/fetch-news.mjs",
-    "sync": "bash ./sync-aidaily.sh",
+    "sync": "bash deploy/deploy-safe.sh",
     "news:sync": "node scripts/news-sync.js",
     "news:hot": "node scripts/hot-topics-cron.js",
     "news:validate": "node scripts/validate-news-data.js",
