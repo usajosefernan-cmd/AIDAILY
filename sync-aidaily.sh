@@ -96,6 +96,29 @@ export TSX_DISABLE_CACHE=1
 
 mkdir -p "$(dirname "$LOG_FILE")"
 
+# --- ROTACIÓN Y LIMPIEZA AUTOMÁTICA DE LOGS DE MÁS DE 5MB ---
+for f in "$PROJECT_DIR/logs"/*.log; do
+    if [ -f "$f" ]; then
+        # Obtener el tamaño en kilobytes de forma tolerante a fallos
+        FILE_SIZE_KB=$(du -k "$f" | cut -f1 || echo "0")
+        if [ "$FILE_SIZE_KB" -gt 5000 ]; then
+            echo "[$(date '+%Y-%m-%d %H:%M:%S')] 🗑️ Rotando log pesado: $f ($((FILE_SIZE_KB / 1024)) MB)..."
+            # Mantener solo las últimas 2000 líneas del log para no perder historial reciente de depuración
+            tail -n 2000 "$f" > "${f}.tmp" 2>/dev/null || true
+            if [ -s "${f}.tmp" ]; then
+                mv "${f}.tmp" "$f"
+                echo "[$(date '+%Y-%m-%d %H:%M:%S')] ✅ Log $f truncado correctamente a 2000 líneas."
+            else
+                rm -f "${f}.tmp"
+                # Fallback: vaciar el archivo si falla la lectura parcial
+                : > "$f"
+                echo "[$(date '+%Y-%m-%d %H:%M:%S')] ✅ Log $f vaciado por precaución."
+            fi
+        fi
+    fi
+done
+# ------------------------------------------------------------
+
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
 }

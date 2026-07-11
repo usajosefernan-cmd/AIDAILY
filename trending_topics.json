@@ -1,37 +1,30 @@
 {
   "topics": [
     {
-      "id": "tour-francia",
-      "title": "Tour Francia",
+      "id": "wimbledon",
+      "title": "Wimbledon",
       "keywords": [
-        "tour",
-        "francia"
+        "wimbledon"
       ],
-      "articleCount": 19,
-      "popularity": 7,
+      "articleCount": 26,
+      "popularity": 6,
       "category": "deportes",
       "type": "event",
-      "recentCount": 2,
-      "detectedAt": "2026-07-11T10:01:00.388Z",
-      "expiresAt": "2026-07-14T10:00:15.097Z",
+      "recentCount": 0,
+      "detectedAt": "2026-07-11T16:01:05.659Z",
+      "expiresAt": "2026-07-14T16:00:20.386Z",
       "subMenus": [
         {
           "label": "Ver Todo",
           "icon": "📰",
-          "count": 19,
-          "query": "tour francia"
+          "count": 26,
+          "query": "wimbledon"
         },
         {
-          "label": "Etapa 1",
-          "icon": "🚴",
+          "label": "Final",
+          "icon": "👑",
           "count": 5,
-          "query": "tour francia etapa 1"
-        },
-        {
-          "label": "Etapa 7",
-          "icon": "🚴",
-          "count": 3,
-          "query": "tour francia etapa 7"
+          "query": "wimbledon final"
         }
       ]
     },
@@ -41,18 +34,18 @@
       "keywords": [
         "agent"
       ],
-      "articleCount": 34,
+      "articleCount": 26,
       "popularity": 6,
       "category": "tecnologia",
       "type": "event",
-      "recentCount": 2,
-      "detectedAt": "2026-07-11T10:01:00.388Z",
-      "expiresAt": "2026-07-14T10:00:15.097Z",
+      "recentCount": 0,
+      "detectedAt": "2026-07-11T16:01:05.659Z",
+      "expiresAt": "2026-07-14T16:00:20.386Z",
       "subMenus": [
         {
           "label": "Ver Todo",
           "icon": "📰",
-          "count": 34,
+          "count": 26,
           "query": "agent"
         },
         {
@@ -70,28 +63,13 @@
         "espana",
         "belgica"
       ],
-      "articleCount": 16,
-      "popularity": 5,
+      "articleCount": 12,
+      "popularity": 6,
       "category": "deportes",
       "type": "event",
-      "recentCount": 1,
-      "detectedAt": "2026-07-11T10:01:00.388Z",
-      "expiresAt": "2026-07-14T10:00:15.097Z",
-      "subMenus": []
-    },
-    {
-      "id": "deja",
-      "title": "Deja",
-      "keywords": [
-        "deja"
-      ],
-      "articleCount": 25,
-      "popularity": 5,
-      "category": "deportes",
-      "type": "event",
-      "recentCount": 3,
-      "detectedAt": "2026-07-11T10:01:00.389Z",
-      "expiresAt": "2026-07-14T10:00:15.097Z",
+      "recentCount": 0,
+      "detectedAt": "2026-07-11T16:01:05.659Z",
+      "expiresAt": "2026-07-14T16:00:20.386Z",
       "subMenus": []
     },
     {
@@ -100,52 +78,48 @@
       "keywords": [
         "series"
       ],
-      "articleCount": 32,
+      "articleCount": 24,
+      "popularity": 6,
+      "category": "cultura",
+      "type": "event",
+      "recentCount": 0,
+      "detectedAt": "2026-07-11T16:01:05.659Z",
+      "expiresAt": "2026-07-14T16:00:20.386Z",
+      "subMenus": []
+    },
+    {
+      "id": "ufc-329",
+      "title": "Ufc 329",
+      "keywords": [
+        "ufc",
+        "329"
+      ],
+      "articleCount": 11,
+      "popularity": 5,
+      "category": "deportes",
+      "type": "event",
+      "recentCount": 0,
+      "detectedAt": "2026-07-11T16:01:05.659Z",
+      "expiresAt": "2026-07-14T16:00:20.386Z",
+      "subMenus": []
+    },
+    {
+      "id": "best",
+      "title": "Best",
+      "keywords": [
+        "best"
+      ],
+      "articleCount": 22,
       "popularity": 5,
       "category": "cultura",
       "type": "event",
       "recentCount": 0,
-      "detectedAt": "2026-07-11T10:01:00.389Z",
-      "expiresAt": "2026-07-14T10:00:15.097Z",
+      "detectedAt": "2026-07-11T16:01:05.659Z",
+      "expiresAt": "2026-07-14T16:00:20.386Z",
       "subMenus": []
-    },
-    {
-      "id": "mundial-2026",
-      "title": "Mundial 2026",
-      "keywords": [
-        "mundial",
-        "2026"
-      ],
-      "articleCount": 14,
-      "popularity": 5,
-      "category": "deportes",
-      "type": "event",
-      "recentCount": 1,
-      "detectedAt": "2026-07-11T10:01:00.389Z",
-      "expiresAt": "2026-07-14T10:00:15.097Z",
-      "subMenus": [
-        {
-          "label": "Ver Todo",
-          "icon": "📰",
-          "count": 14,
-          "query": "mundial 2026"
-        },
-        {
-          "label": "Cuartos de Final",
-          "icon": "🏆",
-          "count": 4,
-          "query": "mundial 2026 cuartos de final"
-        },
-        {
-          "label": "Semifinales",
-          "icon": "🔥",
-          "count": 2,
-          "query": "mundial 2026 semifinales"
-        }
-      ]
     }
   ],
-  "updatedAt": "2026-07-11T10:01:00.425Z",
+  "updatedAt": "2026-07-11T16:01:05.668Z",
   "windowHours": 48,
-  "totalRecentArticles": 3258
+  "totalRecentArticles": 2164
 }
