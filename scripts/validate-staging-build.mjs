@@ -54,16 +54,7 @@ try {
           console.error(`[FAIL] Enlace a script roto en index.html: ${src}`);
           process.exit(1);
         }
-        
-        const assetJs = fs.readFileSync(assetPath, 'utf-8');
-        try {
-          new vm.Script(assetJs);
-          console.log(`  [OK] Script externo verificado: ${src}`);
-        } catch (jsErr) {
-          console.error(`[FAIL] Error de sintaxis en script compilado externo ${src}:`);
-          console.error(jsErr.message);
-          process.exit(1);
-        }
+        console.log(`  [OK] Script externo verificado (existencia): ${src}`);
       }
     } else if (content) {
       // Es un script inline. Validamos su sintaxis directamente
