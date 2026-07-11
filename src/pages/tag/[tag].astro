@@ -33,7 +33,7 @@ export async function getStaticPaths() {
         }
       });
       
-      return Array.from(tagsSet).map(tag => ({
+      return Array.from(tagsSet).slice(0, 15).map(tag => ({
         params: { tag },
         props: { tagKey: tag }
       }));
