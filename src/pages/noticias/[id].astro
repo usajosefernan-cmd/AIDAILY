@@ -1,24 +1,27 @@
 ---
 import fs from 'fs';
 import path from 'path';
-import { DatabaseSync } from 'node:sqlite';
+import { readFileSync, existsSync } from 'fs';
 
 export async function getStaticPaths() {
-  const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
-  if (!fs.existsSync(dbPath)) return [];
+  const cachePath = path.resolve('src/data/articles-light.json');
+  if (!existsSync(cachePath)) return [];
   
   try {
-    const db = new DatabaseSync(dbPath);
-    const stmt = db.prepare("SELECT id, title FROM articles WHERE status = 'publicada' ORDER BY publishedAt DESC LIMIT 100");
-    const rows = stmt.all() as any[];
-    return rows.map(art => ({
-      params: { id: art.id },
-      props: { title: art.title }
-    }));
+    const cacheContent = readFileSync(cachePath, 'utf-8');
+    const allArts = JSON.parse(cacheContent);
+    if (Array.isArray(allArts)) {
+      // Tomar los 100 más nuevos
+      const sliced = allArts.slice(0, 100);
+      return sliced.map(art => ({
+        params: { id: art.id },
+        props: { title: art.title }
+      }));
+    }
   } catch (e) {
     console.error("Error al generar rutas en noticias/[id].astro:", e);
-    return [];
   }
+  return [];
 }
 
 const { id } = Astro.params;

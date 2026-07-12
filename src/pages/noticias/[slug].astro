@@ -26,7 +26,10 @@ export async function getStaticPaths() {
   try {
     const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
     if (Array.isArray(cacheData)) {
-      return cacheData.map(art => {
+      // Ordenar por fecha descendente
+      cacheData.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
+      const sliced = cacheData.slice(0, 100);
+      return sliced.map(art => {
         const slug = getSlug(art.title) || art.id;
         return {
           params: { slug },
