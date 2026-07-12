@@ -163,7 +163,9 @@ async function main() {
           multimedia: art.multimedia ? JSON.parse(art.multimedia) : [],
           hashtags: art.hashtags ? JSON.parse(art.hashtags) : [],
           links: art.links ? JSON.parse(art.links) : [],
-          interestingData: art.interestingData ? JSON.parse(art.interestingData) : []
+          interestingData: art.interestingData ? JSON.parse(art.interestingData) : [],
+          entities: art.entities ? JSON.parse(art.entities) : [],
+          relatedArticles: art.relatedArticles ? JSON.parse(art.relatedArticles) : []
         };
       });
       logger.log(`[SQLite DB] Artículos publicados totales cargados para APIs: ${combinedList.length}`);

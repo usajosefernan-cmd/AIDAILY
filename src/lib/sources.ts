@@ -6,6 +6,21 @@ import { DatabaseSync } from 'node:sqlite';
 import crypto from 'crypto';
 import { execSync } from 'child_process';
 
+export function getSlug(title: string): string {
+  let slug = title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // quitar acentos
+    .replace(/[^a-z0-9\s-]/g, "")    // quitar carácteres especiales
+    .trim()
+    .replace(/\s+/g, "-")            // reemplazar espacios por guión
+    .replace(/-+/g, "-");            // colapsar guiones múltiples
+  if (slug.length > 100) {
+    slug = slug.substring(0, 100).replace(/-+$/, '');
+  }
+  return slug;
+}
+
 function createSafeJSDOM(html: string): JSDOM {
   const cleanHtml = (html || '')
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
@@ -1447,17 +1462,28 @@ export async function generateAIContent(
   }
 ): Promise<{
   title: string;
+  subtitle?: string;
+  author?: string;
   aiSummary: string;
   keyPoints: string[];
   whyMatters: string;
   category: string;
   subcategory: string;
+  entities?: string[];
+  country?: string;
+  importanceScore?: number;
+  qualityScore?: number;
+  isBreaking?: boolean;
+  isEvergreen?: boolean;
+  imageCaption?: string;
   hashtags: string[];
   tags: string[];
   fullArticle: string;
   multimedia: MediaItem[];
   links?: { title: string; url: string }[];
   interestingData?: { label: string; value: string }[];
+  status?: string;
+  rejectionReason?: string;
 }> {
   const allowedSubs = ACTIVE_CATEGORY_MAP[suggestedCategory] || ['general'];
   const apiKey = process.env.OPENROUTER_API_KEY;
@@ -1636,20 +1662,31 @@ export async function generateAIContent(
     }
   }
 
-  const getPromptForText = (textSlice: string) => `Analiza esta noticia y adapta su contenido al español. Genera EXCLUSIVAMENTE un objeto JSON válido con la siguiente estructura y sin markdown adicional:
+  const getPromptForText = (textSlice: string) => `Analiza esta noticia y adáptala al español como un redactor jefe profesional. Genera EXCLUSIVAMENTE un objeto JSON válido con la siguiente estructura y sin markdown adicional:
 
 {
-  "title": "Titular en español",
-  "aiSummary": "Resumen en español",
+  "title": "Titular periodístico contundente en español",
+  "subtitle": "Subtítulo descriptivo e informativo en español de una sola línea",
+  "author": "Nombre del redactor original o un pseudónimo periodístico verosímil si no está disponible",
+  "aiSummary": "Resumen en español estructurado",
   "keyPoints": ["Punto 1", "Punto 2", "Punto 3", "Punto 4"],
-  "whyMatters": "Por qué importa",
-  "category": "categoria_principal",
-  "subcategory": "subcategoria",
-  "hashtags": ["#Tag1", "#Tag2", "#Tag3"],
-  "fullArticle": "Articulo completo",
+  "whyMatters": "Por qué importa detallado con mínimo de 3 oraciones completas",
+  "category": "categoria_principal (obligatoriamente una de las 12 indicadas abajo)",
+  "subcategory": "subcategoria_elegida",
+  "entities": ["Lista", "de", "entidades", "clave", "mencionadas"],
+  "country": "País principal al que afecta o donde sucede la noticia",
+  "importanceScore": 85, // número del 0 al 100 de relevancia pública e impacto de la noticia
+  "qualityScore": 90, // número del 0 al 100 de calidad informativa y profundidad del contenido
+  "isBreaking": false, // boolean, true si es última hora nacional/internacional de extrema urgencia
+  "isEvergreen": false, // boolean, true si es un reportaje o artículo de análisis atemporal de larga duración
+  "imageCaption": "Pie de foto detallado y créditos en español de la imagen principal",
+  "hashtags": ["#Entidad1", "#Entidad2", "#Entidad3"],
+  "fullArticle": "Cuerpo del artículo en español estructurado en 2 o 3 párrafos de lectura fluida",
   "multimedia": [],
-  "links": [{"title": "Nombre descriptivo del enlace", "url": "https://url-relacionada-valida.com"}],
-  "interestingData": [{"label": "Dato clave", "value": "Valor del dato"}]
+  "links": [{"title": "Nombre del enlace", "url": "https://url-relacionada-valida.com"}],
+  "interestingData": [{"label": "Dato clave", "value": "Valor del dato"}],
+  "status": "published", // "published" si es de calidad y apto para publicar, "rejected" si es spam/clickbait/irrelevante
+  "rejectionReason": "" // Razón detallada del rechazo si el status es "rejected"
 }
 
 NOTICIA ORIGINAL:
@@ -2050,17 +2087,28 @@ ${preferencesText}${additionsText}${interestsText}`;
 
               return {
                 title: parsed.title || title,
+                subtitle: parsed.subtitle || '',
+                author: parsed.author || 'Redacción AIDAILY',
                 aiSummary: parsed.aiSummary || fallback.aiSummary,
                 keyPoints: Array.isArray(parsed.keyPoints) ? parsed.keyPoints : [parsed.title],
                 whyMatters: parsed.whyMatters || fallback.whyMatters,
                 category: norm.category,
                 subcategory: norm.subcategory,
+                entities: Array.isArray(parsed.entities) ? parsed.entities : [],
+                country: parsed.country || '',
+                importanceScore: parsed.importanceScore !== undefined ? Number(parsed.importanceScore) : 75,
+                qualityScore: parsed.qualityScore !== undefined ? Number(parsed.qualityScore) : 80,
+                isBreaking: parsed.isBreaking === true || parsed.isBreaking === 'true',
+                isEvergreen: parsed.isEvergreen === true || parsed.isEvergreen === 'true',
+                imageCaption: parsed.imageCaption || '',
                 hashtags: cleanHashtagsList(parsed.hashtags),
                 tags: Array.isArray(parsed.tags) ? parsed.tags : ['noticias'],
                 fullArticle: parsed.fullArticle || fallback.fullArticle,
                 multimedia: Array.isArray(parsed.multimedia) && parsed.multimedia.length > 0 ? parsed.multimedia : (validatedMultimedia.length > 0 ? validatedMultimedia : fallback.multimedia),
                 links: Array.isArray(parsed.links) ? parsed.links : [],
-                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : []
+                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : [],
+                status: parsed.status || 'published',
+                rejectionReason: parsed.rejectionReason || ''
               };
             } catch (jsonErr) {
               console.warn(`[OpenRouter] Error de parseo en JSON Saneado:`, jsonErr);
@@ -2133,17 +2181,28 @@ ${preferencesText}${additionsText}${interestsText}`;
               console.log(`[Texto local] ¡Éxito procesando con Ollama local (${localModel})!`);
               return {
                 title: parsed.title || title,
+                subtitle: parsed.subtitle || '',
+                author: parsed.author || 'Redacción AIDAILY',
                 aiSummary: parsed.aiSummary || fallback.aiSummary,
                 keyPoints: Array.isArray(parsed.keyPoints) ? parsed.keyPoints : [parsed.title],
                 whyMatters: parsed.whyMatters || fallback.whyMatters,
                 category: norm.category,
                 subcategory: norm.subcategory,
+                entities: Array.isArray(parsed.entities) ? parsed.entities : [],
+                country: parsed.country || '',
+                importanceScore: parsed.importanceScore !== undefined ? Number(parsed.importanceScore) : 75,
+                qualityScore: parsed.qualityScore !== undefined ? Number(parsed.qualityScore) : 80,
+                isBreaking: parsed.isBreaking === true || parsed.isBreaking === 'true',
+                isEvergreen: parsed.isEvergreen === true || parsed.isEvergreen === 'true',
+                imageCaption: parsed.imageCaption || '',
                 hashtags: cleanHashtagsList(parsed.hashtags),
                 tags: Array.isArray(parsed.tags) ? parsed.tags : ['noticias'],
                 fullArticle: parsed.fullArticle || fallback.fullArticle,
                 multimedia: Array.isArray(parsed.multimedia) && parsed.multimedia.length > 0 ? parsed.multimedia : (validatedMultimedia.length > 0 ? validatedMultimedia : fallback.multimedia),
                 links: Array.isArray(parsed.links) ? parsed.links : [],
-                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : []
+                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : [],
+                status: parsed.status || 'published',
+                rejectionReason: parsed.rejectionReason || ''
               };
             }
           }
@@ -3569,9 +3628,9 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
   
   const insertStmt = db.prepare(`
     INSERT INTO articles (
-      id, title, url, summary, publishedAt, source, sourceUrl, category, subcategory, priority, status, scrapedAt, detectedAt
+      id, slug, title, url, originalUrl, summary, publishedAt, source, sourceUrl, category, subcategory, priority, status, scrapedAt, detectedAt, author
     ) VALUES (
-      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pendiente_ia', ?, ?
+      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pendiente_ia', ?, ?, ?
     )
   `);
 
@@ -3593,12 +3652,16 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
     const publishedAtStr = item.publishedAt instanceof Date ? item.publishedAt.toISOString() : new Date(item.publishedAt).toISOString();
     const scrapedAt = new Date().toISOString();
     const detectedAt = scrapedAt;
+    const slugVal = getSlug(item.title);
+    const authorVal = item.author || 'Redacción AIDAILY';
 
     try {
       console.log(`[Cola] Encolando en SQLite: "${item.title}" (${item.feedCategory})`);
       insertStmt.run(
         hashId,
+        slugVal,
         item.title,
+        cleanUrl,
         cleanUrl,
         item.summary || '',
         publishedAtStr,
@@ -3608,7 +3671,8 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
         item.feedSubcategory || 'general',
         item.priority || 2.0,
         scrapedAt,
-        detectedAt
+        detectedAt,
+        authorVal
       );
       queuedCount++;
       
@@ -4124,27 +4188,50 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
 
         const newsItem: NewsItem = {
           id: hashId,
+          slug: getSlug(aiResult.title || queueItem.title),
           title: aiResult.title,
+          subtitle: aiResult.subtitle || '',
           summary: aiResult.aiSummary,
           url: queueItem.url,
+          originalUrl: queueItem.url,
           source: queueItem.source,
           sourceUrl: queueItem.sourceUrl,
           publishedAt: new Date(queueItem.publishedAt),
+          updatedAt: new Date(),
+          author: aiResult.author || 'Redacción AIDAILY',
           imageUrl: finalImageUrl,
           imageAlt: aiResult.title,
+          imageCaption: aiResult.imageCaption || '',
+          category: aiResult.category,
+          subcategory: aiResult.subcategory,
           tags: [aiResult.category, ...aiResult.tags],
+          tagsSecundarios: aiResult.tags || [],
           aiSummary: aiResult.aiSummary,
           keyPoints: aiResult.keyPoints,
           whyMatters: aiResult.whyMatters,
           multimedia: finalMultimedia,
           fullText: scrapedText,
-          subcategory: aiResult.subcategory,
-          hashtags: cleanHashtagsList(aiResult.hashtags),
           fullArticle: aiResult.fullArticle,
-          category: aiResult.category,
+          contentHtml: `<p>${(aiResult.fullArticle || '').replace(/\n\n/g, '</p><p>')}</p>`,
+          hashtags: cleanHashtagsList(aiResult.hashtags),
           scrapedAt: new Date().toISOString(),
           links: aiResult.links || [],
-          interestingData: aiResult.interestingData || []
+          interestingData: aiResult.interestingData || [],
+          entities: aiResult.entities || [],
+          country: aiResult.country || '',
+          importanceScore: aiResult.importanceScore !== undefined ? Number(aiResult.importanceScore) : 75,
+          qualityScore: aiResult.qualityScore !== undefined ? Number(aiResult.qualityScore) : 80,
+          editorialScore: 0,
+          trendScore: 0,
+          viewCount: 0,
+          views1h: 0,
+          views24h: 0,
+          views7d: 0,
+          isBreaking: (aiResult.isBreaking === true || aiResult.isBreaking === 'true') ? 1 : 0,
+          isHotTopic: 0,
+          isEvergreen: (aiResult.isEvergreen === true || aiResult.isEvergreen === 'true') ? 1 : 0,
+          relatedArticles: [],
+          rejectionReason: aiResult.rejectionReason || ''
         };
 
         console.log(`[VPS Local] Guardando artículo nuevo en caché local e incremental: "${newsItem.title}"`);
@@ -4181,16 +4268,10 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
           const summaryLower = (newsItem.summary || '').toLowerCase();
           const categoryLower = (newsItem.category || '').toLowerCase();
 
-          // REGLA 1: Si category no es relevante para AIDAILY, descartar.
-          // AIDAILY prioriza IA, tecnología, startups, ciencia y medioambiente.
-          // Descartamos deportes, estilo, gastronomía, y sociedad genérica a menos que hablen de IA o tecnología.
-          const nonRelevantCategories = ['deportes', 'estilo', 'gastronomia', 'sociedad'];
-          const techKeywords = ['inteligencia artificial', 'ia', 'ai', 'robot', 'tecnologia', 'software', 'hardware', 'startup', 'openai', 'chatgpt', 'nvidia', 'google', 'microsoft', 'apple', 'amazon', 'meta', 'ciencia', 'espacio', 'biotecnologia', 'quimica', 'fisica', 'astronomia'];
-          const hasTechKeyword = techKeywords.some(kw => titleLower.includes(kw) || summaryLower.includes(kw));
-
-          if (nonRelevantCategories.includes(categoryLower) && !hasTechKeyword) {
-            console.log(`[Filtro Publicación] Descartando noticia no relevante de categoría "${newsItem.category}": "${newsItem.title}"`);
-            finalStatus = 'descartada';
+          // REGLA 1: Registrar como 'rejected' si el status devuelto por el QA editorial de la IA es 'rejected'
+          if (aiResult.status === 'rejected') {
+            console.log(`[Filtro Publicación] Registrando noticia rechazada por criterio editorial IA como status 'rejected': "${newsItem.title}". Razón: ${aiResult.rejectionReason || 'No especificada'}`);
+            finalStatus = 'rejected';
           }
 
           // REGLA 2: Si la fecha está en el futuro, descartar.
@@ -4221,13 +4302,25 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
           const hashtagsStr = JSON.stringify(newsItem.hashtags || []);
           const linksStr = JSON.stringify(newsItem.links || []);
           const interestingDataStr = JSON.stringify(newsItem.interestingData || []);
+          const entitiesStr = JSON.stringify(newsItem.entities || []);
+          const relatedArticlesStr = JSON.stringify(newsItem.relatedArticles || []);
 
           const updateStmt = db.prepare(`
             UPDATE articles SET
+              slug = ?,
               title = ?,
+              subtitle = ?,
               summary = ?,
+              url = ?,
+              originalUrl = ?,
+              source = ?,
+              sourceUrl = ?,
+              publishedAt = ?,
+              updatedAt = ?,
+              author = ?,
               imageUrl = ?,
               imageAlt = ?,
+              imageCaption = ?,
               category = ?,
               subcategory = ?,
               tags = ?,
@@ -4237,23 +4330,45 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
               whyMatters = ?,
               multimedia = ?,
               fullText = ?,
-              hashtags = ?,
               fullArticle = ?,
+              contentHtml = ?,
+              hashtags = ?,
               scrapedAt = ?,
               links = ?,
               interestingData = ?,
+              entities = ?,
+              country = ?,
+              importanceScore = ?,
+              qualityScore = ?,
+              editorialScore = ?,
+              trendScore = ?,
+              isBreaking = ?,
+              isHotTopic = ?,
+              isEvergreen = ?,
+              relatedArticles = ?,
               relevanceScore = ?,
               urgencyScore = ?,
               scoreReason = ?,
+              rejectionReason = ?,
               status = ?
             WHERE id = ?
           `);
 
           updateStmt.run(
+            newsItem.slug,
             newsItem.title,
+            newsItem.subtitle || '',
             newsItem.summary,
+            newsItem.url,
+            newsItem.originalUrl,
+            newsItem.source,
+            newsItem.sourceUrl || '',
+            newsItem.publishedAt instanceof Date ? newsItem.publishedAt.toISOString() : new Date(newsItem.publishedAt).toISOString(),
+            newsItem.updatedAt instanceof Date ? newsItem.updatedAt.toISOString() : new Date().toISOString(),
+            newsItem.author || 'Redacción AIDAILY',
             newsItem.imageUrl || '',
             newsItem.imageAlt || '',
+            newsItem.imageCaption || '',
             newsItem.category,
             newsItem.subcategory,
             tagsStr,
@@ -4263,14 +4378,26 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
             newsItem.whyMatters || '',
             multimediaStr,
             newsItem.fullText || '',
-            hashtagsStr,
             newsItem.fullArticle || '',
+            newsItem.contentHtml || '',
+            hashtagsStr,
             newsItem.scrapedAt,
             linksStr,
             interestingDataStr,
-            newsItem.relevanceScore || 0,
-            newsItem.urgencyScore || 0,
-            newsItem.scoreReason || '',
+            entitiesStr,
+            newsItem.country || '',
+            newsItem.importanceScore || 75,
+            newsItem.qualityScore || 80,
+            newsItem.editorialScore || 0,
+            newsItem.trendScore || 0,
+            newsItem.isBreaking || 0,
+            newsItem.isHotTopic || 0,
+            newsItem.isEvergreen || 0,
+            relatedArticlesStr,
+            newsItem.importanceScore || 75, // relevancia
+            newsItem.qualityScore || 80, // urgencia
+            aiResult.scoreReason || '',
+            newsItem.rejectionReason || '',
             finalStatus,
             hashId
           );
