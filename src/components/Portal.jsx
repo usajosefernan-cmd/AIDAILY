@@ -414,6 +414,14 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
   const [activeSort, setActiveSort] = useState('recent');
   const [trendingTimeRange, setTrendingTimeRange] = useState('today');
 
+  // Estados de Búsqueda Avanzada e Índices Segmentados
+  const [searchIndex, setSearchIndex] = useState(null);
+  const [suggestionsIndex, setSuggestionsIndex] = useState(null);
+  const [isLoadingSearchIndex, setIsLoadingSearchIndex] = useState(false);
+  const [filterCategory, setFilterCategory] = useState('');
+  const [filterSource, setFilterSource] = useState('');
+  const [filterTime, setFilterTime] = useState('all');
+
   const [allArticles, setAllArticles] = useState(recentArticles);
   const [allArticlesLoaded, setAllArticlesLoaded] = useState(false);
   const [totalArticlesCount, setTotalArticlesCount] = useState(initialCount || recentArticles.length);
@@ -630,6 +638,38 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
     };
   }, [initialSelectedArticleId]);
 
+  // Carga Diferida del Índice Completo de Búsqueda y Sugerencias
+  useEffect(() => {
+    if ((isSearchBoxOpen || searchQuery) && !searchIndex && !isLoadingSearchIndex) {
+      setIsLoadingSearchIndex(true);
+      const basePath = getBasePath();
+      
+      console.log("[Buscador] Cargando índice de búsqueda ligero bajo demanda...");
+      fetch(`${basePath}api/search/index.json`)
+        .then(res => res.json())
+        .then(data => {
+          if (Array.isArray(data)) {
+            setSearchIndex(data);
+            console.log(`[Buscador] Índice de búsqueda de ${data.length} noticias cargado.`);
+          }
+          setIsLoadingSearchIndex(false);
+        })
+        .catch(err => {
+          console.error("[Buscador] Error cargando índice de búsqueda:", err);
+          setIsLoadingSearchIndex(false);
+        });
+
+      fetch(`${basePath}api/search/suggestions.json`)
+        .then(res => res.json())
+        .then(data => {
+          if (data && typeof data === 'object') {
+            setSuggestionsIndex(data);
+          }
+        })
+        .catch(() => {});
+    }
+  }, [isSearchBoxOpen, searchQuery]);
+
   const setTheme = (themeName) => {
     setThemeState(themeName);
     localStorage.setItem('aidaily_theme', themeName);
@@ -640,29 +680,56 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
   };
 
   const filteredArticles = useMemo(() => {
-    return allArticles.filter(art => {
+    // Si hay una búsqueda activa, filtramos sobre el índice completo bajo demanda,
+    // de lo contrario usamos la lista reducida por defecto para la visualización de portada.
+    const pool = searchQuery ? (searchIndex || allArticles) : allArticles;
+
+    return pool.filter(art => {
+      // Excluir noticias con titulares corruptos o que contengan stop words muy de inglés en el titular
       const hasEnglishWords = /\b(the|and|of|with|from|this|that|about|would|their|there|which)\b/i;
       if (hasEnglishWords.test(art.title)) return false;
 
+      // Filtro de Búsqueda de Texto
       if (searchQuery) {
         const q = normalizeText(searchQuery);
         const inTitle = normalizeText(art.title).includes(q);
         const inSummary = normalizeText(art.aiSummary || art.summary).includes(q);
-        const inHashtags = Array.isArray(art.hashtags) && art.hashtags.some(h => normalizeText(h).includes(q));
+        const inHashtags = Array.isArray(art.tags || art.hashtags) && (art.tags || art.hashtags).some(h => normalizeText(h).includes(q));
         if (!inTitle && !inSummary && !inHashtags) return false;
       }
 
+      // Filtro de Categoría del Buscador
+      if (searchQuery && filterCategory) {
+        if (normalizeText(art.category) !== normalizeText(filterCategory)) return false;
+      }
+
+      // Filtro de Fuente del Buscador
+      if (searchQuery && filterSource) {
+        if (normalizeText(art.source) !== normalizeText(filterSource)) return false;
+      }
+
+      // Filtro de Fecha del Buscador
+      if (searchQuery && filterTime && filterTime !== 'all') {
+        const artTime = new Date(art.publishedAt || art.published || 0).getTime();
+        const hrsLimit = filterTime === '24h' ? 24 : filterTime === '7d' ? 24 * 7 : 24 * 30;
+        const limit = Date.now() - hrsLimit * 60 * 60 * 1000;
+        if (artTime < limit) return false;
+      }
+
+      // Filtro de Hashtag de la navegación
       if (activeHashtag) {
         const tagNorm = normalizeText(activeHashtag).replace('#', '');
-        const artTags = Array.isArray(art.hashtags) ? art.hashtags.map(h => normalizeText(h).replace('#', '')) : [];
+        const artTags = Array.isArray(art.tags || art.hashtags) ? (art.tags || art.hashtags).map(h => normalizeText(h).replace('#', '')) : [];
         if (!artTags.includes(tagNorm)) return false;
       }
 
+      // Filtro de Fuente de la navegación
       if (activeSource) {
         if (normalizeText(art.source) !== normalizeText(activeSource)) return false;
       }
 
-      if (activeCategory && activeCategory !== 'breaking' && activeCategory !== 'date') {
+      // Filtro de Categoría de la navegación
+      if (activeCategory && activeCategory !== 'breaking' && activeCategory !== 'date' && !searchQuery) {
         const portalSubcats = PORTAL_MAPPING[activeCategory];
         const artCat = normalizeText(art.category);
         
@@ -673,14 +740,15 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
         }
       }
 
-      if (activeSubcategory) {
+      // Filtro de Subcategoría de la navegación
+      if (activeSubcategory && !searchQuery) {
         const artSub = normalizeText(art.subcategory);
         if (artSub !== normalizeText(activeSubcategory)) return false;
       }
 
       return true;
     });
-  }, [allArticles, activeCategory, activeSubcategory, activeHashtag, activeSource, searchQuery]);
+  }, [allArticles, searchIndex, activeCategory, activeSubcategory, activeHashtag, activeSource, searchQuery, filterCategory, filterSource, filterTime]);
 
   const sortedArticles = useMemo(() => {
     let result = [...filteredArticles];
@@ -736,8 +804,8 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
     if (!art.fullArticle) {
       try {
-        const cleanId = artId.replace(/[^a-zA-Z0-9]/g, '_');
-        const res = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${cleanId}.json`);
+        const basePath = getBasePath();
+        const res = await fetch(`${basePath}api/articles/${artId}.json`);
         if (res.ok) {
           const data = await res.json();
           if (data && data.fullArticle) {
@@ -788,8 +856,8 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
     if (!nextArt.fullArticle) {
       try {
-        const cleanId = nextArt.id.replace(/[^a-zA-Z0-9]/g, '_');
-        const res = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${cleanId}.json`);
+        const basePath = getBasePath();
+        const res = await fetch(`${basePath}api/articles/${nextArt.id}.json`);
         if (res.ok) {
           const data = await res.json();
           if (data && data.fullArticle) {
@@ -1077,6 +1145,99 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
         </nav>
       </div>
 
+      {/* Barra de Filtros del Buscador Inteligente */}
+      {searchQuery && (
+        <div className="search-filters-bar" style={{
+          maxWidth: '1200px',
+          margin: '16px auto 0 auto',
+          padding: '12px 24px',
+          background: 'rgba(255, 255, 255, 0.02)',
+          borderRadius: '12px',
+          border: '1px solid var(--border-color)',
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '16px',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          boxSizing: 'border-box'
+        }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.68rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.5px' }}>FILTRAR BÚSQUEDA:</span>
+            
+            {/* Selector de Categorías */}
+            <select 
+              value={filterCategory} 
+              onChange={(e) => setFilterCategory(e.target.value)}
+              style={{
+                background: '#09090b',
+                color: 'var(--text-color)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '6px',
+                padding: '5px 10px',
+                fontSize: '0.72rem',
+                outline: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="">Todas las categorías</option>
+              {suggestionsIndex?.categories?.map(c => (
+                <option key={c.label} value={c.label}>{c.label.toUpperCase()} ({c.count})</option>
+              ))}
+            </select>
+
+            {/* Selector de Fuentes */}
+            <select 
+              value={filterSource} 
+              onChange={(e) => setFilterSource(e.target.value)}
+              style={{
+                background: '#09090b',
+                color: 'var(--text-color)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '6px',
+                padding: '5px 10px',
+                fontSize: '0.72rem',
+                outline: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="">Todas las fuentes</option>
+              {suggestionsIndex?.sources?.map(s => (
+                <option key={s.label} value={s.label}>{s.label} ({s.count})</option>
+              ))}
+            </select>
+
+            {/* Selector de Fecha */}
+            <select 
+              value={filterTime} 
+              onChange={(e) => setFilterTime(e.target.value)}
+              style={{
+                background: '#09090b',
+                color: 'var(--text-color)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '6px',
+                padding: '5px 10px',
+                fontSize: '0.72rem',
+                outline: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="all">Cualquier fecha</option>
+              <option value="24h">Últimas 24 horas</option>
+              <option value="7d">Últimos 7 días</option>
+              <option value="30d">Último mes</option>
+            </select>
+
+            {isLoadingSearchIndex && (
+              <span style={{ fontSize: '0.72rem', color: 'var(--accent-cyan)', animation: 'pulse 1.5s infinite' }}>Cargando índice completo...</span>
+            )}
+          </div>
+
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+            Resultados: <strong style={{ color: 'var(--accent-cyan)' }}>{filteredArticles.length}</strong> artículos
+          </div>
+        </div>
+      )}
+
       {/* VISTA PRINCIPAL O DETALLE */}
       {!selectedArticle ? (
         <div className="feed-container" id="feed-layout-container">
@@ -1227,57 +1388,121 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                     </div>
                   ) : (
                     <>
-                      {/* Portada de 3 Columnas en Página 1 */}
+                      {/* Portada de 3 Columnas Estilo NYT / El País en Página 1 */}
                       {currentPage === 1 && !isSearchActive && sortedArticles[0] && (
-                        <div className="nyt-front-page-3col" style={{ marginBottom: '32px' }}>
-                          {/* Columna Lead */}
-                          <a href={`${basePath}noticias/${getSlug(sortedArticles[0].title) || sortedArticles[0].id}/`} className="nyt-lead-column" onClick={(e) => { e.preventDefault(); openArticle(sortedArticles[0].id); }} style={{ textDecoration: 'none', display: 'block' }}>
-                            <div className="lead-story-image-wrapper">
-                              <img className="lead-story-img" src={getArticleImageUrl(sortedArticles[0])} alt={sortedArticles[0].title} loading="lazy" />
-                            </div>
-                            <span className="card-source" style={{ fontSize: '0.7rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 800, marginTop: '4px', display: 'block' }}>
-                              {String(sortedArticles[0].category || 'general').toUpperCase()}
-                            </span>
-                            <h2 className="lead-story-title" style={{ fontSize: '1.45rem', fontWeight: 800, margin: '8px 0' }}>{renderString(sortedArticles[0].title)}</h2>
-                            <p className="lead-story-summary">{renderString(sortedArticles[0].aiSummary || sortedArticles[0].summary)}</p>
-                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--border-color)', paddingTop: '8px' }}>
-                              <span>RSS: {formatRelativeDate(sortedArticles[0].publishedAt)}</span>
-                              <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>Leer reporte completo →</span>
-                            </div>
-                          </a>
-
-                          {/* Columna Middle */}
-                          {sortedArticles[1] && (
-                            <a href={`${basePath}noticias/${getSlug(sortedArticles[1].title) || sortedArticles[1].id}/`} className="nyt-middle-column" onClick={(e) => { e.preventDefault(); openArticle(sortedArticles[1].id); }} style={{ textDecoration: 'none', display: 'block' }}>
-                              <div className="lead-story-image-wrapper" style={{ maxHeight: '180px' }}>
-                                <img className="lead-story-img" src={getArticleImageUrl(sortedArticles[1])} alt={sortedArticles[1].title} loading="lazy" />
-                              </div>
-                              <span className="card-source" style={{ fontSize: '0.65rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 800, marginTop: '4px', display: 'block' }}>
-                                {String(sortedArticles[1].category || 'general').toUpperCase()}
-                              </span>
-                              <h3 className="side-story-title" style={{ fontSize: '1.15rem' }}>{renderString(sortedArticles[1].title)}</h3>
-                              <p className="side-story-summary" style={{ fontSize: '0.78rem' }}>{renderString(sortedArticles[1].aiSummary || sortedArticles[1].summary)}</p>
-                              <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--border-color)', paddingTop: '8px' }}>
-                                <span>RSS: {formatRelativeDate(sortedArticles[1].publishedAt)}</span>
-                                <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>Leer →</span>
-                              </div>
-                            </a>
-                          )}
-
-                          {/* Columna Side Stories (Noticias 3, 4 y 5) */}
-                          <div className="nyt-side-column">
-                            <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px', borderBottom: '1.5px solid var(--text-title)', paddingBottom: '6px', color: 'var(--text-title)', marginBottom: '10px' }}>Otras Noticias</h3>
-                            {sortedArticles.slice(2, 5).map(side => (
-                              <a key={side.id} href={`${basePath}noticias/${getSlug(side.title) || side.id}/`} className="side-story-item" onClick={(e) => { e.preventDefault(); openArticle(side.id); }} style={{ display: 'flex', flexDirection: 'column', gap: '4px', textDecoration: 'none', marginBottom: '16px' }}>
-                                <span className="card-source" style={{ fontSize: '0.65rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 800 }}>
-                                  {String(side.category || 'general').toUpperCase()}
+                        <div className="nyt-front-page-3col">
+                          
+                          {/* 1. Columna Izquierda: Historias Secundarias Destacadas */}
+                          <div className="nyt-left-column">
+                            {sortedArticles.slice(1, 3).map((art, idx) => (
+                              <a 
+                                key={art.id} 
+                                href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} 
+                                onClick={(e) => { e.preventDefault(); openArticle(art.id); }} 
+                                style={{ textDecoration: 'none', display: 'block', marginBottom: idx === 0 ? '24px' : '0', borderBottom: idx === 0 ? '1px solid var(--border-color)' : 'none', paddingBottom: idx === 0 ? '20px' : '0' }}
+                              >
+                                <span style={{ fontSize: '0.62rem', color: 'var(--accent-cyan)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                                  {String(art.category || 'general').toUpperCase()}
                                 </span>
-                                <h4 className="side-story-title" style={{ fontSize: '0.88rem', lineHeight: 1.25 }}>{renderString(side.title)}</h4>
-                                <p className="side-story-summary" style={{ fontSize: '0.74rem', lineHeight: 1.35 }}>{renderString(side.aiSummary || side.summary)}</p>
-                                <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>{formatRelativeDate(side.publishedAt)}</span>
+                                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 800, color: '#fff', margin: '6px 0 10px 0', lineHeight: 1.25 }}>
+                                  {renderString(art.title)}
+                                </h3>
+                                <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.45, margin: '8px 0' }}>
+                                  {renderString(art.aiSummary || art.summary)}
+                                </p>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.64rem', color: 'var(--text-muted)', marginTop: '12px' }}>
+                                  <span>{formatRelativeDate(art.publishedAt)}</span>
+                                  <span style={{ color: 'var(--accent-cyan)' }}>Leer →</span>
+                                </div>
                               </a>
                             ))}
                           </div>
+
+                          {/* 2. Columna Central: Lead Story Hero Principal */}
+                          <a 
+                            href={`${basePath}noticias/${getSlug(sortedArticles[0].title) || sortedArticles[0].id}/`} 
+                            className="nyt-lead-column" 
+                            onClick={(e) => { e.preventDefault(); openArticle(sortedArticles[0].id); }} 
+                            style={{ textDecoration: 'none', display: 'block' }}
+                          >
+                            <div className="lead-story-image-wrapper">
+                              <img className="lead-story-img" src={getArticleImageUrl(sortedArticles[0])} alt={sortedArticles[0].title} loading="lazy" />
+                            </div>
+                            
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                              <span style={{ fontSize: '0.68rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '0.8px' }}>
+                                {String(sortedArticles[0].category || 'general').toUpperCase()}
+                              </span>
+                              {sortedArticles[0].isBreaking ? (
+                                <span style={{ background: '#ef4444', color: '#fff', fontSize: '0.58rem', fontWeight: 800, padding: '2px 6px', borderRadius: '4px', textTransform: 'uppercase' }}>
+                                  Urgente
+                                </span>
+                              ) : null}
+                            </div>
+                            
+                            <h2 className="lead-story-title" style={{ fontSize: '1.65rem' }}>
+                              {renderString(sortedArticles[0].title)}
+                            </h2>
+                            <p className="lead-story-summary" style={{ fontSize: '0.86rem', color: 'var(--text-muted)' }}>
+                              {renderString(sortedArticles[0].aiSummary || sortedArticles[0].summary)}
+                            </p>
+                            
+                            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--border-color)', paddingTop: '10px', marginTop: '16px' }}>
+                              <span>Autor: {sortedArticles[0].author || 'Redacción AIDAILY'} • {formatRelativeDate(sortedArticles[0].publishedAt)}</span>
+                              <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>Leer análisis completo →</span>
+                            </div>
+                          </a>
+
+                          {/* 3. Columna Derecha: Sidebar de Widgets en Caliente */}
+                          <div className="nyt-right-sidebar">
+                            {/* Widget de Última Hora */}
+                            <div style={{ marginBottom: '24px' }}>
+                              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1.5px solid var(--accent-cyan)', paddingBottom: '6px', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
+                                <span className="nyt-live-dot"></span> ÚLTIMA HORA
+                              </h3>
+                              {sortedArticles.slice(3, 6).map(art => (
+                                <a 
+                                  key={art.id} 
+                                  href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} 
+                                  onClick={(e) => { e.preventDefault(); openArticle(art.id); }} 
+                                  style={{ textDecoration: 'none', display: 'block', marginBottom: '12px', borderBottom: '1px dashed var(--border-color)', paddingBottom: '10px' }}
+                                >
+                                  <h4 style={{ fontSize: '0.82rem', fontWeight: 700, color: '#fff', margin: 0, lineHeight: 1.3 }}>
+                                    {renderString(art.title)}
+                                  </h4>
+                                  <span style={{ fontSize: '0.6rem', color: 'var(--accent-cyan)', display: 'block', marginTop: '4px' }}>
+                                    Hace {formatRelativeDate(art.publishedAt)}
+                                  </span>
+                                </a>
+                              ))}
+                            </div>
+
+                            {/* Widget de Tendencias Populares */}
+                            <div>
+                              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1.5px solid var(--accent-purple)', paddingBottom: '6px', color: '#fff', marginBottom: '12px' }}>
+                                🔥 TENDENCIAS
+                              </h3>
+                              {sidebarTrending.slice(0, 4).map((art, idx) => (
+                                <a 
+                                  key={art.id} 
+                                  href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} 
+                                  onClick={(e) => { e.preventDefault(); openArticle(art.id); }} 
+                                  style={{ textDecoration: 'none', display: 'flex', gap: '10px', marginBottom: '12px', cursor: 'pointer' }}
+                                >
+                                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '1.3rem', fontWeight: 900, color: 'var(--accent-purple)', minWidth: '20px', textAlign: 'center' }}>
+                                    {idx + 1}
+                                  </span>
+                                  <div>
+                                    <h4 style={{ fontSize: '0.78rem', fontWeight: 700, color: '#fff', margin: 0, lineHeight: 1.25 }}>
+                                      {renderString(art.title)}
+                                    </h4>
+                                    <span style={{ fontSize: '0.58rem', color: 'var(--text-muted)' }}>{art.source}</span>
+                                  </div>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+
                         </div>
                       )}
 

@@ -4,7 +4,7 @@ import path from 'path';
 import { readFileSync, existsSync } from 'fs';
 
 export async function getStaticPaths() {
-  const cachePath = path.resolve('src/data/articles-light.json');
+  const cachePath = path.resolve('src/data/cache-news.json');
   if (!existsSync(cachePath)) return [];
   
   try {

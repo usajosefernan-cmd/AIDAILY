@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Portal from '../../components/Portal.jsx';
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
@@ -26,45 +25,243 @@ export async function getStaticPaths() {
   try {
     const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
     if (Array.isArray(cacheData)) {
-      // Ordenar por fecha descendente
-      cacheData.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
-      const sliced = cacheData.slice(0, 100);
+      // Compilar rutas estáticas para las últimas 150 noticias
+      const sorted = [...cacheData].sort((a, b) => new Date(b.publishedAt || b.published || 0) - new Date(a.publishedAt || a.published || 0));
+      const sliced = sorted.slice(0, 150);
+      
       return sliced.map(art => {
         const slug = getSlug(art.title) || art.id;
+        
+        // Obtener artículos relacionados para pintar estáticamente
+        const related = sorted
+          .filter(a => a.id !== art.id && a.category === art.category)
+          .slice(0, 3);
+
         return {
           params: { slug },
-          props: { article: art }
+          props: { article: art, relatedArticles: related }
         };
       });
     }
   } catch (e) {
-    console.error("Error al generar rutas en noticias/[slug].astro:", e);
+    console.error("Error generando rutas en noticias/[slug].astro:", e);
   }
   return [];
 }
 
 const { slug } = Astro.params;
-const { article } = Astro.props;
+const { article, relatedArticles = [] } = Astro.props;
 
 if (!article) {
   return Astro.redirect('/pro/aidaily/');
 }
 
-// Helpers para multimedia y fechas
+// Helpers para imágenes y metadatos
 const defaultImg = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop&q=80';
 const articleImg = article.imageUrl || (article.multimedia && article.multimedia[0]?.url) || defaultImg;
+
+// Calcular tiempo de lectura estimado (promedio de 200 palabras por minuto)
+const wordCount = (article.fullText || "").split(/\s+/).length;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+// Formatear fecha
+const formatDate = (isoString) => {
+  if (!isoString) return 'Hoy';
+  try {
+    const d = new Date(isoString);
+    return d.toLocaleDateString('es-ES', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  } catch (_) {
+    return 'Reciente';
+  }
+};
+
+// Generar iniciales del autor para el avatar de prensa
+const getAuthorInitials = (authorName) => {
+  if (!authorName) return 'AD';
+  return authorName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+};
+
+// Asegurar formato de tags/keypoints
+const keyPoints = Array.isArray(article.keyPoints) 
+  ? article.keyPoints 
+  : (typeof article.keyPoints === 'string' && article.keyPoints.trim().startsWith('[') 
+      ? JSON.parse(article.keyPoints) 
+      : (article.keyPoints ? [article.keyPoints] : []));
+
+const tags = Array.isArray(article.tags)
+  ? article.tags
+  : (typeof article.tags === 'string' && article.tags.trim().startsWith('[')
+      ? JSON.parse(article.tags)
+      : (article.tags ? [article.tags] : []));
 ---
 
 <Layout 
-  title={`${article.title} — AIDAILY`} 
+  title={article.title} 
   description={article.summary || article.aiSummary}
   image={articleImg}
 >
-  <Portal 
-    client:load 
-    recentArticles={[article]} 
-    totalArticlesCount={1}
-    initialSelectedArticleId={article.id}
-    basePath={import.meta.env.BASE_URL}
-  />
+  <div class="glow-bg glow-purple"></div>
+  <div class="glow-bg glow-cyan"></div>
+
+  {/* Header Corporativo Estático */}
+  <header style="border-bottom: 1px solid var(--border-color); background: rgba(7, 7, 12, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="/pro/aidaily/" style="text-decoration: none; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.25rem; color: #fff; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px;">
+        <span style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AIDAILY</span>
+        <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 500; border-left: 1px solid var(--border-color); padding-left: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Prensa IA</span>
+      </a>
+      <a href="/pro/aidaily/" class="article-back-btn" style="text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); transition: all 0.2s; display: flex; align-items: center; gap: 6px;">
+        ← VOLVER AL PORTAL
+      </a>
+    </div>
+  </header>
+
+  {/* Contenedor Editorial Principal */}
+  <article class="editorial-article-container">
+    
+    {/* Cabecera Editorial */}
+    <div class="editorial-header">
+      <span style="font-size: 0.72rem; color: var(--accent-cyan); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">
+        {String(article.category || 'general').toUpperCase()}
+      </span>
+      <h1 class="editorial-title">{article.title}</h1>
+      {article.subtitle && <p class="editorial-subtitle">{article.subtitle}</p>}
+      
+      <div class="editorial-meta">
+        <div class="editorial-author-avatar">
+          {getAuthorInitials(article.author)}
+        </div>
+        <div>
+          <strong style="color: #fff; display: block; font-size: 0.78rem;">{article.author || 'Redacción AIDAILY'}</strong>
+          <span>Publicado el {formatDate(article.publishedAt)}</span>
+        </div>
+        <span style="color: var(--border-color)">|</span>
+        <span>⏱️ {readingTime} min de lectura</span>
+        <span style="color: var(--border-color)">|</span>
+        <span style="display: flex; align-items: center; gap: 4px;">
+          👁️ <span id="article-views-counter" style="color: var(--accent-cyan); font-weight: 700; font-family: monospace;">Cargando...</span>
+        </span>
+      </div>
+    </div>
+
+    {/* Imagen Principal */}
+    <div class="editorial-image-wrapper">
+      <img class="editorial-image" src={articleImg} alt={article.imageAlt || article.title} />
+      {article.imageCaption && (
+        <div class="editorial-image-caption">
+          {article.imageCaption}
+        </div>
+      )}
+    </div>
+
+    {/* Bloque: Por qué es importante (Why Matters) */}
+    {article.whyMatters && (
+      <div class="editorial-why-matters">
+        <strong>Por qué es importante:</strong> {article.whyMatters}
+      </div>
+    )}
+
+    {/* Bloque: Puntos Clave (Key Points) */}
+    {keyPoints.length > 0 && (
+      <div class="editorial-keypoints-box">
+        <div class="editorial-keypoints-title">Puntos Clave de la Noticia</div>
+        <ul class="editorial-keypoints-list">
+          {keyPoints.map(point => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {/* Cuerpo de la Noticia (Renderizado HTML con fuente Serif Georgia) */}
+    <div class="editorial-body-serif" set:html={article.contentHtml || `<p>${article.fullText || article.summary}</p>`}>
+    </div>
+
+    {/* Enlaces de Etiquetas (Tags) */}
+    {tags.length > 0 && (
+      <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+        {tags.map(t => (
+          <a href={`/pro/aidaily/tag/${t.replace('#', '').toLowerCase().trim()}.html`} style="text-decoration: none; font-size: 0.68rem; font-weight: 700; color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.15); padding: 4px 10px; border-radius: 20px; transition: all 0.2s;">
+            #{t.replace('#', '').trim()}
+          </a>
+        ))}
+      </div>
+    )}
+
+    {/* Sección: Artículos Recomendados */}
+    {relatedArticles.length > 0 && (
+      <div>
+        <div class="editorial-related-title">Lecturas Recomendadas</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+          {relatedArticles.map(rel => (
+            <a href={`/pro/aidaily/noticias/${rel.slug || rel.id}/`} style="text-decoration: none; display: block; background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; padding: 12px; transition: all 0.25s;">
+              <img src={rel.imageUrl || defaultImg} alt={rel.title} style="width: 100%; height: 120px; object-fit: cover; borderRadius: 6px; margin-bottom: 10px;" />
+              <span style={{ fontSize: '0.58rem', color: 'var(--accent-cyan)', fontWeight: 800, textTransform: 'uppercase' }}>{rel.source}</span>
+              <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.84rem; font-weight: 800; color: #fff; margin: 4px 0 0 0; line-height: 1.25;">{rel.title}</h4>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+  </article>
+
+  {/* Pie de Página Minimalista */}
+  <footer style="border-top: 1px solid var(--border-color); padding: 24px 0; margin-top: 60px; text-align: center; font-size: 0.65rem; color: var(--text-muted); background: rgba(0,0,0,0.15);">
+    <p>© {new Date().getFullYear()} AIDAILY. Generado y curado mediante Inteligencia Artificial.</p>
+  </footer>
+
+  {/* Telemetría inline de Visitas (Firebase RTDB) */}
+  <script is:inline define:vars={{ articleId: article.id }}>
+    (function() {
+      if (!articleId) return;
+      const cleanId = articleId.replace(/[^a-zA-Z0-9]/g, '_');
+      const counterEl = document.getElementById('article-views-counter');
+
+      // 1. Incrementar la visita atómicamente y obtener el nuevo valor
+      fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/total.json`, {
+        method: 'PUT',
+        body: '{\".sv\": {\"increment\": 1}}'
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && typeof data === 'object') {
+          const totalVal = data.total || data.increment || data.views || 1;
+          if (counterEl) counterEl.innerText = `${totalVal} visitas`;
+        }
+      })
+      .catch(() => {
+        // Fallback: intentar leer el valor global si PUT falla o no está autorizado en escritura directa
+        fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/total.json`)
+          .then(res => res.json())
+          .then(val => {
+            if (counterEl && val !== null) {
+              counterEl.innerText = `${val} visitas`;
+            }
+          })
+          .catch(() => {
+            if (counterEl) counterEl.innerText = 'Disponible';
+          });
+      });
+
+      // 2. Incrementar visitas por hora para momentum en caliente
+      const now = new Date();
+      const yyyy = now.getUTCFullYear();
+      const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+      const dd = String(now.getUTCDate()).padStart(2, '0');
+      const hh = String(now.getUTCHours()).padStart(2, '0');
+      const hourKey = yyyy + mm + dd + hh;
+
+      fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/hours/${hourKey}.json`, {
+        method: 'PUT',
+        body: '{\".sv\": {\"increment\": 1}}'
+      }).catch(() => {});
+    })();
+  </script>
 </Layout>
