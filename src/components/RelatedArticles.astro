@@ -1,0 +1,156 @@
+---
+import { readFileSync, existsSync } from 'fs';
+import { join } from 'path';
+
+interface Props {
+  article: any;
+  limit?: number;
+}
+
+const { article, limit = 8 } = Astro.props;
+
+// Obtener todos los artículos para buscar recomendados
+const cachePath = join(process.cwd(), 'src/data/cache-news.json');
+let relatedList: any[] = [];
+
+if (existsSync(cachePath)) {
+  try {
+    const allArticles = JSON.parse(readFileSync(cachePath, 'utf-8'));
+    if (Array.isArray(allArticles)) {
+      // 1. Helper para similitud simple de palabras comunes de título
+      const getTitleWords = (title: string) => {
+        return new Set(
+          (title || '')
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .split(/\s+/)
+            .filter(w => w.length > 3)
+        );
+      };
+
+      const currWords = getTitleWords(article.title);
+
+      // 2. Calcular puntuación de coincidencia para cada artículo candidato
+      const candidates = allArticles
+        .filter(a => a.id !== article.id) // Excluir el actual
+        .map(a => {
+          let score = 0;
+
+          // Categoría (Prioridad 1)
+          if (a.category && article.category && a.category.toLowerCase() === article.category.toLowerCase()) {
+            score += 15;
+          }
+
+          // Subcategoría (Prioridad 2)
+          if (a.subcategory && article.subcategory && a.subcategory.toLowerCase() === article.subcategory.toLowerCase()) {
+            score += 10;
+          }
+
+          // Tags (Prioridad 3)
+          if (Array.isArray(a.tags) && Array.isArray(article.tags)) {
+            const commonTags = a.tags.filter(t => article.tags.includes(t));
+            score += commonTags.length * 5;
+          }
+
+          // Entidades (Prioridad 4)
+          if (Array.isArray(a.entities) && Array.isArray(article.entities)) {
+            const commonEntities = a.entities.filter(e => article.entities.includes(e));
+            score += commonEntities.length * 6;
+          }
+
+          // Similitud de título (Prioridad 5)
+          const candWords = getTitleWords(a.title);
+          let commonWordsCount = 0;
+          currWords.forEach(w => {
+            if (candWords.has(w)) commonWordsCount++;
+          });
+          score += commonWordsCount * 4;
+
+          // Cercanía temporal (Prioridad 6)
+          const diffMs = Math.abs(new Date(a.publishedAt).getTime() - new Date(article.publishedAt).getTime());
+          const diffDays = diffMs / (1000 * 60 * 60 * 24);
+          if (diffDays < 1) score += 5;
+          else if (diffDays < 7) score += 2;
+
+          return { article: a, score };
+        });
+
+      // 3. Ordenar por puntuación descendente y fecha
+      candidates.sort((a, b) => b.score - a.score || new Date(b.article.publishedAt).getTime() - new Date(a.article.publishedAt).getTime());
+      
+      // Tomar los top recomendados
+      relatedList = candidates.slice(0, limit).map(c => c.article);
+    }
+  } catch (err) {
+    console.error("Error al calcular recomendados en RelatedArticles:", err);
+  }
+}
+
+const defaultImg = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop&q=80';
+
+// Formatear fecha relativa simple
+const formatRelativeDate = (isoString: string) => {
+  if (!isoString) return 'Hace poco';
+  try {
+    const diffMs = Date.now() - new Date(isoString).getTime();
+    const diffMins = Math.floor(diffMs / 60000);
+    if (diffMins < 60) return `Hace ${diffMins} min`;
+    const diffHrs = Math.floor(diffMins / 60);
+    if (diffHrs < 24) return `Hace ${diffHrs} h`;
+    const diffDays = Math.floor(diffHrs / 24);
+    return `Hace ${diffDays} días`;
+  } catch (_) {
+    return 'Reciente';
+  }
+};
+---
+
+{relatedList.length > 0 && (
+  <div class="editorial-related-container" style="margin-top: 50px; border-top: 2px solid var(--border-color); padding-top: 30px;">
+    <div class="editorial-related-title" style="font-family: 'Outfit', sans-serif; font-size: 1.15rem; font-weight: 900; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; border-left: 3px solid var(--accent-cyan); padding-left: 12px;">
+      Lecturas Recomendadas
+    </div>
+    
+    <div class="editorial-related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;">
+      {relatedList.map(rel => {
+        const relSlug = rel.slug || rel.id;
+        const relImg = rel.imageUrl || (rel.multimedia && rel.multimedia[0]?.url) || defaultImg;
+        return (
+          <a 
+            href={`/pro/aidaily/noticias/${relSlug}/`} 
+            style="text-decoration: none; display: flex; flex-direction: column; background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; padding: 12px; transition: all 0.25s; height: 100%; box-sizing: border-box;"
+            class="related-article-card"
+          >
+            <div style="position: relative; width: 100%; height: 130px; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
+              <img 
+                src={relImg} 
+                alt={rel.title} 
+                style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" 
+                class="related-card-img"
+              />
+              {rel.isBreaking ? (
+                <span style="position: absolute; top: 8px; left: 8px; background: #ef4444; color: #fff; font-size: 0.52rem; font-weight: 900; padding: 2px 6px; borderRadius: 4px; textTransform: uppercase;">
+                  Urgente
+                </span>
+              ) : null}
+            </div>
+            
+            <div style="display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.6rem; color: var(--accent-cyan); fontWeight: 800; textTransform: uppercase; letterSpacing: 0.5px; margin-bottom: 4px;">
+                {rel.source} • {rel.category}
+              </span>
+              <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 800; color: #fff; margin: 4px 0; line-height: 1.3; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                {rel.title}
+              </h4>
+              <span style="font-size: 0.62rem; color: var(--text-muted); margin-top: auto; padding-top: 8px;">
+                {formatRelativeDate(rel.publishedAt)}
+              </span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+)}

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
@@ -25,21 +26,14 @@ export async function getStaticPaths() {
   try {
     const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
     if (Array.isArray(cacheData)) {
-      // Compilar rutas estáticas para las últimas 150 noticias
+      // Compilar rutas estáticas para TODOS los artículos publicados en SQLite / caché JSON
       const sorted = [...cacheData].sort((a, b) => new Date(b.publishedAt || b.published || 0) - new Date(a.publishedAt || a.published || 0));
-      const sliced = sorted.slice(0, 150);
       
-      return sliced.map(art => {
-        const slug = getSlug(art.title) || art.id;
-        
-        // Obtener artículos relacionados para pintar estáticamente
-        const related = sorted
-          .filter(a => a.id !== art.id && a.category === art.category)
-          .slice(0, 3);
-
+      return sorted.map(art => {
+        const slug = art.slug || getSlug(art.title) || art.id;
         return {
           params: { slug },
-          props: { article: art, relatedArticles: related }
+          props: { article: art }
         };
       });
     }
@@ -50,7 +44,7 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const { article, relatedArticles = [] } = Astro.props;
+const { article } = Astro.props;
 
 if (!article) {
   return Astro.redirect('/pro/aidaily/');
@@ -194,21 +188,8 @@ const tags = Array.isArray(article.tags)
       </div>
     )}
 
-    {/* Sección: Artículos Recomendados */}
-    {relatedArticles.length > 0 && (
-      <div>
-        <div class="editorial-related-title">Lecturas Recomendadas</div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-          {relatedArticles.map(rel => (
-            <a href={`/pro/aidaily/noticias/${rel.slug || rel.id}/`} style="text-decoration: none; display: block; background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; padding: 12px; transition: all 0.25s;">
-              <img src={rel.imageUrl || defaultImg} alt={rel.title} style="width: 100%; height: 120px; object-fit: cover; borderRadius: 6px; margin-bottom: 10px;" />
-              <span style={{ fontSize: '0.58rem', color: 'var(--accent-cyan)', fontWeight: 800, textTransform: 'uppercase' }}>{rel.source}</span>
-              <h4 style="font-family: 'Outfit', sans-serif; font-size: 0.84rem; font-weight: 800; color: #fff; margin: 4px 0 0 0; line-height: 1.25;">{rel.title}</h4>
-            </a>
-          ))}
-        </div>
-      </div>
-    )}
+    {/* Sección: Miniaturas de Artículos Relacionados (FASE 6) */}
+    <RelatedArticles article={article} limit={8} />
 
   </article>
 

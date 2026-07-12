@@ -158,6 +158,7 @@ const LIGHT_OUTPUT_PATH = OUTPUT_PATH.replace('search-index.json', 'articles-lig
 const sortedArts = [...arts].sort((a, b) => new Date(b.publishedAt || b.date || 0).getTime() - new Date(a.publishedAt || a.date || 0).getTime());
 const lightArticles = sortedArts.slice(0, 500).map(a => ({
   id: a.id || a.url,
+  slug: a.slug || '',
   title: a.title,
   category: a.category,
   subcategory: a.subcategory,

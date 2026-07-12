@@ -426,12 +426,17 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
   const [allArticlesLoaded, setAllArticlesLoaded] = useState(false);
   const [totalArticlesCount, setTotalArticlesCount] = useState(initialCount || recentArticles.length);
 
-  // Detalle de Artículo y Lectura Infinita
-  const [selectedArticle, setSelectedArticle] = useState(null);
-  const [infiniteArticles, setInfiniteArticles] = useState([]);
-  const [infiniteArticlesQueue, setInfiniteArticlesQueue] = useState([]);
-  const [infiniteNextIndex, setInfiniteNextIndex] = useState(0);
-  const [isLoadingNextArticle, setIsLoadingNextArticle] = useState(false);
+  // Detalle de Artículo y Lectura Infinita (Desacoplados en favor de Astro)
+  const selectedArticle = null;
+  const setSelectedArticle = () => {};
+  const infiniteArticles = [];
+  const setInfiniteArticles = () => {};
+  const infiniteArticlesQueue = [];
+  const setInfiniteArticlesQueue = () => {};
+  const infiniteNextIndex = 0;
+  const setInfiniteNextIndex = () => {};
+  const isLoadingNextArticle = false;
+  const setIsLoadingNextArticle = () => {};
 
   // Menús y Modales
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -873,46 +878,10 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
     setIsLoadingNextArticle(false);
   };
 
-  // IntersectionObserver para cambiar URL y título en lectura infinita
+  // IntersectionObserver desactivado en favor de telemetría nativa de Astro
   useEffect(() => {
-    if (!selectedArticle || infiniteArticles.length === 0) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const title = entry.target.getAttribute('data-title');
-          const id = entry.target.getAttribute('data-id');
-          document.title = `${title} — AIDAILY`;
-          
-          const breadcrumbTitle = document.getElementById('breadcrumb-article-title');
-          if (breadcrumbTitle) breadcrumbTitle.innerText = title;
-
-          if (id) {
-            const basePath = getBasePath();
-            const openArt = allArticles.find(a => a.id === id);
-            const artSlug = openArt ? (getSlug(openArt.title) || id) : id;
-            const newPath = `${basePath}noticias/${artSlug}/`;
-            if (window.location.pathname !== newPath) {
-              window.history.replaceState(null, '', newPath);
-            }
-            
-            // Incrementar visitas en caliente
-            if (!registeredViewsRef.current.has(id)) {
-              registeredViewsRef.current.add(id);
-              registerViewInFirebase(id);
-            }
-          }
-        }
-      });
-    }, { rootMargin: "-25% 0px -55% 0px" });
-
-    document.querySelectorAll('.article-item-wrapper').forEach(el => observer.observe(el));
-    infiniteObserverRef.current = observer;
-
-    return () => {
-      if (infiniteObserverRef.current) infiniteObserverRef.current.disconnect();
-    };
-  }, [infiniteArticles, selectedArticle]);
+    // No operativo
+  }, []);
 
   const openLightbox = (url, caption) => {
     setLightbox({
@@ -1249,9 +1218,8 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                 {quickReelsArticles.map(art => (
                   <a
                     key={art.id}
-                    href={`${basePath}noticias/${getSlug(art.title) || art.id}/`}
+                    href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`}
                     className="reel-item"
-                    onClick={(e) => { e.preventDefault(); openArticle(art.id); }}
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="reel-img-wrapper">
@@ -1339,13 +1307,8 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                               </a>
                             ))}
                           </div>
-                        )}
-                      </div>
-
-                      {leadArt && (
-                        <div className="portal-news-grid">
-                          {/* Destacada Principal */}
-                          <a href={`${basePath}noticias/${getSlug(leadArt.title) || leadArt.id}/`} className="portal-lead-column" onClick={(e) => { e.preventDefault(); openArticle(leadArt.id); }} style={{ textDecoration: 'none', display: 'block' }}>
+                                    {/* Destacada Principal */}
+                          <a href={`${basePath}noticias/${leadArt.slug || getSlug(leadArt.title) || leadArt.id}/`} className="portal-lead-column" style={{ textDecoration: 'none', display: 'block' }}>
                             <div className="portal-lead-img-wrapper">
                               <img className="portal-lead-img" src={getArticleImageUrl(leadArt)} alt={leadArt.title} loading="lazy" />
                             </div>
@@ -1361,7 +1324,7 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                           {/* Secundarias de Columna Derecha */}
                           <div className="portal-side-column">
                             {secondaryArticles.map(secArt => (
-                              <a key={secArt.id} href={`${basePath}noticias/${getSlug(secArt.title) || secArt.id}/`} className="portal-secondary-item" onClick={(e) => { e.preventDefault(); openArticle(secArt.id); }} style={{ textDecoration: 'none', display: 'block', marginBottom: '16px' }}>
+                              <a key={secArt.id} href={`${basePath}noticias/${secArt.slug || getSlug(secArt.title) || secArt.id}/`} className="portal-secondary-item" style={{ textDecoration: 'none', display: 'block', marginBottom: '16px' }}>
                                 <span className="portal-secondary-meta" style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>{secArt.source.toUpperCase()} • {formatRelativeDate(secArt.publishedAt)}</span>
                                 <h4 className="portal-secondary-title" style={{ fontSize: '0.92rem', fontWeight: 700, margin: '4px 0' }}>{renderString(secArt.title)}</h4>
                                 <p className="portal-secondary-summary" style={{ fontSize: '0.76rem', color: 'var(--text-muted)', margin: '4px 0' }}>{renderString(secArt.aiSummary || secArt.summary)}</p>
@@ -1397,8 +1360,7 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                             {sortedArticles.slice(1, 3).map((art, idx) => (
                               <a 
                                 key={art.id} 
-                                href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} 
-                                onClick={(e) => { e.preventDefault(); openArticle(art.id); }} 
+                                href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} 
                                 style={{ textDecoration: 'none', display: 'block', marginBottom: idx === 0 ? '24px' : '0', borderBottom: idx === 0 ? '1px solid var(--border-color)' : 'none', paddingBottom: idx === 0 ? '20px' : '0' }}
                               >
                                 <span style={{ fontSize: '0.62rem', color: 'var(--accent-cyan)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -1420,9 +1382,8 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
                           {/* 2. Columna Central: Lead Story Hero Principal */}
                           <a 
-                            href={`${basePath}noticias/${getSlug(sortedArticles[0].title) || sortedArticles[0].id}/`} 
+                            href={`${basePath}noticias/${sortedArticles[0].slug || getSlug(sortedArticles[0].title) || sortedArticles[0].id}/`} 
                             className="nyt-lead-column" 
-                            onClick={(e) => { e.preventDefault(); openArticle(sortedArticles[0].id); }} 
                             style={{ textDecoration: 'none', display: 'block' }}
                           >
                             <div className="lead-story-image-wrapper">
@@ -1463,8 +1424,7 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                               {sortedArticles.slice(3, 6).map(art => (
                                 <a 
                                   key={art.id} 
-                                  href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} 
-                                  onClick={(e) => { e.preventDefault(); openArticle(art.id); }} 
+                                  href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} 
                                   style={{ textDecoration: 'none', display: 'block', marginBottom: '12px', borderBottom: '1px dashed var(--border-color)', paddingBottom: '10px' }}
                                 >
                                   <h4 style={{ fontSize: '0.82rem', fontWeight: 700, color: '#fff', margin: 0, lineHeight: 1.3 }}>
@@ -1485,8 +1445,7 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                               {sidebarTrending.slice(0, 4).map((art, idx) => (
                                 <a 
                                   key={art.id} 
-                                  href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} 
-                                  onClick={(e) => { e.preventDefault(); openArticle(art.id); }} 
+                                  href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} 
                                   style={{ textDecoration: 'none', display: 'flex', gap: '10px', marginBottom: '12px', cursor: 'pointer' }}
                                 >
                                   <span style={{ fontFamily: 'var(--font-title)', fontSize: '1.3rem', fontWeight: 900, color: 'var(--accent-purple)', minWidth: '20px', textAlign: 'center' }}>
@@ -1509,7 +1468,7 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                       {/* Feed Secundario de Noticias en Grid de Tarjetas Horizontales */}
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
                         {sortedArticles.slice(currentPage === 1 && !isSearchActive ? 5 : 0).slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map(art => (
-                          <a key={art.id} href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} className="row-card-link" onClick={(e) => { e.preventDefault(); openArticle(art.id); }} style={{ textDecoration: 'none', display: 'block' }}>
+                          <a key={art.id} href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} className="row-card-link" style={{ textDecoration: 'none', display: 'block' }}>
                             <div className="row-card" style={{ cursor: 'pointer', background: 'rgba(255,255,255,0.01)', border: '1px solid var(--border-color)', borderRadius: 12, overflow: 'hidden', padding: 16 }}>
                               <img src={getArticleImageUrl(art)} alt={art.title} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: 8 }} />
                               <div style={{ marginTop: 12 }}>
@@ -1530,7 +1489,7 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                   <aside className="nyt-sidebar" style={{ display: 'block', minWidth: '300px' }}>
                     <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.85rem', fontWeight: 800, borderBottom: '1px solid var(--border-color)', paddingBottom: 8, marginBottom: 16 }}>LO MÁS LEÍDO</h3>
                     {sidebarTrending.map((art, idx) => (
-                      <a key={art.id} href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} onClick={(e) => { e.preventDefault(); openArticle(art.id); }} style={{ textDecoration: 'none', display: 'flex', gap: 12, marginBottom: 16, cursor: 'pointer' }}>
+                      <a key={art.id} href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} style={{ textDecoration: 'none', display: 'flex', gap: 12, marginBottom: 16, cursor: 'pointer' }}>
                         <span style={{ fontFamily: 'var(--font-title)', fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-cyan)' }}>{idx + 1}</span>
                         <div>
                           <h4 style={{ fontSize: '0.82rem', fontWeight: 700, color: '#fff', margin: 0 }}>{renderString(art.title)}</h4>
