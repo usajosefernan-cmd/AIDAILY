@@ -12,6 +12,7 @@
     "news:sync": "node scripts/news-sync.js",
     "news:hot": "node scripts/hot-topics-cron.js",
     "news:validate": "node scripts/validate-news-data.js",
+    "articles:slugs": "node scripts/ensure-article-slugs.js",
     "build:safe": "npm run news:validate && npm run build",
     "deploy:safe": "bash deploy/deploy-safe.sh",
     "verify:production": "node scripts/verify-production.js"
