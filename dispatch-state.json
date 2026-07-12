@@ -1,0 +1,33 @@
+{
+  "project_name": "Estabilizacion-Arquitectura-AIDAILY",
+  "last_updated": "2026-07-12T17:50:40Z",
+  "active_sessions": [
+    {
+      "task_id": "TAREA-INIT",
+      "branch": "main",
+      "worktree_path": ".",
+      "agent": "Antigravity",
+      "status": "completed"
+    },
+    {
+      "task_id": "TAREA-001",
+      "branch": "task/TAREA-001",
+      "worktree_path": ".worktrees/TAREA-001",
+      "agent": "Antigravity",
+      "status": "completed"
+    },
+    {
+      "task_id": "TAREA-002",
+      "branch": "task/TAREA-002",
+      "worktree_path": ".worktrees/TAREA-002",
+      "agent": "Hermes",
+      "status": "completed"
+    }
+  ],
+  "worktrees": {
+    "main": {
+      "path": ".",
+      "task_id": "TAREA-INIT"
+    }
+  }
+}

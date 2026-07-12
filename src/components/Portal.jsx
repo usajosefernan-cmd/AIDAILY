@@ -442,6 +442,31 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
   const searchInputRef = useRef(null);
   const infiniteObserverRef = useRef(null);
+  const registeredViewsRef = useRef(new Set());
+
+  const registerViewInFirebase = (articleId) => {
+    if (!articleId) return;
+    const cleanId = articleId.replace(/[^a-zA-Z0-9]/g, '_');
+    
+    // 1. Incrementar el total global de visitas de la noticia
+    fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/total.json`, {
+      method: 'PUT',
+      body: '{\".sv\": {\"increment\": 1}}'
+    }).catch(() => {});
+
+    // 2. Incrementar visitas por hora (UTC) para momentum en caliente
+    const now = new Date();
+    const yyyy = now.getUTCFullYear();
+    const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+    const dd = String(now.getUTCDate()).padStart(2, '0');
+    const hh = String(now.getUTCHours()).padStart(2, '0');
+    const hourKey = `${yyyy}${mm}${dd}${hh}`;
+
+    fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/hours/${hourKey}.json`, {
+      method: 'PUT',
+      body: '{\".sv\": {\"increment\": 1}}'
+    }).catch(() => {});
+  };
 
   const getBasePath = () => {
     if (propBasePath) return propBasePath;
@@ -801,6 +826,12 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
             const newPath = `${basePath}noticias/${artSlug}/`;
             if (window.location.pathname !== newPath) {
               window.history.replaceState(null, '', newPath);
+            }
+            
+            // Incrementar visitas en caliente
+            if (!registeredViewsRef.current.has(id)) {
+              registeredViewsRef.current.add(id);
+              registerViewInFirebase(id);
             }
           }
         }
