@@ -65,3 +65,6 @@ test_*
 ~syncthing~*.tmp
 *.log
 
+
+# Swarm Loop Engineering Exclusions
+.worktrees/
