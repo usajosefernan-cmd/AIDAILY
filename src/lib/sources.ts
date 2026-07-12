@@ -112,17 +112,43 @@ export interface NewsItem {
   tags?: string[];
   contentHtml?: string;
   
-  // Nuevos campos para modal detallado
+  // Nuevos campos para la arquitectura periodística seria (NYT style)
+  slug?: string;
+  subtitle?: string;
+  originalUrl?: string;
+  author?: string;
+  scrapedAt?: string;
+  updatedAt?: string;
+  category?: string;
+  subcategory?: string;
+  entities?: string[];
+  language?: string;
+  country?: string;
+  importanceScore?: number;
+  urgencyScore?: number;
+  qualityScore?: number;
+  editorialScore?: number;
+  trendScore?: number;
+  viewCount?: number;
+  views1h?: number;
+  views24h?: number;
+  views7d?: number;
+  isBreaking?: boolean;
+  isHotTopic?: boolean;
+  isEvergreen?: boolean;
+  imageCaption?: string;
+  multimedia?: MediaItem[];
+  relatedArticles?: string[];
+  status?: 'draft' | 'reviewed' | 'published' | 'rejected' | 'pendiente_ia' | 'publicada';
+  rejectionReason?: string;
+  
+  // Retrocompatibilidad con campos adicionales
   aiSummary?: string;
   keyPoints?: string[];
   whyMatters?: string;
-  multimedia?: MediaItem[];
-  fullText?: string;
-  subcategory?: string;
   hashtags?: string[];
+  fullText?: string;
   fullArticle?: string;
-  category?: string;
-  scrapedAt?: string;
   links?: { title: string; url: string }[];
   interestingData?: { label: string; value: string }[];
 }
@@ -2833,6 +2859,50 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
     );
     CREATE INDEX IF NOT EXISTS idx_articles_status_published ON articles(status, publishedAt DESC);
   `);
+
+  // Migración automática incremental para nuevas columnas de la arquitectura periodística
+  try {
+    const columnsToAdd = [
+      { name: 'slug', type: 'TEXT' },
+      { name: 'subtitle', type: 'TEXT' },
+      { name: 'contentHtml', type: 'TEXT' },
+      { name: 'originalUrl', type: 'TEXT' },
+      { name: 'author', type: 'TEXT' },
+      { name: 'updatedAt', type: 'TEXT' },
+      { name: 'entities', type: 'TEXT' },
+      { name: 'country', type: 'TEXT' },
+      { name: 'importanceScore', type: 'INTEGER' },
+      { name: 'qualityScore', type: 'INTEGER' },
+      { name: 'editorialScore', type: 'INTEGER' },
+      { name: 'trendScore', type: 'INTEGER DEFAULT 0' },
+      { name: 'viewCount', type: 'INTEGER DEFAULT 0' },
+      { name: 'views1h', type: 'INTEGER DEFAULT 0' },
+      { name: 'views24h', type: 'INTEGER DEFAULT 0' },
+      { name: 'views7d', type: 'INTEGER DEFAULT 0' },
+      { name: 'isBreaking', type: 'INTEGER DEFAULT 0' },
+      { name: 'isHotTopic', type: 'INTEGER DEFAULT 0' },
+      { name: 'isEvergreen', type: 'INTEGER DEFAULT 0' },
+      { name: 'imageCaption', type: 'TEXT' },
+      { name: 'relatedArticles', type: 'TEXT' },
+      { name: 'rejectionReason', type: 'TEXT' }
+    ];
+
+    const tableInfo = db.prepare("PRAGMA table_info(articles)").all() as any[];
+    const existingColumnNames = tableInfo.map(col => col.name.toLowerCase());
+
+    columnsToAdd.forEach(col => {
+      if (!existingColumnNames.includes(col.name.toLowerCase())) {
+        console.log(`[SQLite Migration] Añadiendo columna faltante: ${col.name} (${col.type})`);
+        try {
+          db.exec(`ALTER TABLE articles ADD COLUMN ${col.name} ${col.type}`);
+        } catch (alterErr: any) {
+          console.error(`[SQLite Migration] Error añadiendo ${col.name}:`, alterErr.message || alterErr);
+        }
+      }
+    });
+  } catch (migErr: any) {
+    console.error('[SQLite Migration] Error durante la migración incremental del esquema:', migErr.message || migErr);
+  }
 
   let cachedItems: NewsItem[] = [];
   try {
