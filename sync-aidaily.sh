@@ -371,7 +371,7 @@ if [ "$SYNC_OK" = "true" ]; then
             # --- DESPLIEGUE A FIREBASE HOSTING ---
             log "Iniciando despliegue de la web estática en Firebase Hosting (pecemi.web.app)..."
             update_vps_status 8 "Despliegue Firebase" "Subiendo la compilación optimizada a Firebase Hosting..." 10
-            if (cd /home/ubuntu/workspace && firebase deploy --only hosting --non-interactive --project pecemi) 2>&1 | tee -a "$LOG_FILE"; then
+            if (cd /home/ubuntu/workspace && npx firebase deploy --only hosting --non-interactive --project pecemi) 2>&1 | tee -a "$LOG_FILE"; then
                 log "✅ Despliegue en Firebase Hosting completado con éxito."
                 update_vps_status 8 "Servidor Local VPS y Firebase" "Compilación estática copiada en la VPS y desplegada en Firebase Hosting con éxito." 100
             else
@@ -381,7 +381,7 @@ if [ "$SYNC_OK" = "true" ]; then
                     FT_TOKEN=$(grep -oP 'TOKEN=\K[^ ]+' "/home/ubuntu/workspace/firebase_deploy.sh" | tr -d '"' | tr -d "'")
                     if [ -n "$FT_TOKEN" ]; then
                         log "Reintentando deploy de Firebase usando el token extraído..."
-                        (cd /home/ubuntu/workspace && firebase deploy --only hosting --non-interactive --project pecemi --token "$FT_TOKEN") 2>&1 | tee -a "$LOG_FILE" && log "✅ Despliegue exitoso con token." || log "❌ Falló reintento con token."
+                        (cd /home/ubuntu/workspace && npx firebase deploy --only hosting --non-interactive --project pecemi --token "$FT_TOKEN") 2>&1 | tee -a "$LOG_FILE" && log "✅ Despliegue exitoso con token." || log "❌ Falló reintento con token."
                     fi
                 fi
                 update_vps_status 8 "Servidor Local VPS" "Compilación local correcta en la VPS, pero falló deploy final a Firebase." 100

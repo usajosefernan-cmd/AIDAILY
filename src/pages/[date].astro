@@ -33,5 +33,5 @@ try {
 ---
 
 <Layout title={`AIDAILY — Archivo ${date}`} description={`Archivo de noticias del día ${date}.`}>
-  <Portal client:load recentArticles={initialArticles} totalArticlesCount={initialArticles.length} />
+  <Portal client:load recentArticles={initialArticles} totalArticlesCount={initialArticles.length} basePath={import.meta.env.BASE_URL} />
 </Layout>

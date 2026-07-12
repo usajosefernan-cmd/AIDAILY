@@ -10,13 +10,22 @@ async function run() {
     });
     const page = await context.newPage();
     
+    // Capturar logs y errores de consola
+    page.on('console', msg => {
+      console.log(`[NAVEGADOR CONSOLE] ${msg.type().toUpperCase()}: ${msg.text()}`);
+    });
+    page.on('pageerror', err => {
+      console.error('[NAVEGADOR ERROR]', err.message);
+      if (err.stack) console.error(err.stack);
+    });
+    
     console.log('Navegando a https://pecemi.web.app/pro/aidaily/...');
     await page.goto('https://pecemi.web.app/pro/aidaily/', { waitUntil: 'networkidle' });
     
     // Esperar 4 segundos para que se cargue la base de datos de Firebase y renderice las tarjetas
     await page.waitForTimeout(4000);
     
-    const destDesktop = 'C:/Users/yo/.gemini/antigravity-ide/brain/71b0f204-d591-40fb-9015-b669f4c130ef/screenshot_desktop.png';
+    const destDesktop = 'C:/Users/yo/.gemini/antigravity-ide/brain/868931a3-ed41-4c1e-8900-d440f5cd8fbb/screenshot_desktop.png';
     await page.screenshot({ path: destDesktop });
     console.log('[OK] Captura desktop guardada:', destDesktop);
     
@@ -31,7 +40,7 @@ async function run() {
     await mobilePage.goto('https://pecemi.web.app/pro/aidaily/', { waitUntil: 'networkidle' });
     await mobilePage.waitForTimeout(4000);
     
-    const destMobile = 'C:/Users/yo/.gemini/antigravity-ide/brain/71b0f204-d591-40fb-9015-b669f4c130ef/screenshot_mobile.png';
+    const destMobile = 'C:/Users/yo/.gemini/antigravity-ide/brain/868931a3-ed41-4c1e-8900-d440f5cd8fbb/screenshot_mobile.png';
     await mobilePage.screenshot({ path: destMobile });
     console.log('[OK] Captura móvil guardada:', destMobile);
     

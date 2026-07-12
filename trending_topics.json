@@ -1,76 +1,33 @@
 {
   "topics": [
     {
-      "id": "mundial-2026",
-      "title": "Mundial 2026",
+      "id": "espana",
+      "title": "Espana",
       "keywords": [
-        "mundial",
-        "2026"
+        "espana"
       ],
-      "articleCount": 21,
-      "popularity": 7,
+      "articleCount": 30,
+      "popularity": 11,
       "category": "deportes",
-      "type": "event",
-      "recentCount": 1,
-      "detectedAt": "2026-07-11T18:01:07.277Z",
-      "expiresAt": "2026-07-14T18:00:21.914Z",
-      "subMenus": [
-        {
-          "label": "Ver Todo",
-          "icon": "📰",
-          "count": 21,
-          "query": "mundial 2026"
-        },
-        {
-          "label": "Cuartos de Final",
-          "icon": "🏆",
-          "count": 6,
-          "query": "mundial 2026 cuartos de final"
-        },
-        {
-          "label": "Final",
-          "icon": "👑",
-          "count": 4,
-          "query": "mundial 2026 final"
-        },
-        {
-          "label": "Semifinales",
-          "icon": "🔥",
-          "count": 3,
-          "query": "mundial 2026 semifinales"
-        }
-      ]
-    },
-    {
-      "id": "ufc-329",
-      "title": "Ufc 329",
-      "keywords": [
-        "ufc",
-        "329"
-      ],
-      "articleCount": 17,
-      "popularity": 7,
-      "category": "deportes",
-      "type": "event",
-      "recentCount": 3,
-      "detectedAt": "2026-07-11T18:01:07.278Z",
-      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "type": "trending",
+      "recentCount": 0,
+      "detectedAt": "2026-07-12T16:01:19.168Z",
+      "expiresAt": "2026-07-13T04:00:33.895Z",
       "subMenus": []
     },
     {
-      "id": "july-2026",
-      "title": "July 2026",
+      "id": "iran",
+      "title": "Iran",
       "keywords": [
-        "july",
-        "2026"
+        "iran"
       ],
-      "articleCount": 12,
-      "popularity": 6,
+      "articleCount": 25,
+      "popularity": 9,
       "category": "internacional",
       "type": "event",
-      "recentCount": 5,
-      "detectedAt": "2026-07-11T18:01:07.278Z",
-      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "recentCount": 0,
+      "detectedAt": "2026-07-12T16:01:19.168Z",
+      "expiresAt": "2026-07-15T16:00:33.895Z",
       "subMenus": []
     },
     {
@@ -80,24 +37,24 @@
         "tour",
         "francia"
       ],
-      "articleCount": 17,
-      "popularity": 6,
+      "articleCount": 12,
+      "popularity": 9,
       "category": "deportes",
-      "type": "event",
-      "recentCount": 1,
-      "detectedAt": "2026-07-11T18:01:07.278Z",
-      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "type": "trending",
+      "recentCount": 0,
+      "detectedAt": "2026-07-12T16:01:19.168Z",
+      "expiresAt": "2026-07-13T04:00:33.895Z",
       "subMenus": [
         {
           "label": "Ver Todo",
           "icon": "📰",
-          "count": 17,
+          "count": 12,
           "query": "tour francia"
         },
         {
           "label": "Etapa 7",
           "icon": "🚴",
-          "count": 4,
+          "count": 2,
           "query": "tour francia etapa 7"
         },
         {
@@ -115,37 +72,54 @@
       ]
     },
     {
-      "id": "series",
-      "title": "Series",
+      "id": "july-2026",
+      "title": "July 2026",
       "keywords": [
-        "series"
+        "july",
+        "2026"
       ],
-      "articleCount": 27,
-      "popularity": 6,
-      "category": "cultura",
-      "type": "event",
-      "recentCount": 3,
-      "detectedAt": "2026-07-11T18:01:07.278Z",
-      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "articleCount": 10,
+      "popularity": 8,
+      "category": "internacional",
+      "type": "trending",
+      "recentCount": 0,
+      "detectedAt": "2026-07-12T16:01:19.168Z",
+      "expiresAt": "2026-07-13T04:00:33.895Z",
       "subMenus": []
     },
     {
-      "id": "best",
-      "title": "Best",
+      "id": "ufc-329",
+      "title": "Ufc 329",
       "keywords": [
-        "best"
+        "ufc",
+        "329"
       ],
-      "articleCount": 26,
+      "articleCount": 8,
+      "popularity": 6,
+      "category": "deportes",
+      "type": "trending",
+      "recentCount": 0,
+      "detectedAt": "2026-07-12T16:01:19.168Z",
+      "expiresAt": "2026-07-13T04:00:33.895Z",
+      "subMenus": []
+    },
+    {
+      "id": "deja",
+      "title": "Deja",
+      "keywords": [
+        "deja"
+      ],
+      "articleCount": 13,
       "popularity": 5,
-      "category": "cultura",
-      "type": "event",
-      "recentCount": 2,
-      "detectedAt": "2026-07-11T18:01:07.278Z",
-      "expiresAt": "2026-07-14T18:00:21.914Z",
+      "category": "deportes",
+      "type": "trending",
+      "recentCount": 0,
+      "detectedAt": "2026-07-12T16:01:19.168Z",
+      "expiresAt": "2026-07-13T04:00:33.895Z",
       "subMenus": []
     }
   ],
-  "updatedAt": "2026-07-11T18:01:07.289Z",
+  "updatedAt": "2026-07-12T16:01:19.177Z",
   "windowHours": 48,
-  "totalRecentArticles": 3261
+  "totalRecentArticles": 1324
 }

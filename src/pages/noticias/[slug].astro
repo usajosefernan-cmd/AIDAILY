@@ -1,17 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Portal from '../../components/Portal.jsx';
-import fs from 'fs';
-import path from 'path';
-import { DatabaseSync } from 'node:sqlite';
+import { readFileSync, existsSync } from 'fs';
+import { join } from 'path';
 
 export async function getStaticPaths() {
-  const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
-  if (!fs.existsSync(dbPath)) {
-    console.warn("[Astro Build] No existe la base de datos en", dbPath);
-    return [];
-  }
-  
   function getSlug(title) {
     if (!title) return '';
     let slug = title
@@ -20,46 +13,41 @@ export async function getStaticPaths() {
       .replace(/[\u0300-\u036f]/g, '') // Quitar acentos
       .replace(/[^a-z0-9]+/g, '-') // Cambiar no alfanuméricos por guiones
       .replace(/(^-|-$)+/g, ''); // Limpiar guiones iniciales y finales
+    
     if (slug.length > 100) {
       slug = slug.substring(0, 100).replace(/-+$/, '');
     }
     return slug;
   }
 
+  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
+  if (!existsSync(cachePath)) return [];
+  
   try {
-    const db = new DatabaseSync(dbPath);
-    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada' ORDER BY publishedAt DESC LIMIT 100");
-    const rows = stmt.all() as any[];
-    return rows.map(art => {
-      const slug = getSlug(art.title) || art.id;
-      const norm = { category: art.category, subcategory: art.subcategory };
-      const parsedArt = {
-        ...art,
-        tags: art.tags ? JSON.parse(art.tags) : [norm.category],
-        tagsSecundarios: art.tagsSecundarios ? JSON.parse(art.tagsSecundarios) : [],
-        keyPoints: art.keyPoints ? JSON.parse(art.keyPoints) : [],
-        multimedia: art.multimedia ? JSON.parse(art.multimedia) : [],
-        hashtags: art.hashtags ? JSON.parse(art.hashtags) : [],
-        links: art.links ? JSON.parse(art.links) : [],
-        interestingData: art.interestingData ? JSON.parse(art.interestingData) : []
-      };
-      return {
-        params: { slug },
-        props: { article: parsedArt }
-      };
-    });
+    const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
+    if (Array.isArray(cacheData)) {
+      return cacheData.map(art => {
+        const slug = getSlug(art.title) || art.id;
+        return {
+          params: { slug },
+          props: { article: art }
+        };
+      });
+    }
   } catch (e) {
     console.error("Error al generar rutas en noticias/[slug].astro:", e);
-    return [];
   }
+  return [];
 }
 
+const { slug } = Astro.params;
 const { article } = Astro.props;
 
 if (!article) {
   return Astro.redirect('/pro/aidaily/');
 }
 
+// Helpers para multimedia y fechas
 const defaultImg = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop&q=80';
 const articleImg = article.imageUrl || (article.multimedia && article.multimedia[0]?.url) || defaultImg;
 ---
@@ -74,5 +62,6 @@ const articleImg = article.imageUrl || (article.multimedia && article.multimedia
     recentArticles={[article]} 
     totalArticlesCount={1}
     initialSelectedArticleId={article.id}
+    basePath={import.meta.env.BASE_URL}
   />
 </Layout>

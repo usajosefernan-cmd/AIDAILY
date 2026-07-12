@@ -397,7 +397,7 @@ const getSlug = (title) => {
   return slug;
 };
 
-export default function Portal({ recentArticles = [], totalArticlesCount: initialCount = 0, initialSelectedArticleId = null, initialCategory = null, initialTag = null }) {
+export default function Portal({ recentArticles = [], totalArticlesCount: initialCount = 0, initialSelectedArticleId = null, initialCategory = null, initialTag = null, basePath: propBasePath = null }) {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     isServerSide = false;
@@ -444,13 +444,14 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
   const infiniteObserverRef = useRef(null);
 
   const getBasePath = () => {
+    if (propBasePath) return propBasePath;
     if (typeof window === 'undefined') return '/pro/aidaily/';
     const path = window.location.pathname;
     const idx = path.toLowerCase().indexOf('/aidaily/');
     if (idx !== -1) {
       return path.substring(0, idx + 9);
     }
-    return '/';
+    return '/pro/aidaily/';
   };
 
   const syncStateFromURL = () => {
@@ -710,31 +711,18 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
     if (!art.fullArticle) {
       try {
-        let loaded = false;
-        const res = await fetch(`/api/articles/${art.id}.json`);
+        const cleanId = artId.replace(/[^a-zA-Z0-9]/g, '_');
+        const res = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${cleanId}.json`);
         if (res.ok) {
           const data = await res.json();
           if (data && data.fullArticle) {
             const updated = { ...art, ...data };
             setSelectedArticle(updated);
             setInfiniteArticles([updated]);
-            loaded = true;
-          }
-        }
-        if (!loaded) {
-          // Fallback a Firebase RTDB si el archivo estático no existe
-          const fbRes = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${art.id}.json`);
-          if (fbRes.ok) {
-            const fbData = await fbRes.json();
-            if (fbData && fbData.fullArticle) {
-              const updated = { ...art, ...fbData };
-              setSelectedArticle(updated);
-              setInfiniteArticles([updated]);
-            }
           }
         }
       } catch (e) {
-        console.warn("[Portal] Falló fetch de API estática y fallback a Firebase:", e);
+        console.warn("[Portal] Falló fetch de Firebase:", e);
       }
     }
 
@@ -775,27 +763,16 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
     if (!nextArt.fullArticle) {
       try {
-        let loaded = false;
-        const res = await fetch(`/api/articles/${nextArt.id}.json`);
+        const cleanId = nextArt.id.replace(/[^a-zA-Z0-9]/g, '_');
+        const res = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${cleanId}.json`);
         if (res.ok) {
           const data = await res.json();
           if (data && data.fullArticle) {
             Object.assign(nextArt, data);
-            loaded = true;
-          }
-        }
-        if (!loaded) {
-          // Fallback a Firebase RTDB si el archivo estático no existe
-          const fbRes = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${nextArt.id}.json`);
-          if (fbRes.ok) {
-            const fbData = await fbRes.json();
-            if (fbData && fbData.fullArticle) {
-              Object.assign(nextArt, fbData);
-            }
           }
         }
       } catch (e) {
-        console.error("[Portal] Falló fetch de API estática y fallback a Firebase para scroll infinito:", e);
+        console.error(e);
       }
     }
 

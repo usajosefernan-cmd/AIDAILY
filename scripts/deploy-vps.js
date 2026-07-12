@@ -44,7 +44,7 @@ async function run() {
     
     // Desplegar en Firebase Hosting
     log('Iniciando deploy en Firebase Hosting (pecemi)...');
-    const fbCommand = 'firebase deploy --only hosting --non-interactive --project pecemi';
+    const fbCommand = 'npx firebase deploy --only hosting --non-interactive --project pecemi';
     log(`Ejecutando: ${fbCommand}`);
     const fbOutput = execSync(fbCommand, { cwd: FIREBASE_DIR, encoding: 'utf-8' });
     console.log(fbOutput);
