@@ -2222,6 +2222,116 @@ ${preferencesText}${additionsText}${interestsText}`;
   return fallback;
 }
 
+/**
+ * Ejecuta un Fact-Check cruzado utilizando un proveedor de IA inteligente
+ * diferente al que redactó la noticia original para evitar sesgos de autocompletado.
+ */
+async function runDoubleIAFactCheck(newsItem: any, writerProvider: string): Promise<{ approved: boolean; reason: string }> {
+  console.log(`[Doble IA QA] Iniciando Fact-Check cruzado para "${newsItem.title}" (Redactor: ${writerProvider})...`);
+  
+  // Buscar un proveedor de repuesto inteligente
+  let qaProvider = 'gemini';
+  let qaModel = 'gemini-2.5-pro';
+  
+  if (writerProvider === 'gemini') {
+    qaProvider = 'nous';
+    qaModel = 'stepfun/step-3.7-flash:free';
+  }
+
+  const googleApiKey = process.env.GOOGLE_API_KEY;
+  const nous = getNousToken();
+
+  // Validación de API key de repuesto
+  if (qaProvider === 'gemini' && (!googleApiKey || googleApiKey.trim() === '')) {
+    qaProvider = 'nvidia';
+    qaModel = 'nvidia/llama-3.3-nemotron-super-49b-v1';
+  }
+  if (qaProvider === 'nous' && (!nous || !nous.access_token || nous.access_token.trim() === '')) {
+    qaProvider = 'gemini';
+    qaModel = 'gemini-2.5-flash';
+  }
+
+  const prompt = `Actúa como un editor senior de control de calidad periodística para el diario serio AIDAILY (estilo NYT/El País).
+Evalúa la coherencia, veracidad y calidad de la siguiente noticia redactada a partir del texto de origen.
+
+NOTICIA REDACTADA:
+Título: ${newsItem.title}
+Resumen: ${newsItem.aiSummary || newsItem.summary}
+Cuerpo: ${newsItem.fullArticle || newsItem.fullText}
+
+Criterios de descarte inmediato:
+- Clickbait exagerado
+- Tono no periodístico o excesivamente comercial/spam
+- Afirmaciones inventadas que no tienen respaldo en el texto
+- Mezcla incoherente de idiomas o texto con errores de traducción graves
+
+Retorna ÚNICAMENTE un objeto JSON con este formato exacto:
+{
+  "status": "approved" o "rejected",
+  "qaReason": "Explicación breve del veredicto en español"
+}`;
+
+  try {
+    let url = '';
+    let headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    let body: any = {};
+
+    if (qaProvider === 'nous') {
+      url = `${nous.base_url}/chat/completions`;
+      headers['Authorization'] = `Bearer ${nous.access_token}`;
+      body = {
+        model: qaModel,
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.3,
+        response_format: { type: "json_object" }
+      };
+    } else if (qaProvider === 'gemini') {
+      url = `https://generativelanguage.googleapis.com/v1beta/openai/chat/completions`;
+      headers['Authorization'] = `Bearer ${googleApiKey}`;
+      body = {
+        model: qaModel,
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.3,
+        response_format: { type: "json_object" }
+      };
+    } else {
+      url = `https://integrate.api.nvidia.com/v1/chat/completions`;
+      headers['Authorization'] = `Bearer ${process.env.NVIDIA_API_KEY}`;
+      body = {
+        model: qaModel,
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.3,
+        response_format: { type: "json_object" }
+      };
+    }
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers,
+      signal: AbortSignal.timeout(45000),
+      body: JSON.stringify(body)
+    });
+
+    if (res.ok) {
+      const data = await res.json() as any;
+      const content = data.choices?.[0]?.message?.content?.trim() || '';
+      const jsonStr = extractJsonSafe(content);
+      if (jsonStr) {
+        const parsed = JSON.parse(jsonStr);
+        if (parsed.status === 'rejected') {
+          console.warn(`[Doble IA QA] ❌ RECHAZADO por ${qaModel}: ${parsed.qaReason}`);
+          return { approved: false, reason: parsed.qaReason || 'No superó los criterios de calidad' };
+        }
+      }
+    }
+  } catch (err: any) {
+    console.warn(`[Doble IA QA] Advertencia: Error en Fact-Check cruzado de QA:`, err.message || err);
+  }
+
+  console.log(`[Doble IA QA] ✅ APROBADO por el Fact-Check cruzado.`);
+  return { approved: true, reason: '' };
+}
+
 // Scraper HTML de contingencia heurística para fuentes que no son feeds XML válidos
 function scrapeHtmlFallback(feed: FeedConfig & { sectionCategory?: string }, html: string): any[] {
   console.log(`[HTML Scraper] Activando fallback HTML para: "${feed.name}" (${feed.url})`);
@@ -4233,6 +4343,31 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
           relatedArticles: [],
           rejectionReason: aiResult.rejectionReason || ''
         };
+
+        // FASE C: Validación de Doble IA periodística para noticias breaking o de alta importancia
+        let isApprovedByQA = true;
+        let qaRejectionReason = '';
+        const needsDoubleQA = newsItem.isBreaking || (newsItem.importanceScore && newsItem.importanceScore >= 80);
+        
+        if (needsDoubleQA && !aiResult.isFallback) {
+          const threadSlotInfo = runningThreads[mySlot];
+          const writerProvider = threadSlotInfo ? threadSlotInfo.provider : 'desconocido';
+          
+          if (runningThreads[mySlot]) {
+            runningThreads[mySlot].agent = "Agente Fact-Check/QA";
+          }
+          
+          const qaResult = await runDoubleIAFactCheck(newsItem, writerProvider);
+          if (!qaResult.approved) {
+            isApprovedByQA = false;
+            qaRejectionReason = qaResult.reason;
+          }
+        }
+
+        if (!isApprovedByQA) {
+          newsItem.status = 'rejected';
+          newsItem.rejectionReason = `[Doble IA QA] Rechazado por control de calidad: ${qaRejectionReason}`;
+        }
 
         console.log(`[VPS Local] Guardando artículo nuevo en caché local e incremental: "${newsItem.title}"`);
         
