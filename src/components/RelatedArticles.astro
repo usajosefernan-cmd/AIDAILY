@@ -1,6 +1,5 @@
 ---
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { getArticlesFromDb } from '../../lib/db-articles.js';
 
 interface Props {
   article: any;
@@ -10,83 +9,86 @@ interface Props {
 const { article, limit = 8 } = Astro.props;
 
 // Obtener todos los artículos para buscar recomendados
-const cachePath = join(process.cwd(), 'src/data/cache-news.json');
 let relatedList: any[] = [];
 
-if (existsSync(cachePath)) {
-  try {
-    const allArticles = JSON.parse(readFileSync(cachePath, 'utf-8'));
-    if (Array.isArray(allArticles)) {
-      // 1. Helper para similitud simple de palabras comunes de título
-      const getTitleWords = (title: string) => {
-        return new Set(
-          (title || '')
-            .toLowerCase()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-            .replace(/[^a-z0-9\s]/g, ' ')
-            .split(/\s+/)
-            .filter(w => w.length > 3)
-        );
-      };
+try {
+  const allArticles = getArticlesFromDb();
+  if (Array.isArray(allArticles)) {
+      // 1. Intentar cargar relaciones precalculadas
+      let precalculatedIds = [];
+      try {
+        if (article.relatedArticles) {
+          precalculatedIds = typeof article.relatedArticles === 'string'
+            ? JSON.parse(article.relatedArticles)
+            : article.relatedArticles;
+        }
+      } catch (_) {}
 
-      const currWords = getTitleWords(article.title);
+      if (Array.isArray(precalculatedIds) && precalculatedIds.length > 0) {
+        // Encontrar los artículos por sus IDs
+        const idSet = new Set(precalculatedIds);
+        relatedList = allArticles.filter(a => idSet.has(a.id));
+      } else {
+        // Fallback: Calcular similitud simple en caliente
+        const getTitleWords = (title: string) => {
+          return new Set(
+            (title || '')
+              .toLowerCase()
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9\s]/g, ' ')
+              .split(/\s+/)
+              .filter(w => w.length > 3)
+          );
+        };
 
-      // 2. Calcular puntuación de coincidencia para cada artículo candidato
-      const candidates = allArticles
-        .filter(a => a.id !== article.id) // Excluir el actual
-        .map(a => {
-          let score = 0;
+        const currWords = getTitleWords(article.title);
 
-          // Categoría (Prioridad 1)
-          if (a.category && article.category && a.category.toLowerCase() === article.category.toLowerCase()) {
-            score += 15;
-          }
+        const candidates = allArticles
+          .filter(a => a.id !== article.id) // Excluir el actual
+          .map(a => {
+            let score = 0;
 
-          // Subcategoría (Prioridad 2)
-          if (a.subcategory && article.subcategory && a.subcategory.toLowerCase() === article.subcategory.toLowerCase()) {
-            score += 10;
-          }
+            if (a.category && article.category && a.category.toLowerCase() === article.category.toLowerCase()) {
+              score += 15;
+            }
 
-          // Tags (Prioridad 3)
-          if (Array.isArray(a.tags) && Array.isArray(article.tags)) {
-            const commonTags = a.tags.filter(t => article.tags.includes(t));
-            score += commonTags.length * 5;
-          }
+            if (a.subcategory && article.subcategory && a.subcategory.toLowerCase() === article.subcategory.toLowerCase()) {
+              score += 10;
+            }
 
-          // Entidades (Prioridad 4)
-          if (Array.isArray(a.entities) && Array.isArray(article.entities)) {
-            const commonEntities = a.entities.filter(e => article.entities.includes(e));
-            score += commonEntities.length * 6;
-          }
+            if (Array.isArray(a.tags) && Array.isArray(article.tags)) {
+              const commonTags = a.tags.filter(t => article.tags.includes(t));
+              score += commonTags.length * 5;
+            }
 
-          // Similitud de título (Prioridad 5)
-          const candWords = getTitleWords(a.title);
-          let commonWordsCount = 0;
-          currWords.forEach(w => {
-            if (candWords.has(w)) commonWordsCount++;
+            if (Array.isArray(a.entities) && Array.isArray(article.entities)) {
+              const commonEntities = a.entities.filter(e => article.entities.includes(e));
+              score += commonEntities.length * 6;
+            }
+
+            const candWords = getTitleWords(a.title);
+            let commonWordsCount = 0;
+            currWords.forEach(w => {
+              if (candWords.has(w)) commonWordsCount++;
+            });
+            score += commonWordsCount * 4;
+
+            const diffMs = Math.abs(new Date(a.publishedAt).getTime() - new Date(article.publishedAt).getTime());
+            const diffDays = diffMs / (1000 * 60 * 60 * 24);
+            if (diffDays < 1) score += 5;
+            else if (diffDays < 7) score += 2;
+
+            return { article: a, score };
           });
-          score += commonWordsCount * 4;
 
-          // Cercanía temporal (Prioridad 6)
-          const diffMs = Math.abs(new Date(a.publishedAt).getTime() - new Date(article.publishedAt).getTime());
-          const diffDays = diffMs / (1000 * 60 * 60 * 24);
-          if (diffDays < 1) score += 5;
-          else if (diffDays < 7) score += 2;
-
-          return { article: a, score };
-        });
-
-      // 3. Ordenar por puntuación descendente y fecha
-      candidates.sort((a, b) => b.score - a.score || new Date(b.article.publishedAt).getTime() - new Date(a.article.publishedAt).getTime());
-      
-      // Tomar los top recomendados
-      relatedList = candidates.slice(0, limit).map(c => c.article);
+        candidates.sort((a, b) => b.score - a.score || new Date(b.article.publishedAt).getTime() - new Date(a.article.publishedAt).getTime());
+        relatedList = candidates.slice(0, limit).map(c => c.article);
+      }
     }
   } catch (err) {
-    console.error("Error al calcular recomendados en RelatedArticles:", err);
+    console.error("Error al obtener recomendados en RelatedArticles:", err);
   }
-}
 
 const defaultImg = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop&q=80';
 

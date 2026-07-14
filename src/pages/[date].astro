@@ -25,10 +25,14 @@ try {
       }
     });
     // Ordenar descendente
-    initialArticles.sort((a, b) => new Date(b.publishedAt || b.published) - new Date(a.publishedAt || a.published));
+    initialArticles.sort((a, b) => {
+      const timeA = new Date(a.publishedAt || a.published || 0).getTime();
+      const timeB = new Date(b.publishedAt || b.published || 0).getTime();
+      return timeB - timeA;
+    });
   }
 } catch (e) {
-  console.error("Error al cargar cache-news.json en [date].astro:", e);
+  console.error("Error al cargar cache en [date].astro", e);
 }
 ---
 

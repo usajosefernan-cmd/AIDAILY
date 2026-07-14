@@ -182,6 +182,21 @@ else
         log "Sincronización de noticias completada con éxito."
         update_vps_status 5 "Procesamiento con IA" "Sincronización de noticias e IA finalizada con éxito." 100
 
+        # --- GENERAR SLUGS Y ARTÍCULOS RELACIONADOS DE LAS NOTICIAS NUEVAS ---
+        log "Asegurando slugs estables para los nuevos artículos..."
+        if node scripts/ensure-article-slugs.js 2>&1 | tee -a "$LOG_FILE"; then
+            log "Slugs de artículos asegurados con éxito."
+        else
+            log "WARNING: Falló la generación de slugs."
+        fi
+
+        log "Generando relacionados para los nuevos artículos..."
+        if node scripts/build-related-articles.js 2>&1 | tee -a "$LOG_FILE"; then
+            log "Artículos relacionados construidos con éxito."
+        else
+            log "WARNING: Falló la generación de relacionados."
+        fi
+
         # --- GENERAR ÍNDICE DE BÚSQUEDA ---
         log "Generando índice de búsqueda inteligente..."
         if node scripts/generate-search-index.cjs "$PROJECT_DIR/src/data/cache-news.json" "$PROJECT_DIR/src/data/search-index.json" 2>&1 | tee -a "$LOG_FILE"; then
@@ -225,15 +240,16 @@ if [ "$SYNC_OK" = "true" ]; then
         cp src/data/articles-light.json /opt/aidaily/src/data/articles-light.json || true
     fi
 
-    log "Sincronizando src/ y public/ y astro.config.mjs con /opt/aidaily..."
-    if rsync -art --delete src/ /opt/aidaily/src/ && rsync -art --delete public/ /opt/aidaily/public/ && cp astro.config.mjs /opt/aidaily/astro.config.mjs; then
-        log "Sincronización de código fuente a /opt/aidaily completada."
+    log "Sincronizando src/, public/ y lib/ y astro.config.mjs con /opt/aidaily..."
+    if rsync -art --delete src/ /opt/aidaily/src/ && rsync -art --delete public/ /opt/aidaily/public/ && rsync -art --delete lib/ /opt/aidaily/lib/ && cp astro.config.mjs /opt/aidaily/astro.config.mjs; then
+        log "Sincronización de código fuente y lib a /opt/aidaily completada."
     else
         log "WARNING: Falló la sincronización con rsync, limpiando y ejecutando copia manual limpia..."
-        rm -rf /opt/aidaily/src /opt/aidaily/public
-        mkdir -p /opt/aidaily/src /opt/aidaily/public
+        rm -rf /opt/aidaily/src /opt/aidaily/public /opt/aidaily/lib
+        mkdir -p /opt/aidaily/src /opt/aidaily/public /opt/aidaily/lib
         cp -R src/* /opt/aidaily/src/ 2>&1 | tee -a "$LOG_FILE"
         cp -R public/* /opt/aidaily/public/ 2>&1 | tee -a "$LOG_FILE"
+        cp -R lib/* /opt/aidaily/lib/ 2>&1 | tee -a "$LOG_FILE"
         cp astro.config.mjs /opt/aidaily/astro.config.mjs 2>&1 | tee -a "$LOG_FILE"
     fi
 
@@ -393,6 +409,7 @@ if [ "$SYNC_OK" = "true" ]; then
         log "WARNING: Falló la compilación de Astro en /opt/aidaily"
         update_vps_status 6 "Compilación de Astro (Error)" "Falló la compilación de Astro en la VPS. Abortando deploy." 100 "Compilación Astro fallida"
     fi
+else
     log "ERROR: Sincronización interrumpida por fallo del scraper."
     update_vps_status 5 "Procesamiento con IA (Error)" "Falló la sincronización de noticias (Node)." 100 "Falló npm run news:sync"
     exit 1

@@ -413,30 +413,21 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
   const [itemsPerPage, setItemsPerPage] = useState(30);
   const [activeSort, setActiveSort] = useState('recent');
   const [trendingTimeRange, setTrendingTimeRange] = useState('today');
-
-  // Estados de Búsqueda Avanzada e Índices Segmentados
-  const [searchIndex, setSearchIndex] = useState(null);
-  const [suggestionsIndex, setSuggestionsIndex] = useState(null);
-  const [isLoadingSearchIndex, setIsLoadingSearchIndex] = useState(false);
-  const [filterCategory, setFilterCategory] = useState('');
-  const [filterSource, setFilterSource] = useState('');
-  const [filterTime, setFilterTime] = useState('all');
+  const [isHashtagModalOpen, setIsHashtagModalOpen] = useState(false);
+  const [hashtagSearchQuery, setHashtagSearchQuery] = useState('');
+  const [sidebarTagRange, setSidebarTagRange] = useState('7d');
+  const [expandedDrawerCats, setExpandedDrawerCats] = useState(new Set());
 
   const [allArticles, setAllArticles] = useState(recentArticles);
   const [allArticlesLoaded, setAllArticlesLoaded] = useState(false);
   const [totalArticlesCount, setTotalArticlesCount] = useState(initialCount || recentArticles.length);
 
-  // Detalle de Artículo y Lectura Infinita (Desacoplados en favor de Astro)
-  const selectedArticle = null;
-  const setSelectedArticle = () => {};
-  const infiniteArticles = [];
-  const setInfiniteArticles = () => {};
-  const infiniteArticlesQueue = [];
-  const setInfiniteArticlesQueue = () => {};
-  const infiniteNextIndex = 0;
-  const setInfiniteNextIndex = () => {};
-  const isLoadingNextArticle = false;
-  const setIsLoadingNextArticle = () => {};
+  // Detalle de Artículo y Lectura Infinita
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [infiniteArticles, setInfiniteArticles] = useState([]);
+  const [infiniteArticlesQueue, setInfiniteArticlesQueue] = useState([]);
+  const [infiniteNextIndex, setInfiniteNextIndex] = useState(0);
+  const [isLoadingNextArticle, setIsLoadingNextArticle] = useState(false);
 
   // Menús y Modales
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -455,31 +446,6 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
   const searchInputRef = useRef(null);
   const infiniteObserverRef = useRef(null);
-  const registeredViewsRef = useRef(new Set());
-
-  const registerViewInFirebase = (articleId) => {
-    if (!articleId) return;
-    const cleanId = articleId.replace(/[^a-zA-Z0-9]/g, '_');
-    
-    // 1. Incrementar el total global de visitas de la noticia
-    fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/total.json`, {
-      method: 'PUT',
-      body: '{\".sv\": {\"increment\": 1}}'
-    }).catch(() => {});
-
-    // 2. Incrementar visitas por hora (UTC) para momentum en caliente
-    const now = new Date();
-    const yyyy = now.getUTCFullYear();
-    const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
-    const dd = String(now.getUTCDate()).padStart(2, '0');
-    const hh = String(now.getUTCHours()).padStart(2, '0');
-    const hourKey = `${yyyy}${mm}${dd}${hh}`;
-
-    fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/hours/${hourKey}.json`, {
-      method: 'PUT',
-      body: '{\".sv\": {\"increment\": 1}}'
-    }).catch(() => {});
-  };
 
   const getBasePath = () => {
     if (propBasePath) return propBasePath;
@@ -643,38 +609,6 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
     };
   }, [initialSelectedArticleId]);
 
-  // Carga Diferida del Índice Completo de Búsqueda y Sugerencias
-  useEffect(() => {
-    if ((isSearchBoxOpen || searchQuery) && !searchIndex && !isLoadingSearchIndex) {
-      setIsLoadingSearchIndex(true);
-      const basePath = getBasePath();
-      
-      console.log("[Buscador] Cargando índice de búsqueda ligero bajo demanda...");
-      fetch(`${basePath}api/search/index.json`)
-        .then(res => res.json())
-        .then(data => {
-          if (Array.isArray(data)) {
-            setSearchIndex(data);
-            console.log(`[Buscador] Índice de búsqueda de ${data.length} noticias cargado.`);
-          }
-          setIsLoadingSearchIndex(false);
-        })
-        .catch(err => {
-          console.error("[Buscador] Error cargando índice de búsqueda:", err);
-          setIsLoadingSearchIndex(false);
-        });
-
-      fetch(`${basePath}api/search/suggestions.json`)
-        .then(res => res.json())
-        .then(data => {
-          if (data && typeof data === 'object') {
-            setSuggestionsIndex(data);
-          }
-        })
-        .catch(() => {});
-    }
-  }, [isSearchBoxOpen, searchQuery]);
-
   const setTheme = (themeName) => {
     setThemeState(themeName);
     localStorage.setItem('aidaily_theme', themeName);
@@ -685,56 +619,29 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
   };
 
   const filteredArticles = useMemo(() => {
-    // Si hay una búsqueda activa, filtramos sobre el índice completo bajo demanda,
-    // de lo contrario usamos la lista reducida por defecto para la visualización de portada.
-    const pool = searchQuery ? (searchIndex || allArticles) : allArticles;
-
-    return pool.filter(art => {
-      // Excluir noticias con titulares corruptos o que contengan stop words muy de inglés en el titular
+    return allArticles.filter(art => {
       const hasEnglishWords = /\b(the|and|of|with|from|this|that|about|would|their|there|which)\b/i;
       if (hasEnglishWords.test(art.title)) return false;
 
-      // Filtro de Búsqueda de Texto
       if (searchQuery) {
         const q = normalizeText(searchQuery);
         const inTitle = normalizeText(art.title).includes(q);
         const inSummary = normalizeText(art.aiSummary || art.summary).includes(q);
-        const inHashtags = Array.isArray(art.tags || art.hashtags) && (art.tags || art.hashtags).some(h => normalizeText(h).includes(q));
+        const inHashtags = Array.isArray(art.hashtags) && art.hashtags.some(h => normalizeText(h).includes(q));
         if (!inTitle && !inSummary && !inHashtags) return false;
       }
 
-      // Filtro de Categoría del Buscador
-      if (searchQuery && filterCategory) {
-        if (normalizeText(art.category) !== normalizeText(filterCategory)) return false;
-      }
-
-      // Filtro de Fuente del Buscador
-      if (searchQuery && filterSource) {
-        if (normalizeText(art.source) !== normalizeText(filterSource)) return false;
-      }
-
-      // Filtro de Fecha del Buscador
-      if (searchQuery && filterTime && filterTime !== 'all') {
-        const artTime = new Date(art.publishedAt || art.published || 0).getTime();
-        const hrsLimit = filterTime === '24h' ? 24 : filterTime === '7d' ? 24 * 7 : 24 * 30;
-        const limit = Date.now() - hrsLimit * 60 * 60 * 1000;
-        if (artTime < limit) return false;
-      }
-
-      // Filtro de Hashtag de la navegación
       if (activeHashtag) {
         const tagNorm = normalizeText(activeHashtag).replace('#', '');
-        const artTags = Array.isArray(art.tags || art.hashtags) ? (art.tags || art.hashtags).map(h => normalizeText(h).replace('#', '')) : [];
+        const artTags = Array.isArray(art.hashtags) ? art.hashtags.map(h => normalizeText(h).replace('#', '')) : [];
         if (!artTags.includes(tagNorm)) return false;
       }
 
-      // Filtro de Fuente de la navegación
       if (activeSource) {
         if (normalizeText(art.source) !== normalizeText(activeSource)) return false;
       }
 
-      // Filtro de Categoría de la navegación
-      if (activeCategory && activeCategory !== 'breaking' && activeCategory !== 'date' && !searchQuery) {
+      if (activeCategory && activeCategory !== 'breaking' && activeCategory !== 'date') {
         const portalSubcats = PORTAL_MAPPING[activeCategory];
         const artCat = normalizeText(art.category);
         
@@ -745,15 +652,14 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
         }
       }
 
-      // Filtro de Subcategoría de la navegación
-      if (activeSubcategory && !searchQuery) {
+      if (activeSubcategory) {
         const artSub = normalizeText(art.subcategory);
         if (artSub !== normalizeText(activeSubcategory)) return false;
       }
 
       return true;
     });
-  }, [allArticles, searchIndex, activeCategory, activeSubcategory, activeHashtag, activeSource, searchQuery, filterCategory, filterSource, filterTime]);
+  }, [allArticles, activeCategory, activeSubcategory, activeHashtag, activeSource, searchQuery]);
 
   const sortedArticles = useMemo(() => {
     let result = [...filteredArticles];
@@ -809,8 +715,8 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
     if (!art.fullArticle) {
       try {
-        const basePath = getBasePath();
-        const res = await fetch(`${basePath}api/articles/${artId}.json`);
+        const cleanId = artId.replace(/[^a-zA-Z0-9]/g, '_');
+        const res = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${cleanId}.json`);
         if (res.ok) {
           const data = await res.json();
           if (data && data.fullArticle) {
@@ -861,8 +767,8 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
     if (!nextArt.fullArticle) {
       try {
-        const basePath = getBasePath();
-        const res = await fetch(`${basePath}api/articles/${nextArt.id}.json`);
+        const cleanId = nextArt.id.replace(/[^a-zA-Z0-9]/g, '_');
+        const res = await fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${cleanId}.json`);
         if (res.ok) {
           const data = await res.json();
           if (data && data.fullArticle) {
@@ -878,10 +784,40 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
     setIsLoadingNextArticle(false);
   };
 
-  // IntersectionObserver desactivado en favor de telemetría nativa de Astro
+  // IntersectionObserver para cambiar URL y título en lectura infinita
   useEffect(() => {
-    // No operativo
-  }, []);
+    if (!selectedArticle || infiniteArticles.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const title = entry.target.getAttribute('data-title');
+          const id = entry.target.getAttribute('data-id');
+          document.title = `${title} — AIDAILY`;
+          
+          const breadcrumbTitle = document.getElementById('breadcrumb-article-title');
+          if (breadcrumbTitle) breadcrumbTitle.innerText = title;
+
+          if (id) {
+            const basePath = getBasePath();
+            const openArt = allArticles.find(a => a.id === id);
+            const artSlug = openArt ? (getSlug(openArt.title) || id) : id;
+            const newPath = `${basePath}noticias/${artSlug}/`;
+            if (window.location.pathname !== newPath) {
+              window.history.replaceState(null, '', newPath);
+            }
+          }
+        }
+      });
+    }, { rootMargin: "-25% 0px -55% 0px" });
+
+    document.querySelectorAll('.article-item-wrapper').forEach(el => observer.observe(el));
+    infiniteObserverRef.current = observer;
+
+    return () => {
+      if (infiniteObserverRef.current) infiniteObserverRef.current.disconnect();
+    };
+  }, [infiniteArticles, selectedArticle]);
 
   const openLightbox = (url, caption) => {
     setLightbox({
@@ -902,6 +838,55 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
     return [...allArticles]
       .sort((a, b) => (b.clicks || 0) - (a.clicks || 0))
       .slice(0, 5);
+  }, [allArticles]);
+
+  // Trending Tags por volumen con filtro temporal
+  const trendingTags = useMemo(() => {
+    const now = Date.now();
+    const ranges = { 'today': 86400000, '7d': 604800000, '30d': 2592000000 };
+    const cutoff = now - (ranges[trendingTimeRange] || ranges['today']);
+    const tagCounts = {};
+    allArticles.forEach(art => {
+      const artDate = new Date(art.publishedAt || art.published).getTime();
+      if (artDate < cutoff) return;
+      const tags = Array.isArray(art.hashtags) ? art.hashtags : [];
+      tags.forEach(tag => {
+        const clean = tag.replace('#', '').toLowerCase();
+        if (clean.length > 1) tagCounts[clean] = (tagCounts[clean] || 0) + 1;
+      });
+    });
+    return Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 30);
+  }, [allArticles, trendingTimeRange]);
+
+  // Sidebar Tags con filtro independiente
+  const sidebarHotTags = useMemo(() => {
+    const now = Date.now();
+    const ranges = { 'today': 86400000, '7d': 604800000, '30d': 2592000000 };
+    const cutoff = now - (ranges[sidebarTagRange] || ranges['7d']);
+    const tagCounts = {};
+    allArticles.forEach(art => {
+      const artDate = new Date(art.publishedAt || art.published).getTime();
+      if (artDate < cutoff) return;
+      const tags = Array.isArray(art.hashtags) ? art.hashtags : [];
+      tags.forEach(tag => {
+        const clean = tag.replace('#', '').toLowerCase();
+        if (clean.length > 1) tagCounts[clean] = (tagCounts[clean] || 0) + 1;
+      });
+    });
+    return Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).slice(0, 15);
+  }, [allArticles, sidebarTagRange]);
+
+  // Todos los hashtags para el modal
+  const allHashtags = useMemo(() => {
+    const tagCounts = {};
+    allArticles.forEach(art => {
+      const tags = Array.isArray(art.hashtags) ? art.hashtags : [];
+      tags.forEach(tag => {
+        const clean = tag.replace('#', '').toLowerCase();
+        if (clean.length > 1) tagCounts[clean] = (tagCounts[clean] || 0) + 1;
+      });
+    });
+    return Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
   }, [allArticles]);
 
   // Artículos del Carrusel Superior Quick Reels (Historias de Tendencias)
@@ -1099,6 +1084,43 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
         )}
       </div>
 
+      {/* Barra Trending Topics EN VIVO */}
+      {trendingTags.length > 0 && !selectedArticle && (
+        <div style={{ display: 'flex', borderBottom: '1px solid var(--border-color)', background: 'rgba(9,9,16,0.95)', backdropFilter: 'blur(20px)', padding: '8px 24px', zIndex: 1000, position: 'relative' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: 14, width: '100%' }}>
+            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.68rem', fontWeight: 800, color: '#ef4444', textTransform: 'uppercase', letterSpacing: '1px', display: 'flex', alignItems: 'center', gap: 6, whiteSpace: 'nowrap' }}>
+              <span style={{ background: '#ef4444', width: 6, height: 6, display: 'inline-block', borderRadius: '50%', animation: 'pulse 1.5s infinite' }}></span>
+              EN VIVO:
+            </span>
+            <div style={{ display: 'flex', gap: 8, overflowX: 'auto', scrollbarWidth: 'none', flex: 1 }}>
+              {trendingTags.slice(0, 12).map(([tag, count]) => (
+                <a key={tag} onClick={() => { setActiveHashtag(tag); setCurrentPage(1); setSelectedArticle(null); }} style={{ whiteSpace: 'nowrap', fontSize: '0.68rem', fontWeight: 700, color: 'var(--accent-cyan)', cursor: 'pointer', padding: '3px 10px', background: 'rgba(6,182,212,0.08)', borderRadius: 20, border: '1px solid rgba(6,182,212,0.15)', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  #{tag} <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 600 }}>({count})</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Marquesina de Hashtags con botón Modal */}
+      {allHashtags.length > 0 && !selectedArticle && (
+        <div style={{ display: 'flex', position: 'relative', borderBottom: '1px solid var(--border-color)', background: 'rgba(9,9,16,0.9)', overflow: 'hidden', height: 36 }}>
+          <div className="hashtag-ticker-anim" style={{ display: 'flex', gap: 12, alignItems: 'center', whiteSpace: 'nowrap', paddingRight: 50 }}>
+            {[...allHashtags.slice(0, 40), ...allHashtags.slice(0, 40)].map(([tag, count], i) => (
+              <a key={`${tag}-${i}`} onClick={() => { setActiveHashtag(tag); setCurrentPage(1); setSelectedArticle(null); }} style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--text-muted)', cursor: 'pointer', whiteSpace: 'nowrap', transition: 'color 0.2s' }}
+                onMouseOver={e => e.target.style.color = 'var(--accent-cyan)'}
+                onMouseOut={e => e.target.style.color = 'var(--text-muted)'}>
+                #{tag} <span style={{ color: 'var(--accent-purple)', fontSize: '0.6rem' }}>({count})</span>
+              </a>
+            ))}
+          </div>
+          <button onClick={() => setIsHashtagModalOpen(true)} style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: 44, background: 'var(--bg-dark, #0a0a10)', border: 'none', color: 'var(--accent-cyan)', fontSize: '1.15rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10, borderLeft: '1px solid var(--border-color)' }} title="Ver todos los temas">
+            #
+          </button>
+        </div>
+      )}
+
       {/* Overlay Drawer */}
       <div className={`menu-drawer-overlay ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}></div>
       <div className={`menu-drawer ${isMenuOpen ? 'active' : ''}`}>
@@ -1106,106 +1128,49 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
           <span className="drawer-brand">AIDAILY</span>
           <span className="drawer-close-btn" onClick={() => setIsMenuOpen(false)}>✕</span>
         </div>
-        <nav className="drawer-menu-list">
-          {Object.keys(PORTAL_NAMES).map(key => (
-            <a key={key} onClick={() => handleSelectCategory(key)}>{PORTAL_NAMES[key]}</a>
-          ))}
-          <a href="/pro/aidaily/admin.html" style={{ color: '#f87171' }}>Administración</a>
+        <nav className="drawer-menu-list" style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 80px)' }}>
+          <a onClick={() => handleSelectCategory('breaking')} style={{ fontWeight: activeCategory === 'breaking' ? 800 : 600, color: activeCategory === 'breaking' ? 'var(--accent-cyan)' : 'inherit' }}>🏠 Última Hora</a>
+          {Object.entries(CATEGORY_TREE).map(([catKey, catNode]) => {
+            const isExpanded = expandedDrawerCats.has(catKey);
+            const hasChildren = catNode.children && Object.keys(catNode.children).length > 0;
+            const catCount = allArticles.filter(a => normalizeText(a.category) === normalizeText(catKey)).length;
+            return (
+              <div key={catKey} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 0', cursor: 'pointer' }}
+                  onClick={() => {
+                    if (hasChildren) {
+                      const next = new Set(expandedDrawerCats);
+                      isExpanded ? next.delete(catKey) : next.add(catKey);
+                      setExpandedDrawerCats(next);
+                    } else {
+                      handleSelectCategory(catKey);
+                    }
+                  }}>
+                  <span style={{ fontWeight: 700, fontSize: '0.85rem', color: activeCategory === catKey ? 'var(--accent-cyan)' : '#fff' }}
+                    onClick={(e) => { e.stopPropagation(); handleSelectCategory(catKey); }}>
+                    {catNode.name}
+                  </span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.04)', padding: '2px 8px', borderRadius: 10 }}>{catCount}</span>
+                    {hasChildren && <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', transition: 'transform 0.2s', transform: isExpanded ? 'rotate(90deg)' : 'rotate(0)' }}>▶</span>}
+                  </span>
+                </div>
+                {hasChildren && isExpanded && (
+                  <div style={{ paddingLeft: 16, paddingBottom: 8 }}>
+                    {Object.entries(catNode.children).map(([subKey, subNode]) => (
+                      <a key={subKey} onClick={() => { handleSelectSubcategory(subKey, catKey); setIsMenuOpen(false); }}
+                        style={{ display: 'block', fontSize: '0.75rem', padding: '6px 0', color: activeSubcategory === subKey ? 'var(--accent-cyan)' : 'var(--text-muted)', cursor: 'pointer', fontWeight: 600 }}>
+                        {subNode.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+          <a href="/pro/aidaily/admin.html" style={{ color: '#f87171', marginTop: 16 }}>⚙ Administración</a>
         </nav>
       </div>
-
-      {/* Barra de Filtros del Buscador Inteligente */}
-      {searchQuery && (
-        <div className="search-filters-bar" style={{
-          maxWidth: '1200px',
-          margin: '16px auto 0 auto',
-          padding: '12px 24px',
-          background: 'rgba(255, 255, 255, 0.02)',
-          borderRadius: '12px',
-          border: '1px solid var(--border-color)',
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '16px',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          boxSizing: 'border-box'
-        }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.68rem', fontWeight: 800, color: 'var(--text-muted)', letterSpacing: '0.5px' }}>FILTRAR BÚSQUEDA:</span>
-            
-            {/* Selector de Categorías */}
-            <select 
-              value={filterCategory} 
-              onChange={(e) => setFilterCategory(e.target.value)}
-              style={{
-                background: '#09090b',
-                color: 'var(--text-color)',
-                border: '1px solid var(--border-color)',
-                borderRadius: '6px',
-                padding: '5px 10px',
-                fontSize: '0.72rem',
-                outline: 'none',
-                cursor: 'pointer'
-              }}
-            >
-              <option value="">Todas las categorías</option>
-              {suggestionsIndex?.categories?.map(c => (
-                <option key={c.label} value={c.label}>{c.label.toUpperCase()} ({c.count})</option>
-              ))}
-            </select>
-
-            {/* Selector de Fuentes */}
-            <select 
-              value={filterSource} 
-              onChange={(e) => setFilterSource(e.target.value)}
-              style={{
-                background: '#09090b',
-                color: 'var(--text-color)',
-                border: '1px solid var(--border-color)',
-                borderRadius: '6px',
-                padding: '5px 10px',
-                fontSize: '0.72rem',
-                outline: 'none',
-                cursor: 'pointer'
-              }}
-            >
-              <option value="">Todas las fuentes</option>
-              {suggestionsIndex?.sources?.map(s => (
-                <option key={s.label} value={s.label}>{s.label} ({s.count})</option>
-              ))}
-            </select>
-
-            {/* Selector de Fecha */}
-            <select 
-              value={filterTime} 
-              onChange={(e) => setFilterTime(e.target.value)}
-              style={{
-                background: '#09090b',
-                color: 'var(--text-color)',
-                border: '1px solid var(--border-color)',
-                borderRadius: '6px',
-                padding: '5px 10px',
-                fontSize: '0.72rem',
-                outline: 'none',
-                cursor: 'pointer'
-              }}
-            >
-              <option value="all">Cualquier fecha</option>
-              <option value="24h">Últimas 24 horas</option>
-              <option value="7d">Últimos 7 días</option>
-              <option value="30d">Último mes</option>
-            </select>
-
-            {isLoadingSearchIndex && (
-              <span style={{ fontSize: '0.72rem', color: 'var(--accent-cyan)', animation: 'pulse 1.5s infinite' }}>Cargando índice completo...</span>
-            )}
-          </div>
-
-          <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-            Resultados: <strong style={{ color: 'var(--accent-cyan)' }}>{filteredArticles.length}</strong> artículos
-          </div>
-        </div>
-      )}
 
       {/* VISTA PRINCIPAL O DETALLE */}
       {!selectedArticle ? (
@@ -1218,8 +1183,9 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                 {quickReelsArticles.map(art => (
                   <a
                     key={art.id}
-                    href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`}
+                    href={`${basePath}noticias/${getSlug(art.title) || art.id}/`}
                     className="reel-item"
+                    onClick={(e) => { e.preventDefault(); openArticle(art.id); }}
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="reel-img-wrapper">
@@ -1274,6 +1240,16 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                   🔥 LO MÁS LEÍDO
                 </button>
               </div>
+              {/* Selector de Rango Temporal (visible cuando sort=trending) */}
+              {activeSort === 'trending' && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 4, background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)', padding: 3, borderRadius: 8 }}>
+                  {[['today', 'HOY'], ['7d', '7 DÍAS'], ['30d', '30 DÍAS']].map(([val, label]) => (
+                    <button key={val} onClick={() => setTrendingTimeRange(val)} style={{ fontSize: '0.65rem', fontWeight: 700, padding: '4px 10px', borderRadius: 6, border: 'none', background: trendingTimeRange === val ? 'var(--accent-magenta)' : 'transparent', color: trendingTimeRange === val ? '#fff' : 'var(--text-muted)', cursor: 'pointer', transition: 'all 0.2s' }}>
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* CONTENIDO DEL PORTAL (ESTILO PERIODICO NYT) */}
@@ -1307,8 +1283,13 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                               </a>
                             ))}
                           </div>
-                                    {/* Destacada Principal */}
-                          <a href={`${basePath}noticias/${leadArt.slug || getSlug(leadArt.title) || leadArt.id}/`} className="portal-lead-column" style={{ textDecoration: 'none', display: 'block' }}>
+                        )}
+                      </div>
+
+                      {leadArt && (
+                        <div className="portal-news-grid">
+                          {/* Destacada Principal */}
+                          <a href={`${basePath}noticias/${getSlug(leadArt.title) || leadArt.id}/`} className="portal-lead-column" onClick={(e) => { e.preventDefault(); openArticle(leadArt.id); }} style={{ textDecoration: 'none', display: 'block' }}>
                             <div className="portal-lead-img-wrapper">
                               <img className="portal-lead-img" src={getArticleImageUrl(leadArt)} alt={leadArt.title} loading="lazy" />
                             </div>
@@ -1324,7 +1305,7 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                           {/* Secundarias de Columna Derecha */}
                           <div className="portal-side-column">
                             {secondaryArticles.map(secArt => (
-                              <a key={secArt.id} href={`${basePath}noticias/${secArt.slug || getSlug(secArt.title) || secArt.id}/`} className="portal-secondary-item" style={{ textDecoration: 'none', display: 'block', marginBottom: '16px' }}>
+                              <a key={secArt.id} href={`${basePath}noticias/${getSlug(secArt.title) || secArt.id}/`} className="portal-secondary-item" onClick={(e) => { e.preventDefault(); openArticle(secArt.id); }} style={{ textDecoration: 'none', display: 'block', marginBottom: '16px' }}>
                                 <span className="portal-secondary-meta" style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>{secArt.source.toUpperCase()} • {formatRelativeDate(secArt.publishedAt)}</span>
                                 <h4 className="portal-secondary-title" style={{ fontSize: '0.92rem', fontWeight: 700, margin: '4px 0' }}>{renderString(secArt.title)}</h4>
                                 <p className="portal-secondary-summary" style={{ fontSize: '0.76rem', color: 'var(--text-muted)', margin: '4px 0' }}>{renderString(secArt.aiSummary || secArt.summary)}</p>
@@ -1351,124 +1332,64 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                     </div>
                   ) : (
                     <>
-                      {/* Portada de 3 Columnas Estilo NYT / El País en Página 1 */}
+                      {/* Portada de 3 Columnas en Página 1 */}
                       {currentPage === 1 && !isSearchActive && sortedArticles[0] && (
-                        <div className="nyt-front-page-3col">
-                          
-                          {/* 1. Columna Izquierda: Historias Secundarias Destacadas */}
-                          <div className="nyt-left-column">
-                            {sortedArticles.slice(1, 3).map((art, idx) => (
-                              <a 
-                                key={art.id} 
-                                href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} 
-                                style={{ textDecoration: 'none', display: 'block', marginBottom: idx === 0 ? '24px' : '0', borderBottom: idx === 0 ? '1px solid var(--border-color)' : 'none', paddingBottom: idx === 0 ? '20px' : '0' }}
-                              >
-                                <span style={{ fontSize: '0.62rem', color: 'var(--accent-cyan)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                                  {String(art.category || 'general').toUpperCase()}
-                                </span>
-                                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 800, color: '#fff', margin: '6px 0 10px 0', lineHeight: 1.25 }}>
-                                  {renderString(art.title)}
-                                </h3>
-                                <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.45, margin: '8px 0' }}>
-                                  {renderString(art.aiSummary || art.summary)}
-                                </p>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.64rem', color: 'var(--text-muted)', marginTop: '12px' }}>
-                                  <span>{formatRelativeDate(art.publishedAt)}</span>
-                                  <span style={{ color: 'var(--accent-cyan)' }}>Leer →</span>
-                                </div>
-                              </a>
-                            ))}
-                          </div>
-
-                          {/* 2. Columna Central: Lead Story Hero Principal */}
-                          <a 
-                            href={`${basePath}noticias/${sortedArticles[0].slug || getSlug(sortedArticles[0].title) || sortedArticles[0].id}/`} 
-                            className="nyt-lead-column" 
-                            style={{ textDecoration: 'none', display: 'block' }}
-                          >
+                        <div className="nyt-front-page-3col" style={{ marginBottom: '32px' }}>
+                          {/* Columna Lead */}
+                          <a href={`${basePath}noticias/${getSlug(sortedArticles[0].title) || sortedArticles[0].id}/`} className="nyt-lead-column" onClick={(e) => { e.preventDefault(); openArticle(sortedArticles[0].id); }} style={{ textDecoration: 'none', display: 'block' }}>
                             <div className="lead-story-image-wrapper">
                               <img className="lead-story-img" src={getArticleImageUrl(sortedArticles[0])} alt={sortedArticles[0].title} loading="lazy" />
                             </div>
-                            
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                              <span style={{ fontSize: '0.68rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 900, letterSpacing: '0.8px' }}>
-                                {String(sortedArticles[0].category || 'general').toUpperCase()}
-                              </span>
-                              {sortedArticles[0].isBreaking ? (
-                                <span style={{ background: '#ef4444', color: '#fff', fontSize: '0.58rem', fontWeight: 800, padding: '2px 6px', borderRadius: '4px', textTransform: 'uppercase' }}>
-                                  Urgente
-                                </span>
-                              ) : null}
-                            </div>
-                            
-                            <h2 className="lead-story-title" style={{ fontSize: '1.65rem' }}>
-                              {renderString(sortedArticles[0].title)}
-                            </h2>
-                            <p className="lead-story-summary" style={{ fontSize: '0.86rem', color: 'var(--text-muted)' }}>
-                              {renderString(sortedArticles[0].aiSummary || sortedArticles[0].summary)}
-                            </p>
-                            
-                            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--border-color)', paddingTop: '10px', marginTop: '16px' }}>
-                              <span>Autor: {sortedArticles[0].author || 'Redacción AIDAILY'} • {formatRelativeDate(sortedArticles[0].publishedAt)}</span>
-                              <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>Leer análisis completo →</span>
+                            <span className="card-source" style={{ fontSize: '0.7rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 800, marginTop: '4px', display: 'block' }}>
+                              {String(sortedArticles[0].category || 'general').toUpperCase()}
+                            </span>
+                            <h2 className="lead-story-title" style={{ fontSize: '1.45rem', fontWeight: 800, margin: '8px 0' }}>{renderString(sortedArticles[0].title)}</h2>
+                            <p className="lead-story-summary">{renderString(sortedArticles[0].aiSummary || sortedArticles[0].summary)}</p>
+                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--border-color)', paddingTop: '8px' }}>
+                              <span>RSS: {formatRelativeDate(sortedArticles[0].publishedAt)}</span>
+                              <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>Leer reporte completo →</span>
                             </div>
                           </a>
 
-                          {/* 3. Columna Derecha: Sidebar de Widgets en Caliente */}
-                          <div className="nyt-right-sidebar">
-                            {/* Widget de Última Hora */}
-                            <div style={{ marginBottom: '24px' }}>
-                              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1.5px solid var(--accent-cyan)', paddingBottom: '6px', color: '#fff', marginBottom: '12px', display: 'flex', alignItems: 'center' }}>
-                                <span className="nyt-live-dot"></span> ÚLTIMA HORA
-                              </h3>
-                              {sortedArticles.slice(3, 6).map(art => (
-                                <a 
-                                  key={art.id} 
-                                  href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} 
-                                  style={{ textDecoration: 'none', display: 'block', marginBottom: '12px', borderBottom: '1px dashed var(--border-color)', paddingBottom: '10px' }}
-                                >
-                                  <h4 style={{ fontSize: '0.82rem', fontWeight: 700, color: '#fff', margin: 0, lineHeight: 1.3 }}>
-                                    {renderString(art.title)}
-                                  </h4>
-                                  <span style={{ fontSize: '0.6rem', color: 'var(--accent-cyan)', display: 'block', marginTop: '4px' }}>
-                                    Hace {formatRelativeDate(art.publishedAt)}
-                                  </span>
-                                </a>
-                              ))}
-                            </div>
+                          {/* Columna Middle */}
+                          {sortedArticles[1] && (
+                            <a href={`${basePath}noticias/${getSlug(sortedArticles[1].title) || sortedArticles[1].id}/`} className="nyt-middle-column" onClick={(e) => { e.preventDefault(); openArticle(sortedArticles[1].id); }} style={{ textDecoration: 'none', display: 'block' }}>
+                              <div className="lead-story-image-wrapper" style={{ maxHeight: '180px' }}>
+                                <img className="lead-story-img" src={getArticleImageUrl(sortedArticles[1])} alt={sortedArticles[1].title} loading="lazy" />
+                              </div>
+                              <span className="card-source" style={{ fontSize: '0.65rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 800, marginTop: '4px', display: 'block' }}>
+                                {String(sortedArticles[1].category || 'general').toUpperCase()}
+                              </span>
+                              <h3 className="side-story-title" style={{ fontSize: '1.15rem' }}>{renderString(sortedArticles[1].title)}</h3>
+                              <p className="side-story-summary" style={{ fontSize: '0.78rem' }}>{renderString(sortedArticles[1].aiSummary || sortedArticles[1].summary)}</p>
+                              <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px dashed var(--border-color)', paddingTop: '8px' }}>
+                                <span>RSS: {formatRelativeDate(sortedArticles[1].publishedAt)}</span>
+                                <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>Leer →</span>
+                              </div>
+                            </a>
+                          )}
 
-                            {/* Widget de Tendencias Populares */}
-                            <div>
-                              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1.5px solid var(--accent-purple)', paddingBottom: '6px', color: '#fff', marginBottom: '12px' }}>
-                                🔥 TENDENCIAS
-                              </h3>
-                              {sidebarTrending.slice(0, 4).map((art, idx) => (
-                                <a 
-                                  key={art.id} 
-                                  href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} 
-                                  style={{ textDecoration: 'none', display: 'flex', gap: '10px', marginBottom: '12px', cursor: 'pointer' }}
-                                >
-                                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '1.3rem', fontWeight: 900, color: 'var(--accent-purple)', minWidth: '20px', textAlign: 'center' }}>
-                                    {idx + 1}
-                                  </span>
-                                  <div>
-                                    <h4 style={{ fontSize: '0.78rem', fontWeight: 700, color: '#fff', margin: 0, lineHeight: 1.25 }}>
-                                      {renderString(art.title)}
-                                    </h4>
-                                    <span style={{ fontSize: '0.58rem', color: 'var(--text-muted)' }}>{art.source}</span>
-                                  </div>
-                                </a>
-                              ))}
-                            </div>
+                          {/* Columna Side Stories (Noticias 3, 4 y 5) */}
+                          <div className="nyt-side-column">
+                            <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.5px', borderBottom: '1.5px solid var(--text-title)', paddingBottom: '6px', color: 'var(--text-title)', marginBottom: '10px' }}>Otras Noticias</h3>
+                            {sortedArticles.slice(2, 5).map(side => (
+                              <a key={side.id} href={`${basePath}noticias/${getSlug(side.title) || side.id}/`} className="side-story-item" onClick={(e) => { e.preventDefault(); openArticle(side.id); }} style={{ display: 'flex', flexDirection: 'column', gap: '4px', textDecoration: 'none', marginBottom: '16px' }}>
+                                <span className="card-source" style={{ fontSize: '0.65rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: 800 }}>
+                                  {String(side.category || 'general').toUpperCase()}
+                                </span>
+                                <h4 className="side-story-title" style={{ fontSize: '0.88rem', lineHeight: 1.25 }}>{renderString(side.title)}</h4>
+                                <p className="side-story-summary" style={{ fontSize: '0.74rem', lineHeight: 1.35 }}>{renderString(side.aiSummary || side.summary)}</p>
+                                <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>{formatRelativeDate(side.publishedAt)}</span>
+                              </a>
+                            ))}
                           </div>
-
                         </div>
                       )}
 
                       {/* Feed Secundario de Noticias en Grid de Tarjetas Horizontales */}
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
                         {sortedArticles.slice(currentPage === 1 && !isSearchActive ? 5 : 0).slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map(art => (
-                          <a key={art.id} href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} className="row-card-link" style={{ textDecoration: 'none', display: 'block' }}>
+                          <a key={art.id} href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} className="row-card-link" onClick={(e) => { e.preventDefault(); openArticle(art.id); }} style={{ textDecoration: 'none', display: 'block' }}>
                             <div className="row-card" style={{ cursor: 'pointer', background: 'rgba(255,255,255,0.01)', border: '1px solid var(--border-color)', borderRadius: 12, overflow: 'hidden', padding: 16 }}>
                               <img src={getArticleImageUrl(art)} alt={art.title} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: 8 }} />
                               <div style={{ marginTop: 12 }}>
@@ -1484,12 +1405,12 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                   )}
                 </main>
 
-                {/* BARRA LATERAL (LO MÁS LEÍDO) */}
+                {/* BARRA LATERAL (LO MÁS LEÍDO + TEMAS CALIENTES) */}
                 {!isSearchActive && (
                   <aside className="nyt-sidebar" style={{ display: 'block', minWidth: '300px' }}>
                     <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.85rem', fontWeight: 800, borderBottom: '1px solid var(--border-color)', paddingBottom: 8, marginBottom: 16 }}>LO MÁS LEÍDO</h3>
                     {sidebarTrending.map((art, idx) => (
-                      <a key={art.id} href={`${basePath}noticias/${art.slug || getSlug(art.title) || art.id}/`} style={{ textDecoration: 'none', display: 'flex', gap: 12, marginBottom: 16, cursor: 'pointer' }}>
+                      <a key={art.id} href={`${basePath}noticias/${getSlug(art.title) || art.id}/`} onClick={(e) => { e.preventDefault(); openArticle(art.id); }} style={{ textDecoration: 'none', display: 'flex', gap: 12, marginBottom: 16, cursor: 'pointer' }}>
                         <span style={{ fontFamily: 'var(--font-title)', fontSize: '1.5rem', fontWeight: 800, color: 'var(--accent-cyan)' }}>{idx + 1}</span>
                         <div>
                           <h4 style={{ fontSize: '0.82rem', fontWeight: 700, color: '#fff', margin: 0 }}>{renderString(art.title)}</h4>
@@ -1497,30 +1418,76 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
                         </div>
                       </a>
                     ))}
+
+                    {/* Panel de Tags Calientes con filtro temporal */}
+                    <div style={{ marginTop: 32, borderTop: '1px solid var(--border-color)', paddingTop: 16 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                        <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.85rem', fontWeight: 800, margin: 0 }}>🔥 TEMAS CALIENTES</h3>
+                        <div style={{ display: 'flex', gap: 2, background: 'rgba(255,255,255,0.03)', borderRadius: 6, padding: 2 }}>
+                          {[['today', '24h'], ['7d', '7d'], ['30d', '30d']].map(([val, label]) => (
+                            <button key={val} onClick={() => setSidebarTagRange(val)} style={{ fontSize: '0.58rem', fontWeight: 700, padding: '3px 7px', borderRadius: 4, border: 'none', background: sidebarTagRange === val ? 'var(--accent-cyan)' : 'transparent', color: sidebarTagRange === val ? '#000' : 'var(--text-muted)', cursor: 'pointer', transition: 'all 0.2s' }}>
+                              {label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      {sidebarHotTags.length === 0 ? (
+                        <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>Sin tags en este rango</p>
+                      ) : (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                          {sidebarHotTags.map(([tag, count], idx) => {
+                            const maxCount = sidebarHotTags[0][1];
+                            const pct = Math.round((count / maxCount) * 100);
+                            return (
+                              <a key={tag} onClick={() => { setActiveHashtag(tag); setCurrentPage(1); setSelectedArticle(null); }} style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 3 }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem' }}>
+                                  <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>#{tag}</span>
+                                  <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>{count}</span>
+                                </div>
+                                <div style={{ width: '100%', height: 4, background: 'rgba(255,255,255,0.04)', borderRadius: 2, overflow: 'hidden' }}>
+                                  <div style={{ width: `${pct}%`, height: '100%', background: idx < 3 ? 'var(--accent-magenta)' : 'var(--accent-cyan)', borderRadius: 2, transition: 'width 0.5s ease' }}></div>
+                                </div>
+                              </a>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
                   </aside>
                 )}
               </div>
             )}
 
-            {/* Paginación */}
+            {/* Paginación con selector de artículos por página */}
             {totalPages > 1 && (
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 40 }}>
-                {Array.from({ length: totalPages }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => { setCurrentPage(idx + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                    style={{
-                      padding: '6px 12px',
-                      background: currentPage === idx + 1 ? 'var(--accent-cyan)' : 'transparent',
-                      border: '1px solid var(--border-color)',
-                      color: currentPage === idx + 1 ? '#000' : '#fff',
-                      cursor: 'pointer',
-                      borderRadius: 6
-                    }}
-                  >
-                    {idx + 1}
-                  </button>
-                ))}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, marginTop: 40, borderTop: '1px solid var(--border-color)', paddingTop: 30 }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, flexWrap: 'wrap' }}>
+                  <button onClick={() => { if (currentPage > 1) { setCurrentPage(currentPage - 1); window.scrollTo({ top: 0, behavior: 'smooth' }); } }} disabled={currentPage <= 1} style={{ padding: '6px 14px', background: 'transparent', border: '1px solid var(--border-color)', color: currentPage <= 1 ? 'var(--text-muted)' : '#fff', cursor: currentPage <= 1 ? 'default' : 'pointer', borderRadius: 6, fontSize: '0.78rem', fontWeight: 700 }}>← Anterior</button>
+                  {Array.from({ length: Math.min(totalPages, 7) }).map((_, idx) => {
+                    let pageNum;
+                    if (totalPages <= 7) { pageNum = idx + 1; }
+                    else if (currentPage <= 4) { pageNum = idx + 1; }
+                    else if (currentPage >= totalPages - 3) { pageNum = totalPages - 6 + idx; }
+                    else { pageNum = currentPage - 3 + idx; }
+                    return (
+                      <button key={pageNum} onClick={() => { setCurrentPage(pageNum); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ padding: '6px 12px', background: currentPage === pageNum ? 'var(--accent-cyan)' : 'transparent', border: '1px solid var(--border-color)', color: currentPage === pageNum ? '#000' : '#fff', cursor: 'pointer', borderRadius: 6, fontWeight: 700, fontSize: '0.78rem' }}>
+                        {pageNum}
+                      </button>
+                    );
+                  })}
+                  <button onClick={() => { if (currentPage < totalPages) { setCurrentPage(currentPage + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); } }} disabled={currentPage >= totalPages} style={{ padding: '6px 14px', background: 'transparent', border: '1px solid var(--border-color)', color: currentPage >= totalPages ? 'var(--text-muted)' : '#fff', cursor: currentPage >= totalPages ? 'default' : 'pointer', borderRadius: 6, fontSize: '0.78rem', fontWeight: 700 }}>Siguiente →</button>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: '0.8rem', color: 'var(--text-muted)', flexWrap: 'wrap', justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span>Mostrar:</span>
+                    <select value={itemsPerPage} onChange={(e) => { setItemsPerPage(parseInt(e.target.value)); setCurrentPage(1); }} style={{ background: 'var(--bg-dark, #0a0a10)', color: 'var(--accent-cyan)', border: '1px solid var(--border-color)', borderRadius: 6, padding: '4px 10px', outline: 'none', fontFamily: 'var(--font-body)', fontWeight: 600, cursor: 'pointer', fontSize: '0.78rem' }}>
+                      <option value="10">10 artículos</option>
+                      <option value="20">20 artículos</option>
+                      <option value="30">30 artículos</option>
+                    </select>
+                  </div>
+                  <span>Total: {sortedArticles.length} artículos • Página {currentPage} de {totalPages}</span>
+                </div>
               </div>
             )}
           </div>
@@ -1538,43 +1505,184 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
 
             <div id="infinite-articles-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 24px' }}>
               {infiniteArticles.map(art => (
-                <article key={art.id} className="news-detail-wrapper article-item-wrapper" data-id={art.id} data-title={renderString(art.title)} style={{ marginBottom: 60, borderBottom: '1px solid var(--border-color)', paddingBottom: 40 }}>
-                  <header style={{ marginBottom: 24 }}>
-                    <span style={{ fontSize: '0.68rem', color: 'var(--accent-cyan)', fontWeight: 800, textTransform: 'uppercase' }}>{art.source}</span>
-                    <h1 style={{ fontFamily: 'var(--font-title)', fontSize: '2rem', fontWeight: 800, color: '#fff', margin: '12px 0 16px 0' }}>{renderString(art.title)}</h1>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Publicado: {formatRelativeDate(art.publishedAt || art.published)}</div>
+                <article key={art.id} className="news-detail-wrapper article-item-wrapper" data-id={art.id} data-title={renderString(art.title)} style={{ marginBottom: 80, paddingBottom: 60, borderBottom: '1px solid var(--border-color)' }}>
+                  
+                  {/* Premium Header con Breadcrumb */}
+                  <header style={{ marginBottom: 32 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: '0.62rem', fontWeight: 800, color: '#000', background: 'var(--accent-cyan)', padding: '3px 10px', borderRadius: 4, textTransform: 'uppercase', letterSpacing: 0.8 }}>
+                        {String(art.category || 'general').toUpperCase()}
+                      </span>
+                      {art.subcategory && (
+                        <span style={{ fontSize: '0.62rem', fontWeight: 700, color: 'var(--accent-purple)', textTransform: 'uppercase' }}>
+                          {art.subcategory}
+                        </span>
+                      )}
+                      <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>•</span>
+                      <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                        {art.source}
+                      </span>
+                    </div>
+                    
+                    <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.6rem, 4vw, 2.4rem)', fontWeight: 800, color: '#fff', margin: '0 0 16px 0', lineHeight: 1.15, letterSpacing: '-0.3px' }}>
+                      {renderString(art.title)}
+                    </h1>
+                    
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 16, fontSize: '0.75rem', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
+                      <span>📅 {formatRelativeDate(art.publishedAt || art.published)}</span>
+                      {art.originalUrl && (
+                        <a href={art.originalUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-cyan)', fontWeight: 700, textDecoration: 'none' }}>
+                          🔗 Ver fuente original
+                        </a>
+                      )}
+                    </div>
                   </header>
 
-                  <img src={getArticleImageUrl(art)} alt={art.title} style={{ width: '100%', maxHeight: '460px', objectFit: 'cover', borderRadius: 16, marginBottom: 28 }} />
+                  {/* Hero Image con Overlay Gradiente */}
+                  <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', marginBottom: 32, boxShadow: '0 16px 48px rgba(0,0,0,0.4)' }}>
+                    <img src={getArticleImageUrl(art)} alt={art.title} style={{ width: '100%', maxHeight: '520px', objectFit: 'cover', display: 'block' }} />
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%', background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}></div>
+                  </div>
 
+                  {/* Resumen IA Destacado */}
+                  {(art.aiSummary || art.summary) && (
+                    <div style={{ fontSize: '1.1rem', fontWeight: 500, color: 'var(--text-title)', lineHeight: 1.7, borderLeft: '4px solid var(--accent-cyan)', paddingLeft: 20, margin: '0 0 32px 0', fontStyle: 'italic', opacity: 0.95 }}>
+                      {renderString(art.aiSummary || art.summary)}
+                    </div>
+                  )}
+
+                  {/* Puntos Clave Premium */}
                   {Array.isArray(art.keyPoints) && art.keyPoints.length > 0 && (
-                    <div style={{ background: 'rgba(255,255,255,0.015)', border: '1px solid var(--border-color)', padding: 20, borderRadius: 12, marginBottom: 24 }}>
-                      <h3 style={{ color: 'var(--accent-cyan)', fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: 0.5, margin: '0 0 12px 0' }}>PUNTOS CLAVE</h3>
-                      <ul style={{ margin: 0, paddingLeft: 18, color: 'var(--text-title)', fontSize: '0.85rem', lineHeight: 1.6 }}>
-                        {art.keyPoints.map((kp, i) => <li key={i} style={{ marginBottom: 6 }}>{renderString(kp)}</li>)}
+                    <div style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.04), rgba(168,85,247,0.04))', border: '1px solid rgba(6,182,212,0.15)', padding: '24px 28px', borderRadius: 16, marginBottom: 32, position: 'relative', overflow: 'hidden' }}>
+                      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-magenta))' }}></div>
+                      <h3 style={{ color: 'var(--accent-cyan)', fontSize: '0.72rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1.5, margin: '8px 0 16px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
+                        ⚡ PUNTOS CLAVE
+                      </h3>
+                      <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+                        {art.keyPoints.map((kp, i) => (
+                          <li key={i} style={{ display: 'flex', gap: 12, marginBottom: 12, alignItems: 'flex-start' }}>
+                            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.85rem', fontWeight: 800, color: 'var(--accent-magenta)', minWidth: 24, textAlign: 'center', lineHeight: '1.6' }}>{i + 1}</span>
+                            <span style={{ color: 'var(--text-title)', fontSize: '0.88rem', lineHeight: 1.6, fontWeight: 500 }}>{renderString(kp)}</span>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   )}
 
+                  {/* Por Qué Importa — Callout Premium */}
                   {art.whyMatters && (
-                    <div style={{ borderLeft: '3px solid var(--accent-purple)', paddingLeft: 16, margin: '24px 0', fontStyle: 'italic', color: 'var(--text-title)', fontSize: '0.92rem' }}>
-                      <strong>POR QUÉ IMPORTA: </strong>{renderString(art.whyMatters)}
+                    <div style={{ background: 'rgba(168,85,247,0.05)', border: '1px solid rgba(168,85,247,0.15)', borderRadius: 12, padding: '20px 24px', margin: '0 0 32px 0', position: 'relative' }}>
+                      <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 4, borderRadius: '12px 0 0 12px', background: 'linear-gradient(180deg, var(--accent-purple), var(--accent-magenta))' }}></div>
+                      <h4 style={{ fontFamily: 'var(--font-title)', fontSize: '0.7rem', fontWeight: 800, color: 'var(--accent-purple)', textTransform: 'uppercase', letterSpacing: 1, margin: '0 0 8px 0' }}>
+                        💡 POR QUÉ IMPORTA
+                      </h4>
+                      <p style={{ color: 'var(--text-title)', fontSize: '0.92rem', lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
+                        {renderString(art.whyMatters)}
+                      </p>
                     </div>
                   )}
 
-                  {/* Cuerpo de Artículo Intercalado con Embeds */}
-                  <div className="article-body-content" style={{ fontSize: '1.02rem', lineHeight: 1.75, color: 'var(--text-title)' }}>
+                  {/* Galería de Fotos Premium (tipo NYT/El País) */}
+                  {Array.isArray(art.multimedia) && art.multimedia.filter(m => m.type === 'image' || (!m.type && m.url && !m.url.includes('youtube') && !m.url.includes('twitter') && !m.url.includes('x.com'))).length > 1 && (() => {
+                    const images = art.multimedia.filter(m => m.type === 'image' || (!m.type && m.url && !m.url.includes('youtube') && !m.url.includes('twitter') && !m.url.includes('x.com')));
+                    return (
+                      <div style={{ margin: '32px 0', borderRadius: 16, overflow: 'hidden', border: '1px solid var(--border-color)', background: '#000' }}>
+                        <div style={{ position: 'relative' }}>
+                          <img src={images[0].url} alt={images[0].alt || 'Galería'} style={{ width: '100%', maxHeight: 500, objectFit: 'cover', cursor: 'pointer' }}
+                            onClick={() => openLightbox(images[0].url, images[0].caption)} />
+                          <div style={{ position: 'absolute', top: 12, right: 12, background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '4px 12px', borderRadius: 20, fontSize: '0.68rem', fontWeight: 700, backdropFilter: 'blur(8px)' }}>
+                            📷 {images.length} fotos
+                          </div>
+                        </div>
+                        {images.length > 1 && (
+                          <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(images.length - 1, 4)}, 1fr)`, gap: 2 }}>
+                            {images.slice(1, 5).map((img, idx) => (
+                              <div key={idx} style={{ position: 'relative', cursor: 'pointer', overflow: 'hidden' }}
+                                onClick={() => openLightbox(img.url, img.caption)}>
+                                <img src={img.url} alt={img.alt || `Foto ${idx + 2}`} style={{ width: '100%', height: 120, objectFit: 'cover', display: 'block', transition: 'transform 0.3s' }}
+                                  onMouseOver={e => e.target.style.transform = 'scale(1.05)'}
+                                  onMouseOut={e => e.target.style.transform = 'scale(1)'} />
+                                {idx === 3 && images.length > 5 && (
+                                  <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '1.1rem', fontWeight: 800 }}>
+                                    +{images.length - 5}
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {images[0].caption && (
+                          <div style={{ padding: '10px 16px', fontSize: '0.72rem', color: 'var(--text-muted)', fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                            {images[0].caption}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
+
+                  {/* Cuerpo del Artículo — Maquetación Premium con Drop Cap */}
+                  <div className="article-body-content" style={{ fontSize: '1.05rem', lineHeight: 1.85, color: 'var(--text-title)', fontFamily: 'var(--font-body)', letterSpacing: '0.01em' }}>
                     {renderArticleBody(art)}
                   </div>
 
-                  {Array.isArray(art.links) && art.links.length > 0 && (
-                    <div style={{ marginTop: 32 }}>
-                      <h4 style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--accent-cyan)', marginBottom: 12 }}>ENLACES DE INTERÉS</h4>
-                      {art.links.map((link, idx) => (
-                        <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'var(--text-title)', fontSize: '0.85rem', textDecoration: 'underline', marginBottom: 6 }}>
-                          🔗 {link.title || link.url}
+                  {/* Datos Clave / Cifras de Impacto */}
+                  {Array.isArray(art.interestingData) && art.interestingData.length > 0 && (
+                    <div style={{ margin: '32px 0', background: 'linear-gradient(135deg, rgba(6,182,212,0.03), rgba(168,85,247,0.03))', border: '1px solid var(--border-color)', borderRadius: 16, padding: '20px 24px' }}>
+                      <h4 style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-cyan)', textTransform: 'uppercase', letterSpacing: 1.2, margin: '0 0 16px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
+                        📊 DATOS CLAVE
+                      </h4>
+                      <div style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(art.interestingData.length, 3)}, 1fr)`, gap: 16 }}>
+                        {art.interestingData.map((d, idx) => (
+                          <div key={idx} style={{ textAlign: 'center', padding: '12px 8px', background: 'rgba(255,255,255,0.02)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.04)' }}>
+                            <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.15rem', fontWeight: 800, color: 'var(--accent-magenta)', marginBottom: 4 }}>
+                              {renderString(d.value)}
+                            </div>
+                            <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                              {renderString(d.label)}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Hashtags del Artículo */}
+                  {Array.isArray(art.hashtags) && art.hashtags.length > 0 && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, margin: '32px 0', paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+                      <span style={{ fontSize: '0.68rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', marginRight: 4, alignSelf: 'center' }}>Temas:</span>
+                      {art.hashtags.map((tag, idx) => (
+                        <a key={idx} onClick={() => { setActiveHashtag(tag.replace('#', '')); closeArticleView(); }} style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--accent-cyan)', cursor: 'pointer', padding: '4px 12px', background: 'rgba(6,182,212,0.08)', borderRadius: 20, border: '1px solid rgba(6,182,212,0.12)', transition: 'all 0.2s' }}
+                          onMouseOver={e => { e.target.style.background = 'rgba(6,182,212,0.18)'; e.target.style.borderColor = 'var(--accent-cyan)'; }}
+                          onMouseOut={e => { e.target.style.background = 'rgba(6,182,212,0.08)'; e.target.style.borderColor = 'rgba(6,182,212,0.12)'; }}>
+                          {tag.startsWith('#') ? tag : `#${tag}`}
                         </a>
                       ))}
+                    </div>
+                  )}
+
+                  {/* Enlaces de Interés Premium */}
+                  {Array.isArray(art.links) && art.links.length > 0 && (
+                    <div style={{ marginTop: 24, background: 'rgba(255,255,255,0.015)', border: '1px solid var(--border-color)', borderRadius: 12, padding: '20px 24px' }}>
+                      <h4 style={{ fontSize: '0.72rem', fontWeight: 800, color: 'var(--accent-cyan)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 0.8 }}>📎 ENLACES DE INTERÉS</h4>
+                      {art.links.map((link, idx) => (
+                        <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-title)', fontSize: '0.82rem', textDecoration: 'none', padding: '8px 0', borderBottom: idx < art.links.length - 1 ? '1px solid rgba(255,255,255,0.03)' : 'none', transition: 'color 0.2s' }}
+                          onMouseOver={e => e.currentTarget.style.color = 'var(--accent-cyan)'}
+                          onMouseOut={e => e.currentTarget.style.color = 'var(--text-title)'}>
+                          <span style={{ fontSize: '0.7rem' }}>→</span>
+                          {link.title || link.url}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Fuente Original */}
+                  {art.originalUrl && (
+                    <div style={{ marginTop: 24, display: 'flex', justifyContent: 'center' }}>
+                      <a href={art.originalUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '10px 24px', background: 'rgba(6,182,212,0.06)', border: '1px solid rgba(6,182,212,0.2)', borderRadius: 30, color: 'var(--accent-cyan)', fontSize: '0.78rem', fontWeight: 700, textDecoration: 'none', transition: 'all 0.2s' }}
+                        onMouseOver={e => { e.currentTarget.style.background = 'rgba(6,182,212,0.15)'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+                        onMouseOut={e => { e.currentTarget.style.background = 'rgba(6,182,212,0.06)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                        🔗 Leer artículo original en {art.source}
+                      </a>
                     </div>
                   )}
                 </article>
@@ -1617,6 +1725,70 @@ export default function Portal({ recentArticles = [], totalArticlesCount: initia
       )}
 
       <button id="scroll-top-btn" className="scroll-top-btn" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>▲</button>
+
+      {/* Footer Completo con Sitemap */}
+      {!selectedArticle && (
+        <footer style={{ borderTop: '1px solid var(--border-color)', background: 'rgba(9,9,16,0.98)', padding: '48px 24px 24px', marginTop: 40 }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 24, marginBottom: 32 }}>
+              <div>
+                <h2 style={{ fontFamily: 'var(--font-title)', fontSize: '1.4rem', fontWeight: 800, background: 'linear-gradient(135deg, #fff, var(--accent-cyan))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: '0 0 4px 0' }}>AIDAILY</h2>
+                <p style={{ fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: 1, textTransform: 'uppercase' }}>El futuro contado hoy</p>
+              </div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 24, marginBottom: 32 }}>
+              {Object.entries(CATEGORY_TREE).slice(0, 8).map(([catKey, catNode]) => (
+                <div key={catKey}>
+                  <h4 style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 800, color: '#fff', textTransform: 'uppercase', marginBottom: 8, letterSpacing: 0.5 }}>{catNode.name}</h4>
+                  {catNode.children && Object.entries(catNode.children).slice(0, 5).map(([subKey, subNode]) => (
+                    <a key={subKey} onClick={() => handleSelectSubcategory(subKey, catKey)} style={{ display: 'block', fontSize: '0.68rem', color: 'var(--text-muted)', cursor: 'pointer', padding: '3px 0', transition: 'color 0.2s' }}
+                      onMouseOver={e => e.target.style.color = 'var(--accent-cyan)'}
+                      onMouseOut={e => e.target.style.color = 'var(--text-muted)'}>
+                      {subNode.name}
+                    </a>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: 16, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, fontSize: '0.62rem', color: 'var(--text-muted)' }}>
+              <div style={{ display: 'flex', gap: 16 }}>
+                <a style={{ color: 'var(--text-muted)', cursor: 'pointer' }}>Aviso Legal</a>
+                <a style={{ color: 'var(--text-muted)', cursor: 'pointer' }}>Política de Privacidad</a>
+                <a style={{ color: 'var(--text-muted)', cursor: 'pointer' }}>Política de Cookies</a>
+              </div>
+              <div>
+                AIDAILY — El futuro contado hoy © 2026. Todos los derechos reservados.<br/>
+                <span style={{ opacity: 0.7, fontSize: '0.58rem' }}>Redactado y estructurado mediante Inteligencia Artificial avanzada.</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+      )}
+
+      {/* Modal de Hashtags */}
+      {isHashtagModalOpen && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }} onClick={() => setIsHashtagModalOpen(false)}>
+          <div style={{ background: 'rgba(9,9,16,0.98)', border: '1px solid var(--border-color)', borderRadius: 24, maxWidth: 500, width: '100%', padding: 24, maxHeight: '80vh', display: 'flex', flexDirection: 'column', gap: 16, backdropFilter: 'blur(20px)' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.15rem', fontWeight: 800, color: '#fff', textTransform: 'uppercase', margin: 0 }}>Temas y Hashtags en Tendencia</h3>
+              <span onClick={() => setIsHashtagModalOpen(false)} style={{ cursor: 'pointer', fontSize: '1.2rem', color: 'var(--text-muted)' }}>✕</span>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <input type="text" placeholder="Buscar hashtags o temas..." value={hashtagSearchQuery} onChange={e => setHashtagSearchQuery(e.target.value)} style={{ width: '100%', padding: '10px 14px 10px 36px', borderRadius: 20, border: '1px solid var(--border-color)', background: 'rgba(255,255,255,0.05)', color: '#fff', fontFamily: 'var(--font-body)', fontSize: '0.85rem', outline: 'none', boxSizing: 'border-box' }} />
+              <span style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', fontSize: '0.85rem', opacity: 0.6 }}>🔍</span>
+            </div>
+            <div style={{ overflowY: 'auto', maxHeight: '50vh', display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {allHashtags.filter(([tag]) => !hashtagSearchQuery || tag.includes(hashtagSearchQuery.toLowerCase())).map(([tag, count]) => (
+                <a key={tag} onClick={() => { setActiveHashtag(tag); setCurrentPage(1); setSelectedArticle(null); setIsHashtagModalOpen(false); }} style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent-cyan)', cursor: 'pointer', padding: '5px 12px', background: 'rgba(6,182,212,0.08)', borderRadius: 20, border: '1px solid rgba(6,182,212,0.15)', display: 'flex', alignItems: 'center', gap: 4, transition: 'all 0.2s' }}
+                  onMouseOver={e => e.target.style.background = 'rgba(6,182,212,0.2)'}
+                  onMouseOut={e => e.target.style.background = 'rgba(6,182,212,0.08)'}>
+                  #{tag} <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>({count})</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

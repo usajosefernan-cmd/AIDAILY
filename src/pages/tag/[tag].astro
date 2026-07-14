@@ -21,19 +21,29 @@ export async function getStaticPaths() {
   try {
     const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
     if (Array.isArray(cacheData)) {
-      const tagsSet = new Set();
+      const tagCounts = {};
       cacheData.forEach(art => {
         if (Array.isArray(art.hashtags)) {
           art.hashtags.forEach(tag => {
             const cleanTag = normalizeText(tag).replace('#', '');
             if (cleanTag) {
-              tagsSet.add(cleanTag);
+              tagCounts[cleanTag] = (tagCounts[cleanTag] || 0) + 1;
             }
           });
         }
       });
       
-      return Array.from(tagsSet).map(tag => ({
+      // Ordenar por popularidad
+      let popularTags = Object.entries(tagCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([tag]) => tag);
+      
+      // Optimización local: solo los 50 tags más populares
+      if (process.env.BUILD_ALL !== 'true') {
+        popularTags = popularTags.slice(0, 50);
+      }
+      
+      return popularTags.map(tag => ({
         params: { tag },
         props: { tagKey: tag }
       }));

@@ -2,24 +2,8 @@ import { DOMParser } from 'xmldom';
 import { JSDOM } from 'jsdom';
 import * as fs from 'fs';
 import * as path from 'path';
-import { DatabaseSync } from 'node:sqlite';
 import crypto from 'crypto';
 import { execSync } from 'child_process';
-
-export function getSlug(title: string): string {
-  let slug = title
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // quitar acentos
-    .replace(/[^a-z0-9\s-]/g, "")    // quitar carácteres especiales
-    .trim()
-    .replace(/\s+/g, "-")            // reemplazar espacios por guión
-    .replace(/-+/g, "-");            // colapsar guiones múltiples
-  if (slug.length > 100) {
-    slug = slug.substring(0, 100).replace(/-+$/, '');
-  }
-  return slug;
-}
 
 function createSafeJSDOM(html: string): JSDOM {
   const cleanHtml = (html || '')
@@ -37,7 +21,7 @@ function createSilentDOMParser(): DOMParser {
     }
   });
 }
-import { FEED_MATRIX, getFeedsForCategory, type FeedConfig, type CategoryKey, getCategoryMeta, getAllCategories } from './feeds.ts';
+import { FEED_MATRIX, getFeedsForCategory, type FeedConfig, type CategoryKey, getCategoryMeta, getAllCategories } from './feeds.js';
 
 async function firebaseFetch(url: string, options: any = {}): Promise<Response> {
   const controller = new AbortController();
@@ -127,43 +111,17 @@ export interface NewsItem {
   tags?: string[];
   contentHtml?: string;
   
-  // Nuevos campos para la arquitectura periodística seria (NYT style)
-  slug?: string;
-  subtitle?: string;
-  originalUrl?: string;
-  author?: string;
-  scrapedAt?: string;
-  updatedAt?: string;
-  category?: string;
-  subcategory?: string;
-  entities?: string[];
-  language?: string;
-  country?: string;
-  importanceScore?: number;
-  urgencyScore?: number;
-  qualityScore?: number;
-  editorialScore?: number;
-  trendScore?: number;
-  viewCount?: number;
-  views1h?: number;
-  views24h?: number;
-  views7d?: number;
-  isBreaking?: boolean;
-  isHotTopic?: boolean;
-  isEvergreen?: boolean;
-  imageCaption?: string;
-  multimedia?: MediaItem[];
-  relatedArticles?: string[];
-  status?: 'draft' | 'reviewed' | 'published' | 'rejected' | 'pendiente_ia' | 'publicada';
-  rejectionReason?: string;
-  
-  // Retrocompatibilidad con campos adicionales
+  // Nuevos campos para modal detallado
   aiSummary?: string;
   keyPoints?: string[];
   whyMatters?: string;
-  hashtags?: string[];
+  multimedia?: MediaItem[];
   fullText?: string;
+  subcategory?: string;
+  hashtags?: string[];
   fullArticle?: string;
+  category?: string;
+  scrapedAt?: string;
   links?: { title: string; url: string }[];
   interestingData?: { label: string; value: string }[];
 }
@@ -881,6 +839,9 @@ async function fetchWithRetry(url: string, options: any, retries = 2, delay = 30
       clearTimeout(timeoutId);
       
       if (res.status === 429) {
+        if (i === retries - 1) {
+          return res;
+        }
         console.warn(`[Network] Rate limit 429 recibido para ${url}. Reintentando en ${delay}ms (intento ${i + 1}/${retries})...`);
         await new Promise(resolve => setTimeout(resolve, delay));
         delay = Math.min(delay * 2, 12000);
@@ -1462,28 +1423,17 @@ export async function generateAIContent(
   }
 ): Promise<{
   title: string;
-  subtitle?: string;
-  author?: string;
   aiSummary: string;
   keyPoints: string[];
   whyMatters: string;
   category: string;
   subcategory: string;
-  entities?: string[];
-  country?: string;
-  importanceScore?: number;
-  qualityScore?: number;
-  isBreaking?: boolean;
-  isEvergreen?: boolean;
-  imageCaption?: string;
   hashtags: string[];
   tags: string[];
   fullArticle: string;
   multimedia: MediaItem[];
   links?: { title: string; url: string }[];
   interestingData?: { label: string; value: string }[];
-  status?: string;
-  rejectionReason?: string;
 }> {
   const allowedSubs = ACTIVE_CATEGORY_MAP[suggestedCategory] || ['general'];
   const apiKey = process.env.OPENROUTER_API_KEY;
@@ -1662,31 +1612,20 @@ export async function generateAIContent(
     }
   }
 
-  const getPromptForText = (textSlice: string) => `Analiza esta noticia y adáptala al español como un redactor jefe profesional. Genera EXCLUSIVAMENTE un objeto JSON válido con la siguiente estructura y sin markdown adicional:
+  const getPromptForText = (textSlice: string) => `Analiza esta noticia y adapta su contenido al español. Genera EXCLUSIVAMENTE un objeto JSON válido con la siguiente estructura y sin markdown adicional:
 
 {
-  "title": "Titular periodístico contundente en español",
-  "subtitle": "Subtítulo descriptivo e informativo en español de una sola línea",
-  "author": "Nombre del redactor original o un pseudónimo periodístico verosímil si no está disponible",
-  "aiSummary": "Resumen en español estructurado",
+  "title": "Titular en español",
+  "aiSummary": "Resumen en español",
   "keyPoints": ["Punto 1", "Punto 2", "Punto 3", "Punto 4"],
-  "whyMatters": "Por qué importa detallado con mínimo de 3 oraciones completas",
-  "category": "categoria_principal (obligatoriamente una de las 12 indicadas abajo)",
-  "subcategory": "subcategoria_elegida",
-  "entities": ["Lista", "de", "entidades", "clave", "mencionadas"],
-  "country": "País principal al que afecta o donde sucede la noticia",
-  "importanceScore": 85, // número del 0 al 100 de relevancia pública e impacto de la noticia
-  "qualityScore": 90, // número del 0 al 100 de calidad informativa y profundidad del contenido
-  "isBreaking": false, // boolean, true si es última hora nacional/internacional de extrema urgencia
-  "isEvergreen": false, // boolean, true si es un reportaje o artículo de análisis atemporal de larga duración
-  "imageCaption": "Pie de foto detallado y créditos en español de la imagen principal",
-  "hashtags": ["#Entidad1", "#Entidad2", "#Entidad3"],
-  "fullArticle": "Cuerpo del artículo en español estructurado en 2 o 3 párrafos de lectura fluida",
+  "whyMatters": "Por qué importa",
+  "category": "categoria_principal",
+  "subcategory": "subcategoria",
+  "hashtags": ["#Tag1", "#Tag2", "#Tag3"],
+  "fullArticle": "Articulo completo",
   "multimedia": [],
-  "links": [{"title": "Nombre del enlace", "url": "https://url-relacionada-valida.com"}],
-  "interestingData": [{"label": "Dato clave", "value": "Valor del dato"}],
-  "status": "published", // "published" si es de calidad y apto para publicar, "rejected" si es spam/clickbait/irrelevante
-  "rejectionReason": "" // Razón detallada del rechazo si el status es "rejected"
+  "links": [{"title": "Nombre descriptivo del enlace", "url": "https://url-relacionada-valida.com"}],
+  "interestingData": [{"label": "Dato clave", "value": "Valor del dato"}]
 }
 
 NOTICIA ORIGINAL:
@@ -1702,7 +1641,7 @@ REGLAS DE REDACCIÓN (SÍGUELAS ESTRICTAMENTE):
 1. Retorna ÚNICAMENTE el objeto JSON de respuesta. No agregues delimitadores de markdown (\`\`\`json), notas de introducción ni disculpas. Si eres un modelo de razonamiento (como Step 3.7 Flash o similar), NO utilices razonamiento extenso, mantén tu pensamiento interno a menos de 50 palabras y escribe directamente el JSON de respuesta. Esto es crítico para evitar el truncamiento del JSON.
 2. Tono: Adaptación al español con ${toneText}. Tono profesional, riguroso, dinámico y con mucha personalidad periodística.
 3. Idioma: TODO EL CONTENIDO DEBE ESTAR EN ESPAÑOL. Traduce absolutamente todo al español (título, resumen, puntos clave, artículo completo, hashtags, whyMatters, links titles, interestingData labels/values). ESTÁ TERMINANTEMENTE PROHIBIDO dejar cualquier campo en inglés u otro idioma. Si la fuente original está en inglés, francés u otro idioma, traduce y adapta al español de España. Si detectas que has generado contenido en inglés, REESCRÍBELO EN ESPAÑOL antes de devolver el JSON.
-4. Campo "keyPoints": Debe contener exactamente 3 o 4 puntos clave contundentes en español. Cada punto clave debe ser una frase explicativa de entre 15 y 30 palabras máximo que proporcione contexto suficiente, cifras clave y detalles del hecho sin ser innecesariamente largo ni excesivamente escueto, evitando introducciones genéricas.
+4. Campo "keyPoints": Debe contener OBLIGATORIAMENTE EXACTAMENTE 4 puntos clave de resumen en español. Cada punto clave debe ser una frase explicativa y contundente de entre 20 y 35 palabras que proporcione contexto suficiente, cifras clave, métricas o datos importantes cuantificables extraídos del hecho, evitando introducciones redundantes o generalidades vacías.
 5. Campo "whyMatters": Explica el impacto real y estratégico a futuro de la noticia en su sector, sus implicaciones y por qué el lector debe prestarle atención. Debe ser un párrafo desarrollado con un mínimo de 3 oraciones completas y profundas, con lógica y criterio periodístico (evita generalidades vacías).
 6. Campo "category" (CRÍTICO): Debe ser obligatoriamente uno de estos 12 valores en minúsculas: internacional, nacional, economia, opinion, ciencia, tecnologia, medioambiente, cultura, estilo, deportes, sociedad, gastronomia. Lee minuciosamente el artículo y clasifícalo de manera precisa dentro de los nuevos menús definidos. No uses clasificaciones genéricas si el artículo pertenece a un tema específico (ej: si habla de OpenAI o GPT-4, debe ir a 'tecnologia' and subcategoría 'ia').
    * REGLA DE ORO DE DEPORTES: Si la noticia tiene como protagonista, o involucra directamente, a un deportista, exdeportista, entrenador, club deportivo, árbitro o directivo del deporte implicado en CUALQUIER tipo de suceso (incluyendo juicios, pleitos legales, detenciones, divorcios, escándalos del corazón, accidentes de tráfico o cualquier controversia extradeportiva), clasifícala OBLIGATORIAMENTE en la categoría 'deportes'. Su subcategoría deberá reflejar la naturaleza de la noticia (ej. 'Justicia', 'Tribunales', 'Sucesos', o el deporte correspondiente como 'Futbol'). Queda terminantemente prohibido clasificarla en 'sociedad', 'nacional' o 'internacional'.
@@ -1720,7 +1659,7 @@ REGLAS DE REDACCIÓN (SÍGUELAS ESTRICTAMENTE):
    - sociedad: educacion, sanidad, derechos humanos, igualdad, redes sociales, meteorologia
    - gastronomia: recetas, restaurantes, nutricion, vinos, cocina
 8. Campo "hashtags": Debe generar obligatoriamente entre 3 y 5 hashtags específicos que representen las entidades clave de la noticia (ej: #RealMadrid, #Mbappe, #Nvidia, #ElonMusk). Prohibido usar hashtags genéricos como #Noticias, #Actualidad, #Deportes, #Tecnologia o similares. Cada hashtag debe iniciar con '#' y estar capitalizado en formato CamelCase.
-9. Campo "fullArticle": Redacta el cuerpo completo del artículo en español (de 2 a 3 párrafos de longitud moderada, muy bien estructurados y fluidos). Debe aportar contexto de fondo, detalles técnicos o de ingeniería del desarrollo, impacto socioeconómico y una narrativa interesante para el lector. Evita textos excesivamente largos para no superar los límites de tokens de salida.
+9. Campo "fullArticle": Redacta el cuerpo completo del artículo en español (de 2 a 3 párrafos de longitud moderada, muy bien estructurados y fluidos). Debe aportar contexto de fondo, detalles técnicos, impacto socioeconómico y una narrativa interesante para el lector. SI LA NOTICIA ORIGINAL ES DE OPINIÓN, DEBATES VIRALES EN REDES O CONTIENE AFIRMACIONES/BULOS QUE LA GENTE TOMA COMO INFORMACIÓN EN MEDIOS ESPAÑOLES, REDACTA EL ARTÍCULO CON UN ENFOQUE DE FACT-CHECK Y ACLARACIÓN RIGUROSA: identifica el rumor o polémica, contrástalo con datos oficiales y hechos veraces, y aclara con precisión qué es veraz y qué es desinformación. Evita textos excesivamente largos.
 10. Dentro de los textos del JSON, usa ÚNICAMENTE comillas simples para cualquier cita o palabra entrecomillada (ej. 'ejemplo') para no romper el formato JSON.
 11. Campo "multimedia" (CRÍTICO): Selecciona obligatoriamente de forma inteligente y profesional de entre los "CANDIDATOS MULTIMEDIA REALES DISPONIBLES EN LA NOTICIA ORIGINAL" todos los elementos que aporten valor y se relacionen con la noticia (incluyendo videos de YouTube, tweets embebidos e imágenes). Para cada objeto multimedia seleccionado, mantén su "type" y "url" originales, pero redacta obligatoriamente un campo "alt" explicativo y descriptivo en español (para accesibilidad) y un campo "caption" (el pie de foto explicativo en español de lo que muestra el elemento, respetando créditos y autoría si aparecen).
 12. MAQUETACIÓN E INTERCALADO MULTIMEDIA (CRÍTICO): Dentro de la redacción del cuerpo del artículo ("fullArticle"), debes intercalar obligatoriamente de forma natural los elementos multimedia que seleccionaste del array "multimedia" utilizando la etiqueta exacta: [MULTIMEDIA: URL]. Coloca este marcador en un párrafo independiente justo después del bloque de texto que hable de su contexto. Esto es obligatorio para videos de YouTube, tweets e imágenes adicionales. Ejemplo: ...párrafo del texto...\n\n[MULTIMEDIA: https://img.youtube.com/vi/ID/hqdefault.jpg]\n\n...siguiente párrafo...
@@ -1745,20 +1684,22 @@ ${preferencesText}${additionsText}${interestsText}`;
   let rotationCandidates: Array<{ provider: string; model: string }> = (workflowConfig && workflowConfig.rotation_candidates)
     ? workflowConfig.rotation_candidates
     : [
-         // Primera ronda: Modelos INTELIGENTES de excelente rendimiento (alternados por proveedor)
-         { provider: 'nous', model: 'stepfun/step-3.7-flash:free' },
+         // Proveedores oficiales whitelisteados
          { provider: 'gemini', model: 'gemini-2.5-flash' },
-         { provider: 'nvidia', model: 'nvidia/llama-3.3-nemotron-super-49b-v1' },
-         { provider: 'mistral', model: 'mistral-small' },
-         
-         // Segunda ronda: Fallbacks alternativos inteligentes
-         { provider: 'nous', model: 'tencent/hy3:free' },
-         { provider: 'gemini', model: 'gemini-3.1-flash-lite' },
-         
-         // Tercera ronda: Gemini grandes como último recurso
+         { provider: 'openrouter', model: 'meta-llama/llama-3.3-70b-instruct:free' },
+         { provider: 'openrouter', model: 'qwen/qwen-2.5-72b-instruct:free' },
          { provider: 'gemini', model: 'gemini-2.0-flash' },
-         { provider: 'gemini', model: 'gemini-2.5-pro' }
+         { provider: 'nous', model: 'hermes-3-llama-3.1-405b' }
       ];
+
+  // Excluir estrictamente modelos baratos o de mala calidad de redacción (stepfun, tencent, cohere, etc.)
+  rotationCandidates = rotationCandidates.filter(c => {
+    const modelLower = c.model.toLowerCase();
+    return !modelLower.includes('stepfun') && 
+           !modelLower.includes('tencent') && 
+           !modelLower.includes('cohere') &&
+           !modelLower.includes('deepseek-r1');
+  });
 
   // Filtrar rotationCandidates según el test diario de modelos free de Hermes
   try {
@@ -1798,42 +1739,35 @@ ${preferencesText}${additionsText}${interestsText}`;
     // Fallback silencioso
   }
 
-  // Si se ha seleccionado un modelo preferido, lo colocamos en primera posición
+  // Si se ha seleccionado un modelo preferido, lo colocamos en primera posición con saneamiento a OpenRouter gratuito
   if (preferredModel && preferredModel.trim() !== '') {
-    let resolvedProvider = '';
-    let resolvedModel = preferredModel;
+    let resolvedProvider = 'nous'; // Por defecto forzar OpenRouter para garantizar credenciales válidas
+    let rawModel = preferredModel.replace(':free', '').trim();
+    let resolvedModel = `${rawModel}:free`;
 
-    if (preferredModel.startsWith('stepfun/') || preferredModel.startsWith('tencent/')) {
-      resolvedProvider = 'nous';
-    } else if (preferredModel.startsWith('gemini-') || preferredModel.startsWith('google/gemini')) {
+    // Saneamiento de modelos de baja calidad o proveedores directos sin API keys válidas en VPS
+    if (rawModel.includes('gemini')) {
       resolvedProvider = 'gemini';
-      resolvedModel = preferredModel.replace('google/', '');
-    } else if (preferredModel.startsWith('nvidia/') || preferredModel.includes('nemotron')) {
-      resolvedProvider = 'nvidia';
-    } else if (preferredModel.includes('huggingface/') || preferredModel.startsWith('Qwen/Qwen2.5')) {
-      resolvedProvider = 'huggingface';
-      resolvedModel = preferredModel.replace('huggingface/', '');
-    } else if (preferredModel.startsWith('mistral/') || preferredModel.startsWith('mistral-') || preferredModel.startsWith('pixtral-')) {
-      resolvedProvider = 'mistral';
-      resolvedModel = preferredModel.replace('mistral/', '');
-    } else if (preferredModel.startsWith('cloudflare/') || preferredModel.startsWith('@cf/')) {
-      resolvedProvider = 'cloudflare';
-      resolvedModel = preferredModel.replace('cloudflare/', '');
+      resolvedModel = rawModel.replace('google/', '').replace(':free', '').trim();
+      console.log(`[ModelRotator] Mapeando modelo Gemini preferido al proveedor nativo: ${resolvedModel}`);
+    } else if (rawModel.startsWith('stepfun/') || rawModel.startsWith('tencent/') || rawModel.includes('cohere')) {
+      resolvedModel = 'google/gemini-2.5-pro:free';
+      console.log(`[ModelRotator] Mapeando modelo de baja calidad preferred a free: ${resolvedModel}`);
     } else {
-      // Intenta resolver por coincidencia en candidatos
-      const matched = rotationCandidates.find(c => c.model === preferredModel);
-      if (matched) {
-        resolvedProvider = matched.provider;
+      // Normalizar slugs para OpenRouter Free
+      if (rawModel.startsWith('meta-llama/')) {
+        resolvedModel = 'meta-llama/llama-3.3-70b-instruct:free';
+      } else if (rawModel.startsWith('qwen/')) {
+        resolvedModel = 'qwen/qwen-2.5-72b-instruct:free';
+      } else if (rawModel.startsWith('mistral/')) {
+        resolvedModel = 'meta-llama/llama-3.3-70b-instruct:free'; // Fallback a Llama 3.3 free
       }
     }
 
-    if (resolvedProvider !== '') {
-      // Filtrar el modelo de su posición actual
-      rotationCandidates = rotationCandidates.filter(c => !(c.provider === resolvedProvider && c.model === resolvedModel));
-      // Insertar al inicio de la lista
-      rotationCandidates.unshift({ provider: resolvedProvider, model: resolvedModel });
-      console.log(`[Rotación IA] Priorizando modelo preferido: ${resolvedModel} via ${resolvedProvider}`);
-    }
+    // Filtrar el modelo de su posición actual en la lista y colocarlo en primer lugar
+    rotationCandidates = rotationCandidates.filter(c => !(c.model === resolvedModel));
+    rotationCandidates.unshift({ provider: resolvedProvider, model: resolvedModel });
+    console.log(`[Rotación IA] Priorizando modelo preferido saneado: ${resolvedModel} via ${resolvedProvider}`);
   }
 
   // Set para llevar control de proveedores caídos por Rate Limit (429) o cuota agotada
@@ -1850,6 +1784,7 @@ ${preferencesText}${additionsText}${interestsText}`;
 
     // Validación de credenciales antes de intentar
     if (provider === 'nous' && (!nous || !nous.access_token || nous.access_token.trim() === '')) continue;
+    if (provider === 'openrouter' && (!apiKey || apiKey.trim() === '')) continue;
     if (provider === 'gemini' && (!googleApiKey || googleApiKey.trim() === '')) continue;
     if (provider === 'nvidia' && (!nvidiaApiKey || nvidiaApiKey.trim() === '')) continue;
     if (provider === 'github' && (!githubApiKey || githubApiKey.trim() === '')) continue;
@@ -1869,6 +1804,17 @@ ${preferencesText}${additionsText}${interestsText}`;
       if (provider === 'nous') {
         url = `${nous.base_url}/chat/completions`;
         headers['Authorization'] = `Bearer ${nous.access_token}`;
+        body = {
+          model: model,
+          messages: [{ role: 'user', content: getPromptForText(fullText.slice(0, 6000)) }],
+          temperature: 0.5,
+          response_format: { type: "json_object" }
+        };
+      } else if (provider === 'openrouter') {
+        url = `https://openrouter.ai/api/v1/chat/completions`;
+        headers['Authorization'] = `Bearer ${apiKey}`;
+        headers['HTTP-Referer'] = `https://143-47-35-167.sslip.io/ia-daily/`;
+        headers['X-Title'] = `IA Daily Xataka style`;
         body = {
           model: model,
           messages: [{ role: 'user', content: getPromptForText(fullText.slice(0, 6000)) }],
@@ -2087,28 +2033,17 @@ ${preferencesText}${additionsText}${interestsText}`;
 
               return {
                 title: parsed.title || title,
-                subtitle: parsed.subtitle || '',
-                author: parsed.author || 'Redacción AIDAILY',
                 aiSummary: parsed.aiSummary || fallback.aiSummary,
                 keyPoints: Array.isArray(parsed.keyPoints) ? parsed.keyPoints : [parsed.title],
                 whyMatters: parsed.whyMatters || fallback.whyMatters,
                 category: norm.category,
                 subcategory: norm.subcategory,
-                entities: Array.isArray(parsed.entities) ? parsed.entities : [],
-                country: parsed.country || '',
-                importanceScore: parsed.importanceScore !== undefined ? Number(parsed.importanceScore) : 75,
-                qualityScore: parsed.qualityScore !== undefined ? Number(parsed.qualityScore) : 80,
-                isBreaking: parsed.isBreaking === true || parsed.isBreaking === 'true',
-                isEvergreen: parsed.isEvergreen === true || parsed.isEvergreen === 'true',
-                imageCaption: parsed.imageCaption || '',
                 hashtags: cleanHashtagsList(parsed.hashtags),
                 tags: Array.isArray(parsed.tags) ? parsed.tags : ['noticias'],
                 fullArticle: parsed.fullArticle || fallback.fullArticle,
                 multimedia: Array.isArray(parsed.multimedia) && parsed.multimedia.length > 0 ? parsed.multimedia : (validatedMultimedia.length > 0 ? validatedMultimedia : fallback.multimedia),
                 links: Array.isArray(parsed.links) ? parsed.links : [],
-                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : [],
-                status: parsed.status || 'published',
-                rejectionReason: parsed.rejectionReason || ''
+                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : []
               };
             } catch (jsonErr) {
               console.warn(`[OpenRouter] Error de parseo en JSON Saneado:`, jsonErr);
@@ -2130,9 +2065,8 @@ ${preferencesText}${additionsText}${interestsText}`;
   }
 
   // --- PRIORIDAD 4: Inferencia local con Ollama (Solo si se configuró un modelo inteligente local en el .env) ---
-  const ollamaUrl = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
-  const textModel = process.env.OLLAMA_TEXT_MODEL;
-  const localModelsToTry = textModel ? [textModel] : [];
+  // Desactivado de la redacción principal para evitar esperas y timeouts en CPU de VPS (Ollama local sólo para pre-filtro binario rápido)
+  return fallback;
 
   // Adquirir el cerrojo de Ollama para procesar uno por uno secuencialmente y no ahogar la CPU
   const releaseOllamaLock = await new Promise<() => void>((resolveLock) => {
@@ -2155,7 +2089,7 @@ ${preferencesText}${additionsText}${interestsText}`;
         const res = await fetch(`${ollamaUrl}/v1/chat/completions`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          signal: AbortSignal.timeout(60000), // 60 segundos porque ahora es secuencial
+          signal: AbortSignal.timeout(180000), // 180 segundos de margen amplio en CPU de VPS
           body: JSON.stringify({
             model: localModel,
             messages: [{ role: 'user', content: getPromptForText(fullText.slice(0, 2000)) }],
@@ -2181,28 +2115,17 @@ ${preferencesText}${additionsText}${interestsText}`;
               console.log(`[Texto local] ¡Éxito procesando con Ollama local (${localModel})!`);
               return {
                 title: parsed.title || title,
-                subtitle: parsed.subtitle || '',
-                author: parsed.author || 'Redacción AIDAILY',
                 aiSummary: parsed.aiSummary || fallback.aiSummary,
                 keyPoints: Array.isArray(parsed.keyPoints) ? parsed.keyPoints : [parsed.title],
                 whyMatters: parsed.whyMatters || fallback.whyMatters,
                 category: norm.category,
                 subcategory: norm.subcategory,
-                entities: Array.isArray(parsed.entities) ? parsed.entities : [],
-                country: parsed.country || '',
-                importanceScore: parsed.importanceScore !== undefined ? Number(parsed.importanceScore) : 75,
-                qualityScore: parsed.qualityScore !== undefined ? Number(parsed.qualityScore) : 80,
-                isBreaking: parsed.isBreaking === true || parsed.isBreaking === 'true',
-                isEvergreen: parsed.isEvergreen === true || parsed.isEvergreen === 'true',
-                imageCaption: parsed.imageCaption || '',
                 hashtags: cleanHashtagsList(parsed.hashtags),
                 tags: Array.isArray(parsed.tags) ? parsed.tags : ['noticias'],
                 fullArticle: parsed.fullArticle || fallback.fullArticle,
                 multimedia: Array.isArray(parsed.multimedia) && parsed.multimedia.length > 0 ? parsed.multimedia : (validatedMultimedia.length > 0 ? validatedMultimedia : fallback.multimedia),
                 links: Array.isArray(parsed.links) ? parsed.links : [],
-                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : [],
-                status: parsed.status || 'published',
-                rejectionReason: parsed.rejectionReason || ''
+                interestingData: Array.isArray(parsed.interestingData) ? parsed.interestingData : []
               };
             }
           }
@@ -2220,116 +2143,6 @@ ${preferencesText}${additionsText}${interestsText}`;
 
   // --- FALLBACK FINAL (PRIORIDAD 5): Devolución de Fallback predeterminado ---
   return fallback;
-}
-
-/**
- * Ejecuta un Fact-Check cruzado utilizando un proveedor de IA inteligente
- * diferente al que redactó la noticia original para evitar sesgos de autocompletado.
- */
-async function runDoubleIAFactCheck(newsItem: any, writerProvider: string): Promise<{ approved: boolean; reason: string }> {
-  console.log(`[Doble IA QA] Iniciando Fact-Check cruzado para "${newsItem.title}" (Redactor: ${writerProvider})...`);
-  
-  // Buscar un proveedor de repuesto inteligente
-  let qaProvider = 'gemini';
-  let qaModel = 'gemini-2.5-pro';
-  
-  if (writerProvider === 'gemini') {
-    qaProvider = 'nous';
-    qaModel = 'stepfun/step-3.7-flash:free';
-  }
-
-  const googleApiKey = process.env.GOOGLE_API_KEY;
-  const nous = getNousToken();
-
-  // Validación de API key de repuesto
-  if (qaProvider === 'gemini' && (!googleApiKey || googleApiKey.trim() === '')) {
-    qaProvider = 'nvidia';
-    qaModel = 'nvidia/llama-3.3-nemotron-super-49b-v1';
-  }
-  if (qaProvider === 'nous' && (!nous || !nous.access_token || nous.access_token.trim() === '')) {
-    qaProvider = 'gemini';
-    qaModel = 'gemini-2.5-flash';
-  }
-
-  const prompt = `Actúa como un editor senior de control de calidad periodística para el diario serio AIDAILY (estilo NYT/El País).
-Evalúa la coherencia, veracidad y calidad de la siguiente noticia redactada a partir del texto de origen.
-
-NOTICIA REDACTADA:
-Título: ${newsItem.title}
-Resumen: ${newsItem.aiSummary || newsItem.summary}
-Cuerpo: ${newsItem.fullArticle || newsItem.fullText}
-
-Criterios de descarte inmediato:
-- Clickbait exagerado
-- Tono no periodístico o excesivamente comercial/spam
-- Afirmaciones inventadas que no tienen respaldo en el texto
-- Mezcla incoherente de idiomas o texto con errores de traducción graves
-
-Retorna ÚNICAMENTE un objeto JSON con este formato exacto:
-{
-  "status": "approved" o "rejected",
-  "qaReason": "Explicación breve del veredicto en español"
-}`;
-
-  try {
-    let url = '';
-    let headers: Record<string, string> = { 'Content-Type': 'application/json' };
-    let body: any = {};
-
-    if (qaProvider === 'nous') {
-      url = `${nous.base_url}/chat/completions`;
-      headers['Authorization'] = `Bearer ${nous.access_token}`;
-      body = {
-        model: qaModel,
-        messages: [{ role: 'user', content: prompt }],
-        temperature: 0.3,
-        response_format: { type: "json_object" }
-      };
-    } else if (qaProvider === 'gemini') {
-      url = `https://generativelanguage.googleapis.com/v1beta/openai/chat/completions`;
-      headers['Authorization'] = `Bearer ${googleApiKey}`;
-      body = {
-        model: qaModel,
-        messages: [{ role: 'user', content: prompt }],
-        temperature: 0.3,
-        response_format: { type: "json_object" }
-      };
-    } else {
-      url = `https://integrate.api.nvidia.com/v1/chat/completions`;
-      headers['Authorization'] = `Bearer ${process.env.NVIDIA_API_KEY}`;
-      body = {
-        model: qaModel,
-        messages: [{ role: 'user', content: prompt }],
-        temperature: 0.3,
-        response_format: { type: "json_object" }
-      };
-    }
-
-    const res = await fetch(url, {
-      method: 'POST',
-      headers,
-      signal: AbortSignal.timeout(45000),
-      body: JSON.stringify(body)
-    });
-
-    if (res.ok) {
-      const data = await res.json() as any;
-      const content = data.choices?.[0]?.message?.content?.trim() || '';
-      const jsonStr = extractJsonSafe(content);
-      if (jsonStr) {
-        const parsed = JSON.parse(jsonStr);
-        if (parsed.status === 'rejected') {
-          console.warn(`[Doble IA QA] ❌ RECHAZADO por ${qaModel}: ${parsed.qaReason}`);
-          return { approved: false, reason: parsed.qaReason || 'No superó los criterios de calidad' };
-        }
-      }
-    }
-  } catch (err: any) {
-    console.warn(`[Doble IA QA] Advertencia: Error en Fact-Check cruzado de QA:`, err.message || err);
-  }
-
-  console.log(`[Doble IA QA] ✅ APROBADO por el Fact-Check cruzado.`);
-  return { approved: true, reason: '' };
 }
 
 // Scraper HTML de contingencia heurística para fuentes que no son feeds XML válidos
@@ -2986,210 +2799,39 @@ export async function processCandidatesInParallel(
 
 export async function fetchAllNews(): Promise<NewsItem[]> {
   rateLimitedProvidersGlobal.clear();
-  await updateVpsExecutionStatus(1, "Inicialización", "Comprobando entorno, base de datos local y configuración...", 5);
+  await updateVpsExecutionStatus(1, "Inicialización", "Comprobando entorno, caché local y configuración en Firebase...", 5);
+  const cachePath = path.resolve('./src/data/cache-news.json');
+  const cacheDir = path.dirname(cachePath);
   
-  const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
-  const dbDir = path.dirname(dbPath);
-  if (!fs.existsSync(dbDir)) {
-    fs.mkdirSync(dbDir, { recursive: true });
-  }
-  const db = new DatabaseSync(dbPath);
-
-  // Crear tabla única e índices si no existen
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS articles (
-      id TEXT PRIMARY KEY,
-      title TEXT NOT NULL,
-      summary TEXT,
-      url TEXT NOT NULL,
-      source TEXT NOT NULL,
-      sourceUrl TEXT,
-      publishedAt TEXT NOT NULL,
-      imageUrl TEXT,
-      imageAlt TEXT,
-      category TEXT NOT NULL,
-      subcategory TEXT NOT NULL,
-      tags TEXT,
-      tagsSecundarios TEXT,
-      aiSummary TEXT,
-      keyPoints TEXT,
-      whyMatters TEXT,
-      multimedia TEXT,
-      fullText TEXT,
-      hashtags TEXT,
-      fullArticle TEXT,
-      scrapedAt TEXT,
-      detectedAt TEXT,
-      language TEXT DEFAULT 'es',
-      relevanceScore INTEGER,
-      urgencyScore INTEGER,
-      scoreReason TEXT,
-      status TEXT DEFAULT 'pendiente_ia'
-    );
-    CREATE INDEX IF NOT EXISTS idx_articles_status_published ON articles(status, publishedAt DESC);
-  `);
-
-  // Migración automática incremental para nuevas columnas de la arquitectura periodística
-  try {
-    const columnsToAdd = [
-      { name: 'slug', type: 'TEXT' },
-      { name: 'subtitle', type: 'TEXT' },
-      { name: 'contentHtml', type: 'TEXT' },
-      { name: 'originalUrl', type: 'TEXT' },
-      { name: 'author', type: 'TEXT' },
-      { name: 'updatedAt', type: 'TEXT' },
-      { name: 'entities', type: 'TEXT' },
-      { name: 'country', type: 'TEXT' },
-      { name: 'importanceScore', type: 'INTEGER' },
-      { name: 'qualityScore', type: 'INTEGER' },
-      { name: 'editorialScore', type: 'INTEGER' },
-      { name: 'trendScore', type: 'INTEGER DEFAULT 0' },
-      { name: 'viewCount', type: 'INTEGER DEFAULT 0' },
-      { name: 'views1h', type: 'INTEGER DEFAULT 0' },
-      { name: 'views24h', type: 'INTEGER DEFAULT 0' },
-      { name: 'views7d', type: 'INTEGER DEFAULT 0' },
-      { name: 'isBreaking', type: 'INTEGER DEFAULT 0' },
-      { name: 'isHotTopic', type: 'INTEGER DEFAULT 0' },
-      { name: 'isEvergreen', type: 'INTEGER DEFAULT 0' },
-      { name: 'imageCaption', type: 'TEXT' },
-      { name: 'relatedArticles', type: 'TEXT' },
-      { name: 'rejectionReason', type: 'TEXT' }
-    ];
-
-    const tableInfo = db.prepare("PRAGMA table_info(articles)").all() as any[];
-    const existingColumnNames = tableInfo.map(col => col.name.toLowerCase());
-
-    columnsToAdd.forEach(col => {
-      if (!existingColumnNames.includes(col.name.toLowerCase())) {
-        console.log(`[SQLite Migration] Añadiendo columna faltante: ${col.name} (${col.type})`);
-        try {
-          db.exec(`ALTER TABLE articles ADD COLUMN ${col.name} ${col.type}`);
-        } catch (alterErr: any) {
-          console.error(`[SQLite Migration] Error añadiendo ${col.name}:`, alterErr.message || alterErr);
-        }
-      }
-    });
-  } catch (migErr: any) {
-    console.error('[SQLite Migration] Error durante la migración incremental del esquema:', migErr.message || migErr);
+  if (!fs.existsSync(cacheDir)) {
+    fs.mkdirSync(cacheDir, { recursive: true });
   }
 
   let cachedItems: NewsItem[] = [];
-  try {
-    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada' ORDER BY publishedAt DESC");
-    const rows = stmt.all() as any[];
-    cachedItems = rows.map((item: any) => {
-      const norm = normalizeCategoryAndSubcategory(item.category, item.subcategory);
-      return {
-        ...item,
-        category: norm.category,
-        subcategory: norm.subcategory,
-        publishedAt: new Date(item.publishedAt),
-        tags: item.tags ? JSON.parse(item.tags) : [norm.category],
-        tagsSecundarios: item.tagsSecundarios ? JSON.parse(item.tagsSecundarios) : [],
-        keyPoints: item.keyPoints ? JSON.parse(item.keyPoints) : [],
-        multimedia: item.multimedia ? JSON.parse(item.multimedia) : [],
-        hashtags: item.hashtags ? JSON.parse(item.hashtags) : [],
-        links: item.links ? JSON.parse(item.links) : [],
-        interestingData: item.interestingData ? JSON.parse(item.interestingData) : []
-      };
-    });
-    console.log(`[SQLite DB] Cargados ${cachedItems.length} artículos del historial.`);
-  } catch (e: any) {
-    console.error('[SQLite DB] Error leyendo artículos de la base de datos:', e.message || e);
-  }
-
-  // Importar desde caché si la base de datos está vacía para la migración
-  if (cachedItems.length === 0) {
-    const cachePath = path.resolve('./src/data/cache-news.json');
-    if (fs.existsSync(cachePath)) {
-      try {
-        console.log('[SQLite DB] La base de datos está vacía. Importando datos iniciales desde cache-news.json...');
-        const cacheContent = fs.readFileSync(cachePath, 'utf-8');
-        const rawCached = JSON.parse(cacheContent);
-        if (Array.isArray(rawCached)) {
-          const insertStmt = db.prepare(`
-            INSERT INTO articles (
-              id, title, summary, url, source, sourceUrl, publishedAt, imageUrl, imageAlt,
-              category, subcategory, tags, tagsSecundarios, aiSummary, keyPoints, whyMatters,
-              multimedia, fullText, hashtags, fullArticle, scrapedAt, detectedAt, language,
-              relevanceScore, urgencyScore, scoreReason, status
-            ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'publicada'
-            )
-          `);
-          
-          db.exec("BEGIN TRANSACTION");
-          rawCached.forEach((item: any) => {
-            const hashId = item.id || crypto.createHash('sha256').update(sanitizeUrlForHash(item.url)).digest('hex');
-            const norm = normalizeCategoryAndSubcategory(item.category, item.subcategory);
-            try {
-              insertStmt.run(
-                hashId,
-                item.title || '',
-                item.summary || '',
-                sanitizeUrlForHash(item.url),
-                item.source || 'Desconocido',
-                item.sourceUrl || '',
-                item.publishedAt ? new Date(item.publishedAt).toISOString() : new Date().toISOString(),
-                item.imageUrl || '',
-                item.imageAlt || '',
-                norm.category,
-                norm.subcategory,
-                JSON.stringify(item.tags || [norm.category]),
-                JSON.stringify(item.tagsSecundarios || []),
-                item.aiSummary || '',
-                JSON.stringify(item.keyPoints || []),
-                item.whyMatters || '',
-                JSON.stringify(item.multimedia || []),
-                item.fullText || '',
-                JSON.stringify(item.hashtags || []),
-                item.fullArticle || '',
-                item.scrapedAt || new Date().toISOString(),
-                item.detectedAt || new Date().toISOString(),
-                item.language || 'es',
-                item.relevanceScore || 0,
-                item.urgencyScore || 0,
-                item.scoreReason || '',
-              );
-            } catch (err) {
-              // Ignorar duplicados
-            }
-          });
-          db.exec("COMMIT");
-          
-          // Re-leer artículos
-          const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada' ORDER BY publishedAt DESC");
-          const rows = stmt.all() as any[];
-          cachedItems = rows.map((item: any) => {
-            const norm = normalizeCategoryAndSubcategory(item.category, item.subcategory);
-            return {
-              ...item,
-              category: norm.category,
-              subcategory: norm.subcategory,
-              publishedAt: new Date(item.publishedAt),
-              tags: item.tags ? JSON.parse(item.tags) : [norm.category],
-              tagsSecundarios: item.tagsSecundarios ? JSON.parse(item.tagsSecundarios) : [],
-              keyPoints: item.keyPoints ? JSON.parse(item.keyPoints) : [],
-              multimedia: item.multimedia ? JSON.parse(item.multimedia) : [],
-              hashtags: item.hashtags ? JSON.parse(item.hashtags) : [],
-              links: item.links ? JSON.parse(item.links) : [],
-              interestingData: item.interestingData ? JSON.parse(item.interestingData) : []
-            };
-          });
-          console.log(`[SQLite DB] Importación finalizada. Cargados ${cachedItems.length} artículos.`);
-        }
-      } catch (err: any) {
-        console.error('[SQLite DB] Error importando caché inicial:', err.message);
+  if (fs.existsSync(cachePath)) {
+    try {
+      const cacheContent = fs.readFileSync(cachePath, 'utf-8');
+      const rawCached = JSON.parse(cacheContent);
+      cachedItems = rawCached.map((item: any) => {
+        const norm = normalizeCategoryAndSubcategory(item.category, item.subcategory);
+        return {
+          ...item,
+          category: norm.category,
+          subcategory: norm.subcategory,
+          publishedAt: new Date(item.publishedAt)
+        };
+      });
+      console.log(`[Caché] Cargados ${cachedItems.length} artículos del historial.`);
+      const isBuildOnly = process.env.BUILD_ONLY === 'true' || 
+                          process.env.npm_lifecycle_event === 'build' ||
+                          (typeof import.meta !== 'undefined' && import.meta.env && (import.meta.env.BUILD_ONLY === 'true' || import.meta.env.DEV));
+      if (isBuildOnly || process.argv.includes('--build-only')) {
+        console.log('[sources] Modo dev local o BUILD_ONLY detectado. Devolviendo artículos de la caché local para compilar la web de forma inmediata.');
+        return cachedItems;
       }
+    } catch (e) {
+      console.error('[Caché] Error leyendo el archivo de caché:', e);
     }
-  }
-
-  const isBuildOnly = process.env.BUILD_ONLY === 'true' || 
-                      process.env.npm_lifecycle_event === 'build' ||
-                      (typeof import.meta !== 'undefined' && import.meta.env && (import.meta.env.BUILD_ONLY === 'true' || import.meta.env.DEV));
-  if (isBuildOnly || process.argv.includes('--build-only')) {
-    console.log('[sources] Modo dev local o BUILD_ONLY detectado. Devolviendo artículos de SQLite de forma inmediata.');
-    return cachedItems;
   }
 
   const cachedMap = new Map<string, NewsItem>();
@@ -3247,28 +2889,23 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
     console.log(`[Subcategorías Desabastecidas] Se detectaron ${needySubcategories.length} subcategorías con menos de 30 noticias en las últimas 24h. Priorizando sus feeds en la rotación.`);
   }
 
-  // Descargar la cola actual de SQLite para deduplicación preventiva
+  // Descargar la cola actual de Firebase RTDB para deduplicación preventiva
   let currentQueue: Record<string, any> = {};
   try {
-    console.log('[Config] Cargando cola actual de noticias desde SQLite...');
-    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'pendiente_ia'");
-    const rows = stmt.all() as any[];
-    rows.forEach((row: any) => {
-      currentQueue[row.id] = {
-        ...row,
-        tags: row.tags ? JSON.parse(row.tags) : [],
-        tagsSecundarios: row.tagsSecundarios ? JSON.parse(row.tagsSecundarios) : [],
-        keyPoints: row.keyPoints ? JSON.parse(row.keyPoints) : [],
-        multimedia: row.multimedia ? JSON.parse(row.multimedia) : [],
-        hashtags: row.hashtags ? JSON.parse(row.hashtags) : []
-      };
-    });
-    console.log(`[Config] Cargados ${Object.keys(currentQueue).length} artículos en la cola desde SQLite.`);
+    console.log('[Config] Descargando cola actual de noticias (/aidaily/queue.json)...');
+    const queueRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json');
+    if (queueRes.ok) {
+      const data = await queueRes.json();
+      if (data && typeof data === 'object') {
+        currentQueue = data;
+        console.log(`[Config] Descargados ${Object.keys(currentQueue).length} artículos en la cola de Firebase.`);
+      }
+    }
   } catch (e: any) {
-    console.warn('[Config] No se pudo cargar la cola desde SQLite:', e.message || e);
+    console.warn('[Config] No se pudo descargar la cola de Firebase:', e.message || e);
   }
 
-  // Cargar configuración desde config.json local con fallback a Firebase
+  // Cargar configuración desde Firebase con fallback local robusto
   let activeFeeds = FEED_MATRIX;
   let cutoffHours = 24;
   let maxNewProcessings = 100; // Por defecto 100 para procesar de forma escalonada sin saturar los rate limits de OpenRouter
@@ -3280,105 +2917,83 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
   };
 
   try {
-    const configLocalPath = path.resolve('data/config.json');
-    let configData: any = null;
-    
-    console.log('[Config] Intentando sincronizar la configuración dinámica de Firebase...');
-    try {
-      const configRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/config.json');
-      if (configRes.ok) {
-        configData = await configRes.json();
-        if (configData) {
-          const dir = path.dirname(configLocalPath);
-          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-          fs.writeFileSync(configLocalPath, JSON.stringify(configData, null, 2), 'utf-8');
-          console.log('[Config] Configuración sincronizada y guardada localmente en data/config.json.');
+    console.log('[Config] Intentando descargar la configuración dinámica de Firebase...');
+    const configRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/config.json');
+    if (configRes.ok) {
+      const configData = await configRes.json();
+      if (configData) {
+        if (configData.feeds && typeof configData.feeds === 'object' && Object.keys(configData.feeds).length > 0) {
+          activeFeeds = configData.feeds;
+          console.log('[Config] Fuentes RSS cargadas dinámicamente desde Firebase.');
+        } else {
+          console.log('[Config] Nodo de feeds vacío o inválido. Usando feeds locales.');
         }
-      }
-    } catch (e: any) {
-      console.warn('[Config] No se pudo descargar la configuración de Firebase (usando fallback local):', e.message || e);
-    }
 
-    if (!configData && fs.existsSync(configLocalPath)) {
-      console.log('[Config] Cargando configuración previa desde data/config.json local...');
-      configData = JSON.parse(fs.readFileSync(configLocalPath, 'utf-8'));
-    }
-
-    if (configData) {
-      if (configData.feeds && typeof configData.feeds === 'object' && Object.keys(configData.feeds).length > 0) {
-        activeFeeds = configData.feeds;
-        console.log('[Config] Fuentes RSS cargadas dinámicamente.');
-      } else {
-        console.log('[Config] Nodo de feeds vacío o inválido. Usando feeds locales.');
-      }
-
-      if (configData.orientation && typeof configData.orientation === 'object') {
-        const o = configData.orientation;
-        if (o.cutoffHours) cutoffHours = parseInt(o.cutoffHours) || cutoffHours;
-        if (o.maxNewProcessings !== undefined && o.maxNewProcessings !== "") maxNewProcessings = parseInt(o.maxNewProcessings);
-        if (o.tone) activeOrientation.tone = String(o.tone);
-        if (o.model) activeOrientation.model = String(o.model);
-        if (o.customTone) activeOrientation.customTone = String(o.customTone);
-        if (o.preferences) activeOrientation.preferences = String(o.preferences);
-        if (o.promptAdditions) activeOrientation.promptAdditions = String(o.promptAdditions);
-        if (o.relevanceThreshold) activeOrientation.relevanceThreshold = String(o.relevanceThreshold);
-        if (o.relevanceModel) activeOrientation.relevanceModel = String(o.relevanceModel);
-        if (o.batchSize) activeOrientation.batchSize = String(o.batchSize);
-        if (o.enableRelevanceFilter !== undefined) {
-          activeOrientation.enableRelevanceFilter = o.enableRelevanceFilter === true || o.enableRelevanceFilter === 'true';
+        if (configData.orientation && typeof configData.orientation === 'object') {
+          const o = configData.orientation;
+          if (o.cutoffHours) cutoffHours = parseInt(o.cutoffHours) || cutoffHours;
+          if (o.maxNewProcessings !== undefined && o.maxNewProcessings !== "") maxNewProcessings = parseInt(o.maxNewProcessings);
+          if (o.tone) activeOrientation.tone = String(o.tone);
+          if (o.model) activeOrientation.model = String(o.model);
+          if (o.customTone) activeOrientation.customTone = String(o.customTone);
+          if (o.preferences) activeOrientation.preferences = String(o.preferences);
+          if (o.promptAdditions) activeOrientation.promptAdditions = String(o.promptAdditions);
+          if (o.relevanceThreshold) activeOrientation.relevanceThreshold = String(o.relevanceThreshold);
+          if (o.relevanceModel) activeOrientation.relevanceModel = String(o.relevanceModel);
+          if (o.batchSize) activeOrientation.batchSize = String(o.batchSize);
+          if (o.enableRelevanceFilter !== undefined) {
+            activeOrientation.enableRelevanceFilter = o.enableRelevanceFilter === true || o.enableRelevanceFilter === 'true';
+          }
+          if (o.interests && typeof o.interests === 'object') {
+            activeOrientation.interests = {
+              countries: o.interests.countries ? String(o.interests.countries) : '',
+              topics: o.interests.topics ? String(o.interests.topics) : '',
+              entities: o.interests.entities ? String(o.interests.entities) : '',
+              blockedKeywords: o.interests.blockedKeywords ? String(o.interests.blockedKeywords) : ''
+            };
+          }
+          console.log('[Config] Parámetros de orientación IA e intereses semánticos cargados desde Firebase.');
         }
-        if (o.interests && typeof o.interests === 'object') {
-          activeOrientation.interests = {
-            countries: o.interests.countries ? String(o.interests.countries) : '',
-            topics: o.interests.topics ? String(o.interests.topics) : '',
-            entities: o.interests.entities ? String(o.interests.entities) : '',
-            blockedKeywords: o.interests.blockedKeywords ? String(o.interests.blockedKeywords) : ''
+
+        if (configData.workflow && typeof configData.workflow === 'object') {
+          workflowConfig = {
+            ...workflowConfig,
+            ...configData.workflow
           };
         }
-        console.log('[Config] Parámetros de orientación IA e intereses semánticos cargados.');
-      }
+        if (configData.category_map && typeof configData.category_map === 'object' && Object.keys(configData.category_map).length > 0) {
+          ACTIVE_CATEGORY_MAP = configData.category_map;
+          console.log('[Config] Mapa de clasificación de categorías cargado dinámicamente desde Firebase.');
+        }
 
-      if (configData.workflow && typeof configData.workflow === 'object') {
-        workflowConfig = {
-          ...workflowConfig,
-          ...configData.workflow
-        };
+        // Unificar fuentes de verdad de Workflow con las variables de ejecución
+        if (workflowConfig.pre_filter && workflowConfig.pre_filter.cutoff_hours !== undefined) {
+          cutoffHours = parseInt(workflowConfig.pre_filter.cutoff_hours as any) || cutoffHours;
+        }
       }
-      if (configData.category_map && typeof configData.category_map === 'object' && Object.keys(configData.category_map).length > 0) {
-        ACTIVE_CATEGORY_MAP = configData.category_map;
-        console.log('[Config] Mapa de clasificación de categorías cargado dinámicamente.');
-      }
-
-      if (workflowConfig.pre_filter && workflowConfig.pre_filter.cutoff_hours !== undefined) {
-        cutoffHours = parseInt(workflowConfig.pre_filter.cutoff_hours as any) || cutoffHours;
-      }
+    } else {
+      console.warn(`[Config] HTTP status ${configRes.status}. Usando configuración local predeterminada.`);
     }
   } catch (e: any) {
-    console.warn('[Config] Falló la carga de configuración. Usando fallback local:', e.message || e);
+    console.warn('[Config] Falló la carga de configuración de Firebase. Usando fallback local:', e.message || e);
   }
 
   await updateVpsExecutionStatus(1, "Inicialización", "Configuración e historial de artículos cargados con éxito.", 100);
 
   if (workflowConfig.fetch_rss && workflowConfig.fetch_rss.enabled === false) {
-    console.log('[Workflow] fetch_rss deshabilitado en el panel. Retornando artículos inmediatamente.');
+    console.log('[Workflow] fetch_rss deshabilitado en el panel. Retornando caché local inmediatamente.');
     return cachedItems;
   }
 
-  // Descargar estados históricos de feeds de data/sources_status.json
+  // Descargar estados históricos de feeds de Firebase para la rotación
   let feedsStatus: Record<string, any> = {};
   try {
-    const statusLocalPath = path.resolve('data/sources_status.json');
-    if (fs.existsSync(statusLocalPath)) {
-      console.log('[Config] Cargando estados históricos de feeds desde data/sources_status.json local...');
-      feedsStatus = JSON.parse(fs.readFileSync(statusLocalPath, 'utf-8'));
-    } else {
-      console.log('[Config] Descargando estados históricos de feeds de Firebase...');
-      const statusRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/sources_status.json');
-      if (statusRes.ok) {
-        feedsStatus = await statusRes.json() || {};
-        const dir = path.dirname(statusLocalPath);
-        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-        fs.writeFileSync(statusLocalPath, JSON.stringify(feedsStatus, null, 2), 'utf-8');
+    console.log('[Config] Descargando estados históricos de feeds de Firebase...');
+    const statusRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/sources_status.json');
+    if (statusRes.ok) {
+      const data = await statusRes.json();
+      if (data && typeof data === 'object') {
+        feedsStatus = data;
       }
     }
   } catch (e: any) {
@@ -3595,29 +3210,23 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
   await updateVpsExecutionStatus(2, "Rastreo de Feeds RSS", `Rastreo finalizado con éxito. Procesados ${allRssItems.length} artículos iniciales de los feeds.`, 100);
   console.log(`[RSS] Rastreo concurrente finalizado. Procesados ${allRssItems.length} artículos iniciales.`);
 
-  // Guardar estados consolidados localmente en data/sources_status.json para asegurar la rotación
+  // Subir estados consolidados a Firebase RTDB de inmediato para asegurar la rotación
   try {
-    const statusLocalPath = path.resolve('data/sources_status.json');
-    let currentStatus = {};
-    if (fs.existsSync(statusLocalPath)) {
-      try {
-        currentStatus = JSON.parse(fs.readFileSync(statusLocalPath, 'utf-8')) || {};
-      } catch (_) {}
-    }
-    const updatedStatus = { ...currentStatus, ...runStatusUpdates };
-    const dir = path.dirname(statusLocalPath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(statusLocalPath, JSON.stringify(updatedStatus, null, 2), 'utf-8');
-    console.log(`[Config] Estados de rotación de feeds actualizados localmente en data/sources_status.json.`);
-    
-    // Opcional: También reportar a Firebase en segundo plano para el panel
-    firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/sources_status.json', {
+    console.log(`[Config] Guardando de inmediato ${Object.keys(runStatusUpdates).length} estados de feeds en Firebase para asegurar la rotación...`);
+    const statusUploadRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/sources_status.json', {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(runStatusUpdates)
-    }).catch(() => {});
+    });
+    if (statusUploadRes.ok) {
+      console.log('[Config] Estados de rotación de feeds actualizados con éxito en Firebase.');
+    } else {
+      console.error(`[Config] Falló la subida inicial de estados de feeds a Firebase. Status: ${statusUploadRes.status}`);
+    }
   } catch (e: any) {
-    console.error('[Config] Falló la escritura local de estados de feeds:', e.message || e);
+    console.error('[Config] Falló la subida inicial de estados de feeds a Firebase:', e.message || e);
   }
 
   const cutoffTime = Date.now() - cutoffHours * 60 * 60 * 1000;
@@ -3732,18 +3341,9 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
   await updateVpsExecutionStatus(3, "Deduplicación y Pre-filtrado", `Filtrado completado: ${approvedCandidates.length} artículos aprobados de forma heurística para encolado.`, 100);
   console.log(`[Orquestador Agentes] Filtrado completado: ${approvedCandidates.length} artículos aprobados de forma heurística.`);
 
-  // FASE A: Encolar artículos nuevos aprobados en SQLite (0 tokens de IA consumidos)
+  // FASE A: Encolar artículos nuevos aprobados en Firebase (0 tokens de IA consumidos)
   let queuedCount = 0;
   await updateVpsExecutionStatus(4, "Encolado de Artículos", `Analizando candidatos e identificando nuevas noticias para encolar...`, 10);
-  
-  const insertStmt = db.prepare(`
-    INSERT INTO articles (
-      id, slug, title, url, originalUrl, summary, publishedAt, source, sourceUrl, category, subcategory, priority, status, scrapedAt, detectedAt, author
-    ) VALUES (
-      ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pendiente_ia', ?, ?, ?
-    )
-  `);
-
   for (const item of approvedCandidates) {
     if (!item.url || item.url === 'undefined' || !item.title || item.title === 'undefined') {
       console.log(`[Cola] Ignorando artículo corrupto detectado en encolado (título o URL inválidos): "${item.title}" | "${item.url}"`);
@@ -3752,80 +3352,81 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
     const cleanUrl = sanitizeUrlForHash(item.url);
     const hashId = crypto.createHash('sha256').update(cleanUrl).digest('hex');
     
-    // Si ya existe en SQLite (independientemente del estado), no lo encolamos
-    const checkStmt = db.prepare("SELECT status FROM articles WHERE id = ?");
-    const check = checkStmt.get(hashId) as any;
-    if (check) {
+    // Si ya existe en la caché o en la cola, no lo encolamos
+    if (cachedMap.has(cleanUrl) || (currentQueue && currentQueue[hashId])) {
       continue;
     }
 
-    const publishedAtStr = item.publishedAt instanceof Date ? item.publishedAt.toISOString() : new Date(item.publishedAt).toISOString();
-    const scrapedAt = new Date().toISOString();
-    const detectedAt = scrapedAt;
-    const slugVal = getSlug(item.title);
-    const authorVal = item.author || 'Redacción AIDAILY';
+    const queueItem = {
+      id: hashId,
+      title: item.title,
+      url: cleanUrl,
+      summary: item.summary || '',
+      publishedAt: item.publishedAt instanceof Date ? item.publishedAt.toISOString() : new Date(item.publishedAt).toISOString(),
+      source: item.source,
+      sourceUrl: item.sourceUrl,
+      feedCategory: item.feedCategory,
+      feedSubcategory: item.feedSubcategory || 'general',
+      priority: item.priority || 2.0,
+      attempts: 0,
+      queuedAt: new Date().toISOString()
+    };
 
     try {
-      console.log(`[Cola] Encolando en SQLite: "${item.title}" (${item.feedCategory})`);
-      insertStmt.run(
-        hashId,
-        slugVal,
-        item.title,
-        cleanUrl,
-        cleanUrl,
-        item.summary || '',
-        publishedAtStr,
-        item.source,
-        item.sourceUrl || '',
-        item.feedCategory,
-        item.feedSubcategory || 'general',
-        item.priority || 2.0,
-        scrapedAt,
-        detectedAt,
-        authorVal
-      );
-      queuedCount++;
-      
-      if (!currentQueue) currentQueue = {};
-      currentQueue[hashId] = { id: hashId, url: cleanUrl, title: item.title, status: 'pendiente_ia' };
+      console.log(`[Cola] Encolando nuevo candidato relevante: "${queueItem.title}" (${queueItem.feedCategory})`);
+      const qRes = await firebaseFetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/queue/${hashId}.json`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(queueItem)
+      });
+      if (qRes.ok) {
+        queuedCount++;
+        if (!currentQueue) currentQueue = {};
+        currentQueue[hashId] = queueItem;
+      } else {
+        console.warn(`[Cola] Error al encolar en Firebase. Status: ${qRes.status}`);
+      }
     } catch (e: any) {
-      console.error(`[Cola] Error encolando en SQLite "${item.title}":`, e.message || e);
+      console.error(`[Cola] Error de red encolando "${queueItem.title}":`, e.message || e);
     }
   }
-  await updateVpsExecutionStatus(4, "Encolado de Artículos", `Encolado completado con éxito: ${queuedCount} nuevos artículos subidos a la cola local.`, 100);
+  await updateVpsExecutionStatus(4, "Encolado de Artículos", `Encolado completado con éxito: ${queuedCount} nuevos artículos subidos a la cola en Firebase.`, 100);
   console.log(`[Cola] Fase de encolado completada: ${queuedCount} nuevos artículos encolados.`);
 
-  // FASE B: Procesar la cola secuencialmente desde SQLite
-  await updateVpsExecutionStatus(5, "Procesamiento con IA", `Cargando cola de artículos desde SQLite para análisis de IA...`, 2);
+  // FASE B: Procesar la cola secuencialmente (IA con lote acotado)
+  await updateVpsExecutionStatus(5, "Procesamiento con IA", `Descargando cola de artículos de Firebase para análisis de IA...`, 2);
   let queueToProcessList: any[] = [];
   try {
-    // Limpiar automáticamente artículos obsoletos de la cola (> 24h de antigüedad) marcándolos como 'descartada'
-    const limitTimeISO = new Date(Date.now() - cutoffHours * 60 * 60 * 1000).toISOString();
-    const purgeStmt = db.prepare("UPDATE articles SET status = 'descartada' WHERE status = 'pendiente_ia' AND publishedAt < ?");
-    const purgeResult = purgeStmt.run(limitTimeISO) as any;
-    if (purgeResult.changes > 0) {
-      console.log(`[Cola Limpieza] Purgados automáticamente ${purgeResult.changes} artículos obsoletos de la cola en SQLite (> ${cutoffHours}h de antigüedad).`);
+    console.log('[Cola] Descargando cola actualizada para procesamiento...');
+    const queueRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/queue.json');
+    if (queueRes.ok) {
+      const data = await queueRes.json();
+      if (data && typeof data === 'object') {
+        const rawQueue = Object.values(data);
+        const limitTime = Date.now() - cutoffHours * 60 * 60 * 1000;
+        
+        const activeQueue = [];
+        let purgedCount = 0;
+        for (const item of rawQueue as any[]) {
+          const queuedTime = item.queuedAt ? new Date(item.queuedAt).getTime() : (item.publishedAt ? new Date(item.publishedAt).getTime() : 0);
+          if (queuedTime > 0 && queuedTime < limitTime) {
+            purgedCount++;
+            // Delete from Firebase in the background
+            fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/queue/${item.id}.json`, { method: 'DELETE' }).catch(() => {});
+          } else {
+            activeQueue.push(item);
+          }
+        }
+        if (purgedCount > 0) {
+          console.log(`[Cola Limpieza] Purgados automáticamente ${purgedCount} artículos obsoletos de la cola (> ${cutoffHours}h de antigüedad).`);
+        }
+        queueToProcessList = activeQueue;
+      }
     }
-
-    // Seleccionar artículos con status = 'pendiente_ia'
-    console.log('[Cola] Leyendo de SQLite los artículos con estado pendiente_ia...');
-    const stmt = db.prepare("SELECT * FROM articles WHERE status = 'pendiente_ia'");
-    const rows = stmt.all() as any[];
-    queueToProcessList = rows.map((row: any) => ({
-      ...row,
-      feedCategory: row.category,
-      feedSubcategory: row.subcategory,
-      tags: row.tags ? JSON.parse(row.tags) : [],
-      tagsSecundarios: row.tagsSecundarios ? JSON.parse(row.tagsSecundarios) : [],
-      keyPoints: row.keyPoints ? JSON.parse(row.keyPoints) : [],
-      multimedia: row.multimedia ? JSON.parse(row.multimedia) : [],
-      hashtags: row.hashtags ? JSON.parse(row.hashtags) : [],
-      links: row.links ? JSON.parse(row.links) : [],
-      interestingData: row.interestingData ? JSON.parse(row.interestingData) : []
-    }));
-    console.log(`[Cola] Cargados ${queueToProcessList.length} artículos en la cola de SQLite.`);
   } catch (e: any) {
-    console.error('[Cola] Error cargando cola desde SQLite para procesamiento:', e.message || e);
+    console.error('[Cola] Error descargando cola para procesamiento:', e.message || e);
   }
 
   // Ordenar la cola priorizando subcategorías desabastecidas primero, luego categorías desabastecidas, luego por prioridad y finalmente por fecha descendente
@@ -3858,7 +3459,7 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
   });
 
   // FASE B-0: Selección de lote con IA aplicando Round-Robin por Categoría y Capping de Fuente/Categoría para variedad
-  let maxExecutionBatch = 99999; // Sin límites artificiales por lote, procesa la totalidad de la actualidad en cada ciclo
+  let maxExecutionBatch = 12; // Acotado a 12 por ciclo para evitar rate-limits, solapamiento y colapsos
   if (process.env.TEST_LIMIT_NEWS) {
     const limit = parseInt(process.env.TEST_LIMIT_NEWS) || 10;
     maxExecutionBatch = limit;
@@ -4246,7 +3847,7 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
               }
             ),
             new Promise<any>((_, reject) => 
-              setTimeout(() => reject(new Error("Timeout absoluto de procesamiento de IA (90s) alcanzado")), 90000)
+              setTimeout(() => reject(new Error("Timeout absoluto de procesamiento de IA (200s) alcanzado")), 200000)
             )
           ]);
         }
@@ -4298,76 +3899,28 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
 
         const newsItem: NewsItem = {
           id: hashId,
-          slug: getSlug(aiResult.title || queueItem.title),
           title: aiResult.title,
-          subtitle: aiResult.subtitle || '',
           summary: aiResult.aiSummary,
           url: queueItem.url,
-          originalUrl: queueItem.url,
           source: queueItem.source,
           sourceUrl: queueItem.sourceUrl,
           publishedAt: new Date(queueItem.publishedAt),
-          updatedAt: new Date(),
-          author: aiResult.author || 'Redacción AIDAILY',
           imageUrl: finalImageUrl,
           imageAlt: aiResult.title,
-          imageCaption: aiResult.imageCaption || '',
-          category: aiResult.category,
-          subcategory: aiResult.subcategory,
           tags: [aiResult.category, ...aiResult.tags],
-          tagsSecundarios: aiResult.tags || [],
           aiSummary: aiResult.aiSummary,
           keyPoints: aiResult.keyPoints,
           whyMatters: aiResult.whyMatters,
           multimedia: finalMultimedia,
           fullText: scrapedText,
-          fullArticle: aiResult.fullArticle,
-          contentHtml: `<p>${(aiResult.fullArticle || '').replace(/\n\n/g, '</p><p>')}</p>`,
+          subcategory: aiResult.subcategory,
           hashtags: cleanHashtagsList(aiResult.hashtags),
+          fullArticle: aiResult.fullArticle,
+          category: aiResult.category,
           scrapedAt: new Date().toISOString(),
           links: aiResult.links || [],
-          interestingData: aiResult.interestingData || [],
-          entities: aiResult.entities || [],
-          country: aiResult.country || '',
-          importanceScore: aiResult.importanceScore !== undefined ? Number(aiResult.importanceScore) : 75,
-          qualityScore: aiResult.qualityScore !== undefined ? Number(aiResult.qualityScore) : 80,
-          editorialScore: 0,
-          trendScore: 0,
-          viewCount: 0,
-          views1h: 0,
-          views24h: 0,
-          views7d: 0,
-          isBreaking: (aiResult.isBreaking === true || aiResult.isBreaking === 'true') ? 1 : 0,
-          isHotTopic: 0,
-          isEvergreen: (aiResult.isEvergreen === true || aiResult.isEvergreen === 'true') ? 1 : 0,
-          relatedArticles: [],
-          rejectionReason: aiResult.rejectionReason || ''
+          interestingData: aiResult.interestingData || []
         };
-
-        // FASE C: Validación de Doble IA periodística para noticias breaking o de alta importancia
-        let isApprovedByQA = true;
-        let qaRejectionReason = '';
-        const needsDoubleQA = newsItem.isBreaking || (newsItem.importanceScore && newsItem.importanceScore >= 80);
-        
-        if (needsDoubleQA && !aiResult.isFallback) {
-          const threadSlotInfo = runningThreads[mySlot];
-          const writerProvider = threadSlotInfo ? threadSlotInfo.provider : 'desconocido';
-          
-          if (runningThreads[mySlot]) {
-            runningThreads[mySlot].agent = "Agente Fact-Check/QA";
-          }
-          
-          const qaResult = await runDoubleIAFactCheck(newsItem, writerProvider);
-          if (!qaResult.approved) {
-            isApprovedByQA = false;
-            qaRejectionReason = qaResult.reason;
-          }
-        }
-
-        if (!isApprovedByQA) {
-          newsItem.status = 'rejected';
-          newsItem.rejectionReason = `[Doble IA QA] Rechazado por control de calidad: ${qaRejectionReason}`;
-        }
 
         console.log(`[VPS Local] Guardando artículo nuevo en caché local e incremental: "${newsItem.title}"`);
         
@@ -4394,160 +3947,31 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
           console.error('[Caché Incremental] Error al guardar caché local incremental:', diskErr.message || diskErr);
         }
 
-        // 2. Guardar noticia procesada en la base de datos local SQLite (cambiando status a 'publicada' o el filtro correspondiente)
+        // 2. Subir directamente a Firebase RTDB de forma ultraligera para ahorrar base de datos (VPS actúa como base de datos principal)
         try {
-          console.log(`[Cola - SQLite Save] Guardando noticia procesada en la base de datos local SQLite: "${newsItem.title}"`);
-          
-          let finalStatus = 'publicada';
-          const titleLower = (newsItem.title || '').toLowerCase();
-          const summaryLower = (newsItem.summary || '').toLowerCase();
-          const categoryLower = (newsItem.category || '').toLowerCase();
-
-          // REGLA 1: Registrar como 'rejected' si el status devuelto por el QA editorial de la IA es 'rejected'
-          if (aiResult.status === 'rejected') {
-            console.log(`[Filtro Publicación] Registrando noticia rechazada por criterio editorial IA como status 'rejected': "${newsItem.title}". Razón: ${aiResult.rejectionReason || 'No especificada'}`);
-            finalStatus = 'rejected';
+          console.log(`[Cola - Live Upload] Subiendo noticia procesada (versión ligera) a Firebase RTDB: "${newsItem.title}"`);
+          const { fullText, fullArticle, whyMatters, keyPoints, interestingData, links, contentHtml, ...lightweightItem } = newsItem;
+          const liveUploadRes = await firebaseFetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/articles/${hashId}.json`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lightweightItem)
+          });
+          if (liveUploadRes.ok) {
+            console.log(`[Cola - Live Upload] Noticia subida con éxito.`);
+          } else {
+            console.error(`[Cola - Live Upload] Falló subida. Status: ${liveUploadRes.status}`);
           }
-
-          // REGLA 2: Si la fecha está en el futuro, descartar.
-          const pubTime = new Date(newsItem.publishedAt).getTime();
-          if (pubTime > Date.now() + 5 * 60 * 1000) { // Tolerancia de 5 min
-            console.log(`[Filtro Publicación] Descartando noticia con fecha futura: "${newsItem.title}" (${newsItem.publishedAt})`);
-            finalStatus = 'descartada';
-          }
-
-          // REGLA 3: Si noticia parece inventada o sin fuente fiable (título o resumen demasiado cortos, o vacíos, o con errores obvios), descartar.
-          if (titleLower.length < 10 || summaryLower.length < 20 || titleLower.includes('failed') || titleLower.includes('error') || titleLower.includes('unsupported')) {
-            console.log(`[Filtro Publicación] Descartando noticia sospechosa o corrupta: "${newsItem.title}"`);
-            finalStatus = 'descartada';
-          }
-
-          // REGLA 4: Si el título contiene afirmaciones geopolíticas graves, marcar como revisión manual (no publicar automático).
-          const geopoliticalKeywords = ['guerra', 'atentado', 'bomba', 'invasion', 'misil', 'nuclear', 'armas de destruccion', 'golpe de estado', 'asesinato', 'muertos en combate', 'crisis militar'];
-          const hasGeopoliticalSensibility = geopoliticalKeywords.some(kw => titleLower.normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(kw));
-          if (hasGeopoliticalSensibility && finalStatus === 'publicada') {
-            console.log(`[Filtro Publicación] Noticia geopolítica sensible detectada. Marcada para revisión manual: "${newsItem.title}"`);
-            finalStatus = 'revision_manual';
-          }
-
-          const tagsStr = JSON.stringify(newsItem.tags || []);
-          const tagsSecundariosStr = JSON.stringify(newsItem.tagsSecundarios || []);
-          const keyPointsStr = JSON.stringify(newsItem.keyPoints || []);
-          const multimediaStr = JSON.stringify(newsItem.multimedia || []);
-          const hashtagsStr = JSON.stringify(newsItem.hashtags || []);
-          const linksStr = JSON.stringify(newsItem.links || []);
-          const interestingDataStr = JSON.stringify(newsItem.interestingData || []);
-          const entitiesStr = JSON.stringify(newsItem.entities || []);
-          const relatedArticlesStr = JSON.stringify(newsItem.relatedArticles || []);
-
-          const updateStmt = db.prepare(`
-            UPDATE articles SET
-              slug = ?,
-              title = ?,
-              subtitle = ?,
-              summary = ?,
-              url = ?,
-              originalUrl = ?,
-              source = ?,
-              sourceUrl = ?,
-              publishedAt = ?,
-              updatedAt = ?,
-              author = ?,
-              imageUrl = ?,
-              imageAlt = ?,
-              imageCaption = ?,
-              category = ?,
-              subcategory = ?,
-              tags = ?,
-              tagsSecundarios = ?,
-              aiSummary = ?,
-              keyPoints = ?,
-              whyMatters = ?,
-              multimedia = ?,
-              fullText = ?,
-              fullArticle = ?,
-              contentHtml = ?,
-              hashtags = ?,
-              scrapedAt = ?,
-              links = ?,
-              interestingData = ?,
-              entities = ?,
-              country = ?,
-              importanceScore = ?,
-              qualityScore = ?,
-              editorialScore = ?,
-              trendScore = ?,
-              isBreaking = ?,
-              isHotTopic = ?,
-              isEvergreen = ?,
-              relatedArticles = ?,
-              relevanceScore = ?,
-              urgencyScore = ?,
-              scoreReason = ?,
-              rejectionReason = ?,
-              status = ?
-            WHERE id = ?
-          `);
-
-          updateStmt.run(
-            newsItem.slug,
-            newsItem.title,
-            newsItem.subtitle || '',
-            newsItem.summary,
-            newsItem.url,
-            newsItem.originalUrl,
-            newsItem.source,
-            newsItem.sourceUrl || '',
-            newsItem.publishedAt instanceof Date ? newsItem.publishedAt.toISOString() : new Date(newsItem.publishedAt).toISOString(),
-            newsItem.updatedAt instanceof Date ? newsItem.updatedAt.toISOString() : new Date().toISOString(),
-            newsItem.author || 'Redacción AIDAILY',
-            newsItem.imageUrl || '',
-            newsItem.imageAlt || '',
-            newsItem.imageCaption || '',
-            newsItem.category,
-            newsItem.subcategory,
-            tagsStr,
-            tagsSecundariosStr,
-            newsItem.aiSummary,
-            keyPointsStr,
-            newsItem.whyMatters || '',
-            multimediaStr,
-            newsItem.fullText || '',
-            newsItem.fullArticle || '',
-            newsItem.contentHtml || '',
-            hashtagsStr,
-            newsItem.scrapedAt,
-            linksStr,
-            interestingDataStr,
-            entitiesStr,
-            newsItem.country || '',
-            newsItem.importanceScore || 75,
-            newsItem.qualityScore || 80,
-            newsItem.editorialScore || 0,
-            newsItem.trendScore || 0,
-            newsItem.isBreaking || 0,
-            newsItem.isHotTopic || 0,
-            newsItem.isEvergreen || 0,
-            relatedArticlesStr,
-            newsItem.importanceScore || 75, // relevancia
-            newsItem.qualityScore || 80, // urgencia
-            aiResult.scoreReason || '',
-            newsItem.rejectionReason || '',
-            finalStatus,
-            hashId
-          );
-          
-          console.log(`[Cola - SQLite Save] Guardado exitoso con estado: ${finalStatus}`);
-
-          if (finalStatus === 'publicada') {
-            finalItems.push(newsItem);
-            cachedItems.push(newsItem);
-            cachedMap.set(newsItem.url, newsItem);
-            newArticlesProcessed++;
-          }
-        } catch (sqliteSaveErr: any) {
-          console.error('[Cola - SQLite Save] Error guardando noticia procesada en SQLite:', sqliteSaveErr.message || sqliteSaveErr);
+        } catch (uploadErr: any) {
+          console.error('[Cola - Live Upload] Error subiendo noticia en directo:', uploadErr.message || uploadErr);
         }
+
+        console.log(`[Cola] Eliminando de la cola en Firebase...`);
+        await firebaseFetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/queue/${hashId}.json`, { method: 'DELETE' });
+
+        finalItems.push(newsItem);
+        cachedItems.push(newsItem);
+        cachedMap.set(newsItem.url, newsItem);
+        newArticlesProcessed++;
       } catch (articleErr: any) {
         console.error(`[IA] Error procesando artículo en la cola "${queueItem.title}":`, articleErr.message || articleErr);
       } finally {
@@ -4590,29 +4014,23 @@ export async function fetchAllNews(): Promise<NewsItem[]> {
     runStatusUpdates[hashId].articlesScrapedCount = countsBySource[hashId] || 0;
   });
 
-  // Guardar estados consolidados localmente en data/sources_status.json
+  // Subir estados consolidados a Firebase RTDB
   try {
-    const statusLocalPath = path.resolve('data/sources_status.json');
-    let currentStatus = {};
-    if (fs.existsSync(statusLocalPath)) {
-      try {
-        currentStatus = JSON.parse(fs.readFileSync(statusLocalPath, 'utf-8')) || {};
-      } catch (_) {}
-    }
-    const updatedStatus = { ...currentStatus, ...runStatusUpdates };
-    const dir = path.dirname(statusLocalPath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(statusLocalPath, JSON.stringify(updatedStatus, null, 2), 'utf-8');
-    console.log('[Config] Estados de feeds finales actualizados en data/sources_status.json.');
-    
-    // Opcional: También reportar a Firebase en segundo plano
-    firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/sources_status.json', {
+    console.log(`[Config] Subiendo ${Object.keys(runStatusUpdates).length} estados de feeds actualizados a Firebase...`);
+    const statusUploadRes = await firebaseFetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/sources_status.json', {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(runStatusUpdates)
-    }).catch(() => {});
+    });
+    if (statusUploadRes.ok) {
+      console.log('[Config] Estados de feeds actualizados con éxito en Firebase.');
+    } else {
+      console.error(`[Config] Falló la subida de estados de feeds a Firebase. Status: ${statusUploadRes.status}`);
+    }
   } catch (e: any) {
-    console.error('[Config] Falló el guardado local final de estados de feeds:', e.message || e);
+    console.error('[Config] Falló la subida de estados de feeds a Firebase:', e.message || e);
   }
 
   // La cola no se vacía completamente aquí para permitir el procesamiento continuo incremental en lotes sucesivos.
@@ -4640,39 +4058,6 @@ export function groupByDate(items: NewsItem[]): Map<string, NewsItem[]> {
 }
 
 export function getDatesToBuild(): string[] {
-  const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
-  
-  if (fs.existsSync(dbPath)) {
-    try {
-      const db = new DatabaseSync(dbPath);
-      const stmt = db.prepare("SELECT publishedAt FROM articles WHERE status = 'publicada'");
-      const rows = stmt.all() as any[];
-      const uniqueDates = new Set<string>();
-      rows.forEach((row: any) => {
-        if (row.publishedAt) {
-          try {
-            const dateStr = new Date(row.publishedAt).toISOString().split('T')[0];
-            uniqueDates.add(dateStr);
-          } catch (err) {
-            // Ignore
-          }
-        }
-      });
-      
-      // También asegurar los últimos 7 días por si acaso
-      const today = new Date();
-      for (let i = 0; i < 7; i++) {
-        const d = new Date(today);
-        d.setDate(d.getDate() - i);
-        uniqueDates.add(d.toISOString().split('T')[0]);
-      }
-      
-      return Array.from(uniqueDates).sort().reverse().slice(0, 15);
-    } catch (e) {
-      console.error('[sources] Error al leer fechas de SQLite para compilación:', e);
-    }
-  }
-
   const cachePath = path.resolve('./src/data/cache-news.json');
   if (fs.existsSync(cachePath)) {
     try {

@@ -9,17 +9,12 @@ const { title, description } = Astro.props;
 const siteBase = Astro.site?.toString() || 'https://aidaily.pro';
 const canonical = new URL(Astro.url.pathname, siteBase).toString();
 
-const buildTime = new Date().toISOString();
-const commitHash = process.env.COMMIT_HASH || 'production_stable';
-
 import '../styles/premium.css';
 ---
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="build-time" content={buildTime} />
-  <meta name="commit-hash" content={commitHash} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="generator" content="IA Daily" />
   <title>{title} | AIDAILY</title>

@@ -1,6 +1,7 @@
 ---
 import { readFileSync, existsSync } from 'fs';
 import path from 'path';
+import { normalizeSlug } from '../../lib/slug.js';
 
 export async function getStaticPaths() {
   const cachePath = path.resolve('src/data/cache-news.json');
@@ -10,8 +11,14 @@ export async function getStaticPaths() {
     const cacheContent = readFileSync(cachePath, 'utf-8');
     const allArts = JSON.parse(cacheContent);
     if (Array.isArray(allArts)) {
-      // Generar rutas estáticas de redirección 301 para TODOS los IDs históricos publicados
-      return allArts.map(art => ({
+      let sorted = [...allArts].sort((a, b) => new Date(b.publishedAt || b.published || 0).getTime() - new Date(a.publishedAt || a.published || 0).getTime());
+      
+      // Optimización local: solo 250 artículos para compilar rápido
+      if (process.env.BUILD_ALL !== 'true') {
+        sorted = sorted.slice(0, 250);
+      }
+      
+      return sorted.map(art => ({
         params: { id: art.id },
         props: { slug: art.slug, title: art.title }
       }));
@@ -25,22 +32,7 @@ export async function getStaticPaths() {
 const { id } = Astro.params;
 const { slug, title } = Astro.props;
 
-function getSlug(t) {
-  if (!t) return '';
-  let res = t
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '') // Quitar acentos
-    .replace(/[^a-z0-9]+/g, '-') // Cambiar no alfanuméricos por guiones
-    .replace(/(^-|-$)+/g, ''); // Limpiar guiones iniciales y finales
-  
-  if (res.length > 100) {
-    res = res.substring(0, 100).replace(/-+$/, '');
-  }
-  return res;
-}
-
-const targetSlug = slug || getSlug(title) || id;
+const targetSlug = slug || normalizeSlug(title) || id;
 const redirectUrl = `/pro/aidaily/noticias/${targetSlug}/`;
 return Astro.redirect(redirectUrl, 301);
 ---

@@ -1,36 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { getArticlesFromDb } from '../../../lib/db-articles.js';
+import { normalizeSlug } from '../../lib/slug.js';
 
 export async function getStaticPaths() {
-  function getSlug(title) {
-    if (!title) return '';
-    let slug = title
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '') // Quitar acentos
-      .replace(/[^a-z0-9]+/g, '-') // Cambiar no alfanuméricos por guiones
-      .replace(/(^-|-$)+/g, ''); // Limpiar guiones iniciales y finales
-    
-    if (slug.length > 100) {
-      slug = slug.substring(0, 100).replace(/-+$/, '');
-    }
-    return slug;
-  }
-
-  const cachePath = join(process.cwd(), 'src/data/cache-news.json');
-  if (!existsSync(cachePath)) return [];
-  
   try {
-    const cacheData = JSON.parse(readFileSync(cachePath, 'utf-8'));
-    if (Array.isArray(cacheData)) {
-      // Compilar rutas estáticas para TODOS los artículos publicados en SQLite / caché JSON
-      const sorted = [...cacheData].sort((a, b) => new Date(b.publishedAt || b.published || 0) - new Date(a.publishedAt || a.published || 0));
+    const allArticles = getArticlesFromDb();
+    if (Array.isArray(allArticles)) {
+      let sorted = [...allArticles].sort((a, b) => new Date(b.publishedAt || b.published || 0) - new Date(a.publishedAt || a.published || 0));
+      
+      // Optimización: solo los 30 artículos más recientes con slug para compilar en segundos
+      if (process.env.BUILD_ALL !== 'true') {
+        sorted = sorted.slice(0, 30);
+      }
       
       return sorted.map(art => {
-        const slug = art.slug || getSlug(art.title) || art.id;
+        const slug = art.slug || normalizeSlug(art.title) || art.id;
         return {
           params: { slug },
           props: { article: art }
@@ -43,206 +29,474 @@ export async function getStaticPaths() {
   return [];
 }
 
-const { slug } = Astro.params;
 const { article } = Astro.props;
 
-if (!article) {
-  return Astro.redirect('/pro/aidaily/');
+// Formatear fecha
+const publishDate = new Date(article.publishedAt || article.published || Date.now());
+const dateStr = publishDate.toLocaleDateString('es-ES', {
+  weekday: 'long',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+});
+const timeStr = publishDate.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+
+// Procesar Keypoints (puntos clave en español)
+let keyPointsList = [];
+if (article.keyPoints) {
+  try {
+    keyPointsList = typeof article.keyPoints === 'string' ? JSON.parse(article.keyPoints) : article.keyPoints;
+  } catch (e) {
+    console.warn("No se pudo parsear keyPoints para:", article.id);
+  }
 }
 
-// Helpers para imágenes y metadatos
-const defaultImg = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop&q=80';
-const articleImg = article.imageUrl || (article.multimedia && article.multimedia[0]?.url) || defaultImg;
-
-// Calcular tiempo de lectura estimado (promedio de 200 palabras por minuto)
-const wordCount = (article.fullText || "").split(/\s+/).length;
-const readingTime = Math.max(1, Math.ceil(wordCount / 200));
-
-// Formatear fecha
-const formatDate = (isoString) => {
-  if (!isoString) return 'Hoy';
+// Procesar Multimedia (galería de imágenes original)
+let multimediaList = [];
+if (article.multimedia) {
   try {
-    const d = new Date(isoString);
-    return d.toLocaleDateString('es-ES', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-  } catch (_) {
-    return 'Reciente';
+    multimediaList = typeof article.multimedia === 'string' ? JSON.parse(article.multimedia) : article.multimedia;
+  } catch (e) {
+    console.warn("No se pudo parsear multimedia para:", article.id);
   }
-};
+}
+if (!Array.isArray(multimediaList)) {
+  multimediaList = [];
+}
 
-// Generar iniciales del autor para el avatar de prensa
-const getAuthorInitials = (authorName) => {
-  if (!authorName) return 'AD';
-  return authorName.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
-};
+// Si no hay multimedia pero hay una imagen principal, la agregamos como primer elemento
+if (multimediaList.length === 0 && article.imageUrl) {
+  multimediaList.push({
+    url: article.imageUrl,
+    description: article.imageAlt || article.title,
+    type: 'image'
+  });
+}
 
-// Asegurar formato de tags/keypoints
-const keyPoints = Array.isArray(article.keyPoints) 
-  ? article.keyPoints 
-  : (typeof article.keyPoints === 'string' && article.keyPoints.trim().startsWith('[') 
-      ? JSON.parse(article.keyPoints) 
-      : (article.keyPoints ? [article.keyPoints] : []));
+// Procesar Links (enlaces de interés)
+let linksList = [];
+if (article.links) {
+  try {
+    linksList = typeof article.links === 'string' ? JSON.parse(article.links) : article.links;
+  } catch (e) {
+    console.warn("No se pudo parsear links para:", article.id);
+  }
+}
+if (!Array.isArray(linksList)) {
+  linksList = [];
+}
 
-const tags = Array.isArray(article.tags)
-  ? article.tags
-  : (typeof article.tags === 'string' && article.tags.trim().startsWith('[')
-      ? JSON.parse(article.tags)
-      : (article.tags ? [article.tags] : []));
+// Procesar Interesting Data (datos clave de la IA)
+let interestingDataList = [];
+if (article.interestingData) {
+  try {
+    interestingDataList = typeof article.interestingData === 'string' ? JSON.parse(article.interestingData) : article.interestingData;
+  } catch (e) {
+    console.warn("No se pudo parsear interestingData para:", article.id);
+  }
+}
+if (!Array.isArray(interestingDataList)) {
+  interestingDataList = [];
+}
+
+// Helper para escapar HTML en atributos
+function escapeHtmlAttr(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+// Función para renderizar el artículo completo intercalado con multimedia
+function renderArticleBodyHtml(art) {
+  if (!art) return '';
+  
+  let html = '';
+  let paragraphs = [];
+  if (art.fullArticle) {
+    // Sanear placeholders rotos con saltos de línea accidentales dentro de la directiva multimedia
+    const sanitizedArticle = art.fullArticle.replace(/\[MULTIMEDIA:\s*([\s\S]*?)\]/g, (match, url) => {
+      return `[MULTIMEDIA: ${url.replace(/\s+/g, '')}]`;
+    });
+    paragraphs = sanitizedArticle.split(/\n\n+/).filter(p => p.trim().length > 0);
+  } else {
+    paragraphs = [art.aiSummary || art.summary || 'Noticia relevante redactada por IA.'];
+  }
+  
+  // Rastreador de recursos renderizados mediante placeholders
+  const renderedUrls = new Set();
+  
+  // Omitir portada del renderizado inline
+  if (art.imageUrl) {
+    renderedUrls.add(art.imageUrl);
+  }
+
+  paragraphs.forEach((p) => {
+    const trimmed = p.trim();
+    // Buscar el formato [MULTIMEDIA: URL] en cualquier posición del párrafo
+    const match = trimmed.match(/\[MULTIMEDIA:\s*(https?:\/\/[^\]\s]+)\]/i);
+    if (match) {
+      const mediaUrl = match[1].trim();
+      // Buscar el recurso en el array multimedia de la noticia
+      const mediaItem = multimediaList.find(m => m.url === mediaUrl);
+      
+      if (mediaItem) {
+        renderedUrls.add(mediaItem.url);
+        const captionEscaped = escapeHtmlAttr(mediaItem.caption || 'Recurso de la noticia');
+        const captionHtml = mediaItem.caption ? `<div class="inline-image-caption" style="text-align: center; margin-top: 8px; font-size: 0.78rem; color: var(--text-muted); font-style: italic;">${mediaItem.caption}</div>` : '';
+        
+        if (mediaItem.type === 'youtube') {
+          let embedUrl = mediaItem.url;
+          if (embedUrl.includes('watch?v=')) {
+            embedUrl = embedUrl.replace('watch?v=', 'embed/');
+          } else if (embedUrl.includes('youtu.be/')) {
+            embedUrl = embedUrl.replace('youtu.be/', 'youtube.com/embed/');
+          }
+          html += `
+            <div class="inline-article-video-container" style="margin: 24px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 12px 32px rgba(0,0,0,0.5); aspect-ratio: 16/9; background: #000;">
+              <iframe src="${embedUrl}" style="width: 100%; height: 100%; border: none;" allowfullscreen loading="lazy"></iframe>
+              ${captionHtml}
+            </div>
+          `;
+        } else if (mediaItem.type === 'twitter') {
+          html += `
+            <div class="inline-article-tweet-container" style="margin: 24px auto; max-width: 550px; background: rgba(255,255,255,0.02); border-radius: 12px; padding: 16px; border: 1px solid var(--border-color);">
+              <blockquote class="twitter-tweet" data-theme="dark" data-align="center">
+                <a href="${mediaItem.url}"></a>
+              </blockquote>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              ${captionHtml}
+            </div>
+          `;
+        } else if (mediaItem.type === 'video') {
+          html += `
+            <div class="inline-article-video-container" style="margin: 24px 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 12px 32px rgba(0,0,0,0.5); aspect-ratio: 16/9; background: #000;">
+              <video src="${mediaItem.url}" controls style="width: 100%; height: 100%;" loading="lazy"></video>
+              ${captionHtml}
+            </div>
+          `;
+        } else {
+          // Imagen normal
+          html += `
+            <div class="inline-article-image-container" style="margin: 24px 0;">
+              <img class="inline-article-image" src="${mediaItem.url}" alt="${captionEscaped}" onclick="openLightbox('${mediaItem.url}', '${captionEscaped}')" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; cursor: pointer; border: 1px solid var(--border-color);">
+              ${captionHtml}
+            </div>
+          `;
+        }
+      }
+      const textRemaining = trimmed.replace(match[0], '').trim();
+      if (textRemaining.length > 0) {
+        html += `<p style="margin-bottom: 16px; line-height: 1.6; font-size: 0.95rem; text-align: justify;">${textRemaining}</p>`;
+      }
+    } else {
+      // Renderizar como párrafo de texto normal
+      html += `<p style="margin-bottom: 16px; line-height: 1.6; font-size: 0.95rem; text-align: justify;">${trimmed}</p>`;
+    }
+  });
+
+  // Renderizar cualquier multimedia adicional que NO haya sido intercalada
+  if (Array.isArray(multimediaList)) {
+    const remainingMedia = multimediaList.filter(m => !renderedUrls.has(m.url));
+    if (remainingMedia.length > 0) {
+      const remainingImages = remainingMedia.filter(m => m.type === 'image');
+      if (remainingImages.length > 0) {
+        html += '<div style="margin-top: 24px; margin-bottom: 24px;">';
+        html += '<h4 style="font-family: var(--font-title); font-size: 0.9rem; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Galería de Imágenes</h4>';
+        html += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px;">';
+        remainingImages.forEach(img => {
+          const captionEscaped = escapeHtmlAttr(img.caption || 'Imagen de la noticia');
+          html += `
+            <div style="cursor: pointer; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color);" onclick="openLightbox('${img.url}', '${captionEscaped}')">
+              <img src="${img.url}" alt="${captionEscaped}" style="width: 100%; height: 120px; object-fit: cover;" loading="lazy" />
+            </div>
+          `;
+        });
+        html += '</div></div>';
+      }
+    }
+  }
+
+  return html;
+}
 ---
 
-<Layout 
-  title={article.title} 
-  description={article.summary || article.aiSummary}
-  image={articleImg}
->
+<Layout title={article.title} description={article.aiSummary || article.summary}>
   <div class="glow-bg glow-purple"></div>
   <div class="glow-bg glow-cyan"></div>
 
-  {/* Header Corporativo Estático */}
-  <header style="border-bottom: 1px solid var(--border-color); background: rgba(7, 7, 12, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between;">
-      <a href="/pro/aidaily/" style="text-decoration: none; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.25rem; color: #fff; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px;">
-        <span style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AIDAILY</span>
-        <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 500; border-left: 1px solid var(--border-color); padding-left: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Prensa IA</span>
+  <!-- Header mínimo / Volver a Portada -->
+  <header style="border-bottom: 1px solid var(--border-color); background: rgba(9, 9, 16, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="/pro/aidaily/" style="text-decoration: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+        <span>←</span> Volver a Portada
       </a>
-      <a href="/pro/aidaily/" class="article-back-btn" style="text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff; padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); transition: all 0.2s; display: flex; align-items: center; gap: 6px;">
-        ← VOLVER AL PORTAL
-      </a>
+      <span style="font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; letter-spacing: -0.5px; background: linear-gradient(135deg, #fff, var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AIDAILY</span>
     </div>
   </header>
 
-  {/* Contenedor Editorial Principal */}
-  <article class="editorial-article-container">
-    
-    {/* Cabecera Editorial */}
-    <div class="editorial-header">
-      <span style="font-size: 0.72rem; color: var(--accent-cyan); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">
-        {String(article.category || 'general').toUpperCase()}
-      </span>
-      <h1 class="editorial-title">{article.title}</h1>
-      {article.subtitle && <p class="editorial-subtitle">{article.subtitle}</p>}
-      
-      <div class="editorial-meta">
-        <div class="editorial-author-avatar">
-          {getAuthorInitials(article.author)}
-        </div>
-        <div>
-          <strong style="color: #fff; display: block; font-size: 0.78rem;">{article.author || 'Redacción AIDAILY'}</strong>
-          <span>Publicado el {formatDate(article.publishedAt)}</span>
-        </div>
-        <span style="color: var(--border-color)">|</span>
-        <span>⏱️ {readingTime} min de lectura</span>
-        <span style="color: var(--border-color)">|</span>
-        <span style="display: flex; align-items: center; gap: 4px;">
-          👁️ <span id="article-views-counter" style="color: var(--accent-cyan); font-weight: 700; font-family: monospace;">Cargando...</span>
-        </span>
+  <!-- Artículo Completo -->
+  <main style="max-width: 800px; margin: 0 auto; padding: 30px 20px 60px 20px;">
+    <article>
+      <!-- Meta -->
+      <div style="display: flex; gap: 8px; align-items: center; font-size: 0.7rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 800; margin-bottom: 12px;">
+        <span>{article.source}</span>
+        <span style="color: var(--text-muted);">•</span>
+        <span>{article.category}</span>
+        {article.subcategory && (
+          <span style="color: var(--text-muted);">•</span>
+          <span>{article.subcategory}</span>
+        )}
       </div>
-    </div>
 
-    {/* Imagen Principal */}
-    <div class="editorial-image-wrapper">
-      <img class="editorial-image" src={articleImg} alt={article.imageAlt || article.title} />
-      {article.imageCaption && (
-        <div class="editorial-image-caption">
-          {article.imageCaption}
+      <!-- Título -->
+      <h1 style="font-family: var(--font-title); font-size: 2.1rem; font-weight: 900; line-height: 1.25; color: #fff; margin: 0 0 15px 0; letter-spacing: -0.5px;">
+        {article.title}
+      </h1>
+
+      {article.subtitle && (
+        <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; margin: 0 0 20px 0; font-family: var(--font-body); font-weight: 500;">
+          {article.subtitle}
+        </p>
+      )}
+
+      <!-- Fecha y Lectura -->
+      <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+        <time dateTime={publishDate.toISOString()}>Publicado el {dateStr} a las {timeStr}</time>
+        <span>⏱️ 3 min de lectura</span>
+      </div>
+
+      <!-- Panel de Keypoints / Puntos Clave en Español -->
+      <div style="background: rgba(168, 85, 247, 0.04); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 16px; padding: 20px; margin-bottom: 30px; backdrop-filter: blur(10px);">
+        <h3 style="font-family: var(--font-title); font-size: 0.85rem; font-weight: 800; color: var(--accent-purple); text-transform: uppercase; letter-spacing: 1px; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+          <span>💡</span> CLAVES DEL INFORME (ESPAÑOL)
+        </h3>
+        
+        {keyPointsList && keyPointsList.length > 0 ? (
+          <ul style="margin: 0; padding-left: 18px; font-family: var(--font-body); font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; display: flex; flex-direction: column; gap: 6px;">
+            {keyPointsList.map(point => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        ) : (
+          <p style="margin: 0; font-family: var(--font-body); font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+            {article.aiSummary || article.summary || "No hay resumen de puntos clave disponible para este reporte."}
+          </p>
+        )}
+      </div>
+
+      <!-- Visor de Galería de Fotos Premium (Estilo NYT) -->
+      {multimediaList && multimediaList.length > 1 ? (
+        <div style="margin-bottom: 35px; border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; background: rgba(0,0,0,0.4);" class="nyt-photo-gallery">
+          <!-- Visor Principal -->
+          <div style="position: relative; height: 420px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center;">
+            <img id="gallery-main-img" src={multimediaList[0].url} alt={multimediaList[0].description || article.title} style="width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s ease;" />
+            
+            <!-- Botones de Navegación -->
+            <button id="gallery-prev-btn" onclick="prevGalleryImage()" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; transition: background 0.2s;">‹</button>
+            <button id="gallery-next-btn" onclick="nextGalleryImage()" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; transition: background 0.2s;">›</button>
+            
+            <!-- Contador -->
+            <div id="gallery-counter" style="position: absolute; bottom: 15px; right: 15px; background: rgba(0,0,0,0.7); border: 1px solid var(--border-color); padding: 3px 10px; border-radius: 20px; font-size: 0.65rem; color: #fff; font-family: monospace;">
+              1 / {multimediaList.length}
+            </div>
+          </div>
+          <!-- Pie de Foto y Créditos -->
+          <div style="padding: 14px 20px; border-top: 1px solid var(--border-color); min-height: 50px;">
+            <p id="gallery-caption" style="margin: 0; font-size: 0.72rem; color: var(--text-muted); line-height: 1.45; font-style: italic;">
+              {multimediaList[0].description || "Imagen de galería del reporte."}
+            </p>
+          </div>
+        </div>
+      ) : (
+        /* Una sola imagen */
+        article.imageUrl && (
+          <div style="border-radius: 16px; overflow: hidden; margin-bottom: 30px; border: 1px solid var(--border-color); background: var(--surface);">
+            <img src={article.imageUrl} alt={article.title} style="width: 100%; height: auto; display: block;" />
+            {article.imageCaption && (
+              <div style="padding: 10px 15px; border-top: 1px solid var(--border-color); background: rgba(0,0,0,0.15);">
+                <p style="margin: 0; font-size: 0.7rem; color: var(--text-muted); font-style: italic;">{article.imageCaption}</p>
+              </div>
+            )}
+          </div>
+        )
+      )}
+
+      <!-- Por qué importa (Why Matters) -->
+      {article.whyMatters && (
+        <div style="background: rgba(6, 182, 212, 0.03); border-left: 4px solid var(--accent-cyan); padding: 15px 20px; margin-bottom: 30px; border-radius: 0 12px 12px 0; border-top: 1px solid rgba(6, 182, 212, 0.1); border-right: 1px solid rgba(6, 182, 212, 0.1); border-bottom: 1px solid rgba(6, 182, 212, 0.1);">
+          <h4 style="font-family: var(--font-title); font-size: 0.8rem; font-weight: 800; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; margin-top: 0; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+            <span>📢</span> POR QUÉ IMPORTA
+          </h4>
+          <p style="margin: 0; font-family: var(--font-body); font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;">
+            {article.whyMatters}
+          </p>
         </div>
       )}
-    </div>
 
-    {/* Bloque: Por qué es importante (Why Matters) */}
-    {article.whyMatters && (
-      <div class="editorial-why-matters">
-        <strong>Por qué es importante:</strong> {article.whyMatters}
+      <!-- Contenido / Cuerpo del Artículo Premium (Español) -->
+      <div class="article-body-content" style="font-size: 0.95rem; color: var(--text); line-height: 1.7; font-family: var(--font-body); font-weight: 400; text-align: justify; display: flex; flex-direction: column; gap: 20px;" set:html={renderArticleBodyHtml(article)}>
       </div>
-    )}
 
-    {/* Bloque: Puntos Clave (Key Points) */}
-    {keyPoints.length > 0 && (
-      <div class="editorial-keypoints-box">
-        <div class="editorial-keypoints-title">Puntos Clave de la Noticia</div>
-        <ul class="editorial-keypoints-list">
-          {keyPoints.map(point => (
-            <li>{point}</li>
-          ))}
-        </ul>
-      </div>
-    )}
+      <!-- Datos Clave (Interesting Data) -->
+      {interestingDataList && interestingDataList.length > 0 && (
+        <div style="margin-top: 35px; border-top: 1px solid var(--border-color); padding-top: 25px;">
+          <h4 style="font-family: var(--font-title); font-size: 0.85rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; display: flex; align-items: center; gap: 6px;">
+            <span>📊</span> DATOS CLAVE Y CIFRAS
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+            {interestingDataList.map(data => (
+              <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px 16px; border-radius: 12px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(6, 182, 212, 0.3)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                <span style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 4px;">{data.label}</span>
+                <span style="font-size: 1.05rem; color: var(--accent-cyan); font-weight: 800; font-family: var(--font-title);">{data.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-    {/* Cuerpo de la Noticia (Renderizado HTML con fuente Serif Georgia) */}
-    <div class="editorial-body-serif" set:html={article.contentHtml || `<p>${article.fullText || article.summary}</p>`}>
-    </div>
+      <!-- Enlaces de Referencia (Links) -->
+      {linksList && linksList.length > 0 && (
+        <div style="margin-top: 35px; border-top: 1px solid var(--border-color); padding-top: 25px;">
+          <h4 style="font-family: var(--font-title); font-size: 0.85rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+            <span>🔗</span> ENLACES DE REFERENCIA
+          </h4>
+          <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-family: var(--font-body); font-size: 0.85rem;">
+            {linksList.map(link => (
+              <li>
+                <a href={link.url} target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--accent-cyan)'">
+                  {link.title} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
-    {/* Enlaces de Etiquetas (Tags) */}
-    {tags.length > 0 && (
-      <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border-color); padding-top: 20px;">
-        {tags.map(t => (
-          <a href={`/pro/aidaily/tag/${t.replace('#', '').toLowerCase().trim()}.html`} style="text-decoration: none; font-size: 0.68rem; font-weight: 700; color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.15); padding: 4px 10px; border-radius: 20px; transition: all 0.2s;">
-            #{t.replace('#', '').trim()}
+      <!-- Enlace Fuente Original -->
+      {article.url && (
+        <div style="margin-top: 35px; border-top: 1px solid var(--border-color); padding-top: 20px; display: flex; justify-content: flex-end;">
+          <a href={article.url} target="_blank" rel="noopener noreferrer" style="font-size: 0.72rem; color: var(--text-muted); text-decoration: none; font-weight: 700; border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 8px; transition: all 0.2s; background: rgba(255,255,255,0.01);" onmouseover="this.style.color='#fff'; this.style.borderColor='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-muted)'; this.style.borderColor='var(--border-color)'">
+            Leer artículo original en la fuente ↗
           </a>
-        ))}
-      </div>
-    )}
+        </div>
+      )}
 
-    {/* Sección: Miniaturas de Artículos Relacionados (FASE 6) */}
-    <RelatedArticles article={article} limit={8} />
+      <!-- Tags -->
+      {article.tags && article.tags.length > 0 && (
+        <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+          {article.tags.map(tag => (
+            <span style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); color: var(--accent-cyan); font-size: 0.7rem; font-weight: 600; padding: 4px 10px; border-radius: 8px; text-transform: lowercase;">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </article>
 
-  </article>
+    <!-- Recomendados / Relacionados -->
+    <section style="margin-top: 60px; border-top: 2px solid var(--border-color); padding-top: 40px;">
+      <h3 style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 25px;">Noticias Recomendadas</h3>
+      <RelatedArticles article={article} limit={4} />
+    </section>
+  </main>
 
-  {/* Pie de Página Minimalista */}
-  <footer style="border-top: 1px solid var(--border-color); padding: 24px 0; margin-top: 60px; text-align: center; font-size: 0.65rem; color: var(--text-muted); background: rgba(0,0,0,0.15);">
-    <p>© {new Date().getFullYear()} AIDAILY. Generado y curado mediante Inteligencia Artificial.</p>
-  </footer>
+  <script is:inline define:vars={{ multimediaList }}>
+    window.galleryItems = multimediaList;
+    window.currentGalleryIndex = 0;
+  </script>
 
-  {/* Telemetría inline de Visitas (Firebase RTDB) */}
-  <script is:inline define:vars={{ articleId: article.id }}>
-    (function() {
-      if (!articleId) return;
-      const cleanId = articleId.replace(/[^a-zA-Z0-9]/g, '_');
-      const counterEl = document.getElementById('article-views-counter');
+  <!-- Script interactivo del cliente para el visor de galería -->
+  <script is:inline>
+    window.prevGalleryImage = function() {
+      if (!window.galleryItems || window.galleryItems.length <= 1) return;
+      window.currentGalleryIndex--;
+      if (window.currentGalleryIndex < 0) {
+        window.currentGalleryIndex = window.galleryItems.length - 1;
+      }
+      updateGalleryUI();
+    };
 
-      // 1. Incrementar la visita atómicamente y obtener el nuevo valor
-      fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/total.json`, {
-        method: 'PUT',
-        body: '{\".sv\": {\"increment\": 1}}'
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data && typeof data === 'object') {
-          const totalVal = data.total || data.increment || data.views || 1;
-          if (counterEl) counterEl.innerText = `${totalVal} visitas`;
-        }
-      })
-      .catch(() => {
-        // Fallback: intentar leer el valor global si PUT falla o no está autorizado en escritura directa
-        fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/total.json`)
-          .then(res => res.json())
-          .then(val => {
-            if (counterEl && val !== null) {
-              counterEl.innerText = `${val} visitas`;
-            }
-          })
-          .catch(() => {
-            if (counterEl) counterEl.innerText = 'Disponible';
-          });
-      });
+    window.nextGalleryImage = function() {
+      if (!window.galleryItems || window.galleryItems.length <= 1) return;
+      window.currentGalleryIndex++;
+      if (window.currentGalleryIndex >= window.galleryItems.length) {
+        window.currentGalleryIndex = 0;
+      }
+      updateGalleryUI();
+    };
 
-      // 2. Incrementar visitas por hora para momentum en caliente
-      const now = new Date();
-      const yyyy = now.getUTCFullYear();
-      const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
-      const dd = String(now.getUTCDate()).padStart(2, '0');
-      const hh = String(now.getUTCHours()).padStart(2, '0');
-      const hourKey = yyyy + mm + dd + hh;
+    function updateGalleryUI() {
+      var item = window.galleryItems[window.currentGalleryIndex];
+      var img = document.getElementById('gallery-main-img');
+      var counter = document.getElementById('gallery-counter');
+      var caption = document.getElementById('gallery-caption');
+      
+      if (img && item) {
+        img.style.opacity = 0;
+        setTimeout(function() {
+          img.src = item.url;
+          img.alt = item.description || "";
+          img.style.opacity = 1;
+        }, 150);
+      }
+      if (counter) {
+        counter.innerText = (window.currentGalleryIndex + 1) + ' / ' + window.galleryItems.length;
+      }
+      if (caption && item) {
+        caption.innerText = item.description || "Imagen de la galería del reporte.";
+      }
+    }
 
-      fetch(`https://pecemi-default-rtdb.firebaseio.com/aidaily/views/articles/${cleanId}/hours/${hourKey}.json`, {
-        method: 'PUT',
-        body: '{\".sv\": {\"increment\": 1}}'
-      }).catch(() => {});
-    })();
+    // Modal Lightbox global del cliente
+    window.openLightbox = function(url, caption) {
+      // Creamos lightbox dinámico si no existe
+      var lightbox = document.getElementById('global-lightbox');
+      if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'global-lightbox';
+        lightbox.style.position = 'fixed';
+        lightbox.style.top = '0';
+        lightbox.style.left = '0';
+        lightbox.style.width = '100%';
+        lightbox.style.height = '100%';
+        lightbox.style.background = 'rgba(0,0,0,0.95)';
+        lightbox.style.zIndex = '9999';
+        lightbox.style.display = 'flex';
+        lightbox.style.flexDirection = 'column';
+        lightbox.style.alignItems = 'center';
+        lightbox.style.justifyContent = 'center';
+        lightbox.style.cursor = 'zoom-out';
+        lightbox.onclick = function() { lightbox.style.display = 'none'; };
+        
+        var img = document.createElement('img');
+        img.id = 'global-lightbox-img';
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '80%';
+        img.style.objectFit = 'contain';
+        img.style.borderRadius = '8px';
+        img.style.border = '1px solid rgba(255,255,255,0.1)';
+        lightbox.appendChild(img);
+        
+        var cap = document.createElement('div');
+        cap.id = 'global-lightbox-caption';
+        cap.style.color = 'var(--text-muted)';
+        cap.style.fontSize = '0.8rem';
+        cap.style.marginTop = '15px';
+        cap.style.textAlign = 'center';
+        cap.style.maxWidth = '80%';
+        cap.style.fontStyle = 'italic';
+        lightbox.appendChild(cap);
+        
+        document.body.appendChild(lightbox);
+      }
+      
+      document.getElementById('global-lightbox-img').src = url;
+      document.getElementById('global-lightbox-caption').innerText = caption || '';
+      lightbox.style.display = 'flex';
+    };
   </script>
 </Layout>

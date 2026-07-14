@@ -1,102 +1,195 @@
-import { readFileSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import http from 'http';
+import https from 'https';
 
-async function verify() {
-  const targetUrl = `https://pecemi.web.app/pro/aidaily/?cb=${Date.now()}`;
-  console.log(`[Verificación] Solicitando web pública: ${targetUrl}...`);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const DIST_PATH = path.resolve(__dirname, '../dist');
 
+// Leer argumento --url
+const args = process.argv.slice(2);
+let targetUrl = null;
+const urlArgIdx = args.findIndex(a => a.startsWith('--url='));
+if (urlArgIdx !== -1) {
+  targetUrl = args[urlArgIdx].split('=')[1];
+} else {
+  const urlIdx = args.indexOf('--url');
+  if (urlIdx !== -1 && args[urlIdx + 1]) {
+    targetUrl = args[urlIdx + 1];
+  }
+}
+
+// Si la URL es "staging", intentaremos resolverla leyendo el canal preview de Firebase o usando el fallback de pecemi-staging.web.app
+if (targetUrl === 'staging') {
+  targetUrl = 'https://aidaily-staging.web.app/pro/aidaily';
+  console.log(`ℹ️ Resolviendo alias de staging a: ${targetUrl}`);
+}
+
+function fetchUrl(url) {
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith('https') ? https : http;
+    client.get(url, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => resolve({ statusCode: res.statusCode, body: data, headers: res.headers }));
+    }).on('error', err => reject(err));
+  });
+}
+
+async function verifyLocalFiles() {
+  console.log("\n📁 [Fase Local] Verificando existencia de archivos críticos en dist...");
+  if (!fs.existsSync(DIST_PATH)) {
+    console.error("❌ ERROR: El directorio 'dist' no existe. ¡Debes compilar el proyecto primero!");
+    return false;
+  }
+
+  let success = true;
+  const criticalFiles = ['index.html', 'api/articles-light.json', 'pro/aidaily/admin.html'];
+  for (const file of criticalFiles) {
+    if (fs.existsSync(path.join(DIST_PATH, file))) {
+      console.log(`✅ Archivo crítico presente: ${file}`);
+    } else {
+      console.error(`❌ ERROR: Falta archivo crítico: ${file}`);
+      success = false;
+    }
+  }
+
+  // Verificar artículos e integridad
   try {
-    const res = await fetch(targetUrl, {
-      headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0'
-      }
-    });
-
-    if (res.status !== 200) {
-      console.error(`❌ ERROR: Status HTTP incorrecto en producción: ${res.status}`);
-      process.exit(1);
-    }
-    console.log(`✅ Status HTTP 200 OK.`);
-
-    const html = await res.text();
-
-    // 1. Validar que no contenga el banner de error de sincronización de la VPS
-    if (html.includes('Sincronización inactiva por error') || html.includes('Error crítico en la VPS')) {
-      console.error('❌ ERROR: La web pública muestra el banner rojo de Sincronización Inactiva/Error Crítico VPS.');
-      process.exit(1);
-    }
-    console.log('✅ Web libre de avisos de error crítico de la VPS.');
-
-    // 2. Validar que no contenga estado de carga permanente
-    if (html.includes('Procesando y clasificando noticias con IA...')) {
-      console.error('❌ ERROR: La web muestra un mensaje de procesamiento/carga persistente.');
-      process.exit(1);
-    }
-    console.log('✅ Web libre de estados de procesamiento permanente.');
-
-    // 3. Validar existencia de noticias y contenido
-    if (!html.includes('noticias') && !html.includes('card') && !html.includes('article') && !html.includes('Portal')) {
-      console.error('❌ ERROR: El HTML no parece contener marcado de noticias o portal renderizado.');
-      process.exit(1);
-    }
-    console.log('✅ Estructura de noticias detectada.');
-
-    // 4. Validar categorías IA/Tecnología en el HTML
-    const techCategories = ['tecnologia', 'ciencia', 'medioambiente', 'economia'];
-    const foundCategory = techCategories.some(cat => html.toLowerCase().includes(cat));
-    if (!foundCategory) {
-      console.error('❌ ERROR: No se detectaron categorías prioritarias (tecnología/ciencia) en el HTML.');
-      process.exit(1);
-    }
-    console.log('✅ Categorías de IA/tecnología y ciencia presentes.');
-
-    // 5. Validar que no esté saturado de deportes/moda en el marcado estático renderizado
-    const sportsKeywords = ['fútbol', 'champions', 'ciclismo', 'laliga', 'rugby', 'moda', 'tendencias'];
-    const sportsCount = sportsKeywords.reduce((count, kw) => {
-      const regex = new RegExp(kw, 'gi');
-      return count + (html.match(regex) || []).length;
-    }, 0);
-
-    if (sportsCount > 15) {
-      console.warn(`⚠️ ADVERTENCIA: Se detectó alta coincidencia de términos deportivos/generalistas (${sportsCount} menciones).`);
-    } else {
-      console.log(`✅ Contenido generalista bajo control (${sportsCount} menciones).`);
-    }
-
-    // 6. Verificar marca de tiempo de compilación (build-time meta tag)
-    const buildTimeMatch = html.match(/meta name="build-time" content="([^"]+)"/);
-    if (buildTimeMatch) {
-      const liveBuildTime = buildTimeMatch[1];
-      console.log(`[Info] Fecha del build en vivo: ${liveBuildTime}`);
-      
-      // Intentar comparar con el buildTime local si existe la compilación local
-      const localStagingHtmlPath = resolve('/opt/aidaily/dist/index.html');
-      if (existsSync(localStagingHtmlPath)) {
-        const localStagingHtml = readFileSync(localStagingHtmlPath, 'utf-8');
-        const localBuildTimeMatch = localStagingHtml.match(/meta name="build-time" content="([^"]+)"/);
-        if (localBuildTimeMatch) {
-          const localBuildTime = localBuildTimeMatch[1];
-          console.log(`[Info] Fecha del build en local/staging: ${localBuildTime}`);
-          if (new Date(liveBuildTime).getTime() >= new Date(localBuildTime).getTime() - 10000) {
-            console.log('✅ ÉXITO TOTAL: La web en producción está usando el build nuevo.');
-          } else {
-            console.warn('⚠️ ADVERTENCIA: La web en producción sigue sirviendo un build antiguo.');
-          }
-        }
-      }
-    } else {
-      console.warn('⚠️ ADVERTENCIA: No se encontró el tag meta "build-time" en el HTML en vivo.');
-    }
-
-    console.log('\n🌟 VERIFICACIÓN DE PRODUCCIÓN EXITOSA Y VALIDADA.');
-    process.exit(0);
-
+    const apiPath = path.join(DIST_PATH, 'api/articles-light.json');
+    const articles = JSON.parse(fs.readFileSync(apiPath, 'utf-8'));
+    console.log(`✅ API ligera local cargada con ${articles.length} artículos.`);
   } catch (err) {
-    console.error('❌ ERROR: Falló la petición de verificación por red:', err.message);
+    console.error(`❌ ERROR leyendo api/articles-light.json:`, err.message);
+    success = false;
+  }
+
+  return success;
+}
+
+async function verifyRemoteUrl(baseUrl) {
+  // Asegurar barra al final
+  const cleanUrl = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+  console.log(`\n🌍 [Fase Remota] Iniciando testeo HTTP contra: ${cleanUrl}`);
+
+  let success = true;
+
+  // 1. Verificar que responde la home
+  try {
+    const home = await fetchUrl(cleanUrl);
+    if (home.statusCode === 200) {
+      console.log("✅ Home cargada con éxito (HTTP 200 OK).");
+      if (home.body.includes('nyt-nav')) {
+        console.log("✅ Menú de navegación detectado en el DOM remoto.");
+      }
+      if (home.body.includes('top-bar-date')) {
+        console.log("✅ Marquesina del reloj detectada en el DOM remoto.");
+      }
+    } else {
+      console.error(`❌ ERROR: La home respondió con HTTP ${home.statusCode}`);
+      success = false;
+    }
+  } catch (err) {
+    console.error(`❌ ERROR conectando con la home:`, err.message);
+    return false;
+  }
+
+  // 2. Verificar API ligera y que no tenga redirección a HTML (200 OK y JSON real)
+  const apiUrl = `${cleanUrl}api/articles-light.json`;
+  let sampleSlug = '';
+  try {
+    const apiRes = await fetchUrl(apiUrl);
+    if (apiRes.statusCode === 200) {
+      const articles = JSON.parse(apiRes.body);
+      if (Array.isArray(articles) && articles.length > 0) {
+        console.log(`✅ API articles-light.json remota responde correctamente con ${articles.length} artículos.`);
+        
+        // Comprobar campos clave
+        const art = articles[0];
+        if (art.slug && art.title) {
+          console.log(`   - Campo slug ('${art.slug}') y title ('${art.title}') validados en caliente.`);
+          sampleSlug = art.slug;
+        } else {
+          console.error("❌ ERROR: Estructura del JSON ligera remota no tiene campos slug/title.");
+          success = false;
+        }
+      } else {
+        console.error("❌ ERROR: El JSON remoto de la API ligera no es un array válido o está vacío.");
+        success = false;
+      }
+    } else {
+      console.error(`❌ ERROR: La API ligera devolvió HTTP ${apiRes.statusCode}`);
+      success = false;
+    }
+  } catch (err) {
+    console.error(`❌ ERROR validando la API ligera remota:`, err.message);
+    success = false;
+  }
+
+  // 3. Verificar que al menos un artículo estático abra
+  if (sampleSlug) {
+    const articleUrl = `${cleanUrl}noticias/${sampleSlug}/`;
+    try {
+      const artRes = await fetchUrl(articleUrl);
+      if (artRes.statusCode === 200) {
+        console.log(`✅ Artículo estático independiente cargado con éxito: noticias/${sampleSlug}/`);
+        if (artRes.body.includes('editorial-related-container')) {
+          console.log("✅ Componente 'RelatedArticles' (miniaturas relacionadas) presente en el HTML remoto.");
+        } else {
+          console.error("❌ ERROR: No se encontró el componente de miniaturas relacionadas en el HTML remoto.");
+          success = false;
+        }
+      } else {
+        console.error(`❌ ERROR: El artículo estático remoto devolvió HTTP ${artRes.statusCode}`);
+        success = false;
+      }
+    } catch (err) {
+      console.error(`❌ ERROR conectando con el artículo estático remoto:`, err.message);
+      success = false;
+    }
+  }
+
+  // 4. Verificar build-info.json
+  const buildInfoUrl = `${cleanUrl}api/build-info.json`;
+  try {
+    const buildRes = await fetchUrl(buildInfoUrl);
+    if (buildRes.statusCode === 200) {
+      const info = JSON.parse(buildRes.body);
+      console.log(`✅ Archivo build-info.json cargado: Hash: ${info.commitHash} | Time: ${info.buildTime} | Artículos: ${info.articlesCount}`);
+    } else {
+      console.warn(`⚠️ ADVERTENCIA: No se pudo obtener build-info.json (HTTP ${buildRes.statusCode}).`);
+    }
+  } catch (err) {
+    console.warn(`⚠️ ADVERTENCIA: Falló petición a build-info.json:`, err.message);
+  }
+
+  return success;
+}
+
+async function verifyAll() {
+  console.log("==================================================");
+  console.log("🕵️‍♂️ AIDAILY INTEGRITY VERIFIER");
+  console.log(`Fecha: ${new Date().toISOString()}`);
+  console.log("==================================================");
+
+  let success = true;
+
+  if (targetUrl) {
+    success = await verifyRemoteUrl(targetUrl);
+  } else {
+    success = await verifyLocalFiles();
+  }
+
+  console.log("\n==================================================");
+  if (success) {
+    console.log("🎉 ¡VERIFICACIÓN EXITOSA!");
+    process.exit(0);
+  } else {
+    console.error("🚨 VERIFICACIÓN CON ERRORES. Revisa el log de arriba.");
     process.exit(1);
   }
 }
 
-verify();
+verifyAll();

@@ -15,11 +15,5 @@ export default defineConfig({
     format: 'file' 
   },
   integrations: [react()],
-  vite: { 
-    build: { 
-      cssCodeSplit: false,
-      minify: false,
-      sourcemap: false
-    } 
-  }
+  vite: { build: { cssCodeSplit: false } }
 });

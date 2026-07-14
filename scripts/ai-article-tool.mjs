@@ -196,22 +196,38 @@ REGLAS:
 
 // Invocación a OpenRouter para reescribir reporte completo
 async function repairArticle(title, source, text) {
-  const prompt = `Analiza esta noticia y adaptala al español en un reporte premium. Genera EXCLUSIVAMENTE un objeto JSON válido:
+  const prompt = `Analiza esta noticia y adapta su contenido al español como un reportaje premium. Genera EXCLUSIVAMENTE un objeto JSON válido con esta estructura (sin markdown ni delimitadores):
 {
-  "title": "Titular en español",
-  "aiSummary": "Resumen en español",
-  "keyPoints": ["Punto 1", "Punto 2", "Punto 3", "Punto 4"],
-  "whyMatters": "Por qué importa",
+  "title": "Titular impactante en español (estilo NYT/El País)",
+  "aiSummary": "Resumen ejecutivo en español (2-3 oraciones, contexto + impacto)",
+  "keyPoints": ["Punto 1 (15-30 palabras, con cifras)", "Punto 2", "Punto 3", "Punto 4"],
+  "whyMatters": "Párrafo desarrollado (mínimo 3 oraciones) explicando impacto real, implicaciones estratégicas y por qué importa",
   "category": "categoria_principal",
   "subcategory": "subcategoria",
-  "hashtags": ["#Tag1", "#Tag2", "#Tag3"],
-  "fullArticle": "Articulo completo (3-5 párrafos largos)"
+  "hashtags": ["#TagEspecifico1", "#TagEspecifico2", "#TagEspecifico3"],
+  "fullArticle": "Artículo completo (3-5 párrafos bien estructurados, con datos, contexto y narrativa periodística premium)",
+  "links": [{"title": "Nombre descriptivo del enlace en español", "url": "https://url-real-relevante.com"}],
+  "interestingData": [{"label": "Dato clave", "value": "Valor cuantificable"}]
 }
 
 NOTICIA:
 Título original: ${title}
 Fuente: ${source}
-Contenido: ${text.slice(0, 5000)}`;
+Contenido: ${text.slice(0, 5000)}
+
+REGLAS DE REDACCIÓN EDITORIAL:
+1. TODO en español. Traduce absolutamente todo.
+2. Tono premium periodístico tipo NYT/El País con la garra de Xataka. Titulares impactantes, clickbait inteligente pero veraz.
+3. "keyPoints": 3-4 puntos con cifras y detalles concretos (no generalidades).
+4. "whyMatters": Mínimo 3 oraciones profundas con análisis estratégico real.
+5. "fullArticle": 3-5 párrafos largos, bien redactados, con contexto de fondo, detalles técnicos e impacto.
+6. "category": Uno de estos 12: internacional, nacional, economia, opinion, ciencia, tecnologia, medioambiente, cultura, estilo, deportes, sociedad, gastronomia.
+7. "subcategory": Subcategoría válida según la categoría.
+8. "hashtags": 3-5 hashtags CamelCase de entidades específicas (#RealMadrid, #Nvidia), NO genéricos.
+9. "links": 1-3 enlaces reales de referencia (fuente original, sitios oficiales, Wikipedia).
+10. "interestingData": 2-4 datos cuantificables extraídos del artículo (cifras, fechas, porcentajes).
+11. Usa comillas simples dentro de los textos JSON para no romper el formato.`;
+
 
   // --- Intento con Ollama Local ---
   const ollamaUrl = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
@@ -402,6 +418,9 @@ async function main() {
           hashtags: cleanHashtagsList(result.hashtags),
           tags: [norm.category, ...cleanHashtagsList(result.hashtags).map(h => h.replace('#', '').toLowerCase())],
           fullArticle: result.fullArticle || art.fullArticle,
+          links: Array.isArray(result.links) ? result.links : (art.links || []),
+          interestingData: Array.isArray(result.interestingData) ? result.interestingData : (art.interestingData || []),
+          multimedia: art.multimedia || [],
           scrapedAt: new Date().toISOString()
         };
         delete updated.isFallback;

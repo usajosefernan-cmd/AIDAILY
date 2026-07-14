@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import { DatabaseSync } from 'node:sqlite';
 import { CronLogger } from '../lib/logger.js';
 import { writeJsonAtomic } from '../lib/atomic-write.js';
 import { extractRequiredTags } from '../lib/tagging.js';
@@ -99,83 +98,64 @@ async function main() {
 
   // Cargar configuración de orientación para scoring y modelos
   let activeOrientation = null;
-  const configLocalPath = path.resolve('data/config.json');
   try {
-    let configData = null;
-    if (fs.existsSync(configLocalPath)) {
-      configData = JSON.parse(fs.readFileSync(configLocalPath, 'utf-8'));
-      logger.log('Configuración de modelos cargada desde data/config.json local.');
-    } else {
-      const configRes = await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/config.json');
-      if (configRes.ok) {
-        configData = await configRes.json();
-        if (configData) {
-          const dir = path.dirname(configLocalPath);
-          if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-          writeJsonAtomic(configLocalPath, configData, false);
-          logger.log('Configuración descargada de Firebase y sincronizada en data/config.json.');
+    const configRes = await fetch('https://pecemi-default-rtdb.firebaseio.com/aidaily/config.json');
+    if (configRes.ok) {
+      const configData = await configRes.json();
+      if (configData) {
+        if (configData.orientation) {
+          activeOrientation = configData.orientation;
         }
+        // Guardar configuración localmente en data/config.json
+        const configLocalPath = path.resolve('data/config.json');
+        writeJsonAtomic(configLocalPath, configData, false);
+        logger.log('Configuración de modelos y orientación de Firebase sincronizada en data/config.json.');
       }
     }
-    if (configData && configData.orientation) {
-      activeOrientation = configData.orientation;
-    }
   } catch (e) {
-    logger.warn('No se pudo cargar la configuración de Firebase ni local. Usando defaults locales.');
+    logger.warn('No se pudo cargar la configuración desde Firebase. Usando defaults locales.');
   }
 
-  // 2. Obtener estado previo de la base de datos para identificar qué es nuevo
-  const dbPath = process.env.SQLITE_DB_PATH || path.resolve('data/aidaily.db');
-  const db = new DatabaseSync(dbPath);
+  // 2. Obtener estado previo de la caché de noticias para identificar qué es nuevo
+  const cachePath = path.resolve('src/data/cache-news.json');
   const existingArticlesMap = new Map();
-  try {
-    const stmt = db.prepare("SELECT id, url FROM articles WHERE status = 'publicada'");
-    const rows = stmt.all();
-    rows.forEach(art => {
-      existingArticlesMap.set(art.id, art);
-    });
-    logger.log(`[SQLite DB] Artículos en el historial publicado de SQLite: ${existingArticlesMap.size}`);
-  } catch (err) {
-    logger.error('Error leyendo artículos previos de SQLite', err);
+  if (fs.existsSync(cachePath)) {
+    try {
+      const cacheContent = fs.readFileSync(cachePath, 'utf-8');
+      const cacheList = JSON.parse(cacheContent);
+      if (Array.isArray(cacheList)) {
+        cacheList.forEach(art => {
+          existingArticlesMap.set(art.id, art);
+        });
+      }
+    } catch (err) {
+      logger.error('Error leyendo caché inicial', err);
+    }
   }
 
   // 3. Ejecutar el scraping principal
   try {
     logger.log('Lanzando fetchAllNews() para procesar feeds RSS e IA...');
+    // fetchAllNews escribe incrementalmente en cachePath, así que tras finalizar
+    // el archivo en cachePath contendrá la lista combinada (viejos + nuevos sin procesar localmente)
     const resultList = await fetchAllNews();
-    logger.log(`Procesamiento finalizado. Nuevos artículos procesados e incorporados en esta ronda: ${resultList.length}`);
+    logger.log(`Procesamiento finalizado. Nuevos artículos scrapeados e incorporados en esta ronda: ${resultList.length}`);
 
-    // 4. Cargar la lista completa unificada de artículos publicados de SQLite para su exportación
+    // 4. Cargar la lista completa unificada desde la caché local para su enriquecimiento
     let combinedList = [];
-    try {
-      const stmt = db.prepare("SELECT * FROM articles WHERE status = 'publicada' ORDER BY publishedAt DESC");
-      const rows = stmt.all();
-      combinedList = rows.map((art) => {
-        const norm = normalizeCategoryAndSubcategory(art.category, art.subcategory);
-        return {
-          ...art,
-          category: norm.category,
-          subcategory: norm.subcategory,
-          publishedAt: new Date(art.publishedAt).toISOString(),
-          tags: art.tags ? JSON.parse(art.tags) : [norm.category],
-          tagsSecundarios: art.tagsSecundarios ? JSON.parse(art.tagsSecundarios) : [],
-          keyPoints: art.keyPoints ? JSON.parse(art.keyPoints) : [],
-          multimedia: art.multimedia ? JSON.parse(art.multimedia) : [],
-          hashtags: art.hashtags ? JSON.parse(art.hashtags) : [],
-          links: art.links ? JSON.parse(art.links) : [],
-          interestingData: art.interestingData ? JSON.parse(art.interestingData) : [],
-          entities: art.entities ? JSON.parse(art.entities) : [],
-          relatedArticles: art.relatedArticles ? JSON.parse(art.relatedArticles) : []
-        };
-      });
-      logger.log(`[SQLite DB] Artículos publicados totales cargados para APIs: ${combinedList.length}`);
-    } catch (err) {
-      logger.error('Error al recargar base de datos para APIs', err);
-      process.exit(1);
+    if (fs.existsSync(cachePath)) {
+      try {
+        const cacheContent = fs.readFileSync(cachePath, 'utf-8');
+        combinedList = JSON.parse(cacheContent);
+        if (!Array.isArray(combinedList)) combinedList = [];
+      } catch (err) {
+        logger.error('Error al recargar caché consolidada', err);
+        process.exit(1);
+      }
     }
 
     // 5. Post-procesamiento y Enriquecimiento de la lista unificada
-    const enrichedList = combinedList; // Todos los artículos ya vienen enriquecidos por SQLite
+    const enrichedList = [];
     let newCount = 0;
     
     // Contadores para loggear tags y categorías asignados en esta ejecución
@@ -184,21 +164,51 @@ async function main() {
 
     for (const art of combinedList) {
       const isNew = !existingArticlesMap.has(art.id);
+      
+      // Enriquecer campos si faltan o si el artículo es nuevo
+      const detectedAt = art.detectedAt || art.scrapedAt || new Date().toISOString();
+      const language = art.language || 'es';
+      
+      // Extraer tags secundarios
+      const tagsSecundarios = art.tagsSecundarios || extractRequiredTags(art.title, art.summary, art.tags || []);
+      
+      // Calcular score de relevancia y urgencia heurísticos
+      const scores = (art.relevanceScore && art.urgencyScore) 
+        ? { relevanceScore: art.relevanceScore, urgencyScore: art.urgencyScore, scoreReason: art.scoreReason }
+        : computeHeuristicScores(art, activeOrientation);
+      
+      const enrichedArt = {
+        ...art,
+        detectedAt,
+        language,
+        tagsSecundarios,
+        relevanceScore: scores.relevanceScore,
+        urgencyScore: scores.urgencyScore,
+        scoreReason: scores.scoreReason,
+        status: isNew ? 'nueva' : (art.status || 'publicada')
+      };
+
+      enrichedList.push(enrichedArt);
+
+      // Registrar métricas en el logger únicamente si es un artículo nuevo procesado en esta ejecución
       if (isNew) {
         newCount++;
         logger.addSuccess(1);
-        logger.addDetail('new', art.title, art.source, `${art.category}/${art.subcategory}`);
+        logger.addDetail('new', enrichedArt.title, enrichedArt.source, `${enrichedArt.category}/${enrichedArt.subcategory}`);
         
         // Contar categorías y tags nuevos
-        const cat = art.category || 'general';
+        const cat = enrichedArt.category || 'general';
         assignedCategories[cat] = (assignedCategories[cat] || 0) + 1;
-        if (Array.isArray(art.tagsSecundarios)) {
-          art.tagsSecundarios.forEach(tag => {
+        if (Array.isArray(tagsSecundarios)) {
+          tagsSecundarios.forEach(tag => {
             assignedTags[tag] = (assignedTags[tag] || 0) + 1;
           });
         }
       }
     }
+
+    // Ordenar de forma descendente por fecha de publicación
+    enrichedList.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
     // 6. Escritura atómica a /data/news.json y src/data/cache-news.json
     logger.log('Guardando datos consolidados de forma atómica en data/news.json...');
@@ -206,7 +216,6 @@ async function main() {
     writeJsonAtomic(dataNewsPath, enrichedList, true);
 
     logger.log('Actualizando caché consolidada en src/data/cache-news.json...');
-    const cachePath = path.resolve('src/data/cache-news.json');
     writeJsonAtomic(cachePath, enrichedList, false);
 
     // 7. Generación de las APIs segmentadas para la web (100% VPS Nginx)
@@ -235,26 +244,13 @@ async function main() {
     };
     writeJsonAtomic(path.join(apiDir, 'news-config.json'), paginationConfig, false);
 
-    // C. Fichas individuales detalladas de cada noticia (Escritura inteligente / Smart Writing)
+    // C. Fichas individuales detalladas de cada noticia
     const articlesDir = path.join(apiDir, 'articles');
-    
-    // Mantener el directorio existente para no re-escribir de forma redundante 22,000 fichas de noticias
-    if (!fs.existsSync(articlesDir)) {
-      fs.mkdirSync(articlesDir, { recursive: true });
-    }
-
-    let writtenCount = 0;
-    let skippedCount = 0;
+    logger.log(`Guardando fichas individuales de ${enrichedList.length} artículos en ${articlesDir}...`);
     enrichedList.forEach(art => {
       const detailPath = path.join(articlesDir, `${art.id}.json`);
-      if (!fs.existsSync(detailPath)) {
-        writeJsonAtomic(detailPath, art, false);
-        writtenCount++;
-      } else {
-        skippedCount++;
-      }
+      writeJsonAtomic(detailPath, art, false);
     });
-    logger.log(`Fichas detalladas: ${writtenCount} escritas, ${skippedCount} omitidas por existir previamente en disco.`);
 
     // D. Consolidado histórico ligero (optimizado para buscador)
     const optimizedArticlesMap = {};
@@ -263,44 +259,6 @@ async function main() {
       optimizedArticlesMap[art.id] = lightweightArt;
     });
     writeJsonAtomic(path.join(apiDir, 'articles.json'), optimizedArticlesMap, false);
-
-    // E. Exportar la cola actual de SQLite a public/api/queue.json
-    try {
-      const stmt = db.prepare("SELECT * FROM articles WHERE status = 'pendiente_ia'");
-      const rows = stmt.all();
-      const queueList = rows.map((art) => {
-        const norm = normalizeCategoryAndSubcategory(art.category, art.subcategory);
-        return {
-          ...art,
-          feedCategory: art.category,
-          feedSubcategory: art.subcategory,
-          tags: art.tags ? JSON.parse(art.tags) : [],
-          tagsSecundarios: art.tagsSecundarios ? JSON.parse(art.tagsSecundarios) : [],
-          keyPoints: art.keyPoints ? JSON.parse(art.keyPoints) : [],
-          multimedia: art.multimedia ? JSON.parse(art.multimedia) : [],
-          hashtags: art.hashtags ? JSON.parse(art.hashtags) : [],
-          links: art.links ? JSON.parse(art.links) : [],
-          interestingData: art.interestingData ? JSON.parse(art.interestingData) : []
-        };
-      });
-      writeJsonAtomic(path.join(apiDir, 'queue.json'), queueList, false);
-      logger.log(`[SQLite DB] Exportada cola de ${queueList.length} artículos a public/api/queue.json.`);
-    } catch (e) {
-      logger.error('Error al exportar la cola a API estática', e);
-    }
-
-    // F. Exportar feeds activos a public/api/config-feeds.json
-    try {
-      if (fs.existsSync(configLocalPath)) {
-        const configData = JSON.parse(fs.readFileSync(configLocalPath, 'utf-8'));
-        if (configData && configData.feeds) {
-          writeJsonAtomic(path.join(apiDir, 'config-feeds.json'), configData.feeds, false);
-          logger.log('Fuentes RSS activas exportadas a public/api/config-feeds.json.');
-        }
-      }
-    } catch (e) {
-      logger.error('Error al exportar config-feeds a API estática', e);
-    }
 
     // Guardar flag de cambios para deploy
     const hasChanges = newCount > 0;
