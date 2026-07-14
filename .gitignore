@@ -12,7 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
@@ -28,43 +27,52 @@ id_rsa_oracle.key
 *.key
 ayudavps/*.key
 
-
-
 free_providers_research.md
 
-# AIDAILY Generated Files and Folders
+# AIDAILY Generated Data (cron/Hermes output)
 /data/
 /logs/
 /backups/
-*.lock
-
-# Syncthing conflicts and temp files
-*.sync-conflict-*
-~syncthing~*
-.stfolder/
-.stignore
-
-# Astro dynamic data cache
+public/api/articles.json
+public/api/articles-light.json
+public/api/articles/
+public/api/news-page-*.json
+public/api/news-config.json
+public/api/config-feeds.json
+public/api/queue.json
+public/api/build-info*.json
+public/api/search/
 src/data/cache-news.json
 src/data/search-index.json
 src/data/articles-light.json
-src/data/hot-topics.json
-src/data/breaking-news.json
-public/api/
-public/pro/aidaily/noticias/
-public/pro/aidaily/api/
 trending_topics.json
-jobs_updated.json
+.has_changes
 
-# Cleanup constraints
-dist_staging/
-public.bak/
-scratch/
-patch_*
-test_*
-~syncthing~*.tmp
-*.log
+# Test scripts sueltos en raíz (no son parte del proyecto)
+test_*.cjs
+test_*.js
+test_*.mjs
 
+# Archivos de error temporales
+error.html
+error_utf8.html
 
-# Swarm Loop Engineering Exclusions
+# Syncthing artifacts
+*~syncthing~*
+*.sync-conflict-*
+.tmp
+*.tmp
+
+# Archivos de utilidad temporal
+purge-firebase.js
+patch_hermes_config.py
+take_screenshot.js
+
+# Agent/tool configs locales (no subir al repo)
+.agents/
+.antigravity/
 .worktrees/
+
+# Backups y reportes temporales
+DEPLOY_TARGET_REPORT.md
+src/pages/index_original_utf8.astro

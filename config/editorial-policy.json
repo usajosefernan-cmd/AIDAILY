@@ -1,0 +1,40 @@
+{
+  "criterios_prioridad": {
+    "alta": [
+      "ia generativa",
+      "openai",
+      "anthropic",
+      "google deepmind",
+      "meta ai",
+      "microsoft copilot",
+      "nvidia",
+      "apple intelligence",
+      "modelos nuevos",
+      "agentes ia",
+      "regulacion ia",
+      "ciberseguridad",
+      "transicion ecologica",
+      "adquisiciones tecnologicas"
+    ],
+    "media": [
+      "big tech",
+      "chips",
+      "cloud computing",
+      "robotica",
+      "software libre",
+      "productividad digital"
+    ],
+    "descartar": [
+      "deportes convencionales",
+      "moda general",
+      "entretenimiento sin tecnologia",
+      "politica general sin ia",
+      "viral sin fuentes",
+      "clickbait"
+    ]
+  },
+  "balance_portada": {
+    "hot_topics_percent": 70,
+    "evergreen_percent": 30
+  }
+}

@@ -1,0 +1,293 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Buscando en el archivo histórico — AIDAILY" description="Recuperando reporte del archivo histórico de AIDAILY en tiempo real.">
+  <div class="glow-bg glow-purple"></div>
+  <div class="glow-bg glow-cyan"></div>
+
+  <!-- Contenedor del Loader Híbrido de Historial (Inicialmente visible si es ruta de noticias) -->
+  <div id="loader-container" style="display: none; min-height: 100vh; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; font-family: var(--font-body);">
+    <div class="spinner" style="width: 50px; height: 50px; border: 4px solid rgba(6, 182, 212, 0.1); border-top-color: var(--accent-cyan); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;"></div>
+    <h2 style="font-family: var(--font-title); font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 8px;">Accediendo al Archivo Histórico</h2>
+    <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 320px; line-height: 1.4;">Buscando y decodificando el reporte en la base de datos de 22k noticias...</p>
+  </div>
+
+  <!-- Contenedor de Error 404 Real -->
+  <div id="error-container" style="display: none; min-height: 90vh; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 20px; font-family: var(--font-body);">
+    <span style="font-size: 5rem; line-height: 1; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.3));">🔍</span>
+    <h1 style="font-family: var(--font-title); font-size: 2.2rem; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin: 0 0 10px 0;">404 — REPORTE NO ENCONTRADO</h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 440px; line-height: 1.5; margin: 0 0 30px 0;">Lo sentimos, el reporte histórico solicitado no existe en nuestros registros o ha sido archivado definitivamente.</p>
+    <a href="/pro/aidaily/" style="text-decoration: none; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); color: #fff; font-size: 0.85rem; font-weight: 700; padding: 12px 24px; border-radius: 12px; box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25); text-transform: uppercase; letter-spacing: 0.5px;">Volver a la Portada</a>
+  </div>
+
+  <!-- Contenedor del Artículo Renderizado en Caliente (Híbrido) -->
+  <div id="article-container" style="display: none;">
+    <!-- Header mínimo -->
+    <header style="border-bottom: 1px solid var(--border-color); background: rgba(9, 9, 16, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100;">
+      <div style="max-width: 800px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/pro/aidaily/" style="text-decoration: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+          <span>←</span> Volver a Portada
+        </a>
+        <span style="font-family: var(--font-title); font-size: 1.1rem; font-weight: 900; letter-spacing: -0.5px; background: linear-gradient(135deg, #fff, var(--accent-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AIDAILY</span>
+      </div>
+    </header>
+
+    <!-- Artículo -->
+    <main style="max-width: 800px; margin: 0 auto; padding: 30px 20px 60px 20px;">
+      <article>
+        <!-- Meta -->
+        <div style="display: flex; gap: 8px; align-items: center; font-size: 0.7rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: 800; margin-bottom: 12px;">
+          <span id="art-source"></span>
+          <span style="color: var(--text-muted);">•</span>
+          <span id="art-category"></span>
+        </div>
+
+        <!-- Título -->
+        <h1 id="art-title" style="font-family: var(--font-title); font-size: 2.1rem; font-weight: 900; line-height: 1.25; color: #fff; margin: 0 0 15px 0; letter-spacing: -0.5px;"></h1>
+
+        <!-- Subtítulo -->
+        <p id="art-subtitle" style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4; margin: 0 0 20px 0; font-family: var(--font-body); font-weight: 500;"></p>
+
+        <!-- Fecha -->
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <time id="art-date"></time>
+          <span>⏱️ Recuperado del Archivo Histórico</span>
+        </div>
+
+        <!-- Caja de Keypoints en Español -->
+        <div id="art-keypoints-box" style="background: rgba(168, 85, 247, 0.04); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 16px; padding: 20px; margin-bottom: 30px; backdrop-filter: blur(10px);">
+          <h3 style="font-family: var(--font-title); font-size: 0.85rem; font-weight: 800; color: var(--accent-purple); text-transform: uppercase; letter-spacing: 1px; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span>💡</span> CLAVES DEL INFORME (ESPAÑOL)
+          </h3>
+          <div id="art-keypoints-list"></div>
+        </div>
+
+        <!-- Visor de Galería de Fotos Interactiva Híbrida (Estilo NYT) -->
+        <div id="art-gallery-box" style="display: none; margin-bottom: 35px; border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; background: rgba(0,0,0,0.4);">
+          <!-- Visor -->
+          <div style="position: relative; height: 420px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center;">
+            <img id="art-gallery-img" src="" alt="" style="width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s ease;" />
+            <button onclick="prevHybridGalleryImage()" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; transition: background 0.2s; outline:none;">‹</button>
+            <button onclick="nextHybridGalleryImage()" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: 1px solid var(--border-color); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; transition: background 0.2s; outline:none;">›</button>
+            <div id="art-gallery-counter" style="position: absolute; bottom: 15px; right: 15px; background: rgba(0,0,0,0.7); border: 1px solid var(--border-color); padding: 3px 10px; border-radius: 20px; font-size: 0.65rem; color: #fff; font-family: monospace;"></div>
+          </div>
+          <div style="padding: 14px 20px; border-top: 1px solid var(--border-color); min-height: 50px;">
+            <p id="art-gallery-caption" style="margin: 0; font-size: 0.72rem; color: var(--text-muted); line-height: 1.45; font-style: italic;"></p>
+          </div>
+        </div>
+
+        <!-- Imagen única tradicional (por si no hay galería) -->
+        <div id="art-single-img-box" style="display: none; border-radius: 16px; overflow: hidden; margin-bottom: 30px; border: 1px solid var(--border-color); background: var(--surface);">
+          <img id="art-single-img" src="" alt="" style="width: 100%; height: auto; display: block;" />
+        </div>
+
+        <!-- Cuerpo del Artículo (En Inglés) -->
+        <div id="art-body" style="font-size: 0.95rem; color: var(--text); line-height: 1.7; font-family: var(--font-body); font-weight: 400; text-align: justify; display: flex; flex-direction: column; gap: 20px;"></div>
+
+        <!-- Enlace original -->
+        <div id="art-link-box" style="display: none; margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px; justify-content: flex-end;">
+          <a id="art-original-link" href="" target="_blank" rel="noopener noreferrer" style="font-size: 0.72rem; color: var(--accent-cyan); text-decoration: none; font-weight: 700; border: 1px solid rgba(6, 182, 212, 0.3); padding: 6px 14px; border-radius: 8px; transition: all 0.2s;">
+            Leer artículo original en la fuente ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Recomendados Fallback -->
+      <section style="margin-top: 60px; border-top: 2px solid var(--border-color); padding-top: 40px;">
+        <h3 style="font-family: var(--font-title); font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 25px;">Noticias Recomendadas</h3>
+        <div id="fallback-related-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;"></div>
+      </section>
+    </main>
+  </div>
+
+  <style>
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+
+  <!-- Script Cliente para Carga Histórica Híbrida -->
+  <script is:inline>
+    window.hybridGalleryItems = [];
+    window.currentHybridGalleryIndex = 0;
+
+    (async function() {
+      const pathname = window.location.pathname;
+      const loaderContainer = document.getElementById('loader-container');
+      const errorContainer = document.getElementById('error-container');
+      const articleContainer = document.getElementById('article-container');
+
+      // 1. Detectar si la ruta corresponde a noticias (ej. /pro/aidaily/noticias/slug/)
+      const match = pathname.match(/\/noticias\/([^/]+)\/?$/);
+      if (!match) {
+        errorContainer.style.display = 'flex';
+        return;
+      }
+
+      const slug = match[1];
+      loaderContainer.style.display = 'flex';
+
+      try {
+        // 2. Cargar el mapeo de slugs histórico
+        const res = await fetch('/pro/aidaily/api/search/slug-map.json');
+        if (!res.ok) throw new Error("No se pudo cargar el archivo de mapeo histórico.");
+
+        const slugMap = await res.json();
+        const article = slugMap[slug];
+
+        if (!article) {
+          loaderContainer.style.display = 'none';
+          errorContainer.style.display = 'flex';
+          return;
+        }
+
+        // 3. Pintar los datos en caliente en el DOM
+        document.title = `${article.title} — AIDAILY`;
+        document.getElementById('art-source').innerText = article.source || 'IA Daily';
+        document.getElementById('art-category').innerText = (article.category || 'tecnologia').toUpperCase();
+        document.getElementById('art-title').innerText = article.title;
+        document.getElementById('art-subtitle').innerText = article.summary || '';
+        
+        // Formatear fecha
+        const dateObj = new Date(article.publishedAt);
+        document.getElementById('art-date').innerText = 'Publicado el ' + dateObj.toLocaleDateString('es-ES', {
+          weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+        }) + ' a las ' + dateObj.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+
+        // Procesar Keypoints (puntos clave en español)
+        const keypointsListEl = document.getElementById('art-keypoints-list');
+        let keyPoints = [];
+        try {
+          if (article.keyPoints) {
+            keyPoints = typeof article.keyPoints === 'string' ? JSON.parse(article.keyPoints) : article.keyPoints;
+          }
+        } catch (_) {}
+
+        if (Array.isArray(keyPoints) && keyPoints.length > 0) {
+          keypointsListEl.innerHTML = `<ul style="margin:0; padding-left:18px; font-family:var(--font-body); font-size:0.82rem; color:var(--text-muted); line-height:1.55; display:flex; flex-direction:column; gap:6px;">
+            ${keyPoints.map(p => `<li>${p}</li>`).join('')}
+          </ul>`;
+        } else {
+          keypointsListEl.innerHTML = `<p style="margin: 0; font-family: var(--font-body); font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">${article.summary || "No hay puntos clave detallados en español para este reporte."}</p>`;
+        }
+
+        // Procesar galería o imagen única
+        let multimedia = [];
+        try {
+          if (article.multimedia) {
+            multimedia = typeof article.multimedia === 'string' ? JSON.parse(article.multimedia) : article.multimedia;
+          }
+        } catch (_) {}
+
+        if (!Array.isArray(multimedia)) multimedia = [];
+
+        if (multimedia.length > 1) {
+          // Iniciar galería
+          window.hybridGalleryItems = multimedia;
+          window.currentHybridGalleryIndex = 0;
+          
+          document.getElementById('art-gallery-img').src = multimedia[0].url;
+          document.getElementById('art-gallery-img').alt = multimedia[0].description || article.title;
+          document.getElementById('art-gallery-counter').innerText = `1 / ${multimedia.length}`;
+          document.getElementById('art-gallery-caption').innerText = multimedia[0].description || "Imagen de la galería.";
+          document.getElementById('art-gallery-box').style.display = 'block';
+        } else {
+          // Mostrar imagen única tradicional
+          const mainImgUrl = article.imageUrl || (multimedia[0] ? multimedia[0].url : null);
+          if (mainImgUrl) {
+            document.getElementById('art-single-img').src = mainImgUrl;
+            document.getElementById('art-single-img').alt = article.title;
+            document.getElementById('art-single-img-box').style.display = 'block';
+          }
+        }
+
+        // Cargar cuerpo formateado
+        const bodyEl = document.getElementById('art-body');
+        if (article.body) {
+          bodyEl.innerHTML = article.body.split(/\r?\n\r?\n/).map(function(p) {
+            return `<p style="margin: 0 0 15px 0;">${p.trim()}</p>`;
+          }).join('');
+        } else {
+          bodyEl.innerHTML = `<p>${article.summary}</p>`;
+        }
+
+        // Cargar link de la fuente original
+        if (article.url || article.originalUrl) {
+          const originalLink = article.url || article.originalUrl;
+          document.getElementById('art-original-link').href = originalLink;
+          document.getElementById('art-link-box').style.display = 'flex';
+        }
+
+        // 4. Cargar sugerencias recomendadas de la misma categoría del mapa
+        const relatedGrid = document.getElementById('fallback-related-grid');
+        const candidates = Object.values(slugMap)
+          .filter(a => a.id !== article.id && a.category === article.category)
+          .slice(0, 4);
+
+        if (candidates.length > 0) {
+          relatedGrid.innerHTML = candidates.map(art => `
+            <a class="related-article-card" href="/pro/aidaily/noticias/${art.slug || art.id}/" style="text-decoration: none; background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px; display: flex; flex-direction: column;">
+              <div style="height: 140px; border-radius: 8px; overflow: hidden; margin-bottom: 10px;">
+                <img src="${art.imageUrl || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800'}" alt="${art.title}" style="width:100%; height:100%; object-fit:cover;" />
+              </div>
+              <span style="font-size:0.6rem; color:var(--accent-cyan); font-weight:800; text-transform:uppercase;">${art.source}</span>
+              <h4 style="font-family:var(--font-title); font-size:0.88rem; font-weight:800; color:#fff; margin: 4px 0; line-height: 1.3;">${art.title}</h4>
+              <p style="font-size:0.75rem; color:var(--text-muted); line-height:1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 4px 0 0 0;">${art.summary || ''}</p>
+            </a>
+          `).join('');
+        }
+
+        // Mostrar contenedor del artículo
+        loaderContainer.style.display = 'none';
+        articleContainer.style.display = 'block';
+
+      } catch (err) {
+        console.error("Fallo al recuperar artículo de historial:", err.message);
+        loaderContainer.style.display = 'none';
+        errorContainer.style.display = 'flex';
+      }
+    })();
+
+    // Funciones del visor de la galería híbrida
+    window.prevHybridGalleryImage = function() {
+      if (!window.hybridGalleryItems || window.hybridGalleryItems.length <= 1) return;
+      window.currentHybridGalleryIndex--;
+      if (window.currentHybridGalleryIndex < 0) {
+        window.currentHybridGalleryIndex = window.hybridGalleryItems.length - 1;
+      }
+      updateHybridGalleryUI();
+    };
+
+    window.nextHybridGalleryImage = function() {
+      if (!window.hybridGalleryItems || window.hybridGalleryItems.length <= 1) return;
+      window.currentHybridGalleryIndex++;
+      if (window.currentHybridGalleryIndex >= window.hybridGalleryItems.length) {
+        window.currentHybridGalleryIndex = 0;
+      }
+      updateHybridGalleryUI();
+    };
+
+    function updateHybridGalleryUI() {
+      var item = window.hybridGalleryItems[window.currentHybridGalleryIndex];
+      var img = document.getElementById('art-gallery-img');
+      var counter = document.getElementById('art-gallery-counter');
+      var caption = document.getElementById('art-gallery-caption');
+      
+      if (img && item) {
+        img.style.opacity = 0;
+        setTimeout(function() {
+          img.src = item.url;
+          img.alt = item.description || "";
+          img.style.opacity = 1;
+        }, 150);
+      }
+      if (counter) {
+        counter.innerText = (window.currentHybridGalleryIndex + 1) + ' / ' + window.hybridGalleryItems.length;
+      }
+      if (caption && item) {
+        caption.innerText = item.description || "Imagen de la galería.";
+      }
+    }
+  </script>
+</Layout>

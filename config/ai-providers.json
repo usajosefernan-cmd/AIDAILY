@@ -1,0 +1,50 @@
+{
+  "providers": [
+    {
+      "name": "google",
+      "models": [
+        {
+          "name": "google/gemini-2.5-pro:free",
+          "tier": "smart",
+          "allowedTasks": ["editorial_decision", "writing", "fact_check", "rewrite", "qa", "seo"]
+        },
+        {
+          "name": "google/gemini-2.5-flash:free",
+          "tier": "cheap",
+          "allowedTasks": ["scout", "classification", "tagging", "dedupe", "summaries_short"]
+        }
+      ]
+    },
+    {
+      "name": "meta",
+      "models": [
+        {
+          "name": "meta-llama/llama-3.3-70b-instruct:free",
+          "tier": "smart",
+          "allowedTasks": ["editorial_decision", "writing", "fact_check", "rewrite", "qa", "seo"]
+        }
+      ]
+    },
+    {
+      "name": "qwen",
+      "models": [
+        {
+          "name": "qwen/qwen-2.5-72b-instruct:free",
+          "tier": "smart",
+          "allowedTasks": ["editorial_decision", "writing", "fact_check", "rewrite", "qa", "seo"]
+        }
+      ]
+    },
+    {
+      "name": "deepseek",
+      "models": [
+        {
+          "name": "deepseek/deepseek-r1:free",
+          "tier": "smart",
+          "allowedTasks": ["writing", "fact_check", "rewrite", "qa"]
+        }
+      ]
+    }
+  ],
+  "cooldown_duration_ms": 300000
+}
